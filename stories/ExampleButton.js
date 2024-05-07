@@ -1,4 +1,4 @@
-import './button.css';
+import './example-button.css';
 
 export const createButton = ({
   primary = false,
@@ -12,8 +12,8 @@ export const createButton = ({
   btn.innerText = label;
   btn.addEventListener('click', onClick);
 
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  btn.className = ['storybook-button', `storybook-button--${size}`, mode].join(' ');
+  const mode = primary ? 'henk-button--primary' : 'henk-button--secondary';
+  btn.className = ['henk-button', `henk-button--${size}`, mode].join(' ');
 
   btn.style.backgroundColor = backgroundColor;
 

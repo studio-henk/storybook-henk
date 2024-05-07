@@ -28,5 +28,7 @@ const createIconStory = (iconName) => ({ primary, size, ...args }) => {
   return iconRef;
 };
 
-export const Discord = createIconStory('discord');
-export const Github = createIconStory('github');
+export const ShareIcon = createIconStory('icon-share');
+export const CheckmarkIcon = createIconStory('icon-checkmark');
+// export const Discord = createIconStory('discord');
+// export const Github = createIconStory('github');

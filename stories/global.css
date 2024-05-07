@@ -1,0 +1,63 @@
+:root {
+  /* primitive colors */  
+  --color-primitive-transparent: transparent;
+  --color-primitive-white: #fff;
+  --color-primitive-black: #000;
+  --color-primitive-ral-9016: #F1F0EA;
+  --color-primitive-ral-9005: #0A0C10;
+  --color-primitive-accent-5: #EAE4D7;
+  --color-primitive-accent-14: #CCC7BD;
+  --color-primitive-accent-16: #6B7156;
+  --color-primitive-blue: #009FF5;
+
+  /* mapped colors */
+  --color-mapped-henk-white: var(--color-primitive-ral-9016);
+  --color-mapped-henk-black: var(--color-primitive-ral-9005);
+  --color-mapped-primary: var(--color-primitive-blue);
+
+  /* semantic tokens */  
+  --color-token-surface-default: var(--color-mapped-henk-white);
+  --color-token-surface-primary: var(--color-mapped-primary);
+  --color-token-surface-secondary: var(--color-primitive-transparent);
+  --color-token-surface-tertiary: var(--color-primitive-accent-5);
+  --color-token-surface-quaternary: var(--color-primitive-accent-14);
+  --color-token-surface-highlight: var(--color-primitive-accent-16);
+  /* --color-token-surface-disabled: var(--color-primitive-brand-accent-5); */
+}
+
+html {
+  font-family: 'Haas Grot Text R Web',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* background-color: var(--color-background-page, #fff); */
+  background-color: #fff;
+  /* color: var(--color-text-page, #000); */
+  color: #000;
+  line-height: 1.5;
+  letter-spacing: 0;
+  height: 100%;
+  /* font-family: var(--font-body, sans-serif), sans-serif; */
+  font-size: 100%;
+  font-feature-settings: "pnum" on, "lnum" on;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--total-bars-height, 80px);
+}
+
+@supports (-webkit-font-smoothing: antialiased) {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+:root {
+  --total-bars-height: calc(var(--NavBarHeight-mobile, 80px) + var(--MsgBarHeight, 0px));
+}
+
+@media only screen and (min-width: 1024px) {
+  :root {
+    --total-bars-height: calc(var(--NavBarHeight-desktop, 80px) + var(--MsgBarHeight, 0px));
+  }
+}
+
+body {
+  padding: var(--total-bars-height, 80px) 0 0 0;
+  font-weight: 400;
+}
