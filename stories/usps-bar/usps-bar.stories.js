@@ -1,6 +1,7 @@
 // usps-bar.stories.js
 // import { withDesign } from "storybook-addon-designs";
 import { createUspsBar } from "./usps-bar";
+// import { BADGE } from '@geometricpanda/storybook-addon-badges';
 
 export default {
   title: "Components/USPS Bar",

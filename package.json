@@ -16,7 +16,7 @@
     "@storybook/addon-essentials": "^8.1.0-alpha.7",
     "@storybook/addon-interactions": "^8.1.0-alpha.7",
     "@storybook/addon-links": "^8.1.0-alpha.7",
-    "@storybook/blocks": "^8.1.0-alpha.7",
+    "@storybook/blocks": "^8.1.0-alpha.8",
     "@storybook/html": "^8.1.0-alpha.7",
     "@storybook/html-vite": "^8.1.0-alpha.7",
     "@storybook/test": "^8.1.0-alpha.7",
