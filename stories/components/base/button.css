@@ -1,6 +1,6 @@
 ::part(button),
 .sh-atom-button {
-  font-family: var(--font-body, sans-serif), sans-serif;
+  /* font-family: var(--font-body, sans-serif), sans-serif; */
   font-size: 1rem;
   line-height: 1.5;
   display: inline-flex;
@@ -13,7 +13,7 @@
   padding: 0.5em 1.5em;
   cursor: pointer;
   font-feature-settings: "pnum" on, "lnum" on;
-  background-color: var(--color-background-button, transparent);
+  background-color: var(--color-background-button, red);
   color: var(--color-text-button, #fff);
   border: 1px solid var(--color-border-button, #fff);
   border-radius: 32px;

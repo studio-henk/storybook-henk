@@ -1,0 +1,143 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+
+<Meta title="Colors" />
+
+## Primitives
+
+<ColorPalette>
+    <ColorItem
+        title="color.primitive.transparent"
+        subtitle="Transparent"
+        colors={{ Transparent: "transparent" }}
+    />
+    <ColorItem
+        title="color.primitive.white"
+        subtitle="White"
+        colors={{ White: "#fff" }}
+    />
+    <ColorItem
+        title="color.primitive.black"
+        subtitle="Black"
+        colors={{ Black: "#000" }}
+    />
+    <ColorItem
+        title="color.primitive.ral-9016"
+        subtitle="RAL 9016"
+        colors={{ "RAL-9016": "#f1f0ea" }}
+    />
+    <ColorItem
+        title="color.primitive.ral-9005"
+        subtitle="RAL 9005"
+        colors={{ "RAL-9005": "#0a0c10" }}
+    />
+    <ColorItem
+        title="color.primitive.neutral"
+        subtitle="Some of the greys"
+        colors={{
+            "10": "hsl(0, 0%, 10%)",
+            "20": "hsl(0, 0%, 20%)",
+            "30": "hsl(0, 0%, 30%)",
+            "40": "hsl(0, 0%, 40%)",
+            "50": "hsl(0, 0%, 50%)",
+            "60": "hsl(0, 0%, 60%)",
+            "70": "hsl(0, 0%, 70%)",
+            "80": "hsl(0, 0%, 80%)",
+            "90": "hsl(0, 0%, 90%)",
+            "95": "hsl(0, 0%, 95%)",
+        }}
+    />
+    <ColorItem
+        title="color.primitive.blue"
+        subtitle="Blue"
+        colors={{ Blue: "#009ff5" }}
+    />
+    <ColorItem
+        title="color.primitive.blue.tints"
+        subtitle="Blue tints"
+        colors={{
+            "10": "hsl(201, 100%, 10%)",
+            "20": "hsl(201, 100%, 20%)",
+            "30": "hsl(201, 100%, 30%)",
+            "40": "hsl(201, 100%, 40%)",
+            "50": "hsl(201, 100%, 50%)",
+            "60": "hsl(201, 100%, 60%)",
+            "70": "hsl(201, 100%, 70%)",
+            "80": "hsl(201, 100%, 80%)",
+            "90": "hsl(201, 100%, 90%)"  
+        }}
+    />    
+    <ColorItem
+        title="color.primitive.accent-5"
+        subtitle="Accent-5"
+        colors={{ "Accent-5": "#eae4d7" }}
+    />
+    <ColorItem
+        title="color.primitive.accent-14"
+        subtitle="Accent-14"
+        colors={{ "Accent-14": "#ccc7bd" }}
+    />
+    <ColorItem
+        title="color.primitive.accent-16"
+        subtitle="Accent-16"
+        colors={{ "Accent-16": "#6b7156" }}
+    />
+</ColorPalette>
+
+## Mapped
+
+<ColorPalette>
+    <ColorItem
+        title="color.mapped.henk-white"
+        subtitle="HENK White"
+        colors={{ "color.primitive.ral-9016": "#f1f0ea" }}
+    />
+    <ColorItem
+        title="color.mapped.henk-black"
+        subtitle="HENK Black"
+        colors={{ "color.primitive.ral-9005": "#0a0c10" }}
+    />
+    <ColorItem
+        title="color.mapped.neutral"
+        subtitle="100-900"
+        colors={{
+            "100": "hsl(0, 0%, 95%)",
+            "200": "hsl(0, 0%, 90%)",
+            "300": "hsl(0, 0%, 80%)",
+            "400": "hsl(0, 0%, 70%)",
+            "500": "hsl(0, 0%, 60%)",
+            "600": "hsl(0, 0%, 50%)",
+            "700": "hsl(0, 0%, 40%)",
+            "800": "hsl(0, 0%, 30%)",
+            "900": "hsl(0, 0%, 20%)",            
+        }}
+    />
+    <ColorItem
+        title="color.mapped.primary"
+        subtitle="Primary"
+        colors={{ "color.primitive.blue": "#009ff5" }}
+    />
+    <ColorItem
+        title="color.mapped.secondary"
+        subtitle="NA"
+        colors={{ NA: "transparent" }}
+    />
+    <ColorItem
+        title="color.mapped.blue.tints"
+        subtitle="Blue tints"
+        colors={{
+            "200": "hsl(201, 100%, 70%)",
+            "400": "hsl(201, 100%, 48%)",
+            "600": "hsl(201, 100%, 30%)",            
+        }}
+    />
+</ColorPalette>
+
+## Semantic Tokens
+
+<ColorPalette>
+    <ColorItem
+        title="color.token.surface.default"
+        subtitle="Surface default"
+        colors={{ "color.mapped.henk-white": "#f1f0ea" }}
+    />
+</ColorPalette>

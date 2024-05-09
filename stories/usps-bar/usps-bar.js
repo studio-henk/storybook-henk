@@ -1,8 +1,7 @@
 // usps-bar.js
 
 import './usps-bar.css';
-// import { Icon } from "../../Atoms/atom-icon/_atom-icon";
-import { Checkmark } from '../IconSVG.stories';
+import { Checkmark } from '../components/base/Icon.stories';
 
 export const createUspsBar = ({ texts, showIcon = false, variant = 'Default' }) => {
     if (!texts || texts.length === 0) {
@@ -25,10 +24,9 @@ export const createUspsBar = ({ texts, showIcon = false, variant = 'Default' }) 
         icon.className = "icon-checkmark sh-atom-icon__svg";
         icon.innerHTML = Checkmark();
         uspListItem.appendChild(icon);
-        // uspListItem.appendChild(icon.firstChild);
       }
   
-      uspListItem.innerHTML += text; // Use innerHTML to render raw HTML from Twig
+      uspListItem.innerHTML += text;
       // uspListItem.innerHTML = text;
   
       uspList.appendChild(uspListItem);

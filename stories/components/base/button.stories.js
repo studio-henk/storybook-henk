@@ -5,7 +5,7 @@ import {createAtomButton} from './button';
 // import {Placeholder} from "../AtomInput.stories";
 
 export default {
-    title: 'Components/Button/Button Stories',
+    title: 'Components/Base/Button',
     component: createAtomButton,
     tags: ['autodocs'],
     parameters: { controls: { sort: 'requiredFirst' } },
@@ -128,14 +128,19 @@ Base.parameters = {
     // },
 };
 
-// You also have the option to select a specific Frame to embed. From the share modal, check Link to selected frame.
-
-/*export const Primary = Template.bind({});
-Primary.args = {
-  buttonText: 'Primary Button',
-  role: 'primary',
+export const Filled = Template.bind({});
+Filled.args = {
+    buttonText: 'Filled Button',
+    style: 'filled',
 };
 
+// export const Primary = Template.bind({});
+// Primary.args = {
+//   buttonText: 'Primary Button',
+//   role: 'primary',
+// };
+
+/*
 Primary.parameters = {
     badges: [BADGE.NEEDS_REVISION],
     controls: { exclude: ['role'] },

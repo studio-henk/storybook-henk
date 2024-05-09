@@ -9,6 +9,8 @@ export default {
   // decorators: [withDesign],
   parameters: {
     controls: { sort: "requiredFirst" },
+    // layout: "fullscreen",
+    //layout: "centered",
   },
   argTypes: {
     texts: {
@@ -31,8 +33,11 @@ export default {
       description: "Variant of the USPS bar",
       table: { type: { summary: "string" }, defaultValue: { summary: "Default" } },
       control: "select",
-      options: ["Default", "Primary", "Secondary", "Tertiary", "Quaternary", "Highlight"],
+      options: ["Default", "Highlight", "Highlight-Contrast"],
     },
+  },
+  args: {
+    texts: ["Made to order in Europe", "Customisable design", "Assembled on delivery"], // Default texts
   },
 };
 
@@ -41,62 +46,28 @@ const Template = ({ texts, showIcon, ...args }) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {
-  texts: ["Free Shipping", "24/7 Support", "Secure Checkout"],
-  variant: 'Default',
-};
 
 export const DefaultWithIcons = Template.bind({});
-DefaultWithIcons.args = {
-  texts: ["Free Shipping", "24/7 Support", "Secure Checkout"],
-  variant: 'Default',
+DefaultWithIcons.args = {  
   showIcon: true,
 };
 
 export const DefaultWithLinks = Template.bind({});
 DefaultWithLinks.args = {
   texts: ["<a href='#somewhere'>Free Shipping</a>", "24/7 Support", "Secure Checkout"],
-  variant: 'Default',
 };
 
-export const DefaultWithLinksAndIcons = Template.bind({});
-DefaultWithLinksAndIcons.args = {
-  texts: ["<a href='#somewhere'>Free Shipping</a>", "24/7 Support", "Secure Checkout"],
-  variant: 'Default',
-  showIcon: true,
+export const Highlight = Template.bind({});
+Highlight.args = {
+  variant: 'Highlight',
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-  texts: ["Free Shipping", "24/7 Support", "Secure Checkout"],
-  variant: 'Primary',
+export const HighlightAccessible = Template.bind({});
+HighlightAccessible.args = {
+  variant: 'Highlight-Contrast',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  texts: ["Free Shipping", "24/7 Support", "Secure Checkout"],
-  variant: 'Secondary',
+export const DefaultDutch = Template.bind({});
+DefaultDutch.args = {
+  texts: ["Gemaakt in Europa", "Aanpasbaar ontwerp", "Gemonteerd bij levering"],
 };
-
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  texts: ["Free Shipping", "24/7 Support", "Secure Checkout"],
-  variant: 'Tertiary',
-};
-
-export const Quaternary = Template.bind({});
-Quaternary.args = {
-  texts: ["Free Shipping", "24/7 Support", "Secure Checkout"],
-  variant: 'Quaternary',
-};
-
-// export const WithIcons = Template.bind({});
-// WithIcons.args = {
-//   texts: ["Free Shipping", "24/7 Support", "Secure Checkout"],
-//   showIcon: true,
-// };
-
-// export const CustomTexts = Template.bind({});
-// CustomTexts.args = {
-//   texts: ["Fast Delivery", "Expert Assistance", "Safe Transactions"],
-// };

@@ -1,35 +1,29 @@
 .usp-bar {
-    display: none;
-    --_color-background-usp-bar: var(--color-token-surface-default, #fff);
-    --_color-text-usp-bar: var(--color-token-text-primary, #000);
+    /* display: none; */
+    --_color-background-usp-bar: var(--color-token-surface-invert);
+    --_color-text-usp-bar: var(--color-token-text-invert);
     
-    background-color: var(--_color-background-usp-bar);
-    color: var(--_color-text-usp-bar, #000);
-    padding: 4px 1rem;
-    width: 100%;
+    background-color: var(--_color-background-usp-bar, #000);
+    color: var(--_color-text-usp-bar, #fff);
+    /* width: max-content; */ 
+    width: 100%;   
+    padding: 4px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    place-content: center;
 
     --color-text-action: currentcolor;
 }
 
-.usp-bar--primary {
-  --_color-background-usp-bar: var(--color-token-surface-primary, #009FF5);
-  --_color-text-usp-bar: var(--color-primitive-white, #fff);
-}
-
-.usp-bar--secondary {
-  --_color-background-usp-bar: var(--color-token-surface-secondary, transparent);
-}
-
-.usp-bar--tertiary {
-  --_color-background-usp-bar: var(--color-token-surface-tertiary, #EAE4D7);
-}
-
-.usp-bar--quaternary {
-  --_color-background-usp-bar: var(--color-token-surface-quaternary, #CCC7BD);
-}
-
 .usp-bar--highlight {
-  --_color-background-usp-bar: var(--color-token-surface-highlight, #6B7156);
+  --_color-background-usp-bar: var(--color-token-surface-highlight, blue);
+}
+
+.usp-bar--highlight-contrast {
+  --_color-background-usp-bar: var(--color-mapped-blue-650, #000);
 }
 
 .usp-bar a:hover,
@@ -46,12 +40,20 @@
 .usp-bar__list {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-evenly; */
 }
 
-@media only screen and (min-width: 768px) {
+.usp-bar__list-item {
+    /* font-weight: 700; */
+    text-align: center;
+}
+
+/* @media only screen and (min-width: 768px) {
     .usp-bar {
         position: fixed;
         top: 0;
@@ -60,4 +62,4 @@
         display: flex;
         place-content: center;
     }
-}
+} */

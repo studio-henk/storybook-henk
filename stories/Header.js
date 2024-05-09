@@ -1,5 +1,6 @@
 import './header.css';
-import { createButton } from './ExampleButton';
+// import { createButton } from './ExampleButton';
+import { createButton } from './components/base/ButtonV2';
 
 export const createHeader = ({ user, onLogout, onLogin, onCreateAccount }) => {
   const header = document.createElement('header');

@@ -1,13 +1,20 @@
 import { fn } from "@storybook/test";
 import "./BaseModalV2.js";
-import { createIcon } from '../Icon';
+// import { createIcon } from '../Icon';
 // import *  as IconStories from '../Icon.stories.js';
-import { Share } from '../IconSVG.stories';
+// import { Share } from '../Icon.stories.js';
+import { Share } from '../components/base/Icon.stories.js';
 
+/**
+ * Renders a BaseModalV2 component with a hidden modal and a button to open it.
+ *
+ * @return {string} The HTML markup for the BaseModalV2 component.
+ */
 export default {
   title: "Web Components/BaseModalV2",
   tags: ['autodocs'],
 };
+
 
 export const Default = () => `
 <base-modal-v2 
