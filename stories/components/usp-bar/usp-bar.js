@@ -1,11 +1,11 @@
 // usps-bar.js
 
-import './usps-bar.css';
-import { Checkmark } from '../components/base/Icon.stories';
+import './usp-bar.css';
+import { Checkmark } from '../base/Icon.stories';
 
-export const createUspsBar = ({ texts, showIcon = false, variant = 'Default' }) => {
+export const createUspsBar = ({ texts = ["Made to order in Europe", "Customisable design", "Assembled on delivery"], showIcon = false, variant = 'Default' }) => {
     if (!texts || texts.length === 0) {
-      return null; // Return null if texts array is empty or undefined
+      // return null; // Return null if texts array is empty or undefined
     }
   
     const uspBar = document.createElement("div");

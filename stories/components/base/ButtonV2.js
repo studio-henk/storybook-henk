@@ -1,9 +1,8 @@
 import './button-v2.css';
 
 export const createButton = ({
-  primary = false,
+  style = '',
   size = 'medium',
-  backgroundColor,
   label,
   onClick,
 }) => {
@@ -12,10 +11,11 @@ export const createButton = ({
   btn.innerText = label;
   btn.addEventListener('click', onClick);
 
-  const mode = primary ? 'henk-button--primary' : 'henk-button--secondary';
-  btn.className = ['henk-button', `henk-button--${size}`, mode].join(' ');
+  // const mode = primary ? 'henk-button--primary' : 'henk-button--secondary';
+  // btn.className = ['henk-button', `henk-button--${size}`, `henk-button--${style}`].join(' ');
+  btn.className = ['henk-button', `henk-button--${style}`].join(' ');
 
-  btn.style.backgroundColor = backgroundColor;
+  // btn.style.backgroundColor = backgroundColor;
 
   return btn;
 };

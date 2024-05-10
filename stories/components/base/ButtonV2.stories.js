@@ -1,13 +1,12 @@
 import { fn } from '@storybook/test';
 import { createButton } from './ButtonV2';
+import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
-  title: 'Components/Base/ButtonV2',
+  title: 'Components/Base/Button/ButtonV2',
   tags: ['autodocs'],
   render: ({ label, ...args }) => {
-    // You can either use a function to create DOM elements or use a plain html string!
-    // return `<div>${label}</div>`;
     return createButton({ label, ...args });
   },
   argTypes: {
@@ -28,18 +27,21 @@ export default {
 export const Primary = {
   args: {
     label: 'Button',
+    style: 'primary',
   },
 };
 
 export const Secondary = {
   args: {
     label: 'Button',
+    style: 'secondary',
   },
 };
 
 export const Tertiary = {
   args: {
     label: 'Button',
+    style: 'tertiary',
   },
 };
 

@@ -5,7 +5,7 @@ import {createAtomButton} from './button';
 // import {Placeholder} from "../AtomInput.stories";
 
 export default {
-    title: 'Components/Base/Button',
+    title: 'Components/Base/Button/Button',
     component: createAtomButton,
     tags: ['autodocs'],
     parameters: { controls: { sort: 'requiredFirst' } },

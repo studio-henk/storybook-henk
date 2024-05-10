@@ -1,10 +1,10 @@
 // usps-bar.stories.js
 // import { withDesign } from "storybook-addon-designs";
-import { createUspsBar } from "./usps-bar";
+import { createUspsBar } from "./usp-bar";
 // import { BADGE } from '@geometricpanda/storybook-addon-badges';
 
 export default {
-  title: "Components/USPS Bar",
+  title: "Components/Bars/USP Bar",
   component: createUspsBar,
   tags: ['autodocs'],
   // decorators: [withDesign],
@@ -50,7 +50,7 @@ export const Default = Template.bind({});
 
 export const DefaultWithIcons = Template.bind({});
 DefaultWithIcons.args = {  
-  showIcon: true,
+  showIcon: true,  
 };
 
 export const DefaultWithLinks = Template.bind({});

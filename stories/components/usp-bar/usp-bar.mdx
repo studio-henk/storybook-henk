@@ -1,13 +1,13 @@
 import { Meta, Source } from '@storybook/blocks';
 
-<Meta title="Components/usps-bar/twig" />
+<Meta title="Components/Bars/usp-bar/twig" />
 
-# USPS-bar
+# USP-bar
 
 ## in header.html. twig
 
 <Source code={`{% include 'Components/usp-bar.html.twig' with {
-    lang: app.request.locale,
-    showIcon: true
+    showIcon: true,
+    variant: "highlight"
     }
 %}`} />
