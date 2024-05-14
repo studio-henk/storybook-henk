@@ -9,6 +9,7 @@
   --color-primitive-accent-14: #ccc7bd;
   --color-primitive-accent-16: #6b7156;
   --color-primitive-blue: #009ff5;
+  --color-primitive-blue2: #1b33cb;
 
   /* primitive neutral colors */
   --color-primitive-neutral-0: hsl(0, 0%, 0%);
@@ -43,6 +44,7 @@
   --color-mapped-henk-black: var(--color-primitive-ral-9005);
   --color-mapped-primary: var(--color-primitive-blue);
   --color-mapped-highlight: var(--color-primitive-blue);
+  /* --color-mapped-highlight: var(--color-primitive-blue2); */
   --color-mapped-white: var(--color-primitive-white);
   --color-mapped-black: var(--color-primitive-black);
 
@@ -73,6 +75,7 @@
   --color-token-surface-default: var(--color-mapped-henk-white);
   --color-token-surface-primary: var(--color-mapped-primary);
   --color-token-surface-highlight: var(--color-mapped-highlight);
+  
   --color-token-surface-invert: var(--color-mapped-henk-black);
 
   --color-token-text-primary: var(--color-mapped-henk-black);
