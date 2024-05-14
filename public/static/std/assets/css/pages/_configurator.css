@@ -20,7 +20,8 @@
 }
 .configurator__view {
   margin-bottom: 0.5rem;
-  cursor: url("/static/std/assets/toolkit/images/icons/zoom.png"), default;
+  /* cursor: url("/static/std/assets/toolkit/images/icons/zoom.png"), default; */
+  cursor: url("/images/svg/zoom-in.svg"), default;
 }
 @media (min-width: 544px) {
   .configurator__view {

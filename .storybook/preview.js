@@ -5,7 +5,8 @@ import '../public/static/std/assets/css/tokens/_tokens-colors.css';
 import '../public/static/std/assets/css/tokens/_tokens-size-font.css';
 import '../public/static/std/assets/css/tokens/_tokens-size-spacing.css';
 
-import '../public/static/std/assets/css/henk-styles.min.css';
+// import '../public/static/std/assets/css/henk-styles.min.css';
+import '../public/static/std/assets/css/henk-styles.css';
 
 
 //import '../stories/_font-face.css';
