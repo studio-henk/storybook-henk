@@ -1,20 +1,21 @@
 /** @type { import('@storybook/html').Preview } */
 
 // current henk styles
-import '../public/static/std/assets/css/tokens/_tokens-colors.css';
-import '../public/static/std/assets/css/tokens/_tokens-size-font.css';
-import '../public/static/std/assets/css/tokens/_tokens-size-spacing.css';
+// import '/static/std/assets/css/tokens/_tokens-colors.css';
+// import '/static/std/assets/css/tokens/_tokens-size-font.css';
+// import '/static/std/assets/css/tokens/_tokens-size-spacing.css';
 
-// import '../public/static/std/assets/css/henk-styles.min.css';
-import '../public/static/std/assets/css/henk-styles.css';
+// import '/static/std/assets/css/henk-styles.min.css';
+// import '/static/std/assets/css/henk-styles.css';
 
 
 //import '../stories/_font-face.css';
 
 
 // new sb styles
-import '../public/styles/tokens/_tokens-colorsV2.css';
-import '../public/styles/global.css';
+// import '/styles/_font-face.css';
+// import '/styles/tokens/_tokens-colorsV2.css'; // TODO: move to head with preload like in pimcore version?
+// import '/styles/global.css';
 
 const preview = {
   parameters: {

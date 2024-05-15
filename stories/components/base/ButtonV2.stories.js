@@ -1,6 +1,6 @@
 import { fn } from '@storybook/test';
 import { createButton } from './ButtonV2';
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {

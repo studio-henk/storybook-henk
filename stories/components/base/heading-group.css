@@ -1,0 +1,13 @@
+.henk-hgroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.henk-hgroup--reverse {
+  flex-direction: column-reverse;
+}
+
+.henk-hgroup * {
+  margin-bottom: 0;
+}
