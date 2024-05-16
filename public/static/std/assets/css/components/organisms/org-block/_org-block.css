@@ -116,7 +116,8 @@
   position: absolute;
   margin: 0;
   text-align: center;
-  padding: 24px 64px;
+  /*padding: 24px 64px;*/
+  padding: 1.5em;
 }
 
 .sh-org-block[data-fullscreen] .sh-org-block__layer1>.sh-atom-button.--anchor-link {

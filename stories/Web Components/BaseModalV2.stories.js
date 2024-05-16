@@ -12,7 +12,6 @@ import { Share } from '../components/base/Icon.stories.js';
  */
 export default {
   title: "Web Components/BaseModalV2",
-  tags: ['autodocs'],
 };
 
 
