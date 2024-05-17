@@ -5,38 +5,46 @@ import { createHeadingGroup } from './HeadingGroup';
 export default {
   title: 'Components/Base/HeadingGroup',
   tags: ['autodocs'],
-  render: ({ heading, subheading, level, reverse, ...args }) => {
-    return createHeadingGroup({ heading, subheading, level, reverse, ...args });
+  render: ({ level, heading, paragraphs, reverse, ...args }) => {
+    return createHeadingGroup({ level, heading, paragraphs, reverse, ...args });
   },
   argTypes: {
-    heading: { control: 'text' },
-    subheading: { control: 'text' },
     level: {
       control: { type: 'select' },
       options: ['1', '2', '3', '4', '5', '6'],
     },
+    heading: { control: 'text' },
+    paragraphs: { control: 'array' },    
     reverse: { control: 'boolean' },
     className: { control: 'text' },
   },
   args: {
+    paragraphs: [],
     reverse: false,
   },
 };
 
+/** The ```<hgroup>``` HTML element represents a heading and related content. It groups a single ```<h1>–<h6>``` element with one or more ```<p>```. */
 export const Default = {
   args: {
-    level: '1',
-    heading: 'Primary Heading',
-    subheading: 'Subheading',
+    heading: 'Secondary Heading',
+    paragraphs: ['Related content'],
   },
 };
 
-export const Reverse = {
+export const DefaultReverse = {
+  args: {
+    heading: 'Secondary Heading',
+    paragraphs: ['Related content'],
+    reverse: true,
+  },
+};
+
+export const Level1 = {
   args: {
     level: '1',
     heading: 'Primary Heading',
-    subheading: 'Subheading',
-    reverse: true,
+    paragraphs: ['Related content'],
   },
 };
 
@@ -44,7 +52,7 @@ export const Level2 = {
   args: {
     level: '2',
     heading: 'Level 2 Heading',
-    subheading: 'Subheading',
+    paragraphs: ['Related content'],
   },
 };
 
@@ -52,7 +60,7 @@ export const Level3 = {
   args: {
     level: '3',
     heading: 'Level 3 Heading',
-    subheading: 'Subheading',
+    paragraphs: ['Related content'],
   },
 };
 
@@ -63,3 +71,9 @@ export const TitleOnly = {
   },
 };
 
+export const MultipleParagraphs = {
+  args: {
+    heading: 'Level 2 Heading',
+    paragraphs: ['Related content', 'and more related content'],
+  },
+};

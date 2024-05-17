@@ -1,9 +1,9 @@
 import './heading-group.css';
 
 export const createHeadingGroup = ({
-  level = '1',
+  level = '2',
   heading = '',
-  subheading = '',
+  paragraphs = [],
   className = '',
   reverse = false,
 }) => {
@@ -14,16 +14,17 @@ export const createHeadingGroup = ({
   if (heading) {
     const headingElement = document.createElement(headingTag);
     headingElement.innerText = heading;
+    headingElement.className = 'henk-hgroup__heading';
     hgroup.appendChild(headingElement);
   }
 
-  if (subheading) {
-    const subheadingElement = document.createElement('p');
-    subheadingElement.innerText = subheading;
-    hgroup.appendChild(subheadingElement);
-  }
+  paragraphs.forEach(paragraphText => {
+    const paragraphElement = document.createElement('p');
+    paragraphElement.innerText = paragraphText;
+    paragraphElement.className = 'henk-hgroup__paragraph';
+    hgroup.appendChild(paragraphElement);
+  });
 
-  // hgroup.className = ['henk-hgroup', className ? `henk-hgroup--${className}` : ''].filter(Boolean).join(' ');
   hgroup.className = [
     'henk-hgroup',
     className ? `henk-hgroup--${className}` : '',
