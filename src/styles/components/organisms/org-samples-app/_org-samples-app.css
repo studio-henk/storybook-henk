@@ -635,6 +635,9 @@ main.sh-l-page-main .sample__quickshop__content ul,
 
 .filterIsOpen .samples__filter__container .samples_filter .samples_filter__groups {
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
 }
 
 @media only screen and (min-width: 768px) {
@@ -694,25 +697,27 @@ main.sh-l-page-main .sample__quickshop__content ul,
   --var-filter-color-Red: #923315;
   --var-filter-color-Orange: #c18b22;
   --var-filter-color-Pink: #df8f8f;
+  --var-filter-color-Purple: purple;
   --var-filter-color-Yellow: #ead35e;
-  --var-filter-color-Zwart: var(--var-filter-color-Black);
-  --var-filter-color-Wit: var(--var-filter-color-White);
-  --var-filter-color-Bruin: var(--var-filter-color-Brown);
-  --var-filter-color-Grijs: var(--var-filter-color-Grey);
-  --var-filter-color-Groen: var(--var-filter-color-Green);
-  --var-filter-color-Blauw: var(--var-filter-color-Blue);
-  --var-filter-color-LichtBruin: var(--var-filter-color-LightBrown);
-  --var-filter-color-DonkerBruin: var(--var-filter-color-DarkBrown);
-  --var-filter-color-LichtGrijs: var(--var-filter-color-LightGrey);
-  --var-filter-color-DonkerGrijs: var(--var-filter-color-DarkGrey);
-  --var-filter-color-LichtGroen: var(--var-filter-color-LightGreen);
-  --var-filter-color-DonkerGroen: var(--var-filter-color-DarkGreen);
-  --var-filter-color-LichtBlauw: var(--var-filter-color-LightBlue);
-  --var-filter-color-DonkerBlauw: var(--var-filter-color-DarkBlue);
-  --var-filter-color-Rood: var(--var-filter-color-Rood);
-  --var-filter-color-Oranje: var(--var-filter-color-Orange);
-  --var-filter-color-Roze: var(--var-filter-color-Pink);
-  --var-filter-color-Geel: var(--var-filter-color-Yellow);
+  /*--var-filter-color-Zwart: var(--var-filter-color-Black);*/
+  /*--var-filter-color-Wit: var(--var-filter-color-White);*/
+  /*--var-filter-color-Bruin: var(--var-filter-color-Brown);*/
+  /*--var-filter-color-Grijs: var(--var-filter-color-Grey);*/
+  /*--var-filter-color-Groen: var(--var-filter-color-Green);*/
+  /*--var-filter-color-Blauw: var(--var-filter-color-Blue);*/
+  /*--var-filter-color-LichtBruin: var(--var-filter-color-LightBrown);*/
+  /*--var-filter-color-DonkerBruin: var(--var-filter-color-DarkBrown);*/
+  /*--var-filter-color-LichtGrijs: var(--var-filter-color-LightGrey);*/
+  /*--var-filter-color-DonkerGrijs: var(--var-filter-color-DarkGrey);*/
+  /*--var-filter-color-LichtGroen: var(--var-filter-color-LightGreen);*/
+  /*--var-filter-color-DonkerGroen: var(--var-filter-color-DarkGreen);*/
+  /*--var-filter-color-LichtBlauw: var(--var-filter-color-LightBlue);*/
+  /*--var-filter-color-DonkerBlauw: var(--var-filter-color-DarkBlue);*/
+  /*--var-filter-color-Rood: var(--var-filter-color-Rood);*/
+  /*--var-filter-color-Oranje: var(--var-filter-color-Orange);*/
+  /*--var-filter-color-Roze: var(--var-filter-color-Pink);*/
+  /*--var-filter-color-Geel: var(--var-filter-color-Yellow);*/
+  /*--var-filter-color-Paars: var(--var-filter-color-Purple);*/
   background: var(--color-henk-white, aliceblue);
   min-width: 380px;
   max-width: fit-content;
@@ -750,6 +755,7 @@ main.sh-l-page-main .sample__quickshop__content ul,
 
 .samples__filter__container .samples_filter .samples_filter__group>header .samples_filter__grouptitle {
   flex-grow: 1;
+  margin: 0;
 }
 
 .samples__filter__container .samples_filter .samples_filter__group>header button {
