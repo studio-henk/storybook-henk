@@ -1,6 +1,7 @@
 // sectionHeader.js
-import './_SectionHeader.css';
-
+// import './_SectionHeader.css';
+// import './_SectionHeader.css';
+import './section-header.css';
 
 export const createSectionHeader = ({
   bgColor = 'default',
@@ -13,21 +14,21 @@ export const createSectionHeader = ({
   buttonText = ''
 }) => {
   const section = document.createElement('section');
-  section.className = `SectionHeader SectionHeader--BG-${bgColor}`;
+  section.className = `section-header section-header--bg-${bgColor}`;
   section.id = id;
 
   const contentDiv = document.createElement('div');
-  contentDiv.className = 'SectionHeader__content';
+  contentDiv.className = 'section-header__content';
 
   if (byline) {
     const bylineP = document.createElement('p');
-    bylineP.className = 'SectionHeader__byline';
+    bylineP.className = 'section-header__byline';
     bylineP.innerText = byline;
     contentDiv.appendChild(bylineP);
   }
 
   const titleElement = document.createElement(`h${level}`);
-  titleElement.className = 'SectionHeader__title';
+  titleElement.className = 'section-header__title';
   titleElement.innerText = title;
   contentDiv.appendChild(titleElement);
 

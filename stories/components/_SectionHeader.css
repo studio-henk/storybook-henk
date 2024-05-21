@@ -1,7 +1,5 @@
-.SectionHeader {    
+/* .SectionHeader {    
     padding: 1.5rem;
-    /* background-color: var(--color-background-section-header, #fff); */
-    /* color: var(--color-text-section-header, #000); */
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -29,4 +27,4 @@
     .SectionHeader {
         padding: 5rem 2.5rem;
     }
-}
+} */

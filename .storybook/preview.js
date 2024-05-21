@@ -69,7 +69,7 @@ import '../src/styles/components/bricks/faq-brick/_faq-brick.css';
 import '../src/styles/components/bricks/doubleimage-brick/_doubleimage-brick.css';
 import '../src/styles/components/bricks/hero-video-brick/_hero-video-brick.css';
 import '../src/styles/components/bricks/hero-brick/_hero-brick.css';
-import '../src/styles/components/bricks/SectionHeader/_SectionHeader.css';
+// import '../src/styles/components/bricks/SectionHeader/_SectionHeader.css';
 import '../src/styles/components/bricks/BlockQuoteBrick/BlockQuoteBrick.css';
 import '../src/styles/components/bricks/_StoreBrick.css';
 import '../src/styles/components/bricks/shop-product-row/shop-product-row-brick.css';

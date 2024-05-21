@@ -36,6 +36,24 @@ Primary.args = {
   bgColor: 'primary',
 };
 
+export const Secondary = Template.bind({});
+Secondary.args = {
+  ...Default.args,
+  bgColor: 'secondary',
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  ...Default.args,
+  bgColor: 'tertiary',
+}
+
+export const Highlight = Template.bind({});
+Highlight.args = {
+  ...Default.args,
+  bgColor: 'highlight',
+}
+
 export const WithoutButton = Template.bind({});
 WithoutButton.args = {
   ...Default.args,

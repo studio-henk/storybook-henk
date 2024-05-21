@@ -1,16 +1,20 @@
-[class*="--BG-primary"] {
+[class*="--BG-primary"],
+[class*="--bg-primary"] {
   background-color: var(--color-background-primary);
 }
 
-[class*="--BG-secondary"] {
+[class*="--BG-secondary"],
+[class*="--bg-secondary"] {
   background-color: var(--color-background-secondary);
 }
 
-[class*="--BG-tertiary"] {
+[class*="--BG-tertiary"],
+[class*="--bg-tertiary"] {
   background-color: var(--color-background-tertiary);
 }
 
-[class*="--BG-highlight"] {
+[class*="--BG-highlight"],
+[class*="--bg-highlight"] {
   background-color: var(--color-background-highlight);
   color: var(--color-text-on-dark);
 }
