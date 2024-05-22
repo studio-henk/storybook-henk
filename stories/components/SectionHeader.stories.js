@@ -5,11 +5,17 @@ import { createSectionHeader } from './SectionHeader';
 export default {
   title: 'Components/SectionHeader',
   argTypes: {
-    bgColor: { control: 'text' },
+    bgColor: {
+      control: { type: 'select' },
+      options: ['default', 'primary', 'secondary', 'tertiary', 'highlight'],
+    },
     id: { control: 'text' },
     byline: { control: 'text' },
     title: { control: 'text' },
-    level: { control: 'number' },
+    level: {
+      control: { type: 'select' },
+      options: ['1', '2'],
+    },
     content: { control: 'text' },
     buttonUrl: { control: 'text' },
     buttonText: { control: 'text' },
