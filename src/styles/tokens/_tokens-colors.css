@@ -54,3 +54,23 @@
   --color-surface-brand: var(--color-primary-500);
   --color-text-invert: var(--color-mapped-neutral-100);
 }
+
+/* new */
+:root {
+  /* primitive colors */  
+  --color-blue: #1b33cb;
+  --color-blue-light: #6174ea;
+  --color-white: #fff;
+  --color-neutral-100: #fff;
+  
+  /* alias */
+  --color-primary: var(--color-blue);
+  --color-primary-light: var(--color-blue-light);
+  --color-alias-neutral-100: var(--color-neutral-100);
+
+
+  /* mapped */
+  --color-surface-action-1-light: var(--color-primary-light);
+
+  --color-text-on-dark: var(--color-alias-neutral-100);
+}

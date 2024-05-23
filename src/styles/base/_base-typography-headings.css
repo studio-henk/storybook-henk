@@ -26,30 +26,20 @@ h6:first-child {
 
 .fs-xxx-large,
 h1,
-.h1 {
-  /* calc the relative in-between number
-   (39/1728)*100 = 2.257 
-  */
-  /*font-size: clamp(calc(var(--size-font-heading-1-min) / var(--size-font-body) * 1rem),*/
-  /*    calc(var(--size-font-heading-1-max) / var(--size-screen-target) * 100 * 1vw),*/
-  /*    calc(var(--size-font-heading-1-max) / var(--size-font-body) * 1rem));*/
+.h1 {  
     font-size: max(
             calc(31 / 16 * 1rem),
-            calc(39 * 100 / 1920 * 1vw)
+            calc(39 * 100 / 1728 * 1vw)
     );
   line-height: clamp(32px, 3vw, 48px);
 }
 
 .fs-xx-large,
 h2,
-.h2 {
-  /* font-size: clamp(20px, 3vw, 31px); */
-  /*font-size: clamp(calc(var(--size-font-heading-2-min) / var(--size-font-body) * 1rem),*/
-  /*    calc(var(--size-font-heading-2-max) / var(--size-screen-target) * 100 * 1vw),*/
-  /*    calc(var(--size-font-heading-2-max) / var(--size-font-body) * 1rem));*/
+.h2 {  
     font-size: max(
             calc(25 / 16 * 1rem),
-            calc(31 * 100 / 1920 * 1vw)
+            calc(31 * 100 / 1728 * 1vw)
     );
   line-height: clamp(32px, 3vw, 40px);
 }
@@ -57,9 +47,13 @@ h2,
 .fs-x-large,
 h3,
 .h3 {
-      font-size: max(
+      /* font-size: max(
               calc(20 / 16 * 1rem),
               calc(25 * 100 / 1920 * 1vw)
+      ); */
+      font-size: max(
+              calc(20 / 16 * 1rem),
+              calc(25 * 100 / 1728 * 1vw)
       );
     line-height: clamp(24px, 3vw, 32px);
 }

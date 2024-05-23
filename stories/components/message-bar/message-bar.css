@@ -1,0 +1,29 @@
+
+
+.message-bar {
+  /* --_color-background-message-bar: var(--color-surface-action-1-light);
+  background-color: var(--_color-background-message-bar,pink);
+  color: var(--_color-text-message-bar, #fff); */
+  background-color: var(--color-surface-action-1-light);
+  color: var(--color-text-on-dark, #fff);
+  padding: 4px 16px;
+  text-align: center;
+  width: 100%;  
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  text-wrap: balance;
+}
+
+.message-bar a {
+  display: inline-block;
+  text-decoration: none;
+  color: currentColor;
+}
+
+@media only screen and (max-width: 767px) {
+  .message-bar {
+      font-size: 13px;
+  }
+}
