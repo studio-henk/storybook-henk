@@ -34,7 +34,7 @@ export default {
       description: "Variant of the USPS bar",
       table: { type: { summary: "string" }, defaultValue: { summary: "Default" } },
       control: "select",
-      options: ["Default", "Highlight", "Highlight-Contrast"],
+      options: ["primary", "secondary", "tertiary", "Highlight", "Highlight-Contrast"],
     },
   },
   args: {
@@ -46,29 +46,62 @@ const Template = ({ texts, showIcon, ...args }) => {
   return createUspsBar({ texts, showIcon, ...args });
 };
 
-export const Default = Template.bind({});
+// export const Default = Template.bind({});
 
-export const DefaultWithIcons = Template.bind({});
-DefaultWithIcons.args = {  
-  showIcon: true,  
+export const Primary = Template.bind({});
+Primary.args = {
+  variant: 'primary',
 };
 
-export const DefaultWithLinks = Template.bind({});
-DefaultWithLinks.args = {
-  texts: ["<a href='#somewhere'>Free Shipping</a>", "24/7 Support", "Secure Checkout"],
+export const Secondary = Template.bind({});
+Secondary.args = {
+  variant: 'secondary',
 };
 
-export const Highlight = Template.bind({});
-Highlight.args = {
-  variant: 'Highlight',
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  variant: 'tertiary',
 };
 
-export const HighlightAccessible = Template.bind({});
-HighlightAccessible.args = {
-  variant: 'Highlight-Contrast',
+// export const DefaultWithLinks = Template.bind({});
+// DefaultWithLinks.args = {
+//   texts: ["<a href='#somewhere'>Made to order in Europe</a>", "<a href='#somewhere'>Customisable design</a>", "<a href='#somewhere'>Assembled on delivery</a>"],
+// };
+
+// export const DefaultWithIcons = Template.bind({});
+// DefaultWithIcons.args = {  
+//   showIcon: true,  
+// };
+
+// export const Brand = Template.bind({});
+// Brand.args = {
+//   variant: 'Brand',
+// };
+
+// export const DefaultDutch = Template.bind({});
+// DefaultDutch.args = {
+//   texts: ["Gemaakt in Europa", "Aanpasbaar ontwerp", "Gemonteerd bij levering"],
+// };
+
+export const PrimaryWithLinks = Template.bind({});
+PrimaryWithLinks.args = {
+  variant: 'primary',
+  texts: ["<a href='#somewhere'>Made to order in Europe</a>", "<a href='#somewhere'>Customisable design</a>", "<a href='#somewhere'>Assembled on delivery</a>"],
 };
 
-export const DefaultDutch = Template.bind({});
-DefaultDutch.args = {
-  texts: ["Gemaakt in Europa", "Aanpasbaar ontwerp", "Gemonteerd bij levering"],
+export const SecondaryWithLinks = Template.bind({});
+SecondaryWithLinks.args = {
+  variant: 'secondary',
+  texts: ["<a href='#somewhere'>Made to order in Europe</a>", "<a href='#somewhere'>Customisable design</a>", "<a href='#somewhere'>Assembled on delivery</a>"],
 };
+
+export const TertiaryWithLinks = Template.bind({});
+TertiaryWithLinks.args = {
+  variant: 'tertiary',
+  texts: ["<a href='#somewhere'>Made to order in Europe</a>", "<a href='#somewhere'>Customisable design</a>", "<a href='#somewhere'>Assembled on delivery</a>"],
+};
+
+// export const Highlight = Template.bind({});
+// Highlight.args = {
+//   variant: 'Highlight',
+// };

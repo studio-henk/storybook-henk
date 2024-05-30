@@ -20,7 +20,7 @@
   padding: 0 1rem 24px;
   /* configurable */
   background-color: var(--color-background-actionconsole, var(--color-henk-white, #fff));
-  color: var(--color-text-actionconsole, var(--color-black, #000));
+  color: var(--color-ui-text-actionconsole, var(--color-black, #000));
 }
 
 .action-console .action-console__toolbar {

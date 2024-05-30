@@ -23,6 +23,13 @@ export default {
   args: { onClick: fn() },
 };
 
+export const Default = {
+  args: {
+    label: 'Button',
+    style: 'default',
+  },
+};
+
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {

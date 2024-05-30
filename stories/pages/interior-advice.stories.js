@@ -62,7 +62,7 @@ export const InteriorAdvice = () => {
                 <p>subtitle</p>                
               </hgroup> -->
                 <p class="service__intro">Op zoek naar een nieuwe
-                    tafel, bank of ander HENK meubel? Tijdens een
+                    tafel, bank of ander <a href="https://studio-henk.nl">HENK</a> meubel? Tijdens een
                     gratis en vrijblijvend productadvies bekijken
                     we welk meubel en samenstelling het best past
                     bij jouw persoonlijke stijl en voorkeuren. Met

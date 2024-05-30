@@ -87,17 +87,24 @@ new default link with underline
 @todo connect to better var / token, not directly a color ie var-link-color*/
 
 a {
-  color: var(--color-text-action);
+  color: var(--color-ui-text-action);
   text-decoration-line: underline;
+  text-decoration-style: solid;
   text-underline-offset: 0.0875em;
   text-decoration-thickness: 1px;
-  transition: color 0.2s ease;
+  text-decoration-color: var(--color-ui-text-action);
+  /* transition: color 0.2s ease; */
+  transition: all 0.3s ease;
 }
 
 a:focus,
 a:hover {
-  /* --color-text-action: var(--color-henk-black); */
-  --color-text-action: var(--color-text-action-dimmed, grey);
+  /* --color-ui-text-action: var(--color-henk-black); */
+  --color-ui-text-action: var(--color-ui-text-action-hover, red);
+  text-decoration-style: dashed;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-ui-text-action-hover);
 }
 
 p {

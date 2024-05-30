@@ -1,7 +1,10 @@
-.henk-button {
-  /* font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
-  /* font-weight: 700; */
-  border: 0;
+.henk-button {  
+  --_color-button-background: var(--color-ui-surface-default);
+  --_color-button-text: var(--color-ui-text-on-default);
+  --_color-button-border: var(--color-ui-border-default);
+  background-color: var(--_color-button-background);
+  color: var(--_color-button-text);
+  border: 1px solid var(--_color-button-border);
   border-radius: 3em;
   cursor: pointer;
   display: inline-block;
@@ -9,24 +12,46 @@
   padding: 14px 32px;
 }
 
+.henk-button:hover {
+  --_color-button-background: var(--color-ui-surface-default-hover);
+  --_color-button-text: var(--color-ui-text-on-default);
+  --_color-button-border: var(--color-ui-border-default-hover);
+}
+
 .henk-button--primary {
-  color: white;
-  background-color: var(--color-token-surface-primary);
+  --_color-button-background: var(--color-ui-surface-primary);
+  --_color-button-text: var(--color-ui-text-on-primary);
+  --_color-button-border: var(--color-ui-border-primary);
+}
+
+.henk-button--primary:hover {
+  --_color-button-background: var(--color-ui-surface-primary-hover);
+  --_color-button-text: var(--color-ui-text-on-primary);
+  --_color-button-border: var(--color-ui-border-primary-hover);
 }
 
 .henk-button--secondary {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
-  /* color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset; */
+ --_color-button-background: var(--color-ui-surface-secondary);
+ --_color-button-text: var(--color-ui-text-on-secondary);
+ --_color-button-border: var(--color-ui-border-secondary); 
+}
+
+.henk-button--secondary:hover {
+  --_color-button-background: var(--color-ui-surface-secondary-hover);
+  --_color-button-text: var(--color-ui-text-on-secondary);
+  --_color-button-border: var(--color-ui-border-secondary-hover);
 }
 
 .henk-button--tertiary {
-  color: #fff;
-  background-color: #000;
-  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset; */
+  --_color-button-background: var(--color-ui-surface-tertiary);
+  --_color-button-text: var(--color-ui-text-on-tertiary);
+  --_color-button-border: var(--color-ui-border-tertiary);
+}
+
+.henk-button--tertiary:hover {
+  --_color-button-background: var(--color-ui-surface-tertiary-hover);
+  --_color-button-text: var(--color-ui-text-on-tertiary);
+  --_color-button-border: var(--color-ui-border-tertiary-hover);
 }
 
 /* .henk-button--small {

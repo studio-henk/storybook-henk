@@ -11,6 +11,7 @@ const config = {
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
     "@whitespace/storybook-addon-html",
+    "@storybook/addon-designs",
   ],
   framework: {
     name: "@storybook/html-vite",

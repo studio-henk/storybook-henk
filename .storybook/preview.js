@@ -47,7 +47,7 @@ import '../src/styles/components/_mdl-shop-product.css';
 import '../src/styles/components/_BaseModal.css';
 import '../src/styles/components/_info-box.css';
 
-import '../src/styles/components/atoms/atom-button/atom-button-new.css';
+// import '../src/styles/components/atoms/atom-button/atom-button-new.css';
 import '../src/styles/components/atoms/atom-dl/atom-dl.css';
 import '../src/styles/components/atoms/atom-sup/atom-sup.css';
 import '../src/styles/components/atoms/atom-icon/sh-atom-icon.css';

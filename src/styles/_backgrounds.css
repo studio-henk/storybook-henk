@@ -1,20 +1,50 @@
+[class*="--BG-default"],
+[class*="--bg-default"] {
+  background-color: var(--color-ui-surface-default);
+  color: var(--color-text-body);
+}
+
 [class*="--BG-primary"],
 [class*="--bg-primary"] {
-  background-color: var(--color-background-primary);
+  background-color: var(--color-ui-surface-primary);
+  color: var(--color-ui-text-on-primary);
 }
 
 [class*="--BG-secondary"],
 [class*="--bg-secondary"] {
-  background-color: var(--color-background-secondary);
+  background-color: var(--color-ui-surface-secondary);
+  color: var(--color-ui-text-on-secondary);
 }
 
 [class*="--BG-tertiary"],
 [class*="--bg-tertiary"] {
-  background-color: var(--color-background-tertiary);
+  background-color: var(--color-ui-surface-tertiary);
+  color: var(--color-ui-text-on-tertiary);
 }
 
 [class*="--BG-highlight"],
 [class*="--bg-highlight"] {
-  background-color: var(--color-background-highlight);
-  color: var(--color-text-on-dark);
+  background-color: var(--color-ui-surface-highlight);
+  color: var(--color-ui-text-on-highlight);
 }
+
+/* links */
+[class*="--BG-primary"] a,
+[class*="--bg-primary"] a {
+  --color-ui-text-action: var(--color-ui-text-action-on-primary);
+  text-decoration-color: var(--color-ui-text-action-on-primary);
+}
+
+[class*="--BG-tertiary"] a,
+[class*="--bg-tertiary"] a {
+  --color-ui-text-action: var(--color-ui-text-action-on-tertiary);
+  text-decoration-color: var(--color-ui-text-on-tertiary);
+}
+
+/* hover */
+[class*="--BG-primary"] a:hover,
+[class*="--bg-primary"] a:hover {  
+  --color-ui-text-action: var(--color-alias-highlight);
+  text-decoration-color: var(--color-alias-highlight);
+}
+

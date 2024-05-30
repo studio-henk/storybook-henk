@@ -115,7 +115,7 @@
     text-decoration: none;
     font-size: 14px;
     line-height: 24px;
-    --color-text-action: var(--color-text-action-dimmed);
+    --color-ui-text-action: var(--color-ui-text-action-dimmed);
     display: flex;
     align-items: center;
     gap: 4px;
@@ -124,19 +124,19 @@
   }
 
   [data-theme="dark"] .utils_contact-bar-link {
-    --color-text-action: var(--color-henk-white);
+    --color-ui-text-action: var(--color-henk-white);
   }
 
   [data-theme="dark"].NavBar--isHovered .utils_contact-bar-link,
   [data-theme="dark"].NavBar--isScrolled .utils_contact-bar-link,
   [data-theme="dark"].NavBar--submenuOpen .utils_contact-bar-link {
-    --color-text-action: var(--color-text-action-dimmed);
+    --color-ui-text-action: var(--color-ui-text-action-dimmed);
   }
 
   [data-theme="dark"].NavBar--isHovered .utils_contact-bar-link:hover,
   [data-theme="dark"].NavBar--isScrolled .utils_contact-bar-link:hover,
   [data-theme="dark"].NavBar--submenuOpen .utils_contact-bar-link:hover {
-    --color-text-action: var(--color-henk-black);
+    --color-ui-text-action: var(--color-henk-black);
   }
 
   .utils_location-stores {
@@ -215,7 +215,7 @@
   }
 
   .NavBar--isHovered .utilities-nav__item a:hover {
-    --color-text-button: var(--color-text-action-dimmed);
+    --color-text-button: var(--color-ui-text-action-dimmed);
   }
 
   #utilities-nav__lang {
@@ -294,14 +294,14 @@
   .masthead-desktop[data-theme="dark"] {
     --color-background-masthead: var(--color-transparent);
     --color-text-masthead: var(--color-white);
-    --color-text-action: var(--color-text-masthead, #fff);
+    --color-ui-text-action: var(--color-text-masthead, #fff);
     --color-background-knob: var(--color-henk-white);
   }
 
   .masthead-desktop[data-theme="light"] {
     --color-background-masthead: var(--color-transparent);
     --color-text-masthead: var(--color-black);
-    --color-text-action: var(--color-text-masthead, #000);
+    --color-ui-text-action: var(--color-text-masthead, #000);
     --color-background-knob: var(--color-henk-black);
   }
 
@@ -314,7 +314,7 @@
   .masthead-desktop[data-theme="dark"].NavBar--isScrolled {
     --color-background-masthead: var(--color-white);
     --color-text-masthead: var(--color-black);
-    --color-text-action: var(--color-text-masthead, #000);
+    --color-ui-text-action: var(--color-text-masthead, #000);
     --color-background-knob: var(--color-henk-black);
   }
 
@@ -493,23 +493,23 @@
   .masthead-desktop[data-theme="dark"] .gallery-controller__level-link,
   .masthead-desktop[data-theme="dark"] .page-link,
   .masthead-desktop[data-theme="dark"] .card__title {
-    --color-text-action: var(--color-henk-black);
-    color: var(--color-text-action);
+    --color-ui-text-action: var(--color-henk-black);
+    color: var(--color-ui-text-action);
   }
 
   .masthead-desktop .gallery-controller__level-link:hover {
-    --color-text-action: var(--color-text-action-dimmed);
+    --color-ui-text-action: var(--color-ui-text-action-dimmed);
     text-indent: 0.5rem;
   }
 
   .masthead-desktop .page-link {
     text-decoration: none;
-    color: var(--color-text-action);
+    color: var(--color-ui-text-action);
     transition: all 0.3s ease;
   }
 
   .masthead-desktop .page-link:hover {
-    --color-text-action: var(--color-text-action-dimmed);
+    --color-ui-text-action: var(--color-ui-text-action-dimmed);
   }
 
   .masthead-desktop .gallery-controller__controls .page-link:hover {
@@ -567,7 +567,7 @@
   }
 
   .masthead-desktop .card:hover .card__image-container + p {
-    --color-text-action: var(--color-text-action-dimmed);
+    --color-ui-text-action: var(--color-ui-text-action-dimmed);
   }
 
   /* swiper */
