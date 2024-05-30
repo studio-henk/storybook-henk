@@ -185,7 +185,7 @@ const preview = {
   parameters: {
     options: {
       storySort: {
-        order: ['Colors', 'Typography', 'Components', ['Base', 'Bars'], '*'],
+        order: ['Colours', ['Brand', 'Alias'], 'Typography', 'Components', ['Base', 'Bars'], '*'],
       },
     },
     controls: {         
