@@ -11,7 +11,8 @@ export const createSectionHeader = ({
   level = 2,
   content = '',
   buttonUrl = '',
-  buttonText = ''
+  buttonText = '',
+  buttonVariant = 'default',
 }) => {
   const section = document.createElement('section');
   section.className = `section-header section-header--bg-${bgColor}`;
@@ -40,8 +41,9 @@ export const createSectionHeader = ({
   if (buttonUrl) {
     const button = document.createElement('a');
     button.href = buttonUrl;
-    button.className = 'sh-atom-button';
-    button.setAttribute('data-style', 'filled');
+    // button.className = 'sh-atom-button';
+    button.className = `henk-button henk-button--${buttonVariant}`;
+    // button.setAttribute('data-style', 'filled');
     button.innerText = buttonText;
     contentDiv.appendChild(button);
   }

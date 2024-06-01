@@ -1,13 +1,24 @@
-import './button-v2.css';
+// import './button-v2.css';
 
 export const createButton = ({
+  buttonElement = 'a',
+  href,
   style = '',
   size = 'medium',
   label,
   onClick,
 }) => {
-  const btn = document.createElement('button');
-  btn.type = 'button';
+  // const btn = document.createElement('button');
+  const btn = document.createElement(buttonElement);
+    if (buttonElement === 'button') {
+        btn.type = 'button';
+    }
+    if (buttonElement === 'a') {
+        btn.href = href ? href : 'https://studio-henk.nl/en';
+    }
+    // if (buttonElement === 'span') {
+    //   btn.href = href ? href : 'https://studio-henk.nl/en';
+    // }  
   btn.innerText = label;
   btn.addEventListener('click', onClick);
 

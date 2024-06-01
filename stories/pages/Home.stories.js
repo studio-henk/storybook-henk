@@ -13,7 +13,8 @@ export default {
 // Define the story for the HomePage
 export const HomePage = () => {
   const uspBar = createUspsBar({    
-    showIcon: true,
+    showIcon: false,
+    variant: 'primary',
   });
 
   const homeContainer = document.createElement('div');

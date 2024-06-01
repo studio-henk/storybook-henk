@@ -19,6 +19,10 @@ export default {
     content: { control: 'text' },
     buttonUrl: { control: 'text' },
     buttonText: { control: 'text' },
+    buttonVariant: {
+      control: { type: 'select' },
+      options: ['default', 'primary', 'secondary', 'tertiary'],
+    }
   },
 };
 
@@ -31,15 +35,17 @@ Default.args = {
   byline: 'This is a byline',
   title: 'Section Title',
   level: 2,
-  content: '<p>This is some content inside the section header.</p>',
+  content: '<p>This is some content inside the <a href="#">section</a> header.</p>',
   buttonUrl: 'https://example.com',
   buttonText: 'Click Me',
+  buttonVariant: 'default',
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
   ...Default.args,
   bgColor: 'primary',
+  
 };
 
 export const Secondary = Template.bind({});

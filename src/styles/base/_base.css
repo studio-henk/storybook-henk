@@ -1,3 +1,14 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,14 +25,14 @@
   border-radius: 4px;
 }
 
-::selection {
+::selection {  
+  background-color: var(--color-ui-surface-highlight, pink);
   color: currentColor;
-  background-color: var(--color-accent5, pink);
 }
 
 html {
-  background-color: var(--color-background-page, #fff);
-  color: var(--color-text-page, #000);
+  background-color: var(--color-ui-surface-default, #fff);
+  color: var(--color-ui-text-body, #000);
   line-height: 1.5;
   letter-spacing: 0;
   height: 100%;
@@ -49,8 +60,8 @@ html {
 }
 
 body {
-  background-color: var(--color-background-page, #fff);
-  color: var(--color-text-page, #000);
+  background-color: var(--color-ui-surface-default, #fff);
+  color: var(--color-ui-text-body, #000);
   padding: var(--total-bars-height, 80px) 0 0 0;
   font-family: var(--font-body, sans-serif), sans-serif;
   font-weight: 400;
@@ -176,6 +187,7 @@ li>ol {
   list-style: none;
   margin-left: 0;
 }
+
 
 /*def list*/
 dt {

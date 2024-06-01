@@ -1,33 +1,38 @@
 .henk-button {  
   --_color-button-background: var(--color-ui-surface-default);
-  --_color-button-text: var(--color-ui-text-on-default);
-  --_color-button-border: var(--color-ui-border-default);
+  --_color-button-text: var(--color-alias-primary);
+  --_color-button-border: var(--color-alias-primary);
   background-color: var(--_color-button-background);
   color: var(--_color-button-text);
   border: 1px solid var(--_color-button-border);
   border-radius: 3em;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   line-height: 1;
   padding: 14px 32px;
+  text-decoration: none;
+  font-family: var(--font-body, sans-serif), sans-serif;
+  transition: all 0.3s ease;
 }
 
-.henk-button:hover {
-  --_color-button-background: var(--color-ui-surface-default-hover);
-  --_color-button-text: var(--color-ui-text-on-default);
-  --_color-button-border: var(--color-ui-border-default-hover);
+.henk-button:hover,
+:hover span.henk-button {
+  --_color-button-background: var(--color-ui-surface-quaternary);
+  --_color-button-text: var(--color-alias-primary-dark);
+  --_color-button-border: var(--color-alias-primary-dark);
 }
 
 .henk-button--primary {
   --_color-button-background: var(--color-ui-surface-primary);
+  /* --_color-button-text: var(--color-alias-base-white); */
   --_color-button-text: var(--color-ui-text-on-primary);
   --_color-button-border: var(--color-ui-border-primary);
 }
 
 .henk-button--primary:hover {
-  --_color-button-background: var(--color-ui-surface-primary-hover);
+  --_color-button-background: var(--color-alias-primary-dark);
   --_color-button-text: var(--color-ui-text-on-primary);
-  --_color-button-border: var(--color-ui-border-primary-hover);
+  --_color-button-border: var(--color-alias-primary-dark);
 }
 
 .henk-button--secondary {
@@ -37,9 +42,9 @@
 }
 
 .henk-button--secondary:hover {
-  --_color-button-background: var(--color-ui-surface-secondary-hover);
+  --_color-button-background: var(--color-alias-secondary-dark);
   --_color-button-text: var(--color-ui-text-on-secondary);
-  --_color-button-border: var(--color-ui-border-secondary-hover);
+  --_color-button-border: var(--color-alias-secondary-dark);
 }
 
 .henk-button--tertiary {
@@ -49,20 +54,23 @@
 }
 
 .henk-button--tertiary:hover {
-  --_color-button-background: var(--color-ui-surface-tertiary-hover);
+  --_color-button-background: var(--color-alias-tertiary-dark);
   --_color-button-text: var(--color-ui-text-on-tertiary);
-  --_color-button-border: var(--color-ui-border-tertiary-hover);
+  --_color-button-border: var(--color-alias-tertiary-dark);
 }
 
-/* .henk-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
+/* same colour on top of same color */
+[class*="--BG-primary"] .henk-button--primary,
+[class*="--bg-primary"] .henk-button--primary {
+  --_color-button-border: var(--color-ui-border-on-primary); 
 }
-.henk-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
+
+[class*="--BG-secondary"] .henk-button--secondary,
+[class*="--bg-secondary"] .henk-button--secondary {
+  --_color-button-border: var(--color-ui-border-on-secondary); 
 }
-.henk-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
-} */
+
+[class*="--BG-tertiary"] .henk-button--tertiary,
+[class*="--bg-tertiary"] .henk-button--tertiary {
+  --_color-button-border: var(--color-ui-border-on-tertiary); 
+}

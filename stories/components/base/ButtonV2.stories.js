@@ -10,6 +10,14 @@ export default {
     return createButton({ label, ...args });
   },
   argTypes: {
+    buttonElement: {
+      control: { type: 'radio' },
+      options: ['a', 'button', 'span'],
+      table: {
+        type: { summary: 'html element' },
+        defaultValue: { summary: 'a' },
+      },
+    },
     backgroundColor: { control: 'color' },
     label: { control: 'text' },
     onClick: { action: 'onClick' },

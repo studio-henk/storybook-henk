@@ -1,10 +1,5 @@
-
-
-.message-bar {
-  /* --_color-background-message-bar: var(--color-surface-action-1-light);
-  background-color: var(--_color-background-message-bar,pink);
-  color: var(--_color-text-message-bar, #fff); */
-  background-color: var(--color-surface-action-1-light);
+.message-bar {  
+  background-color: var(--color-alias-primary-light);
   color: var(--color-text-on-dark, #fff);
   padding: 4px 16px;
   text-align: center;

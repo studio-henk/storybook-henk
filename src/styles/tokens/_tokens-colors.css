@@ -142,16 +142,20 @@
   --color-ui-surface-primary: var(--color-alias-primary);
   --color-ui-surface-secondary: var(--color-alias-secondary);
   --color-ui-surface-tertiary: var(--color-alias-henk-black);
+  --color-ui-surface-quaternary: var(--color-alias-henk-white);
   --color-ui-surface-highlight: var(--color-alias-highlight);
 
-  /* surface hover */
-  --color-ui-surface-default-hover: var(--color-alias-neutral-lighter);
-  --color-ui-surface-primary-hover: var(--color-alias-primary-dark);
-  --color-ui-surface-secondary-hover: var(--color-alias-secondary-dark);
-  --color-ui-surface-tertiary-hover: var(--color-alias-tertiary-dark);
-  --color-ui-surface-highlight-hover: var(--color-alias-highlight-dark);
+  /* surface dark */
+  --color-ui-surface-default-dark: var(--color-alias-henk-white);
+  --color-ui-surface-primary-dark: var(--color-alias-primary-dark);
+  --color-ui-surface-secondary-dark: var(--color-alias-secondary-dark);
+  --color-ui-surface-tertiary-dark: var(--color-alias-tertiary-dark);
+  --color-ui-surface-quaternary-dark: var(--color-alias-neutral-dark);
+  --color-ui-surface-highlight-dark: var(--color-alias-highlight-dark);
 
   /* text */
+  --color-ui-text-default: var(--color-alias-henk-black);
+  --color-ui-text-body: var(--color-alias-henk-black);
   --color-ui-text-action: var(--color-alias-primary, blue);
   --color-ui-text-action-hover: var(--color-alias-primary-dark, blue);
   --color-ui-text-disabled: var(--color-alias-neutral-default);
@@ -163,25 +167,16 @@
   /* links */
   --color-ui-text-action-on-primary: var(--color-alias-base-white);
 
-  /* text hover */
-  --color-ui-text-on-primary-hover: var(--color-alias-highlight);
-  --color-ui-text-on-secondary-hover: var(--color-alias-primary);
-  --color-ui-text-on-tertiary-hover: var(--color-alias-primary);
-  --color-ui-text-on-highlight-hover: var(--color-alias-primary);
-
   /* border */
-  --color-ui-border-default: var(--color-alias-neutral-default);
+  --color-ui-border-default: var(--color-alias-neutral-light);
   --color-ui-border-primary: var(--color-alias-primary);
   --color-ui-border-secondary: var(--color-alias-secondary);
   --color-ui-border-tertiary: var(--color-alias-base-black);
   --color-ui-border-highlight: var(--color-alias-highlight);
-
-  /* border hover */
-  --color-ui-border-default-hover: var(--color-alias-neutral-dark);
-  --color-ui-border-primary-hover: var(--color-alias-primary-dark);
-  --color-ui-border-secondary-hover: var(--color-alias-secondary-dark);
-  --color-ui-border-tertiary-hover: var(--color-alias-neutral-dark);
-  --color-ui-border-highlight-hover: var(--color-alias-highlight-dark);
+  --color-ui-border-on-primary: var(--color-alias-neutral-light);
+  --color-ui-border-on-secondary: var(--color-alias-primary);
+  --color-ui-border-on-tertiary: var(--color-alias-secondary);
+  --color-ui-border-on-highlight: var(--color-alias-primary);
 
   /* fonts */
   --font-body: "Haas Grot Text R Web";

@@ -90,8 +90,7 @@ export const InteriorAdvice = () => {
                 </ul>
             </div>
             <a
-                class="sh-atom-button"
-                data-style="filled"
+                class="henk-button henk-button--default"
                 onclick="shOpenModal(event)"
                 href="/modal-advice?lang=nl&amp;service=0"
             >Boek gratis productadvies</a>
@@ -146,8 +145,7 @@ export const InteriorAdvice = () => {
                 </ul>
             </div>
             <a
-                class="sh-atom-button"
-                data-style="filled"
+              class="henk-button henk-button--default"
                 onclick="shOpenModal(event)"
                 href="/modal-advice?lang=nl&amp;service=1"
             >Boek gratis interieuradvies</a>
