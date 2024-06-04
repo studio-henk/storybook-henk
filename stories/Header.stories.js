@@ -11,8 +11,8 @@ export default {
     layout: 'fullscreen',
   },
   args: {
-    onLogin: fn(),
-    onLogout: fn(),
+    // onLogin: fn(),
+    // onLogout: fn(),
     onCreateAccount: fn(),
   },
 };
