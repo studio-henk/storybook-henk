@@ -20,7 +20,6 @@ footer.henk-footer a {
 }
 
 .henk-footer__container {
-  /* max-width: var(--_max-width, 1208px);   */
   max-width: calc(100vw - 80px);
   display: flex;
   flex-direction: column;

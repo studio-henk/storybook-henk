@@ -83,11 +83,11 @@ import '../src/styles/components/bricks/shop-product-row/shop-product-row-brick.
 import '../src/styles/components/molecules/molecule-l-button-group/_molecule-l-button-group.css';
 import '../src/styles/components/molecules/sh-molecule-bg-box/_sh-molecule-bg-box.css';
 import '../src/styles/components/molecules/sh-molecule-padding-box/_sh-molecule-padding-box.css';
-import '../src/styles/components/molecules/molecule-heading-badge/molecule-heading-badge.css';
-import '../src/styles/components/molecules/_molecule-input-label.css';
-import '../src/styles/components/molecules/_molecule-label-checkbox.css';
-import '../src/styles/components/molecules/_molecule-label-radio.css';
-import '../src/styles/components/molecules/_molecule-label-select.css';
+// import '../src/styles/components/molecules/molecule-heading-badge/molecule-heading-badge.css';
+// import '../src/styles/components/molecules/_molecule-input-label.css';
+// import '../src/styles/components/molecules/_molecule-label-checkbox.css';
+// import '../src/styles/components/molecules/_molecule-label-radio.css';
+// import '../src/styles/components/molecules/_molecule-label-select.css';
 
 import '../src/styles/components/organisms/org-breadcrumbs/_org-breadcrumbs.css';
 import '../src/styles/components/organisms/org-details/_org-details.css';
