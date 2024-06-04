@@ -1,4 +1,6 @@
-// Import dependencies as needed
+import { PinterestSmall, StarSmall, TikTokSmall, YoutubeSmall } from '../components/base/Icon.stories.js';
+import { InstagramSmall } from '../components/base/Icon.stories.js';
+import { FacebookSmall } from '../components/base/Icon.stories.js';
 
 export default {
   title: 'Components/Footer', // Define the title of your story
@@ -12,13 +14,130 @@ export const FooterStory = () => `
   <footer class="henk-footer">
     <div class="henk-footer__container">
       <h2 class="visually-hidden">Footer</h2>
-      <div class="henk-footer__row">row 1</div>
-      <div class="henk-footer__row">row 2</div>
-      <div class="henk-footer__row footer__row--payment-terms fs-xs">
-        <div class="footer__section footer__section--payment">
+      
+      <!-- First Row: Link Lists Grid -->
+      <div class="henk-footer__row henk-footer__row--links">
+        <div class="henk-footer__grid">
+          <div class="henk-footer__grid-column">
+            <h3 class="henk-footer__heading h4">Collection</h3>
+            <ul class="henk-footer__list --no-bullets">
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Dining Tables</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Coffee Tables</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Dining Chairs</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Dining Benches</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Stools</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Sofas</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Lounge Chairs</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Poufs</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Cabinets</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Accessories</a></li>
+            </ul>
+          </div>
+          <div class="henk-footer__grid-column">
+            <h3 class="henk-footer__heading h4">About</h3>
+            <ul class="henk-footer__list --no-bullets">
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Contact</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">About</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Sustainability</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Jobs</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Press</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Image Bank</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Retailers</a></li>
+            </ul>
+          </div>
+          <div class="henk-footer__grid-column">
+            <h3 class="henk-footer__heading h4">Services</h3>
+            <ul class="henk-footer__list --no-bullets">              
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">FAQ</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Maintenance</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Samples Services</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Interior Advice</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Stock</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Price List</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Manuals</a></li>
+            </ul>
+          </div>
+          <div class="henk-footer__grid-column">
+            <h3 class="henk-footer__heading h4">Support</h3>
+            <ul class="henk-footer__list --no-bullets">
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Order Status</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Returns</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Contact</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Delivery Times</a></li>
+            </ul>
+          </div>
+          <div class="henk-footer__grid-column">
+            <h3 class="henk-footer__heading h4">Stores</h3>
+            <ul class="henk-footer__list --no-bullets">
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Amsterdam</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Rotterdam</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Antwerpen</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Utrecht</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>   
+      
+      <!-- Second Row: Google Rating Widget and Social Media Links -->
+
+      <div class="henk-footer__row henk-footer__row--social-rating">
+        <div class="henk-footer__section henk-footer__section--rating">
+          <h3 class="henk-footer__heading h4 visually-hidden">Google Rating</h3>
+          <!-- Google Rating Widget Placeholder -->
+          <div class="henk-footer__rating-widget">
+            <!-- Google rating widget code goes here -->
+            <div class="star-rating">
+              <ol class="star-rating__stars">
+              <li class="star-rating__star">${StarSmall()}</li>
+              <li class="star-rating__star">${StarSmall()}</li>
+              <li class="star-rating__star">${StarSmall()}</li>
+              <li class="star-rating__star">${StarSmall()}</li>
+              <li class="star-rating__star">${StarSmall()}</li>
+              </ol>
+              <p class="star-rating__rating">4.6 Sterren</p>
+              <p class="star-rating__reviews">159 reviews on Google</p> 
+            </div>
+          </div>
+        </div>
+        <div class="henk-footer__section henk-footer__section--social">
+          <h3 class="henk-footer__heading h4 visually-hidden">Follow Us</h3>
+          <ul class="henk-footer__social-media henk-list henk-list--horizontal --no-bullets">              
+            <li class="henk-footer__social-media-item">
+              <a href="https://instagram.com/company" class="henk-footer__social-media-link">
+                ${InstagramSmall()}
+              </a>
+            </li>
+            <li class="henk-footer__social-media-item">
+              <a href="https://www.facebook.com/studiohenk/" class="henk-footer__social-media-link">
+                ${FacebookSmall()}
+              </a>
+            </li>
+            <li class="henk-footer__social-media-item">
+              <a href="https://www.tiktok.com/@studiohenk" class="henk-footer__social-media-link">
+                ${TikTokSmall()}
+              </a>
+            </li>
+            <li class="henk-footer__social-media-item">
+              <a href="https://nl.pinterest.com/studiohenk/" class="henk-footer__social-media-link">
+                ${PinterestSmall()}
+              </a>
+            </li>
+            <li class="henk-footer__social-media-item">
+              <a href="https://www.youtube.com/channel/UC_RBQhav2vf-zwLTIr-xHQg" class="henk-footer__social-media-link">
+                ${YoutubeSmall()}
+              </a>
+            </li>            
+          </ul>
+        </div>
+      </div>
+
+      <!-- Third Row: Payment Logos and Small Print Links -->
+
+      <div class="henk-footer__row henk-footer__row--payment-terms fs-xs">
+        <div class="henk-footer__section henk-footer__section--payment">
           <h3 class="visually-hidden">Payment methods</h3>
-          <ul class="footer__payment-logos --no-bullets --dir-hor">
-            <li class="footer__payment-logo-item">
+          <ul class="henk-footer__payment-logos --no-bullets">
+            <li class="henk-footer__payment-logo-item">
             <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 1.98611V15.614C0 16.2663 0.533729 16.8 1.18606 16.8H9.32839C15.4841 16.8 18.1527 13.3545 18.1527 8.78226C18.1527 4.2337 15.4841 0.800049 9.32839 0.800049H1.18606C0.533729 0.800049 0 1.33378 0 1.98611Z" fill="white"/>
               <path d="M5.44995 4.14476V14.2144H9.83246C13.8117 14.2144 15.5374 11.9669 15.5374 8.7882C15.5374 5.74595 13.8117 3.38568 9.83246 3.38568H6.20903C5.78798 3.38568 5.44995 3.72964 5.44995 4.14476Z" fill="#CC0066"/>
@@ -31,7 +150,7 @@ export const FooterStory = () => `
               <path d="M4.30523 14.2144C3.37417 14.2144 2.62695 13.4613 2.62695 12.5361V11.2255C2.62695 10.763 3.00056 10.3834 3.46906 10.3834C3.93162 10.3834 4.31116 10.757 4.31116 11.2255V14.2144H4.30523Z" fill="black"/>
             </svg>            
             </li>
-            <li class="footer__payment-logo-item">
+            <li class="henk-footer__payment-logo-item">
               <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1.08378 0.800049H22.6731C22.8848 0.800049 23.0878 0.884334 23.2375 1.03436C23.3872 1.18439 23.4713 1.38788 23.4713 1.60005V16C23.4713 16.2122 23.3872 16.4157 23.2375 16.5657C23.0878 16.7158 22.8848 16.8 22.6731 16.8H1.08378C0.872099 16.8 0.669091 16.7158 0.519412 16.5657C0.369733 16.4157 0.285645 16.2122 0.285645 16V1.60005C0.285645 1.38788 0.369733 1.18439 0.519412 1.03436C0.669091 0.884334 0.872099 0.800049 1.08378 0.800049Z" fill="white"/>
                 <path d="M2.35034 14.6834V11.9243H3.19974C3.81713 11.9243 4.2143 12.1569 4.2143 12.6377C4.2143 12.9097 4.08847 13.0989 3.91151 13.2093C4.16711 13.3275 4.31654 13.5561 4.31654 13.8675C4.31654 14.4233 3.91151 14.6834 3.28232 14.6834L2.35034 14.6834ZM2.89694 13.0713H3.30199C3.54972 13.0713 3.6559 12.9491 3.6559 12.7245C3.6559 12.484 3.46321 12.4052 3.20367 12.4052H2.89694V13.0713ZM2.89694 14.2026H3.23513C3.56546 14.2026 3.75814 14.1198 3.75814 13.8596C3.75814 13.6034 3.59299 13.497 3.28232 13.497H2.89694V14.2026ZM5.37655 14.7307C4.83781 14.7307 4.56647 14.4667 4.56647 14.1119C4.56647 13.7217 4.885 13.4931 5.35688 13.4891C5.47415 13.4913 5.5911 13.5018 5.70687 13.5207V13.4261C5.70687 13.1856 5.56923 13.0713 5.30576 13.0713C5.12827 13.0691 4.95202 13.1012 4.78668 13.1659L4.68837 12.7402C4.85747 12.6693 5.1288 12.622 5.36868 12.622C5.94674 12.622 6.2338 12.9294 6.2338 13.4615V14.5573C6.07258 14.6401 5.76978 14.7307 5.37655 14.7307ZM5.70687 14.2853V13.8636C5.61518 13.8431 5.52159 13.8326 5.42767 13.832C5.24677 13.832 5.10521 13.903 5.10521 14.0883C5.10521 14.2538 5.22318 14.3405 5.4316 14.3405C5.52637 14.3436 5.62058 14.3247 5.70687 14.2853ZM6.61587 14.6834V12.7954C6.89846 12.6816 7.20006 12.6228 7.5046 12.622C8.07872 12.622 8.40905 12.9058 8.40905 13.43V14.6834H7.86637V13.4694C7.86637 13.1974 7.74053 13.0713 7.50065 13.0713C7.38154 13.0696 7.26349 13.0938 7.1546 13.1423V14.6834L6.61587 14.6834ZM10.3055 12.7402L10.2032 13.1699C10.0628 13.1088 9.91193 13.0754 9.75889 13.0713C9.44037 13.0713 9.26734 13.296 9.26734 13.6665C9.26734 14.0725 9.44822 14.2814 9.78642 14.2814C9.93734 14.2773 10.0859 14.2424 10.2229 14.1789L10.3094 14.6164C10.1314 14.6959 9.938 14.7349 9.74315 14.7307C9.09038 14.7307 8.71287 14.3247 8.71287 13.6823C8.71287 13.0437 9.08645 12.622 9.7117 12.622C9.91555 12.621 10.1175 12.6612 10.3055 12.7402ZM11.4778 14.7307C10.8722 14.7307 10.4947 14.309 10.4947 13.6744C10.4947 13.0437 10.8722 12.622 11.4778 12.622C12.0874 12.622 12.457 13.0437 12.457 13.6744C12.457 14.309 12.0874 14.7307 11.4778 14.7307ZM11.4778 14.2814C11.757 14.2814 11.9025 14.0488 11.9025 13.6744C11.9025 13.3039 11.757 13.0713 11.4778 13.0713C11.2026 13.0713 11.0492 13.3039 11.0492 13.6744C11.0492 14.0488 11.2026 14.2814 11.4778 14.2814ZM12.771 14.6834V12.7954C13.0536 12.6816 13.3552 12.6228 13.6598 12.622C14.2339 12.622 14.5642 12.9058 14.5642 13.43V14.6834H14.0215V13.4694C14.0215 13.1974 13.8957 13.0713 13.6558 13.0713C13.5367 13.0696 13.4187 13.0938 13.3098 13.1423V14.6834L12.771 14.6834ZM15.7881 14.7307C15.3201 14.7307 15.0802 14.4745 15.0802 13.9542V13.1029H14.8128V12.6693H15.0802V12.2317L15.6229 12.2042V12.6693H16.0594V13.1029H15.6229V13.9464C15.6229 14.175 15.7173 14.2814 15.8942 14.2814C15.9644 14.2812 16.0343 14.2733 16.1027 14.2577L16.1302 14.6953C16.0179 14.7202 15.9031 14.7321 15.7881 14.7307ZM17.1578 14.7307C16.6191 14.7307 16.3477 14.4667 16.3477 14.1119C16.3477 13.7217 16.6663 13.4931 17.1381 13.4891C17.2554 13.4913 17.3724 13.5018 17.4881 13.5207V13.4261C17.4881 13.1856 17.3505 13.0713 17.087 13.0713C16.9095 13.0691 16.7333 13.1012 16.5679 13.1659L16.4696 12.7402C16.6387 12.6693 16.9101 12.622 17.1499 12.622C17.728 12.622 18.0151 12.9294 18.0151 13.4615V14.5573C17.8538 14.6401 17.551 14.7307 17.1578 14.7307ZM17.4881 14.2853V13.8636C17.3964 13.8431 17.3028 13.8326 17.2089 13.832C17.028 13.832 16.8865 13.903 16.8865 14.0883C16.8865 14.2538 17.0044 14.3405 17.2129 14.3405C17.3076 14.3436 17.4018 14.3247 17.4881 14.2853ZM19.8717 12.7402L19.7695 13.1699C19.629 13.1088 19.4782 13.0754 19.3251 13.0713C19.0066 13.0713 18.8336 13.296 18.8336 13.6665C18.8336 14.0725 19.0145 14.2814 19.3527 14.2814C19.5036 14.2773 19.6521 14.2424 19.7892 14.1789L19.8757 14.6164C19.6976 14.6959 19.5043 14.7349 19.3094 14.7307C18.6566 14.7307 18.2791 14.3247 18.2791 13.6823C18.2791 13.0437 18.6527 12.622 19.2779 12.622C19.4818 12.621 19.6838 12.6612 19.8717 12.7402ZM21.0649 14.7307C20.5969 14.7307 20.357 14.4745 20.357 13.9542V13.1029H20.0896V12.6693H20.357V12.2317L20.8997 12.2042V12.6693H21.3362V13.1029H20.8997V13.9464C20.8997 14.175 20.9941 14.2814 21.171 14.2814C21.2412 14.2812 21.3111 14.2733 21.3795 14.2577L21.407 14.6953C21.2947 14.7202 21.1799 14.7321 21.0649 14.7307Z" fill="#1E3764"/>
@@ -49,7 +168,7 @@ export const FooterStory = () => `
                 </defs>
               </svg>            
             </li>
-            <li class="footer__payment-logo-item">
+            <li class="henk-footer__payment-logo-item">
               <svg width="27" height="17" viewBox="0 0 27 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1576_522)">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.9153 2.5105H16.9153V15.0896H9.9153V2.5105Z" fill="#FF5F00"/>
@@ -63,7 +182,7 @@ export const FooterStory = () => `
                 </defs>
               </svg>            
             </li>
-            <li class="footer__payment-logo-item">
+            <li class="henk-footer__payment-logo-item">
               <svg width="52" height="17" viewBox="0 0 52 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1490_308)">
                 <path d="M22.7155 16.5692H18.6379L21.1883 1.08074H25.2658L22.7155 16.5692Z" fill="white"/>
@@ -81,13 +200,13 @@ export const FooterStory = () => `
             </li>
           </ul>
         </div>
-        <div class="footer__section footer__section--terms">
+        <div class="henk-footer__section footer__section--terms">
           <h3 class="visually-hidden">Terms and Policies</h3>
-          <ul class="footer__small-print --no-bullets --dir-hor">
-            <li class="footer__small-print-item"><a href="#" class="footer__link">Intellectual Property</a></li>
-            <li class="footer__small-print-item"><a href="#" class="footer__link">Privacy Policy</a></li>
-            <li class="footer__small-print-item"><a href="#" class="footer__link">Cookie Statement</a></li>
-            <li class="footer__small-print-item"><a href="#" class="footer__link">Terms and Conditions</a></li>            
+          <ul class="henk-footer__small-print --no-bullets">
+            <li class="henk-footer__small-print-item"><a href="#" class="footer__link">Intellectual Property</a></li>
+            <li class="henk-footer__small-print-item"><a href="#" class="footer__link">Privacy Policy</a></li>
+            <li class="henk-footer__small-print-item"><a href="#" class="footer__link">Cookie Statement</a></li>
+            <li class="henk-footer__small-print-item"><a href="#" class="footer__link">Terms and Conditions</a></li>            
           </ul>
         </div>
       </div>

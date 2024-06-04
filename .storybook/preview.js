@@ -13,6 +13,8 @@ import '../src/styles/tokens/_tokens-size-font.css';
 import '../src/styles/tokens/_tokens-size-spacing.css';
 import "../src/styles/_backgrounds.css";
 
+import '../stories/components/base/henk-icon.css';
+import '../stories/components/star-rating.css';
 import '../stories/components/henk-footer.css';
 
 // preview.js
@@ -94,7 +96,7 @@ import '../src/styles/components/organisms/org-cl-table/_org-cl-table.css';
 import '../src/styles/components/organisms/org-datepicker/_org-datepicker.css';
 import '../src/styles/components/organisms/org-virtualtour/_org-virtualtour.css';
 import '../src/styles/components/organisms/org-cookie-bar/_org-cookie-bar.css';
-import '../src/styles/components/organisms/org-g-rating-avg/_org-g-rating-avg.css';
+// import '../src/styles/components/organisms/org-g-rating-avg/_org-g-rating-avg.css';
 import '../src/styles/components/organisms/org-tooltip/_org-tooltip.css';
 import '../src/styles/components/organisms/org-nav-list-links/_org-nav-list-links.css';
 import '../src/styles/components/organisms/org-newsletter-form/_org-newsletter-form.css';

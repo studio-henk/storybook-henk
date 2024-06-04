@@ -4,6 +4,7 @@ import {HeroVideoStory} from '../components/HeroVideo.stories.js';
 // import { Default as HeadingGroupDefault } from '../components/base/HeadingGroup.stories.js';
 import { createHeadingGroup } from '../components/base/HeadingGroup.js';
 
+
 export default {
   title: 'Pages/Interior Advice', // Define the title of your story
   parameters: {

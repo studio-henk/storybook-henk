@@ -47,10 +47,6 @@ h2,
 .fs-x-large,
 h3,
 .h3 {
-      /* font-size: max(
-              calc(20 / 16 * 1rem),
-              calc(25 * 100 / 1920 * 1vw)
-      ); */
       font-size: max(
               calc(20 / 16 * 1rem),
               calc(25 * 100 / 1728 * 1vw)
@@ -60,12 +56,12 @@ h3,
 
 .fs-large,
 h4,
-.h4 {
-  /* font-size: clamp(16px, 3vw, 25px); */
-  font-size: clamp(calc(var(--size-font-heading-4-min) / var(--size-font-body) * 1rem),
-      calc(var(--size-font-heading-4-max) / var(--size-screen-target) * 100 * 1vw),
-      calc(var(--size-font-heading-4-max) / var(--size-font-body) * 1rem));
-  line-height: clamp(24px, 3vw, 24px);
+.h4 {  
+  font-size: max(
+              calc(16 / 16 * 1rem),
+              calc(20 * 100 / 1728 * 1vw)
+      );
+    line-height: clamp(24px, 3vw, 24px);
 }
 
 h5,

@@ -188,6 +188,12 @@ li>ol {
   margin-left: 0;
 }
 
+/* horizontal list */
+.henk-list--horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
 
 /*def list*/
 dt {
