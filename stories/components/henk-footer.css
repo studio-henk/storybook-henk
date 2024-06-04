@@ -50,10 +50,7 @@ footer.henk-footer a {
   row-gap: 24px;
 }
 
-.henk-footer__section--rating {}
-
 .henk-footer__section--social {
-  /* flex: 0 1 130px; */
   flex: 0 1 auto;
 }
 
@@ -106,11 +103,6 @@ footer.henk-footer a {
 
 
 @media only screen and (min-width: 1208px) {
-  footer.henk-footer {}
-  
-  .henk-footer__container {
-    
-  }
 
   .henk-footer__row--payment-terms {  
     flex-direction: row;
