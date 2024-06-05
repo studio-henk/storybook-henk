@@ -52,7 +52,7 @@ footer.henk-footer a {
 
 .henk-footer__section--rating,
 .henk-footer__section--social {
-  flex: 0 1 48%;
+  flex: 1 1 48%;
 }
 
 .henk-footer__social-media {
