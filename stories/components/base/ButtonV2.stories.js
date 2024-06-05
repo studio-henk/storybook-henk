@@ -18,14 +18,16 @@ export default {
         defaultValue: { summary: 'a' },
       },
     },
-    backgroundColor: { control: 'color' },
+    variant: {
+      name: "variant",
+      type: { name: "string", required: false },
+      description: "Variant of the button",
+      table: { type: { summary: "string" }, defaultValue: { summary: "Default" } },
+      control: "select",
+      options: ["default", "primary", "secondary", "tertiary"],
+    },
     label: { control: 'text' },
-    onClick: { action: 'onClick' },
-    // primary: { control: 'boolean' },
-    // size: {
-    //   control: { type: 'select' },
-    //   options: ['small', 'medium', 'large'],
-    // },
+    onClick: { action: 'onClick' },    
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
@@ -34,7 +36,7 @@ export default {
 export const Default = {
   args: {
     label: 'Button',
-    style: 'default',
+    variant: 'default',
   },
 };
 
@@ -42,34 +44,20 @@ export const Default = {
 export const Primary = {
   args: {
     label: 'Button',
-    style: 'primary',
+    variant: 'primary',
   },
 };
 
 export const Secondary = {
   args: {
     label: 'Button',
-    style: 'secondary',
+    variant: 'secondary',
   },
 };
 
 export const Tertiary = {
   args: {
     label: 'Button',
-    style: 'tertiary',
+    variant: 'tertiary',
   },
 };
-
-// export const Large = {
-//   args: {
-//     size: 'large',
-//     label: 'Button',
-//   },
-// };
-
-// export const Small = {
-//   args: {
-//     size: 'small',
-//     label: 'Button',
-//   },
-// };

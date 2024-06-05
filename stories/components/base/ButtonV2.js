@@ -3,12 +3,10 @@
 export const createButton = ({
   buttonElement = 'a',
   href,
-  style = '',
-  size = 'medium',
+  variant = 'default',
   label,
   onClick,
-}) => {
-  // const btn = document.createElement('button');
+}) => {  
   const btn = document.createElement(buttonElement);
     if (buttonElement === 'button') {
         btn.type = 'button';
@@ -16,17 +14,13 @@ export const createButton = ({
     if (buttonElement === 'a') {
         btn.href = href ? href : 'https://studio-henk.nl/en';
     }
-    // if (buttonElement === 'span') {
-    //   btn.href = href ? href : 'https://studio-henk.nl/en';
-    // }  
-  btn.innerText = label;
-  btn.addEventListener('click', onClick);
+  btn.innerText = label;  
+  btn.className = ['henk-button', `henk-button--${variant}`].join(' ');
 
-  // const mode = primary ? 'henk-button--primary' : 'henk-button--secondary';
-  // btn.className = ['henk-button', `henk-button--${size}`, `henk-button--${style}`].join(' ');
-  btn.className = ['henk-button', `henk-button--${style}`].join(' ');
-
-  // btn.style.backgroundColor = backgroundColor;
+  // if onClick is defined, add an event listener
+  if (onClick) {
+    btn.addEventListener('click', onClick);
+  }
 
   return btn;
 };

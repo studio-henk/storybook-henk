@@ -3,7 +3,7 @@ import { InstagramSmall } from '../components/base/Icon.stories.js';
 import { FacebookSmall } from '../components/base/Icon.stories.js';
 
 export default {
-  title: 'Components/Footer', // Define the title of your story
+  title: 'Sections/Footer', // Define the title of your story
   parameters: {
     layout: 'fullscreen',
   },

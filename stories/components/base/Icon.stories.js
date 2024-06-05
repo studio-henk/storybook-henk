@@ -8,6 +8,13 @@ import IconFacebook from '../../assets/icons/icon-facebook.svg?raw';
 import IconTikTok from '../../assets/icons/icon-tiktok.svg?raw';
 import IconYouTube from '../../assets/icons/icon-youtube.svg?raw';
 import IconPinterest from '../../assets/icons/icon-pinterest.svg?raw';
+import IconLocation from '../../assets/icons/icon-location.svg?raw';
+import IconInfo from '../../assets/icons/icon-info.svg?raw';  
+import IconSuccess from '../../assets/icons/icon-success.svg?raw';
+import IconWarning from '../../assets/icons/icon-warning.svg?raw';
+import IconDanger from '../../assets/icons/icon-danger.svg?raw';
+import IconInfoOpen from '../../assets/icons/icon-info-open.svg?raw';
+import IconLocationOpen from '../../assets/icons/icon-location-open.svg?raw';
 
 export default {
   title: 'Components/Base/Icon',
@@ -72,3 +79,45 @@ export const Pinterest = () => IconTemplate({ icon: IconPinterest });
 export const PinterestSmall = () => IconTemplate({ icon: IconPinterest, size: 'small' });
 
 export const PinterestMedium = () => IconTemplate({ icon: IconPinterest, size: 'medium' });
+
+export const Location = () => IconTemplate({ icon: IconLocation });
+
+export const LocationSmall = () => IconTemplate({ icon: IconLocation, size: 'small' });
+
+export const LocationMedium = () => IconTemplate({ icon: IconLocation, size: 'medium' });
+
+export const InfoDefault = () => IconTemplate({ icon: IconInfo });
+
+export const InfoSmall = () => IconTemplate({ icon: IconInfo, size: 'small' });
+
+export const InfoMedium = () => IconTemplate({ icon: IconInfo, size: 'medium' });
+
+export const SuccessDefault = () => IconTemplate({ icon: IconSuccess });
+
+export const SuccessSmall = () => IconTemplate({ icon: IconSuccess, size: 'small' });
+
+export const SuccessMedium = () => IconTemplate({ icon: IconSuccess, size: 'medium' }); 
+
+export const WarningDefault = () => IconTemplate({ icon: IconWarning });
+
+export const WarningSmall = () => IconTemplate({ icon: IconWarning, size: 'small' });
+
+export const WarningMedium = () => IconTemplate({ icon: IconWarning, size: 'medium' });
+
+export const DangerDefault = () => IconTemplate({ icon: IconDanger });
+
+export const DangerSmall = () => IconTemplate({ icon: IconDanger, size: 'small' });
+
+export const DangerMedium = () => IconTemplate({ icon: IconDanger, size: 'medium' });
+
+export const InfoOpenDefault = () => IconTemplate({ icon: IconInfoOpen });
+
+export const InfoOpenSmall = () => IconTemplate({ icon: IconInfoOpen, size: 'small' });
+
+export const InfoOpenMedium = () => IconTemplate({ icon: IconInfoOpen, size: 'medium' });
+
+export const LocationOpenDefault = () => IconTemplate({ icon: IconLocationOpen });
+
+export const LocationOpenSmall = () => IconTemplate({ icon: IconLocationOpen, size: 'small' });
+
+export const LocationOpenMedium = () => IconTemplate({ icon: IconLocationOpen, size: 'medium' });

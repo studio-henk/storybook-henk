@@ -50,7 +50,7 @@ import '../stories/components/henk-footer.css';
 // import '../src/styles/components/datepicker.css';
 // import '../src/styles/components/_mdl-shop-product.css';
 import '../src/styles/components/_BaseModal.css';
-import '../src/styles/components/_info-box.css';
+// import '../src/styles/components/_info-box.css';
 
 // import '../src/styles/components/atoms/atom-button/atom-button-new.css';
 import '../stories/components/base/button-v2.css';

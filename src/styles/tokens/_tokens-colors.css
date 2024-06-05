@@ -87,11 +87,26 @@
   --color-brand-grey-lighter: #F1F1F1;
 
   /* yellow */
-  --color-brand-yellow-darker: #999900;
-  --color-brand-yellow-dark: #CCCC00;
+  --color-brand-yellow-darker: #666600;
+  --color-brand-yellow-dark: #999900;
   --color-brand-yellow-default: #FFFF00;
   --color-brand-yellow-light: #FFFF66;
-  --color-brand-yellow-lighter: #FFFF99;
+  --color-brand-yellow-lighter: #FFFFCC;
+
+  /* green */
+  --color-brand-green-default: #008000;
+  --color-brand-green-darker: #003300;
+  --color-brand-green-dark: #004D00;
+  --color-brand-green-light: #00E500;
+  --color-brand-green-lighter: #B2FFB2;
+
+  /* red */
+  --color-brand-red-default: #FF0000;
+  --color-brand-red-darker: #660000;
+  --color-brand-red-dark: #990000;
+  --color-brand-red-light: #FF6666;
+  --color-brand-red-lighter: #FFCCCC;
+
 
   /* orange */
   --color-brand-orange-default: orange;
@@ -135,15 +150,40 @@
   --color-alias-henk-black: var(--color-brand-ral-9005);
   --color-alias-henk-white: var(--color-brand-ral-9016);
 
+  /* info */
+  --color-alias-information-default: var(--color-brand-blue);
+  --color-alias-information-dark: var(--color-brand-blue-dark);
+  --color-alias-information-light: var(--color-brand-blue-lighter);
+
+  /* success */
+  --color-alias-success-default: var(--color-brand-green-default);
+  --color-alias-success-dark: var(--color-brand-green-dark);
+  --color-alias-success-light: var(--color-brand-green-lighter);
+
+  /* warning */
+  --color-alias-warning-default: var(--color-brand-yellow-default);
+  --color-alias-warning-dark: var(--color-brand-yellow-darker);
+  --color-alias-warning-light: var(--color-brand-yellow-lighter);
+
+  /* danger */
+  --color-alias-danger-default: var(--color-brand-red-default);
+  --color-alias-danger-dark: var(--color-brand-red-dark);
+  --color-alias-danger-light: var(--color-brand-red-lighter);
+
   /* mapped / ui */
 
   /* surface */
   --color-ui-surface-default: var(--color-alias-base-white);
+  --color-ui-surface-neutral: var(--color-alias-neutral-lighter);
   --color-ui-surface-primary: var(--color-alias-primary);
   --color-ui-surface-secondary: var(--color-alias-secondary);
   --color-ui-surface-tertiary: var(--color-alias-henk-black);
   --color-ui-surface-quaternary: var(--color-alias-henk-white);
   --color-ui-surface-highlight: var(--color-alias-highlight);
+  --color-ui-surface-information: var(--color-alias-information-light);  
+  --color-ui-surface-success: var(--color-alias-success-light);
+  --color-ui-surface-warning: var(--color-alias-warning-light);
+  --color-ui-surface-danger: var(--color-alias-danger-light);
 
   /* surface dark */
   --color-ui-surface-default-dark: var(--color-alias-henk-white);
@@ -163,6 +203,10 @@
   --color-ui-text-on-secondary: var(--color-alias-primary);
   --color-ui-text-on-tertiary: var(--color-alias-henk-white);
   --color-ui-text-on-highlight: var(--color-alias-base-black);
+  --color-ui-text-on-information: var(--color-alias-information-dark);
+  --color-ui-text-on-success: var(--color-alias-success-dark);
+  --color-ui-text-on-warning: var(--color-alias-warning-dark);
+  --color-ui-text-on-danger: var(--color-alias-danger-dark);
 
   /* links */
   --color-ui-text-action-on-primary: var(--color-alias-base-white);
@@ -177,6 +221,10 @@
   --color-ui-border-on-secondary: var(--color-alias-primary);
   --color-ui-border-on-tertiary: var(--color-alias-secondary);
   --color-ui-border-on-highlight: var(--color-alias-primary);
+  --color-ui-border-on-information: var(--color-alias-information-dark);
+  --color-ui-border-on-success: var(--color-alias-success-dark);
+  --color-ui-border-on-warning: var(--color-alias-warning-dark);
+  --color-ui-border-on-danger: var(--color-alias-danger-dark);
 
   /* fonts */
   --font-body: "Haas Grot Text R Web";
