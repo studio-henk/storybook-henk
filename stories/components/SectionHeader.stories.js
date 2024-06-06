@@ -4,6 +4,11 @@ import { createSectionHeader } from './SectionHeader';
 
 export default {
   title: 'Components/SectionHeader',
+  component: createSectionHeader,
+  tags: ['autodocs'],
+  parameters: {
+    controls: { sort: 'requiredFirst' },
+  },
   argTypes: {
     bgColor: {
       control: { type: 'select' },
@@ -60,11 +65,11 @@ Tertiary.args = {
   bgColor: 'tertiary',
 }
 
-export const Highlight = Template.bind({});
-Highlight.args = {
-  ...Default.args,
-  bgColor: 'highlight',
-}
+// export const Highlight = Template.bind({});
+// Highlight.args = {
+//   ...Default.args,
+//   bgColor: 'highlight',
+// }
 
 export const WithoutButton = Template.bind({});
 WithoutButton.args = {

@@ -1,6 +1,8 @@
 import { PinterestSmall, StarSmall, TikTokSmall, YoutubeSmall } from '../components/base/Icon.stories.js';
 import { InstagramSmall } from '../components/base/Icon.stories.js';
 import { FacebookSmall } from '../components/base/Icon.stories.js';
+import BcorpLogoSVG from '../assets/icons/b-corp.svg?raw';  
+import { PinterestMedium, StarMedium, TikTokMedium, YoutubeMedium, InstagramMedium, FacebookMedium } from '../components/base/Icon.stories.js';
 
 export default {
   title: 'Sections/Footer', // Define the title of your story
@@ -19,7 +21,7 @@ export const FooterStory = () => `
       <div class="henk-footer__row henk-footer__row--links">
         <div class="henk-footer__grid">
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4">Collection</h3>
+            <h3 class="henk-footer__heading h4"><a href="#collection">Collection</a></h3>
             <ul class="henk-footer__list --no-bullets">
               <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Dining Tables</a></li>
               <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Coffee Tables</a></li>
@@ -34,7 +36,7 @@ export const FooterStory = () => `
             </ul>
           </div>
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4">About</h3>
+            <h3 class="henk-footer__heading h4"><a href="#">About</a></h3>
             <ul class="henk-footer__list --no-bullets">
               <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Contact</a></li>
               <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">About</a></li>
@@ -46,7 +48,7 @@ export const FooterStory = () => `
             </ul>
           </div>
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4">Services</h3>
+            <h3 class="henk-footer__heading h4"><a href="#">Services</a></h3>
             <ul class="henk-footer__list --no-bullets">              
               <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">FAQ</a></li>
               <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Maintenance</a></li>
@@ -58,7 +60,7 @@ export const FooterStory = () => `
             </ul>
           </div>
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4">Support</h3>
+            <h3 class="henk-footer__heading h4"><a href="#">Support</a></h3>
             <ul class="henk-footer__list --no-bullets">
               <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Order Status</a></li>
               <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Returns</a></li>
@@ -67,7 +69,7 @@ export const FooterStory = () => `
             </ul>
           </div>
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4">Stores</h3>
+            <h3 class="henk-footer__heading h4"><a href="#">Stores</a></h3>
             <ul class="henk-footer__list --no-bullets">
               <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Amsterdam</a></li>
               <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Rotterdam</a></li>
@@ -82,20 +84,22 @@ export const FooterStory = () => `
 
       <div class="henk-footer__row henk-footer__row--social-rating">
         <div class="henk-footer__section henk-footer__section--rating">
-          <h3 class="henk-footer__heading h4 visually-hidden">Google Rating</h3>
-          <!-- Google Rating Widget Placeholder -->
-          <div class="henk-footer__rating-widget">
-            <!-- Google rating widget code goes here -->
-            <div class="star-rating">
-              <ol class="star-rating__stars">
-              <li class="star-rating__star">${StarSmall()}</li>
-              <li class="star-rating__star">${StarSmall()}</li>
-              <li class="star-rating__star">${StarSmall()}</li>
-              <li class="star-rating__star">${StarSmall()}</li>
-              <li class="star-rating__star">${StarSmall()}</li>
-              </ol>
-              <p class="star-rating__rating">4.6 Sterren</p>
-              <p class="star-rating__reviews">159 reviews on Google</p> 
+          <h3 class="henk-footer__heading h4 visually-hidden">Google Rating</h3>          
+          <div class="henk-footer__certificates-rating">
+          <a href="https://www.bcorporation.net/en-us/find-a-b-corp/company/studio-henk/">${BcorpLogoSVG}</a>
+
+            <div class="henk-footer__rating-widget">              
+              <div class="star-rating">
+                <ol class="star-rating__stars">
+                <li class="star-rating__star">${StarSmall()}</li>
+                <li class="star-rating__star">${StarSmall()}</li>
+                <li class="star-rating__star">${StarSmall()}</li>
+                <li class="star-rating__star">${StarSmall()}</li>
+                <li class="star-rating__star">${StarSmall()}</li>
+                </ol>
+                <p class="star-rating__rating">4.6 Sterren</p>
+                <p class="star-rating__reviews"><a href="https://www.google.com/maps/place/Studio+HENK+Amsterdam+Flagship+store/@52.3726924,4.874644,17z/data=!3m1!4b1!4m6!3m5!1s0x47c6096bedafecb5:0xcf2b8610a886605e!8m2!3d52.3726924!4d4.8772189!16s%2Fg%2F11r_xqvrvl?entry=ttu">159 reviews on Google</a></p> 
+              </div>
             </div>
           </div>
         </div>
@@ -104,27 +108,32 @@ export const FooterStory = () => `
           <ul class="henk-footer__social-media henk-list henk-list--horizontal --no-bullets">              
             <li class="henk-footer__social-media-item">
               <a href="https://instagram.com/company" class="henk-footer__social-media-link">
-                ${InstagramSmall()}
+               <!-- ${InstagramSmall()} --> 
+                ${InstagramMedium()}
               </a>
             </li>
             <li class="henk-footer__social-media-item">
               <a href="https://www.facebook.com/studiohenk/" class="henk-footer__social-media-link">
-                ${FacebookSmall()}
+                <!-- ${FacebookSmall()} -->
+                ${FacebookMedium()}
               </a>
             </li>
             <li class="henk-footer__social-media-item">
               <a href="https://www.tiktok.com/@studiohenk" class="henk-footer__social-media-link">
-                ${TikTokSmall()}
+                <!-- ${TikTokSmall()} -->
+                ${TikTokMedium()}
               </a>
             </li>
             <li class="henk-footer__social-media-item">
               <a href="https://nl.pinterest.com/studiohenk/" class="henk-footer__social-media-link">
-                ${PinterestSmall()}
+                <!-- ${PinterestSmall()} -->
+                ${PinterestMedium()}
               </a>
             </li>
             <li class="henk-footer__social-media-item">
               <a href="https://www.youtube.com/channel/UC_RBQhav2vf-zwLTIr-xHQg" class="henk-footer__social-media-link">
-                ${YoutubeSmall()}
+                <!-- ${YoutubeSmall()} -->
+                ${YoutubeMedium()}
               </a>
             </li>            
           </ul>
@@ -133,7 +142,7 @@ export const FooterStory = () => `
 
       <!-- Third Row: Payment Logos and Small Print Links -->
 
-      <div class="henk-footer__row henk-footer__row--payment-terms fs-xs">
+      <div class="henk-footer__row henk-footer__row--payment-terms">
         <div class="henk-footer__section henk-footer__section--payment">
           <h3 class="visually-hidden">Payment methods</h3>
           <ul class="henk-footer__payment-logos --no-bullets">

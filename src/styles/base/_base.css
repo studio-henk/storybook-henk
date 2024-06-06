@@ -22,11 +22,13 @@
 :focus-visible {
   outline-style: solid;
   outline-width: 2px;
-  border-radius: 4px;
+  outline-offset: 4px;
+  border-radius: 2px;
+  outline-color: var(--color-alias-primary, red);
 }
 
 ::selection {  
-  background-color: var(--color-ui-surface-highlight, pink);
+  background-color: var(--color-ui-surface-primary, pink);
   color: currentColor;
 }
 

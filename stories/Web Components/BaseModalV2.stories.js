@@ -1,9 +1,7 @@
 import { fn } from "@storybook/test";
 import "./BaseModalV2.js";
-// import { createIcon } from '../Icon';
-// import *  as IconStories from '../Icon.stories.js';
-// import { Share } from '../Icon.stories.js';
 import { Share } from '../components/base/Icon.stories.js';
+import { ShareMedium } from "../components/base/Icon.stories.js"; 
 
 /**
  * Renders a BaseModalV2 component with a hidden modal and a button to open it.
@@ -14,7 +12,6 @@ export default {
   title: "Web Components/BaseModalV2",
 };
 
-
 export const Default = () => `
 <base-modal-v2 
   hidden
@@ -22,8 +19,7 @@ export const Default = () => `
 >
 <button
 id="button-open"
-class="sh-atom-button modal-open"
-data-style="filled"
+class="henk-button modal-open"
 slot="trigger"
 >Open modal
 </button>
@@ -43,11 +39,10 @@ export const ShareMail = () => `
 >
   <button
     id="button-share"
-    class="sh-atom-button modal-open"
-    data-style="filled"
+    class="henk-button modal-open"
     slot="trigger"
   >Deel
-  ${Share()}  
+  ${ShareMedium()}  
   </button>
   <div
     class="slot"
@@ -78,6 +73,19 @@ export const ShareMail = () => `
             required=""
             title="Please enter a valid email address."
           />
+          <label for="txt_email2">Email Address 2</label>
+          <input 
+            class="henk-input"
+            type="email"
+            name="txt_email2"
+            id="txt_email2"
+            autocomplete="email"
+            inputmode="text"
+            placeholder="Enter your email address"
+            minlength="5"
+            required=""
+            title="Please enter a valid email address."
+          />
           <span
             class="base-form__message fs-small"
           >Please enter a valid email address.
@@ -96,13 +104,17 @@ export const ShareMail = () => `
     slot="footer"
   >
     <button
+    type="reset"
+    id="button-cancel"
+    class="henk-button henk-button--default"
+  >Annuleren
+  </button>
+    <button
       type="submit"
       id="button-send"
-      class="sh-atom-button"
-      data-style="filled"
+      class="henk-button henk-button--primary"
     >Verstuur
     </button>
   </div>
 </base-modal-v2>
 `;
-

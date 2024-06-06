@@ -11,8 +11,13 @@ footer.henk-footer a {
   text-decoration: none;
 }
 
-.henk-footer__heading {
-  color: var(--color-alias-base-white, #fff);  
+.henk-footer__heading,
+.henk-footer__heading a {
+  color: var(--color-alias-base-white, #fff);
+}
+
+.henk-footer__heading a:hover {
+  color: var(--color-alias-primary-light, blue);
 }
 
 .henk-footer__list.--no-bullets {
@@ -20,21 +25,20 @@ footer.henk-footer a {
 }
 
 .henk-footer__container {
-  max-width: calc(100% - 48px);
-  /* max-width: calc(100vw - 2 * clamp(24px, calc(24px + (40 - 24) * ((100vw - 320px) / (1728 - 320))), 40px)); */
+  max-width: calc(100% - 48px);  
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  padding: 160px 0 0;
+  margin: 0 auto;  
+  padding: 80px 0 0;
 }
 
 .henk-footer__grid {
-  padding-bottom: 160px;
+  padding-bottom: 80px;
   display: flex;
   flex-wrap: wrap;
   /* justify-content: space-between; */
-  align-items: flex-start;
-  gap: 1rem;
+  align-items: flex-start;  
+  gap: 3.5rem;
 }
 
 .henk-footer__grid-column {
@@ -45,19 +49,19 @@ footer.henk-footer a {
   padding-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   align-items: flex-end;
-  gap: 1rem;
+  gap: 40px;
 }
 
 .henk-footer__section--rating,
 .henk-footer__section--social {
-  flex: 1 1 48%;
+  /* flex: 1 1 48%; */
+  flex: 1 1 47%;
 }
 
 .henk-footer__social-media {
   gap: 4px;
-  margin: 0;  
+  margin: 0;
 }
 
 .henk-footer__social-media-link {
@@ -69,13 +73,14 @@ footer.henk-footer a {
   line-height: 1;
 }
 
-.henk-footer__row--payment-terms {    
+.henk-footer__row--payment-terms {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  /* padding: 40px 0; */
   padding: 2.5rem 0;
   border-top: 1px solid var(--color-ui-border-default, #d1d1d1);
+  font-size: 13px;
+  line-height: 16px;
 }
 
 .henk-footer__payment-logos {
@@ -89,11 +94,36 @@ footer.henk-footer a {
   padding: 0;
 }
 
+.henk-footer__small-print-item {}
+
+.henk-footer__small-print-item a,
+.henk-footer__small-print-item .footer__link {
+  font-size: 13px;
+  line-height: 24px;
+}
+
+
+
+/* b-corp and rating */
+.henk-footer__certificates-rating {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 40px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.henk-footer__certificates-rating > a > svg {
+  height: 68px;
+  width: auto;
+}
 
 .henk-footer__rating-widget {
   display: flex;
   align-items: center;
   color: var(--color-alias-base-white, #fff);
+  flex: 1 1 193px;
 }
 
 .henk-footer__payment-logo-item {
@@ -139,22 +169,42 @@ footer.henk-footer a {
 
 @media only screen and (min-width: 1208px) {
 
-  .henk-footer__row--payment-terms {  
+  .henk-footer__row--payment-terms {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;       
+    flex-wrap: wrap;
   }
 
   .henk-footer__small-print {
     display: flex;
     gap: 40px;
   }
- 
+
 }
 
 @media only screen and (min-width: 1256px) {
   .henk-footer__container {
-    max-width: var(--_max-width, 1208px);  
+    padding: 160px 0 0;
+    max-width: var(--_max-width, 1208px);
+  }
+
+  .henk-footer__grid {
+    padding-bottom: 160px;
+    gap: 1rem;
+  }
+}
+
+/* social icons on mobile 44 minimum */
+/* .henk-footer__social-media-link:has(.henk-icon) svg {
+  background-color: red;
+  width: 44px;
+  height: 44px;
+} */
+
+@media (pointer: coarse) {
+  .henk-footer__social-media-link .henk-icon svg {
+    width: 44px;
+    height: 44px;
   }
 }
