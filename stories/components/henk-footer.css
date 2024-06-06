@@ -36,7 +36,6 @@ footer.henk-footer a {
   padding-bottom: 80px;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   align-items: flex-start;  
   gap: 3.5rem;
 }
@@ -94,15 +93,11 @@ footer.henk-footer a {
   padding: 0;
 }
 
-.henk-footer__small-print-item {}
-
 .henk-footer__small-print-item a,
 .henk-footer__small-print-item .footer__link {
   font-size: 13px;
   line-height: 24px;
 }
-
-
 
 /* b-corp and rating */
 .henk-footer__certificates-rating {
@@ -194,13 +189,6 @@ footer.henk-footer a {
     gap: 1rem;
   }
 }
-
-/* social icons on mobile 44 minimum */
-/* .henk-footer__social-media-link:has(.henk-icon) svg {
-  background-color: red;
-  width: 44px;
-  height: 44px;
-} */
 
 @media (pointer: coarse) {
   .henk-footer__social-media-link .henk-icon svg {
