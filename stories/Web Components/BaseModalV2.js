@@ -96,25 +96,43 @@ class BaseModalV2 extends HTMLElement {
       font-size: 1.375rem;      
     }
     
-    .sh-atom-button.modal-open {
-      appearance: none;
-      border: 0;
-      background: transparent;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    
     .modal-close {
+      --_color-button-background: var(--color-ui-surface-default);
+      --_color-button-text: var(--color-alias-primary);
+      --_color-button-border: var(--color-alias-primary);
+      background-color: var(--_color-button-background);
+      color: var(--_color-button-text);
+      border: 1px solid var(--_color-button-border);
       position: absolute;
       right: 0;
-      padding: 0;
-      appearance: none;
-      border: 0;
-      background: transparent;
+      cursor: pointer;
     }
     
     .modal-close svg {
       fill: currentcolor;
+    }
+
+    .henk-icon {
+      display: inline-flex;
+      place-content: center;
+      padding: 2px;
+    }
+
+    .henk-button--icon-only {
+      padding-inline: 9px;
+      border-radius: 3em;
+      min-height: 44px;
+      min-width: 44px;
+      line-height: 1;
+    }
+
+    .henk-icon.icon--large svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .henk-button:has(.icon--large) {
+      padding-block: 9px;
     }
     </style>
     <div class="BaseModal">            
@@ -123,16 +141,35 @@ class BaseModalV2 extends HTMLElement {
         <div class="BaseModal__content">
           <div class="BaseModal__header">
             <span class="BaseModal__header-title">${modalTitle}</span>
-            <button type="button" class="sh-atom-button modal-close" data-style="plain-dark">
-              close
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true">
-              <g id="icon-close">
-              <g id="icon-close-g">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.20017 2.20018C2.46707 1.93328 2.89979 1.93327 3.16669 2.20017L21.7996 20.8332C22.0664 21.1001 22.0665 21.5328 21.7996 21.7997C21.5327 22.0666 21.0999 22.0666 20.833 21.7997L2.20017 3.1667C1.93328 2.89981 1.93328 2.46708 2.20017 2.20018Z"></path>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M21.7998 2.20017C22.0667 2.46707 22.0667 2.8998 21.7998 3.1667L3.16695 21.7998C2.90005 22.0667 2.46733 22.0667 2.20043 21.7998C1.93354 21.5329 1.93354 21.1002 2.20043 20.8333L20.8333 2.20018C21.1002 1.93328 21.5329 1.93327 21.7998 2.20017Z"></path>
-              </g>
-              </g>
-              </svg>
+            <button 
+              type="button" 
+              class="henk-button henk-button--default henk-button--icon-only modal-close"               
+            >
+              <span class="visually-hidden" part="button-label-hidden">close</span>              
+              <i class="henk-icon icon--large">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 6L6 18"
+                    stroke="currentcolor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M6 6L18 18"
+                    stroke="currentcolor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </i>
             </button>
     </div>
     <div class="BaseModal__main">            

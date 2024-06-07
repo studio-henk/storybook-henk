@@ -206,6 +206,7 @@
   --color-ui-text-on-information: var(--color-alias-information-dark);
   --color-ui-text-on-success: var(--color-alias-success-dark);
   --color-ui-text-on-warning: var(--color-alias-warning-dark);
+  --color-ui-text-danger: var(--color-alias-danger-default);
   --color-ui-text-on-danger: var(--color-alias-danger-dark);
 
   /* links */

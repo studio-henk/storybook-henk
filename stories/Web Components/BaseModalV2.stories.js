@@ -2,6 +2,7 @@ import { fn } from "@storybook/test";
 import "./BaseModalV2.js";
 import { Share } from '../components/base/Icon.stories.js';
 import { ShareMedium } from "../components/base/Icon.stories.js"; 
+import { LabeledInput } from "../components/base/forms/LabeledInput.ts";
 
 /**
  * Renders a BaseModalV2 component with a hidden modal and a button to open it.
@@ -55,46 +56,32 @@ export const ShareMail = () => `
         method="POST"
       >
         <fieldset class="base-form__fieldset">
-          <label
-            class="base-form__label"
-            for="txt_email"
-            title="Please enter a valid email address."
-          >Email Address
-          </label>
-          <input
-            class="base-form__input"
-            type="email"
-            name="txt_email"
-            id="txt_email"
-            autocomplete="email"
-            inputmode="text"
-            placeholder="Enter your email address"
-            minlength="5"
-            required=""
-            title="Please enter a valid email address."
-          />
-          <label for="txt_email2">Email Address 2</label>
-          <input 
-            class="henk-input"
-            type="email"
-            name="txt_email2"
-            id="txt_email2"
-            autocomplete="email"
-            inputmode="text"
-            placeholder="Enter your email address"
-            minlength="5"
-            required=""
-            title="Please enter a valid email address."
-          />
-          <span
-            class="base-form__message fs-small"
-          >Please enter a valid email address.
-          </span>
-          <div class="sh-atom-checkbox-label">
-            <input type="checkbox" class="atom-checkbox" id="hocker" required="" />
-            <label class="atom-label" for="hocker">Ik ga akkoord met de <a href="/en/privacy-policy-studio-h-k" target="_blank">privacy voorwaarden</a></label>
-            <span class="molecule-label-checkbox__hint-required">*</span>
-          </div>
+        <div class="henk-labeled-input">
+        <label class="henk-label">
+          Email
+          <span class="required-indicator">*</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Enter text here"
+          required=""
+          id="input-id"
+          class="henk-input"
+        />
+      </div>
+      <div class="henk-labeled-input">
+        <label class="henk-label">
+          First Name
+          <span class="required-indicator">*</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Enter text here"
+          required=""
+          id="input-id2"
+          class="henk-input"
+        />
+      </div>          
         </fieldset>
       </form>
     </div>
@@ -113,6 +100,7 @@ export const ShareMail = () => `
       type="submit"
       id="button-send"
       class="henk-button henk-button--primary"
+      aria-label="Send"
     >Verstuur
     </button>
   </div>

@@ -1,83 +1,68 @@
+// import './button-v2.css';
 import './button.css';
-// import '../../../../henk-astro/src/static/std/assets/css/components/atoms/atom-button/atom-button-new.css';
-// import './_button-loading.css';
-// import camelcase from "lodash.camelcase";
-// import { returnIconSVG } from "../atom-icon/_icons-function";
 
-export const createAtomButton = ({
-     buttonElement = 'a',
-     type = 'button',
-     role = '',
-     state = '',
-     style = '',
-     accent = '',
-     textColor = '',
-     dataState = '',
-     size = '',
-     buttonText = 'button text',
-     onClick,
-     href,
-     textTransform = '',
-     shape = '',
-     icon = ''
- }) => {
-    const btn = document.createElement(buttonElement);
-    if (buttonElement === 'button') {
-        btn.type = type;
+export const createButton = ({
+  buttonElement = 'a',
+  href,
+  variant = 'default',
+  label,
+  title,
+  iconSvg = '',
+  iconPosition = 'left',
+  iconSize = 'medium',
+  iconOnly = false,
+  onClick,
+  isLoading = false,
+}) => {  
+  const btn = document.createElement(buttonElement);
+    if (isLoading) {
+      btn.setAttribute('data-state', 'loading');
     }
+
+    if (buttonElement === 'button') {
+        btn.type = 'button';
+    }
+
     if (buttonElement === 'a') {
         btn.href = href ? href : 'https://studio-henk.nl/en';
     }
-    btn.innerText = buttonText;
+    
+    if (buttonElement === 'span') {
+        btn.role = 'presentation';
+    }
+
+  const sizeClass = `icon--${iconSize}`;
+  const iconHtml = iconSvg ? `<i class="henk-icon ${sizeClass}">${iconSvg}</i>` : '';
+
+  // Construct the inner HTML based on the presence of a label and the icon position
+  if (label && !iconOnly) {
+    if (iconPosition === 'left') {
+      btn.innerHTML = `${iconHtml} ${label}`;
+    } else {
+      btn.innerHTML = `${label} ${iconHtml}`;
+    }
+  } else {
+    btn.innerHTML = iconHtml; // Icon only button
+    if (!buttonElement === 'span') {
+      btn.ariaLabel = label;
+    }    
+  }
+  
+  const classNames = ['henk-button', `henk-button--${variant}`];
+  if (iconOnly) {
+    classNames.push('henk-button--icon-only');
+  }
+  btn.className = classNames.join(' ');
+
+  // Add title attribute to button if title is defined
+  if (title) {
+    btn.title = title;
+  }
+
+  // if onClick is defined, add an event listener
+  if (onClick) {
     btn.addEventListener('click', onClick);
-    btn.className = ['sh-atom-button'].join(' ');
-    //btn.style.backgroundColor = backgroundColor;
+  }
 
-    if (role && role !== 'Normal') {
-        btn.setAttribute('data-role', role);
-    }
-
-    if (state === 'disabled') {
-        if (buttonElement === 'button') {
-            btn.setAttribute('disabled', 'disabled');
-        } else {
-            btn.setAttribute('data-state', state);
-        }
-    }
-
-    if (size && size !== 'base') {
-        btn.setAttribute('data-size', size);
-    }
-
-    if (style) {
-        btn.setAttribute('data-style', style);
-    }
-
-    if (accent) {
-        btn.setAttribute('data-accent', accent);
-    }
-
-    if (textColor) {
-        btn.setAttribute('data-text-color', textColor);
-    }
-
-    if (dataState) {
-        btn.setAttribute('data-state', dataState);
-    }
-
-    if (textTransform) {
-        btn.setAttribute('data-text-transform', textTransform);
-    }
-
-    if (shape) {
-        btn.setAttribute('data-shape', shape);
-    }
-
-    // if (icon) {
-    //     btn.setAttribute('data-icon', icon);
-    //     const iconName = camelcase(icon);
-    //     btn.insertAdjacentHTML('beforeend', returnIconSVG(iconName));
-    // }
-
-    return btn;
+  return btn;
 };

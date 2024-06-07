@@ -15,6 +15,8 @@ import IconWarning from '../../assets/icons/icon-warning.svg?raw';
 import IconDanger from '../../assets/icons/icon-danger.svg?raw';
 import IconInfoOpen from '../../assets/icons/icon-info-open.svg?raw';
 import IconLocationOpen from '../../assets/icons/icon-location-open.svg?raw';
+import IconCircleX from '../../assets/icons/icon-circle-x.svg?raw';
+import IconClose from '../../assets/icons/icon-x.svg?raw';
 
 export default {
   title: 'Components/Base/Icon',
@@ -121,3 +123,15 @@ export const LocationOpenDefault = () => IconTemplate({ icon: IconLocationOpen }
 export const LocationOpenSmall = () => IconTemplate({ icon: IconLocationOpen, size: 'small' });
 
 export const LocationOpenMedium = () => IconTemplate({ icon: IconLocationOpen, size: 'medium' });
+
+export const CircleXDefault = () => IconTemplate({ icon: IconCircleX });
+
+export const CircleXSmall = () => IconTemplate({ icon: IconCircleX, size: 'small' });
+
+export const CircleXMedium = () => IconTemplate({ icon: IconCircleX, size: 'medium' });
+
+export const CloseDefault = () => IconTemplate({ icon: IconClose });
+
+export const CloseSmall = () => IconTemplate({ icon: IconClose, size: 'small' });
+
+export const CloseMedium = () => IconTemplate({ icon: IconClose, size: 'medium' });

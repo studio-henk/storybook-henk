@@ -1,5 +1,5 @@
 import './info-box.css';
-import { createButton } from '../base/ButtonV2.js';
+import { createButton } from '../base/Button.js';
 // import { Checkmark } from '../base/Icon.stories';
 
 export const createInfoBox = ({   
