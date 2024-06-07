@@ -3,8 +3,6 @@ import { createButton } from './Button.js';
 // Import the raw SVG
 import ShareIcon from '../../assets/icons/icon-share.svg?raw';
 
-
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
   title: 'Components/Base/Button/Button',
   tags: ['autodocs'],
@@ -102,6 +100,7 @@ export const IconOnly = {
     iconSvg: ShareIcon,
     iconSize: 'large',
     iconOnly: true,
+    onClick: () => alert('Icon button clicked!'),
   },
   parameters: {
     controls: { exclude: ['iconPosition', 'iconOnly'] },
