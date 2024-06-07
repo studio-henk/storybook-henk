@@ -1,9 +1,7 @@
 import { fn } from '@storybook/test';
-import { createButton } from './Button';
+import { createButton } from './Button.js';
 // Import the raw SVG
 import ShareIcon from '../../assets/icons/icon-share.svg?raw';
-import IconCircleX from '../../assets/icons/icon-circle-x.svg?raw';
-import { title } from 'process';
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
