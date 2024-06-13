@@ -1,39 +1,21 @@
-
-
-.fs-xxx-large {  
-    font-size: max(
-            calc(31 / 16 * 1rem),
-            calc(39 * 100 / 1728 * 1vw)
-    );
-  line-height: clamp(32px, 3vw, 48px);
+/* medium / base font size / 16px */
+.fs-base,
+.fs-md {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-.fs-xx-large  {  
-    font-size: max(
-            calc(25 / 16 * 1rem),
-            calc(31 * 100 / 1728 * 1vw)
-    );
-  line-height: clamp(32px, 3vw, 40px);
+/* TODO: check line heights */
+/* 13px */
+.fs-sm {
+  /* font-size: calc(var(--size-font-small) / var(--size-font-body) * 1rem); */
+  font-size: calc(13 / 16 * 1rem);
+  line-height: calc(20/13);
 }
 
-.fs-x-large {
-      font-size: max(
-              calc(20 / 16 * 1rem),
-              calc(25 * 100 / 1728 * 1vw)
-      );
-    line-height: clamp(24px, 3vw, 32px);
-}
-
-.fs-large {
-  font-size: clamp(calc(var(--size-font-heading-4-min) / var(--size-font-body) * 1rem),
-      calc(var(--size-font-heading-4-max) / var(--size-screen-target) * 100 * 1vw),
-      calc(var(--size-font-heading-4-max) / var(--size-font-body) * 1rem));
-  line-height: clamp(24px, 3vw, 24px);
-}
-
-
-/* 10/16 both on mobile and desktop */
+/* 10px */
 .fs-xs {
-  font-size: 0.625rem;
-  line-height: 16px;
+  font-size: calc(10 / 16 * 1rem);
+  line-height: calc(16/10);
 }
+

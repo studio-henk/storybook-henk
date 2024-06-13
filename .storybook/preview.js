@@ -7,6 +7,7 @@ import "../src/styles/_config.css";
 import "../src/styles/base/_base.css";
 import "../src/styles/base/_base-typography-headings.css";
 import "../src/styles/base/_base-typography-fontsizes.css";
+import "../src/styles/base/_base-typography-fontweight.css";
 
 import '../src/styles/tokens/_tokens-colors.css';
 import '../src/styles/tokens/_tokens-size-font.css';
@@ -191,17 +192,24 @@ const preview = {
   parameters: {
     options: {
       storySort: {
-        order: ['Colours', ['Brand', 'Alias'], 'Typography', 'Components', ['Base', 'Bars'], '*'],
+        order: [
+          'Colours', 
+          ['Brand', 'Alias'],
+          'Typography',
+          'Components', 
+          ['Base', ['Paragraph', 'Headings', 'HeadingGroup', 'Icon', '*'], 'Bars'], 
+          '*'
+        ],
       },
     },
-    controls: {         
+    controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
     },
-    backgrounds: { disable: true },    
-  },  
+    backgrounds: { disable: true },
+  },
 };
 
 export default preview;

@@ -21,6 +21,13 @@ import IconClose from '../../assets/icons/icon-x.svg?raw';
 export default {
   title: 'Components/Base/Icon',
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+        description: {
+            component: 'Icons at HENK are SVG code elements rendered inside an ```<i>``` HTML element. Icons are used to represent actions, objects, or concepts in a visually appealing way.',
+        },
+    },
+  },
 };
 
 const IconTemplate = ({ icon, size = 'large' }) => {

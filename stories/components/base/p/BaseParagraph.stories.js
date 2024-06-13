@@ -6,6 +6,7 @@ import {createBaseParagraph} from './BaseParagraph';
 export default {
     title: 'Components/Base/Paragraph',
     component: 'createBaseParagraph',
+    tags: ['autodocs'],
     parameters: {
         // badges: [BADGE.BETA],
         docs: {
@@ -17,17 +18,13 @@ export default {
     argTypes: {
         text: {control: 'text'},
     },
-    // decorators: [withDesign],
 };
 
 const Template = ({text, ...args}) => {
-    // You can either use a function to create DOM elements or use a plain html string!
-    // return `<p>${label}</p>`;
     return createBaseParagraph({text, ...args});
 };
 
 export const Base = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
 Base.args = {
     text: 'This is a paragraph.',
 };
