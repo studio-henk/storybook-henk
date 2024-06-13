@@ -1,0 +1,28 @@
+.henk-labeled-select {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.henk-labeled-select.--dir-horizontal {
+  flex-direction: row; 
+  justify-content: flex-start;
+  align-items: center; 
+  gap: 0.5rem;  
+}
+
+.henk-labeled-select .henk-label {
+  margin-bottom: 0.25rem;
+}
+
+.henk-labeled-select.--dir-horizontal .henk-label {
+  margin-bottom: 0;
+}
+
+.henk-labeled-select.--dir-horizontal .henk-select {
+  flex: 1;
+}
+
+.henk-labeled-select .required-indicator {
+  color: var(--color-ui-text-danger);
+} 

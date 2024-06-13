@@ -6,12 +6,12 @@ export interface CreateLabelProps {
 }
 
 export const createLabel = ({
-    text,
+    text = 'label text',
     htmlFor
 }: CreateLabelProps): HTMLLabelElement => {
-    if (!text) {
-        throw new Error('The "text" parameter is required.');
-    }
+    // if (!text) {
+    //     throw new Error('The "text" parameter is required.');
+    // }
     
     const label = document.createElement('label');
     label.className = 'henk-label';

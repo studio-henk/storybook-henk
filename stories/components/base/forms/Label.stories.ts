@@ -2,7 +2,7 @@
 import { createLabel, CreateLabelProps } from './Label';
 
 export default {
-    title: 'Components/Base/Forms/Label',
+    title: 'Components/Base/Forms/Base/Label',
     tags: ['autodocs'],
     component: createLabel,
     render: ({ text, ...args }: CreateLabelProps) => {

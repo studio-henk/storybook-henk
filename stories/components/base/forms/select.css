@@ -1,0 +1,19 @@
+.henk-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: border-color 0.3s;
+}
+
+.henk-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.henk-select.required {
+  border-left: 3px solid #dc3545;
+}
+

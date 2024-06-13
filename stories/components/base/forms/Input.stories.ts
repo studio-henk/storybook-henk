@@ -1,10 +1,19 @@
 import { createInput, CreateInputProps } from './Input';
 
 export default {
-    title: 'Components/Base/Forms/Input',
+    title: 'Components/Base/Forms/Base/Input',
     tags: ['autodocs'],
     component: createInput,
     render: (args: CreateInputProps) => createInput(args),
+    parameters: {
+        // badges: [BADGE.BETA],
+        docs: {
+            description: {
+                component: 'The input component is used to collect user input.',
+            },
+        },
+        // controls: { exclude: ['tag'] },
+    },
     argTypes: {
         id: { control: 'text', defaultValue: 'input-id' },
         type: { control: 'text', defaultValue: 'text' },
