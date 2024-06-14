@@ -226,7 +226,4 @@
   --color-ui-border-on-success: var(--color-alias-success-dark);
   --color-ui-border-on-warning: var(--color-alias-warning-dark);
   --color-ui-border-on-danger: var(--color-alias-danger-dark);
-
-  /* fonts */
-  --font-body: "Haas Grot Text R Web";
 }

@@ -1,7 +1,7 @@
 import { PinterestSmall, StarSmall, TikTokSmall, YoutubeSmall } from '../components/base/Icon.stories.js';
 import { InstagramSmall } from '../components/base/Icon.stories.js';
 import { FacebookSmall } from '../components/base/Icon.stories.js';
-import BcorpLogoSVG from '../assets/icons/b-corp.svg?raw';  
+import BcorpLogoSVG from '../assets/icons/b-corp.svg?raw';
 import { PinterestMedium, StarMedium, TikTokMedium, YoutubeMedium, InstagramMedium, FacebookMedium } from '../components/base/Icon.stories.js';
 
 export default {
@@ -19,62 +19,62 @@ export const FooterStory = () => `
       
       <!-- First Row: Link Lists Grid -->
       <div class="henk-footer__row henk-footer__row--links">
-        <div class="henk-footer__grid">
+        <div class="henk-footer__grid">          
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4"><a href="#collection">Collection</a></h3>
+              <h3 class="henk-footer__heading h4"><a href="/en/collection">Collection</a></h3>
+              <ul class="henk-footer__list --no-bullets">
+                  <li class="henk-footer__list-item"><a href="/en/products/dining-tables" class="henk-footer__link">Dining Tables</a></li>
+                  <li class="henk-footer__list-item"><a href="/en/products/coffee-tables" class="henk-footer__link">Coffee Tables</a></li>
+                  <li class="henk-footer__list-item"><a href="/en/products/chairs" class="henk-footer__link">Dining Chairs</a></li>
+                  <li class="henk-footer__list-item"><a href="/en/products/dining-benches" class="henk-footer__link">Dining Benches</a></li>
+                  <li class="henk-footer__list-item"><a href="/en/products/stools" class="henk-footer__link">Stools</a></li>
+                  <li class="henk-footer__list-item"><a href="/en/products/sofas" class="henk-footer__link">Sofas</a></li>
+                  <li class="henk-footer__list-item"><a href="/en/products/lounge-chairs" class="henk-footer__link">Lounge Chairs</a></li>
+                  <li class="henk-footer__list-item"><a href="/en/products/poufs" class="henk-footer__link">Poufs</a></li>
+                  <li class="henk-footer__list-item"><a href="/en/products/cabinets" class="henk-footer__link">Cabinets</a></li>
+                  <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Accessories</a></li>
+              </ul>
+          </div>
+
+          <div class="henk-footer__grid-column">
+            <h3 class="henk-footer__heading h4"><a href="/en/about-us">About</a></h3>
             <ul class="henk-footer__list --no-bullets">
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Dining Tables</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Coffee Tables</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Dining Chairs</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Dining Benches</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Stools</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Sofas</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Lounge Chairs</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Poufs</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Cabinets</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Accessories</a></li>
+              <li class="henk-footer__list-item"><a href="/en/about-us/" class="henk-footer__link">Abou HENK</a></li>
+              <li class="henk-footer__list-item"><a href="/en/about-us/b-corp" class="henk-footer__link">Sustainability</a></li>              
+              <li class="henk-footer__list-item"><a href="https://studio-henk.homerun.co/" class="henk-footer__link">Careers</a></li>              
+              <li class="henk-footer__list-item"><a href="/en/contact" class="henk-footer__link">Contact</a></li>
+              <li class="henk-footer__list-item"><a href="/en/press" class="henk-footer__link">Press</a></li>
+              <li class="henk-footer__list-item"><a href="/en/top-nav/imagebank" class="henk-footer__link">Image Bank</a></li>              
             </ul>
           </div>
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4"><a href="#">About</a></h3>
-            <ul class="henk-footer__list --no-bullets">
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Contact</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">About</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Sustainability</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Jobs</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Press</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Image Bank</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Retailers</a></li>
-            </ul>
-          </div>
-          <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4"><a href="#">Services</a></h3>
+            <h3 class="henk-footer__heading h4"><a href="/en/services">Services</a></h3>
             <ul class="henk-footer__list --no-bullets">              
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">FAQ</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Maintenance</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Samples Services</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Interior Advice</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Stock</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Price List</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Manuals</a></li>
+              <li class="henk-footer__list-item"><a href="/en/samples" class="henk-footer__link">Samples Service</a></li>
+              <li class="henk-footer__list-item"><a href="/en/interior-advice" class="henk-footer__link">Interior Advice</a></li>
+              <li class="henk-footer__list-item"><a href="/en/maintenance" class="henk-footer__link">Maintenance</a></li>
+              <li class="henk-footer__list-item"><a href="/en/manuals" class="henk-footer__link">Manuals</a></li>
+              <li class="henk-footer__list-item"><a href="/en/stock" class="henk-footer__link">Stock</a></li>
+              <li class="henk-footer__list-item"><a href="https://assets.studio-henk.nl/assets/Pricelists/STUDIOHENK_Pricelist_2024_DIGITAL_v36.pdf" class="henk-footer__link">Price List</a></li>              
             </ul>
           </div>
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4"><a href="#">Support</a></h3>
+            <h3 class="henk-footer__heading h4"><a href="/en/contact">Support</a></h3>
             <ul class="henk-footer__list --no-bullets">
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Order Status</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Returns</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Contact</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Delivery Times</a></li>
+              <li class="henk-footer__list-item"><a href="/en/contact" class="henk-footer__link">Contact</a></li>
+              <li class="henk-footer__list-item"><a href="/en/faq" class="henk-footer__link">FAQ</a></li>
+              <li class="henk-footer__list-item"><a href="/en/planning" class="henk-footer__link">Delivery Times</a></li>                        
+              <!-- <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Order Status</a></li>
+              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Returns</a></li> -->
             </ul>
           </div>
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4"><a href="#">Stores</a></h3>
+            <h3 class="henk-footer__heading h4"><a href="/en/stores">Stores</a></h3>
             <ul class="henk-footer__list --no-bullets">
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Amsterdam</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Rotterdam</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Antwerpen</a></li>
-              <li class="henk-footer__list-item"><a href="#" class="henk-footer__link">Utrecht</a></li>
+              <li class="henk-footer__list-item"><a href="/en/stores/amsterdam-flagship-store" class="henk-footer__link">Amsterdam</a></li>
+              <li class="henk-footer__list-item"><a href="/en/stores/antwerp-flagship-store" class="henk-footer__link">Antwerpen</a></li>
+              <li class="henk-footer__list-item"><a href="/en/stores/rotterdam-brand-store" class="henk-footer__link">Rotterdam</a></li>              
+              <li class="henk-footer__list-item"><a href="/en/stores/utrecht-brand-store" class="henk-footer__link">Utrecht</a></li>
             </ul>
           </div>
         </div>
@@ -106,8 +106,8 @@ export const FooterStory = () => `
         <div class="henk-footer__section henk-footer__section--social">
           <h3 class="henk-footer__heading h4 visually-hidden">Follow Us</h3>
           <ul class="henk-footer__social-media henk-list henk-list--horizontal --no-bullets">              
-            <li class="henk-footer__social-media-item">
-              <a href="https://instagram.com/company" class="henk-footer__social-media-link">
+            <li class="henk-footer__social-media-item">            
+              <a href="https://www.instagram.com/studiohenk/" class="henk-footer__social-media-link">
                <!-- ${InstagramSmall()} --> 
                 ${InstagramMedium()}
               </a>
@@ -212,10 +212,10 @@ export const FooterStory = () => `
         <div class="henk-footer__section footer__section--terms">
           <h3 class="visually-hidden">Terms and Policies</h3>
           <ul class="henk-footer__small-print --no-bullets">
-            <li class="henk-footer__small-print-item"><a href="#" class="footer__link">Intellectual Property</a></li>
-            <li class="henk-footer__small-print-item"><a href="#" class="footer__link">Privacy Policy</a></li>
-            <li class="henk-footer__small-print-item"><a href="#" class="footer__link">Cookie Statement</a></li>
-            <li class="henk-footer__small-print-item"><a href="#" class="footer__link">Terms and Conditions</a></li>            
+            <li class="henk-footer__small-print-item"><a href="/en/intellectual-property" class="footer__link">Intellectual Property</a></li>
+            <li class="henk-footer__small-print-item"><a href="/en/privacy-policy-studio-h-k" class="footer__link">Privacy Policy</a></li>
+            <li class="henk-footer__small-print-item"><a href="/en/cookies" class="footer__link">Cookie Statement</a></li>
+            <li class="henk-footer__small-print-item"><a href="/en/terms-and-conditions-studio-h-k" class="footer__link">Terms and Conditions</a></li>            
           </ul>
         </div>
       </div>

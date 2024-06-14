@@ -3,15 +3,17 @@
 // current henk styles
 // import '../src/styles/_normalize.css';
 import "../src/styles/_font-face.css";
+import '../src/styles/tokens/_tokens-font.css';
+import '../src/styles/tokens/_tokens-colors.css';
+import '../src/styles/tokens/_tokens-size-font.css';
+import '../src/styles/tokens/_tokens-size-spacing.css';
+
 import "../src/styles/_config.css";
 import "../src/styles/base/_base.css";
 import "../src/styles/base/_base-typography-headings.css";
 import "../src/styles/base/_base-typography-fontsizes.css";
 import "../src/styles/base/_base-typography-fontweight.css";
 
-import '../src/styles/tokens/_tokens-colors.css';
-import '../src/styles/tokens/_tokens-size-font.css';
-import '../src/styles/tokens/_tokens-size-spacing.css';
 import "../src/styles/_backgrounds.css";
 
 import '../stories/components/base/henk-icon.css';

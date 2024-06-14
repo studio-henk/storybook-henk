@@ -1,15 +1,16 @@
 .henk-select {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-ui-border-default);
   border-radius: 4px;
-  font-size: 16px;
+  font-family: var(--font-body);
+  font-size: 1rem;
   line-height: 1.5;
   transition: border-color 0.3s;
 }
 
 .henk-select:focus {
-  border-color: #007bff;
+  border-color: var(--color-ui-border-primary);
   outline: none;
 }
 
@@ -17,3 +18,4 @@
   border-left: 3px solid #dc3545;
 }
 
+/* arrow */
