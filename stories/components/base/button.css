@@ -90,12 +90,21 @@
   padding-inline: 9px;
 }
 
-.henk-button:has(i.henk-icon) {
+/* .henk-button:has(i.henk-icon) {
 
-}
+} */
 
 .henk-button:has(.icon--large) {
   padding-block: 9px;
+}
+
+/* disabled state */
+.henk-button[disabled] {
+  --_color-button-background: var(--color-ui-surface-disabled);
+  --_color-button-text: var(--color-ui-text-disabled);
+  --_color-button-border: var(--color-ui-border-default);
+  
+  cursor: not-allowed;
 }
 
 /* loading state */

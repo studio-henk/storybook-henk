@@ -2,6 +2,8 @@
 
 import './usp-bar.css';
 import { Checkmark } from '../base/Icon.stories';
+import { CheckmarkMedium } from '../base/Icon.stories';
+import { CheckmarkSmall } from '../base/Icon.stories';
 
 export const createUspsBar = ({ 
   texts = ["Made to order in Europe", "Customisable design", "Assembled on delivery"], 
@@ -23,15 +25,9 @@ export const createUspsBar = ({
     const uspListItem = document.createElement("li");
     uspListItem.className = "usp-bar__list-item";
 
-    // if (showIcon) {
-    //   const icon = document.createElement("i");
-    //   icon.className = "icon-checkmark sh-atom-icon__svg";
-    //   icon.innerHTML = Checkmark();
-    //   uspListItem.appendChild(icon);
-    // }
-
     if (showIcon) {
-      const iconHTML = Checkmark(); // Get the HTML string from Checkmark()
+      // const iconHTML = Checkmark(); // Get the HTML string from Checkmark()
+      const iconHTML = CheckmarkSmall(); // Get the HTML string from CheckmarkSmall()
       const tempContainer = document.createElement('div'); // Create a temporary container
       tempContainer.innerHTML = iconHTML; // Set the innerHTML to the Checkmark() result
 

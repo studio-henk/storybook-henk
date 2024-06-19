@@ -7,6 +7,8 @@ export interface CreateSelectDropdownProps {
   name?: string;
   className?: string;
   required?: boolean;
+  customArrow?: boolean;
+  dataList?: boolean;
 }
 
 export const createSelectDropdown = ({
@@ -16,7 +18,9 @@ export const createSelectDropdown = ({
   name,
   className = 'henk-select',
   required = false,
-}: CreateSelectDropdownProps): HTMLSelectElement => {
+  customArrow = false,
+  dataList = false,
+}: CreateSelectDropdownProps): HTMLElement => {
   const select = document.createElement('select');
 
   if (id) {
@@ -44,6 +48,15 @@ export const createSelectDropdown = ({
     }
     select.appendChild(optionElement);
   });
+
+  if (customArrow) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'select-wrapper';
+
+    wrapper.appendChild(select);
+
+    return wrapper as HTMLElement;
+  }
 
   return select;
 };

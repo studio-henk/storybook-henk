@@ -46,7 +46,7 @@ const Template = ({ texts, showIcon, ...args }) => {
   return createUspsBar({ texts, showIcon, ...args });
 };
 
-// export const Default = Template.bind({});
+export const Default = Template.bind({});
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -68,10 +68,10 @@ Tertiary.args = {
 //   texts: ["<a href='#somewhere'>Made to order in Europe</a>", "<a href='#somewhere'>Customisable design</a>", "<a href='#somewhere'>Assembled on delivery</a>"],
 // };
 
-// export const DefaultWithIcons = Template.bind({});
-// DefaultWithIcons.args = {  
-//   showIcon: true,  
-// };
+export const DefaultWithIcons = Template.bind({});
+DefaultWithIcons.args = {  
+  showIcon: true,  
+};
 
 // export const Brand = Template.bind({});
 // Brand.args = {

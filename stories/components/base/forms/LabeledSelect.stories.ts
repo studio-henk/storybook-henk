@@ -56,6 +56,24 @@ export const Default = (args: LabeledSelectProps) => {
 };
 Default.args = {}; 
 
+export const WithCustomArrow = {
+    args: {
+        label: {
+            text: 'Label',
+            htmlFor: 'select-id',
+        },
+        select: {
+            options: ['Option 1', 'Option 2', 'Option 3'],
+            defaultOption: 'Option 1',
+            id: 'select-id',
+            name: 'select-name',
+            className: 'henk-select',
+            required: false,
+            customArrow: true,
+        },
+    },
+};
+
 export const Required = {
     args: {
         label: {

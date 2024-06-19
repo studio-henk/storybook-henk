@@ -36,7 +36,7 @@ export default {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
     },
-    onClick: { action: 'onClick' },    
+    onClick: { action: 'onClick' },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
@@ -68,6 +68,22 @@ export const Tertiary = {
   args: {
     label: 'Button',
     variant: 'tertiary',
+  },
+};
+
+export const Disabled = {
+  args: {
+    label: 'Button',
+    variant: 'default',
+    disabled: true,
+  },
+};
+
+export const PrimaryDisabled = {
+  args: {
+    label: 'Button',
+    variant: 'primary',
+    disabled: true,
   },
 };
 

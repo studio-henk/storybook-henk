@@ -184,6 +184,7 @@
   --color-ui-surface-success: var(--color-alias-success-light);
   --color-ui-surface-warning: var(--color-alias-warning-light);
   --color-ui-surface-danger: var(--color-alias-danger-light);
+  --color-ui-surface-disabled: var(--color-alias-neutral-light);
 
   /* surface dark */
   --color-ui-surface-default-dark: var(--color-alias-henk-white);

@@ -50,3 +50,9 @@ export const WithDifferentDefaultOption = {
         defaultOption: 'Option 2',
     },
 };
+
+export const WithCustomArrow = {
+    args: {
+        customArrow: true,
+    },
+};

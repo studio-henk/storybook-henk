@@ -2,7 +2,7 @@
 import './button.css';
 
 export const createButton = ({
-  buttonElement = 'a',
+  buttonElement = 'button',
   href,
   variant = 'default',
   label,
@@ -13,6 +13,8 @@ export const createButton = ({
   iconOnly = false,
   onClick,
   isLoading = false,
+  disabled = false,
+  target
 }) => {  
   const btn = document.createElement(buttonElement);
     if (isLoading) {
@@ -21,10 +23,19 @@ export const createButton = ({
 
     if (buttonElement === 'button') {
         btn.type = 'button';
+        if (disabled) {
+            btn.disabled = true;
+        }
     }
 
     if (buttonElement === 'a') {
         btn.href = href ? href : 'https://studio-henk.nl/en';
+        if (target) {
+            btn.target = target;
+        }
+        if (disabled) {
+            btn.setAttribute('aria-disabled', 'true');
+        }
     }
     
     if (buttonElement === 'span') {

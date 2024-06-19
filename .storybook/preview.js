@@ -14,7 +14,7 @@ import "../src/styles/base/_base-typography-headings.css";
 import "../src/styles/base/_base-typography-fontsizes.css";
 import "../src/styles/base/_base-typography-fontweight.css";
 
-import "../src/styles/_backgrounds.css";
+// import "../src/styles/_backgrounds.css";
 
 import '../stories/components/base/henk-icon.css';
 import '../stories/components/star-rating.css';
@@ -195,11 +195,12 @@ const preview = {
     options: {
       storySort: {
         order: [
+          'Welcome',
           'Colours', 
           ['Brand', 'Alias'],
           'Typography',
           'Components', 
-          ['Base', ['Paragraph', 'Headings', 'HeadingGroup', 'Icon', '*'], 'Bars'], 
+          ['Base', ['Paragraph', 'Headings', 'HeadingGroup', 'Icon', 'ContentDivider', '*'], 'Bars'], 
           '*'
         ],
       },
