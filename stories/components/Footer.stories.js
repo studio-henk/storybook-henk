@@ -5,7 +5,8 @@ import BcorpLogoSVG from '../assets/icons/b-corp.svg?raw';
 import { PinterestMedium, StarMedium, TikTokMedium, YoutubeMedium, InstagramMedium, FacebookMedium } from '../components/base/Icon.stories.js';
 
 export default {
-  title: 'Sections/Footer', // Define the title of your story
+  title: 'Sections/Footer',
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
@@ -39,7 +40,7 @@ export const FooterStory = () => `
           <div class="henk-footer__grid-column">
             <h3 class="henk-footer__heading h4"><a href="/en/about-us">About</a></h3>
             <ul class="henk-footer__list --no-bullets">
-              <li class="henk-footer__list-item"><a href="/en/about-us/" class="henk-footer__link">Abou HENK</a></li>
+              <li class="henk-footer__list-item"><a href="/en/about-us/" class="henk-footer__link">About HENK</a></li>
               <li class="henk-footer__list-item"><a href="/en/about-us/b-corp" class="henk-footer__link">Sustainability</a></li>              
               <li class="henk-footer__list-item"><a href="https://studio-henk.homerun.co/" class="henk-footer__link">Careers</a></li>              
               <li class="henk-footer__list-item"><a href="/en/contact" class="henk-footer__link">Contact</a></li>

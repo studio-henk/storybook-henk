@@ -180,7 +180,7 @@
   --color-ui-surface-tertiary: var(--color-alias-henk-black);
   --color-ui-surface-quaternary: var(--color-alias-henk-white);
   --color-ui-surface-highlight: var(--color-alias-highlight);
-  --color-ui-surface-information: var(--color-alias-information-light);  
+  --color-ui-surface-information: var(--color-alias-information-light);
   --color-ui-surface-success: var(--color-alias-success-light);
   --color-ui-surface-warning: var(--color-alias-warning-light);
   --color-ui-surface-danger: var(--color-alias-danger-light);
@@ -197,6 +197,7 @@
   /* text */
   --color-ui-text-default: var(--color-alias-henk-black);
   --color-ui-text-body: var(--color-alias-henk-black);
+  --color-ui-text-primary: var(--color-alias-primary, blue);
   --color-ui-text-action: var(--color-alias-primary, blue);
   --color-ui-text-action-hover: var(--color-alias-primary-dark, blue);
   --color-ui-text-disabled: var(--color-alias-neutral-default);
@@ -228,3 +229,13 @@
   --color-ui-border-on-warning: var(--color-alias-warning-dark);
   --color-ui-border-on-danger: var(--color-alias-danger-dark);
 }
+
+/* dark mode */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-ui-surface-default: var(--color-alias-base-black);
+    --color-ui-text-body: var(--color-alias-base-white);
+    --color-ui-text-action-hover: var(--color-alias-primary-light, blue);
+  }
+} */

@@ -21,7 +21,7 @@
 /* arrow */
 .select-wrapper {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .select-wrapper select.henk-select {

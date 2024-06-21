@@ -1,11 +1,7 @@
-import { StoryObj } from '@storybook/html';
+// Headings.stories.ts
 
-interface HeadingProps {
-    tag: string;
-    text: string;
-    weight?: 'normal' | 'semibold';
-    style?: 'normal' | 'italic';
-}
+import { StoryObj } from '@storybook/html';
+import { createHeadingElement, HeadingProps } from './Headings';
 
 type HeadingStory = StoryObj<HeadingProps>;
 
@@ -13,7 +9,6 @@ export default {
     title: 'Components/Base/Headings',
     tags: ['autodocs'],
     parameters: {
-        // badges: [BADGE.BETA],
         docs: {
             description: {
                 component: 'The ```<h1>``` to ```<h6>``` HTML elements represent six levels of section headings. ```<h1>``` is the highest section level and ```<h6>``` is the lowest. By default, all heading elements create a block-level box in the layout, starting on a new line and taking up the full width available in their containing block. All the levels come in font-weight normal, semibold and style italic.',
@@ -21,30 +16,18 @@ export default {
         },
         controls: { exclude: ['tag'] },
     },
-    render: ({ tag, text, weight = 'normal', style = 'normal' }) => {        
-        const classes: string[] = [];
-        if (weight === 'semibold') classes.push('fw-500');
-        if (style === 'italic') classes.push('fs-italic');
-        const className = classes.length > 0 ? ` class="${classes.join(' ')}"` : '';
-        return `<${tag}${className}>${text}</${tag}>`;
+    render: ({ tag, text, weight = 'normal', style = 'normal' }) => {
+        return createHeadingElement({ tag, text, weight, style }).outerHTML;
     },
 };
 
-// type HeadingStory = StoryObj<{ tag: string; text: string }>;
-
-/** font-size: 31px on small screens, grows to 39px on 1728px screen and then grows on.<br>
- * line-height: 32px on small screens, grows to 48px on 1728px screen and then grows on.
- */
 export const Heading1: HeadingStory = {
     args: {
         tag: 'h1',
-        text: 'Heading 1',        
+        text: 'Heading 1',
     },
 };
 
-/** font-size: 25px on small screens, grows to 31px on 1728px screen and then grows on.<br> 
- * line-height: 28px on small screens, grows to 39px on 1728px screen and then grows on.
-*/
 export const Heading2: HeadingStory = {
     args: {
         tag: 'h2',
@@ -52,7 +35,6 @@ export const Heading2: HeadingStory = {
     },
 };
 
-/** font-size: 20px on small screens, grows to 25px on 1728px screen and then grows on. */
 export const Heading3: HeadingStory = {
     args: {
         tag: 'h3',
@@ -60,7 +42,6 @@ export const Heading3: HeadingStory = {
     },
 };
 
-/** font-size: 16px on small screens, grows to 20px on 1728px screen and then grows on. */
 export const Heading4: HeadingStory = {
     args: {
         tag: 'h4',
@@ -68,7 +49,6 @@ export const Heading4: HeadingStory = {
     },
 };
 
-/** font-size: 16px on all screens. */
 export const Heading5: HeadingStory = {
     args: {
         tag: 'h5',
@@ -76,7 +56,6 @@ export const Heading5: HeadingStory = {
     },
 };
 
-/** font-size: 16px on all screens. */
 export const Heading6: HeadingStory = {
     args: {
         tag: 'h6',
@@ -84,21 +63,18 @@ export const Heading6: HeadingStory = {
     },
 };
 
-/** font-weight: 500. */
 export const Heading1Semibold: HeadingStory = {
     args: {
         tag: 'h1',
-        text: 'Heading 1',
+        text: 'Heading 1 Semibold',
         weight: 'semibold',
     },
 };
 
-/** font-style: italic. */
 export const Heading1Italic: HeadingStory = {
     args: {
         tag: 'h1',
-        text: 'Heading 1',
-        weight: 'normal',
+        text: 'Heading 1 Italic',
         style: 'italic',
     },
 };

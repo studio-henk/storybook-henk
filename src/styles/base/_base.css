@@ -29,8 +29,10 @@
 }
 
 ::selection {  
-  background-color: var(--color-ui-surface-primary, pink);
-  color: currentColor;
+  /* background-color: var(--color-ui-surface-primary, pink);
+  color: currentColor; */
+  background-color: var(--color-ui-surface-primary, blue);
+  color: var(--color-ui-text-on-primary, #fff);
 }
 
 html {
