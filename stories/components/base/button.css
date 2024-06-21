@@ -1,6 +1,7 @@
 .henk-button,
 ::part(henk-button) {  
-  --_color-button-background: var(--color-ui-surface-default);
+  /* --_color-button-background: var(--color-ui-surface-default); */
+  --_color-button-background: var(--color-ui-surface-transparent);
   --_color-button-text: var(--color-alias-primary);
   --_color-button-border: var(--color-alias-primary);
   background-color: var(--_color-button-background);
@@ -161,3 +162,11 @@
 .henk-button[data-state="loading"][data-accent="transparent"][data-text-color] {
   --color-border-button: var(--_color-button-text);
 }
+
+@media (prefers-color-scheme: dark) {
+  .henk-button--tertiary {
+    /* --_color-button-background: var(--color-ui-surface-tertiary);
+    --_color-button-text: var(--color-ui-text-on-tertiary); */
+    --_color-button-border: var(--color-ui-border-on-dark);
+  }
+} 

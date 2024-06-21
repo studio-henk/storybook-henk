@@ -211,7 +211,20 @@ const preview = {
         date: /Date$/i,
       },
     },
-    backgrounds: { disable: true },
+    backgrounds: { 
+      disable: false,
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: '#ffffff',
+        },
+        {
+          name: 'dark',
+          value: '#000000',
+        },
+      ],
+    },
   },
 };
 
