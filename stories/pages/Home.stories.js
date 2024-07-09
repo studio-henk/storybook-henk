@@ -3,6 +3,7 @@ import { createUspsBar } from '../components/usp-bar/usp-bar';
 import {HeroVideoStory} from '../components/HeroVideo.stories.js';
 import { FooterStory } from '../components/Footer.stories.js';
 import { NewsletterBlock } from '../sections/NewsletterBlock.stories';
+import { NewsletterBlockMinimal } from '../sections/NewsletterBlock.stories';
 import { createSectionHeader } from '../components/SectionHeader';
 import {createContentDivider } from '../components/base/content-divider/ContentDivider';
 import { FAQBlock } from '../sections/FAQ-block.stories';
@@ -61,10 +62,26 @@ export const HomePage = () => {
   // Create FAQ block
   homeContainer.appendChild(FAQBlock());
 
+  // create section header for newsletter form
+  const sectionHeaderNewsletter = createSectionHeader({
+    bgColor: 'primary',
+    id: 'section-header-newsletter',
+    title: 'Join our newsletter',
+    level: 2,
+    content: '<p>Enjoy exclusive invites to events, be the first to discover new interior treasures and read our most inspiring interior stories.</p>',    
+  });
+
+  // homeContainer.appendChild(sectionHeaderNewsletter);
+
   // Create newsletter form
   const newsletterFormContainer = document.createElement('div');
   newsletterFormContainer.innerHTML = NewsletterBlock(); 
   homeContainer.appendChild(newsletterFormContainer);
+
+  // Create newsletter form
+  // const newsletterFormContainerMinimal = document.createElement('div');
+  // newsletterFormContainerMinimal.innerHTML = NewsletterBlockMinimal(); 
+  // homeContainer.appendChild(newsletterFormContainerMinimal);
 
   // Create footer
   const footerContainer = document.createElement('div');

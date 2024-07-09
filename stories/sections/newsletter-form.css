@@ -24,6 +24,15 @@
   gap: 8px;
 }
 
+.henk-newsletter-form__title,
+.henk-newsletter-form__description {
+  max-width: 30em;
+}
+
+/* .henk-newsletter-form__description {
+  max-width: 30em;
+} */
+
 @media (min-width: 768px) {
   .henk-newsletter-form .henk-labeled-input .henk-input {
       margin-bottom: 0;
