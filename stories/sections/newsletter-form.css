@@ -42,11 +42,11 @@
       align-items: center;
   }
 
-  .henk-newsletter-form__title {
+  .henk-newsletter-form__title,
+  .henk-newsletter-form__description {
       text-align: center;
       text-wrap: balance;
-  }
-
+  }  
   
   .henk-newsletter-form__actions-container {
       flex-direction: row;
