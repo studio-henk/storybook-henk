@@ -2,7 +2,7 @@ import { PinterestSmall, StarSmall, TikTokSmall, YoutubeSmall } from '../compone
 import { InstagramSmall } from '../components/base/Icon.stories.js';
 import { FacebookSmall } from '../components/base/Icon.stories.js';
 import BcorpLogoSVG from '../assets/icons/b-corp.svg?raw';
-import { PinterestMedium, StarMedium, TikTokMedium, YoutubeMedium, InstagramMedium, FacebookMedium } from '../components/base/Icon.stories.js';
+import { Pinterest, StarMedium, TikTok, Youtube, Instagram, Facebook } from '../components/base/Icon.stories.js';
 
 export default {
   title: 'Sections/Footer',
@@ -108,33 +108,28 @@ export const FooterStory = () => `
           <h3 class="henk-footer__heading h4 visually-hidden">Follow Us</h3>
           <ul class="henk-footer__social-media henk-list henk-list--horizontal --no-bullets">              
             <li class="henk-footer__social-media-item">            
-              <a href="https://www.instagram.com/studiohenk/" class="henk-footer__social-media-link">
-               <!-- ${InstagramSmall()} --> 
-                ${InstagramMedium()}
+              <a href="https://www.instagram.com/studiohenk/" class="henk-footer__social-media-link">               
+                ${Instagram()}
               </a>
             </li>
             <li class="henk-footer__social-media-item">
               <a href="https://www.facebook.com/studiohenk/" class="henk-footer__social-media-link">
-                <!-- ${FacebookSmall()} -->
-                ${FacebookMedium()}
+                ${Facebook()}
               </a>
             </li>
             <li class="henk-footer__social-media-item">
               <a href="https://www.tiktok.com/@studiohenk" class="henk-footer__social-media-link">
-                <!-- ${TikTokSmall()} -->
-                ${TikTokMedium()}
+                ${TikTok()}
               </a>
             </li>
             <li class="henk-footer__social-media-item">
               <a href="https://nl.pinterest.com/studiohenk/" class="henk-footer__social-media-link">
-                <!-- ${PinterestSmall()} -->
-                ${PinterestMedium()}
+                ${Pinterest()}
               </a>
             </li>
             <li class="henk-footer__social-media-item">
               <a href="https://www.youtube.com/channel/UC_RBQhav2vf-zwLTIr-xHQg" class="henk-footer__social-media-link">
-                <!-- ${YoutubeSmall()} -->
-                ${YoutubeMedium()}
+                ${Youtube()}
               </a>
             </li>            
           </ul>
@@ -195,15 +190,15 @@ export const FooterStory = () => `
             <li class="henk-footer__payment-logo-item">
               <svg width="52" height="17" viewBox="0 0 52 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1490_308)">
-                <path d="M22.7155 16.5692H18.6379L21.1883 1.08074H25.2658L22.7155 16.5692Z" fill="white"/>
-                <path d="M37.4973 1.45939C36.693 1.14601 35.4174 0.799988 33.84 0.799988C29.8132 0.799988 26.9776 2.90894 26.9602 5.9241C26.9267 8.14868 28.9904 9.38427 30.5339 10.126C32.1115 10.884 32.6477 11.3787 32.6477 12.0543C32.6317 13.0919 31.3729 13.5702 30.199 13.5702C28.571 13.5702 27.6987 13.3236 26.3731 12.7463L25.8361 12.4989L25.2655 15.9757C26.2219 16.4036 27.9839 16.7833 29.8132 16.8C34.0917 16.8 36.8772 14.7237 36.9102 11.5105C36.9265 9.74737 35.8368 8.39637 33.4875 7.2924C32.0613 6.58373 31.1879 6.10587 31.1879 5.38077C31.2046 4.72159 31.9266 4.04641 33.5365 4.04641C34.8621 4.01335 35.8361 4.32629 36.574 4.63946L36.9428 4.80393L37.4973 1.45939Z" fill="white"/>
-                <path d="M42.9168 11.0822C43.2526 10.1924 44.5448 6.74863 44.5448 6.74863C44.5279 6.7817 44.88 5.84242 45.0813 5.26579L45.3663 6.60037C45.3663 6.60037 46.1384 10.3078 46.3061 11.0822C45.6689 11.0822 43.7222 11.0822 42.9168 11.0822ZM47.9502 1.08074H44.7961C43.8235 1.08074 43.0845 1.36062 42.6649 2.36582L36.6081 16.5689H40.8866C40.8866 16.5689 41.591 14.6573 41.7424 14.2456H46.9777C47.0948 14.7894 47.4643 16.5689 47.4643 16.5689H51.2398L47.9502 1.08074Z" fill="white"/>
-                <path d="M15.2321 1.08074L11.2388 11.6424L10.8024 9.50034C10.0641 7.02873 7.74869 4.34338 5.16479 3.00815L8.82256 16.5527H13.1345L19.5439 1.08074H15.2321Z" fill="white"/>
-                <path d="M7.5307 1.08075H0.970193L0.903076 1.3937C6.02069 2.679 9.40988 5.7765 10.8024 9.50034L9.37631 2.38269C9.14151 1.39348 8.41995 1.11338 7.5307 1.08075Z" fill="white"/>
+                <path d="M22.7155 16.5692H18.6379L21.1883 1.08074H25.2658L22.7155 16.5692Z" fill="black"/>
+                <path d="M37.4973 1.45939C36.693 1.14601 35.4174 0.799988 33.84 0.799988C29.8132 0.799988 26.9776 2.90894 26.9602 5.9241C26.9267 8.14868 28.9904 9.38427 30.5339 10.126C32.1115 10.884 32.6477 11.3787 32.6477 12.0543C32.6317 13.0919 31.3729 13.5702 30.199 13.5702C28.571 13.5702 27.6987 13.3236 26.3731 12.7463L25.8361 12.4989L25.2655 15.9757C26.2219 16.4036 27.9839 16.7833 29.8132 16.8C34.0917 16.8 36.8772 14.7237 36.9102 11.5105C36.9265 9.74737 35.8368 8.39637 33.4875 7.2924C32.0613 6.58373 31.1879 6.10587 31.1879 5.38077C31.2046 4.72159 31.9266 4.04641 33.5365 4.04641C34.8621 4.01335 35.8361 4.32629 36.574 4.63946L36.9428 4.80393L37.4973 1.45939Z" fill="black"/>
+                <path d="M42.9168 11.0822C43.2526 10.1924 44.5448 6.74863 44.5448 6.74863C44.5279 6.7817 44.88 5.84242 45.0813 5.26579L45.3663 6.60037C45.3663 6.60037 46.1384 10.3078 46.3061 11.0822C45.6689 11.0822 43.7222 11.0822 42.9168 11.0822ZM47.9502 1.08074H44.7961C43.8235 1.08074 43.0845 1.36062 42.6649 2.36582L36.6081 16.5689H40.8866C40.8866 16.5689 41.591 14.6573 41.7424 14.2456H46.9777C47.0948 14.7894 47.4643 16.5689 47.4643 16.5689H51.2398L47.9502 1.08074Z" fill="black"/>
+                <path d="M15.2321 1.08074L11.2388 11.6424L10.8024 9.50034C10.0641 7.02873 7.74869 4.34338 5.16479 3.00815L8.82256 16.5527H13.1345L19.5439 1.08074H15.2321Z" fill="black"/>
+                <path d="M7.5307 1.08075H0.970193L0.903076 1.3937C6.02069 2.679 9.40988 5.7765 10.8024 9.50034L9.37631 2.38269C9.14151 1.39348 8.41995 1.11338 7.5307 1.08075Z" fill="black"/>
                 </g>
                 <defs>
                 <clipPath id="clip0_1490_308">
-                <rect width="51.2" height="16" fill="white" transform="translate(0.471436 0.800049)"/>
+                <rect width="51.2" height="16" fill="black" transform="translate(0.471436 0.800049)"/>
                 </clipPath>
                 </defs>
               </svg>            
