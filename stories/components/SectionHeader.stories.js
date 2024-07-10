@@ -26,7 +26,7 @@ export default {
     buttonText: { control: 'text' },
     buttonVariant: {
       control: { type: 'select' },
-      options: ['default', 'primary', 'secondary', 'tertiary'],
+      options: ['default', 'default-inverted'],
     }
   },
 };
@@ -46,24 +46,24 @@ Default.args = {
   buttonVariant: 'default',
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-  ...Default.args,
-  bgColor: 'primary',
+// export const Primary = Template.bind({});
+// Primary.args = {
+//   ...Default.args,
+//   bgColor: 'primary',
   
-};
+// };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  ...Default.args,
-  bgColor: 'secondary',
-};
+// export const Secondary = Template.bind({});
+// Secondary.args = {
+//   ...Default.args,
+//   bgColor: 'secondary',
+// };
 
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  ...Default.args,
-  bgColor: 'tertiary',
-}
+// export const Tertiary = Template.bind({});
+// Tertiary.args = {
+//   ...Default.args,
+//   bgColor: 'tertiary',
+// }
 
 // export const Highlight = Template.bind({});
 // Highlight.args = {

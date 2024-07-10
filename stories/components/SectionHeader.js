@@ -1,6 +1,4 @@
 // sectionHeader.js
-// import './_SectionHeader.css';
-// import './_SectionHeader.css';
 import './section-header.css';
 
 export const createSectionHeader = ({

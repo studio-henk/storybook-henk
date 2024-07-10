@@ -1,5 +1,4 @@
 .usp-bar {    
-    /* width: max-content; */ 
     width: 100%;   
     padding: 4px 0;
     position: fixed;
@@ -8,27 +7,28 @@
     z-index: 1000;
     display: flex;
     place-content: center;
-    background-color: var(--color-ui-surface-tertiary);
-    color: var(--color-ui-text-on-tertiary);
+    background-color: var(--color-ui-surface-neutral-01);
+    color: var(--color-ui-text-default);
 }
 
-.usp-bar.usp-bar--bg-primary {
+/* .usp-bar.usp-bar--bg-primary {
     background-color: var(--color-ui-surface-primary);
     color: var(--color-ui-text-on-primary);
-}
+} */
 
-.usp-bar.usp-bar--bg-secondary {    
+/* .usp-bar.usp-bar--bg-secondary {    
     background-color: var(--color-ui-surface-secondary);
     color: var(--color-ui-text-on-secondary);
-}
+} */
 
-.usp-bar.usp-bar--bg-tertiary {
+/* .usp-bar.usp-bar--bg-tertiary {
     background-color: var(--color-ui-surface-tertiary);
     color: var(--color-ui-text-on-tertiary);
-}
+} */
 
 .usp-bar a {
   text-decoration: none;
+  color: var(--color-ui-text-default);
 }
 
 .usp-bar__list {
