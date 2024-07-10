@@ -12,9 +12,6 @@
 }
 
 .info-box a {
-  /* color: var(--color-ui-text-on-success); */
-  /* --color-ui-text-action: var(--color-ui-text-on-success);  */
-  /* --color-ui-text-action: inherit; */
   --color-ui-text-action: currentcolor;
   --color-ui-text-action-hover: currentcolor;
 }

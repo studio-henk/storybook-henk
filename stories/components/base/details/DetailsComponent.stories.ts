@@ -2,7 +2,7 @@ import { createDetailsComponent, DetailsProps } from './DetailsComponent';
 
 // Define the Storybook story
 export default {
-    title: 'Components/base/DetailsComponent',
+    title: 'Components/Base/DetailsComponent',
     component: createDetailsComponent,
     argTypes: {
         summary: { control: 'text' },

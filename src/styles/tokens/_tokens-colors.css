@@ -174,21 +174,10 @@
 
   /* surface */
   --color-ui-surface-default: var(--color-alias-base-white);
-  --color-ui-surface-neutral: var(--color-alias-neutral-default);
-  --color-ui-surface-neutral-light: var(--color-alias-neutral-light); 
-  --color-ui-surface-neutral-dark: var(--color-alias-neutral-dark);
-  --color-ui-surface-neutral-darker: var(--color-alias-neutral-darker);
-  --color-ui-surface-black: var(--color-alias-base-black);
-
-
-  --color-ui-surface-neutral-01: var(--color-alias-henk-white); 
-  --color-ui-surface-neutral-02: var(--color-alias-henk-black);
+  --color-ui-surface-neutral: var(--color-alias-neutral-lighter);
+  --color-ui-surface-henk-white: var(--color-alias-henk-white);
+  --color-ui-surface-henk-black: var(--color-alias-henk-black);  
   --color-ui-surface-transparent: var(--color-alias-base-transparent);
-  --color-ui-surface-primary: var(--color-alias-primary);
-  --color-ui-surface-secondary: var(--color-alias-secondary);
-  --color-ui-surface-tertiary: var(--color-alias-henk-black);
-  --color-ui-surface-quaternary: var(--color-alias-henk-white);
-  --color-ui-surface-highlight: var(--color-alias-highlight);
   --color-ui-surface-information: var(--color-alias-information-light);
   --color-ui-surface-success: var(--color-alias-success-light);
   --color-ui-surface-warning: var(--color-alias-warning-light);
@@ -198,15 +187,11 @@
   /* text */
   --color-ui-text-default: var(--color-alias-henk-black);
   --color-ui-text-body: var(--color-alias-henk-black);
-  --color-ui-text-on-neutral-02: var(--color-alias-henk-white);
+  --color-ui-text-on-henk-black: var(--color-alias-henk-white); 
   --color-ui-text-primary: var(--color-alias-primary, blue);
-  --color-ui-text-action: var(--color-alias-primary, blue);
-  --color-ui-text-action-hover: var(--color-alias-primary-dark, blue);
-  --color-ui-text-disabled: var(--color-alias-neutral-default);
-  --color-ui-text-on-primary: var(--color-alias-neutral-lighter);
-  --color-ui-text-on-secondary: var(--color-alias-primary);
-  --color-ui-text-on-tertiary: var(--color-alias-henk-white);
-  --color-ui-text-on-highlight: var(--color-alias-base-black);
+  --color-ui-text-action: var(--color-alias-henk-black, #000);
+  --color-ui-text-action-hover: var(--color-alias-base-black, #000);
+  --color-ui-text-disabled: var(--color-alias-neutral-default);    
   --color-ui-text-on-information: var(--color-alias-information-dark);
   --color-ui-text-on-success: var(--color-alias-success-dark);
   --color-ui-text-on-warning: var(--color-alias-warning-dark);
@@ -218,15 +203,17 @@
 
   /* border */
   --color-ui-border-default: var(--color-alias-neutral-light);
-  --color-ui-border-neutral-01: var(--color-alias-henk-black);
-  --color-ui-border-primary: var(--color-alias-primary);
+  --color-ui-border-neutral: var(--color-alias-neutral);
+  --color-ui-border-henk-black: var(--color-alias-henk-black);
+  --color-ui-border-henk-white: var(--color-alias-henk-white);
+  /* --color-ui-border-primary: var(--color-alias-primary);
   --color-ui-border-secondary: var(--color-alias-secondary);
   --color-ui-border-tertiary: var(--color-alias-base-black);
-  --color-ui-border-highlight: var(--color-alias-highlight);
-  --color-ui-border-on-primary: var(--color-alias-neutral-light);
+  --color-ui-border-highlight: var(--color-alias-highlight); */
+  /* --color-ui-border-on-primary: var(--color-alias-neutral-light);
   --color-ui-border-on-secondary: var(--color-alias-primary);
   --color-ui-border-on-tertiary: var(--color-alias-secondary);
-  --color-ui-border-on-highlight: var(--color-alias-primary);
+  --color-ui-border-on-highlight: var(--color-alias-primary); */
   --color-ui-border-on-information: var(--color-alias-information-dark);
   --color-ui-border-on-success: var(--color-alias-success-dark);
   --color-ui-border-on-warning: var(--color-alias-warning-dark);
@@ -236,9 +223,9 @@
 
 /* dark mode */ 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --color-ui-surface-default: var(--color-alias-base-black); 
     --color-ui-text-default: var(--color-alias-henk-white);
   }
-}
+} */

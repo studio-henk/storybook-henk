@@ -1,8 +1,8 @@
 .henk-button,
 ::part(henk-button) {    
-  --_color-button-background: var(--color-ui-surface-neutral-02);
-  --_color-button-text: var(--color-ui-text-on-neutral-02);
-  --_color-button-border: var(--color-ui-border-neutral-01);
+  --_color-button-background: var(--color-ui-surface-henk-black);
+  --_color-button-text: var(--color-ui-text-on-henk-black);
+  --_color-button-border: var(--color-ui-border-henk-black);
   
   background-color: var(--_color-button-background);
   color: var(--_color-button-text);
@@ -31,13 +31,11 @@
 .henk-button--default-inverted {  
   --_color-button-background: var(--color-ui-surface-transparent);
   --_color-button-text: var(--color-ui-text-default, #000);
-  --_color-button-border: var(--color-ui-border-neutral-01);
 }
 
 .henk-button--default-inverted:hover {
-  --_color-button-background: var(--color-ui-surface-neutral-02 );
-  --_color-button-text: var(--color-ui-text-on-neutral-02, #fff);
-  --_color-button-border: var(--color-ui-border-neutral-01);
+  --_color-button-background: var(--color-ui-surface-henk-black, #000);
+  --_color-button-text: var(--color-ui-text-on-henk-black, #fff);
 }  
 
 /* .henk-button--primary,

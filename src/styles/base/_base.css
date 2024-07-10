@@ -16,10 +16,6 @@
   box-sizing: border-box;
 }
 
-/*TODO: discuss*/
-/* *:focus {
-  outline: none;
-} */
 :focus-visible {
   outline-style: solid;
   outline-width: 2px;
@@ -29,8 +25,6 @@
 }
 
 ::selection {  
-  /* background-color: var(--color-ui-surface-primary, pink);
-  color: currentColor; */
   background-color: var(--color-ui-surface-primary, blue);
   color: var(--color-ui-text-on-primary, #fff);
 }
@@ -109,17 +103,15 @@ a {
   text-underline-offset: 0.0875em;
   text-decoration-thickness: 1px;
   text-decoration-color: var(--color-ui-text-action);
-  /* transition: color 0.2s ease; */
   transition: all 0.3s ease;
 }
 
 a:focus,
 a:hover {
-  /* --color-ui-text-action: var(--color-henk-black); */
-  --color-ui-text-action: var(--color-ui-text-action-hover, red);
-  text-decoration-style: dashed;
+  --color-ui-text-action: var(--color-ui-text-action-hover, #000);
+  /* text-decoration-style: dashed; */
   text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
+  /* text-decoration-thickness: 2px; */
   text-decoration-color: var(--color-ui-text-action-hover);
 }
 

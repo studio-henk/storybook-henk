@@ -25,11 +25,11 @@ export const Default = {
     
 };
 
-export const Primary = {
-    args: {
-        variant: 'primary',
-    }
-};
+// export const Primary = {
+//     args: {
+//         variant: 'primary',
+//     }
+// };
 
 export const DefaultWithMargin = {
     args: {
