@@ -1,9 +1,9 @@
 .henk-button,
-::part(henk-button) {  
-  /* --_color-button-background: var(--color-ui-surface-default); */
-  --_color-button-background: var(--color-ui-surface-transparent);
-  --_color-button-text: var(--color-alias-primary);
-  --_color-button-border: var(--color-alias-primary);
+::part(henk-button) {    
+  --_color-button-background: var(--color-ui-surface-neutral-02);
+  --_color-button-text: var(--color-ui-text-on-neutral-02);
+  --_color-button-border: var(--color-ui-border-neutral-01);
+  
   background-color: var(--_color-button-background);
   color: var(--_color-button-text);
   border: 1px solid var(--_color-button-border);
@@ -24,53 +24,59 @@
 }
 
 .henk-button:hover,
-:hover span.henk-button,
-::part(henk-button):hover,
-::part(henk-button):hover span {
-  --_color-button-background: var(--color-ui-surface-quaternary);
-  --_color-button-text: var(--color-alias-primary-dark);
-  --_color-button-border: var(--color-alias-primary-dark);
+:hover span.henk-button {
+  --_color-button-background: var(--color-ui-surface-black, #666);    
 }
 
-.henk-button--primary,
-::part(henk-button--primary) {
-  --_color-button-background: var(--color-ui-surface-primary);
-  /* --_color-button-text: var(--color-alias-base-white); */
+.henk-button--default-inverted {  
+  --_color-button-background: var(--color-ui-surface-transparent);
+  --_color-button-text: var(--color-ui-text-default, #000);
+  --_color-button-border: var(--color-ui-border-neutral-01);
+}
+
+.henk-button--default-inverted:hover {
+  --_color-button-background: var(--color-ui-surface-neutral-02 );
+  --_color-button-text: var(--color-ui-text-on-neutral-02, #fff);
+  --_color-button-border: var(--color-ui-border-neutral-01);
+}  
+
+/* .henk-button--primary,
+::part(henk-button--primary) {  
   --_color-button-text: var(--color-ui-text-on-primary);
   --_color-button-border: var(--color-ui-border-primary);
-}
+} */
 
-.henk-button--primary:hover {
+/* .henk-button--primary:hover {
   --_color-button-background: var(--color-alias-primary-dark);
   --_color-button-text: var(--color-ui-text-on-primary);
   --_color-button-border: var(--color-alias-primary-dark);
-}
+} */
 
-.henk-button--secondary {
+/* .henk-button--secondary {
  --_color-button-background: var(--color-ui-surface-secondary);
  --_color-button-text: var(--color-ui-text-on-secondary);
  --_color-button-border: var(--color-ui-border-secondary); 
-}
+} */
 
-.henk-button--secondary:hover {
+/* .henk-button--secondary:hover {
   --_color-button-background: var(--color-alias-secondary-dark);
   --_color-button-text: var(--color-ui-text-on-secondary);
   --_color-button-border: var(--color-alias-secondary-dark);
-}
+} */
 
-.henk-button--default,
+/* .henk-button--default,
 .henk-button--tertiary {
   --_color-button-background: var(--color-ui-surface-tertiary);
   --_color-button-text: var(--color-ui-text-on-tertiary);
   --_color-button-border: var(--color-ui-border-tertiary);
-}
+} */
 
-.henk-button--default:hover,
+/* .henk-button--default:hover,
 .henk-button--tertiary:hover {
   --_color-button-background: var(--color-alias-tertiary-dark);
   --_color-button-text: var(--color-ui-text-on-tertiary);
   --_color-button-border: var(--color-alias-tertiary-dark);
-}
+} */
 
 /* same colour on top of same color */
 [class*="--BG-primary"] .henk-button--primary,

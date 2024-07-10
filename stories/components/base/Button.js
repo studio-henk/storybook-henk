@@ -2,9 +2,9 @@
 import './button.css';
 
 export const createButton = ({
-  buttonElement = 'button',
+  buttonElement = 'a',
   href,
-  variant = 'default',
+  variant,
   label,
   title,
   iconSvg = '',
@@ -15,32 +15,32 @@ export const createButton = ({
   isLoading = false,
   disabled = false,
   target
-}) => {  
+}) => {
   const btn = document.createElement(buttonElement);
-    if (isLoading) {
-      btn.setAttribute('data-state', 'loading');
-    }
+  if (isLoading) {
+    btn.setAttribute('data-state', 'loading');
+  }
 
-    if (buttonElement === 'button') {
-        btn.type = 'button';
-        if (disabled) {
-            btn.disabled = true;
-        }
+  if (buttonElement === 'button') {
+    btn.type = 'button';
+    if (disabled) {
+      btn.disabled = true;
     }
+  }
 
-    if (buttonElement === 'a') {
-        btn.href = href ? href : 'https://studio-henk.nl/en';
-        if (target) {
-            btn.target = target;
-        }
-        if (disabled) {
-            btn.setAttribute('aria-disabled', 'true');
-        }
+  if (buttonElement === 'a') {
+    btn.href = href ? href : 'https://studio-henk.nl/en';
+    if (target) {
+      btn.target = target;
     }
-    
-    if (buttonElement === 'span') {
-        btn.role = 'presentation';
+    if (disabled) {
+      btn.setAttribute('aria-disabled', 'true');
     }
+  }
+
+  if (buttonElement === 'span') {
+    btn.role = 'presentation';
+  }
 
   const sizeClass = `icon--${iconSize}`;
   const iconHtml = iconSvg ? `<i class="henk-icon ${sizeClass}">${iconSvg}</i>` : '';
@@ -56,10 +56,15 @@ export const createButton = ({
     btn.innerHTML = iconHtml; // Icon only button
     if (!buttonElement === 'span') {
       btn.ariaLabel = label;
-    }    
+    }
   }
-  
-  const classNames = ['henk-button', `henk-button--${variant}`];
+
+  // const classNames = ['henk-button', `henk-button--${variant}`];
+  const classNames = ['henk-button'];
+  if (variant) {
+    classNames.push(`henk-button--${variant}`);
+  }
+
   if (iconOnly) {
     classNames.push('henk-button--icon-only');
   }

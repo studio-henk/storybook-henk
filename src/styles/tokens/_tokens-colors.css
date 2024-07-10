@@ -174,8 +174,16 @@
 
   /* surface */
   --color-ui-surface-default: var(--color-alias-base-white);
-  --color-ui-surface-neutral: var(--color-alias-neutral-lighter);
+  --color-ui-surface-neutral: var(--color-alias-neutral-default);
+  --color-ui-surface-neutral-light: var(--color-alias-neutral-light); 
+  --color-ui-surface-neutral-dark: var(--color-alias-neutral-dark);
+  --color-ui-surface-neutral-darker: var(--color-alias-neutral-darker);
+  --color-ui-surface-black: var(--color-alias-base-black);
+
+
   --color-ui-surface-neutral-01: var(--color-alias-henk-white); 
+  --color-ui-surface-neutral-02: var(--color-alias-henk-black);
+  --color-ui-surface-transparent: var(--color-alias-base-transparent);
   --color-ui-surface-primary: var(--color-alias-primary);
   --color-ui-surface-secondary: var(--color-alias-secondary);
   --color-ui-surface-tertiary: var(--color-alias-henk-black);
@@ -190,6 +198,7 @@
   /* text */
   --color-ui-text-default: var(--color-alias-henk-black);
   --color-ui-text-body: var(--color-alias-henk-black);
+  --color-ui-text-on-neutral-02: var(--color-alias-henk-white);
   --color-ui-text-primary: var(--color-alias-primary, blue);
   --color-ui-text-action: var(--color-alias-primary, blue);
   --color-ui-text-action-hover: var(--color-alias-primary-dark, blue);

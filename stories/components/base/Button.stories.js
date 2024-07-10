@@ -1,42 +1,41 @@
-import { fn } from '@storybook/test';
-import { createButton } from './Button.js';
+import { fn } from "@storybook/test";
+import { createButton } from "./Button.js";
 // Import the raw SVG
-import ShareIcon from '../../assets/icons/icon-share.svg?raw';
+import ShareIcon from "../../assets/icons/icon-share.svg?raw";
 
 export default {
-  title: 'Components/Base/Button/Button',
-  tags: ['autodocs'],
+  title: "Components/Base/Button/Button",
+  tags: ["autodocs"],
   render: ({ label, ...args }) => {
     return createButton({ label, ...args });
   },
   argTypes: {
     buttonElement: {
-      control: { type: 'radio' },
-      options: ['a', 'button', 'span'],
-      table: {
-        type: { summary: 'html element' },
-        defaultValue: { summary: 'a' },
-      },
+      control: { type: "radio" },
+      options: ["a", "button", "span"],      
     },
     variant: {
       name: "variant",
       type: { name: "string", required: false },
       description: "Variant of the button",
-      table: { type: { summary: "string" }, defaultValue: { summary: "Default" } },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "Default" },
+      },
       control: "select",
       options: ["default", "primary", "secondary", "tertiary"],
     },
-    label: { control: 'text' },
-    isLoading: { control: 'boolean' },
+    label: { control: "text" },
+    isLoading: { control: "boolean" },
     iconPosition: {
-      control: { type: 'select', },
-      options: ['left', 'right'],
+      control: { type: "select" },
+      options: ["left", "right"],
     },
     iconSize: {
-      control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
     },
-    onClick: { action: 'onClick' },
+    onClick: { action: "onClick" },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
@@ -44,89 +43,102 @@ export default {
 
 export const Default = {
   args: {
-    label: 'Button',
-    variant: 'default',
+    label: "Button",
+    buttonElement: "a",
   },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary = {
+export const DefaultAsButton = {
   args: {
-    label: 'Button',
-    variant: 'primary',
+    label: "Button",
+    buttonElement: "button",
   },
 };
 
-export const Secondary = {
+export const DefaultInverted = {
   args: {
-    label: 'Button',
-    variant: 'secondary',
+    label: "Button",
+    variant: "default-inverted",
   },
 };
 
-export const Tertiary = {
-  args: {
-    label: 'Button',
-    variant: 'tertiary',
-  },
-};
+// export const Primary = {
+//   args: {
+//     label: "Button",
+//     variant: "primary",
+//   },
+// };
+
+// export const Secondary = {
+//   args: {
+//     label: "Button",
+//     variant: "secondary",
+//   },
+// };
+
+// export const Tertiary = {
+//   args: {
+//     label: "Button",
+//     variant: "tertiary",
+//   },
+// };
 
 export const Disabled = {
   args: {
-    label: 'Button',
-    variant: 'default',
+    label: "Button",
+    variant: "default",
     disabled: true,
   },
 };
 
-export const PrimaryDisabled = {
-  args: {
-    label: 'Button',
-    variant: 'primary',
-    disabled: true,
-  },
-};
+// export const PrimaryDisabled = {
+//   args: {
+//     label: "Button",
+//     variant: "primary",
+//     disabled: true,
+//   },
+// };
 
 export const WithIconLeft = {
   args: {
-    label: 'Button text',
-    variant: 'default',
-    buttonElement: 'a',
+    label: "Button text",
+    variant: "default",
+    buttonElement: "a",
     iconSvg: ShareIcon,
-    iconPosition: 'left',
+    iconPosition: "left",
   },
 };
 
 export const WithIconRight = {
   args: {
-    label: 'Button text',
-    variant: 'default',
-    buttonElement: 'a',
+    label: "Button text",
+    variant: "default",
+    buttonElement: "a",
     iconSvg: ShareIcon,
-    iconPosition: 'right',
+    iconPosition: "right",
   },
 };
 
 export const IconOnly = {
   args: {
-    buttonElement: 'button',
-    variant: 'primary',
-    label: 'Share',
-    title: 'Share this page',
+    buttonElement: "button",
+    variant: "default",
+    label: "Share",
+    title: "Share this page",
     iconSvg: ShareIcon,
-    iconSize: 'large',
+    iconSize: "large",
     iconOnly: true,
-    onClick: () => alert('Icon button clicked!'),
+    onClick: () => alert("Icon button clicked!"),
   },
   parameters: {
-    controls: { exclude: ['iconPosition', 'iconOnly'] },
+    controls: { exclude: ["iconPosition", "iconOnly"] },
   },
 };
 
 export const Loading = {
   args: {
-    label: 'Loading',
-    variant: 'default',
+    label: "Loading",
+    variant: "default",
     isLoading: true,
   },
 };
