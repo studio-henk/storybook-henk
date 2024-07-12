@@ -25,6 +25,10 @@ export default {
       control: "select",
       options: ["default", "primary", "secondary", "tertiary"],
     },
+    size: {
+      control: { type: "radio" },
+      options: ["regular", "small"],      
+    },
     label: { control: "text" },
     isLoading: { control: "boolean" },
     iconPosition: {
@@ -48,33 +52,33 @@ export const Default = {
   },
 };
 
-export const DefaultAsButton = {
-  args: {
-    label: "Button",
-    buttonElement: "button",
-  },
-};
-
-export const DefaultInverted = {
-  args: {
-    label: "Button",
-    variant: "default-inverted",
-  },
-};
-
-// export const Primary = {
+// export const DefaultAsButton = {
 //   args: {
 //     label: "Button",
-//     variant: "primary",
+//     buttonElement: "button",
 //   },
 // };
 
-// export const Secondary = {
+// export const DefaultInverted = {
 //   args: {
 //     label: "Button",
-//     variant: "secondary",
+//     variant: "default-inverted",
 //   },
 // };
+
+export const Primary = {
+  args: {
+    label: "Button",
+    variant: "primary",
+  },
+};
+
+export const Secondary = {
+  args: {
+    label: "Button",
+    variant: "secondary",
+  },
+};
 
 // export const Tertiary = {
 //   args: {
@@ -82,6 +86,16 @@ export const DefaultInverted = {
 //     variant: "tertiary",
 //   },
 // };
+
+export const OutlineLight = {
+  args: {
+    label: "Button",
+    variant: "outline-light",
+  },
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+};
 
 export const Disabled = {
   args: {
@@ -140,5 +154,13 @@ export const Loading = {
     label: "Loading",
     variant: "default",
     isLoading: true,
+  },
+};
+
+export const Small = {
+  args: {
+    label: "Small Button",
+    variant: "default",
+    size: "small",
   },
 };

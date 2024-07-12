@@ -118,19 +118,19 @@
   /* alias */
 
   /* primary */
-  --color-alias-primary: var(--color-brand-blue);
-  --color-alias-primary-dark: var(--color-brand-blue-dark);
-  --color-alias-primary-light: var(--color-brand-blue-light);
+  --color-alias-primary: var(--color-brand-base-black);
+  /* --color-alias-primary-dark: var(--color-brand-blue-dark);
+  --color-alias-primary-light: var(--color-brand-blue-light); */
 
   /* secondary */
-  --color-alias-secondary: var(--color-brand-butter-yellow);
-  --color-alias-secondary-dark: var(--color-brand-butter-yellow-dark);
-  --color-alias-secondary-light: var(--color-brand-butter-yellow-light);
+  --color-alias-secondary: var(--color-brand-base-white);
+  /* --color-alias-secondary-dark: var(--color-brand-butter-yellow-dark);
+  --color-alias-secondary-light: var(--color-brand-butter-yellow-light); */
 
   /* tertiary */
-  --color-alias-tertiary: var(--color-brand-ral-9005);
+  /* --color-alias-tertiary: var(--color-brand-ral-9005);
   --color-alias-tertiary-dark: var(--color-brand-grey-darker);
-  --color-alias-tertiary-light: var(--color-brand-grey-dark);
+  --color-alias-tertiary-light: var(--color-brand-grey-dark); */
 
   /* highlight */
   --color-alias-highlight: var(--color-brand-orange-default);
@@ -174,9 +174,12 @@
 
   /* surface */
   --color-ui-surface-default: var(--color-alias-base-white);
+  --color-ui-surface-primary: var(--color-alias-primary);
+  --color-ui-surface-secondary: var(--color-alias-secondary);
   --color-ui-surface-neutral: var(--color-alias-neutral-lighter);
   --color-ui-surface-henk-white: var(--color-alias-henk-white);
   --color-ui-surface-henk-black: var(--color-alias-henk-black);  
+  --color-ui-surface-black: var(--color-alias-base-black);  
   --color-ui-surface-transparent: var(--color-alias-base-transparent);
   --color-ui-surface-information: var(--color-alias-information-light);
   --color-ui-surface-success: var(--color-alias-success-light);
@@ -188,7 +191,8 @@
   --color-ui-text-default: var(--color-alias-henk-black);
   --color-ui-text-body: var(--color-alias-henk-black);
   --color-ui-text-on-henk-black: var(--color-alias-henk-white); 
-  --color-ui-text-primary: var(--color-alias-primary, blue);
+  --color-ui-text-primary: var(--color-alias-primary, #000);
+  --color-ui-text-secondary: var(--color-alias-secondary, #fff);
   --color-ui-text-action: var(--color-alias-henk-black, #000);
   --color-ui-text-action-hover: var(--color-alias-base-black, #000);
   --color-ui-text-disabled: var(--color-alias-neutral-default);    
@@ -203,17 +207,11 @@
 
   /* border */
   --color-ui-border-default: var(--color-alias-neutral-light);
+  --color-ui-border-primary: var(--color-alias-primary);
+  --color-ui-border-secondary: var(--color-alias-secondary);
   --color-ui-border-neutral: var(--color-alias-neutral);
   --color-ui-border-henk-black: var(--color-alias-henk-black);
   --color-ui-border-henk-white: var(--color-alias-henk-white);
-  /* --color-ui-border-primary: var(--color-alias-primary);
-  --color-ui-border-secondary: var(--color-alias-secondary);
-  --color-ui-border-tertiary: var(--color-alias-base-black);
-  --color-ui-border-highlight: var(--color-alias-highlight); */
-  /* --color-ui-border-on-primary: var(--color-alias-neutral-light);
-  --color-ui-border-on-secondary: var(--color-alias-primary);
-  --color-ui-border-on-tertiary: var(--color-alias-secondary);
-  --color-ui-border-on-highlight: var(--color-alias-primary); */
   --color-ui-border-on-information: var(--color-alias-information-dark);
   --color-ui-border-on-success: var(--color-alias-success-dark);
   --color-ui-border-on-warning: var(--color-alias-warning-dark);

@@ -14,7 +14,8 @@ export const createButton = ({
   onClick,
   isLoading = false,
   disabled = false,
-  target
+  target,
+  size
 }) => {
   const btn = document.createElement(buttonElement);
   if (isLoading) {
@@ -58,11 +59,15 @@ export const createButton = ({
       btn.ariaLabel = label;
     }
   }
-
-  // const classNames = ['henk-button', `henk-button--${variant}`];
+  
+  // classes
   const classNames = ['henk-button'];
   if (variant) {
     classNames.push(`henk-button--${variant}`);
+  }
+
+  if (size) {
+    classNames.push(`henk-button--${size}`);
   }
 
   if (iconOnly) {
