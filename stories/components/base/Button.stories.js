@@ -23,7 +23,7 @@ export default {
         defaultValue: { summary: "Default" },
       },
       control: "select",
-      options: ["default", "primary", "secondary", "tertiary"],
+      options: ["default", "primary", "secondary", "tertiary", "link"],
     },
     size: {
       control: { type: "radio" },
@@ -162,5 +162,24 @@ export const Small = {
     label: "Small Button",
     variant: "default",
     size: "small",
+  },
+};
+
+export const Link = {
+  args: {
+    label: "Link",
+    variant: "link",
+    buttonElement: "a",
+    href: "#",
+  },
+};
+
+export const LinkDisabled = {
+  args: {
+    label: "Link",
+    variant: "link",
+    buttonElement: "a",
+    href: "#",
+    disabled: true,
   },
 };

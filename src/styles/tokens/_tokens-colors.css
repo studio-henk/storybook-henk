@@ -1,59 +1,5 @@
-/* :root {
-
-  --color-ral-9005: #0a0c10;
-  --color-ral-9016: #f1f0ea;
-
-
-  --color-transparent: transparent;
-  --color-black: #000;
-  --color-white: #fff;
-  --color-black-65: #a6a6a6;
-
-
-  --color-accent5: #eae4d7;
-  --color-accent6: #ccb193;
-  --color-accent11: #9aabbc;
-  --color-accent14: #ccc7bd;
-  --color-accent16: #6b7156;
-  --color-henk-danger: #f00;
-  --color-henk-danger-dark: #c00;
-  --color-henk-success: #008000;
-  --color-henk-warning: #ffa500;
-
-  
-  --color-black-lacquer: var(--color-ral-9005);
-  --color-white-lacquer: var(--color-ral-9016);
-  --color-henk-black: var(--color-ral-9005);
-  --color-henk-white: var(--color-ral-9016);
-
-  
-  --color-background-primary: var(--color-henk-white);
-  --color-background-secondary: var(--color-transparent);
-  --color-background-tertiary: var(--color-accent5);
-  --color-background-highlight: var(--color-accent16);
-
-  --color-text-primary: var(--color-henk-black);
-  --color-text-secondary: var(--color-henk-white);
-  --color-text-on-dark: var(--color-text-secondary);
-  --color-text-disabled: var(--color-black-65);
-
-  --color-brand-blue: #009ff5;
-  --color-brand-ral-9005: #0A0C10;
-  --color-brand-ral-9016: #f1f0ea;
-  --color-neutral-100: #fff;
-
-
-  --color-alias-brand-primary-500: var(--color-brand-blue);
-  --color-brand-henk-black: var(--color-brand-ral-9005);
-  --color-brand-henk-white: var(--color-brand-ral-9016);
-  --color-mapped-neutral-100: var(--color-neutral-100);
-
-
-  --color-surface-brand: var(--color-alias-brand-primary-500);
-  --color-text-invert: var(--color-mapped-neutral-100);
-} */
-
-:root {
+:root,
+::selection {
   /* primitive colors */
 
   /* blue */
@@ -109,28 +55,24 @@
 
 
   /* orange */
-  --color-brand-orange-default: orange;
+  --color-brand-orange-default: #ED7D18;
+  --color-brand-orange-dark: #B35B00;
+  --color-brand-orange-light: #FFB366;
 
-
-
-
+  /* brown */
+  --color-brand-brown-default: #79614E;
+  /* --color-brand-brown-dark: #4E3D2F; */
+  /* --color-brand-brown-dark: hsl(27, 22%, 39%); */
+  --color-brand-brown-dark: hsl(27, 22%, 19%);
+  --color-brand-brown-light: #B58762;
 
   /* alias */
 
   /* primary */
-  --color-alias-primary: var(--color-brand-base-black);
-  /* --color-alias-primary-dark: var(--color-brand-blue-dark);
-  --color-alias-primary-light: var(--color-brand-blue-light); */
+  --color-alias-primary: var(--color-brand-base-black);  
 
   /* secondary */
-  --color-alias-secondary: var(--color-brand-base-white);
-  /* --color-alias-secondary-dark: var(--color-brand-butter-yellow-dark);
-  --color-alias-secondary-light: var(--color-brand-butter-yellow-light); */
-
-  /* tertiary */
-  /* --color-alias-tertiary: var(--color-brand-ral-9005);
-  --color-alias-tertiary-dark: var(--color-brand-grey-darker);
-  --color-alias-tertiary-light: var(--color-brand-grey-dark); */
+  --color-alias-secondary: var(--color-brand-base-white);  
 
   /* highlight */
   --color-alias-highlight: var(--color-brand-orange-default);
@@ -153,7 +95,8 @@
   /* info */
   --color-alias-information-default: var(--color-brand-blue);
   --color-alias-information-dark: var(--color-brand-blue-dark);
-  --color-alias-information-light: var(--color-brand-blue-lighter);
+  --color-alias-information-light: var(--color-brand-blue-light);
+  --color-alias-information-lighter: var(--color-brand-blue-lighter);
 
   /* success */
   --color-alias-success-default: var(--color-brand-green-default);
@@ -169,6 +112,16 @@
   --color-alias-danger-default: var(--color-brand-red-default);
   --color-alias-danger-dark: var(--color-brand-red-dark);
   --color-alias-danger-light: var(--color-brand-red-lighter);
+
+  /* highlight */
+  --color-alias-highlight-default: var(--color-brand-orange-default);
+  --color-alias-highlight-dark: var(--color-brand-orange-dark);
+  --color-alias-highlight-light: var(--color-brand-orange-light);
+
+  /* sustainability */
+  --color-alias-sustainability-default: var(--color-brand-brown-default);
+  --color-alias-sustainability-dark: var(--color-brand-brown-dark);
+  --color-alias-sustainability-light: var(--color-brand-brown-light);
 
   /* mapped / ui */
 
@@ -186,6 +139,9 @@
   --color-ui-surface-warning: var(--color-alias-warning-light);
   --color-ui-surface-danger: var(--color-alias-danger-light);
   --color-ui-surface-disabled: var(--color-alias-neutral-light);
+  --color-ui-surface-sustainability: var(--color-alias-sustainability-default);
+  --color-ui-surface-sustainability-dark: var(--color-alias-sustainability-dark);
+  --color-ui-surface-highlight: var(--color-alias-highlight-default);
 
   /* text */
   --color-ui-text-default: var(--color-alias-henk-black);
@@ -194,13 +150,18 @@
   --color-ui-text-primary: var(--color-alias-primary, #000);
   --color-ui-text-secondary: var(--color-alias-secondary, #fff);
   --color-ui-text-action: var(--color-alias-henk-black, #000);
-  --color-ui-text-action-hover: var(--color-alias-base-black, #000);
+  /* --color-ui-text-action-hover: var(--color-alias-base-black, #000); */
+  --color-ui-text-action-hover: var(--color-alias-sustainability-default, #000);  
   --color-ui-text-disabled: var(--color-alias-neutral-default);    
   --color-ui-text-on-information: var(--color-alias-information-dark);
   --color-ui-text-on-success: var(--color-alias-success-dark);
   --color-ui-text-on-warning: var(--color-alias-warning-dark);
   --color-ui-text-danger: var(--color-alias-danger-default);
   --color-ui-text-on-danger: var(--color-alias-danger-dark);
+  --color-ui-text-sustainability: var(--color-alias-sustainability-default);
+  --color-ui-text-highlight: var(--color-alias-highlight-default);
+
+  --color-ui-text-action-dimmed: var(--color-alias-neutral, #666);
 
   /* links */
   --color-ui-text-action-on-primary: var(--color-alias-base-white);
@@ -218,12 +179,3 @@
   --color-ui-border-on-danger: var(--color-alias-danger-dark);
   --color-ui-border-on-dark: var(--color-alias-base-white);
 }
-
-/* dark mode */ 
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --color-ui-surface-default: var(--color-alias-base-black); 
-    --color-ui-text-default: var(--color-alias-henk-white);
-  }
-} */

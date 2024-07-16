@@ -24,8 +24,9 @@
 }
 
 .henk-button:hover,
-:hover span.henk-button {
-  --_color-button-background: var(--color-ui-surface-black, #666);    
+a:hover span.henk-button {
+  /* --_color-button-background: var(--color-ui-surface-black, #666);     */
+  --_color-button-background: var(--color-ui-surface-sustainability-dark, #000);
 }
 
 .henk-button--default-inverted {  
@@ -139,3 +140,27 @@
   line-height: 1.84615385em;
   padding: 3px 16px;
 }
+
+.henk-button--link {
+  background: none;
+  border: none;
+  color: var(--color-ui-text-action);
+  text-decoration: underline;
+  padding: 0;
+  cursor: pointer;
+}
+
+.henk-button--link:hover {
+  color: var(--color-ui-text-action-hover);
+}
+
+.henk-button--link[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* .henk-button--link:disabled {
+  color: gray;
+  text-decoration: none;
+  cursor: default;
+} */

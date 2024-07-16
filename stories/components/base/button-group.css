@@ -1,0 +1,26 @@
+/* button-group.css */
+.henk-button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.henk-button-group--left {
+  justify-content: flex-start;
+}
+
+.henk-button-group--center {
+  justify-content: center;
+}
+
+.henk-button-group--right {
+  justify-content: flex-end;
+}
+
+.henk-button-group--space-between {
+  justify-content: space-between;
+}
+
+.henk-button-group--fill .henk-button {
+  flex: 1;
+}
