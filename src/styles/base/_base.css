@@ -24,9 +24,9 @@
   outline-color: var(--color-alias-primary, red);
 }
 
-::selection {  
-  background-color: var(--color-ui-surface-primary, blue);
-  color: var(--color-ui-text-on-primary, #fff);
+::selection {
+  color: var(--color-ui-text-on-henk-black, #fff);
+  background-color: var(--color-ui-surface-henk-black, #000);
 }
 
 html {

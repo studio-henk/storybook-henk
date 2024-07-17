@@ -141,6 +141,12 @@ a:hover span.henk-button {
   padding: 3px 16px;
 }
 
+.henk-button--small.henk-button--icon-only {
+  padding-inline: 3px;
+}
+
+
+
 .henk-button--link {
   background: none;
   border: none;

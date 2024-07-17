@@ -31,8 +31,6 @@ import '../stories/components/henk-footer.css';
 // import '../src/styles/layout/sh-l-grid.css';
 // import '../src/styles/layout/sh-l-page-main.css';
 
-// import '../src/styles/base/_icons.css';
-
 // import '../src/styles/basics/_selector.css';
 // import '../src/styles/basics/_toggle.css';
 
@@ -59,7 +57,6 @@ import '../src/styles/components/_BaseModal.css';
 // import '../stories/components/base/button-v2.css';
 // import '../src/styles/components/atoms/atom-dl/atom-dl.css';
 // import '../src/styles/components/atoms/atom-sup/atom-sup.css';
-// import '../src/styles/components/atoms/atom-icon/sh-atom-icon.css';
 // import '../src/styles/components/atoms/atom-tag/atom-tag.css';
 // import '../src/styles/components/atoms/atom-blockquote/atom-blockquote.css';
 // import '../src/styles/components/atoms/atom-figure/atom-figure.css';

@@ -1,5 +1,4 @@
-:root,
-::selection {
+:root {
   /* primitive colors */
 
   /* blue */
@@ -159,7 +158,8 @@
   --color-ui-text-danger: var(--color-alias-danger-default);
   --color-ui-text-on-danger: var(--color-alias-danger-dark);
   --color-ui-text-sustainability: var(--color-alias-sustainability-default);
-  --color-ui-text-highlight: var(--color-alias-highlight-default);
+  --color-ui-text-on-highlight: var(--color-alias-base-black); 
+  --color-ui-text-on-sustainability: var(--color-alias-base-white);
 
   --color-ui-text-action-dimmed: var(--color-alias-neutral, #666);
 

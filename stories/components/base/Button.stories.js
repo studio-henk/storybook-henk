@@ -165,6 +165,17 @@ export const Small = {
   },
 };
 
+export const IconOnlySmall = {
+  args: {
+    label: "Small Button",
+    variant: "default",
+    size: "small",
+    iconSvg: ShareIcon,
+    iconSize: "small",
+    iconOnly: true,
+  },
+};
+
 export const Link = {
   args: {
     label: "Link",

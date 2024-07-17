@@ -1,0 +1,26 @@
+/* tag.css */
+.henk-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: var(--color-ui-surface-henk-white, #fff);
+  color: var(--color-ui-text-default, #000);
+}
+
+.henk-tag--highlight {
+  background-color: var(--color-ui-surface-highlight);
+  color: var(--color-ui-text-on-highlight);  
+}
+
+.henk-tag--highlight .henk-icon {
+  margin-right: 0.25rem; /* Space between icon and text */
+}
+
+.henk-tag--sustainability {
+  background-color: var(--color-ui-surface-sustainability);
+  color: var(--color-ui-text-on-sustainability);  
+}
