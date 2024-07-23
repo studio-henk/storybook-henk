@@ -1,20 +1,6 @@
 :root {
   /* primitive colors */
 
-  /* blue */
-  --color-brand-blue: #1b33cb;
-  --color-brand-blue-darker: #0F1C71;
-  --color-brand-blue-dark: #15289E;
-  --color-brand-blue-light: #6174ea;
-  --color-brand-blue-lighter: #BBC3F6;
-
-  /* butter-yellow */
-  --color-brand-butter-yellow: #D8CA9D;
-  --color-brand-butter-yellow-darker: #9D863E;
-  --color-brand-butter-yellow-dark: #C2AC66;
-  --color-brand-butter-yellow-light: #E6DDC1;
-  --color-brand-butter-yellow-lighter: #F5F1E5;
-
   /* ral */
   --color-brand-ral-9005: #0A0C10;
   --color-brand-ral-9016: #F1F0EA;
@@ -23,64 +9,70 @@
   --color-brand-base-white: #FFF;
   --color-brand-base-black: #000;
   --color-brand-base-transparent: transparent;
+  --color-brand-base-orange: #ED7D18;
+  --color-brand-base-brown: #79614E;
 
   /* grey */
   --color-brand-grey-default: #999;
-  --color-brand-grey-darker: #333;
   --color-brand-grey-dark: #666;
+  --color-brand-grey-darker: #333;  
   --color-brand-grey-light: #D1D1D1;
   --color-brand-grey-lighter: #F1F1F1;
 
+  /* blue */
+  --color-brand-blue-default: #1b33cb;
+  --color-brand-blue-dark: #15289E;
+  --color-brand-blue-darker: #0F1C71;  
+  --color-brand-blue-light: #6174ea;
+  --color-brand-blue-lighter: #BBC3F6;
+
   /* yellow */
-  --color-brand-yellow-darker: #666600;
-  --color-brand-yellow-dark: #999900;
   --color-brand-yellow-default: #FFFF00;
+  --color-brand-yellow-dark: #999900;
+  --color-brand-yellow-darker: #666600;    
   --color-brand-yellow-light: #FFFF66;
   --color-brand-yellow-lighter: #FFFFCC;
 
   /* green */
   --color-brand-green-default: #008000;
-  --color-brand-green-darker: #003300;
   --color-brand-green-dark: #004D00;
-  --color-brand-green-light: #00E500;
-  --color-brand-green-lighter: #B2FFB2;
+  --color-brand-green-darker: #003300;  
+  --color-brand-green-light: #80ff80;
+  --color-brand-green-lighter: #ccffcc;
 
   /* red */
   --color-brand-red-default: #FF0000;
-  --color-brand-red-darker: #660000;
   --color-brand-red-dark: #990000;
+  --color-brand-red-darker: #660000;  
   --color-brand-red-light: #FF6666;
   --color-brand-red-lighter: #FFCCCC;
 
-
   /* orange */
   --color-brand-orange-default: #ED7D18;
-  --color-brand-orange-dark: #B35B00;
-  --color-brand-orange-light: #FFB366;
+  --color-brand-orange-dark: #c2630f;
+  --color-brand-orange-darker: hsl(28, 86%, 35%);   
+  --color-brand-orange-light: #f19646;
+  --color-brand-orange-lighter: hsl(28, 86%, 71%);
 
   /* brown */
   --color-brand-brown-default: #79614E;
-  /* --color-brand-brown-dark: #4E3D2F; */
-  /* --color-brand-brown-dark: hsl(27, 22%, 39%); */
-  --color-brand-brown-dark: hsl(27, 22%, 19%);
-  --color-brand-brown-light: #B58762;
+  --color-brand-brown-dark: #6d5746;
+  --color-brand-brown-darker: hsl(27, 22%, 30%);  
+  --color-brand-brown-light: #8c705a;
+  --color-brand-brown-lighter: hsl(27, 22%, 50%);
 
   /* alias */
 
   /* primary */
-  --color-alias-primary: var(--color-brand-base-black);  
+  --color-alias-primary: var(--color-brand-ral-9005);
 
   /* secondary */
-  --color-alias-secondary: var(--color-brand-base-white);  
-
-  /* highlight */
-  --color-alias-highlight: var(--color-brand-orange-default);
-  --color-alias-highlight-dark: var(--color-brand-orange-dark);
+  --color-alias-secondary: var(--color-brand-ral-9016);    
 
   /* neutral */
   --color-alias-neutral-default: var(--color-brand-grey-default);
-  --color-alias-neutral-darker: var(--color-brand-grey-darker);
   --color-alias-neutral-dark: var(--color-brand-grey-dark);
+  --color-alias-neutral-darker: var(--color-brand-grey-darker);  
   --color-alias-neutral-light: var(--color-brand-grey-light);
   --color-alias-neutral-lighter: var(--color-brand-grey-lighter);
 
@@ -93,14 +85,17 @@
 
   /* info */
   --color-alias-information-default: var(--color-brand-blue);
+  --color-alias-information-darker: var(--color-brand-blue-darker);
   --color-alias-information-dark: var(--color-brand-blue-dark);
   --color-alias-information-light: var(--color-brand-blue-light);
   --color-alias-information-lighter: var(--color-brand-blue-lighter);
 
   /* success */
   --color-alias-success-default: var(--color-brand-green-default);
+  --color-alias-success-darker: var(--color-brand-green-darker);
   --color-alias-success-dark: var(--color-brand-green-dark);
-  --color-alias-success-light: var(--color-brand-green-lighter);
+  --color-alias-success-light: var(--color-brand-green-light);
+  --color-alias-success-lighter: var(--color-brand-green-lighter);
 
   /* warning */
   --color-alias-warning-default: var(--color-brand-yellow-default);
@@ -126,15 +121,16 @@
 
   /* surface */
   --color-ui-surface-default: var(--color-alias-base-white);
-  --color-ui-surface-primary: var(--color-alias-primary);
+  --color-ui-surface-page: var(--color-alias-base-white);
+  --color-ui-surface-primary: var(--color-alias-base-white);
   --color-ui-surface-secondary: var(--color-alias-secondary);
   --color-ui-surface-neutral: var(--color-alias-neutral-lighter);
   --color-ui-surface-henk-white: var(--color-alias-henk-white);
   --color-ui-surface-henk-black: var(--color-alias-henk-black);  
-  --color-ui-surface-black: var(--color-alias-base-black);  
+  /* --color-ui-surface-black: var(--color-alias-base-black);   */
   --color-ui-surface-transparent: var(--color-alias-base-transparent);
-  --color-ui-surface-information: var(--color-alias-information-light);
-  --color-ui-surface-success: var(--color-alias-success-light);
+  --color-ui-surface-information: var(--color-alias-information-lighter);
+  --color-ui-surface-success: var(--color-alias-success-lighter);
   --color-ui-surface-warning: var(--color-alias-warning-light);
   --color-ui-surface-danger: var(--color-alias-danger-light);
   --color-ui-surface-disabled: var(--color-alias-neutral-light);
@@ -145,26 +141,28 @@
   /* text */
   --color-ui-text-default: var(--color-alias-henk-black);
   --color-ui-text-body: var(--color-alias-henk-black);
-  --color-ui-text-on-henk-black: var(--color-alias-henk-white); 
+  --color-ui-text-action: var(--color-alias-sustainability-default, #79614E);  
+  --color-ui-text-action-hover: var(--color-alias-sustainability-dark, #000);  
+  
+  /* --color-ui-text-on-henk-black: var(--color-alias-henk-white);  */
   --color-ui-text-primary: var(--color-alias-primary, #000);
-  --color-ui-text-secondary: var(--color-alias-secondary, #fff);
-  --color-ui-text-action: var(--color-alias-henk-black, #000);
-  /* --color-ui-text-action-hover: var(--color-alias-base-black, #000); */
-  --color-ui-text-action-hover: var(--color-alias-sustainability-default, #000);  
+  --color-ui-text-secondary: var(--color-alias-secondary, #fff);  
   --color-ui-text-disabled: var(--color-alias-neutral-default);    
   --color-ui-text-on-information: var(--color-alias-information-dark);
   --color-ui-text-on-success: var(--color-alias-success-dark);
   --color-ui-text-on-warning: var(--color-alias-warning-dark);
   --color-ui-text-danger: var(--color-alias-danger-default);
   --color-ui-text-on-danger: var(--color-alias-danger-dark);
-  --color-ui-text-sustainability: var(--color-alias-sustainability-default);
+  /* --color-ui-text-sustainability: var(--color-alias-sustainability-default); */
   --color-ui-text-on-highlight: var(--color-alias-base-black); 
   --color-ui-text-on-sustainability: var(--color-alias-base-white);
 
   --color-ui-text-action-dimmed: var(--color-alias-neutral, #666);
 
+  --color-ui-text-on-dark: var(--color-alias-base-white);
+
   /* links */
-  --color-ui-text-action-on-primary: var(--color-alias-base-white);
+  /* --color-ui-text-action-on-primary: var(--color-alias-base-white); */
 
   /* border */
   --color-ui-border-default: var(--color-alias-neutral-light);

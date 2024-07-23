@@ -30,7 +30,7 @@
 }
 
 html {
-  background-color: var(--color-ui-surface-default, #fff);
+  background-color: var(--color-ui-surface-page, #fff);
   color: var(--color-ui-text-body, #000);
   line-height: 1.5;
   letter-spacing: 0;
@@ -59,7 +59,7 @@ html {
 }
 
 body {
-  background-color: var(--color-ui-surface-default, #fff);
+  background-color: var(--color-ui-surface-page, #fff);
   color: var(--color-ui-text-body, #000);
   padding: var(--total-bars-height, 80px) 0 0 0;
   font-family: var(--font-body, sans-serif), sans-serif;

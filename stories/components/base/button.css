@@ -1,7 +1,7 @@
 .henk-button,
 ::part(henk-button) {    
   --_color-button-background: var(--color-ui-surface-henk-black);
-  --_color-button-text: var(--color-ui-text-on-henk-black);
+  --_color-button-text: var(--color-ui-text-on-dark);
   --_color-button-border: var(--color-ui-border-henk-black);
   
   background-color: var(--_color-button-background);
@@ -19,13 +19,10 @@
   font-family: var(--font-body, sans-serif), sans-serif;
   font-size: 1rem;
   transition: all 0.3s ease;
-  /* min-height: 44px;
-  min-width: 44px; */
 }
 
 .henk-button:hover,
-a:hover span.henk-button {
-  /* --_color-button-background: var(--color-ui-surface-black, #666);     */
+a:hover span.henk-button {  
   --_color-button-background: var(--color-ui-surface-sustainability-dark, #000);
 }
 
@@ -47,7 +44,7 @@ a:hover span.henk-button {
 
 .henk-button--secondary:hover {
   --_color-button-background: var(--color-ui-surface-primary);
-  --_color-button-text: var(--color-ui-text-on-henk-black);
+  --_color-button-text: var(--color-ui-text-on-dark);
   --_color-button-border: var(--color-ui-border-henk-black);
 }
 

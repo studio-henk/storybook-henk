@@ -1,6 +1,6 @@
 .message-bar {  
-  background-color: var(--color-alias-primary-light);
-  color: var(--color-text-on-dark, #fff);
+  background-color: var(--color-ui-surface-secondary, #F1F0EA);
+  color: var(--color-ui-text-default, #f00);
   padding: 4px 16px;
   text-align: center;
   width: 100%;  

@@ -4,17 +4,7 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 
 ## Brand
 
-<ColorPalette>
-    {/* <ColorItem
-        title="color.brand.blue"
-        subtitle="Blue"
-        colors={{ blue: "#1B33CB" }}
-    /> */}
-    {/* <ColorItem
-        title="color.brand.butter-yellow"
-        subtitle="Butter Yellow"
-        colors={{ 'butter-yellow': "#D8CA9D" }}
-    />     */}
+<ColorPalette>    
     <ColorItem
         title="color.brand.ral-9005"
         subtitle="RAL 9005"
@@ -24,18 +14,17 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
         title="color.brand.ral-9016"
         subtitle="RAL 9016"
         colors={{ "RAL-9016": "#F1F0EA" }}
-    />    
-    {/* <ColorItem
-        title="color.brand.butter-yellow.tints"
-        subtitle="Butter Yellow tints"
+    />
+    <ColorItem
+        title="color.brand.base"
+        subtitle="Base"
         colors={{                        
-            "butter-yellow-darker": "#9D863E",
-            "butter-yellow-dark": "#C2AC66",
-            "butter-yellow-default": "#D8CA9D",
-            "butter-yellow-light": "#E6DDC1",
-            "butter-yellow-lighter": "#F5F1E5"
+            "black": "#000",
+            "white": "#FFF",
+            "orange": "#ED7D18",
+            "brown": "#79614E",
         }}
-    />     */}
+    />        
     <ColorItem
         title="color.brand.grey.tints"
         subtitle="Grey tints"
@@ -46,16 +35,7 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
             "grey-light": "#D1D1D1",
             "grey-lighter": "#F1F1F1"
         }}
-    />
-    <ColorItem
-        title="color.brand.base"
-        subtitle="Base"
-        colors={{                        
-            "transparent": "transparent",
-            "black": "#000",
-            "white": "#FFF"            
-        }}
-    />
+    />    
     <ColorItem
         title="color.brand.blue.tints"
         subtitle="Blue tints"
@@ -107,11 +87,25 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
         title="color.brand.orange.tints"
         subtitle="Orange tints"
         colors={{                        
-            "orange-darker": "#664200",
-            "orange-dark": "#996300",
-            "orange-default": "#FFA500",
-            "orange-light": "#FFC966",
-            "orange-lighter": "#FFEDCC"
+            "orange-darker": "hsl(28, 86%, 35%);",
+            "orange-dark": "hsl(28, 86%, 41%);",
+            "orange-default": "#ED7D18",
+            "orange-light": "hsl(28, 86%, 61%);",
+            "orange-lighter": "hsl(28, 86%, 71%)"
         }}
     />
+
+    <ColorItem
+        title="color.brand.brown.tints"
+        subtitle="Brown tints"
+        colors={{                        
+            "brown-darker": "hsl(27, 22%, 30%);",
+            "brown-dark": "hsl(27, 22%, 35%);",
+            "brown-default": "#79614E",
+            "brown-light": "hsl(27, 22%, 45%);",
+            "brown-lighter": "hsl(27, 22%, 50%)"
+        }}
+    />
+
+    
 </ColorPalette>

@@ -5,47 +5,14 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 ## Alias
 
 <ColorPalette>
-    {/* <ColorItem
+    <ColorItem
         title="color.alias..."
         subtitle="Primary, Secondary"
         colors={{                     
-            "primary": "#1B33CB",   
-            "secondary": "#D8CA9D",            
+            "primary": "#0A0C10",   
+            "secondary": "#F1F0EA",            
         }}
-    />     */}
-    {/* <ColorItem
-        title="color.alias.tertiary"
-        subtitle="Tertiary"
-        colors={{ "color.brand.ral-9005": "#0A0C10" }}
-    /> */}
-    {/* <ColorItem
-        title="color.alias.henk-black"
-        subtitle="HENK Black"
-        colors={{ "color.brand.ral-9005": "#0A0C10" }}
-    /> */}
-    {/* <ColorItem
-        title="color.alias.henk-white"
-        subtitle="HENK White"
-        colors={{ "color.brand.ral-9016": "#F1F0EA" }}
-    />     */}
-    {/* <ColorItem
-        title="color.alias.primary.tints"
-        subtitle="Primary tints"        
-        colors={{                                    
-            "primary-dark": "#15289E",
-            "primary-default": "#1B33CB",
-            "primary-light": "#6174EA",
-        }}
-    /> */}
-    {/* <ColorItem
-        title="color.alias.secondary.tints"
-        subtitle="Secondary tints"
-        colors={{                        
-            "secondary-dark": "#C2AC66",
-            "secondary-default": "#D8CA9D",
-            "secondary-light": "#E6DDC1",
-        }}
-    /> */}
+    />        
     <ColorItem
         title="color.alias.neutral.tints"
         subtitle="Neutral tints"
@@ -67,30 +34,55 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
         }}
     />
     <ColorItem
+        title="color.alias.highlight"
+        subtitle="Highlight"
+        colors={{                        
+            "highlight-dark": "#c2630f",
+            "highlight-default": "#ED7D18",
+            "highlight-light": "#f19646",
+        }}
+    />
+    <ColorItem
+        title="color.alias.sustainability"
+        subtitle="Sustainability"
+        colors={{                        
+            "sustainability-dark": "#6d5746",
+            "sustainability-default": "#79614E",
+            "sustainability-light": "#8c705a",
+        }}
+    />
+
+    <ColorItem
         title="color.alias.information"
         subtitle="Information"
         colors={{                        
+            "information-darker": "#0F1C71",
             "information-dark": "#15289E",
             "information-default": "#1B33CB",
-            "information-light": "#BBC3F6"            
+            "information-light": "#6174ea",
+            "information-lighter": "#BBC3F6"
         }}
     />
     <ColorItem
         title="color.alias.success"
         subtitle="Success"
-        colors={{                        
+        colors={{                      
+            "success-darker": "#003300",  
             "success-dark": "#004D00",
             "success-default": "#008000",
-            "success-light": "#B2FFB2"            
+            "success-light": "hsl(120, 100%, 75%);",
+            "success-lighter": "hsl(120, 100%, 90%);"
         }}
     />
     <ColorItem
         title="color.alias.warning"
         subtitle="Warning"
         colors={{                        
+            "warning-darker": "#666600",
             "warning-dark": "#999900",
             "warning-default": "#FFFF00",
-            "warning-light": "#FFFF66"            
+            "warning-light": "#FFFF66",
+            "warning-lighter": "#FFFFCC"
         }}
     />
     <ColorItem

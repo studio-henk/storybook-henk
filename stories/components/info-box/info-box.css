@@ -2,8 +2,7 @@
   --_color-ui-border-info-box: var(--color-ui-border-default);
   background-color: var(--color-ui-surface-neutral-01);
   padding: 1rem;
-  border-radius: 0.5rem;
-  /* border: 1px solid var(--color-ui-border-default); */
+  border-radius: 0.5rem;  
   border: 1px solid var(--_color-ui-border-info-box);
 }
 
@@ -11,10 +10,10 @@
   margin: 0;
 }
 
-.info-box a {
+/* .info-box a {
   --color-ui-text-action: currentcolor;
   --color-ui-text-action-hover: currentcolor;
-}
+} */
 
 .info-box__container {
   display: flex;
@@ -38,14 +37,6 @@
 
 .info-box__header--has-icon .info-box__heading {
   max-width: calc(100% - 24px);
-}
-
-.info-box__body {
-  
-}
-
-.info-box__footer {
-  
 }
 
 .info-box--variant-info {
