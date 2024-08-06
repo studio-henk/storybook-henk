@@ -65,6 +65,8 @@ export const variantHighlight = {
   args: {
     label: "Fast Delivery",
     variant: "highlight",
+    iconSvg: TruckIcon, 
+    iconPosition: "left",
   },
 };
 
@@ -72,5 +74,16 @@ export const variantSustainability = {
   args: {
     label: "Sustainable",
     variant: "sustainability",
+    iconSvg: TruckIcon, 
+    iconPosition: "left",
   },
 };
+
+export const Outlined = {
+    args: {
+      label: "Fast Delivery",
+      variant: "outlined",
+      iconSvg: TruckIcon, 
+      iconPosition: "left",
+    },
+  };

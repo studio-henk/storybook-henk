@@ -142,8 +142,6 @@ a:hover span.henk-button {
   padding-inline: 3px;
 }
 
-
-
 .henk-button--link {
   background: none;
   border: none;
@@ -162,8 +160,14 @@ a:hover span.henk-button {
   pointer-events: none;
 }
 
-/* .henk-button--link:disabled {
-  color: gray;
-  text-decoration: none;
-  cursor: default;
-} */
+.henk-button--transparent {
+  --_color-button-background: var(--color-ui-surface-transparent);
+  --_color-button-text: currentcolor;
+  --_color-button-border: transparent;
+}
+
+.henk-button--transparent:hover {
+  --_color-button-background: var(--color-ui-surface-transparent);/* --_color-button-background: var(--color-ui-surface-primary); */
+  --_color-button-text: var(--color-ui-text-sustainability);
+  --_color-button-border: transparent;
+}

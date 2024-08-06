@@ -1,6 +1,6 @@
 .info-box {
   --_color-ui-border-info-box: var(--color-ui-border-default);
-  background-color: var(--color-ui-surface-neutral-01);
+  background-color: var(--color-ui-surface-default);
   padding: 1rem;
   border-radius: 0.5rem;  
   border: 1px solid var(--_color-ui-border-info-box);

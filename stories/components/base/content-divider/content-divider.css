@@ -11,3 +11,7 @@
 .henk-content-divider--primary hr {
   background-color: var(--color-ui-border-primary, #1b33cb);
 }
+
+.henk-content-divider--transparent hr {
+  background-color: var(--color-ui-border-transparent, transparent); 
+}

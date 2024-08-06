@@ -31,7 +31,7 @@ export default {
       description: "Variant of the info box",
       table: { type: { summary: "string" }, defaultValue: { summary: "Default" } },
       control: "select",
-      options: ["default", "info", "success", "warning", "error"],
+      options: ["default", "info", "success", "warning", "danger"],
     },
     buttonConfig: {
       name: "Button Configuration",

@@ -6,7 +6,7 @@
   16px 
   13px 
   10px 
-  8px */
+*/
 
 :root {
   /* font sizes */
@@ -17,7 +17,6 @@
   --size-font-16: 16;
   --size-font-13: 13;
   --size-font-10: 10;
-  --size-font-8: 8;
 
   /* alias keywords */
   --size-font-xxx-large: var(--size-font-39);
@@ -27,22 +26,8 @@
   --size-font-medium: var(--size-font-16);
   --size-font-small: var(--size-font-13);
   --size-font-x-small: var(--size-font-10);
-  --size-font-xx-small: var(--size-font-8);
-
-  /* alias headings min and max for mobile and desktop */
-  /* --size-font-heading-1-min: var(--size-font-25);
-  --size-font-heading-1-max: var(--size-font-39);
-  --size-font-heading-2-min: var(--size-font-20);
-  --size-font-heading-2-max: var(--size-font-31);
-  --size-font-heading-3-min: var(--size-font-16);
-  --size-font-heading-3-max: var(--size-font-25);
-  --size-font-heading-4-min: var(--size-font-16);
-  --size-font-heading-4-max: var(--size-font-20);
-  --size-font-heading-5-min: var(--size-font-16);
-  --size-font-heading-5-max: var(--size-font-16);
-  --size-font-heading-6-min: var(--size-font-16);
-  --size-font-heading-6-max: var(--size-font-16); */
 
   /* target screen where font-size reaches the max */
   --size-screen-target: 1728;
+  --size-font-body: 16;
 }

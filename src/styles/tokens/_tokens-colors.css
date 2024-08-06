@@ -122,7 +122,7 @@
   /* surface */
   --color-ui-surface-default: var(--color-alias-base-white);
   --color-ui-surface-page: var(--color-alias-base-white);
-  --color-ui-surface-primary: var(--color-alias-base-white);
+  --color-ui-surface-primary: var(--color-alias-primary);
   --color-ui-surface-secondary: var(--color-alias-secondary);
   --color-ui-surface-neutral: var(--color-alias-neutral-lighter);
   --color-ui-surface-henk-white: var(--color-alias-henk-white);
@@ -153,7 +153,7 @@
   --color-ui-text-on-warning: var(--color-alias-warning-dark);
   --color-ui-text-danger: var(--color-alias-danger-default);
   --color-ui-text-on-danger: var(--color-alias-danger-dark);
-  /* --color-ui-text-sustainability: var(--color-alias-sustainability-default); */
+  --color-ui-text-sustainability: var(--color-alias-sustainability-default);
   --color-ui-text-on-highlight: var(--color-alias-base-black); 
   --color-ui-text-on-sustainability: var(--color-alias-base-white);
 
@@ -176,4 +176,5 @@
   --color-ui-border-on-warning: var(--color-alias-warning-dark);
   --color-ui-border-on-danger: var(--color-alias-danger-dark);
   --color-ui-border-on-dark: var(--color-alias-base-white);
+  --color-ui-border-transparent: var(--color-alias-base-transparent);
 }

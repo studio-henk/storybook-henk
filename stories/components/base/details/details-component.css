@@ -91,7 +91,7 @@
   color: var(--color-ui-text-action-hover);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --color-ui-surface-default: var(--color-alias-base-black);
     --color-ui-text-body: var(--color-alias-base-white);
@@ -101,4 +101,4 @@
   .henk-details.henk-details--plusmin[open] .henk-details__summary {
     color: var(--color-alias-primary-light); 
   }
-}
+} */

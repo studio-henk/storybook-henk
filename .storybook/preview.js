@@ -8,7 +8,7 @@ import '../src/styles/tokens/_tokens-colors.css';
 import '../src/styles/tokens/_tokens-size-font.css';
 import '../src/styles/tokens/_tokens-size-spacing.css';
 
-import "../src/styles/_config.css";
+// import "../src/styles/_config.css";
 import "../src/styles/base/_base.css";
 import "../src/styles/base/_base-typography-headings.css";
 import "../src/styles/base/_base-typography-fontsizes.css";

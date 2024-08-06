@@ -1,5 +1,5 @@
 // import './atom-paragraph.css';
-import {createContentDivider, CreateDividerProps} from './ContentDivider';
+import {createContentDivider, type CreateDividerProps} from './ContentDivider';
 
 export default {
     title: 'Components/Base/ContentDivider',
@@ -25,12 +25,6 @@ export const Default = {
     
 };
 
-// export const Primary = {
-//     args: {
-//         variant: 'primary',
-//     }
-// };
-
 export const DefaultWithMargin = {
     args: {
         variant: 'default',
@@ -42,5 +36,17 @@ export const DefaultWithPadding = {
     args: {
         variant: 'default',
         padding: '0 3rem',
+    }
+};
+
+export const Primary = {
+    args: {
+        variant: 'primary',
+    }
+};
+
+export const Transparent = {
+    args: {
+        variant: 'transparent',
     }
 };

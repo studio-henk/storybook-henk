@@ -2,6 +2,8 @@ import { fn } from "@storybook/test";
 import { createButton } from "./Button.js";
 // Import the raw SVG
 import ShareIcon from "../../assets/icons/icon-share.svg?raw";
+import ArrowRight from "../../assets/icons/icon-arrow-right.svg?raw";
+import CloseDefault from "../../assets/icons/icon-x.svg?raw";
 
 export default {
   title: "Components/Base/Button/Button",
@@ -12,7 +14,7 @@ export default {
   argTypes: {
     buttonElement: {
       control: { type: "radio" },
-      options: ["a", "button", "span"],      
+      options: ["a", "button", "span"],
     },
     variant: {
       name: "variant",
@@ -23,11 +25,18 @@ export default {
         defaultValue: { summary: "Default" },
       },
       control: "select",
-      options: ["default", "primary", "secondary", "tertiary", "link"],
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "tertiary",
+        "link",
+        "transparent",
+      ],
     },
     size: {
       control: { type: "radio" },
-      options: ["regular", "small"],      
+      options: ["regular", "small"],
     },
     label: { control: "text" },
     isLoading: { control: "boolean" },
@@ -93,7 +102,7 @@ export const OutlineLight = {
     variant: "outline-light",
   },
   parameters: {
-    backgrounds: { default: 'dark' },
+    backgrounds: { default: "dark" },
   },
 };
 
@@ -128,8 +137,9 @@ export const WithIconRight = {
     label: "Button text",
     variant: "default",
     buttonElement: "a",
-    iconSvg: ShareIcon,
+    iconSvg: ArrowRight,
     iconPosition: "right",
+    iconSize: "large",
   },
 };
 
@@ -140,6 +150,38 @@ export const IconOnly = {
     label: "Share",
     title: "Share this page",
     iconSvg: ShareIcon,
+    iconSize: "large",
+    iconOnly: true,
+    onClick: () => alert("Icon button clicked!"),
+  },
+  parameters: {
+    controls: { exclude: ["iconPosition", "iconOnly"] },
+  },
+};
+
+export const IconOnlyTransparent = {
+  args: {
+    buttonElement: "button",
+    variant: "transparent",
+    label: "Share",
+    title: "Share this page",
+    iconSvg: ShareIcon,
+    iconSize: "large",
+    iconOnly: true,
+    onClick: () => alert("Icon button clicked!"),
+  },
+  parameters: {
+    controls: { exclude: ["iconPosition", "iconOnly"] },
+  },
+};
+
+export const IconCloseOnlyTransparent = {
+  args: {
+    buttonElement: "button",
+    variant: "transparent",
+    label: "Close",
+    title: "Close this modal",
+    iconSvg: CloseDefault,
     iconSize: "large",
     iconOnly: true,
     onClick: () => alert("Icon button clicked!"),
@@ -182,6 +224,42 @@ export const Link = {
     variant: "link",
     buttonElement: "a",
     href: "#",
+  },
+};
+
+export const LinkWithIcon = {
+  args: {
+    label: "Link",
+    variant: "link",
+    buttonElement: "a",
+    href: "#",
+    iconSvg: ArrowRight,
+    iconPosition: "right",
+    iconSize: "large",
+  },
+};
+
+export const LinkWithIconMedium = {
+  args: {
+    label: "Link",
+    variant: "link",
+    buttonElement: "a",
+    href: "#",
+    iconSvg: ArrowRight,
+    iconPosition: "right",
+    iconSize: "medium",
+  },
+};
+
+export const LinkWithIconSmall = {
+  args: {
+    label: "Link",
+    variant: "link",
+    buttonElement: "a",
+    href: "#",
+    iconSvg: ArrowRight,
+    iconPosition: "right",
+    iconSize: "small",
   },
 };
 
