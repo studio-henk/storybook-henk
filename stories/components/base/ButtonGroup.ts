@@ -26,17 +26,10 @@ interface ButtonGroupProps {
     fill?: boolean; // New prop to control button filling
 }
 
-export const createButtonGroup = ({ buttons, alignment = 'right', fill = false }: ButtonGroupProps) => {
+export const createButtonGroup = ({ buttons, alignment = 'right' }: ButtonGroupProps) => {
     const group = document.createElement('div');
-    // const alignmentClass = `henk-button-group--${alignment}`;
-    // const fillClass = fill ? 'henk-button-group--fill' : '';
-    // group.className = `henk-button-group ${alignmentClass} ${fillClass}`;
-    group.className = `henk-button-group henk-button-group--${alignment} ${fill ? 'henk-button-group--fill' : ''}`;
+    group.className = `henk-button-group henk-button-group--${alignment}`;
 
-    // buttons.forEach(buttonProps => {
-    //     const button = createButton(buttonProps);
-    //     group.appendChild(button);
-    // });
     for (const buttonProps of buttons) {
         const button = createButton(buttonProps);
         group.appendChild(button);

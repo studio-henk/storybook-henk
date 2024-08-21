@@ -3,6 +3,11 @@
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
+  margin: 1.5rem 0;
+}
+
+.henk-button-group:last-child {
+  margin-bottom: 0;
 }
 
 .henk-button-group--left {
@@ -21,6 +26,23 @@
   justify-content: space-between;
 }
 
+.henk-button-group--stacked {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.henk-button-group--fill {
+
+}
+
 .henk-button-group--fill .henk-button {
   flex: 1;
+}
+
+@media only screen and (max-width: 600px) {
+
+.henk-button-group--mobile-stacked {
+  flex-direction: column;
+  align-items: stretch;
+}
 }
