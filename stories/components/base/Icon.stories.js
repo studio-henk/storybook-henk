@@ -209,11 +209,13 @@ export const IconPlusDefault = () => IconTemplate({ icon: IconPlus });
 export const IconPlusMedium = () =>
   IconTemplate({ icon: IconPlus, size: "medium" });
 
-export const IconPlusSmall = () => IconTemplate({ icon: IconPlus, size: "small" });
+export const IconPlusSmall = () =>
+  IconTemplate({ icon: IconPlus, size: "small" });
 
 export const IconMinusDefault = () => IconTemplate({ icon: IconMinus });
 
 export const IconMinusMedium = () =>
   IconTemplate({ icon: IconMinus, size: "medium" });
 
-export const IconMinusSmall = () => IconTemplate({ icon: IconMinus, size: "small" });
+export const IconMinusSmall = () =>
+  IconTemplate({ icon: IconMinus, size: "small" });
