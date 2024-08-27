@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+blockquote {
+  margin: 6rem auto 24px;
+}
+
+blockquote > p,
+blockquote > a > p,
+.quote__text {
+  display: inline;
+  box-decoration-break: clone;
+  background-color: var(--color-ui-surface-henk-black);
+  color: var(--color-ui-text-on-dark);
+  text-align: left;
+  max-width: 66ch;
+  font-size: 39px;
+  margin: 0 0 0 40px;
+  line-height: 1.5;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0.05em 0.5em;
+}
+
+blockquote > a {
+  text-decoration: none;
+  color: currentcolor;
+}
+
+blockquote > p:first-child::before,
+blockquote > a > p:first-child::before,
+blockquote .quote__text:first-child::before {
+  content: open-quote;
+  display: inline-block;
+}
+
+blockquote > p:first-child::after,
+blockquote > a > p:first-child::after,
+blockquote .quote__text:first-child::after {
+  content: close-quote;
+}
+
+/* see Gist code for future fluid font-size
+  https://gist.github.com/nilshendriks/9dcbbfdbcb94dd62be5850f949ab221b
+  */
+.quote__citation {
+  display: block;
+  font-style: normal;
+  text-align: left;
+  font-feature-settings:
+    "pnum" on,
+    "lnum" on;
+  /* text-indent: 40px; */
+  /* margin-bottom: 6rem; */
+  margin: 1rem auto 6rem;
+}
+
+.quote__citation cite {
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.quote__jobtitle {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.sh-atom-blockquote {
+  max-width: 670px;
+  margin: 0 auto;
+}
+
+figure blockquote,
+.sh-atom-blockquote blockquote {
+  max-width: none;
+}
+
+figure figcaption,
+.sh-atom-blockquote figcaption {
+  text-align: center;
+}
+
+:lang(en) q,
+:lang(en) blockquote {
+  quotes: "‘" "’" "“" "”";
+}
+
+:lang(fr) q,
+:lang(fr) blockquote {
+  quotes: "«" "»" "‹" "›";
+}
+
+:lang(de) q,
+:lang(de) blockquote {
+  quotes: "„" "“" "‚" "‘";
+}
+
+:lang(jp) q,
+:lang(jp) blockquote {
+  quotes: "「" "」" "『" "』";
+}
+
+:lang(en-us) q,
+:lang(en-us) blockquote,
+:lang(en-US) q,
+:lang(en-US) blockquote,
+:lang(en_US) q,
+:lang(en_US) blockquote,
+:lang(nl) q,
+:lang(nl) blockquote,
+:lang(th) q,
+:lang(th) blockquote {
+  quotes: "“" "”" "‘" "’";
+}
+
+:lang(hu) q,
+:lang(hu) blockquote {
+  quotes: "„" "“" "»" "«";
+}

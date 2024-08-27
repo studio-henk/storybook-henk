@@ -37,7 +37,9 @@ html {
   height: 100%;
   font-family: var(--font-body, sans-serif), sans-serif;
   font-size: 100%;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-feature-settings:
+    "pnum" on,
+    "lnum" on;
   scroll-behavior: smooth;
   scroll-padding-top: var(--total-bars-height, 80px);
 }
@@ -49,12 +51,16 @@ html {
 }
 
 :root {
-  --total-bars-height: calc(var(--NavBarHeight-mobile, 80px) + var(--MsgBarHeight, 0px));
+  --total-bars-height: calc(
+    var(--NavBarHeight-mobile, 80px) + var(--MsgBarHeight, 0px)
+  );
 }
 
 @media only screen and (min-width: 1024px) {
   :root {
-    --total-bars-height: calc(var(--NavBarHeight-desktop, 80px) + var(--MsgBarHeight, 0px));
+    --total-bars-height: calc(
+      var(--NavBarHeight-desktop, 80px) + var(--MsgBarHeight, 0px)
+    );
   }
 }
 
@@ -75,6 +81,11 @@ strong {
   font-weight: 500;
 }
 
+.amp {
+  font-family: "Baskerville", serif;
+  font-style: italic;
+}
+
 /* weights */
 .fw-normal,
 .fw-400 {
@@ -89,7 +100,6 @@ strong {
 .fstyle-italic {
   font-style: italic;
 }
-
 
 /*Description
 @name: link
@@ -175,8 +185,8 @@ ol {
 }
 
 /*2nd level*/
-li>ul,
-li>ol {
+li > ul,
+li > ol {
   margin-top: 0;
 }
 
@@ -209,7 +219,7 @@ figure img {
   display: block;
 }
 
-figure img+figcaption {
+figure img + figcaption {
   text-align: left;
 }
 

@@ -1,7 +1,7 @@
 import { fn } from "@storybook/test";
 import "./BaseModalV2.js";
-import { Share } from '../components/base/Icon.stories.js';
-import { ShareMedium } from "../components/base/Icon.stories.js"; 
+import { Share } from "../components/base/Icon.stories.js";
+import { ShareMedium } from "../components/base/Icon.stories.js";
 import { LabeledInput } from "../components/base/forms/LabeledInput.ts";
 
 /**
@@ -10,7 +10,7 @@ import { LabeledInput } from "../components/base/forms/LabeledInput.ts";
  * @return {string} The HTML markup for the BaseModalV2 component.
  */
 export default {
-  title: "Web Components/BaseModalV2",
+  title: "Components/Web Components/BaseModalV2",
 };
 
 export const Default = () => `

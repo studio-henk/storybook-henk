@@ -1,0 +1,46 @@
+.henk-post {
+  padding: 40px;
+}
+
+.henk-post p {
+  max-width: 56ch;
+}
+
+.henk-post__intro {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.henk-post .post-question {
+  color: var(--color-ui-text-highlight);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  max-width: 40ch;
+}
+
+.henk-post figure {
+  margin: 1.5rem 0;
+}
+
+.henk-post figure figcaption {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--color-ui-text-neutral);
+}
+
+.henk-post blockquote {
+  max-width: 66ch;
+}
+
+.post-question ~ .post-question {
+  font-size: 39px;
+  line-height: 40px;
+  font-weight: 700;
+  /* text-align: center; */
+  letter-spacing: -0.03em;
+  /* margin-top: 4rem; */
+  max-width: 20em;
+  margin: 1.5rem 0;
+}
