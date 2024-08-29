@@ -1,4 +1,3 @@
-/* button-group.css */
 .henk-button-group {
   display: flex;
   gap: 1rem;
@@ -27,22 +26,17 @@
 }
 
 .henk-button-group--stacked {
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: stretch;
-}
-
-.henk-button-group--fill {
-
 }
 
 .henk-button-group--fill .henk-button {
   flex: 1;
 }
 
-@media only screen and (max-width: 600px) {
-
-.henk-button-group--mobile-stacked {
-  flex-direction: column;
-  align-items: stretch;
-}
+@media only screen and (max-width: 767px) {
+  .henk-button-group--mobile-stacked {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
 }

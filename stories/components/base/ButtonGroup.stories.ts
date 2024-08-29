@@ -3,7 +3,7 @@ import { fn } from "@storybook/test";
 import { createButtonGroup } from "./ButtonGroup";
 import ShareIcon from "../../assets/icons/icon-share.svg?raw";
 
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 export default {
     title: "Components/Base/ButtonGroup",
@@ -12,25 +12,34 @@ export default {
         return createButtonGroup(args);
     },
     argTypes: {
-        buttons: { control: 'object' },
+        buttons: { control: "object" },
         alignment: {
-            control: { type: 'radio' },
-            options: ['left', 'center', 'right', 'space-between', 'fill', 'mobile-stacked', 'stacked'],
+            control: { type: "radio" },
+            options: [
+                "left",
+                "center",
+                "right",
+                "space-between",
+                "fill",
+                "mobile-stacked",
+                "stacked",
+            ],
         },
-        fill: { control: 'boolean' }, // New control for fill prop
+        fill: { control: "boolean" }, // New control for fill prop
     },
     args: { onClick: fn() },
     parameters: {
         docs: {
             description: {
-                component: 'HENK follows the convention followed by the majority: Primary action on the right. See research: https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/',
+                component:
+                    "HENK follows the convention followed by the majority: Primary action on the right. See research: https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/",
             },
         },
         viewport: {
             //👇 The viewports you want to use
             viewports: INITIAL_VIEWPORTS,
             //👇 Your own default viewport
-            defaultViewport: 'responsive',
+            defaultViewport: "responsive",
         },
     },
 };
@@ -51,7 +60,7 @@ export const GroupAlignedLeft = {
             { label: "Button 1", variant: "secondary", buttonElement: "a" },
             { label: "Button 2", variant: "primary", buttonElement: "button" },
         ],
-        alignment: 'left',
+        alignment: "left",
         fill: false,
     },
 };
@@ -62,7 +71,7 @@ export const GroupAlignedCenter = {
             { label: "Button 1", variant: "secondary", buttonElement: "a" },
             { label: "Button 2", variant: "primary", buttonElement: "button" },
         ],
-        alignment: 'center',
+        alignment: "center",
         fill: false,
     },
 };
@@ -73,11 +82,10 @@ export const GroupAlignedSpaceBetween = {
             { label: "Button 1", variant: "secondary", buttonElement: "a" },
             { label: "Button 2", variant: "primary", buttonElement: "button" },
         ],
-        alignment: 'space-between',
+        alignment: "space-between",
         fill: false,
     },
 };
-
 
 export const GroupAlignedMobileStacked = {
     args: {
@@ -85,15 +93,14 @@ export const GroupAlignedMobileStacked = {
             { label: "Button 1", variant: "secondary", buttonElement: "a" },
             { label: "Button 2", variant: "primary", buttonElement: "button" },
         ],
-        alignment: 'mobile-stacked',
+        alignment: "mobile-stacked",
     },
     parameters: {
         viewport: {
-            defaultViewport: 'iphonex',
+            defaultViewport: "iphonex",
         },
     },
 };
-
 
 export const GroupAlignedStacked = {
     args: {
@@ -101,7 +108,7 @@ export const GroupAlignedStacked = {
             { label: "Button 1", variant: "secondary", buttonElement: "a" },
             { label: "Button 2", variant: "primary", buttonElement: "button" },
         ],
-        alignment: 'stacked',
+        alignment: "stacked",
     },
 };
 
@@ -111,34 +118,34 @@ export const FillContainerGroup = {
             { label: "Button 1", variant: "secondary", buttonElement: "a" },
             { label: "Button 2", variant: "primary", buttonElement: "button" },
         ],
-        alignment: 'fill',
+        alignment: "fill",
     },
 };
 
-export const GroupWithThreeButtons = {
-    args: {
-        buttons: [
-            {
-                label: "Button 1",
-                variant: "secondary",
-                buttonElement: "a",
-            },
-            {
-                label: "Button 2",
-                variant: "secondary",
-                buttonElement: "button",
-            },
-            {
-                buttonElement: "button",
-                iconSvg: ShareIcon,
-                iconOnly: true,
-                iconSize: "large",
-                title: "Share",
-            },
-        ],
-        fill: false,
-    },
-};
+// export const GroupWithThreeButtons = {
+//     args: {
+//         buttons: [
+//             {
+//                 label: "Button 1",
+//                 variant: "secondary",
+//                 buttonElement: "a",
+//             },
+//             {
+//                 label: "Button 2",
+//                 variant: "secondary",
+//                 buttonElement: "button",
+//             },
+//             {
+//                 buttonElement: "button",
+//                 iconSvg: ShareIcon,
+//                 iconOnly: true,
+//                 iconSize: "large",
+//                 title: "Share",
+//             },
+//         ],
+//         fill: false,
+//     },
+// };
 
 // export const DisabledGroup = {
 //   args: {
