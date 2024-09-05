@@ -1,0 +1,18 @@
+.henk-list {
+}
+
+.henk-list--checkmark {
+  list-style-type: "✓ ";
+}
+
+.henk-list--plus {
+  list-style-type: "+ ";
+}
+
+.henk-list--min {
+  list-style-type: "- ";
+}
+
+.henk-list--em-dash {
+  list-style-type: "– ";
+}
