@@ -22,6 +22,7 @@ import IconArrowLeft from "../../assets/icons/icon-arrow-left.svg?raw";
 import BagIcon from "../../assets/icons/icon-bag.svg?raw";
 import IconPlus from "../../assets/icons/icon-plus.svg?raw";
 import IconMinus from "../../assets/icons/icon-minus.svg?raw";
+import IconCheckmarkFat from "../../assets/icons/icon-checkmark-fat.svg?raw";
 
 export default {
   title: "Components/Base/Icon",
@@ -36,7 +37,7 @@ export default {
   },
 };
 
-const IconTemplate = ({ icon, size = "large" }) => {
+export const IconTemplate = ({ icon, size = "large" }) => {
   const sizeClass = `icon--${size}`;
   return `<i class="henk-icon ${sizeClass}">${icon}</i>`;
 };
@@ -219,3 +220,12 @@ export const IconMinusMedium = () =>
 
 export const IconMinusSmall = () =>
   IconTemplate({ icon: IconMinus, size: "small" });
+
+export const IconCheckmarkFatDefault = () =>
+  IconTemplate({ icon: IconCheckmarkFat, size: "large" });
+
+export const IconCheckmarkFatMedium = () =>
+  IconTemplate({ icon: IconCheckmarkFat, size: "medium" });
+
+export const IconCheckmarkFatSmall = () =>
+  IconTemplate({ icon: IconCheckmarkFat, size: "small" });

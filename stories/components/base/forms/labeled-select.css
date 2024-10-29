@@ -4,25 +4,50 @@
   margin-bottom: 1.5rem;
 }
 
-.henk-labeled-select.--dir-horizontal {
-  flex-direction: row; 
+.henk-labeled-select--dir-horizontal {
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: center; 
-  gap: 0.5rem;  
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .henk-labeled-select .henk-label {
   margin-bottom: 0.25rem;
 }
 
-.henk-labeled-select.--dir-horizontal .henk-label {
+.henk-labeled-select--dir-horizontal .henk-label {
   margin-bottom: 0;
 }
 
-.henk-labeled-select.--dir-horizontal .henk-select {
+.henk-labeled-select--dir-horizontal .henk-select {
   flex: 1;
 }
 
 .henk-labeled-select .required-indicator {
   color: var(--color-ui-text-danger);
-} 
+}
+
+.henk-labeled-select.henk-labeled-select--floating {
+  position: relative;
+}
+
+.henk-labeled-select--floating .henk-label {
+  position: absolute;
+  font-weight: 400;
+  background-color: #fff;
+  color: var(--color-ui-text-neutral);
+  top: 10px;
+  left: 10px;
+  right: 32px;
+  transition: top 0.3s ease;
+}
+
+.henk-labeled-select--floating .henk-select:not([value=""]) + .henk-label,
+.henk-labeled-select--floating .henk-select:focus + .henk-label {
+  top: -10px;
+  font-size: 12px;
+  background-color: #fff;
+  color: #000;
+  padding: 0 0.5rem;
+  right: unset;
+}

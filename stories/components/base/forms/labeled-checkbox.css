@@ -1,0 +1,70 @@
+.henk-labeled-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+/* Visually hide the real checkbox but keep it accessible */
+.henk-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.henk-labeled-checkbox .henk-label {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+}
+
+.henk-labeled-checkbox .henk-label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #666;
+  border-radius: 4px;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+  box-sizing: border-box;
+}
+
+/* Focus styles for keyboard navigation */
+.henk-checkbox:focus-visible + .henk-label::before {
+  outline: 2px solid #0078d4;
+  outline-offset: 2px;
+}
+
+.henk-labeled-checkbox .henk-label .henk-icon {
+  visibility: hidden;
+  position: absolute;
+  left: 2px;
+  top: 4px;
+  color: white;
+}
+
+.henk-labeled-checkbox .henk-checkbox:checked + .henk-label .henk-icon {
+  visibility: visible;
+}
+
+.henk-labeled-checkbox .henk-checkbox:checked + .henk-label::before {
+  background-color: #000;
+  border-color: #000;
+}
+
+.henk-labeled-checkbox input {
+  outline: none;
+}
+
+/* Apply a focus style when focused via keyboard (tab) */
+.henk-labeled-checkbox input:focus-visible {
+  outline: none;
+}
+
+/* Optional: To ensure there's no outline when focused by mouse click */
+.henk-labeled-checkbox input:focus:not(:focus-visible) {
+  outline: none;
+}
