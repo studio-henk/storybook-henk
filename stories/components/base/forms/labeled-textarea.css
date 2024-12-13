@@ -1,34 +1,29 @@
-.henk-labeled-input {
+.henk-labeled-textarea {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
 }
 
-.henk-labeled-input--dir-horizontal {
+.henk-labeled-textarea--dir-horizontal {
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
 }
 
-/* why? */
-.henk-labeled-input .henk-label {
-  /* margin-bottom: 0.25rem; */
-}
-
-.henk-labeled-input--dir-horizontal .henk-label {
+.henk-labeled-textarea--dir-horizontal .henk-label {
   margin-bottom: 0;
 }
 
-.henk-labeled-input--dir-horizontal .henk-input {
+.henk-labeled-textarea--dir-horizontal .henk-textarea {
   flex: 1;
 }
 
-.henk-labeled-input--floating {
+.henk-labeled-textarea--floating {
   position: relative;
 }
 
-.henk-labeled-input--floating .henk-label {
+.henk-labeled-textarea--floating .henk-label {
   position: absolute;
   font-weight: 400;
   color: var(--color-ui-text-neutral);
@@ -37,9 +32,9 @@
   transition: top 0.3s ease;
 }
 
-.henk-labeled-input--floating .henk-input:focus + .henk-label,
-.henk-labeled-input--floating
-  .henk-input:not(:placeholder-shown)
+.henk-labeled-textarea--floating .henk-textarea:focus + .henk-label,
+.henk-labeled-textarea--floating
+  .henk-textarea:not(:placeholder-shown)
   + .henk-label {
   top: -14px;
   font-size: 12px;
@@ -52,7 +47,7 @@
   color: var(--color-ui-text-danger);
 }
 
-.henk-labeled-input--required {
+.henk-labeled-textarea--required {
   margin-bottom: 8px;
 }
 
@@ -64,26 +59,22 @@
   visibility: hidden;
 }
 
-.henk-labeled-input .henk-input:invalid {
+henk-labeled-textarea .henk-textarea:invalid {
   border-color: red;
 }
 
-/* .henk-labeled-input .henk-input:placeholder-shown { */
-/*   border-color: pink; */
-/* } */
-
 /* empty required fields on start, showing placeholder / label ! */
-.henk-labeled-input .henk-input:placeholder-shown:invalid {
+henk-labeled-textarea .henk-textarea:placeholder-shown:invalid {
   border-color: black;
 }
 
 /* empty required fields ! */
-.henk-labeled-input .henk-input.henk-input:not(:placeholder-shown):invalid {
+henk-labeled-textarea .henk-textarea:not(:placeholder-shown):invalid {
   border-color: var(--color-ui-text-danger);
 }
 
-.henk-labeled-input
-  .henk-input.henk-input:not(:placeholder-shown):invalid
+henk-labeled-textarea
+  .henk-input.henk-textarea:not(:placeholder-shown):invalid
   ~ .error-message {
   visibility: visible;
 }
