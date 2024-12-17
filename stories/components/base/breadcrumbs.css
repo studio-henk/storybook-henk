@@ -1,0 +1,45 @@
+.henk-breadcrumbs {
+  display: flex;
+  flex-direction: column;
+  padding-inline: clamp(24px, 5vw, 40px);
+  padding-block: 8px;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.henk-breadcrumbs__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.henk-breadcrumbs__item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.henk-breadcrumbs__name {
+  text-transform: capitalize;
+}
+
+/* Add the ">" separator between breadcrumb items */
+.henk-breadcrumbs__item:not(:last-child)::after {
+  /* content: " > "; */
+  content: "\003E"; /* Unicode for the > symbol */
+  margin-left: 10px;
+  color: #888; /* You can change the color to match your design */
+}
+
+.henk-breadcrumbs__item:last-child .henk-breadcrumbs__link {
+  font-weight: 500; /* If you want the last breadcrumb to look different */
+}
+
+@media (max-width: 767px) {
+  .henk-breadcrumbs__item:nth-child(2) {
+    display: block; /* Ensure it's still present in the DOM */
+    visibility: hidden; /* Hides the content visually */
+    position: absolute; /* Removes it from the layout flow */
+    width: 0; /* Optional: remove any space it might take */
+    height: 0;
+  }
+}

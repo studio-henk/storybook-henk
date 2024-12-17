@@ -2,7 +2,7 @@ import { fn } from "@storybook/test";
 import "./BaseModalV2.js";
 import { Share } from "../components/base/Icon.stories.js";
 import { ShareMedium } from "../components/base/Icon.stories.js";
-import { LabeledInput } from "../components/base/forms/LabeledInput.ts";
+import { LabeledInput } from "../components/base/forms/LabeledInput.js";
 
 /**
  * Renders a BaseModalV2 component with a hidden modal and a button to open it.

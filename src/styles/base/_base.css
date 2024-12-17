@@ -59,7 +59,8 @@ html {
 @media only screen and (min-width: 1024px) {
   :root {
     --total-bars-height: calc(
-      var(--NavBarHeight-desktop, 80px) + var(--MsgBarHeight, 0px)
+      var(--NavBarHeight-desktop, 60px) + var(--MsgBarHeight, 0px) +
+        var(--size-height-breadcrumbsbar, 0px)
     );
   }
 }
