@@ -1,0 +1,11 @@
+.required-indicator {
+  color: var(--color-ui-text-danger);
+}
+
+.error-message {
+  color: var(--color-ui-text-danger);
+  font-size: 13px;
+  line-height: 24px;
+  padding-left: 1rem;
+  visibility: hidden;
+}

@@ -1,6 +1,6 @@
 .henk-labeled-checkbox {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 /* Visually hide the real checkbox but keep it accessible */
@@ -14,7 +14,7 @@
 .henk-labeled-checkbox .henk-label {
   display: flex;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
 }
 
@@ -30,6 +30,7 @@
     background-color 0.2s,
     border-color 0.2s;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 /* Focus styles for keyboard navigation */
@@ -42,7 +43,7 @@
   visibility: hidden;
   position: absolute;
   left: 2px;
-  top: 4px;
+  top: 2px;
   color: white;
 }
 

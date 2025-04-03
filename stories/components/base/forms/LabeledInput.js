@@ -34,15 +34,16 @@ export const createLabeledInput = ({
     ${floating ? "henk-labeled-input--floating" : ""}
     ${input?.required ? "henk-labeled-input--required" : ""}`;
 
-  const labelElement = createLabel(label);
+  // const labelElement = createLabel(label);
+  const labelElement = createLabel({ ...label, required: input.required });
   const inputElement = createInput(input);
 
   // If input is required, append asterisk (*) to label text
   if (input.required) {
-    const asterisk = document.createElement("span");
-    asterisk.className = "required-indicator";
-    asterisk.innerText = " *";
-    labelElement.appendChild(asterisk);
+    // const asterisk = document.createElement("span");
+    // asterisk.className = "required-indicator";
+    // asterisk.innerText = " *";
+    // labelElement.appendChild(asterisk);
 
     // error message span element
     const errorMessage = document.createElement("span");

@@ -11,7 +11,11 @@ import "./label.css";
  * @param {CreateLabelProps} props - The properties to configure the label element.
  * @returns {HTMLLabelElement} The created label element.
  */
-export const createLabel = ({ text = "label text", htmlFor }) => {
+export const createLabel = ({
+  text = "label text",
+  htmlFor,
+  required = false,
+}) => {
   const label = document.createElement("label");
   label.className = "henk-label";
 
@@ -19,7 +23,21 @@ export const createLabel = ({ text = "label text", htmlFor }) => {
     label.htmlFor = htmlFor;
   }
 
-  label.innerText = text;
+  // Create a span specifically for the main text
+  const textSpan = document.createElement("span");
+  textSpan.className = "henk-label-text";
+  textSpan.innerHTML = text;
+
+  // Add required-indicator inside the text span if required
+  if (required) {
+    const asterisk = document.createElement("span");
+    asterisk.className = "required-indicator";
+    asterisk.innerText = " *";
+    textSpan.appendChild(asterisk);
+  }
+
+  // Append the text span to the label
+  label.appendChild(textSpan);
 
   return label;
 };

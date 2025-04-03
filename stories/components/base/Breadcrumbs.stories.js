@@ -47,19 +47,19 @@ Default.args = {
   ],
 };
 
-export const Configurable = Template.bind({});
-Configurable.args = {
-  breadcrumbs: [
-    { name: "Home", fullPath: "/" },
-    { name: "Blogs", fullPath: "/blogs/" },
-  ],
-};
-Configurable.parameters = {
-  controls: {
-    breadcrumbs: {
-      type: "array",
-      control: "object",
-      description: "List of breadcrumb items",
-    },
-  },
-};
+// export const Configurable = Template.bind({});
+// Configurable.args = {
+//   breadcrumbs: [
+//     { name: "Home", fullPath: "/" },
+//     { name: "Blogs", fullPath: "/blogs/" },
+//   ],
+// };
+// Configurable.parameters = {
+//   controls: {
+//     breadcrumbs: {
+//       type: "array",
+//       control: "object",
+//       description: "List of breadcrumb items",
+//     },
+//   },
+// };

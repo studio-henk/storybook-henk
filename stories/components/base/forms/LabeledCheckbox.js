@@ -22,7 +22,10 @@ export const createLabeledCheckbox = ({
   dataJs,
 }) => {
   const container = document.createElement("div");
-  container.className = `henk-labeled-checkbox`;
+  // container.className = `henk-labeled-checkbox`;
+
+  container.className = `henk-labeled-checkbox 
+    ${checkbox?.required ? "henk-labeled-checkbox--required" : ""}`;
 
   if (dataJs) {
     container.setAttribute(`data-js-${dataJs}`, "");
@@ -34,7 +37,19 @@ export const createLabeledCheckbox = ({
   const labelElement = createLabel({
     text: label.text,
     htmlFor: checkbox.id, // Set htmlFor to match the checkbox ID
+    required: checkbox.required,
   });
+
+  if (checkbox.required) {
+    // const asterisk = document.createElement("span");
+    // asterisk.className = "required-indicator";
+    // asterisk.innerText = " *";
+    // labelElement.appendChild(asterisk);
+    // error message span element
+    // const errorMessage = document.createElement("span");
+    // errorMessage.className = "error-message";
+    // errorMessage.innerText = "This field is required";
+  }
 
   // If an icon is provided, include it inside the label
   if (icon) {
@@ -42,14 +57,7 @@ export const createLabeledCheckbox = ({
     const iconElement = IconTemplate({ icon, size });
     // Append the icon to the label
     labelElement.innerHTML = `${iconElement} ${labelElement.innerHTML}`;
-    // container.innerHTML = iconElement;
   }
-  // if (icon) {
-  //   const iconElement = document.createElement("span");
-  //   iconElement.className = "henk-checkbox-icon";
-  //   iconElement.innerHTML = icon; // Insert raw SVG
-  //   labelElement.prepend(iconElement); // Prepend icon before label text
-  // }
 
   container.appendChild(checkboxElement);
   container.appendChild(labelElement);

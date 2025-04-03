@@ -55,3 +55,20 @@ export const Default = {
     size: "small",
   },
 };
+
+export const Required = {
+  args: {
+    label: {
+      text: "This one is required. <a href='#test'>a link</a> You <a href='test2'>have to</a> check it",
+      htmlFor: "input-id-req",
+    },
+    checkbox: {
+      id: "input-id-req",
+      name: "checkbox-name-req",
+      checked: false,
+      required: true,
+    },
+    icon: CheckmarkIcon,
+    size: "small",
+  },
+};

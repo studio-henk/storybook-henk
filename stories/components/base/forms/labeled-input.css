@@ -48,20 +48,8 @@
   padding: 0 0.5rem;
 }
 
-.required-indicator {
-  color: var(--color-ui-text-danger);
-}
-
 .henk-labeled-input--required {
   margin-bottom: 8px;
-}
-
-.error-message {
-  color: var(--color-ui-text-danger);
-  font-size: 13px;
-  line-height: 24px;
-  padding-left: 1rem;
-  visibility: hidden;
 }
 
 .henk-labeled-input .henk-input:invalid {
