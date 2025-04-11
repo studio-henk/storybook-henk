@@ -6,7 +6,7 @@ import { createHeadingElement, HeadingProps } from './Headings';
 type HeadingStory = StoryObj<HeadingProps>;
 
 export default {
-    title: 'Components/Base/Headings',
+    title: 'Typography/Headings',
     tags: ['autodocs'],
     parameters: {
         docs: {
@@ -71,10 +71,10 @@ export const Heading1Semibold: HeadingStory = {
     },
 };
 
-export const Heading1Italic: HeadingStory = {
-    args: {
-        tag: 'h1',
-        text: 'Heading 1 Italic',
-        style: 'italic',
-    },
-};
+// export const Heading1Italic: HeadingStory = {
+//     args: {
+//         tag: 'h1',
+//         text: 'Heading 1 Italic',
+//         style: 'italic',
+//     },
+// };

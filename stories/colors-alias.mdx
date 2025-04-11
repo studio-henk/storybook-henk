@@ -1,97 +1,218 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 
-<Meta title="Colours/Alias" />
+<Meta title="Tokens/Colours/Semantic" />
 
-## Alias
+## Semantic / Alias
 
 <ColorPalette>
     <ColorItem
-        title="color.alias..."
-        subtitle="Primary, Secondary"
-        colors={{                     
-            "primary": "#0A0C10",   
-            "secondary": "#F1F0EA",            
-        }}
-    />        
-    <ColorItem
-        title="color.alias.neutral.tints"
-        subtitle="Neutral tints"
-        colors={{                        
-            "neutral-darker": "#333",
-            "neutral-dark": "#666",
-            "neutral-default": "#999",
-            "neutral-light": "#D1D1D1",
-            "neutral-lighter": "#F1F1F1"
-        }}
-    />    
-    <ColorItem
-        title="color.alias.base"
-        subtitle="Base"
-        colors={{                        
-            "transparent": "transparent",
-            "black": "#000",
-            "white": "#FFF"            
-        }}
+        title="--color-primary"
+        subtitle="Primary"
+        colors={{ "blue-44": "#006fde" }}
     />
     <ColorItem
-        title="color.alias.highlight"
-        subtitle="Highlight"
-        colors={{                        
-            "highlight-dark": "#c2630f",
-            "highlight-default": "#ED7D18",
-            "highlight-light": "#f19646",
-        }}
+        title="--color-primary-dark"
+        subtitle="Primary Dark"
+        colors={{ "blue-25": "#004080" }}
     />
     <ColorItem
-        title="color.alias.sustainability"
-        subtitle="Sustainability"
-        colors={{                        
-            "sustainability-dark": "#6d5746",
-            "sustainability-default": "#79614E",
-            "sustainability-light": "#8c705a",
-        }}
+        title="--color-secondary"
+        subtitle="Secondary"
+        colors={{ "neutral-100": "#fff" }}
     />
+    <ColorItem
+        title="--color-secondary-dark"
+        subtitle="Secondary Dark"
+        colors={{ "neutral-60": "#999" }}
+    />
+</ColorPalette>
 
+### Background
+
+<ColorPalette>
     <ColorItem
-        title="color.alias.information"
-        subtitle="Information"
-        colors={{                        
-            "information-darker": "#0F1C71",
-            "information-dark": "#15289E",
-            "information-default": "#1B33CB",
-            "information-light": "#6174ea",
-            "information-lighter": "#BBC3F6"
-        }}
+        title="--color-background-body"
+        subtitle="Body"
+        colors={{ "neutral-100": "#fff" }}
     />
     <ColorItem
-        title="color.alias.success"
+        title="--color-background-base"
+        subtitle="Base"
+        colors={{ "neutral-100": "#fff" }}
+    />
+    <ColorItem
+        title="--color-background-muted"
+        subtitle="Muted"
+        colors={{ "neutral-95": "#f1f1f1" }}
+    />
+    <ColorItem
+        title="--color-background-disabled"
+        subtitle="Disabled"
+        colors={{ "neutral-82": "#d1d1d1" }}
+    />
+    <ColorItem
+        title="--color-background-base-invert"
+        subtitle="Base Invert"
+        colors={{ "neutral-0": "#000" }}
+    />
+    <ColorItem
+        title="--color-background-transparent"
+        subtitle="Transparent"
+        colors={{ transparent: "transparent" }}
+    />
+    <ColorItem
+        title="--color-background-primary"
+        subtitle="Primary"
+        colors={{ "--color-primary": "#006fde" }}
+    />
+    <ColorItem
+        title="--color-background-primary-hover"
+        subtitle="Primary Hover"
+        colors={{ "--color-primary-dark": "#004080" }}
+    />
+    <ColorItem
+        title="--color-background-secondary"
+        subtitle="Secondary"
+        colors={{ "--color-secondary": "#fff" }}
+    />
+    <ColorItem
+        title="--color-background-secondary-hover"
+        subtitle="Secondary Hover"
+        colors={{ "neutral-0": "#000" }}
+    />
+    <ColorItem
+        title="--color-background-card"
+        subtitle="Card"
+        colors={{ "neutral-95": "#f1f1f1" }}
+    />
+</ColorPalette>
+
+### Text
+
+<ColorPalette>
+    <ColorItem
+        title="--color-text-body"
+        subtitle="Body"
+        colors={{ "neutral-0": "#000" }}
+    />
+    <ColorItem
+        title="--color-text-base"
+        subtitle="Base"
+        colors={{ "neutral-0": "#000" }}
+    />
+    <ColorItem
+        title="--color-text-on-muted"
+        subtitle="On Muted"
+        colors={{ "neutral-0": "#000" }}
+    />
+    <ColorItem
+        title="--color-text-disabled"
+        subtitle="Disabled"
+        colors={{ "neutral-60": "#999" }}
+    />
+    <ColorItem
+        title="--color-text-base-invert"
+        subtitle="Base Invert"
+        colors={{ "neutral-100": "#fff" }}
+    />
+    <ColorItem
+        title="--color-text-on-primary"
+        subtitle="On Primary"
+        colors={{ "neutral-100": "#fff" }}
+    />
+    <ColorItem
+        title="--color-text-on-secondary"
+        subtitle="On Secondary"
+        colors={{ "neutral-0": "#000" }}
+    />
+    <ColorItem
+        title="--color-text-link"
+        subtitle="Text Link"
+        colors={{ "--color-primary": "#006fde" }}
+    />
+    <ColorItem
+        title="--color-text-link-hover"
+        subtitle="Text link Hover"
+        colors={{ "--color-primary-dark": "#004080" }}
+    />
+    <ColorItem
+        title="--color-text-help"
+        subtitle="Help"
+        colors={{ "neutral-60": "#999" }}
+    />
+    <ColorItem
+        title="--color-text-placeholder"
+        subtitle="Placeholder"
+        colors={{ "neutral-82": "#d1d1d1" }}
+    />
+    <ColorItem
+        title="--color-text-on-card"
+        subtitle="On Card"
+        colors={{ "neutral-0": "#000" }}
+    />
+</ColorPalette>
+
+### Border
+
+<ColorPalette>
+    <ColorItem
+        title="--color-border-base"
+        subtitle="Base"
+        colors={{ "neutral-82": "#d1d1d1" }}
+    />
+    <ColorItem
+        title="--color-border-disabled"
+        subtitle="Base"
+        colors={{ "neutral-82": "#d1d1d1" }}
+    />
+    <ColorItem
+        title="--color-border-strong"
+        subtitle="Strong"
+        colors={{ "neutral-0": "#000" }}
+    />
+    <ColorItem
+        title="--color-border-strong-invert"
+        subtitle="Strong Invert"
+        colors={{ "neutral-100": "#fff" }}
+    />
+    <ColorItem
+        title="--color-border-transparent"
+        subtitle="Transparent"
+        colors={{ transparent: "transparent" }}
+    />
+    <ColorItem
+        title="--color-border-primary"
+        subtitle="Primary"
+        colors={{ primary: "#006fde" }}
+    />
+    <ColorItem
+        title="--color-border-primary-hover"
+        subtitle="Primary Hover"
+        colors={{ "primary-dark": "#004080" }}
+    />
+</ColorPalette>
+
+### Extra
+
+<ColorPalette>
+    <ColorItem
+        title="--color-success"
         subtitle="Success"
-        colors={{                      
-            "success-darker": "#003300",  
-            "success-dark": "#004D00",
-            "success-default": "#008000",
-            "success-light": "hsl(120, 100%, 75%);",
-            "success-lighter": "hsl(120, 100%, 90%);"
-        }}
+        colors={{ "color-green": "#008000" }}
     />
     <ColorItem
-        title="color.alias.warning"
+        title="--color-danger"
+        subtitle="Danger"
+        colors={{ "color-red": "#ff0000" }}
+    />
+    <ColorItem
+        title="--color-warning"
         subtitle="Warning"
-        colors={{                        
-            "warning-darker": "#666600",
-            "warning-dark": "#999900",
-            "warning-default": "#FFFF00",
-            "warning-light": "#FFFF66",
-            "warning-lighter": "#FFFFCC"
-        }}
+        colors={{ "color-orange": "#ffa500" }}
     />
     <ColorItem
-        title="color.alias.error"
-        subtitle="Error"
-        colors={{                        
-            "error-dark": "#990000",
-            "error-default": "#FF0000",
-            "error-light": "#FFCCCC"            
-        }}
+        title="--color-information"
+        subtitle="Information"
+        colors={{ "color-blue-44": "#006fde" }}
     />
 </ColorPalette>

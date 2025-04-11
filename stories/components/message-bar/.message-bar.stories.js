@@ -3,9 +3,9 @@
 import { createMsgBar } from "./message-bar";
 
 export default {
-  title: "Components/Bars/Message Bar",
+  title: "Components/Message Bar",
   component: createMsgBar,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     controls: { sort: "requiredFirst" },
   },
@@ -14,16 +14,22 @@ export default {
       name: "text",
       type: { name: "string", required: true },
       description: "text for bar",
-      table: { type: { summary: "string" }, defaultValue: { summary: "Bezoek een verkooppunt bij jou in de buurt" } },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "Bezoek een verkooppunt bij jou in de buurt" },
+      },
       control: "text",
     },
     showTimer: {
       name: "showTimer",
       type: { name: "boolean", required: false },
       description: "Whether to display timer",
-      table: { type: { summary: "boolean" }, defaultValue: { summary: "false" } },
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
       control: "boolean",
-    },    
+    },
   },
   // args: {
   //   texts: ["Made to order in Europe", "Customisable design", "Assembled on delivery"], // Default texts
@@ -35,13 +41,13 @@ const Template = ({ text, showTimer, ...args }) => {
 };
 
 export const Default = Template.bind({});
-// Default.args = {  
-//   showIcon: true,  
+// Default.args = {
+//   showIcon: true,
 // };
 
 // export const DefaultWithIcons = Template.bind({});
-// DefaultWithIcons.args = {  
-//   showIcon: true,  
+// DefaultWithIcons.args = {
+//   showIcon: true,
 // };
 
 // export const DefaultWithLinks = Template.bind({});

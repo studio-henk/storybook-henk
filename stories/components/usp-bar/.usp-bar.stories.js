@@ -4,9 +4,9 @@ import { createUspsBar } from "./usp-bar";
 // import { BADGE } from '@geometricpanda/storybook-addon-badges';
 
 export default {
-  title: "Components/Bars/USP Bar",
+  title: "Components/USP Bar",
   component: createUspsBar,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   // decorators: [withDesign],
   parameters: {
     controls: { sort: "requiredFirst" },
@@ -25,20 +25,30 @@ export default {
       name: "showIcon",
       type: { name: "boolean", required: false },
       description: "Whether to display icons for USPS items",
-      table: { type: { summary: "boolean" }, defaultValue: { summary: "false" } },
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
       control: "boolean",
     },
     variant: {
       name: "variant",
       type: { name: "string", required: false },
       description: "Variant of the USPS bar",
-      table: { type: { summary: "string" }, defaultValue: { summary: "Default" } },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "Default" },
+      },
       control: "select",
       options: ["default"],
     },
   },
   args: {
-    texts: ["Made to order in Europe", "Customisable design", "Assembled on delivery"], // Default texts
+    texts: [
+      "Made to order in Europe",
+      "Customisable design",
+      "Assembled on delivery",
+    ], // Default texts
   },
 };
 
@@ -65,12 +75,16 @@ export const Default = Template.bind({});
 
 export const DefaultWithLinks = Template.bind({});
 DefaultWithLinks.args = {
-  texts: ["<a href='#somewhere'>Made to order in Europe</a>", "<a href='#somewhere'>Customisable design</a>", "<a href='#somewhere'>Assembled on delivery</a>"],
+  texts: [
+    "<a href='#somewhere'>Made to order in Europe</a>",
+    "<a href='#somewhere'>Customisable design</a>",
+    "<a href='#somewhere'>Assembled on delivery</a>",
+  ],
 };
 
 export const DefaultWithIcons = Template.bind({});
-DefaultWithIcons.args = {  
-  showIcon: true,  
+DefaultWithIcons.args = {
+  showIcon: true,
 };
 
 // export const Brand = Template.bind({});

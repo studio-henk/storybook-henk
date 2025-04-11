@@ -1,31 +1,31 @@
 import { fn } from "@storybook/test";
-import ShareIcon from "../../assets/icons/icon-share.svg?raw";
-import TruckIcon from "../../assets/icons/icon-truck.svg?raw";
-import CheckmarkIcon from "../../assets/icons/icon-checkmark.svg?raw";
-import StarIcon from "../../assets/icons/icon-star.svg?raw";
-import IconInstaGram from "../../assets/icons/icon-instagram.svg?raw";
-import IconFacebook from "../../assets/icons/icon-facebook.svg?raw";
-import IconTikTok from "../../assets/icons/icon-tiktok.svg?raw";
-import IconYouTube from "../../assets/icons/icon-youtube.svg?raw";
-import IconPinterest from "../../assets/icons/icon-pinterest.svg?raw";
-import IconLocation from "../../assets/icons/icon-location.svg?raw";
-import IconInfo from "../../assets/icons/icon-info.svg?raw";
-import IconSuccess from "../../assets/icons/icon-success.svg?raw";
-import IconWarning from "../../assets/icons/icon-warning.svg?raw";
-import IconDanger from "../../assets/icons/icon-danger.svg?raw";
-import IconInfoOpen from "../../assets/icons/icon-info-open.svg?raw";
-import IconLocationOpen from "../../assets/icons/icon-location-open.svg?raw";
-import IconCircleX from "../../assets/icons/icon-circle-x.svg?raw";
-import IconClose from "../../assets/icons/icon-x.svg?raw";
-import IconArrowRight from "../../assets/icons/icon-arrow-right.svg?raw";
-import IconArrowLeft from "../../assets/icons/icon-arrow-left.svg?raw";
-import BagIcon from "../../assets/icons/icon-bag.svg?raw";
-import IconPlus from "../../assets/icons/icon-plus.svg?raw";
-import IconMinus from "../../assets/icons/icon-minus.svg?raw";
-import IconCheckmarkFat from "../../assets/icons/icon-checkmark-fat.svg?raw";
+import ShareIcon from "../assets/icons/icon-share.svg?raw";
+import TruckIcon from "../assets/icons/icon-truck.svg?raw";
+import CheckmarkIcon from "../assets/icons/icon-checkmark.svg?raw";
+import StarIcon from "../assets/icons/icon-star.svg?raw";
+import IconInstaGram from "../assets/icons/icon-instagram.svg?raw";
+import IconFacebook from "../assets/icons/icon-facebook.svg?raw";
+import IconTikTok from "../assets/icons/icon-tiktok.svg?raw";
+import IconYouTube from "../assets/icons/icon-youtube.svg?raw";
+import IconPinterest from "../assets/icons/icon-pinterest.svg?raw";
+import IconLocation from "../assets/icons/icon-location.svg?raw";
+import IconInfo from "../assets/icons/icon-info.svg?raw";
+import IconSuccess from "../assets/icons/icon-success.svg?raw";
+import IconWarning from "../assets/icons/icon-warning.svg?raw";
+import IconDanger from "../assets/icons/icon-danger.svg?raw";
+import IconInfoOpen from "../assets/icons/icon-info-open.svg?raw";
+import IconLocationOpen from "../assets/icons/icon-location-open.svg?raw";
+import IconCircleX from "../assets/icons/icon-circle-x.svg?raw";
+import IconClose from "../assets/icons/icon-x.svg?raw";
+import IconArrowRight from "../assets/icons/icon-arrow-right.svg?raw";
+import IconArrowLeft from "../assets/icons/icon-arrow-left.svg?raw";
+import BagIcon from "../assets/icons/icon-bag.svg?raw";
+import IconPlus from "../assets/icons/icon-plus.svg?raw";
+import IconMinus from "../assets/icons/icon-minus.svg?raw";
+import IconCheckmarkFat from "../assets/icons/icon-checkmark-fat.svg?raw";
 
 export default {
-  title: "Components/Base/Icon",
+  title: "Components/Icon",
   tags: ["autodocs"],
   parameters: {
     docs: {

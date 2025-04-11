@@ -1,12 +1,12 @@
 import { fn } from "@storybook/test";
 import { createButton } from "./Button.js";
 // Import the raw SVG
-import ShareIcon from "../../assets/icons/icon-share.svg?raw";
-import ArrowRight from "../../assets/icons/icon-arrow-right.svg?raw";
-import CloseDefault from "../../assets/icons/icon-x.svg?raw";
+import ShareIcon from "../assets/icons/icon-share.svg?raw";
+import ArrowRight from "../assets/icons/icon-arrow-right.svg?raw";
+import CloseDefault from "../assets/icons/icon-x.svg?raw";
 
 export default {
-  title: "Components/Base/Button/Button",
+  title: "Components/Button",
   tags: ["autodocs"],
   render: ({ label, ...args }) => {
     return createButton({ label, ...args });

@@ -1,43 +1,55 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 
-<Meta title="Colours/Primitives" />
+<Meta title="Tokens/Colours/Primitives" />
 
 ## Primitives
 
 <ColorPalette>
     <ColorItem
-        title="color.primitives.ral-9005"
-        subtitle="RAL 9005"
-        colors={{ "RAL-9005": "#0A0C10" }}
+        title="--color-green"
+        subtitle="Green"
+        colors={{ Green: "#008000" }}
+    />
+    <ColorItem title="--color-red" subtitle="Red" colors={{ Red: "#ff0000" }} />
+    <ColorItem
+        title="--color-orange"
+        subtitle="Orange"
+        colors={{ Orange: "#FFA500" }}
     />
     <ColorItem
-        title="color.primitives.ral-9016"
-        subtitle="RAL 9016"
-        colors={{ "RAL-9016": "#F1F0EA" }}
+        title="--color-yellow"
+        subtitle="Yellow"
+        colors={{ Yellow: "#ffff00" }}
     />
     <ColorItem
-        title="color.primitives.base"
-        subtitle="Base"
+        title="color.primitives.blue"
+        subtitle="Blue tints"
         colors={{
-            "black": "#000",
-            "white": "#FFF",
-            "orange": "#ED7D18",
-            "brown": "#79614E",
-            "blue": "#1b33cb",
-            "green": "#008000",
-            "red": "#ff0000"
+            "blue-25": "#004080",
+            "blue-44": "#006FDE",
+            "blue-50": "#0080FF",
+            "blue-75": "#80BFFF",
         }}
     />
     <ColorItem
-        title="color.primitives.grey.tints"
+        title="color.primitives.neutral"
         subtitle="Grey tints"
         colors={{
-            "grey-darker": "#333",
-            "grey-dark": "#666",
-            "grey-default": "#999",
-            "grey-light": "#D1D1D1",
-            "grey-lighter": "#F1F1F1"
+            "neutral-0": "#000",
+            "neutral-20": "#333",
+            "neutral-40": "#666",
+            "neutral-60": "#999",
+            "neutral-82": "#d1d1d1",
+            "neutral-95": "#f1f1f1",
+            "neutral-100": "#fff",
         }}
     />
-
+    <ColorItem
+        title="color.browser-defaults"
+        subtitle="Browser defaults"
+        colors={{
+            "focus-ring": "#005FCC",
+            "accent-color": "#0075FF",
+        }}
+    />
 </ColorPalette>

@@ -4,7 +4,7 @@ import { createBaseParagraph } from "./BaseParagraph";
 // import {BADGE} from "@geometricpanda/storybook-addon-badges";
 
 export default {
-  title: "Components/Base/Paragraph",
+  title: "Typography/Paragraph",
   component: "createBaseParagraph",
   tags: ["autodocs"],
   parameters: {
