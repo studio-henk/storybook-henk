@@ -1,7 +1,7 @@
 /** @type { import('@storybook/html').Preview } */
 
-// import "../src/styles/css/henk-styles.min.css";
-import "/Users/studiohenk-nh/Sites/pimcore-local/public/static/std/assets/css/henk-styles.min.css";
+import "../src/styles/henk-styles.min.css";
+// import "/Users/studiohenk-nh/Sites/pimcore-local/public/static/std/assets/css/henk-styles.min.css";
 // import "@styles/henk-styles.min.css";
 
 // import "../src/styles/_font-face.css";
