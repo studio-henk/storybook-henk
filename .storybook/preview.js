@@ -93,8 +93,14 @@ const preview = {
       storySort: {
         order: [
           "Welcome",
+          "Colour",
           "Tokens",
-          ["Primitives", "Semantic"],
+          [
+            "Colours",
+            ["Primitives", "Semantic"],
+            "Type",
+            ["Size", "Line-height"],
+          ],
           "Typography",
           "Components",
           ["Base", ["HeadingGroup", "ContentDivider", "*"], "Web Components"],
