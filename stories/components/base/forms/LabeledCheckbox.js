@@ -1,7 +1,7 @@
 import { createLabel } from "./Label.js";
 import { createCheckbox } from "./Checkbox.js";
 import "./labeled-checkbox.css";
-import { IconTemplate } from "../Icon.stories.js";
+import { IconTemplate } from "../../Icon.stories.js";
 
 /**
  * Creates a labeled checkbox element.
