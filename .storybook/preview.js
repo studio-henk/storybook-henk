@@ -1,6 +1,7 @@
 /** @type { import('@storybook/html').Preview } */
 
-import "../src/styles/css/henk-styles.min.css";
+// import "../src/styles/css/henk-styles.min.css";
+import "@styles/henk-styles.min.css";
 
 // import "../src/styles/_font-face.css";
 // import "../src/styles/tokens/_tokens-font.css";
