@@ -25,14 +25,7 @@ export default {
         defaultValue: { summary: "Default" },
       },
       control: "select",
-      options: [
-        "default",
-        "primary",
-        "secondary",
-        "tertiary",
-        "link",
-        "transparent",
-      ],
+      options: ["primary", "secondary", "tertiary", "link", "transparent"],
     },
     size: {
       control: { type: "radio" },
@@ -56,7 +49,7 @@ export default {
 
 export const Default = {
   args: {
-    label: "Button",
+    label: "Label",
     buttonElement: "a",
   },
 };
@@ -89,6 +82,12 @@ export const Secondary = {
   },
 };
 
+export const Disabled = {
+  args: {
+    label: "Button",
+    disabled: true,
+  },
+};
 // export const Tertiary = {
 //   args: {
 //     label: "Button",
@@ -96,23 +95,15 @@ export const Secondary = {
 //   },
 // };
 
-export const OutlineLight = {
-  args: {
-    label: "Button",
-    variant: "outline-light",
-  },
-  parameters: {
-    backgrounds: { default: "dark" },
-  },
-};
-
-export const Disabled = {
-  args: {
-    label: "Button",
-    variant: "default",
-    disabled: true,
-  },
-};
+// export const OutlineLight = {
+//   args: {
+//     label: "Button",
+//     variant: "outline-light",
+//   },
+//   parameters: {
+//     backgrounds: { default: "dark" },
+//   },
+// };
 
 // export const PrimaryDisabled = {
 //   args: {
@@ -122,153 +113,153 @@ export const Disabled = {
 //   },
 // };
 
-export const WithIconLeft = {
-  args: {
-    label: "Button text",
-    variant: "default",
-    buttonElement: "a",
-    iconSvg: ShareIcon,
-    iconPosition: "left",
-  },
-};
+// export const WithIconLeft = {
+//   args: {
+//     label: "Button text",
+//     variant: "default",
+//     buttonElement: "a",
+//     iconSvg: ShareIcon,
+//     iconPosition: "left",
+//   },
+// };
 
-export const WithIconRight = {
-  args: {
-    label: "Button text",
-    variant: "default",
-    buttonElement: "a",
-    iconSvg: ArrowRight,
-    iconPosition: "right",
-    iconSize: "large",
-  },
-};
+// export const WithIconRight = {
+//   args: {
+//     label: "Button text",
+//     variant: "default",
+//     buttonElement: "a",
+//     iconSvg: ArrowRight,
+//     iconPosition: "right",
+//     iconSize: "large",
+//   },
+// };
 
-export const IconOnly = {
-  args: {
-    buttonElement: "button",
-    variant: "default",
-    label: "Share",
-    title: "Share this page",
-    iconSvg: ShareIcon,
-    iconSize: "large",
-    iconOnly: true,
-    onClick: () => alert("Icon button clicked!"),
-  },
-  parameters: {
-    controls: { exclude: ["iconPosition", "iconOnly"] },
-  },
-};
+// export const IconOnly = {
+//   args: {
+//     buttonElement: "button",
+//     variant: "default",
+//     label: "Share",
+//     title: "Share this page",
+//     iconSvg: ShareIcon,
+//     iconSize: "large",
+//     iconOnly: true,
+//     onClick: () => alert("Icon button clicked!"),
+//   },
+//   parameters: {
+//     controls: { exclude: ["iconPosition", "iconOnly"] },
+//   },
+// };
 
-export const IconOnlyTransparent = {
-  args: {
-    buttonElement: "button",
-    variant: "transparent",
-    label: "Share",
-    title: "Share this page",
-    iconSvg: ShareIcon,
-    iconSize: "large",
-    iconOnly: true,
-    onClick: () => alert("Icon button clicked!"),
-  },
-  parameters: {
-    controls: { exclude: ["iconPosition", "iconOnly"] },
-  },
-};
+// export const IconOnlyTransparent = {
+//   args: {
+//     buttonElement: "button",
+//     variant: "transparent",
+//     label: "Share",
+//     title: "Share this page",
+//     iconSvg: ShareIcon,
+//     iconSize: "large",
+//     iconOnly: true,
+//     onClick: () => alert("Icon button clicked!"),
+//   },
+//   parameters: {
+//     controls: { exclude: ["iconPosition", "iconOnly"] },
+//   },
+// };
 
-export const IconCloseOnlyTransparent = {
-  args: {
-    buttonElement: "button",
-    variant: "transparent",
-    label: "Close",
-    title: "Close this modal",
-    iconSvg: CloseDefault,
-    iconSize: "large",
-    iconOnly: true,
-    onClick: () => alert("Icon button clicked!"),
-  },
-  parameters: {
-    controls: { exclude: ["iconPosition", "iconOnly"] },
-  },
-};
+// export const IconCloseOnlyTransparent = {
+//   args: {
+//     buttonElement: "button",
+//     variant: "transparent",
+//     label: "Close",
+//     title: "Close this modal",
+//     iconSvg: CloseDefault,
+//     iconSize: "large",
+//     iconOnly: true,
+//     onClick: () => alert("Icon button clicked!"),
+//   },
+//   parameters: {
+//     controls: { exclude: ["iconPosition", "iconOnly"] },
+//   },
+// };
 
-export const Loading = {
-  args: {
-    label: "Loading",
-    variant: "default",
-    isLoading: true,
-  },
-};
+// export const Loading = {
+//   args: {
+//     label: "Loading",
+//     variant: "default",
+//     isLoading: true,
+//   },
+// };
 
-export const Small = {
-  args: {
-    label: "Small Button",
-    variant: "default",
-    size: "small",
-  },
-};
+// export const Small = {
+//   args: {
+//     label: "Small Button",
+//     variant: "default",
+//     size: "small",
+//   },
+// };
 
-export const IconOnlySmall = {
-  args: {
-    label: "Small Button",
-    variant: "default",
-    size: "small",
-    iconSvg: ShareIcon,
-    iconSize: "small",
-    iconOnly: true,
-  },
-};
+// export const IconOnlySmall = {
+//   args: {
+//     label: "Small Button",
+//     variant: "default",
+//     size: "small",
+//     iconSvg: ShareIcon,
+//     iconSize: "small",
+//     iconOnly: true,
+//   },
+// };
 
-export const Link = {
-  args: {
-    label: "Link",
-    variant: "link",
-    buttonElement: "a",
-    href: "#",
-  },
-};
+// export const Link = {
+//   args: {
+//     label: "Link",
+//     variant: "link",
+//     buttonElement: "a",
+//     href: "#",
+//   },
+// };
 
-export const LinkWithIcon = {
-  args: {
-    label: "Link",
-    variant: "link",
-    buttonElement: "a",
-    href: "#",
-    iconSvg: ArrowRight,
-    iconPosition: "right",
-    iconSize: "large",
-  },
-};
+// export const LinkWithIcon = {
+//   args: {
+//     label: "Link",
+//     variant: "link",
+//     buttonElement: "a",
+//     href: "#",
+//     iconSvg: ArrowRight,
+//     iconPosition: "right",
+//     iconSize: "large",
+//   },
+// };
 
-export const LinkWithIconMedium = {
-  args: {
-    label: "Link",
-    variant: "link",
-    buttonElement: "a",
-    href: "#",
-    iconSvg: ArrowRight,
-    iconPosition: "right",
-    iconSize: "medium",
-  },
-};
+// export const LinkWithIconMedium = {
+//   args: {
+//     label: "Link",
+//     variant: "link",
+//     buttonElement: "a",
+//     href: "#",
+//     iconSvg: ArrowRight,
+//     iconPosition: "right",
+//     iconSize: "medium",
+//   },
+// };
 
-export const LinkWithIconSmall = {
-  args: {
-    label: "Link",
-    variant: "link",
-    buttonElement: "a",
-    href: "#",
-    iconSvg: ArrowRight,
-    iconPosition: "right",
-    iconSize: "small",
-  },
-};
+// export const LinkWithIconSmall = {
+//   args: {
+//     label: "Link",
+//     variant: "link",
+//     buttonElement: "a",
+//     href: "#",
+//     iconSvg: ArrowRight,
+//     iconPosition: "right",
+//     iconSize: "small",
+//   },
+// };
 
-export const LinkDisabled = {
-  args: {
-    label: "Link",
-    variant: "link",
-    buttonElement: "a",
-    href: "#",
-    disabled: true,
-  },
-};
+// export const LinkDisabled = {
+//   args: {
+//     label: "Link",
+//     variant: "link",
+//     buttonElement: "a",
+//     href: "#",
+//     disabled: true,
+//   },
+// };
