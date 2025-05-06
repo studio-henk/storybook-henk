@@ -71,6 +71,13 @@ export const Heading1Semibold: HeadingStory = {
     },
 };
 
+export const Heading1Lineheight: HeadingStory = {
+    args: {
+        tag: 'h1',
+        text: 'Heading 1 with much much much much much much more text to see how it flows over multiple lines',
+    },
+};
+
 // export const Heading1Italic: HeadingStory = {
 //     args: {
 //         tag: 'h1',
