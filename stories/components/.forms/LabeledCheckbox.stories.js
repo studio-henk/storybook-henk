@@ -1,5 +1,5 @@
 import { IconTemplate } from "../../Icon.stories.js";
-import CheckmarkIcon from "../../../assets/icons/icon-checkmark-fat.svg?raw";
+import CheckmarkIcon from "../../assets/icons/icon-checkmark-fat.svg?raw";
 import { createLabeledCheckbox } from "./LabeledCheckbox.js";
 
 export default {

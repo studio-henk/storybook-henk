@@ -1,12 +1,12 @@
 // ButtonGroup.stories.ts
 import { fn } from "@storybook/test";
 import { createButtonGroup } from "./ButtonGroup";
-import ShareIcon from "../../assets/icons/icon-share.svg?raw";
+import ShareIcon from "../assets/icons/icon-share.svg?raw";
 
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 export default {
-    title: "Components/Base/ButtonGroup",
+    title: "Components/ButtonGroup",
     tags: ["autodocs"],
     render: (args) => {
         return createButtonGroup(args);

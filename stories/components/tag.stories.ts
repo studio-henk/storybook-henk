@@ -1,10 +1,10 @@
 // tag.stories.ts
 import { createTag } from "./tag";
-import ShareIcon from "../../assets/icons/icon-share.svg?raw"; // Import an icon
-import TruckIcon from "../../assets/icons/icon-truck.svg?raw"; // Import an icon
+import ShareIcon from "../assets/icons/icon-share.svg?raw"; // Import an icon
+import TruckIcon from "../assets/icons/icon-truck.svg?raw"; // Import an icon
 
 export default {
-    title: "Components/Base/Tag",
+    title: "Components/Tag",
     tags: ["autodocs"],
     render: ({ label, ...args }) => {
         return createTag({ label, ...args });
@@ -74,23 +74,23 @@ export const variantHighlight = {
     },
 };
 
-export const variantSustainability = {
-    args: {
-        label: "Sustainable",
-        variant: "sustainability",
-        iconSvg: TruckIcon,
-        iconPosition: "left",
-    },
-};
+// export const variantSustainability = {
+//     args: {
+//         label: "Sustainable",
+//         variant: "sustainability",
+//         iconSvg: TruckIcon,
+//         iconPosition: "left",
+//     },
+// };
 
-export const Outlined = {
-    args: {
-        label: "Fast Delivery",
-        variant: "outlined",
-        iconSvg: TruckIcon,
-        iconPosition: "left",
-    },
-};
+// export const Outlined = {
+//     args: {
+//         label: "Fast Delivery",
+//         variant: "outlined",
+//         iconSvg: TruckIcon,
+//         iconPosition: "left",
+//     },
+// };
 
 export const DefaultSmall = {
     args: {

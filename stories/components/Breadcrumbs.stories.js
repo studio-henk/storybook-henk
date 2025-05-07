@@ -1,8 +1,8 @@
-import "./breadcrumbs.css";
+// import "./breadcrumbs.css";
 import "./breadcrumbs.js";
 
 export default {
-  title: "Components/Base/Breadcrumbs",
+  title: "Components/Breadcrumbs",
   tags: ["autodocs"],
   parameters: {
     docs: {

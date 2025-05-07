@@ -1,6 +1,6 @@
 import { createCheckbox } from "./Checkbox";
 export default {
-  title: "Components/Base/Forms/Base/Checkbox",
+  title: "Components/Forms/Base/Checkbox",
   parameters: { controls: { sort: "requiredFirst" } },
   argTypes: {
     checked: { control: "boolean" },

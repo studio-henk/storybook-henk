@@ -1,4 +1,4 @@
-import "./_henk-checkbox.css";
+// import "./_henk-checkbox.css";
 
 /**
  * Creates a checkbox input element with optional attributes such as `checked`, `id`, `name`, `disabled`, and `required`.

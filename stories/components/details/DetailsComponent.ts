@@ -1,4 +1,4 @@
-import './details-component.css';
+// import './details-component.css';
 
 export interface DetailsProps {
     summary: string;

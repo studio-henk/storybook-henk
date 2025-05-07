@@ -1,7 +1,4 @@
-// import './button-group.css';
-
-// ButtonGroup.ts
-import { createButton } from "../Button.js";
+import { createButton } from "./Button.js";
 
 interface ButtonProps {
     buttonElement?: 'a' | 'button' | 'span';

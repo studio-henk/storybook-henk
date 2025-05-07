@@ -2,7 +2,7 @@ import { createDetailsComponent, DetailsProps } from './DetailsComponent';
 
 // Define the Storybook story
 export default {
-    title: 'Components/Base/DetailsComponent',
+    title: 'Components/DetailsComponent',
     component: createDetailsComponent,
     argTypes: {
         summary: { control: 'text' },
@@ -89,7 +89,7 @@ export const MultipleDetailsComponents = () => {
     });
 
     const details6 = createDetailsComponent({
-        summary: 'Will I be reimbursed for the samples?',        
+        summary: 'Will I be reimbursed for the samples?',
         content: '<p>When you return the samples to one of our stores, we will reimburse the cost as a discount with your order. Unfortunately, we\'re not able to offer reimbursement when you return your samples to us via mail.</p>',
         variant: 'plusmin',
     });

@@ -1,5 +1,5 @@
 // tag.ts
-import "./tag.css";
+// import "./tag.css";
 
 interface TagProps {
     label: string; // Required label for the tag

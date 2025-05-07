@@ -1,13 +1,13 @@
-import CheckmarkIcon from "../../../assets/icons/icon-checkmark-fat.svg?raw";
+import CheckmarkIcon from "../../assets/icons/icon-checkmark-fat.svg?raw";
 import { createForm } from "./Form.js";
 import { createFieldset } from "./Fieldset.js";
 import { createLabeledInput } from "./LabeledInput.js";
 import { createLabeledSelect } from "./LabeledSelect";
-import { createButton } from "../../Button.js";
+import { createButton } from "../Button.js";
 import { createLabeledCheckbox } from "./LabeledCheckbox.js";
 
 export default {
-  title: "Components/Base/Forms/Base/Form",
+  title: "Components/Forms/Base/Form",
   tags: ["autodocs"],
   render: ({ ...args }) => {
     // return createForm({ ...args });

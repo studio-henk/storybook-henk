@@ -3,7 +3,7 @@ import { createList } from "./list.js";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 export default {
-  title: "Components/Base/List",
+  title: "Typography/List",
   tags: ["autodocs"],
   render: (args) => {
     return createList(args);
