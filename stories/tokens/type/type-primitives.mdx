@@ -9,16 +9,32 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 <table>
     <thead>
         <tr>
-            <th>Element</th>
-            <th>Rem Size</th>
-            <th>Mobile px (16px)</th>
-            <th>Desktop px (20px)</th>
+            <th>Token</th>
+            <th>Rem Value</th>
+            <th>Mobile (px)</th>
+            <th>Desktop (px)</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
-                <code>body</code>
+                <code>--size-font-xs</code>
+            </td>
+            <td>0.625rem</td>
+            <td>10px</td>
+            <td>12.5px</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-sm</code>
+            </td>
+            <td>0.875rem</td>
+            <td>14px</td>
+            <td>17.5px</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-base</code>
             </td>
             <td>1rem</td>
             <td>16px</td>
@@ -26,31 +42,7 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
         </tr>
         <tr>
             <td>
-                <code>h1</code>
-            </td>
-            <td>2rem</td>
-            <td>32px</td>
-            <td>40px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>h2</code>
-            </td>
-            <td>1.75rem</td>
-            <td>28px</td>
-            <td>35px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>h3</code>
-            </td>
-            <td>1.5rem</td>
-            <td>24px</td>
-            <td>30px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>h4</code>
+                <code>--size-font-md</code>
             </td>
             <td>1.25rem</td>
             <td>20px</td>
@@ -58,60 +50,46 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
         </tr>
         <tr>
             <td>
-                <code>h5</code>
+                <code>--size-font-lg</code>
             </td>
-            <td>1rem</td>
-            <td>16px</td>
-            <td>20px</td>
+            <td>1.5rem</td>
+            <td>24px</td>
+            <td>30px</td>
         </tr>
         <tr>
             <td>
-                <code>h6</code>
+                <code>--size-font-xl</code>
             </td>
-            <td>0.875rem</td>
-            <td>14px</td>
-            <td>18px</td>
+            <td>1.75rem</td>
+            <td>28px</td>
+            <td>35px</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-xxl</code>
+            </td>
+            <td>2rem</td>
+            <td>32px</td>
+            <td>40px</td>
         </tr>
     </tbody>
 </table>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Value</th>
-    </tr>
-    <tr>
-        <td>xs</td>
-        <td>10</td>
-    </tr>
-    <tr>
-        <td>sm</td>
-        <td>13</td>
-    </tr>
-    <tr>
-        <td>md</td>
-        <td>16</td>
-    </tr>
-    <tr>
-        <td>lg</td>
-        <td>20</td>
-    </tr>
-    <tr>
-        <td>xl</td>
-        <td>25</td>
-    </tr>
-    <tr>
-        <td>xxl</td>
-        <td>31</td>
-    </tr>
-    <tr>
-        <td>xxxl</td>
-        <td>39</td>
-    </tr>
-    <tr>
-        <td>xxxxl</td>
-        <td>48</td>
-    </tr>
-</table>
+<hr />
 
-Font-sizes are based on this [modular scale of 1.25](https://www.modularscale.com/?16&px&1.25) and rounded to their nearest integer.
+<table>
+    <thead>
+        <tr>
+            <th>Token</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>--font-body</code>
+            </td>
+            <td>Haas Grot Text R Web</td>
+        </tr>
+    </tbody>
+</table>
