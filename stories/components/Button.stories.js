@@ -123,16 +123,16 @@ export const Disabled = {
 //   },
 // };
 
-// export const WithIconRight = {
-//   args: {
-//     label: "Button text",
-//     variant: "default",
-//     buttonElement: "a",
-//     iconSvg: ArrowRight,
-//     iconPosition: "right",
-//     iconSize: "large",
-//   },
-// };
+export const WithIconRight = {
+  args: {
+    label: "Button text",
+    variant: "default",
+    buttonElement: "a",
+    iconSvg: ArrowRight,
+    iconPosition: "right",
+    iconSize: "large",
+  },
+};
 
 // export const IconOnly = {
 //   args: {
@@ -190,13 +190,25 @@ export const Disabled = {
 //   },
 // };
 
-// export const Small = {
-//   args: {
-//     label: "Small Button",
-//     variant: "default",
-//     size: "small",
-//   },
-// };
+export const Small = {
+  args: {
+    label: "Small Button",
+    variant: "secondary",
+    size: "small",
+  },
+};
+
+export const SmallWithIconRight = {
+  args: {
+    label: "Small with icon",
+    variant: "secondary",
+    size: "small",
+    buttonElement: "a",
+    iconSvg: ArrowRight,
+    iconPosition: "right",
+    iconSize: "small",
+  },
+};
 
 // export const IconOnlySmall = {
 //   args: {

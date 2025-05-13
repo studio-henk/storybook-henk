@@ -1,4 +1,4 @@
-import "./list.css";
+// import "./list.css";
 
 export const createList = ({
   listType = "ul",

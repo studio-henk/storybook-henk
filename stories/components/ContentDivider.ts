@@ -18,13 +18,13 @@ export const createContentDivider = ({
     // contentDivider.className = 'henk-content-divider'; 
     contentDivider.className = `henk-content-divider henk-content-divider--${variant}`;
 
-    if (margin) {
-        contentDivider.style.margin = margin;
-    }
-
-    if (padding) {
-        contentDivider.style.padding = padding;
-    }
+    // if (margin) {
+    //     contentDivider.style.margin = margin;
+    // }
+    //
+    // if (padding) {
+    //     contentDivider.style.padding = padding;
+    // }
 
     return contentDivider;
 };
