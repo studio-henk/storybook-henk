@@ -14,7 +14,7 @@ export const createLogo = ({
 
     // create span for text 
     const span = document.createElement('span');
-    span.className = `screen-reader-text`;
+    span.className = `visually-hidden`;
     span.textContent = "Studio HENK";
 
     logolink.appendChild(span);

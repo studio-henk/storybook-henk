@@ -1,7 +1,5 @@
-// tag.stories.ts
 import { createTag } from "./tag";
-import ShareIcon from "../assets/icons/icon-share.svg?raw"; // Import an icon
-import TruckIcon from "../assets/icons/icon-truck.svg?raw"; // Import an icon
+import TruckIcon from "../assets/icons/icon-truck.svg?raw";
 
 export default {
     title: "Components/Tag",
