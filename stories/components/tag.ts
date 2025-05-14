@@ -1,6 +1,3 @@
-// tag.ts
-// import "./tag.css";
-
 interface TagProps {
     label: string; // Required label for the tag
     iconSvg?: string; // Optional SVG icon
@@ -14,7 +11,7 @@ export const createTag = ({
     iconSvg = "",
     iconPosition = "left",
     variant,
-    size = "large",
+    size,
 }: TagProps) => {
     const tag = document.createElement("span");
 

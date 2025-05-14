@@ -26,7 +26,7 @@ export default {
         },
         variant: {
             control: { type: "select" },
-            options: ["default", "highlight", "sustainability"],
+            options: ["highlight"],
             description: "Visual style variant of the tag",
         },
         size: {
@@ -37,9 +37,6 @@ export default {
     },
     args: {
         label: "Fast Delivery",
-        // iconSvg: TruckIcon, // Default icon
-        // iconPosition: "left", // Default position of the icon
-        variant: "default", // Default variant
     },
 };
 
@@ -92,18 +89,26 @@ export const variantHighlight = {
 //     },
 // };
 
-export const DefaultSmall = {
+
+export const Large = {
     args: {
         label: "Fast Delivery",
-        size: "small",
+        size: "large",
     },
 };
 
-export const DefaultSmallIcon = {
-    args: {
-        label: "Fast Delivery",
-        size: "small",
-        iconSvg: TruckIcon,
-        iconPosition: "left",
-    },
-};
+// export const DefaultSmall = {
+//     args: {
+//         label: "Fast Delivery",
+//         size: "small",
+//     },
+// };
+
+// export const DefaultSmallIcon = {
+//     args: {
+//         label: "Fast Delivery",
+//         size: "small",
+//         iconSvg: TruckIcon,
+//         iconPosition: "left",
+//     },
+// };
