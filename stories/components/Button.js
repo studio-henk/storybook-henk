@@ -1,5 +1,3 @@
-// import "./button.css";
-
 /**
  * @typedef {Object} ButtonProps
  * @property {("a" | "button" | "span")} [buttonElement] - The HTML element to use for the button (defaults to "a").
@@ -16,7 +14,7 @@
  * @property {boolean} [disabled] - Whether the button is disabled.
  * @property {string} [target] - The target attribute for anchor elements.
  * @property {("submit" | "reset" | "button")} [type] - The type attribute for the button element (e.g., "submit").
- * @property {("small" | "medium" | "large")} [size] - The size variant of the button.
+ * @property {("small" | large")} [size] - The size variant of the button.
  */
 
 /**

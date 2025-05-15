@@ -1,4 +1,3 @@
-// ButtonGroup.stories.ts
 import { fn } from "@storybook/test";
 import { createButtonGroup } from "./ButtonGroup";
 import ShareIcon from "../assets/icons/icon-share.svg?raw";
@@ -21,8 +20,8 @@ export default {
                 "right",
                 "space-between",
                 "fill",
-                "mobile-stacked",
-                "stacked",
+                // "mobile-stacked",
+                // "stacked",
             ],
         },
         fill: { control: "boolean" }, // New control for fill prop
@@ -87,38 +86,53 @@ export const GroupAlignedSpaceBetween = {
     },
 };
 
-export const GroupAlignedMobileStacked = {
+// export const GroupAlignedMobileStacked = {
+//     args: {
+//         buttons: [
+//             { label: "Button 1", variant: "secondary", buttonElement: "a" },
+//             { label: "Button 2", variant: "primary", buttonElement: "button" },
+//         ],
+//         alignment: "mobile-stacked",
+//     },
+//     parameters: {
+//         viewport: {
+//             defaultViewport: "iphonex",
+//         },
+//     },
+// };
+
+// export const GroupAlignedStacked = {
+//     args: {
+//         buttons: [
+//             { label: "Button 1", variant: "secondary", buttonElement: "a" },
+//             { label: "Button 2", variant: "primary", buttonElement: "button" },
+//         ],
+//         alignment: "stacked",
+//     },
+// };
+
+export const FillContainerGroup = {
     args: {
         buttons: [
-            { label: "Button 1", variant: "secondary", buttonElement: "a" },
-            { label: "Button 2", variant: "primary", buttonElement: "button" },
+            { label: "Clear All", variant: "secondary", buttonElement: "a" },
+            { label: "Apply", variant: "primary", buttonElement: "button" },
         ],
-        alignment: "mobile-stacked",
+        alignment: "fill",
+    },
+};
+
+export const FillContainerGroupMobile = {
+    args: {
+        buttons: [
+            { label: "Clear All", variant: "secondary", buttonElement: "a" },
+            { label: "Apply", variant: "primary", buttonElement: "button" },
+        ],
+        alignment: "fill",
     },
     parameters: {
         viewport: {
             defaultViewport: "iphonex",
         },
-    },
-};
-
-export const GroupAlignedStacked = {
-    args: {
-        buttons: [
-            { label: "Button 1", variant: "secondary", buttonElement: "a" },
-            { label: "Button 2", variant: "primary", buttonElement: "button" },
-        ],
-        alignment: "stacked",
-    },
-};
-
-export const FillContainerGroup = {
-    args: {
-        buttons: [
-            { label: "Button 1", variant: "secondary", buttonElement: "a" },
-            { label: "Button 2", variant: "primary", buttonElement: "button" },
-        ],
-        alignment: "fill",
     },
 };
 

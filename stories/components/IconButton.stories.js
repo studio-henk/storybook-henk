@@ -24,11 +24,11 @@ export default {
         defaultValue: { summary: "Default" },
       },
       control: "select",
-      options: ["primary", "noborder"],
+      options: ["outline", "primary", "minimal"],
     },
     size: {
       control: { type: "radio" },
-      options: ["regular", "small"],
+      options: ["small", "large"],
     },
     label: { control: "text" },
     isLoading: { control: "boolean" },
@@ -46,25 +46,26 @@ export default {
   args: { onClick: fn() },
 };
 
-export const Default = {
+export const Outline = {
   args: {
     label: "Close",
     buttonElement: "a",
+    variant: "outline",
     iconSvg: CloseDefault,
     iconPosition: "left",
     iconSize: "large",
   },
 };
 
-export const DefaultAsButton = {
-  args: {
-    label: "Button",
-    buttonElement: "button",
-    iconSvg: CloseDefault,
-    iconPosition: "left",
-    iconSize: "large",
-  },
-};
+// export const DefaultAsButton = {
+//   args: {
+//     label: "Button",
+//     buttonElement: "button",
+//     iconSvg: CloseDefault,
+//     iconPosition: "left",
+//     iconSize: "large",
+//   },
+// };
 
 export const Primary = {
   args: {
@@ -117,11 +118,11 @@ export const Small = {
 //   },
 // };
 
-export const NoBorder = {
+export const Minimal = {
   args: {
     label: "Close",
     buttonElement: "a",
-    variant: "noborder",
+    variant: "minimal",
     iconSvg: CloseDefault,
     iconPosition: "left",
     iconSize: "large",

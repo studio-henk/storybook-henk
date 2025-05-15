@@ -72,22 +72,7 @@ export const createIconButton = ({
   // if (label && !iconOnly) {
   const visuallyHiddenSpan = `<span class="visually-hidden">${label}</span>`;
 
-  // if (label) {
-  // if (iconPosition === "left") {
-  //   // btn.innerHTML = `${iconHtml} ${label}`;
-  //   btn.innerHTML = `${iconHtml} ${visuallyHiddenSpan}`;
-  // } else {
-  //   // btn.innerHTML = `${label} ${iconHtml}`;
-  //   btn.innerHTML = `${visuallyHiddenSpan} ${iconHtml}`;
-  // }
-
   btn.innerHTML = `${iconHtml}${visuallyHiddenSpan}`;
-  // } else {
-  //   btn.innerHTML = iconHtml; // Icon only button
-  //   if (!buttonElement === "span") {
-  //     btn.ariaLabel = label;
-  //   }
-  // }
 
   if (label && (buttonElement === "button" || buttonElement === "a")) {
     btn.setAttribute("aria-label", label);
@@ -103,9 +88,6 @@ export const createIconButton = ({
     classNames.push(`henk-icon-button--${size}`);
   }
 
-  // if (iconOnly) {
-  //   classNames.push("henk-icon-button--icon-only");
-  // }
   btn.className = classNames.join(" ");
 
   // Add title attribute to button if title is defined
