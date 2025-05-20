@@ -125,7 +125,7 @@ export const Disabled = {
 export const WithIconRight = {
   args: {
     label: "Button text",
-    variant: "default",
+    // variant: "default",
     buttonElement: "a",
     iconSvg: ArrowRight,
     iconPosition: "right",
