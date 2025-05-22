@@ -1,5 +1,3 @@
-// import './details-component.css';
-
 export interface DetailsProps {
     summary: string;
     content: string;
