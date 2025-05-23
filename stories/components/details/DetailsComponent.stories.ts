@@ -122,6 +122,6 @@ MultipleDetailsComponents.parameters = {
     },
     design: {
         type: "figma",
-        url: "https://www.figma.com/file/DHpJJWTOUv4MpfeCEx3pe6/UI?node-id=16%3A144&t=rsNgWdfYtt2CC04f-1",
+        url: "https://www.figma.com/design/53sW3t6iEWcFKp97iwGc2D/Component--CollapsibleContent?node-id=3407-3121&t=JHBb2TtvmtbFDqGR-1",
     },
 };
