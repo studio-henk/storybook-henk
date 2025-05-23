@@ -39,13 +39,26 @@ export const Default = {
     },
 };
 
-export const PlusMinVariant = {
-    args: {
-        variant: 'plusmin'
-    }
-}
+Default.parameters = {
+    docs: {
+        description: {
+            story: "The name attribute has to be the same for each in order to have only 1 widget open at a time.",
+        },
+    },
+    design: {
+        type: "figma",
+        url: "https://www.figma.com/file/53sW3t6iEWcFKp97iwGc2D/Component--CollapsibleContent?m=auto&t=eNnqS82mM3j1o2Ax-1",
+    },
+};
 
-export const PlusMinVariantWithContent = {
+
+// export const PlusMinVariant = {
+//     args: {
+//         variant: 'plusmin'
+//     }
+// }
+
+export const PlusMinVariant = {
     args: {
         variant: 'plusmin',
         summary: 'Summary',
@@ -122,6 +135,6 @@ MultipleDetailsComponents.parameters = {
     },
     design: {
         type: "figma",
-        url: "https://www.figma.com/design/53sW3t6iEWcFKp97iwGc2D/Component--CollapsibleContent?node-id=3407-3121&t=JHBb2TtvmtbFDqGR-1",
+        url: "https://www.figma.com/design/53sW3t6iEWcFKp97iwGc2D/Component--CollapsibleContent?node-id=3407-3121&t=bgrDKj2HRAsx1ok7-1",
     },
 };

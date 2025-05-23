@@ -39,7 +39,8 @@ Base.parameters = {
   },
   design: {
     type: "figma",
-    url: "https://www.figma.com/file/DHpJJWTOUv4MpfeCEx3pe6/UI?node-id=16%3A144&t=rsNgWdfYtt2CC04f-1",
+    // url: "https://www.figma.com/file/DHpJJWTOUv4MpfeCEx3pe6/UI?node-id=16%3A144&t=rsNgWdfYtt2CC04f-1",
+    url: "https://www.figma.com/file/JMl8SVdoCbQWqgWYrN6lD4/HENK-DS?node-id=4180-10676&t=BpmTZZxfDyyVVOo0-1",
   },
 };
 
