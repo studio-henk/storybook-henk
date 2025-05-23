@@ -2,15 +2,19 @@ export interface DetailsProps {
     summary: string;
     content: string;
     variant?: 'default' | 'plusmin';
+    name?: string;
 }
 
 export const createDetailsComponent = ({
     summary = 'Summary',
     content = '<p>Content</p>',
     variant = 'default',
+    name = 'cc'
 }: DetailsProps): HTMLDetailsElement => {
     const details = document.createElement('details');
     details.className = 'henk-details';
+
+    details.name = name;
 
     if (variant) {
         details.className = `henk-details henk-details--${variant}`;

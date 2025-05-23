@@ -21,12 +21,12 @@ const preview = {
           "Components",
           [
             "Base",
+            "TextLink",
             "Logo",
             "Icon",
             "IconButton",
             "Button",
             "ButtonGroup",
-            "TextLink",
             ["HeadingGroup", "ContentDivider", "*"],
             "Web Components",
           ],

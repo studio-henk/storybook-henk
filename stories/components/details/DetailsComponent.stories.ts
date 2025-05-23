@@ -2,15 +2,16 @@ import { createDetailsComponent, DetailsProps } from './DetailsComponent';
 
 // Define the Storybook story
 export default {
-    title: 'Components/DetailsComponent',
+    title: 'Components/CollapsibleContent',
     component: createDetailsComponent,
     argTypes: {
         summary: { control: 'text' },
         content: { control: 'text' },
         variant: { control: { type: 'select', options: ['default', 'plusmin'] } }, // Add variant control
+        name: { control: 'text' }
     },
-    render: ({ summary, content, variant }) => {
-        const details = createDetailsComponent({ summary, content, variant });
+    render: ({ summary, content, variant, name }) => {
+        const details = createDetailsComponent({ summary, content, variant, name });
         return details;
     },
     tags: ['autodocs'],
@@ -23,11 +24,11 @@ export default {
     },
 };
 
+// export const Default = {
+//
+// };
+
 export const Default = {
-
-};
-
-export const WithContent = {
     args: {
         summary: 'Summary',
         content: `<p>Op onze onderhoudspagina vind je uitgebreide informatie over het gebruik en onderhoud van onze meubels. Zo adviseren wij het gebruik van onderzetters en schoonmaken met licht vochtig doekje (eventueel mild sopje, wel nadrogen). Hout van iedere kwaliteit werkt, en reageert op (lucht-)vocht(-igheid), warmte(-wisselingen) en licht; voorkom schommelingen hierin of blootstelling hieraan dus. Ook afwerkingen bieden slechts gedeeltelijke bescherming tegen vlekken en krassen. Scheuren of verkleuren, gevolgen van dergelijke blootstelling of schommelingen, alsook krassen, slijtagesporen, kringen of vlekken vallen daarom niet onder de garantie, zij zijn immers het gevolg van gebruik door de klant. Raadpleeg ook onze algemene voorwaarden. Je vindt op onze onderhoudspagina onder meer informatie over:</p><ul>
@@ -112,3 +113,15 @@ export const MultipleDetailsComponents = () => {
 
 // Define individual stories (optional)
 MultipleDetailsComponents.storyName = 'Multiple Details Components';
+
+MultipleDetailsComponents.parameters = {
+    docs: {
+        description: {
+            story: "The name attribute has to be the same for each in order to have only 1 widget open at a time.",
+        },
+    },
+    design: {
+        type: "figma",
+        url: "https://www.figma.com/file/DHpJJWTOUv4MpfeCEx3pe6/UI?node-id=16%3A144&t=rsNgWdfYtt2CC04f-1",
+    },
+};

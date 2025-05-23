@@ -1,4 +1,7 @@
 import { fn } from "@storybook/test";
+import IconChevronRight from "../assets/icons/icon-chevron-right.svg?raw";
+import IconChevronLeft from "../assets/icons/icon-chevron-left.svg?raw";
+
 import ShareIcon from "../assets/icons/icon-share.svg?raw";
 import TruckIcon from "../assets/icons/icon-truck.svg?raw";
 import CheckmarkIcon from "../assets/icons/icon-checkmark.svg?raw";
@@ -37,18 +40,28 @@ export default {
   },
 };
 
-export const IconTemplate = ({ icon, size = "large" }) => {
+const IconTemplate = ({ icon, size = "large" }) => {
   const sizeClass = `icon--${size}`;
   return `<i class="henk-icon ${sizeClass}">${icon}</i>`;
 };
 
-export const Share = () => IconTemplate({ icon: ShareIcon });
+// export const Share = () => IconTemplate({ icon: ShareIcon });
+//
+// export const ShareSmall = () =>
+//   IconTemplate({ icon: ShareIcon, size: "small" });
+//
+// export const ShareMedium = () =>
+//   IconTemplate({ icon: ShareIcon, size: "medium" });
 
-export const ShareSmall = () =>
-  IconTemplate({ icon: ShareIcon, size: "small" });
+export const ChevronRight = () => IconTemplate({ icon: IconChevronRight });
 
-export const ShareMedium = () =>
-  IconTemplate({ icon: ShareIcon, size: "medium" });
+export const ChevronRightSmall = () =>
+  IconTemplate({ icon: IconChevronRight, size: "small" });
+
+export const ChevronLeft = () => IconTemplate({ icon: IconChevronLeft });
+
+export const ChevronLeftSmall = () =>
+  IconTemplate({ icon: IconChevronLeft, size: "small" });
 
 export const Truck = () => IconTemplate({ icon: TruckIcon });
 
