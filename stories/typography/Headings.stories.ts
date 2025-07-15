@@ -16,8 +16,16 @@ export default {
         },
         controls: { exclude: ['tag'] },
     },
-    render: ({ tag, text, weight = 'normal', style = 'normal' }) => {
-        return createHeadingElement({ tag, text, weight, style }).outerHTML;
+    render: ({ tag, text, weight = 'normal', style = 'normal', display = false }) => {
+        return createHeadingElement({ tag, text, weight, style, display }).outerHTML;
+    },
+};
+
+export const HeadingDisplay: HeadingStory = {
+    args: {
+        tag: 'h1',
+        text: 'Display Heading',
+        display: true
     },
 };
 

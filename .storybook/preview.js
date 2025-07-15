@@ -1,7 +1,7 @@
 /** @type { import('@storybook/html').Preview } */
 
-import "../src/styles/global.min.css";
-import "../src/styles/content.min.css";
+// import "../src/styles/global.min.css";
+// import "../src/styles/content.min.css";
 
 const preview = {
   parameters: {
@@ -43,7 +43,7 @@ const preview = {
       },
     },
     backgrounds: {
-      disable: false,
+      disable: true,
       default: "light",
       values: [
         {

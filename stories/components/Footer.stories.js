@@ -1,20 +1,49 @@
-import { PinterestSmall, StarSmall, TikTokSmall, YoutubeSmall } from '../components/base/Icon.stories.js';
-import { InstagramSmall } from '../components/base/Icon.stories.js';
-import { FacebookSmall } from '../components/base/Icon.stories.js';
-import BcorpLogoSVG from '../assets/icons/b-corp.svg?raw';
-import { Pinterest, StarMedium, TikTok, Youtube, Instagram, Facebook } from '../components/base/Icon.stories.js';
+import {
+  PinterestSmall,
+  StarSmall,
+  TikTokSmall,
+  YoutubeSmall,
+} from "./Icon.stories.js";
+import { InstagramSmall } from "./Icon.stories.js";
+import { FacebookSmall } from "./Icon.stories.js";
+import BcorpLogoSVG from "../assets/icons/b-corp.svg?raw";
+import {
+  Pinterest,
+  StarMedium,
+  TikTok,
+  Youtube,
+  Instagram,
+  Facebook,
+} from "./Icon.stories.js";
 
 export default {
-  title: 'Sections/Footer',
-  tags: ['autodocs'],
+  title: "Sections/Footer",
+  tags: ["autodocs"],
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 };
 
+function loadTrustpilotScript() {
+  return new Promise((resolve, reject) => {
+    if (window.Trustpilot) {
+      resolve();
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src =
+      "https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js";
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => reject("Trustpilot script failed to load");
+    document.head.appendChild(script);
+  });
+}
+
 // Create a template for your HeroVideo component
 export const FooterStory = () => `
-  <footer class="henk-footer">
+  <footer class="henk-footer fs-small">
     <div class="henk-footer__container">
       <h2 class="visually-hidden">Footer</h2>
       
@@ -22,8 +51,8 @@ export const FooterStory = () => `
       <div class="henk-footer__row henk-footer__row--links">
         <div class="henk-footer__grid">          
           <div class="henk-footer__grid-column">
-              <h3 class="henk-footer__heading h4"><a href="/en/collection">Collection</a></h3>
-              <ul class="henk-footer__list --no-bullets">
+              <h3 class="henk-footer__heading"><a href="/en/collection">Collection</a></h3>
+              <ul class="henk-footer__list henk-list henk-list--no-bullets">
                   <li class="henk-footer__list-item"><a href="/en/products/dining-tables" class="henk-footer__link">Dining Tables</a></li>
                   <li class="henk-footer__list-item"><a href="/en/products/coffee-tables" class="henk-footer__link">Coffee Tables</a></li>
                   <li class="henk-footer__list-item"><a href="/en/products/chairs" class="henk-footer__link">Dining Chairs</a></li>
@@ -38,8 +67,8 @@ export const FooterStory = () => `
           </div>
 
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4"><a href="/en/about-us">About</a></h3>
-            <ul class="henk-footer__list --no-bullets">
+            <h3 class="henk-footer__heading"><a href="/en/about-us">About</a></h3>
+            <ul class="henk-footer__list henk-list--no-bullets">
               <li class="henk-footer__list-item"><a href="/en/about-us/" class="henk-footer__link">About HENK</a></li>
               <li class="henk-footer__list-item"><a href="/en/about-us/b-corp" class="henk-footer__link">Sustainability</a></li>              
               <li class="henk-footer__list-item"><a href="https://studio-henk.homerun.co/" class="henk-footer__link">Careers</a></li>              
@@ -49,8 +78,8 @@ export const FooterStory = () => `
             </ul>
           </div>
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4"><a href="/en/services">Services</a></h3>
-            <ul class="henk-footer__list --no-bullets">              
+            <h3 class="henk-footer__heading"><a href="/en/services">Services</a></h3>
+            <ul class="henk-footer__list henk-list--no-bullets">              
               <li class="henk-footer__list-item"><a href="/en/samples" class="henk-footer__link">Samples Service</a></li>
               <li class="henk-footer__list-item"><a href="/en/interior-advice" class="henk-footer__link">Interior Advice</a></li>
               <li class="henk-footer__list-item"><a href="/en/maintenance" class="henk-footer__link">Maintenance</a></li>
@@ -60,8 +89,8 @@ export const FooterStory = () => `
             </ul>
           </div>
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4"><a href="/en/contact">Support</a></h3>
-            <ul class="henk-footer__list --no-bullets">
+            <h3 class="henk-footer__heading"><a href="/en/contact">Support</a></h3>
+            <ul class="henk-footer__list henk-list--no-bullets">
               <li class="henk-footer__list-item"><a href="/en/contact" class="henk-footer__link">Contact</a></li>
               <li class="henk-footer__list-item"><a href="/en/faq" class="henk-footer__link">FAQ</a></li>
               <li class="henk-footer__list-item"><a href="/en/planning" class="henk-footer__link">Delivery Times</a></li>                        
@@ -70,8 +99,8 @@ export const FooterStory = () => `
             </ul>
           </div>
           <div class="henk-footer__grid-column">
-            <h3 class="henk-footer__heading h4"><a href="/en/stores">Stores</a></h3>
-            <ul class="henk-footer__list --no-bullets">
+            <h3 class="henk-footer__heading"><a href="/en/stores">Stores</a></h3>
+            <ul class="henk-footer__list henk-list--no-bullets">
               <li class="henk-footer__list-item"><a href="/en/stores/amsterdam-flagship-store" class="henk-footer__link">Amsterdam</a></li>
               <li class="henk-footer__list-item"><a href="/en/stores/antwerp-flagship-store" class="henk-footer__link">Antwerpen</a></li>
               <li class="henk-footer__list-item"><a href="/en/stores/rotterdam-brand-store" class="henk-footer__link">Rotterdam</a></li>              
@@ -81,32 +110,36 @@ export const FooterStory = () => `
         </div>
       </div>   
       
-      <!-- Second Row: Google Rating Widget and Social Media Links -->
+      <!-- Second Row: Rating Widget and Social Media Links -->
 
       <div class="henk-footer__row henk-footer__row--social-rating">
         <div class="henk-footer__section henk-footer__section--rating">
-          <h3 class="henk-footer__heading h4 visually-hidden">Google Rating</h3>          
+          <h3 class="henk-footer__heading visually-hidden">Trustpilot Rating</h3>          
           <div class="henk-footer__certificates-rating">
           <a href="https://www.bcorporation.net/en-us/find-a-b-corp/company/studio-henk/">${BcorpLogoSVG}</a>
 
             <div class="henk-footer__rating-widget">              
-              <div class="star-rating">
-                <ol class="star-rating__stars">
-                <li class="star-rating__star">${StarSmall()}</li>
-                <li class="star-rating__star">${StarSmall()}</li>
-                <li class="star-rating__star">${StarSmall()}</li>
-                <li class="star-rating__star">${StarSmall()}</li>
-                <li class="star-rating__star">${StarSmall()}</li>
-                </ol>
-                <p class="star-rating__rating">4.6 Sterren</p>
-                <p class="star-rating__reviews"><a href="https://www.google.com/maps/place/Studio+HENK+Amsterdam+Flagship+store/@52.3726924,4.874644,17z/data=!3m1!4b1!4m6!3m5!1s0x47c6096bedafecb5:0xcf2b8610a886605e!8m2!3d52.3726924!4d4.8772189!16s%2Fg%2F11r_xqvrvl?entry=ttu">159 reviews on Google</a></p> 
-              </div>
+
+                <!-- TrustBox widget - Mini -->
+                <div
+                  class="trustpilot-widget"
+                  data-locale="nl-NL"
+                  data-template-id="53aa8807dec7e10d38f59f32"
+                  data-businessunit-id="60489ea4c2b19d0001711086"
+                  data-style-height="150px"
+                  data-style-width="100%"
+                  data-theme="light"
+                >
+                  <a href="https://nl.trustpilot.com/review/studio-henk.nl" target="_blank" rel="noopener">Trustpilot</a>
+                </div>
+                <!-- End TrustBox widget -->
+
             </div>
           </div>
         </div>
         <div class="henk-footer__section henk-footer__section--social">
-          <h3 class="henk-footer__heading h4 visually-hidden">Follow Us</h3>
-          <ul class="henk-footer__social-media henk-list henk-list--horizontal --no-bullets">              
+          <h3 class="henk-footer__heading visually-hidden">Follow Us</h3>
+          <ul class="henk-footer__social-media henk-list henk-list--no-bullets">              
             <li class="henk-footer__social-media-item">            
               <a href="https://www.instagram.com/studiohenk/" class="henk-footer__social-media-link">               
                 ${Instagram()}
@@ -141,7 +174,7 @@ export const FooterStory = () => `
       <div class="henk-footer__row henk-footer__row--payment-terms">
         <div class="henk-footer__section henk-footer__section--payment">
           <h3 class="visually-hidden">Payment methods</h3>
-          <ul class="henk-footer__payment-logos --no-bullets">
+          <ul class="henk-footer__payment-logos henk-list henk-list--no-bullets">
             <li class="henk-footer__payment-logo-item">
             <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 1.98611V15.614C0 16.2663 0.533729 16.8 1.18606 16.8H9.32839C15.4841 16.8 18.1527 13.3545 18.1527 8.78226C18.1527 4.2337 15.4841 0.800049 9.32839 0.800049H1.18606C0.533729 0.800049 0 1.33378 0 1.98611Z" fill="white"/>
@@ -207,7 +240,7 @@ export const FooterStory = () => `
         </div>
         <div class="henk-footer__section footer__section--terms">
           <h3 class="visually-hidden">Terms and Policies</h3>
-          <ul class="henk-footer__small-print --no-bullets">
+          <ul class="henk-footer__small-print henk-list henk-list--no-bullets">
             <li class="henk-footer__small-print-item"><a href="/en/intellectual-property" class="footer__link">Intellectual Property</a></li>
             <li class="henk-footer__small-print-item"><a href="/en/privacy-policy-studio-h-k" class="footer__link">Privacy Policy</a></li>
             <li class="henk-footer__small-print-item"><a href="/en/cookies" class="footer__link">Cookie Statement</a></li>
@@ -219,7 +252,15 @@ export const FooterStory = () => `
   </footer>
 `;
 
+FooterStory.play = async () => {
+  try {
+    await loadTrustpilotScript();
 
-
-
-
+    const widget = document.querySelector(".trustpilot-widget");
+    if (widget && widget.dataset.templateId) {
+      window.Trustpilot.loadFromElement(widget, true);
+    }
+  } catch (error) {
+    console.error("Trustpilot failed:", error);
+  }
+};

@@ -1,53 +1,27 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+import Swatches from "../../src/components/Swatches.jsx";
 
 <Meta title="Colour/Palette" />
 
 ## Colour Palette
 
-### Neutral
+### Brand
+
 
 <ColorPalette>
-    <ColorItem
-        title="neutral"
-        subtitle="Grey tints"
-        colors={{
-            "neutral-0": "#000",
-            "neutral-20": "#333",
-            "neutral-40": "#666",
-            "neutral-60": "#999",
-            "neutral-82": "#d1d1d1",
-            "neutral-95": "#f1f1f1",
-            "neutral-100": "#fff",
-        }}
-    />
+  <Swatches
+    title="--color-brand"
+    subtitle="Brand"
+    colors={{
+      "taupe-gray": "--taupe-gray",
+      "dim-gray": "--dim-gray",
+      "silver": "--silver",
+      "columbia-blue": "--columbia-blue",
+      "white-smoke": "--white-smoke",
+    }}
+  />
 </ColorPalette>
 
-### Blue
+Created from photo at: [coolors.co](https://coolors.co/visualizer/9e9a98-7f7266-afaaa5-c8dae8-f3f3f2)
 
-<ColorPalette>
-    <ColorItem
-        title="blue"
-        subtitle="Blue tints"
-        colors={{
-            "blue-25": "#004080",
-            "blue-44": "#006FDE",
-            "blue-50": "#0080FF",
-            "blue-75": "#80BFFF",
-        }}
-    />
-</ColorPalette>
-
-### Signal
-
-<ColorPalette>
-    <ColorItem
-        title="signal"
-        subtitle="Signal colours"
-        colors={{
-            green: "#008000",
-            red: "#ff0000",
-            orange: "#ffa500",
-            yellow: "#ffff00",
-        }}
-    />
-</ColorPalette>
+![alt text](assets/images/collage.jpg) 

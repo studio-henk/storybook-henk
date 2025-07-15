@@ -1,55 +1,138 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+import Swatches from "../../../src/components/Swatches.jsx";
 
 <Meta title="Tokens/Colours/Primitives" />
 
 ## Primitives
 
 <ColorPalette>
-    <ColorItem
-        title="--color-green"
-        subtitle="Green"
-        colors={{ Green: "#008000" }}
-    />
-    <ColorItem title="--color-red" subtitle="Red" colors={{ Red: "#ff0000" }} />
-    <ColorItem
-        title="--color-orange"
-        subtitle="Orange"
-        colors={{ Orange: "#FFA500" }}
-    />
-    <ColorItem
-        title="--color-yellow"
-        subtitle="Yellow"
-        colors={{ Yellow: "#ffff00" }}
-    />
-    <ColorItem
-        title="color.primitives.blue"
-        subtitle="Blue tints"
-        colors={{
-            "blue-25": "#004080",
-            "blue-44": "#006FDE",
-            "blue-50": "#0080FF",
-            "blue-75": "#80BFFF",
+<Swatches
+    title="--color-neutral-"
+    subtitle="Neutral"
+    colors={{
+        "0": "--color-neutral-0",
+        "10": "--color-neutral-10",
+        "20": "--color-neutral-20",
+        "30": "--color-neutral-30",
+        "40": "--color-neutral-40",
+        "50": "--color-neutral-50",
+        "60": "--color-neutral-60",
+        "70": "--color-neutral-70",
+        "80": "--color-neutral-80",
+        "90": "--color-neutral-90",
+        "100": "--color-neutral-100",
         }}
-    />
-    <ColorItem
-        title="color.primitives.neutral"
-        subtitle="Grey tints"
-        colors={{
-            "neutral-0": "#000",
-            "neutral-20": "#333",
-            "neutral-40": "#666",
-            "neutral-60": "#999",
-            "neutral-82": "#d1d1d1",
-            "neutral-95": "#f1f1f1",
-            "neutral-100": "#fff",
-        }}
-    />
-    <ColorItem
-        title="color.browser-defaults"
-        subtitle="Browser defaults"
-        colors={{
-            "focus-ring": "#005FCC",
-            "accent-color": "#0075FF",
-        }}
-    />
+/>
+  <Swatches
+    title="--color-blue"
+    subtitle="Blue tints"
+    colors={{
+      "25": "--color-blue-25",
+      "50": "--color-blue-50",
+      "75": "--color-blue-75",
+    }}
+  />
+
+{" "}
+<Swatches
+    title="--color-green"
+    subtitle="Green tints"
+    colors={{
+        "30": "--color-green-30",
+        "40": "--color-green-40",
+        "90": "--color-green-90",
+    }}
+/>
+
+{" "}
+<Swatches
+    title="--color-red"
+    subtitle="Red tints"
+    colors={{
+        "10": "--color-red-10",
+        "20": "--color-red-20",
+        "30": "--color-red-30",
+        "40": "--color-red-40",
+        "50": "--color-red-50",
+        "60": "--color-red-60",
+        "70": "--color-red-70",
+        "80": "--color-red-80",
+        "90": "--color-red-90",
+    }}
+/>
+
+{" "}
+<Swatches
+    title="--color-orange"
+    subtitle="Orange tints"
+    colors={{
+        "10": "--color-orange-10",
+        "20": "--color-orange-20",
+        "30": "--color-orange-30",
+        "40": "--color-orange-40",
+        "50": "--color-orange-50",
+        "60": "--color-orange-60",
+        "70": "--color-orange-70",
+        "80": "--color-orange-80",
+        "90": "--color-orange-90",
+    }}
+/>
+
+{" "}
+<Swatches
+    title="--color-yellow"
+    subtitle="Yellow tints"
+    colors={{
+        "10": "--color-yellow-10",
+        "20": "--color-yellow-20",
+        "30": "--color-yellow-30",
+        "40": "--color-yellow-40",
+        "50": "--color-yellow-50",
+        "60": "--color-yellow-60",
+        "70": "--color-yellow-70",
+        "80": "--color-yellow-80",
+        "90": "--color-yellow-90",
+    }}
+/>
+
+<Swatches
+    title="--color-purple"
+    subtitle="Purple tints"
+    colors={{
+        "10": "--color-purple-10",
+        "20": "--color-purple-20",
+        "30": "--color-purple-30",
+        "40": "--color-purple-40",
+        "50": "--color-purple-50",
+        "60": "--color-purple-60",
+        "70": "--color-purple-70",
+        "80": "--color-purple-80",
+        "90": "--color-purple-90",
+    }}
+/>
+
+<Swatches
+  title="--color-teal"
+  subtitle="Teal tints"
+  colors={{
+    "10": "--color-teal-10",
+    "20": "--color-teal-20",
+    "30": "--color-teal-30",
+    "40": "--color-teal-40",
+    "50": "--color-teal-50",
+    "60": "--color-teal-60",
+    "70": "--color-teal-70",
+    "80": "--color-teal-80",
+    "90": "--color-teal-90",
+  }}
+/>
 </ColorPalette>
+
+## Test 
+
+<input
+  type="text"
+  id="name"
+  name="name"
+  required
+  size="10" />

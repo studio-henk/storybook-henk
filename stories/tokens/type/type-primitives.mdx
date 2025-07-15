@@ -1,4 +1,5 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+import { DefinitionList } from "../../../src/components/DefinitionList.jsx";
 
 <Meta title="Tokens/Type/Primitives" />
 
@@ -6,71 +7,86 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 
 ### Font-size (from smallest to largest)
 
+{/*
+
+<DefinitionList
+    className="variant-tokens"
+    items={[{ term: "--size-font-xxs", definition: "10" }]}
+/>
+
+<DefinitionList
+    className="variant-tokens"
+    items={[{ term: "--size-font-xs", definition: "12" }]}
+/>
+
+*/}
 <table>
     <thead>
         <tr>
             <th>Token</th>
-            <th>Rem Value</th>
-            <th>Mobile (px)</th>
-            <th>Desktop (px)</th>
+            <th>Px</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
+                <code>--size-font-xxs</code>
+            </td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>
                 <code>--size-font-xs</code>
             </td>
-            <td>0.625rem</td>
-            <td>10px</td>
-            <td>12.5px</td>
+            <td>12</td>
         </tr>
         <tr>
             <td>
                 <code>--size-font-sm</code>
             </td>
-            <td>0.875rem</td>
-            <td>14px</td>
-            <td>17.5px</td>
+            <td>14</td>
         </tr>
         <tr>
             <td>
                 <code>--size-font-base</code>
             </td>
-            <td>1rem</td>
-            <td>16px</td>
-            <td>20px</td>
+            <td>16</td>
         </tr>
         <tr>
             <td>
                 <code>--size-font-md</code>
             </td>
-            <td>1.25rem</td>
-            <td>20px</td>
-            <td>25px</td>
+            <td>20</td>
         </tr>
         <tr>
             <td>
                 <code>--size-font-lg</code>
             </td>
-            <td>1.5rem</td>
-            <td>24px</td>
-            <td>30px</td>
+            <td>24</td>
         </tr>
         <tr>
             <td>
                 <code>--size-font-xl</code>
             </td>
-            <td>1.75rem</td>
-            <td>28px</td>
-            <td>35px</td>
+            <td>32</td>
         </tr>
         <tr>
             <td>
                 <code>--size-font-xxl</code>
             </td>
-            <td>2rem</td>
-            <td>32px</td>
-            <td>40px</td>
+            <td>48</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-xxl</code>
+            </td>
+            <td>72</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-xxl</code>
+            </td>
+            <td>96</td>
         </tr>
     </tbody>
 </table>

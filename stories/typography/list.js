@@ -1,4 +1,4 @@
-// import "./list.css";
+// import "./_henk-list.css";
 
 export const createList = ({
   listType = "ul",

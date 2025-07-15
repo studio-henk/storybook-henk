@@ -1,0 +1,33 @@
+dl {
+  margin-block: 1lh 0;
+}
+
+.sbdocs-content dt {
+  color: currentColor;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: inherit;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.sbdocs-content dd {
+  margin: 0;
+  padding: 0;
+}
+
+.variant-tokens {
+  font-size: 14px;
+  display: flex;
+  gap: 4px;
+}
+
+.variant-tokens dt {
+  font-family: monospace;
+  font-weight: 400;
+}
+
+.variant-tokens dt::after {
+  content: ": ";
+}

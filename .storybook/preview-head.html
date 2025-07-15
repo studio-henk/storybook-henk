@@ -1,98 +1,78 @@
-<!-- preload font -->
-<!-- <link
-    rel="preload"
-    href="/fonts/NeueHaasGrotTextRound-55Roman-Web.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-/> -->
+<style>
+    .css-k7lbue {
+        background: var(--color-background-page) !important;
+    }
 
-<!-- Preload stylesheets -->
-<!-- <link
-    rel="preload"
-    href="/static/std/assets/css/tokens/_tokens-colors.css"
-    as="style"
-/>
-<link
-    rel="preload"
-    href="/styles/tokens/_tokens-colorsV2.css"
-    as="style"
-/>
-<link
-    rel="preload"
-    href="/static/std/assets/css/tokens/_tokens-size-font.css"
-    as="style"
-/>
-<link
-    rel="preload"
-    href="/static/std/assets/css/tokens/_tokens-size-spacing.css"
-    as="style"
-/>
-<link
-    rel="preload"
-    href="/static/std/assets/components/MsgBar/MsgBar.css"
-    as="style"
-/>
-<link
-    rel="preload"
-    href="/static/std/assets/components/NavBar/NavBarMobile.css"
-    as="style"
-/>
-<link
-    rel="preload"
-    href="/static/std/assets/components/NavBar/NavBarDesktop.css"
-    as="style"
-/> -->
+    .css-rs8390 span {
+        display: none !important;
+    }
+</style>
 
-<!-- Apply stylesheets -->
-<!-- <link
-    rel="stylesheet"
-    href="/static/std/assets/css/tokens/_tokens-colors.css"
-/>
-<link
-    rel="stylesheet"
-    href="/styles/tokens/_tokens-colorsV2.css"
-/>
-<link
-    rel="stylesheet"
-    href="/static/std/assets/css/tokens/_tokens-size-font.css"
-/>
-<link
-    rel="stylesheet"
-    href="/static/std/assets/css/tokens/_tokens-size-spacing.css"
-/>
-<link
-    rel="stylesheet"
-    href="/static/std/assets/components/MsgBar/MsgBar.css"
-/>
-<link
-    rel="stylesheet"
-    href="/static/std/assets/components/NavBar/NavBarMobile.css"
-/>
-<link
-    rel="stylesheet"
-    href="/static/std/assets/components/NavBar/NavBarDesktop.css"
-/> -->
+<link rel="stylesheet" href="src/styles/_henk-brand.css" />
+<link rel="stylesheet" href="src/styles/_henk-primitives.css" />
+<link rel="stylesheet" href="src/styles/_henk-semantic.css" />
 
-<!-- WEB COMPONENTS -->
-<!-- <script src="{{ asset('static/std/assets/js/web-components/CountdownTimer.js') }}" defer></script> -->
+<link rel="stylesheet" href="src/styles/_font-face.css" />
+<link rel="stylesheet" href="src/styles/_tokens-font.css" />
+<link rel="stylesheet" href="src/styles/_henk-tokens-size-font.css" />
 
-<!-- <link
-    href="/static/std/assets/css/henk-styles.css"
-    media="screen"
-    rel="stylesheet"
-    type="text/css"
-/> -->
-<!-- <link
-    href="/static/std/assets/css/henk-styles.min.css"
-    media="screen"
-    rel="stylesheet"
-    type="text/css"
-/> -->
+<link rel="stylesheet" href="src/styles/_henk-base.css" />
+<link rel="stylesheet" href="src/styles/_henk-size-font.css" />
+<link rel="stylesheet" href="src/styles/_henk-icon.css" />
+<link rel="stylesheet" href="src/styles/_henk-button.css" />
+<link rel="stylesheet" href="src/styles/_henk-list.css" />
+<link rel="stylesheet" href="src/styles/_henk-footer.css" />
 
-<!-- <link
-    href="/styles/global.css"
-    media="screen"
-    rel="stylesheet"
-    type="text/css"
-/> -->
+<script>
+    // public/scripts/user-env.js
+    (() => {
+        const html = document.documentElement;
+
+        // Color gamut
+        if (window.matchMedia("(color-gamut: p3)").matches) {
+            html.classList.add("color-p3");
+        } else {
+            html.classList.add("color-srgb");
+        }
+
+        // Color scheme
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            html.classList.add("theme-dark");
+        } else {
+            html.classList.add("theme-light");
+        }
+
+        // Reduced motion
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            html.classList.add("reduced-motion");
+        }
+
+        // Device pixel ratio
+        const dpr = window.devicePixelRatio || 1;
+        if (dpr >= 3) {
+            html.classList.add("dpr-3plus");
+        } else if (dpr >= 2) {
+            html.classList.add("dpr-2");
+        } else {
+            html.classList.add("dpr-1");
+        }
+
+        // CSS pow() support detection
+        const supportsPow = (() => {
+            try {
+                const testEl = document.createElement("div");
+                testEl.style.width = "calc(pow(1.25, 2) * 1px)";
+                // If browser accepts the value, style.width won't be empty string
+                return testEl.style.width !== "";
+            } catch {
+                return false;
+            }
+        })();
+
+        if (supportsPow) {
+            html.classList.add("css-pow-supported");
+        } else {
+            html.classList.add("css-pow-not-supported");
+        }
+    })();
+</script>

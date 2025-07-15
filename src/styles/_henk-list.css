@@ -1,6 +1,3 @@
-.henk-list {
-}
-
 .henk-list--checkmark {
   list-style-type: "✓ ";
 }
@@ -15,4 +12,10 @@
 
 .henk-list--em-dash {
   list-style-type: "– ";
+}
+
+.henk-list--no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

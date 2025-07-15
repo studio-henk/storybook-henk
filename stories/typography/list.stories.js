@@ -16,7 +16,7 @@ export default {
     },
     markerType: {
       control: { type: "radio" },
-      options: ["disc", "checkmark", "plus", "min", "em-dash"],
+      options: ["disc", "checkmark", "plus", "min", "em-dash", "no-bullets"],
     },
   },
   args: { listType: "ul", markerType: "disc" },
@@ -55,5 +55,11 @@ export const Checkmarks = {
 export const EmDash = {
   args: {
     markerType: "em-dash",
+  },
+};
+
+export const NoBullets = {
+  args: {
+    markerType: "no-bullets",
   },
 };
