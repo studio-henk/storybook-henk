@@ -1,0 +1,64 @@
+@layer colors.semantic {
+  :root {
+
+    /* primary */
+
+    --color-primary: var(--color-palette-2);
+    --color-secondary: var(--color-palette-4);
+
+    /* background */
+    --color-background-body: var(--color-neutral-100);
+    --color-background-base: var(--color-neutral-100);
+    --color-background-base-invert: var(--color-neutral-0);
+    --color-background-primary: var(--color-primary);
+    --color-background-secondary: var(--color-secondary);
+    --color-background-palette-1: var(--color-palette-1);
+    --color-background-palette-2: var(--color-palette-2);
+    --color-background-palette-3: var(--color-palette-3);
+    --color-background-palette-4: var(--color-palette-4);
+    --color-background-palette-5: var(--color-palette-5);
+    --color-background-disabled: var(--color-neutral-80);
+    --color-background-muted: var(--color-neutral-90);
+
+    /* text */
+    --color-text-body: var(--color-neutral-0, #000);
+    --color-text-base: var(--color-neutral-0, #000);
+    --color-text-base-invert: var(--color-neutral-100, #fff);
+    --color-text-link: var(--color-blue-40, blue);
+    --color-text-link-hover: var(--color-blue-30, blue);
+    --color-text-muted: var(--color-neutral-50);
+    --color-text-on-disabled: var(--color-neutral-50);
+
+    /* border */
+    --color-border-base: var(--color-neutral-0);
+    --color-border-primary: var(--color-primary);
+    --color-border-secondary: var(--color-secondary);
+    --color-border-palette-1: var(--color-palette-1);
+    --color-border-palette-2: var(--color-palette-2);
+    --color-border-palette-3: var(--color-palette-3);
+    --color-border-palette-4: var(--color-palette-4);
+    --color-border-palette-5: var(--color-palette-5);
+    --color-border-disabled: var(--color-neutral-80);
+
+    /* signal */
+    --color-success: var(--color-green-40);
+    --color-warning: var(--color-yellow-50);
+
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+    --color-background-body: var(--color-neutral-10);
+    --color-text-body: var(--color-neutral-100);
+    color-scheme: dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --color-background-body: var(--color-neutral-0, #000);
+      --color-text-body: var(--color-neutral-100, #fff);
+      color-scheme: dark;
+    }
+  }
+}
+
