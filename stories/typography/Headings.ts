@@ -1,7 +1,7 @@
 export interface HeadingProps {
     tag: string;
     text: string;
-    weight?: 'normal' | 'semibold';
+    weight?: 'normal' | 'medium' | 'bold';
     style?: 'normal' | 'italic';
     display?: boolean;
 }
@@ -10,8 +10,12 @@ export const createHeadingElement = ({ tag, text, weight = 'normal', style = 'no
     const heading = document.createElement(tag);
     heading.textContent = text;
 
-    if (weight === 'semibold') {
+    if (weight === 'medium') {
         heading.classList.add('fw-500');
+    }
+
+    if (weight === 'bold') {
+        heading.classList.add('fw-700');
     }
 
     if (style === 'italic') {

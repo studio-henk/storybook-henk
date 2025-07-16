@@ -71,11 +71,19 @@ export const Heading6: HeadingStory = {
     },
 };
 
-export const Heading1Semibold: HeadingStory = {
+export const Heading1Medium: HeadingStory = {
     args: {
         tag: 'h1',
-        text: 'Heading 1 Semibold',
-        weight: 'semibold',
+        text: 'Heading 1 Medium',
+        weight: 'medium',
+    },
+};
+
+export const Heading1Bold: HeadingStory = {
+    args: {
+        tag: 'h1',
+        text: 'Heading 1 Bold',
+        weight: 'bold',
     },
 };
 
