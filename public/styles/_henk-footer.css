@@ -1,6 +1,4 @@
 footer.henk-footer {
-  /* font-size: var(--size-font-small, 13px); */
-
   background-color: var(--color-background-palette-4, lightgray);
   color: var(--color-text-base, #000);
 
@@ -32,8 +30,9 @@ footer.henk-footer a:hover {
 }
 
 .henk-footer__grid-column .henk-footer__heading {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--color-border-base, #000);
   margin-block-start: 0;
+  font-weight: 500;
 }
 
 .henk-footer__grid-column .henk-footer__heading a:hover {
@@ -68,9 +67,7 @@ footer.henk-footer a:hover {
   display: flex;
   gap: 1.5rem;
   padding: 2.5rem 0;
-  border-top: 1px solid var(--color-ui-border-neutral-01, #000);
-  /* font-size: 13px; */
-  line-height: 16px;
+  border-top: 1px solid var(--color-border-base, #000);
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -96,7 +93,6 @@ footer.henk-footer a:hover {
 
 .henk-footer__small-print-item a,
 .henk-footer__small-print-item .footer__link {
-  /* font-size: 13px; */
   line-height: 24px;
 }
 

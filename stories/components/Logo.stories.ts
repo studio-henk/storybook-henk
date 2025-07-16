@@ -20,6 +20,20 @@ export default {
     // },
 };
 
+export const Default = {
+    args: {
+        variant: 'default',
+        href: '/nl',
+    }
+};
+
+export const DefaultInverted = {
+    args: {
+        variant: 'default-inverted',
+        href: '/nl',
+    }
+};
+
 export const Primary = {
     args: {
         variant: 'primary',
