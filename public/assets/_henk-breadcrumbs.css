@@ -1,21 +1,17 @@
 .henk-breadcrumbs {
-  display: flex;
-  flex-direction: column;
-  padding-inline: clamp(24px, 5vw, 40px);
-  padding-block: 8px;
-  font-size: 13px;
-  line-height: 24px;
+  font-size: var(--size-font-small);
 }
 
 .henk-breadcrumbs__list {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  width: min(1208px, 100% - 3rem);
 }
 
 .henk-breadcrumbs__item {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .henk-breadcrumbs__name {
@@ -24,14 +20,13 @@
 
 /* Add the ">" separator between breadcrumb items */
 .henk-breadcrumbs__item:not(:last-child)::after {
-  /* content: " > "; */
   content: "\003E"; /* Unicode for the > symbol */
-  margin-left: 10px;
-  color: #888; /* You can change the color to match your design */
+  margin-left: 8px;
+  color: var(--color-text-muted);
 }
 
-.henk-breadcrumbs__item:last-child .henk-breadcrumbs__link {
-  font-weight: 500; /* If you want the last breadcrumb to look different */
+.henk-breadcrumbs__item:last-child .henk-breadcrumbs__name {
+  font-weight: 500;
 }
 
 @media (max-width: 767px) {

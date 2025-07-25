@@ -14,6 +14,10 @@ export default {
     buttonElement: {
       control: { type: "radio" },
       options: ["a", "button", "span"],
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "a" },
+      },
     },
     variant: {
       name: "variant",
@@ -21,25 +25,35 @@ export default {
       description: "Variant of the button",
       table: {
         type: { summary: "string" },
-        defaultValue: { summary: "Default" },
+        defaultValue: { summary: "tertiary" },
       },
       control: "select",
-      options: ["primary", "secondary", "tertiary", "link", "transparent"],
+      options: ["primary", "secondary", "tertiary"],
     },
     size: {
       control: { type: "radio" },
       options: ["regular", "small"],
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "regular" },
+      },
     },
-    label: { control: "text" },
-    isLoading: { control: "boolean" },
+    label: { 
+      control: "text",
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "Label" },
+      },
+    },
+    // isLoading: { control: "boolean" },
     iconPosition: {
       control: { type: "select" },
       options: ["left", "right"],
     },
-    iconSize: {
-      control: { type: "select" },
-      options: ["small", "medium", "large"],
-    },
+    // iconSize: {
+    //   control: { type: "select" },
+    //   options: ["small", "medium", "large"],
+    // },
     onClick: { action: "onClick" },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args

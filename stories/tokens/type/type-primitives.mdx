@@ -5,93 +5,7 @@ import { DefinitionList } from "../../../src/components/DefinitionList.jsx";
 
 ## Type Primitives
 
-### Font-size (from smallest to largest)
-
-{/*
-
-<DefinitionList
-    className="variant-tokens"
-    items={[{ term: "--size-font-xxs", definition: "10" }]}
-/>
-
-<DefinitionList
-    className="variant-tokens"
-    items={[{ term: "--size-font-xs", definition: "12" }]}
-/>
-
-*/}
-<table>
-    <thead>
-        <tr>
-            <th>Token</th>
-            <th>Px</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <code>--size-font-xxs</code>
-            </td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>
-                <code>--size-font-xs</code>
-            </td>
-            <td>12</td>
-        </tr>
-        <tr>
-            <td>
-                <code>--size-font-sm</code>
-            </td>
-            <td>14</td>
-        </tr>
-        <tr>
-            <td>
-                <code>--size-font-base</code>
-            </td>
-            <td>16</td>
-        </tr>
-        <tr>
-            <td>
-                <code>--size-font-md</code>
-            </td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>
-                <code>--size-font-lg</code>
-            </td>
-            <td>24</td>
-        </tr>
-        <tr>
-            <td>
-                <code>--size-font-xl</code>
-            </td>
-            <td>32</td>
-        </tr>
-        <tr>
-            <td>
-                <code>--size-font-xxl</code>
-            </td>
-            <td>48</td>
-        </tr>
-        <tr>
-            <td>
-                <code>--size-font-xxl</code>
-            </td>
-            <td>72</td>
-        </tr>
-        <tr>
-            <td>
-                <code>--size-font-xxl</code>
-            </td>
-            <td>96</td>
-        </tr>
-    </tbody>
-</table>
-
-<hr />
+### Font-family
 
 <table>
     <thead>
@@ -109,3 +23,72 @@ import { DefinitionList } from "../../../src/components/DefinitionList.jsx";
         </tr>
     </tbody>
 </table>
+
+### Font-size 
+
+These are the CSS custom properties (variables) for font-size in px. They are then used in <code>em</code> sizes in the font-scale calculations.
+Sizes were derived from a modular scale called Major Third and uses the 1.25 multiplier.
+See [Modular Scale](https://www.modularscale.com/?16&px&1.25).
+
+<table>
+    <thead>
+        <tr>
+            <th>Token</th>
+            <th>Px</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>--size-font-xxxx-large-px</code>
+            </td>
+            <td>48.8281</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-xxx-large-px</code>
+            </td>
+            <td>39.063</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-xx-large-px</code>
+            </td>
+            <td>31.25</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-x-large-px</code>
+            </td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-large-px</code>
+            </td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-medium-px</code>
+            </td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-small-px</code>
+            </td>
+            <td>12.8</td>
+        </tr>
+        <tr>
+            <td>
+                <code>--size-font-x-small-px</code>
+            </td>
+            <td>10.24</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr />
+
+### Font-weight

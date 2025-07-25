@@ -2,43 +2,25 @@ import { Meta, Typeset } from "@storybook/blocks";
 
 <Meta title="Typography" />
 
-export const typographyMobile = {
-    type: {
-        primary:
-            '"Haas Grot Text R Web",system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
-    },
-    weight: {
-        regular: "400",
-        semibold: "500",
-    },
-    size: {
-        xs: 10,
-        sm: 14,
-        base: 16,
-        md: 20,
-        lg: 24,
-        xl: 28,
-        xxl: 32,
-    },
-};
-
 export const typographyDesktop = {
     type: {
         primary:
             '"Haas Grot Text R Web",system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
     },
     weight: {
-        regular: "400",
-        semibold: "500",
+        regular: 400,
+        semibold: 500,
+        bold: 700
     },
     size: {
-        xs: 12.5,
-        sm: 17.5,
-        base: 20,
-        md: 25,
-        lg: 30,
-        xl: 35,
-        xxl: 40,
+        xs: 10.24,
+        sm: 12.8,
+        md: 16,
+        lg: 20,
+        xl: 25,
+        xxlarge: 31.25,
+        xxxlarge: 39.063,
+        xxxxlarge: 48.8281,
     },
 };
 
@@ -47,178 +29,25 @@ export const SampleText =
 
 # Typography
 
-## **Font:** Haas Grot Text R Web
+## Font-family 
+
+Haas Grot Text R Web
 
 ## Size
 
-All font sizes (class names)
+Sizes were derived from a modular scale called Major Third and uses the 1.25 multiplier.
+See [Modular Scale](https://www.modularscale.com/?16&px&1.25).
 
-<table>
-    <thead>
-        <tr>
-            <th>Class</th>
-            <th>Font Size (rem)</th>
-            <th>Mobile (px / line-height)</th>
-            <th>Desktop (px / line-height)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <code>.fs-xs</code>
-            </td>
-            <td>0.625rem</td>
-            <td>10px / 16px</td>
-            <td>12.5px / 16px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>.fs-sm</code>
-            </td>
-            <td>0.875rem</td>
-            <td>14px / 20px</td>
-            <td>17.5px / 20px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>.fs-base</code>
-            </td>
-            <td>1rem</td>
-            <td>16px / 24px</td>
-            <td>20px / 24px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>.fs-md</code>
-            </td>
-            <td>1.25rem</td>
-            <td>20px / 32px</td>
-            <td>25px / 32px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>.fs-lg</code>
-            </td>
-            <td>1.5rem</td>
-            <td>24px / 32px</td>
-            <td>30px / 32px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>.fs-xl</code>
-            </td>
-            <td>1.75rem</td>
-            <td>28px / 40px</td>
-            <td>35px / 40px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>.fs-xxl</code>
-            </td>
-            <td>2rem</td>
-            <td>32px / 48px</td>
-            <td>40px / 48px</td>
-        </tr>
-    </tbody>
-</table>
-
-Font sizes for body and heading elements.
-
-<table>
-    <thead>
-        <tr>
-            <th>Element</th>
-            <th>Font Size (rem)</th>
-            <th>Mobile (px / line-height)</th>
-            <th>Desktop (px / line-height)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <code>body</code>
-            </td>
-            <td>1rem</td>
-            <td>16px / 24px</td>
-            <td>20px / 32px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>h1</code>
-            </td>
-            <td>2rem</td>
-            <td>32px / 48px</td>
-            <td>40px / 48px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>h2</code>
-            </td>
-            <td>1.75rem</td>
-            <td>28px / 40px</td>
-            <td>35px / 40px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>h3</code>
-            </td>
-            <td>1.5rem</td>
-            <td>24px / 32px</td>
-            <td>30px / 32px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>h4</code>
-            </td>
-            <td>1.25rem</td>
-            <td>20px / 32px</td>
-            <td>25px / 32px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>h5</code>
-            </td>
-            <td>1rem</td>
-            <td>16px / 24px</td>
-            <td>20px / 24px</td>
-        </tr>
-        <tr>
-            <td>
-                <code>h6</code>
-            </td>
-            <td>0.875rem</td>
-            <td>14px / 20px</td>
-            <td>18px / 20px</td>
-        </tr>
-    </tbody>
-</table>
-
-### Sizes mobile
+### Sizes
 
 <Typeset
     fontSizes={[
-        Number(typographyMobile.size.xxl),
-        Number(typographyMobile.size.xl),
-        Number(typographyMobile.size.lg),
-        Number(typographyMobile.size.md),
-        Number(typographyMobile.size.base),
-        Number(typographyMobile.size.sm),
-        Number(typographyMobile.size.xs),
-    ]}
-    fontWeight={typographyMobile.weight.regular}
-    sampleText={SampleText}
-    fontFamily={typographyMobile.type.primary}
-/>
-
-### Sizes desktop
-
-<Typeset
-    fontSizes={[
-        Number(typographyDesktop.size.xxl),
+        Number(typographyDesktop.size.xxxxlarge),
+        Number(typographyDesktop.size.xxxlarge),
+        Number(typographyDesktop.size.xxlarge),
         Number(typographyDesktop.size.xl),
         Number(typographyDesktop.size.lg),
         Number(typographyDesktop.size.md),
-        Number(typographyDesktop.size.base),
         Number(typographyDesktop.size.sm),
         Number(typographyDesktop.size.xs),
     ]}
@@ -232,17 +61,26 @@ Font sizes for body and heading elements.
 ### Roman / 400 (regular)
 
 <Typeset
-    fontSizes={[Number(typographyMobile.size.xxl)]}
-    fontWeight={typographyMobile.weight.regular}
+    fontSizes={[Number(typographyDesktop.size.xl)]}
+    fontWeight={typographyDesktop.weight.regular}
     sampleText={SampleText}
-    fontFamily={typographyMobile.type.primary}
+    fontFamily={typographyDesktop.type.primary}
 />
 
 ### Medium / 500
 
 <Typeset
-    fontSizes={[Number(typographyMobile.size.xxl)]}
-    fontWeight={typographyMobile.weight.semibold}
+    fontSizes={[Number(typographyDesktop.size.xl)]}
+    fontWeight={typographyDesktop.weight.semibold}
     sampleText={SampleText}
-    fontFamily={typographyMobile.type.primary}
+    fontFamily={typographyDesktop.type.primary}
+/>
+
+### Bold / 700
+
+<Typeset
+    fontSizes={[Number(typographyDesktop.size.xl)]}
+    fontWeight={typographyDesktop.weight.bold}
+    sampleText={SampleText}
+    fontFamily={typographyDesktop.type.primary}
 />

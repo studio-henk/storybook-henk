@@ -22,10 +22,18 @@ export default {
 };
 
 export const HeadingDisplay: HeadingStory = {
+    name: "Display heading",
     args: {
         tag: 'h1',
         text: 'Display Heading',
         display: true
+    },
+    parameters: {
+        docs: {
+        description: {
+            story: 'A large display-style heading based on an `<h1>` element, using the `display: true` prop for enhanced styling.',
+        },
+        },
     },
 };
 

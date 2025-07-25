@@ -34,7 +34,7 @@ Base.parameters = {
   // controls: { exclude: ['variant'] },
   docs: {
     description: {
-      story: "Some story **markdown**",
+      story: "Represents the **default paragraph** style used for body text. It reflects the base *font size*, *weight*, and *line height* defined in the typography scale, and is suitable for general content across the UI.",
     },
   },
   design: {

@@ -1,0 +1,101 @@
+.henk-button,
+::part(henk-button) {
+  --_color-button-background: var(--color-background-palette-5);
+  --_color-button-text: var(--color-text-base);
+  --_color-button-border: var(--color-border-base);
+
+  background-color: var(--_color-button-background);
+  color: var(--_color-button-text);
+  border: 1px solid var(--_color-button-border);
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  line-height: 1.5;
+  padding: 0.5625em 1.5em;
+  text-decoration: none;
+  font-family: var(--font-body, sans-serif), sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+@media screen and (max-width: 321px) {
+  .henk-button {
+    padding-inline: 16px;
+  }
+}
+
+.henk-button:hover,
+a:hover span.henk-button {
+  --_color-button-background: var(--color-background-base-invert);
+  --_color-button-text: var(--color-text-base-invert);
+  --color-text-link-hover: var(--color-text-base-invert);
+}
+
+.henk-button--primary {
+  --_color-button-background: var(--color-background-primary);
+  --_color-button-text: var(--color-text-base);
+  --_color-button-border: var(--color-border-primary);
+}
+
+.henk-button--primary:hover {
+  --_color-button-background: var(--color-background-palette-1);
+  --_color-button-text: var(--color-text-base);
+  --_color-button-border: var(--color-border-palette-1);
+  --color-text-link-hover: var(--color-text-base);
+}
+
+.henk-button--secondary {
+  --_color-button-background: var(--color-background-secondary);
+  /* --_color-button-text: var(--color-ui-text-default); */
+  --_color-button-border: var(--color-border-secondary);
+}
+
+.henk-button--secondary:hover {
+  --_color-button-background: var(--color-background-palette-1);
+  --_color-button-text: var(--color-text-base);
+  --_color-button-border: var(--color-border-palette-1);
+  --color-text-link-hover: var(--color-text-base);
+}
+
+/* icon-only button */
+.henk-button--icon-only {
+  aspect-ratio: 1 / 1;
+  padding-inline: 9px;
+}
+
+.henk-button:has(.icon--large) {
+  padding-block: 9px;
+}
+
+.henk-button:has(.icon--medium) {
+  padding-block: 3px;
+}
+
+/* disabled state */
+.henk-button[disabled],
+.henk-button[aria-disabled="true"] {
+  --_color-button-background: var(--color-background-disabled);
+  --_color-button-text: var(--color-text-on-disabled);
+  --_color-button-border: var(--color-border-disabled);
+
+  cursor: not-allowed;
+}
+
+.henk-button[disabled]:hover,
+.henk-button[aria-disabled="true"]:hover {
+  --color-text-link-hover: var(--color-text-on-disabled);
+}
+
+.henk-button--small {
+  font-size: 0.8125em;
+  line-height: 1.84615385em;
+  padding: 3px 16px;
+}
+
+.henk-button--small.henk-button--icon-only {
+  padding-inline: 5px;
+}
