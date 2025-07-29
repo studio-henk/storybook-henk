@@ -1,0 +1,5 @@
+--size-width-content {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 1140px;
+}

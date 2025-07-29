@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "ESNext",
+        "lib": [
+            "DOM",
+            "ES2022"
+        ],
+        "jsx": "preserve",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noEmit": true,
+        "isolatedModules": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "types": [
+            "vite/client",
+        ],
+        "incremental": true
+    },
+    "include": [
+        "src",
+        ".storybook"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

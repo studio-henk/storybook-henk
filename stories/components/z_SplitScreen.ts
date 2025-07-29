@@ -1,10 +1,9 @@
 
-export interface SectionHeaderProps {
-    bgColor?: 'default' | 'primary' | 'secondary' | 'tertiary' | 'highlight';
+interface SplitScreenProps {
+    bgColor?: 'default';
     id?: string;
-    byline?: string;
     title: string;
-    level?: 1 | 2 | 3 | 4 | 5 | 6;
+    level?: 2 | 3;
     content?: string;
     buttonUrl?: string;
     buttonText?: string;
@@ -12,10 +11,9 @@ export interface SectionHeaderProps {
     alignLeft?: boolean;
 }
 
-export const createSectionHeader = ({
+export const createSplitScreen = ({
     bgColor = 'default',
     id = '',
-    byline = '',
     title,
     level = 2,
     content = '',
@@ -23,14 +21,13 @@ export const createSectionHeader = ({
     buttonText = '',
     buttonVariant = 'default',
     alignLeft = false
-}: SectionHeaderProps): HTMLElement => {
+}: SplitScreenProps): HTMLElement => {
     const container = document.createElement('div');
 
     // Build class list
     const classList = [
-        `henk-section-header`,
-        bgColor !== 'default' ? `henk-section-header--bg-${bgColor}` : '',
-        alignLeft ? 'henk-section-header--align-left' : '',
+        `henk-split-screen`,
+        bgColor !== 'default' ? `henk-split-screen--bg-${bgColor}` : '',
     ].filter(Boolean).join(' ');
 
     container.className = classList;
@@ -38,22 +35,25 @@ export const createSectionHeader = ({
     if (id) container.id = id;
 
     const innerDiv = document.createElement('div');
-    innerDiv.className = 'henk-section-header__inner';
+    innerDiv.className = 'henk-split-screen__inner';
+
+    // grid 
+    const gridContainer = document.createElement('div');
+    gridContainer.className = 'henk-split-screen__grid';
+
+    const gridItem1 = document.createElement('div');
+    gridItem1.className = 'henk-split-screen__grid-item';
+
+    const gridItem2 = document.createElement('div');
+    gridItem2.className = 'henk-split-screen__grid-item';
 
     const contentDiv = document.createElement('div');
-    contentDiv.className = 'henk-section-header__content';
-
-    if (byline) {
-        const bylineP = document.createElement('p');
-        bylineP.className = 'henk-section-header__byline';
-        bylineP.innerText = byline;
-        contentDiv.appendChild(bylineP);
-    }
+    contentDiv.className = 'henk-split-screen__content';
 
     // Clamp level between 1 and 6 just in case
     const headingLevel = Math.min(Math.max(level, 1), 6);
     const titleElement = document.createElement(`h${headingLevel}`);
-    titleElement.className = 'henk-section-header__title';
+    titleElement.className = 'henk-split-screen__title';
     titleElement.innerText = title;
     contentDiv.appendChild(titleElement);
 

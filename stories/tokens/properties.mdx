@@ -1,0 +1,21 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Tokens/Properties" />
+
+## CSS Properties
+
+The @property CSS at-rule is part of the CSS Houdini set of APIs. It allows developers to explicitly define CSS custom properties, allowing for property type checking and constraining, setting default values, and defining whether a custom property can inherit values or not.
+
+```
+--size-width-content {
+syntax: "<length>";
+inherits: true;
+initial-value: 1140px;
+}
+```
+
+```
+:root {
+  --size-width-content: 1140px;
+}
+```

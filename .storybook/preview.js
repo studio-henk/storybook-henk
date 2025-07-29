@@ -1,8 +1,5 @@
 /** @type { import('@storybook/html').Preview } */
 
-// import "../src/styles/global.min.css";
-// import "../src/styles/content.min.css";
-
 const preview = {
   parameters: {
     options: {
@@ -12,6 +9,7 @@ const preview = {
           "Colour",
           "Tokens",
           [
+            "Properties",
             "Colours",
             ["Primitives", "Semantic"],
             "Type",
@@ -31,6 +29,8 @@ const preview = {
             "Web Components",
           ],
           "Sections",
+          ["SectionHeader", "*"],
+          "Global",
           "Pages",
           "*",
         ],

@@ -29,6 +29,7 @@
         "react-syntax-highlighter": "^15.5.0",
         "storybook": "^8.1.0",
         "storybook-design-token": "^3.3.0",
+        "typescript": "^5.8.3",
         "vite": "^5.4.18"
     }
 }

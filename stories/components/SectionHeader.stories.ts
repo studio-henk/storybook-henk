@@ -1,20 +1,27 @@
-
 import type { Meta, StoryObj, Decorator } from '@storybook/html';
+import type { SectionHeaderProps } from './SectionHeader';
 import { createSectionHeader } from './SectionHeader';
 
+// Decorator to wrap each story in a <section> tag (mimicking Shopify's DOM)
 const withSectionWrapper: Decorator = (Story) => {
-  const section = document.createElement('section');
-  section.className = 'shopify-section'; // optional class for styling
-  section.appendChild(Story());
-  return section;
+    const section = document.createElement('section');
+    section.className = 'shopify-section';
+
+    const storyHtml = Story();
+    const fragment =
+        typeof storyHtml === 'string'
+            ? document.createRange().createContextualFragment(storyHtml)
+            : storyHtml;
+
+    section.appendChild(fragment);
+    return section;
 };
 
 const meta: Meta = {
-    title: 'Components/SectionHeader',
-    component: createSectionHeader,
+    title: 'Sections/SectionHeader',
     decorators: [withSectionWrapper],
     tags: ['autodocs'],
-    render: (args) => createSectionHeader(args),
+    render: (args) => createSectionHeader(args as SectionHeaderProps),
     parameters: {
         docs: {
             description: {
@@ -40,7 +47,7 @@ const meta: Meta = {
         id: {
             control: 'text',
             table: { disable: true },
-        }, 
+        },
         byline: { control: 'text' },
         title: {
             control: 'text',

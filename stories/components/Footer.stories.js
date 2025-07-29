@@ -17,7 +17,7 @@ import {
 } from "./Icon.stories.js";
 
 export default {
-  title: "Sections/Footer",
+  title: "Global/Footer",
   tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
