@@ -3,8 +3,9 @@ export interface SplitScreenProps {
     bgColor?: 'default';
     id?: string;
     title: string;
-    subtitle?: string;
-    level?: 2 | 3;
+    caption?: string;
+    level?: 1 | 2 | 3;
+    display?: boolean;
     content?: string;
     imageUrl?: string;
     imageAlt?: string;
@@ -18,7 +19,8 @@ export const createSplitScreen = ({
     bgColor = 'default',
     id = '',
     title,
-    subtitle = '',
+    display = false,
+    caption = '',
     level = 2,
     content = '',
     imageUrl = '',
@@ -57,18 +59,24 @@ export const createSplitScreen = ({
     const contentDiv = document.createElement('div');
     contentDiv.className = 'henk-split-screen__content';
 
-    const headingLevel = Math.min(Math.max(level, 2), 3);
-    const titleEl = document.createElement(`h${headingLevel}`);
-    titleEl.className = 'henk-split-screen__title';
-    titleEl.innerText = title;
-    contentDiv.appendChild(titleEl);
-
-    if (subtitle) {
-        const subtitleEl = document.createElement('h3');
-        subtitleEl.className = 'henk-split-screen__subtitle';
-        subtitleEl.innerText = subtitle;
+    if (caption) {
+        const subtitleEl = document.createElement('p');
+        subtitleEl.className = 'henk-split-screen__caption';
+        subtitleEl.innerText = caption;
         contentDiv.appendChild(subtitleEl);
     }
+
+    const safeLevel = Math.min(Math.max(level, 1), 3);
+    const headingTag = `h${safeLevel}` as keyof HTMLElementTagNameMap;
+
+    const titleElement = document.createElement(headingTag);
+    titleElement.className = [
+        'henk-split-screen__title',
+        display ? 'fs-display' : '',
+    ].filter(Boolean).join(' ');
+    titleElement.innerText = title;
+    contentDiv.appendChild(titleElement);
+
 
     if (content) {
         const contentEl = document.createElement('div');

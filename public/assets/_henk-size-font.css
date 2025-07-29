@@ -11,8 +11,8 @@ h6 {
   text-wrap: balance;
 }
 
-h1.display,
-.h1.display {
+h1.fs-display,
+.h1.fs-display {
   --_target-lh: 48;
   font-size: var(--size-font-xxxx-large);
   line-height: calc(var(--_target-lh) / var(--size-font-xxxx-large-px, 48px));
@@ -54,7 +54,13 @@ h6,
   line-height: calc(24 / var(--size-font-medium-px, 24px));
 }
 
-.fs-small {
-  font-size: var(--size-font-small, 13px);
-  line-height: calc(24 / var(--size-font-medium-px, 24px));
+.fs-display {
+  --_target-lh: 48;
+  font-size: var(--size-font-xxxx-large);
+  line-height: calc(var(--_target-lh) / var(--size-font-xxxx-large-px, 48px));
 }
+
+/* .fs-small { */
+/*   font-size: var(--size-font-small, 13px); */
+/*   line-height: calc(24 / var(--size-font-medium-px, 24px)); */
+/* } */

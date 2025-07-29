@@ -48,7 +48,7 @@ const meta: Meta = {
             control: 'text',
             table: { disable: true },
         },
-        byline: { control: 'text' },
+        caption: { control: 'text' },
         title: {
             control: 'text',
             name: 'title *',
@@ -56,7 +56,7 @@ const meta: Meta = {
         },
         level: {
             control: { type: 'select' },
-            options: ['1', '2'],
+            options: ['1', '2', '3', 'display'],
         },
         content: { control: 'text' },
         buttonUrl: { control: 'text' },
@@ -70,7 +70,7 @@ const meta: Meta = {
         alignLeft: false,
         bgColor: 'default',
         id: 'section-header-1',
-        byline: 'This is a byline',
+        caption: 'This is a caption',
         title: 'Section Title',
         level: '2',
         content:
@@ -104,4 +104,10 @@ export const Secondary: StoryObj = {
         bgColor: 'secondary',
         buttonVariant: 'primary',
     },
+};
+
+export const Display: StoryObj = {
+    args: {
+        level: 'display'
+    }
 };

@@ -58,9 +58,9 @@ const meta: Meta = {
             name: 'title *',
             description: '**Required.** Main heading of the block.',
         },
-        subtitle: {
+        caption: {
             control: 'text',
-            description: 'Optional subtitle above title',
+            description: 'Optional caption above title',
         },
         level: {
             control: { type: 'radio' },
@@ -105,10 +105,11 @@ const meta: Meta = {
         bgColor: 'default',
         reverse: false,
         title: 'Een afvalvrije meubelindustrie',
-        subtitle: 'ONZE MISSIE',
+        caption: 'ONZE MISSIE',
         level: 2,
+        display: false,
         content:
-            'Als B Corp gebruiken wij de kracht van ons bedrijf om positieve verandering te bewerkstelligen. Het is onze missie om de meubelindustrie van binnenuit te hervormen en deze volledig afvalvrij te maken.',
+            '<p>Als B Corp gebruiken wij de kracht van ons bedrijf om positieve verandering te bewerkstelligen. Het is onze missie om de meubelindustrie van binnenuit te hervormen en deze volledig afvalvrij te maken.</p>',
         imageUrl:
             'https://surf-turf-2-0.myshopify.com/cdn/shop/files/studio-henk-renewi2_-_media--5860a965--query.jpg?crop=center&height=1728&v=1724855609&width=1152',
         imageAlt: '',
@@ -126,4 +127,12 @@ export const Reverse: StoryObj = {
     args: {
         reverse: true,
     },
+};
+
+export const Display: StoryObj = {
+    args: {
+        caption: 'Onze Missie',
+        level: '2',
+        display: true,
+    }
 };
