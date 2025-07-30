@@ -1,23 +1,24 @@
 .henk-button,
 ::part(henk-button) {
-  --_color-button-background: var(--color-background-palette-5);
+  --_color-button-background: var(--color-background-tertiary);
   --_color-button-text: var(--color-text-base);
   --_color-button-border: var(--color-border-base);
 
   background-color: var(--_color-button-background);
   color: var(--_color-button-text);
   border: 1px solid var(--_color-button-border);
-  border-radius: 3em;
+  border-radius: 4px;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 0.5em;
   line-height: 1.5;
-  padding: 0.5625em 1.5em;
+  padding: 0.5625em 1em;
   text-decoration: none;
   font-family: var(--font-body, sans-serif), sans-serif;
   font-size: 1rem;
+  font-weight: var(--font-weight-semibold, 500);
   transition: all 0.3s ease;
   text-align: center;
 }
@@ -36,29 +37,14 @@ a:hover span.henk-button {
 }
 
 .henk-button--primary {
-  --_color-button-background: var(--color-background-primary);
+  --_color-button-background: hsl(from var(--color-background-primary) h s 75);
+  /* --_color-button-background: var(--color-background-primary); */
   --_color-button-text: var(--color-text-base);
   --_color-button-border: var(--color-border-primary);
 }
 
-.henk-button--primary:hover {
-  --_color-button-background: var(--color-background-palette-1);
-  --_color-button-text: var(--color-text-base);
-  --_color-button-border: var(--color-border-palette-1);
-  --color-text-link-hover: var(--color-text-base);
-}
-
 .henk-button--secondary {
   --_color-button-background: var(--color-background-secondary);
-  /* --_color-button-text: var(--color-ui-text-default); */
-  --_color-button-border: var(--color-border-secondary);
-}
-
-.henk-button--secondary:hover {
-  --_color-button-background: var(--color-background-palette-1);
-  --_color-button-text: var(--color-text-base);
-  --_color-button-border: var(--color-border-palette-1);
-  --color-text-link-hover: var(--color-text-base);
 }
 
 /* icon-only button */

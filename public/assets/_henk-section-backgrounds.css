@@ -1,0 +1,11 @@
+section > div[class*="--bg-primary"]:first-of-type {
+  background-color: var(--color-background-primary-light);
+}
+
+section > div[class*="--bg-secondary"]:first-of-type {
+  background-color: var(--color-background-secondary);
+}
+
+section > div[class*="--bg-tertiary"]:first-of-type {
+  background-color: var(--color-background-tertiary);
+}

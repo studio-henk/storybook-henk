@@ -29,7 +29,8 @@
     },
     "include": [
         "src",
-        ".storybook"
+        ".storybook",
+        "stories"
     ],
     "exclude": [
         "node_modules",

@@ -1,0 +1,77 @@
+.henk-three-column-block {
+  padding-block: 4lh;
+}
+
+.henk-three-column-block__inner {
+  display: flex;
+  flex-direction: column;
+  width: min(var(--size-width-content, 1140px), 100% - 3rem);
+  margin-inline: auto;
+  container-type: inline-size;
+  container-name: ThreeColumnsGrid;
+}
+
+.henk-three-column-block__title {
+  text-align: center;
+}
+
+.henk-three-column-block__columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4rem;
+}
+
+@container ThreeColumnsGrid (min-width: 560px) {
+  .henk-three-column-block__columns {
+    grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
+    column-gap: 1.5rem;
+  }
+}
+
+.henk-three-column-block__column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1.5rem;
+}
+
+.henk-three-column-block__column > * {
+  margin-block: 0;
+}
+
+.henk-three-column-block__image {
+  display: block;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  margin-bottom: 0;
+  border-radius: 8px;
+}
+
+.henk-three-column-block__image-link {
+  display: block;
+}
+
+.henk-three-column-block__heading {
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1.3em * 2);
+}
+
+.henk-three-column-block__text {
+  flex-grow: 1;
+}
+
+.henk-three-column-block__button {
+  margin-top: auto;
+}
+
+/* center aligned columns */
+.henk-three-column-block--align-center .henk-three-column-block__column {
+  align-items: center;
+  text-align: center;
+}
