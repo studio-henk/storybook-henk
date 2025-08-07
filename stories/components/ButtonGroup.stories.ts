@@ -77,27 +77,22 @@ export const GroupAlignedSpaceBetween: Story = {
     },
 };
 
-// export const FillContainerGroup: Story = {
-//     args: {
-//         buttons: [
-//             { label: 'Clear All', variant: 'secondary', href: '#' },
-//             { label: 'Apply', variant: 'primary', href: '#' },
-//         ],
-//         fill: true,
-//     },
-// };
+export const TertiaryPrimaryAlignedRight: Story = {
+    args: {
+        buttons: [
+            { label: 'Button 1', variant: 'tertiary', href: '#' },
+            { label: 'Button 2', variant: 'primary', href: '#' },
+        ],
+        fill: false,
+    },
+};
 
-// export const FillContainerGroupMobile: Story = {
-//     args: {
-//         buttons: [
-//             { label: 'Clear All', variant: 'secondary', href: '#' },
-//             { label: 'Apply', variant: 'primary', href: '#' },
-//         ],
-//         fill: true,
-//     },
-//     parameters: {
-//         viewport: {
-//             defaultViewport: 'iphonex',
-//         },
-//     },
-// };
+export const TertiarySecondaryAlignedRight: Story = {
+    args: {
+        buttons: [
+            { label: 'Button 1', variant: 'tertiary', href: '#' },
+            { label: 'Button 2', variant: 'secondary', href: '#' },
+        ],
+        fill: false,
+    },
+};

@@ -16,6 +16,7 @@
     line-height: 1.5;
     padding: 0.5625em 1em;
     text-decoration: none;
+    text-underline-offset: 0;
     font-family: var(--font-body, sans-serif), sans-serif;
     font-size: 1rem;
     font-weight: var(--font-weight-semibold, 500);
@@ -33,8 +34,7 @@
   a:hover span.henk-link-button {
     --_color-background-button: var(--color-background-base-invert);
     --_color-text-button: var(--color-text-base-invert);
-    --_color-border-button: var(--color-border-base-invert);
-    /* --color-text-link-hover: var(--color-text-base-invert); */
+    text-underline-offset: 0;
   }
 
   .henk-link-button--primary {
@@ -42,7 +42,6 @@
       from var(--color-background-primary) h s 75
     );
     --_color-text-button: var(--color-text-static);
-    /* --_color-button-border: var(--color-border-primary); */
   }
 
   .henk-link-button--secondary {
@@ -76,5 +75,22 @@
     font-size: 0.8125em;
     line-height: 1.84615385em;
     padding: 3px 16px;
+  }
+
+  /*dark mode*/
+  [data-theme="dark"] {
+    .henk-link-button:hover,
+    a:hover span.henk-link-button {
+      --_color-border-button: var(--color-border-base-invert);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      .henk-link-button:hover,
+      a:hover span.henk-link-button {
+        --_color-border-button: var(--color-border-base-invert);
+      }
+    }
   }
 }
