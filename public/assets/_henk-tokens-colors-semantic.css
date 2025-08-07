@@ -38,8 +38,12 @@
     --color-text-secondary: var(--color-secondary);
     --color-text-warning: var(--color-orange-50);
 
+    /*doesnt change in dark mode*/
+    --color-text-static: var(--color-neutral-0, #000);
+
     /* border */
     --color-border-base: var(--color-neutral-0);
+    --color-border-base-invert: var(--color-neutral-100);
     --color-border-primary: var(--color-primary);
     --color-border-secondary: var(--color-secondary);
     --color-border-palette-1: var(--color-palette-1);
@@ -50,6 +54,7 @@
     --color-border-disabled: var(--color-neutral-80);
     --color-border-muted: var(--color-neutral-90);
 
+    --color-border-static: var(--color-neutral-0);
     color-scheme: light;
   }
 
@@ -61,6 +66,8 @@
     --color-text-link-hover: var(--color-blue-70, blue);
     --color-border-base: var(--color-neutral-100);
     --color-border-muted: var(--color-neutral-10);
+
+    /* --color-border-static: var(--color-neutral-0); */
     color-scheme: dark;
   }
 
@@ -73,6 +80,7 @@
       --color-text-link-hover: var(--color-blue-70, blue);
       --color-border-base: var(--color-neutral-100);
       --color-border-muted: var(--color-neutral-10);
+      /* --color-border-static: var(--color-neutral-0); */
       color-scheme: dark;
     }
   }

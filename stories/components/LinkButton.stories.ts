@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/html';
 import { createLinkButton, LinkButtonProps } from './LinkButton';
 // Import raw SVGs
-import ArrowRight from '@assets/icons/icon-arrow-right.svg?raw';
+import ChevronRight from "@assets/icons/icon-chevron-right.svg?raw";
 
 const meta: Meta<LinkButtonProps> = {
     title: 'Components/LinkButton',
@@ -112,8 +112,9 @@ export const Disabled: Story = {
 export const WithIconRight: Story = {
     args: {
         label: 'Button with icon',
-        iconSvg: ArrowRight,
+        iconSvg: ChevronRight,
         iconPosition: 'right',
+        iconSize: 'small',
     },
 };
 
@@ -130,7 +131,8 @@ export const SmallWithIconRight: Story = {
         label: 'Small with icon',
         size: 'small',
         variant: 'secondary',
-        iconSvg: ArrowRight,
+        iconSvg: ChevronRight,
         iconPosition: 'right',
+        iconSize: 'small',
     },
 };
