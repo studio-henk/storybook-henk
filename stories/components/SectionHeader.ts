@@ -80,7 +80,7 @@ export const createSectionHeader = ({
     if (buttonUrl) {
         const button = document.createElement('a');
         button.href = buttonUrl;
-        button.className = `henk-button henk-button--${buttonVariant}`;
+        button.className = `henk-link-button henk-link-button--${buttonVariant}`;
         button.innerText = buttonText;
         contentDiv.appendChild(button);
     }

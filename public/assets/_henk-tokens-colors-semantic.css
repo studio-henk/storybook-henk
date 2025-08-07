@@ -26,6 +26,7 @@
     --color-background-palette-5: var(--color-palette-5);
     --color-background-disabled: var(--color-neutral-80);
     --color-background-muted: var(--color-neutral-90);
+    --color-background-neutral-darkest: var(--color-neutral-0);
 
     /* text */
     --color-text-body: var(--color-neutral-0, #000);
@@ -61,6 +62,8 @@
 
   [data-theme="dark"] {
     --color-background-body: var(--color-neutral-0);
+    --color-background-base: var(--color-neutral-0);
+    --color-background-base-invert: var(--color-neutral-100);
     --color-text-body: var(--color-neutral-100);
     --color-text-base: var(--color-neutral-100);
     --color-text-link: var(--color-blue-50, blue);
@@ -75,6 +78,8 @@
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
       --color-background-body: var(--color-neutral-0, #000);
+      --color-background-base: var(--color-neutral-0);
+      --color-background-base-invert: var(--color-neutral-100);
       --color-text-body: var(--color-neutral-100, #fff);
       --color-text-base: var(--color-neutral-100, #fff);
       --color-text-link: var(--color-blue-60, blue);

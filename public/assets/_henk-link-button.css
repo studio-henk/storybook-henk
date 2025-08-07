@@ -4,6 +4,8 @@
     --_color-text-button: var(--color-text-static);
     --_color-border-button: var(--color-border-static);
 
+    --_color-background-button-hover: var(--color-background-neutral-darkest);
+
     background-color: var(--_color-background-button);
     color: var(--_color-text-button);
     border: 1px solid var(--_color-border-button);
@@ -32,17 +34,13 @@
 
   .henk-link-button:hover,
   a:hover span.henk-link-button {
-    --_color-background-button: var(--color-background-base-invert);
+    --_color-background-button: var(--_color-background-button-hover);
     --_color-text-button: var(--color-text-base-invert);
     text-underline-offset: 0;
   }
 
   .henk-link-button--primary {
-    /* --_color-background-button: hsl( */
-    /*   from var(--color-background-primary) h s 75 */
-    /* ); */
     --_color-background-button: var(--color-background-primary-light);
-    --_color-text-button: var(--color-text-static);
   }
 
   .henk-link-button--secondary {
@@ -67,11 +65,6 @@
     cursor: not-allowed;
   }
 
-  .henk-link-button[disabled]:hover,
-  .henk-link-button[aria-disabled="true"]:hover {
-    --color-text-link-hover: var(--color-text-on-disabled);
-  }
-
   .henk-link-button--small {
     font-size: 0.8125em;
     line-height: 1.84615385em;
@@ -84,6 +77,12 @@
     a:hover span.henk-link-button {
       --_color-border-button: var(--color-border-base-invert);
     }
+
+    /* section > div[class*="--bg-primary"]:first-of-type { */
+    /*   .henk-link-button:hover { */
+    /*     --_color-border-button: var(--_color-background-button-hover); */
+    /*   } */
+    /* } */
   }
 
   @media (prefers-color-scheme: dark) {

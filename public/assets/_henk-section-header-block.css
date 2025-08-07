@@ -3,6 +3,7 @@
   flex-direction: column;
   place-items: center;
   background-color: var(--color-background-base);
+  color: var(--color-text-base);
   padding-block: 4lh;
 }
 
