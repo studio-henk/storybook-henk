@@ -1,0 +1,8 @@
+.henk-lister-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 267px));
+  gap: 1.5rem;
+  width: min(1140px, 100% - 3rem);
+  margin-inline: auto;
+}

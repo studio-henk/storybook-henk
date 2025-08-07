@@ -2,7 +2,7 @@
 import "./breadcrumbs.js";
 
 export default {
-  title: "Components/Breadcrumbs",
+  title: "Sections/Breadcrumbs",
   tags: ["autodocs"],
   parameters: {
     docs: {

@@ -1,10 +1,9 @@
 import { createLinkButton } from "./LinkButton";
 import type { LinkButtonProps } from './LinkButton';
 
-
-interface ButtonGroupProps {
+export interface ButtonGroupProps {
     buttons: LinkButtonProps[];
-    alignment?: 'left' | 'center' | 'right';
+    alignment?: 'left' | 'center' | 'right' | 'space-between';
     fill?: boolean; // New prop to control button filling
 }
 

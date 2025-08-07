@@ -12,7 +12,6 @@ export interface LinkButtonProps {
     iconSize?: IconSize;
     disabled?: boolean;
     target?: string;
-    onClick?: (event: MouseEvent) => void;
     size?: 'small' | 'large';
 }
 
@@ -26,7 +25,6 @@ export const createLinkButton = ({
     iconSize,
     disabled = false,
     target,
-    onClick,
     size,
 }: LinkButtonProps): HTMLAnchorElement => {
     const btn = document.createElement('a');
@@ -41,17 +39,26 @@ export const createLinkButton = ({
 
     // Inner content
     btn.innerHTML = iconPosition === 'left'
-        ? `${iconHTML} ${label}`
+        ? `${iconHTML}${label}`
         : `${label} ${iconHTML}`;
 
     // Classes
-    const classNames = ['henk-button'];
-    if (variant) classNames.push(`henk-button--${variant}`);
-    if (size) classNames.push(`henk-button--${size}`);
+    const classNames = ['henk-link-button'];
+    const DEFAULT_VARIANT = 'tertiary';
+
+    if (variant && variant !== DEFAULT_VARIANT) {
+        classNames.push(`henk-link-button--${variant}`);
+    }
+
+    // size
+    const DEFAULT_SIZE = 'large';
+
+    if (size && size !== DEFAULT_SIZE) {
+        classNames.push(`henk-link-button--${size}`);
+    }
     btn.className = classNames.join(' ');
 
     if (title) btn.title = title;
-    if (onClick) btn.addEventListener('click', onClick);
 
     return btn;
 };

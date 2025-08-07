@@ -1,7 +1,8 @@
 .henk-logo {
-  --color-text-link: var(--color-text-base, #000);
-
-  background-color: var(--color-background-base);
+  --color-text-logo: var(--color-neutral-0, #000);
+  --color-background-logo: var(--color-neutral-100, #fff);
+  color: var(--color-text-logo);
+  background-color: var(--color-background-logo);
   display: inline-flex;
   margin-block: 0;
   margin-inline: 0;
@@ -10,24 +11,45 @@
 }
 
 .henk-logo--default-inverted {
-  --color-text-link: var(--color-text-base-invert);
-  background-color: var(--color-background-base-invert);
-}
-
-.henk-logo--default-inverted {
-  --color-text-link-hover: var(--color-text-secondary);
+  --color-text-logo: var(--color-neutral-100);
+  --color-background-logo: var(--color-neutral-0);
 }
 
 .henk-logo--primary {
-  --color-text-link: var(--color-primary);
-  background-color: var(--color-background-secondary);
+  --color-text-logo: var(--color-text-secondary);
+  --color-background-logo: var(--color-background-primary);
 }
 
 .henk-logo--secondary {
-  --color-text-link: var(--color-text-secondary);
-  background-color: var(--color-background-primary);
+  --color-text-logo: var(--color-text-primary);
+  --color-background-logo: var(--color-background-secondary);
 }
 
-/* .henk-logo--secondary:hover { */
-/*   --color-text-link-hover: var(--color-text-secondary); */
-/* } */
+/*dark mode*/
+[data-theme="dark"] {
+  .henk-logo--default {
+    --color-text-logo: var(--color-neutral-100, #fff);
+    --color-background-logo: var(--color-neutral-0, #000);
+  }
+
+  .henk-logo--default-inverted {
+    --color-text-logo: var(--color-neutral-0);
+    --color-background-logo: var(--color-neutral-100);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    .henk-logo--default {
+      --color-text-logo: var(--color-neutral-100, #fff);
+      --color-background-logo: var(--color-neutral-0, #000);
+      /*color-scheme: dark;*/
+    }
+
+    .henk-logo--default-inverted {
+      --color-text-logo: var(--color-neutral-0);
+      --color-background-logo: var(--color-neutral-100);
+      /*color-scheme: dark;*/
+    }
+  }
+}

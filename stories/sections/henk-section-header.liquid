@@ -1,0 +1,122 @@
+<div 
+  class="henk-section-header{% if section.settings.align_left %} henk-section-header--align-left{% endif %}{% if section.settings.bg_color != 'default' %} henk-section-header--bg-{{ section.settings.bg_color }}{% endif %}"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}>
+
+  <div class="henk-section-header__inner">
+    <div class="henk-section-header__content">
+
+      {% if section.settings.caption != blank %}
+        <p class="henk-section-header__caption">{{ section.settings.caption }}</p>
+      {% endif %}
+
+      {% assign level = section.settings.level | default: '2' %}
+      {% assign level_int = level | plus: 0 %}
+      {% assign display = section.settings.display %}
+
+      <h{{ level_int }} class="henk-section-header__title{% if display %} fs-display{% endif %}">
+        {{ section.settings.title }}
+      </h{{ level_int }}>
+
+      {% if section.settings.content != blank %}
+        <div class="henk-section-header__text">
+        {{ section.settings.content }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.button_url != blank %}
+        <a href="{{ section.settings.button_url }}" class="henk-button henk-button--primary">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section Header",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "default",
+      "options": [
+        { "value": "default", "label": "Default" },
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "tertiary", "label": "Tertiary" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "default": "intro"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption",
+      "default": "Actie"
+    },
+    {
+      "type": "select",
+      "id": "level",
+      "label": "Heading level",
+      "default": "2",
+      "options": [
+        { "value": "display", "label": "Display (H1)" },
+        { "value": "1", "label": "H1" },
+        { "value": "2", "label": "H2" },
+        { "value": "3", "label": "H3" },
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "display",
+      "label": "Use display style",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Gratis salontafel"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Content",
+      "default": "Iced coffees, blote voeten, lange zomeravonden en een slapende hond. Studio HENK heeft zin in de zomer. Om het nieuwe seizoen te vieren geven we een salontafel cadeau bij een aankoop vanaf € 1000."
+    },
+    {
+      "type": "checkbox",
+      "id": "align_left",
+      "label": "Align content left",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Lees meer"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Header",
+      "category": "HENK Blocks"
+    }
+  ]
+}
+{% endschema %}

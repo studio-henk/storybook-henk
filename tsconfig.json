@@ -18,12 +18,21 @@
         "skipLibCheck": true,
         "baseUrl": "./",
         "paths": {
-            "@/*": [
-                "src/*"
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@assets/*": [
+                "src/assets/*"
+            ],
+            "@utils/*": [
+                "src/utils/*"
+            ],
+            "@decorators/*": [
+                "src/decorators/*"
             ]
         },
         "types": [
-            "vite/client",
+            "vite/client"
         ],
         "incremental": true
     },

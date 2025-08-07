@@ -1,9 +1,10 @@
-interface TagProps {
+export interface TagProps {
     label: string; // Required label for the tag
     iconSvg?: string; // Optional SVG icon
     iconPosition?: "left" | "right"; // Position of the icon
     size?: "small" | "large";
-    variant?: "highlight";
+    variant?: "default" | "primary" | "secondary";
+    href?: string;
 }
 
 export const createTag = ({
@@ -12,8 +13,10 @@ export const createTag = ({
     iconPosition = "left",
     variant,
     size,
+    href,
 }: TagProps) => {
-    const tag = document.createElement("span");
+    // const tag = document.createElement("span");
+    const tag = href ? document.createElement('a') : document.createElement('span');
 
     // Set class names for the tag
     const classNames = ["henk-tag"];

@@ -8,7 +8,10 @@
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
         "storybook-docs": "storybook dev --docs",
-        "build-storybook-docs": "storybook build --docs"
+        "build-storybook-docs": "storybook build --docs",
+        "build:wc": "vite build",
+        "build:copy": "cp dist/product-card2.mjs public/assets/",
+        "build+copy": "npm run build:wc && npm run build:copy"
     },
     "author": "nh",
     "license": "ISC",
@@ -30,6 +33,11 @@
         "storybook": "^8.1.0",
         "storybook-design-token": "^3.3.0",
         "typescript": "^5.8.3",
-        "vite": "^5.4.18"
+        "vite": "^5.4.18",
+        "vite-tsconfig-paths": "^5.1.4"
+    },
+    "dependencies": {
+        "@geometricpanda/storybook-addon-badges": "^2.0.5",
+        "liquidjs": "^10.21.1"
     }
 }
