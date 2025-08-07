@@ -1,5 +1,5 @@
 import { fn } from "@storybook/test";
-import { BADGE } from '@geometricpanda/storybook-addon-badges';
+// import { BADGE } from '@geometricpanda/storybook-addon-badges';
 
 import IconChevronRight from "@assets/icons/icon-chevron-right.svg?raw";
 import IconChevronLeft from "@assets/icons/icon-chevron-left.svg?raw";
@@ -30,25 +30,22 @@ import IconMinus from "@assets/icons/icon-minus.svg?raw";
 import IconCheckmarkFat from "@assets/icons/icon-checkmark-fat.svg?raw";
 
 export default {
-    title: "Components/Icon",
-    tags: ["autodocs"],
-    parameters: {
-        docs: {
-            description: {
-                component:
-                    "Icons at HENK are SVG code elements rendered inside an ```<i>``` HTML element. Icons are used to represent actions, objects, or concepts in a visually appealing way.",
-            },
-        },
-        badges: [
-            BADGE.BETA,
-            BADGE.SHOPIFY
-        ],
+  title: "Components/Icon",
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Icons at HENK are SVG code elements rendered inside an ```<i>``` HTML element. Icons are used to represent actions, objects, or concepts in a visually appealing way.",
+      },
     },
+    badges: [BADGE.BETA, BADGE.SHOPIFY],
+  },
 };
 
 const IconTemplate = ({ icon, size = "large" }) => {
-    const sizeClass = `icon--${size}`;
-    return `<i class="henk-icon ${sizeClass}">${icon}</i>`;
+  const sizeClass = `icon--${size}`;
+  return `<i class="henk-icon ${sizeClass}">${icon}</i>`;
 };
 
 // export const Share = () => IconTemplate({ icon: ShareIcon });
@@ -62,189 +59,189 @@ const IconTemplate = ({ icon, size = "large" }) => {
 export const ChevronRight = () => IconTemplate({ icon: IconChevronRight });
 
 export const ChevronRightSmall = () =>
-    IconTemplate({ icon: IconChevronRight, size: "small" });
+  IconTemplate({ icon: IconChevronRight, size: "small" });
 
 export const ChevronLeft = () => IconTemplate({ icon: IconChevronLeft });
 
 export const ChevronLeftSmall = () =>
-    IconTemplate({ icon: IconChevronLeft, size: "small" });
+  IconTemplate({ icon: IconChevronLeft, size: "small" });
 
 export const Truck = () => IconTemplate({ icon: TruckIcon });
 
 export const TruckSmall = () =>
-    IconTemplate({ icon: TruckIcon, size: "small" });
+  IconTemplate({ icon: TruckIcon, size: "small" });
 
 export const TruckMedium = () =>
-    IconTemplate({ icon: TruckIcon, size: "medium" });
+  IconTemplate({ icon: TruckIcon, size: "medium" });
 
 export const Checkmark = () => IconTemplate({ icon: CheckmarkIcon });
 
 export const CheckmarkSmall = () =>
-    IconTemplate({ icon: CheckmarkIcon, size: "small" });
+  IconTemplate({ icon: CheckmarkIcon, size: "small" });
 
 export const CheckmarkMedium = () =>
-    IconTemplate({ icon: CheckmarkIcon, size: "medium" });
+  IconTemplate({ icon: CheckmarkIcon, size: "medium" });
 
 export const Star = () => IconTemplate({ icon: StarIcon });
 
 export const StarSmall = () => IconTemplate({ icon: StarIcon, size: "small" });
 
 export const StarMedium = () =>
-    IconTemplate({ icon: StarIcon, size: "medium" });
+  IconTemplate({ icon: StarIcon, size: "medium" });
 
 export const Instagram = () => IconTemplate({ icon: IconInstaGram });
 
 export const InstagramSmall = () =>
-    IconTemplate({ icon: IconInstaGram, size: "small" });
+  IconTemplate({ icon: IconInstaGram, size: "small" });
 
 export const InstagramMedium = () =>
-    IconTemplate({ icon: IconInstaGram, size: "medium" });
+  IconTemplate({ icon: IconInstaGram, size: "medium" });
 
 export const Facebook = () => IconTemplate({ icon: IconFacebook });
 
 export const FacebookSmall = () =>
-    IconTemplate({ icon: IconFacebook, size: "small" });
+  IconTemplate({ icon: IconFacebook, size: "small" });
 
 export const FacebookMedium = () =>
-    IconTemplate({ icon: IconFacebook, size: "medium" });
+  IconTemplate({ icon: IconFacebook, size: "medium" });
 
 export const TikTok = () => IconTemplate({ icon: IconTikTok });
 
 export const TikTokSmall = () =>
-    IconTemplate({ icon: IconTikTok, size: "small" });
+  IconTemplate({ icon: IconTikTok, size: "small" });
 
 export const TikTokMedium = () =>
-    IconTemplate({ icon: IconTikTok, size: "medium" });
+  IconTemplate({ icon: IconTikTok, size: "medium" });
 
 export const Youtube = () => IconTemplate({ icon: IconYouTube });
 
 export const YoutubeSmall = () =>
-    IconTemplate({ icon: IconYouTube, size: "small" });
+  IconTemplate({ icon: IconYouTube, size: "small" });
 
 export const YoutubeMedium = () =>
-    IconTemplate({ icon: IconYouTube, size: "medium" });
+  IconTemplate({ icon: IconYouTube, size: "medium" });
 
 export const Pinterest = () => IconTemplate({ icon: IconPinterest });
 
 export const PinterestSmall = () =>
-    IconTemplate({ icon: IconPinterest, size: "small" });
+  IconTemplate({ icon: IconPinterest, size: "small" });
 
 export const PinterestMedium = () =>
-    IconTemplate({ icon: IconPinterest, size: "medium" });
+  IconTemplate({ icon: IconPinterest, size: "medium" });
 
 export const Location = () => IconTemplate({ icon: IconLocation });
 
 export const LocationSmall = () =>
-    IconTemplate({ icon: IconLocation, size: "small" });
+  IconTemplate({ icon: IconLocation, size: "small" });
 
 export const LocationMedium = () =>
-    IconTemplate({ icon: IconLocation, size: "medium" });
+  IconTemplate({ icon: IconLocation, size: "medium" });
 
 export const InfoDefault = () => IconTemplate({ icon: IconInfo });
 
 export const InfoSmall = () => IconTemplate({ icon: IconInfo, size: "small" });
 
 export const InfoMedium = () =>
-    IconTemplate({ icon: IconInfo, size: "medium" });
+  IconTemplate({ icon: IconInfo, size: "medium" });
 
 export const SuccessDefault = () => IconTemplate({ icon: IconSuccess });
 
 export const SuccessSmall = () =>
-    IconTemplate({ icon: IconSuccess, size: "small" });
+  IconTemplate({ icon: IconSuccess, size: "small" });
 
 export const SuccessMedium = () =>
-    IconTemplate({ icon: IconSuccess, size: "medium" });
+  IconTemplate({ icon: IconSuccess, size: "medium" });
 
 export const WarningDefault = () => IconTemplate({ icon: IconWarning });
 
 export const WarningSmall = () =>
-    IconTemplate({ icon: IconWarning, size: "small" });
+  IconTemplate({ icon: IconWarning, size: "small" });
 
 export const WarningMedium = () =>
-    IconTemplate({ icon: IconWarning, size: "medium" });
+  IconTemplate({ icon: IconWarning, size: "medium" });
 
 export const DangerDefault = () => IconTemplate({ icon: IconDanger });
 
 export const DangerSmall = () =>
-    IconTemplate({ icon: IconDanger, size: "small" });
+  IconTemplate({ icon: IconDanger, size: "small" });
 
 export const DangerMedium = () =>
-    IconTemplate({ icon: IconDanger, size: "medium" });
+  IconTemplate({ icon: IconDanger, size: "medium" });
 
 export const InfoOpenDefault = () => IconTemplate({ icon: IconInfoOpen });
 
 export const InfoOpenSmall = () =>
-    IconTemplate({ icon: IconInfoOpen, size: "small" });
+  IconTemplate({ icon: IconInfoOpen, size: "small" });
 
 export const InfoOpenMedium = () =>
-    IconTemplate({ icon: IconInfoOpen, size: "medium" });
+  IconTemplate({ icon: IconInfoOpen, size: "medium" });
 
 export const LocationOpenDefault = () =>
-    IconTemplate({ icon: IconLocationOpen });
+  IconTemplate({ icon: IconLocationOpen });
 
 export const LocationOpenSmall = () =>
-    IconTemplate({ icon: IconLocationOpen, size: "small" });
+  IconTemplate({ icon: IconLocationOpen, size: "small" });
 
 export const LocationOpenMedium = () =>
-    IconTemplate({ icon: IconLocationOpen, size: "medium" });
+  IconTemplate({ icon: IconLocationOpen, size: "medium" });
 
 export const CircleXDefault = () => IconTemplate({ icon: IconCircleX });
 
 export const CircleXSmall = () =>
-    IconTemplate({ icon: IconCircleX, size: "small" });
+  IconTemplate({ icon: IconCircleX, size: "small" });
 
 export const CircleXMedium = () =>
-    IconTemplate({ icon: IconCircleX, size: "medium" });
+  IconTemplate({ icon: IconCircleX, size: "medium" });
 
 export const CloseDefault = () => IconTemplate({ icon: IconClose });
 
 export const CloseSmall = () =>
-    IconTemplate({ icon: IconClose, size: "small" });
+  IconTemplate({ icon: IconClose, size: "small" });
 
 export const CloseMedium = () =>
-    IconTemplate({ icon: IconClose, size: "medium" });
+  IconTemplate({ icon: IconClose, size: "medium" });
 
 export const IconArrowRightLarge = () =>
-    IconTemplate({ icon: IconArrowRight, size: "large" });
+  IconTemplate({ icon: IconArrowRight, size: "large" });
 
 export const IconArrowRightMedium = () =>
-    IconTemplate({ icon: IconArrowRight, size: "medium" });
+  IconTemplate({ icon: IconArrowRight, size: "medium" });
 
 export const IconArrowRightSmall = () =>
-    IconTemplate({ icon: IconArrowRight, size: "small" });
+  IconTemplate({ icon: IconArrowRight, size: "small" });
 
 export const IconBag = () => IconTemplate({ icon: BagIcon });
 
 export const IconArrowLeftLarge = () =>
-    IconTemplate({ icon: IconArrowLeft, size: "large" });
+  IconTemplate({ icon: IconArrowLeft, size: "large" });
 
 export const IconArrowLeftMedium = () =>
-    IconTemplate({ icon: IconArrowLeft, size: "medium" });
+  IconTemplate({ icon: IconArrowLeft, size: "medium" });
 
 export const IconArrowLeftSmall = () =>
-    IconTemplate({ icon: IconArrowLeft, size: "small" });
+  IconTemplate({ icon: IconArrowLeft, size: "small" });
 
 export const IconPlusDefault = () => IconTemplate({ icon: IconPlus });
 
 export const IconPlusMedium = () =>
-    IconTemplate({ icon: IconPlus, size: "medium" });
+  IconTemplate({ icon: IconPlus, size: "medium" });
 
 export const IconPlusSmall = () =>
-    IconTemplate({ icon: IconPlus, size: "small" });
+  IconTemplate({ icon: IconPlus, size: "small" });
 
 export const IconMinusDefault = () => IconTemplate({ icon: IconMinus });
 
 export const IconMinusMedium = () =>
-    IconTemplate({ icon: IconMinus, size: "medium" });
+  IconTemplate({ icon: IconMinus, size: "medium" });
 
 export const IconMinusSmall = () =>
-    IconTemplate({ icon: IconMinus, size: "small" });
+  IconTemplate({ icon: IconMinus, size: "small" });
 
 export const IconCheckmarkFatDefault = () =>
-    IconTemplate({ icon: IconCheckmarkFat, size: "large" });
+  IconTemplate({ icon: IconCheckmarkFat, size: "large" });
 
 export const IconCheckmarkFatMedium = () =>
-    IconTemplate({ icon: IconCheckmarkFat, size: "medium" });
+  IconTemplate({ icon: IconCheckmarkFat, size: "medium" });
 
 export const IconCheckmarkFatSmall = () =>
-    IconTemplate({ icon: IconCheckmarkFat, size: "small" });
+  IconTemplate({ icon: IconCheckmarkFat, size: "small" });
