@@ -1,6 +1,5 @@
 .henk-tag,
-.henk-tag--default,
-::part(henk-tag) {
+.henk-tag--default {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -8,8 +7,8 @@
   border-radius: 8px;
   font-size: 1rem;
   line-height: 1.5;
-  background-color: var(--color-background-primary-light);
-  color: var(--color-text-base, #000);
+  background-color: var(--color-background-tertiary);
+  color: var(--color-text-static, #000);
   border: 1px solid var(--color-ui-border-transparent);
   transition: all 0.3s ease;
 }
@@ -23,7 +22,9 @@
 }
 
 .henk-tag--outlined {
+  color: var(--color-text-base);
   border: 1px solid var(--color-border-base);
+  background-color: transparent;
 }
 
 .henk-tag--small {
@@ -40,6 +41,5 @@ a.henk-tag {
 
 a.henk-tag:focus-visible,
 a.henk-tag:hover {
-  background-color: var(--color-background-base-invert);
-  color: var(--color-text-base-invert);
+  background-color: var(--color-background-primary-lighter);
 }

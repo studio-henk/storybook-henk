@@ -38,9 +38,10 @@
   }
 
   .henk-link-button--primary {
-    --_color-background-button: hsl(
-      from var(--color-background-primary) h s 75
-    );
+    /* --_color-background-button: hsl( */
+    /*   from var(--color-background-primary) h s 75 */
+    /* ); */
+    --_color-background-button: var(--color-background-primary-light);
     --_color-text-button: var(--color-text-static);
   }
 

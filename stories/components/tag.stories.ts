@@ -93,3 +93,10 @@ export const Link: Story = {
         href: 'https://studio-henk.nl',
     },
 };
+
+export const Outlined: Story = {
+    args: {
+        label: 'Fast Delivery',
+        variant: 'outlined',
+    },
+};
