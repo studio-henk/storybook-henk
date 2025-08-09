@@ -1,97 +1,78 @@
 <style>
-  .sbdocs-preview {
-    background-color: var(--color-background-body) !important;
-    color: var(--color-text-body) !important;
-  }
+    .sbdocs-preview {
+        background-color: var(--color-background-body) !important;
+        color: var(--color-text-body) !important;
+    }
+    .docblock-colorpalette .css-rs8390 span {
+        display: none !important;
+    }
 </style>
 
-<link rel="stylesheet" href="/assets/_henk-properties.css" />
-<link rel="stylesheet" href="/assets/_henk-tokens-colors-brand.css" />
-<link rel="stylesheet" href="/assets/_henk-tokens-colors-primitives.css" />
-<link rel="stylesheet" href="/assets/_henk-tokens-colors-semantic.css" />
-
-<link rel="stylesheet" href="/assets/_henk-font-face.css" />
-<link rel="stylesheet" href="/assets/_henk-tokens-font.css" />
-<link rel="stylesheet" href="/assets/_henk-tokens-size-font.css" />
-<link rel="stylesheet" href="/assets/_henk-tokens-weight-font.css" />
-
-<link rel="stylesheet" href="/assets/_henk-tokens-size-width.css" />
-
-<link rel="stylesheet" href="/assets/_henk-base.css" />
-<link rel="stylesheet" href="/assets/_henk-helpers.css" />
-<link rel="stylesheet" href="/assets/_henk-size-font.css" />
-<link rel="stylesheet" href="/assets/_henk-weight-font.css" />
-<link rel="stylesheet" href="/assets/_henk-section-backgrounds.css" />
-<link rel="stylesheet" href="/assets/_henk-logo.css" />
-<link rel="stylesheet" href="/assets/_henk-icon.css" />
-<link rel="stylesheet" href="/assets/_henk-tag.css" />
-
-<link rel="stylesheet" href="/assets/_henk-text-link.css" />
-<link rel="stylesheet" href="/assets/_henk-link-button.css" />
-<link rel="stylesheet" href="/assets/_henk-button-group.css" />
-<link rel="stylesheet" href="/assets/_henk-list.css" />
-
-<link rel="stylesheet" href="/assets/_henk-breadcrumbs.css" />
-<link rel="stylesheet" href="/assets/_henk-header.css" />
-<link rel="stylesheet" href="/assets/_henk-footer.css" />
-<link rel="stylesheet" href="/assets/_henk-lister-grid.css" />
-
-<!-- sections -->
-<link rel="stylesheet" href="/assets/_henk-section-header-block.css" />
-<link rel="stylesheet" href="/assets/_henk-split-screen.css" />
-<link rel="stylesheet" href="/assets/_henk-double-image-block.css" />
-<link rel="stylesheet" href="/assets/_henk-three-column-block.css" />
+<link
+    rel="stylesheet"
+    href="../src/assets/_henk-tokens-colors-semantic-dark.css"
+/>
+<link rel="stylesheet" href="/assets/main.css" />
 
 <script>
-  // public/scripts/user-env.js
-  (() => {
-    const html = document.documentElement;
+    // public/scripts/user-env.js
+    (() => {
+        const html = document.documentElement;
 
-    // Color gamut
-    if (window.matchMedia("(color-gamut: p3)").matches) {
-      html.classList.add("color-p3");
-    } else {
-      html.classList.add("color-srgb");
-    }
+        // Color gamut
+        if (window.matchMedia("(color-gamut: p3)").matches) {
+            html.classList.add("color-p3");
+        } else {
+            html.classList.add("color-srgb");
+        }
 
-    // Color scheme
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      html.classList.add("theme-dark");
-    } else {
-      html.classList.add("theme-light");
-    }
+        // Color scheme
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            html.classList.add("theme-dark");
+        } else {
+            html.classList.add("theme-light");
+        }
 
-    // Reduced motion
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      html.classList.add("reduced-motion");
-    }
+        // Reduced motion
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            html.classList.add("reduced-motion");
+        }
 
-    // Device pixel ratio
-    const dpr = window.devicePixelRatio || 1;
-    if (dpr >= 3) {
-      html.classList.add("dpr-3plus");
-    } else if (dpr >= 2) {
-      html.classList.add("dpr-2");
-    } else {
-      html.classList.add("dpr-1");
-    }
+        // Device pixel ratio
+        const dpr = window.devicePixelRatio || 1;
+        if (dpr >= 3) {
+            html.classList.add("dpr-3plus");
+        } else if (dpr >= 2) {
+            html.classList.add("dpr-2");
+        } else {
+            html.classList.add("dpr-1");
+        }
 
-    // CSS pow() support detection
-    const supportsPow = (() => {
-      try {
-        const testEl = document.createElement("div");
-        testEl.style.width = "calc(pow(1.25, 2) * 1px)";
-        // If browser accepts the value, style.width won't be empty string
-        return testEl.style.width !== "";
-      } catch {
-        return false;
-      }
+        // CSS pow() support detection
+        const supportsPow = (() => {
+            try {
+                const testEl = document.createElement("div");
+                testEl.style.width = "calc(pow(1.25, 2) * 1px)";
+                // If browser accepts the value, style.width won't be empty string
+                return testEl.style.width !== "";
+            } catch {
+                return false;
+            }
+        })();
+
+        if (supportsPow) {
+            html.classList.add("css-pow-supported");
+        } else {
+            html.classList.add("css-pow-not-supported");
+        }
+
+        const supportsRelativeColors = CSS.supports(
+            "color",
+            "hsl(from var(--fake) h 0 s 0 l 0)",
+        );
+
+        document.documentElement.classList.add(
+            supportsRelativeColors ? "rcs-supported" : "rcs-not-supported",
+        );
     })();
-
-    if (supportsPow) {
-      html.classList.add("css-pow-supported");
-    } else {
-      html.classList.add("css-pow-not-supported");
-    }
-  })();
 </script>

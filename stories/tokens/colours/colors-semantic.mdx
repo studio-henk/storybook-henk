@@ -1,235 +1,54 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 import Swatches from "../../../src/components/Swatches.jsx";
 
-<Meta title="Tokens/Colours/Semantic" />
+<Meta title="Tokens/Colours/Semantic/Base" />
 
 ## Semantic
 
+### Palette
+
 <ColorPalette>
 
 <Swatches
-    title="--color-primary"
-    subtitle="Primary"
-    colors={{
-        "dim-gray": "--color-primary",
-    }}
+  title="--color-palette"
+  subtitle="Palette"
+  colors={{
+    "palette-1": "--khaki",
+    "palette-2": "--columbia-blue",
+    "palette-3": "--white-smoke",
+    "palette-4": "--dim-gray",
+    "palette-5": "--silver",
+  }}
 />
-
-  <Swatches
-    title="--color-secondary"
-    subtitle="Secondary"
-    colors={{
-      "columbia-blue": "--color-secondary",
-    }}
-  />
 </ColorPalette>
 
-### Background
+### Signal
 
 <ColorPalette>
 
 <Swatches
-    title="--color-background-body"
-    subtitle="Body Background"
-    colors={{
-        "neutral-100": "--color-background-body",
-    }}
+  title="--color-signal"
+  subtitle="Signal"
+  colors={{
+    "success": "--color-success",
+    "danger": "--color-danger",
+    "warning": "--color-warning",
+    "info": "--color-info",
+  }}
 />
-<Swatches
-    title="--color-background-base"
-    subtitle="Base Background"
-    colors={{
-        "neutral-100": "--color-background-base",
-    }}
-/>
-
-<Swatches
-    title="--color-background-base-invert"
-    subtitle="Base Background Inverted"
-    colors={{
-        "neutral-0": "--color-background-base-invert",
-    }}
-/>
-
-<Swatches
-    title="--color-background-primary"
-    subtitle="Primary Background"
-    colors={{
-        primary: "--color-background-primary",
-    }}
-/>
-
-<Swatches
-    title="--color-background-primary-light"
-    subtitle="Primary Background light"
-    colors={{
-        primary: "--color-background-primary-light",
-    }}
-/>
-
-<Swatches
-    title="--color-background-secondary"
-    subtitle="Secondary Background"
-    colors={{
-        secondary: "--color-background-secondary",
-    }}
-/>
-
-<Swatches
-    title="--color-background-palette-1"
-    subtitle="Palette Background"
-    colors={{
-        palette: "--color-background-palette-1",
-    }}
-/>
-
-<Swatches
-    title="--color-background-palette-2"
-    subtitle="Palette Background"
-    colors={{
-        palette: "--color-background-palette-2",
-    }}
-/>
-
-<Swatches
-    title="--color-background-palette-3"
-    subtitle="Palette Background"
-    colors={{
-        palette: "--color-background-palette-3",
-    }}
-/>
-
-<Swatches
-    title="--color-background-palette-4"
-    subtitle="Palette Background"
-    colors={{
-        palette: "--color-background-palette-4",
-    }}
-/>
-
-<Swatches
-    title="--color-background-palette-5"
-    subtitle="Palette Background"
-    colors={{
-        palette: "--color-background-palette-5",
-    }}
-/>
-
-<Swatches
-    title="--color-background-disabled"
-    subtitle="Disabled Background"
-    colors={{
-        Disabled: "--color-background-disabled",
-    }}
-/>
-
-<Swatches
-    title="--color-background-muted"
-    subtitle="Muted Background"
-    colors={{
-        Muted: "--color-background-muted",
-    }}
-/>
-
 </ColorPalette>
 
-### Text
+### Foundation
 
 <ColorPalette>
 
 <Swatches
-    title="--color-text-body"
-    subtitle="Body"
-    colors={{
-        "neutral-0": "--color-text-body",
-    }}
+  title="Foundation"
+  subtitle="Foundation"
+  colors={{
+    "primary": "--color-primary",
+    "secondary": "--color-secondary",
+    "tertiary": "--color-tertiary",
+  }}
 />
-
-<Swatches
-    title="--color-text-base"
-    subtitle="Base"
-    colors={{
-        "neutral-0": "--color-text-base",
-    }}
-/>
-
-<Swatches
-    title="--color-text-base-invert"
-    subtitle="Base inverted"
-    colors={{
-        "neutral-100": "--color-text-base-invert",
-    }}
-/>
-
-<Swatches
-    title="--color-text-primary"
-    subtitle="Primary"
-    colors={{
-        primary: "--color-text-primary",
-    }}
-/>
-
-<Swatches
-    title="--color-text-secondary"
-    subtitle="Secondary"
-    colors={{
-        secondary: "--color-text-secondary",
-    }}
-/>
-
-<Swatches
-    title="--color-text-link"
-    subtitle="Link"
-    colors={{
-        "blue-40": "--color-text-link",
-    }}
-/>
-
-  <Swatches
-    title="--color-text-link-hover"
-    subtitle="Link hover"
-    colors={{
-      "blue-30": "--color-text-link-hover",
-    }}
-  />
-</ColorPalette>
-
-### Border
-
-<ColorPalette>
-    <Swatches
-        title="--color-border-base"
-        subtitle="Border base"
-        colors={{
-            border: "--color-border-base",
-        }}
-    />
-    <Swatches
-        title="--color-border-muted"
-        subtitle="Border muted"
-        colors={{
-            muted: "--color-border-muted",
-        }}
-    />
-</ColorPalette>
-
-### Extra
-
-<ColorPalette>
-
-<Swatches
-    title="--color-success"
-    subtitle="Success"
-    colors={{
-        "green-40": "--color-success",
-    }}
-/>
-
-  <Swatches
-    title="--color-warning"
-    subtitle="Warning"
-    colors={{
-      "yellow-50": "--color-warning"
-    }}
-  />
 </ColorPalette>

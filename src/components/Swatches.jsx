@@ -10,6 +10,7 @@ const Swatches = ({ title, subtitle, colors }) => {
     Object.entries(colors).map(([key, cssVar]) => [key, getCssVariableValue(cssVar)])
   );
 
+  // return <ColorItem title={title} subtitle={subtitle} colors={resolvedColors} />;
   return <ColorItem title={title} subtitle={subtitle} colors={resolvedColors} />;
 };
 

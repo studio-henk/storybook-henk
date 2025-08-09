@@ -11,7 +11,11 @@
     "build-storybook-docs": "storybook build --docs",
     "build:wc": "vite build",
     "build:copy": "cp dist/product-card2.mjs public/assets/",
-    "build+copy": "npm run build:wc && npm run build:copy"
+    "build+copy": "npm run build:wc && npm run build:copy",
+    "check:browsers": "npx browserslist",
+    "css:dev": "NODE_ENV=development postcss src/assets/main.css -o public/assets/main.css --no-map",
+    "css:prod": "NODE_ENV=production postcss src/assets/main.css -o public/assets/main.min.css",
+    "watch:css": "nodemon -e css -w src/assets --ignore public/assets --exec \"npm run css:dev && npm run css:prod\""
   },
   "author": "nh",
   "license": "ISC",
@@ -27,7 +31,16 @@
     "@storybook/html-vite": "^8.1.0",
     "@storybook/test": "^8.1.0",
     "@whitespace/storybook-addon-html": "^6.0.5",
+    "autoprefixer": "^10.4.21",
+    "browserslist-config-baseline": "^0.5.0",
     "chromatic": "^11.3.2",
+    "cssnano": "^7.1.0",
+    "nodemon": "^3.1.10",
+    "postcss-cli": "^11.0.1",
+    "postcss-discard-comments": "^7.0.4",
+    "postcss-import": "^16.1.1",
+    "postcss-nested": "^7.0.2",
+    "postcss-preset-env": "^10.2.4",
     "prettier": "^3.2.5",
     "react-syntax-highlighter": "^15.5.0",
     "storybook": "^8.1.0",
@@ -38,5 +51,8 @@
   },
   "dependencies": {
     "liquidjs": "^10.21.1"
-  }
+  },
+  "browserslist": [
+    "extends browserslist-config-baseline/2023"
+  ]
 }

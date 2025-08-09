@@ -1,0 +1,12 @@
+.henk-content-divider {
+  background-color: var(--color-background-base-invert);
+  margin-block: 4lh;
+  width: min(var(--size-width-content), 100% - 3rem);
+  margin-inline: auto;
+}
+
+.henk-content-divider hr {
+  border: none;
+  height: 1px;
+  margin: 0;
+}
