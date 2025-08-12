@@ -30,7 +30,13 @@ export default {
       control: { type: "radio" },
       options: ["small", "large"],
     },
-    label: { control: "text" },
+    label: {
+      control: "text",
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "Share" },
+      },
+    },
     isLoading: { control: "boolean" },
     iconPosition: {
       control: { type: "select" },
@@ -39,23 +45,33 @@ export default {
     iconSize: {
       control: { type: "select" },
       options: ["small", "medium", "large"],
+      table: {
+        type: { summary: "select" },
+        defaultValue: { summary: "large" },
+      },
     },
     onClick: { action: "onClick" },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
-};
-
-export const Outline = {
   args: {
-    label: "Close",
     buttonElement: "a",
-    variant: "outline",
+    label: "Close",
     iconSvg: CloseDefault,
-    iconPosition: "left",
-    iconSize: "large",
+    iconSize: "large"
   },
 };
+
+export const Default = {}
+// export const Outline = {
+//   args: {
+//     label: "Close",
+//     buttonElement: "a",
+//     variant: "outline",
+//     iconSvg: CloseDefault,
+//     iconPosition: "left",
+//     iconSize: "large",
+//   },
+// };
 
 // export const DefaultAsButton = {
 //   args: {
@@ -77,15 +93,25 @@ export const Primary = {
   },
 };
 
-// export const Secondary = {
-//   args: {
-//     label: "Button",
-//     variant: "secondary",
-//     iconSvg: CloseDefault,
-//     iconPosition: "left",
-//     iconSize: "large",
-//   },
-// };
+export const Secondary = {
+  args: {
+    label: "Button",
+    variant: "secondary",
+    iconSvg: CloseDefault,
+    iconPosition: "left",
+    iconSize: "large",
+  },
+};
+
+export const Tertiary = {
+  args: {
+    label: "Button",
+    variant: "tertiary",
+    iconSvg: CloseDefault,
+    iconPosition: "left",
+    iconSize: "large",
+  },
+};
 
 export const Disabled = {
   args: {
@@ -118,13 +144,13 @@ export const Small = {
 //   },
 // };
 
-export const Minimal = {
-  args: {
-    label: "Close",
-    buttonElement: "a",
-    variant: "minimal",
-    iconSvg: CloseDefault,
-    iconPosition: "left",
-    iconSize: "large",
-  },
-};
+// export const Minimal = {
+//   args: {
+//     label: "Close",
+//     buttonElement: "a",
+//     variant: "minimal",
+//     iconSvg: CloseDefault,
+//     iconPosition: "left",
+//     iconSize: "large",
+//   },
+// };

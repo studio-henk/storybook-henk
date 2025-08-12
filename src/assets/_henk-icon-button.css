@@ -1,0 +1,31 @@
+@layer components.icon-button {
+  /* .henk-icon-button { */
+  /*   --_color-background-button: var(--color-background-tertiary); */
+  /*   --_color-text-button: var(--color-text-static); */
+  /*   --_color-border-button: var(--color-border-static); */
+  /**/
+  /*   --_color-background-button-hover: var(--color-background-neutral-darkest); */
+  /**/
+  /*   background-color: var(--_color-background-button); */
+  /*   color: var(--_color-text-button); */
+  /*   border: 1px solid var(--_color-border-button); */
+  /*   border-radius: 4px; */
+  /*   cursor: pointer; */
+  /*   display: inline-flex; */
+  /*   justify-content: center; */
+  /*   align-items: center; */
+  /*   gap: 0.5em; */
+  /*   line-height: 1.5; */
+  /*   padding: 0.5625em 1em; */
+  /*   text-decoration: none; */
+  /*   text-underline-offset: 0; */
+  /*   font-family: var(--font-body, sans-serif), sans-serif; */
+  /*   font-size: 1rem; */
+  /*   font-weight: var(--font-weight-semibold, 500); */
+  /*   transition: all 0.3s ease; */
+  /*   text-align: center; */
+  /* } */
+  /* .henk-icon-button { */
+  /*   background-color: pink; */
+  /* } */
+}

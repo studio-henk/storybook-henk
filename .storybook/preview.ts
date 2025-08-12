@@ -62,6 +62,7 @@ const preview = {
             "TextLink",
             "Logo",
             "Icon",
+            "IconButton",
             "LinkButton",
             "ButtonGroup",
           ],

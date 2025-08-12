@@ -1,17 +1,15 @@
 .henk-header {
   --color-text-header: var(--color-neutral-0);
   --color-background-header: var(--color-neutral-100);
-  /*position: fixed;*/
   top: 0;
   left: 0;
   right: 0;
   z-index: 99;
   background-color: var(--color-background-header);
-  /* padding-block: 1.5rem; */
-  /* padding-inline: 1.5rem; */
 }
+
 /*TODO: body > wrapper > header*/
-.henk-wrapper > .henk-header {
+.henk-wrapper > .shopify-section > .henk-header {
   position: fixed;
 }
 
@@ -50,8 +48,9 @@
   display: flex;
   justify-content: right;
   gap: 1.5rem;
-  padding-right: 40px;
-  width: 100%;
+  /* padding-right: 40px; */
+  /* width: 100%; */
+  justify-self: flex-end;
 }
 
 .henk-header ul {
@@ -63,12 +62,13 @@
 ul.henk-navbar__menu {
   display: flex;
   justify-items: start;
+  justify-self: center;
   gap: 1rem;
 }
 
 .main-level {
-  display: block;
-  padding: 32px 0;
+  /* display: block; */
+  /* padding: 32px 0; */
 }
 
 .henk-navbar__dropdown {

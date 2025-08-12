@@ -1,5 +1,6 @@
 @layer components.link-button {
-  .henk-link-button {
+  .henk-link-button,
+  .henk-icon-button {
     --_color-background-button: var(--color-background-tertiary);
     --_color-text-button: var(--color-text-static);
     --_color-border-button: var(--color-border-static);
@@ -33,17 +34,21 @@
   }
 
   .henk-link-button:hover,
+  a:hover span.henk-link-button,
+  .henk-icon-button:hover,
   a:hover span.henk-link-button {
     --_color-background-button: var(--_color-background-button-hover);
     --_color-text-button: var(--color-text-base-invert);
     text-underline-offset: 0;
   }
 
-  .henk-link-button--primary {
+  .henk-link-button--primary,
+  .henk-icon-button--primary {
     --_color-background-button: var(--color-background-primary-light);
   }
 
-  .henk-link-button--secondary {
+  .henk-link-button--secondary,
+  .henk-icon-button--secondary {
     --_color-background-button: var(--color-background-secondary);
   }
 
@@ -57,7 +62,9 @@
 
   /* disabled state */
   .henk-link-button[disabled],
-  .henk-link-button[aria-disabled="true"] {
+  .henk-link-button[aria-disabled="true"],
+  .henk-icon-button[disabled],
+  .henk-icon-button[aria-disabled="true"] {
     --_color-background-button: var(--color-background-disabled);
     --_color-text-button: var(--color-text-on-disabled);
     --_color-border-button: var(--color-border-disabled);

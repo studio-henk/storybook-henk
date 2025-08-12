@@ -21,6 +21,13 @@
         "tabWidth": 4,
         "embeddedLanguageFormatting": "off"
       }
+    },
+{
+      "files": "*.liquid",
+      "options": {
+        "tabWidth": 4,
+        "embeddedLanguageFormatting": "off"
+      }
     }
   ]
 }
