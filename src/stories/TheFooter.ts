@@ -1,14 +1,19 @@
 import { TextLink } from './TextLink'; // adjust path as needed
 
 import BcorpLogoSVG from "@assets/icons/b-corp.svg?raw";
+import Pinterest from '@assets/icons/icon-pinterest.svg?raw';
+import Instagram from '@assets/icons/icon-instagram.svg?raw';
+import Facebook from '@assets/icons/icon-facebook.svg?raw';
+import TikTok from '@assets/icons/icon-tiktok.svg?raw';
+import Youtube from '@assets/icons/icon-youtube.svg?raw';
 
-import {
-  Pinterest,
-  TikTok,
-  Youtube,
-  Instagram,
-  Facebook,
-} from "./Icon.stories.js";
+// import {
+//   Pinterest,
+//   TikTok,
+//   Youtube,
+//   Instagram,
+//   Facebook,
+// } from "./Icon.stories.js";
 
 function loadTrustpilotScript() {
   return new Promise((resolve, reject) => {
@@ -193,27 +198,27 @@ export function TheFooter({ footerData = defaultFooterData }: TheFooterProps): H
     <ul class="henk-footer__social-media henk-list henk-list--no-bullets">              
     <li class="henk-footer__social-media-item">            
         <a href="https://www.instagram.com/studiohenk/" class="henk-footer__social-media-link" aria-label="Instagram">               
-        ${Instagram()}
+        ${Instagram}
         </a>
     </li>
     <li class="henk-footer__social-media-item">
         <a href="https://www.facebook.com/studiohenk/" class="henk-footer__social-media-link" aria-label="Facebook">
-        ${Facebook()}
+        ${Facebook}
         </a>
     </li>
     <li class="henk-footer__social-media-item">
         <a href="https://www.tiktok.com/@studiohenk" class="henk-footer__social-media-link" aria-label="TikTok">
-        ${TikTok()}
+        ${TikTok}
         </a>
     </li>
     <li class="henk-footer__social-media-item">
         <a href="https://nl.pinterest.com/studiohenk/" class="henk-footer__social-media-link" aria-label="pinterest">
-        ${Pinterest()}
+        ${Pinterest}
         </a>
     </li>
     <li class="henk-footer__social-media-item">
         <a href="https://www.youtube.com/channel/UC_RBQhav2vf-zwLTIr-xHQg" class="henk-footer__social-media-link" aria-label="youtube">
-        ${Youtube()}
+        ${Youtube}
         </a>
     </li>            
     </ul>
@@ -306,7 +311,7 @@ export function TheFooter({ footerData = defaultFooterData }: TheFooterProps): H
   container.appendChild(rowPayment);
   footer.appendChild(container);
 
-loadTrustpilotScript().catch((err) => {
+  loadTrustpilotScript().catch((err) => {
     console.warn('Trustpilot script failed to load:', err);
   });
 

@@ -1,82 +1,62 @@
+
 import { createInfoBox } from "./info-box";
-// import { ShareIcon } from "./Icon.stories";
-import { Location } from "./Icon.stories";
-import { LocationOpenDefault } from "./Icon.stories";
-import { InfoDefault } from "./Icon.stories";
-import { InfoOpenDefault } from "./Icon.stories";
-import { SuccessDefault } from "./Icon.stories";
-import { WarningDefault } from "./Icon.stories";
-import { DangerDefault } from "./Icon.stories";
+import { Icon } from "./Icon";
+
+const icons = import.meta.glob("../assets/icons/*.svg", { as: "raw", eager: true });
+const iconNames = Object.keys(icons).map((path) =>
+  path.split("/").pop()?.replace(".svg", "") || ""
+);
+const iconOptions = ["None", ...iconNames];
 
 export default {
   title: "Components/Info Box",
   component: createInfoBox,
   tags: ["autodocs"],
-  parameters: {
-    controls: { sort: "requiredFirst" },
-    // layout: "fullscreen",
-    //layout: "centered",
-  },
+  parameters: { controls: { sort: "requiredFirst" } },
   argTypes: {
-    title: {
-      name: "title",
-      type: { name: "string", required: false },
-      description: "Title of the info box",
-      table: {
-        type: { summary: "string" },
-        defaultValue: { summary: "Default" },
-      },
-      control: "text",
-    },
+    title: { control: "text" },
     variant: {
-      name: "variant",
-      type: { name: "string", required: false },
-      description: "Variant of the info box",
-      table: {
-        type: { summary: "string" },
-        defaultValue: { summary: "Default" },
-      },
       control: "select",
       options: ["default", "info", "success", "warning", "danger"],
     },
-    buttonConfig: {
-      name: "Button Configuration",
-      type: { name: "object", required: false },
-      description: "Configuration object for the button",
-      table: { type: { summary: "object" }, defaultValue: { summary: null } },
-      control: {
-        type: "object",
-      },
-    },
-    iconHTML: {
+    buttonConfig: { control: "object" },
+    iconName: {
       name: "Icon",
-      type: { name: "string", required: false },
-      description: "SVG Icon for the info box",
-      table: { type: { summary: "string" }, defaultValue: { summary: null } },
-      control: {
-        type: "select",
-        options: {
-          None: null,
-          // Share: Share(),
-          Location: Location(),
-          LocationOpenDefault: LocationOpenDefault(),
-          InfoDefault: InfoDefault(),
-          InfoOpenDefault: InfoOpenDefault(),
-          SuccessDefault: SuccessDefault(),
-          WarningDefault: WarningDefault(),
-          DangerDefault: DangerDefault(),
-          // Add more icon story functions here
-        },
-      },
+      control: "select",
+      options: iconOptions,
     },
   },
-  // args: {
-  //   texts: ["Made to order in Europe", "Customisable design", "Assembled on delivery"], // Default texts
-  // },
 };
 
-const Template = ({ variant, ...args }) => {
-  return createInfoBox({ variant, ...args });
+// const Template = (args) => {
+//   const iconHTML =
+//     args.iconName && args.iconName !== "None"
+//       ? Icon({ name: args.iconName, size: "large" })
+//       : null;
+//
+//   return createInfoBox({ ...args, iconHTML });
+// };
+
+
+const Template = (args) => {
+  let iconHTML = "";
+
+  if (args.iconName && args.iconName !== "None") {
+    const iconVal = Icon({ name: args.iconName, size: "large" });
+
+    if (typeof iconVal === "string") {
+      iconHTML = iconVal;
+    } else if (iconVal instanceof Element) {
+      iconHTML = iconVal.outerHTML;
+    } else {
+      // fallback to string coercion
+      iconHTML = String(iconVal);
+    }
+  } else {
+    iconHTML = ""; // safe empty string so .trim() works downstream
+  }
+
+  return createInfoBox({ ...args, iconHTML });
 };
 
 export const Default = Template.bind({});
@@ -85,17 +65,16 @@ Default.args = {
   title: "Heading",
   content: "<p>Some very important information here.</p>",
   buttonConfig: null,
-  iconHTML: null,
+  iconName: "icon-location",
 };
 
-export const DefaultWithIcon = Template.bind({});
-DefaultWithIcon.args = {
+export const DefaultWithIconInfo = Template.bind({});
+DefaultWithIconInfo.args = {
   variant: "default",
   title: "Still a heading",
   content: "<p>My my, do we have a fancy icon here?</p>",
   buttonConfig: null,
-  // iconHTML: InfoDefault(),
-  iconHTML: InfoOpenDefault(),
+  iconName: "icon-info-open",
 };
 
 export const VariantInfo = Template.bind({});
@@ -105,8 +84,7 @@ VariantInfo.args = {
   content:
     '<p>Our tables come in different sizes. You can <a href="#">choose the size</a> that best fits your needs.</p>',
   buttonConfig: null,
-  // iconHTML: InfoDefault(),
-  iconHTML: InfoOpenDefault(),
+  iconName: "icon-info-open",
 };
 
 export const VariantSuccess = Template.bind({});
@@ -115,7 +93,7 @@ VariantSuccess.args = {
   title: "Yay! Congratulations!",
   content: '<p>You have successfully <a href="#">completed the task</a>.</p>',
   buttonConfig: null,
-  iconHTML: SuccessDefault(),
+  iconName: "icon-success",
 };
 
 export const VariantWarning = Template.bind({});
@@ -125,7 +103,7 @@ VariantWarning.args = {
   content:
     '<p>Step away from the computer! You have <a href="#">10 seconds</a> to comply.</p>',
   buttonConfig: null,
-  iconHTML: WarningDefault(),
+  iconName: "icon-warning",
 };
 
 export const VariantDanger = Template.bind({});
@@ -135,7 +113,7 @@ VariantDanger.args = {
   content:
     '<p>This is a dangerous box. <a href="#">Don\'t click the button</a>! Clicking the button will cause the box to disappear.</p>',
   buttonConfig: null,
-  iconHTML: DangerDefault(),
+  iconName: "icon-danger",
 };
 
 export const LocationExample = Template.bind({});
@@ -150,8 +128,7 @@ LocationExample.args = {
     variant: "default",
     label: "Maak een afspraak",
   },
-  // iconHTML: Location(),
-  iconHTML: LocationOpenDefault(),
+  iconName: "icon-info",
 };
 
 export const MultipleParagraphs = Template.bind({});
@@ -161,5 +138,5 @@ MultipleParagraphs.args = {
   content:
     "<p>Some very important information here.</p><p>hello second paragraph</p>",
   buttonConfig: null,
-  iconHTML: null,
+  iconName: "icon-info",
 };
