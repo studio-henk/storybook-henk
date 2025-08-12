@@ -1,0 +1,26 @@
+{
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro",
+        "tabWidth": 4,
+        "embeddedLanguageFormatting": "off"
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "tabWidth": 4,
+        "embeddedLanguageFormatting": "off"
+      }
+    }
+  ]
+}
