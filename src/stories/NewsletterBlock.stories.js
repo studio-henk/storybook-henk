@@ -26,7 +26,7 @@ export const NewsletterBlock = () => `
           <div class="henk-newsletter-form__actions-container">
 
             <input type="text" placeholder="Enter email address" required="" class="henk-input henk-newsletter-form__input" name="nl_email" id="nl_email">
-            <a href="javascript:subscribeNewsletter();" class="henk-link-button henk-link-button--default henk-newsletter-form__button">Subscribe</a>
+            <a href="javascript:subscribeNewsletter();" class="henk-button henk-button--default henk-newsletter-form__button">Subscribe</a>
 
           </div>
         </div>
@@ -53,7 +53,7 @@ export const NewsletterBlockMinimal = () => `
           <div class="henk-newsletter-form__actions-container">
 
             <input type="text" placeholder="Enter email address" required="" class="henk-input henk-newsletter-form__input" name="nl_email" id="nl_email">
-            <a href="javascript:subscribeNewsletter();" class="henk-link-button henk-link-button--default henk-newsletter-form__button">Subscribe</a>
+            <a href="javascript:subscribeNewsletter();" class="henk-button henk-button--default henk-newsletter-form__button">Subscribe</a>
 
           </div>
         </div>

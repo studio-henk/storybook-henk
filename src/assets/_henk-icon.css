@@ -1,26 +1,20 @@
+/* TODO: remove part */
 /* the i element is used for icons */
 .henk-icon,
 ::part(henk-icon) {
-  display: inline-flex;
-  place-content: center;
+  display: inline-block;
+  line-height: 1;
   pointer-events: none;
-  align-items: flex-start;
-  transition: transform .3s ease;
+  /* transition: transform 0.3s ease; */
 }
-
-/* default size is 20px for svg, 24px for i parent by padding */
-
-/* 
-size default = 24px -> icon size 20px 
-size medium = 20px -> icon size 16px
-size small = 16px -> icon size 12px
-*/
 
 /* 24 */
 .henk-icon svg {
   width: 1.5rem;
   height: 1.5rem;
   pointer-events: none;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
 }
 
 /* 24 */

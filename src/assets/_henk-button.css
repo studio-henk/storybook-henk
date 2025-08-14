@@ -1,6 +1,5 @@
-@layer components.link-button {
-  .henk-link-button,
-  .henk-icon-button {
+@layer components.button {
+  .henk-button {
     --_color-background-button: var(--color-background-tertiary);
     --_color-text-button: var(--color-text-static);
     --_color-border-button: var(--color-border-static);
@@ -28,74 +27,79 @@
   }
 
   @media screen and (max-width: 321px) {
-    .henk-link-button {
+    .henk-button {
       padding-inline: 16px;
     }
   }
 
-  .henk-link-button:hover,
-  a:hover span.henk-link-button,
-  .henk-icon-button:hover,
-  a:hover span.henk-link-button {
+  .henk-button:hover,
+  a:hover span.henk-button {
     --_color-background-button: var(--_color-background-button-hover);
     --_color-text-button: var(--color-text-base-invert);
     text-underline-offset: 0;
   }
 
-  .henk-link-button--primary,
-  .henk-icon-button--primary {
+  /* Variants */
+  .henk-button--primary {
     --_color-background-button: var(--color-background-primary-light);
   }
 
-  .henk-link-button--secondary,
-  .henk-icon-button--secondary {
+  .henk-button--secondary {
     --_color-background-button: var(--color-background-secondary);
   }
 
-  .henk-link-button:has(.icon--large) {
+  /* Icon size adjustments */
+  .henk-button:has(.icon--large) {
     padding-block: 9px;
   }
 
-  .henk-link-button:has(.icon--medium) {
+  .henk-button:has(.icon--medium) {
     padding-block: 3px;
   }
 
-  /* disabled state */
-  .henk-link-button[disabled],
-  .henk-link-button[aria-disabled="true"],
-  .henk-icon-button[disabled],
-  .henk-icon-button[aria-disabled="true"] {
+  /* Disabled state */
+  .henk-button[disabled],
+  .henk-button[aria-disabled="true"] {
     --_color-background-button: var(--color-background-disabled);
     --_color-text-button: var(--color-text-on-disabled);
     --_color-border-button: var(--color-border-disabled);
-
     cursor: not-allowed;
   }
 
-  .henk-link-button--small {
+  /* Size modifiers */
+  .henk-button--small {
     font-size: 0.8125em;
     line-height: 1.84615385em;
     padding: 3px 16px;
   }
 
-  /*dark mode*/
+  /* Ghost variant (minimal styling) */
+  .henk-button--ghost {
+    --_color-background-button: transparent;
+    --_color-border-button: transparent;
+    padding-inline: 0.25em; /* optional — makes it more text-like */
+    background-color: transparent;
+    border: none;
+    color: var(--color-text-base); /* or a link color */
+  }
+
+  .henk-button--ghost:hover {
+    --_color-background-button: transparent;
+    color: var(--color-text-primary);
+  }
+
+  /* Dark mode adjustments */
   [data-theme="dark"] {
-    .henk-link-button:hover,
-    a:hover span.henk-link-button {
+    .henk-button:hover,
+    a:hover span.henk-button {
       --_color-border-button: var(--color-border-base-invert);
     }
-
-    /* section > div[class*="--bg-primary"]:first-of-type { */
-    /*   .henk-link-button:hover { */
-    /*     --_color-border-button: var(--_color-background-button-hover); */
-    /*   } */
-    /* } */
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-      .henk-link-button:hover,
-      a:hover span.henk-link-button {
+      .henk-button:hover,
+      a:hover span.henk-button {
         --_color-border-button: var(--color-border-base-invert);
       }
     }

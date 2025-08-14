@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/html";
 import { createHeader, type HeaderProps } from "./TheHeader";
+import { withSectionWrapper } from '@decorators/withSectionWrapper';
 
 const meta = {
   title: "Global/Header",
   tags: ["autodocs"],
+  decorators: [withSectionWrapper],
   render: (args: HeaderProps) => createHeader(args),
   argTypes: {
     title: {

@@ -1,55 +1,57 @@
-.henk-logo {
-  --color-text-logo: var(--color-neutral-0, #000);
-  --color-background-logo: var(--color-neutral-100, #fff);
-  color: var(--color-text-logo);
-  background-color: var(--color-background-logo);
-  display: inline-flex;
-  margin-block: 0;
-  margin-inline: 0;
-  padding-block: 1lh;
-  padding-inline: 18px;
-}
-
-.henk-logo--default-inverted {
-  --color-text-logo: var(--color-neutral-100);
-  --color-background-logo: var(--color-neutral-0);
-}
-
-.henk-logo--primary {
-  --color-text-logo: var(--color-text-secondary);
-  --color-background-logo: var(--color-background-primary);
-}
-
-.henk-logo--secondary {
-  --color-text-logo: var(--color-text-primary);
-  --color-background-logo: var(--color-background-secondary);
-}
-
-/*dark mode*/
-[data-theme="dark"] {
-  .henk-logo--default {
-    --color-text-logo: var(--color-neutral-100, #fff);
-    --color-background-logo: var(--color-neutral-0, #000);
+@layer components.logo {
+  .henk-logo {
+    --color-text-logo: var(--color-neutral-0, #000);
+    --color-background-logo: var(--color-neutral-100, #fff);
+    color: var(--color-text-logo);
+    background-color: var(--color-background-logo);
+    display: inline-flex;
+    margin-block: 0;
+    margin-inline: 0;
+    padding-block: 1lh;
+    padding-inline: 18px;
   }
 
   .henk-logo--default-inverted {
-    --color-text-logo: var(--color-neutral-0);
-    --color-background-logo: var(--color-neutral-100);
+    --color-text-logo: var(--color-neutral-100);
+    --color-background-logo: var(--color-neutral-0);
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+  .henk-logo--primary {
+    --color-text-logo: var(--color-text-secondary);
+    --color-background-logo: var(--color-background-primary);
+  }
+
+  .henk-logo--secondary {
+    --color-text-logo: var(--color-text-primary);
+    --color-background-logo: var(--color-background-secondary);
+  }
+
+  /*dark mode*/
+  [data-theme="dark"] {
     .henk-logo--default {
       --color-text-logo: var(--color-neutral-100, #fff);
       --color-background-logo: var(--color-neutral-0, #000);
-      /*color-scheme: dark;*/
     }
 
     .henk-logo--default-inverted {
       --color-text-logo: var(--color-neutral-0);
       --color-background-logo: var(--color-neutral-100);
-      /*color-scheme: dark;*/
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      .henk-logo--default {
+        --color-text-logo: var(--color-neutral-100, #fff);
+        --color-background-logo: var(--color-neutral-0, #000);
+        /*color-scheme: dark;*/
+      }
+
+      .henk-logo--default-inverted {
+        --color-text-logo: var(--color-neutral-0);
+        --color-background-logo: var(--color-neutral-100);
+        /*color-scheme: dark;*/
+      }
     }
   }
 }

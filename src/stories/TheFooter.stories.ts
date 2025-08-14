@@ -6,8 +6,8 @@ const meta = {
   title: 'Global/TheFooter',
   component: TheFooter,
   decorators: [withSectionWrapper],
-  render: ({ bgColor }: TheFooterProps) => {
-    const footer = TheFooter({ bgColor });
+  render: (args: TheFooterProps) => {
+    const footer = TheFooter(args);
     return footer;
   },
   tags: ['autodocs'],

@@ -43,6 +43,12 @@ ChevronRight.args = {
   size: "large",
 };
 
+export const Search = Template.bind({});
+Search.args = {
+  name: "icon-search",
+  size: "large",
+};
+
 export const Truck = Template.bind({});
 Truck.args = { name: "icon-truck", size: "large" };
 
@@ -113,4 +119,3 @@ export const IconCheckmarkFat = Template.bind({});
 IconCheckmarkFat.args = { name: "icon-checkmark-fat", size: "large" };
 
 // export const ChevronRight = () => Icon({ name: "icon-chevron-right", size: "large" });
-

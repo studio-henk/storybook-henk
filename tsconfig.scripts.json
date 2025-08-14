@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "public/assets", // where JS goes
+    "rootDir": "src/scripts", // only your scripts
+    "noEmit": false,
+    "noEmitOnError": false,
+    "target": "ES2019", // good baseline for browsers ~2y old
+    "module": "ESNext", // keep modules as ESNext so you can import/export
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2019"
+    ] // DOM.Iterable fixes TS2488 + match target
+  },
+  "include": [
+    "src/scripts/**/*.ts"
+  ]
+}

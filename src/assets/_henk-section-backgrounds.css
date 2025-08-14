@@ -14,7 +14,7 @@ section > div[class*="--bg-tertiary"]:first-of-type {
 }
 
 section > div[class*="--bg-"]:first-of-type {
-  .henk-link-button:hover {
+  .henk-button:hover {
     --_color-border-button: var(--_color-background-button-hover);
   }
 }

@@ -49,7 +49,6 @@
     margin: 0;
     background-color: var(--color-background-body);
     color: var(--color-text-body);
-    /* padding-top: 122px; */
   }
 
   img {
@@ -95,5 +94,5 @@
 
 .henk-wrapper > .henk-main {
   /* background-color: pink; */
-  padding-top: 74px;
+  padding-top: 72px;
 }

@@ -1,51 +1,51 @@
 {
-    "compilerOptions": {
-        "target": "ES2022",
-        "module": "ESNext",
-        "lib": [
-            "DOM",
-            "ES2022"
-        ],
-        "jsx": "preserve",
-        "moduleResolution": "Node",
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "noEmit": true,
-        "isolatedModules": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true,
-        "baseUrl": "./",
-        "paths": {
-            "@components/*": [
-                "src/components/*"
-            ],
-            "@stories/*": [
-                "src/stories/*"
-            ],
-            "@assets/*": [
-                "src/assets/*"
-            ],
-            "@utils/*": [
-                "src/utils/*"
-            ],
-            "@decorators/*": [
-                "src/decorators/*"
-            ]
-        },
-        "types": [
-            "vite/client"
-        ],
-        "incremental": true
-    },
-    "include": [
-        "src",
-        ".storybook",
-        "stories"
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": [
+      "DOM",
+      "ES2022"
     ],
-    "exclude": [
-        "node_modules",
-        "dist"
-    ]
+    "jsx": "preserve",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@stories/*": [
+        "src/stories/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@decorators/*": [
+        "src/decorators/*"
+      ]
+    },
+    "types": [
+      "vite/client"
+    ],
+    "incremental": true
+  },
+  "include": [
+    "src",
+    ".storybook",
+    "stories"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

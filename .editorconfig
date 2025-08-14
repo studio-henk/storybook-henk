@@ -9,5 +9,5 @@ trim_trailing_whitespace = false
 insert_final_newline = false
 
 # Set indentation size to 2 spaces for JavaScript and CSS files
-[*.{js,mjs,ts,tsx,css,yml,md,markdown,mdx}]
+[*.{js,mjs,ts,tsx,css,yml,md,markdown,mdx,json}]
 indent_size = 2

@@ -7,14 +7,6 @@ import Facebook from '@assets/icons/icon-facebook.svg?raw';
 import TikTok from '@assets/icons/icon-tiktok.svg?raw';
 import Youtube from '@assets/icons/icon-youtube.svg?raw';
 
-// import {
-//   Pinterest,
-//   TikTok,
-//   Youtube,
-//   Instagram,
-//   Facebook,
-// } from "./Icon.stories.js";
-
 function loadTrustpilotScript() {
   return new Promise((resolve, reject) => {
     if (window.Trustpilot) {
