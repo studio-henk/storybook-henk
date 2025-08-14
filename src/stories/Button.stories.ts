@@ -141,7 +141,7 @@ export const IconButtonSmallIconSmall: Story = {
   },
 };
 
-export const GhostButton: Story = {
+export const CloseButton: Story = {
   args: {
     element: 'button',
     label: 'CLOSE',

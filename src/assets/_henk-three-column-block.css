@@ -13,6 +13,7 @@
 
 .henk-three-column-block__title {
   text-align: center;
+  margin-block-start: 0;
 }
 
 .henk-three-column-block__columns {
