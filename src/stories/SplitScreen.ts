@@ -9,6 +9,8 @@ export interface SplitScreenProps {
   content?: string;
   imageUrl?: string;
   imageAlt?: string;
+  imageLink?: string;
+  imageLinkTargetBlank?: boolean;
   buttonUrl?: string;
   buttonText?: string;
   buttonVariant?: 'default' | 'primary' | 'secondary' | 'tertiary';
@@ -25,6 +27,8 @@ export const createSplitScreen = ({
   content = '',
   imageUrl = '',
   imageAlt = '',
+  imageLink = '',
+  imageLinkTargetBlank = '',
   buttonUrl = '',
   buttonText = '',
   buttonVariant = 'default',
@@ -44,12 +48,28 @@ export const createSplitScreen = ({
   // === IMAGE COLUMN ===
   const imageItem = document.createElement('div');
   imageItem.className = 'henk-split-screen__grid-item';
+
   if (imageUrl) {
     const img = document.createElement('img');
     img.src = imageUrl;
     img.alt = imageAlt || '';
     img.className = 'henk-split-screen__img';
-    imageItem.appendChild(img);
+    // imageItem.appendChild(img);
+
+    if (imageLink) {
+      const link = document.createElement('a');
+      link.href = imageLink;
+
+      if (imageLinkTargetBlank) {
+        link.target = '_blank';
+        link.rel = 'noopener';
+      }
+
+      link.appendChild(img);
+      imageItem.appendChild(link);
+    } else {
+      imageItem.appendChild(img);
+    }
   }
 
   // === CONTENT COLUMN ===
