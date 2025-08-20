@@ -24,6 +24,12 @@ type Story = StoryObj<HeaderProps>;
 
 export const Default: Story = {};
 
+export const WithCartCountBadge: Story = {
+  args: {
+    cartCount: 3,
+  },
+};
+
 export const InvertedLogo: Story = {
   args: {
     logoProps: {

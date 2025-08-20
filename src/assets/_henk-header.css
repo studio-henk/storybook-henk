@@ -74,7 +74,7 @@
     .henk-header__utils {
       display: flex;
       justify-content: right;
-      gap: 1.5rem;
+      gap: 0;
       justify-self: flex-end;
     }
   }
@@ -87,12 +87,13 @@
     opacity: 0;
     height: 0;
     position: absolute;
-    background-color: rgba(243, 243, 242, 0.6);
+    /* background-color: rgba(243, 243, 242, 0.6); */
+    background-color: rgba(255, 255, 255, 0.6);
     width: 100%;
-    height: calc(100svh - 88px);
+    height: calc(100svh - var(--size-height-header, 72px));
     left: 0;
     margin: 0 auto;
-    top: 72px;
+    top: var(--size-height-header, 72px);
     display: none;
     backdrop-filter: blur(24px);
     transition: opacity 1s ease;
@@ -156,6 +157,28 @@
   .column ul {
     font-size: 13px;
     line-height: 20px;
+  }
+
+  .header__utils-link.header__utils-link--cart {
+    position: relative;
+  }
+
+  .cart__badge {
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 4px;
+    left: 16px;
+    background-color: #000;
+    width: 24px;
+    height: 24px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
   }
 
   /* [data-theme="dark"] { */

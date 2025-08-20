@@ -1,4 +1,3 @@
-
 import { Icon } from "./Icon";
 
 export default {
@@ -40,6 +39,12 @@ ChevronLeft.args = { name: "icon-chevron-left", size: "large" };
 export const ChevronRight = Template.bind({});
 ChevronRight.args = {
   name: "icon-chevron-right",
+  size: "large",
+};
+
+export const ChevronDown = Template.bind({});
+ChevronDown.args = {
+  name: "icon-chevron-down",
   size: "large",
 };
 
@@ -97,8 +102,11 @@ LocationOpen.args = { name: "icon-location-open", size: "large" };
 export const CircleX = Template.bind({});
 CircleX.args = { name: "icon-circle-x", size: "large" };
 
+export const X = Template.bind({});
+X.args = { name: "icon-x", size: "large" };
+
 export const Close = Template.bind({});
-Close.args = { name: "icon-x", size: "large" };
+Close.args = { name: "icon-close", size: "large" };
 
 export const IconArrowRight = Template.bind({});
 IconArrowRight.args = { name: "icon-arrow-right", size: "large" };

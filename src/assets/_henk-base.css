@@ -94,5 +94,5 @@
 
 .henk-wrapper > .henk-main {
   /* background-color: pink; */
-  padding-top: 72px;
+  padding-top: var(--size-height-header, 72px);
 }

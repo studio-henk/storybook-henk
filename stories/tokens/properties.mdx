@@ -54,3 +54,37 @@ The @property CSS at-rule is part of the CSS Houdini set of APIs. It allows deve
 }
 `}
 />
+
+
+<Source
+    language="css"
+    dark={true}
+    code={`
+\@property --size-height-header {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 72px;
+}
+`}
+/>
+
+<Source
+    language="css"
+    dark={true}
+    code={`
+.henk-header .dropdown-container {
+  opacity: 0;
+  height: 0;
+  position: absolute;
+  background-color: rgba(243, 243, 242, 0.6);
+  width: 100%;
+  height: calc(100svh - var(--size-height-header, 72px));
+  left: 0;
+  margin: 0 auto;
+  top: 72px;
+  display: none;
+  backdrop-filter: blur(24px);
+  transition: opacity 1s ease;
+}
+`}
+/>

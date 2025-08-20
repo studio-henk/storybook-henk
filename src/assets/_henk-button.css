@@ -49,13 +49,13 @@
   }
 
   /* Icon size adjustments */
-  .henk-button:has(.icon--large) {
-    padding-block: 9px;
-  }
-
-  .henk-button:has(.icon--medium) {
-    padding-block: 3px;
-  }
+  /* .henk-button:has(.icon--large) { */
+  /*   padding-block: 9px; */
+  /* } */
+  /**/
+  /* .henk-button:has(.icon--medium) { */
+  /*   padding-block: 3px; */
+  /* } */
 
   /* Disabled state */
   .henk-button[disabled],
@@ -78,14 +78,49 @@
     --_color-background-button: transparent;
     --_color-border-button: transparent;
     padding-inline: 0.25em; /* optional — makes it more text-like */
+    /* padding-block: 10px; */
     background-color: transparent;
-    border: none;
+    border: 1px solid transparent;
     color: var(--color-text-base); /* or a link color */
   }
 
   .henk-button--ghost:hover {
     --_color-background-button: transparent;
     color: var(--color-text-primary);
+  }
+
+  .henk-button .henk-icon {
+    font-size: 12px;
+  }
+
+  .henk-button .henk-icon svg {
+    width: 1em;
+    height: 1em;
+  }
+
+  .henk-button.henk-button--small .henk-icon {
+    font-size: 10px;
+  }
+
+  .henk-button .henk-icon.icon--only {
+    font-size: 24px;
+  }
+
+  .henk-button.henk-button--small .henk-icon.icon--only {
+    font-size: 16px;
+  }
+
+  .henk-button:has(.icon--only) {
+    padding-inline: 9px;
+  }
+
+  .henk-button.henk-button--small:has(.icon--only) {
+    padding-block: 7px;
+    padding-inline: 7px;
+  }
+
+  .henk-button .henk-icon:has(#chevron-down) {
+    transform: translateY(1px);
   }
 
   /* Dark mode adjustments */
