@@ -39,7 +39,7 @@ export function createHeader({
   // add links level 1
   const level1Links = `
 <li class="henk-header__menu-item henk-header__dropdown main-level">
-  <a data-js-behavior="openSub" href="shop" class="henk-header__menu-link henk-button henk-button--ghost henk-button--small">Shop
+  <a data-js-behavior="openSub" href="shop" class="henk-header__menu-link henk-button henk-button--ghost">Shop
     <i class="henk-icon">
 ${IconChevronDown}
     </i>
@@ -221,7 +221,7 @@ ${IconClose}
 </li>
 
 <li class="henk-menu__item henk-header__dropdown main-level">
-  <a data-js-behavior="openSub" href="ser" class="henk-header__menu-link henk-button--small henk-button henk-button--ghost">Service
+  <a data-js-behavior="openSub" href="ser" class="henk-header__menu-link henk-button henk-button--ghost">Service
       <i class="henk-icon">
 ${IconChevronDown}
       </i>
@@ -246,7 +246,7 @@ ${IconClose}
 </li>
 
 <li class="henk-menu__item henk-header__dropdown main-level">
-  <a data-js-behavior="openSub" href="HENK" class="henk-header__menu-link henk-button--small henk-button--ghost henk-button">HENK
+  <a data-js-behavior="openSub" href="HENK" class="henk-header__menu-link henk-button--ghost henk-button">HENK
     <i class="henk-icon">
 ${IconChevronDown}
     </i>
