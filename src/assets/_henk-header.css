@@ -76,6 +76,7 @@
       justify-content: right;
       gap: 0;
       justify-self: flex-end;
+      align-items: center;
     }
   }
 
