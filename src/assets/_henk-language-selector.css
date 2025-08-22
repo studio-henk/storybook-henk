@@ -1,0 +1,34 @@
+.henk-localise {
+  .henk-popover {
+  }
+
+  .henk-popover--lang {
+  }
+}
+
+#henk-lang-popover {
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  inset: unset;
+}
+
+#henk-lang-popover::backdrop {
+}
+
+@supports not (top: anchor(bottom)) {
+  #henk-lang-popover {
+  }
+}
+
+@supports (top: anchor(bottom)) {
+  .henk-popover #lang-button {
+    anchor-name: --lang-anchor;
+  }
+  #henk-lang-popover {
+    position: absolute;
+    position-anchor: --lang-anchor;
+    top: anchor(bottom);
+    left: anchor(left);
+    margin-top: 0.5rem;
+  }
+}

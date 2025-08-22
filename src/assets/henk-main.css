@@ -20,10 +20,12 @@
 @import "./_henk-icon.css";
 @import "./_henk-tag.css";
 
+@import "./_henk-toggle.css";
 @import "./_henk-text-link.css";
 @import "./_henk-button.css";
 @import "./_henk-button-group.css";
 @import "./_henk-list.css";
+@import "./_henk-language-selector.css";
 
 @import "./_henk-breadcrumbs.css";
 @import "./_henk-header.css";

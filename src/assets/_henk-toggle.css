@@ -1,0 +1,3 @@
+[data-js-behavior="toggle"][open] .henk-icon svg {
+  transform: rotate(180deg);
+}

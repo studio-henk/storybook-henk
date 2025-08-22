@@ -32,6 +32,9 @@
       ],
       "@decorators/*": [
         "src/decorators/*"
+      ],
+      "@scripts/*": [
+        "src/scripts/*"
       ]
     },
     "types": [
@@ -42,7 +45,8 @@
   "include": [
     "src",
     ".storybook",
-    "stories"
+    "stories",
+    "src/stories/.LanguageSelector.stories.ts"
   ],
   "exclude": [
     "node_modules",

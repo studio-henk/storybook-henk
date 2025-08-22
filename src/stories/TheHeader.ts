@@ -1,10 +1,10 @@
 import type { LogoProps } from "./Logo";
 import { createLogo } from "./Logo";
-import IconSearch from "../assets/icons/icon-search.svg?raw";
-import IconBag from "../assets/icons/icon-bag.svg?raw";
+import IconSearch from "@assets/icons/icon-search.svg?raw";
+import IconBag from "@assets/icons/icon-bag.svg?raw";
 import IconChevronDown from "@assets/icons/icon-chevron-down.svg?raw";
 import IconClose from "@assets/icons/icon-close.svg?raw";
-import { initTheHeaderMenu } from "../scripts/TheHeaderMenu";
+import { initTheHeaderMenu } from "@scripts/TheHeaderMenu";
 
 export interface HeaderProps {
   logoProps?: LogoProps;
@@ -290,6 +290,34 @@ ${IconClose}
   // util nav
   const headerUtils = `
 <div class="henk-header__utils">
+
+  <div class="henk-localise">
+    <div class="henk-popover henk-popover--lang">
+      <button
+        id="lang-button"
+        popovertarget="henk-lang-popover"
+        class="henk-button henk-button--small henk-button--ghost"
+      >
+        English
+    <i class="henk-icon">
+${IconChevronDown}
+    </i>
+      </button>
+      <div popover="" id="henk-lang-popover" anchor="lang-button">
+        <ul id="lang-options" class="henk-list henk-list--no-bullets">
+          <li>
+            <button
+              type="button"
+              value="nl"
+              class="henk-button henk-button--ghost"
+            >
+              Nederlands
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
     <a class="henk-button henk-button--small henk-button--ghost henk-header__utils-link header__utils-link--search" href="search" aria-label="Search">
       <i class="henk-icon icon--only">
         ${IconSearch}
