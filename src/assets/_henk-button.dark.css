@@ -1,0 +1,18 @@
+@layer components.button {
+  /* Dark mode adjustments */
+  [data-theme="dark"] {
+    .henk-button:hover,
+    a:hover span.henk-button {
+      --_color-border-button: var(--color-border-base-invert);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      .henk-button:hover,
+      a:hover span.henk-button {
+        --_color-border-button: var(--color-border-base-invert);
+      }
+    }
+  }
+}

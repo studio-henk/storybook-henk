@@ -3,6 +3,7 @@ import { createButton, ButtonProps } from "./Button";
 
 // Import raw SVGs
 import ChevronRight from "@assets/icons/icon-chevron-right.svg?raw";
+import ChevronDown from "@assets/icons/icon-chevron-down.svg?raw";
 // import IconClose from "@assets/icons/icon-x.svg?raw";
 import IconClose from "@assets/icons/icon-close.svg?raw";
 
@@ -222,5 +223,22 @@ export const CloseButtonSmall: Story = {
     variant: "ghost",
     size: "small",
     iconSvg: IconClose,
+  },
+};
+
+export const Expand: Story = {
+  args: {
+    element: "button",
+    label: "Open me!",
+    type: "button",
+    variant: "ghost",
+    size: "small",
+    iconSvg: ChevronDown,
+    iconPosition: "right",
+    attrs: {
+      "aria-expanded": "false",
+      "data-js-expand": "true",
+      "data-state": "closed",
+    },
   },
 };

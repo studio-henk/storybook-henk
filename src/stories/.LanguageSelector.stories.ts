@@ -27,7 +27,12 @@ const render = (localization: Localization, container: HTMLElement): void => {
     .map(
       (lang) => `
       <li>
-        <button type="button" value="${lang.iso_code}" class="henk-button henk-button--ghost">
+        <button 
+          type="button" 
+          value="${lang.iso_code}" 
+          class="henk-button henk-button--ghost"
+          title="Switch to ${lang.endonym_name}"
+        >
           ${lang.endonym_name}
         </button>
       </li>

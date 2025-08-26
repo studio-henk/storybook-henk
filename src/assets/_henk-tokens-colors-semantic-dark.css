@@ -5,6 +5,7 @@
     --color-background-base-invert: var(--color-neutral-100);
     --color-text-body: var(--color-neutral-100);
     --color-text-base: var(--color-neutral-100);
+    --color-text-base-invert: var(--color-neutral-0);
     --color-text-link: var(--color-blue-50, blue);
     --color-text-link-hover: var(--color-blue-70, blue);
     --color-border-base: var(--color-neutral-100);
@@ -20,6 +21,7 @@
       --color-background-base-invert: var(--color-neutral-100);
       --color-text-body: var(--color-neutral-100, #fff);
       --color-text-base: var(--color-neutral-100, #fff);
+      --color-text-base-invert: var(--color-neutral-0);
       --color-text-link: var(--color-blue-60, blue);
       --color-text-link-hover: var(--color-blue-70, blue);
       --color-border-base: var(--color-neutral-100);

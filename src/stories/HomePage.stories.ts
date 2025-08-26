@@ -38,6 +38,7 @@ type Story = StoryObj;
 export const HomePage: Story = {
   render: () => {
     const header = createHeader({
+      cartCount: 3,
       logoProps: { variant: "default", href: "/" },
     });
     const footer = TheFooter({});

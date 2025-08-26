@@ -278,11 +278,10 @@ ${IconClose}
     cartCount > 0
       ? `
         <div class="cart-count-bubble cart__badge">
-          ${
-            cartCount < 100
-              ? `<span aria-hidden="true">${cartCount}</span>`
-              : ""
-          }
+          ${cartCount < 100
+        ? `<span aria-hidden="true">${cartCount}</span>`
+        : ""
+      }
           <span class="visually-hidden">${cartCount} items in cart</span>
         </div>`
       : "";
@@ -297,19 +296,24 @@ ${IconClose}
         id="lang-button"
         popovertarget="henk-lang-popover"
         class="henk-button henk-button--small henk-button--ghost"
+aria-controls="henk-lang-popover"
+aria-expanded="false"
+ data-state="closed"
+data-js-expand
       >
         English
     <i class="henk-icon">
 ${IconChevronDown}
     </i>
       </button>
-      <div popover="" id="henk-lang-popover" anchor="lang-button">
+      <div data-js-popover popover="" id="henk-lang-popover" anchor="lang-button" role="menu">
         <ul id="lang-options" class="henk-list henk-list--no-bullets">
           <li>
             <button
               type="button"
               value="nl"
               class="henk-button henk-button--ghost"
+title="Switch to Nederlands"
             >
               Nederlands
             </button>

@@ -16,6 +16,8 @@ export interface ButtonProps {
   disabled?: boolean;
   target?: string;
   size?: "small" | "large";
+
+  attrs?: Record<string, string>;
 }
 
 export const createButton = ({
@@ -32,6 +34,7 @@ export const createButton = ({
   disabled = false,
   target,
   size,
+  attrs,
 }: ButtonProps): HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement => {
   const btn = document.createElement(element) as
     | HTMLButtonElement
@@ -49,6 +52,12 @@ export const createButton = ({
     if (disabled) (btn as HTMLButtonElement).disabled = true;
   } else if (disabled) {
     btn.setAttribute("aria-disabled", "true");
+  }
+
+  if (attrs) {
+    Object.entries(attrs).forEach(([key, value]) => {
+      btn.setAttribute(key, value);
+    });
   }
 
   // Icon HTML

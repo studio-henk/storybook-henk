@@ -164,24 +164,6 @@
     position: relative;
   }
 
-  .cart__badge {
-    font-size: 13px;
-    font-weight: 500;
-    position: absolute;
-    bottom: 4px;
-    left: 16px;
-    background-color: #000;
-    width: 24px;
-    height: 24px;
-    line-height: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: #fff;
-    transition: all 0.3s ease;
-  }
-
   /* [data-theme="dark"] { */
   /*   .henk-header { */
   /*     --color-text-header: var(--color-neutral-100, #fff); */

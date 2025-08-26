@@ -123,20 +123,12 @@
     transform: translateY(1px);
   }
 
-  /* Dark mode adjustments */
-  [data-theme="dark"] {
-    .henk-button:hover,
-    a:hover span.henk-button {
-      --_color-border-button: var(--color-border-base-invert);
-    }
+  /* state */
+  .henk-button[data-state="open"] #chevron-down {
+    transform: rotate(180deg);
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-      .henk-button:hover,
-      a:hover span.henk-button {
-        --_color-border-button: var(--color-border-base-invert);
-      }
-    }
+  .henk-button:popover-open .henk-icon #chevron-down {
+    transform: rotate(180deg);
   }
 }
