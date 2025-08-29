@@ -28,7 +28,7 @@ export const createSectionHeader = ({
 
   // Build class list
   const classList = [
-    `henk-section-header`,
+    `henk-section henk-section-header`,
     bgColor !== 'default' ? `henk-section-header--bg-${bgColor}` : '',
     alignLeft ? 'henk-section-header--align-left' : '',
   ].filter(Boolean).join(' ');
