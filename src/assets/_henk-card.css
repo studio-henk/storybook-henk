@@ -1,15 +1,16 @@
 .henk-card {
   background-color: var(--color-background-muted);
   border-radius: 8px;
-  padding-bottom: 24px;
   display: grid;
   justify-items: center;
+  align-items: start;
 }
 
 .henk-card .henk-card__content {
   padding: 24px;
   display: grid;
   justify-content: center;
+  justify-items: center;
   row-gap: 8px;
 }
 
@@ -17,14 +18,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-bottom: 0.5rem; */
-  margin-bottom: 0;
+  margin-block: 0;
 }
 
 .henk-card__link--directions {
   font-size: 13px;
   text-decoration: none;
-  /* align-items: flex-start; */
   display: flex;
   align-items: center;
   gap: 8px;
@@ -38,30 +37,21 @@
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 374px) {
-  .henk-card__link--directions:has(.henk-icon) {
-    display: inline;
-  }
-
-  .henk-card__link--directions .henk-icon {
-    position: relative;
-    top: 5px;
-  }
+.henk-card__button {
+  margin-top: 24px;
 }
 
-/* .henk-card__button { */
-/*   margin-left: 24px; */
-/* } */
-
 picture.henk-card__picture {
-  aspect-ratio: 460 / 382;
+  /* aspect-ratio: 460 / 382; */
+  aspect-ratio: 2 / 3;
+  max-height: 50%;
 }
 
 .henk-card__img {
   height: auto;
   border-radius: 8px 8px 0 0;
-  aspect-ratio: 460 / 382;
   object-fit: cover;
+  margin: 0;
 }
 
 .henk-card__store-status {
@@ -76,16 +66,3 @@ picture.henk-card__picture {
   color: var(--color-ui-text-danger);
 }
 
-@media only screen and (min-width: 879px) {
-  .henk-card .henk-card__content {
-    padding: 48px;
-  }
-
-  /* .henk-card__button { */
-  /*   margin-left: 48px; */
-  /* } */
-
-  .henk-card {
-    padding-bottom: 48px;
-  }
-}

@@ -1,10 +1,9 @@
 .henk-section {
-  margin-block: 4lh;
+  /* margin-block: 4lh; */
+  padding-block: 4lh;
 }
 
 .henk-section__inner {
-  width: min(1208px, 100% - 3rem);
+  width: min(var(----size-width-content), 100% - 3rem);
   margin-inline: auto;
 }
-
-

@@ -33,6 +33,7 @@
   aspect-ratio: 2/3;
   border-radius: 8px;
   margin-block: 0;
+  object-fit: cover;
 }
 
 svg.henk-split-screen__img {

@@ -1,4 +1,8 @@
 .henk-section--stores {
+  .henk-section__inner {
+    width: min(var(--size-width-content), 100% - 3rem);
+    margin-inline: auto;
+  }
 }
 
 .henk-section__grid--stores {
@@ -6,6 +10,8 @@
   justify-content: center;
   align-items: start;
   gap: 48px;
-  grid-template-columns: repeat(auto-fit, minmax(270px, clamp(270px, 100%, 455px)));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(270px, clamp(270px, 100%, 418px))
+  );
 }
-

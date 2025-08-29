@@ -4,7 +4,7 @@
   place-items: center;
   background-color: var(--color-background-base);
   color: var(--color-text-base);
-  padding-block: 4lh;
+  /* padding-block: 4lh; */
 }
 
 .henk-section-header .henk-section-header__inner {
@@ -18,12 +18,17 @@
   place-items: center;
   text-align: center;
   text-wrap: balance;
-  width: min(520px, 100%);
+  width: min(540px, 100%);
   margin-inline: auto;
 }
 
 .henk-section-header__content > * {
   margin-block: 0;
+}
+
+.henk-section-header__caption {
+  margin: 0;
+  font-weight: 500;
 }
 
 .henk-section-header__title {
@@ -33,12 +38,6 @@
   word-break: break-word; /* fallback */
   overflow-wrap: anywhere; /* preferred modern */
   hyphens: auto;
-}
-
-.henk-section-header__caption {
-  margin: 0;
-  font-weight: 500;
-  /* color: var(--color-text-primary-dark); */
 }
 
 .henk-section-header--align-left {
@@ -53,4 +52,14 @@
 
 .henk-section-header--align-left .henk-section-header__title {
   text-align: left;
+}
+
+.henk-section-header__text {
+  :last-child {
+    margin-block-end: 0;
+  }
+}
+
+.henk-section-header__button {
+  margin-block-start: 1lh;
 }

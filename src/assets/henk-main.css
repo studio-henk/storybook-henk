@@ -15,7 +15,6 @@
 @import "./_henk-helpers.css";
 @import "./_henk-size-font.css";
 @import "./_henk-weight-font.css";
-@import "./_henk-section-backgrounds.css";
 @import "./_henk-logo.css";
 @import "./_henk-icon.css";
 @import "./_henk-tag.css";
@@ -32,6 +31,7 @@
 @import "./_henk-header.css";
 @import "./_henk-footer.css";
 @import "./_henk-lister-grid.css";
+@import "./_henk-card.css";
 
 /* forms */
 @import "./_henk-form-messages.css";
@@ -40,6 +40,8 @@
 @import "./_henk-labeled-input.css";
 
 /* sections */
+@import "./_henk-section.css";
+@import "./_henk-section-backgrounds.css";
 @import "./_henk-section-header-block.css";
 @import "./_henk-split-screen.css";
 @import "./_henk-double-image-block.css";
@@ -48,3 +50,4 @@
 @import "./_henk-details-component.css";
 @import "./_henk-content-divider.css";
 @import "./_henk-newsletter-form.css";
+@import "./_henk-stores-brick.css";
