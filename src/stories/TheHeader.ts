@@ -10,16 +10,27 @@ export interface HeaderProps {
   logoProps?: LogoProps;
   title?: string;
   cartCount?: number;
+  align?: string;
+  inBetween?: boolean;
 }
 
 export function createHeader({
   logoProps,
   title = "Site Title",
   cartCount = 0,
+  align,
+  inBetween = false,
 }: HeaderProps = {}): HTMLElement {
   const header = document.createElement("header");
   header.className = "henk-header";
 
+  if (align) {
+    header.className += ` henk-header--${align}`;
+  }
+
+  if (inBetween) {
+    header.className += ` henk-header--in-between`;
+  }
   const headerInner = document.createElement("div");
   headerInner.className = "henk-header__inner";
 
@@ -278,10 +289,11 @@ ${IconClose}
     cartCount > 0
       ? `
         <div class="cart-count-bubble cart__badge">
-          ${cartCount < 100
-        ? `<span aria-hidden="true">${cartCount}</span>`
-        : ""
-      }
+          ${
+            cartCount < 100
+              ? `<span aria-hidden="true">${cartCount}</span>`
+              : ""
+          }
           <span class="visually-hidden">${cartCount} items in cart</span>
         </div>`
       : "";

@@ -1,25 +1,30 @@
 export interface LogoProps {
-  variant?: 'default' | 'default-inverted' | 'primary' | 'secondary';
+  variant?:
+    | "default"
+    | "default-inverted"
+    | "primary"
+    | "secondary"
+    | "transparent";
   href?: string;
 }
 
 export const createLogo = ({
-  variant = 'primary',
-  href = 'https://studio-henk.nl',
+  variant = "primary",
+  href = "https://studio-henk.nl",
 }: LogoProps = {}): HTMLAnchorElement => {
-  const logoLink = document.createElement('a');
+  const logoLink = document.createElement("a");
 
   logoLink.className = `henk-logo henk-logo--${variant}`;
   logoLink.href = href;
-  logoLink.setAttribute('aria-label', 'Studio HENK');
+  logoLink.setAttribute("aria-label", "Studio HENK");
 
   const svgNS = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(svgNS, 'svg');
-  svg.setAttribute('fill', 'none');
-  svg.setAttribute('height', '24');
-  svg.setAttribute('viewBox', '0 0 104 24');
-  svg.setAttribute('width', '104');
-  svg.setAttribute('xmlns', svgNS);
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("height", "24");
+  svg.setAttribute("viewBox", "0 0 104 24");
+  svg.setAttribute("width", "104");
+  svg.setAttribute("xmlns", svgNS);
 
   svg.innerHTML = `
     <path d="M14.1281 9.84241H4.04317V0.230835H0V23.8324H4.04317V13.6883H14.1281V23.8324H18.1713V0.230835H14.1281V9.84241Z" fill="currentcolor"/>

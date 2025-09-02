@@ -27,6 +27,9 @@
     --color-secondary-light: var(--columbia-blue-light);
     --color-secondary-dark: var(--columbia-blue-dark);
 
+    --color-tertiary-light: var(--white-smoke-light);
+    --color-tertiary-dark: var(--white-smoke-dark);
+
     /* background */
     --color-background-body: var(--color-neutral-100);
     --color-background-base: var(--color-neutral-100);
@@ -36,7 +39,10 @@
     --color-background-primary-light: var(--color-primary-light);
     --color-background-secondary: var(--color-secondary);
     --color-background-secondary-light: var(--color-secondary-light);
+    --color-background-secondary-dark: var(--color-secondary-dark);
     --color-background-tertiary: var(--color-tertiary);
+    --color-background-tertiary-light: var(--color-tertiary-light);
+    --color-background-tertiary-dark: var(--color-tertiary-dark);
     --color-background-disabled: var(--color-neutral-80);
     --color-background-muted: var(--color-neutral-90);
     --color-background-neutral-darkest: var(--color-neutral-0);
@@ -53,6 +59,7 @@
     --color-text-primary-dark: var(--color-primary-dark);
     --color-text-secondary: var(--color-secondary);
     --color-text-warning: var(--color-orange-50);
+    --color-text-neutral-lightest: var(--color-neutral-100, #fff);
 
     /*doesnt change in dark mode*/
     --color-text-static: var(--color-neutral-0, #000);
@@ -69,6 +76,7 @@
     --color-border-palette-5: var(--color-palette-5);
     --color-border-disabled: var(--color-neutral-80);
     --color-border-muted: var(--color-neutral-90);
+    --color-border-neutral-lightest: var(--color-neutral-100, #fff);
 
     --color-border-static: var(--color-neutral-0);
     color-scheme: light;

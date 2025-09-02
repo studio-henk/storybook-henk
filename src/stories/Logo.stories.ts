@@ -16,7 +16,13 @@ const meta = {
   argTypes: {
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "default", "default-inverted"],
+      options: [
+        "primary",
+        "secondary",
+        "default",
+        "default-inverted",
+        "transparent",
+      ],
       description: "Logo variant",
     },
     href: {
@@ -54,6 +60,13 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     variant: "secondary",
+    href: "/en",
+  },
+};
+
+export const Transparent: Story = {
+  args: {
+    variant: "transparent",
     href: "/en",
   },
 };

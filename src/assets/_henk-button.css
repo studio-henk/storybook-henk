@@ -1,14 +1,15 @@
 @layer components.button {
   .henk-button {
-    --_color-background-button: var(--color-background-tertiary);
-    --_color-text-button: var(--color-text-static);
-    --_color-border-button: var(--color-border-static);
+    --btn-bg: var(--color-background-tertiary);
+    --btn-bg-hover: var(--color-background-tertiary-dark);
+    --btn-text: var(--color-text-static);
+    --btn-text-hover: var(--color-text-static);
+    --btn-border: var(--color-border-static);
+    --btn-border-hover: var(--color-border-static);
 
-    --_color-background-button-hover: var(--color-background-neutral-darkest);
-
-    background-color: var(--_color-background-button);
-    color: var(--_color-text-button);
-    border: 1px solid var(--_color-border-button);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
     border-radius: 4px;
     cursor: pointer;
     display: inline-flex;
@@ -22,8 +23,11 @@
     font-family: var(--font-body, sans-serif), sans-serif;
     font-size: 1rem;
     font-weight: var(--font-weight-semibold, 500);
-    transition: all 0.3s ease;
     text-align: center;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
   }
 
   @media screen and (max-width: 321px) {
@@ -34,36 +38,46 @@
 
   .henk-button:hover,
   a:hover span.henk-button {
-    --_color-background-button: var(--_color-background-button-hover);
-    --_color-text-button: var(--color-text-base-invert);
+    background-color: var(--btn-bg-hover);
+    color: var(--btn-text-hover);
+    border-color: var(--btn-border-hover);
     text-underline-offset: 0;
   }
 
   /* Variants */
   .henk-button--primary {
-    --_color-background-button: var(--color-background-primary-light);
+    --btn-bg: var(--color-background-primary-light);
+  }
+
+  .henk-button--primary:hover {
+    --btn-bg-hover: var(--color-background-primary);
   }
 
   .henk-button--secondary {
-    --_color-background-button: var(--color-background-secondary);
-  }
+    --btn-bg: var(--color-background-secondary);
 
-  /* Icon size adjustments */
-  /* .henk-button:has(.icon--large) { */
-  /*   padding-block: 9px; */
-  /* } */
-  /**/
-  /* .henk-button:has(.icon--medium) { */
-  /*   padding-block: 3px; */
-  /* } */
+    &:hover {
+      --btn-bg-hover: var(--color-background-secondary-dark);
+    }
+  }
 
   /* Disabled state */
   .henk-button[disabled],
   .henk-button[aria-disabled="true"] {
-    --_color-background-button: var(--color-background-disabled);
-    --_color-text-button: var(--color-text-on-disabled);
-    --_color-border-button: var(--color-border-disabled);
+    --btn-bg: var(--color-background-disabled);
+    --btn-bg-hover: var(--color-background-disabled);
+    --btn-text: var(--color-text-on-disabled);
+    --btn-text-hover: var(--color-text-on-disabled);
+    --btn-border: var(--color-border-disabled);
+    --btn-border-hover: var(--color-border-disabled);
+    /* --btn-border-hover: transparent; */
+
     cursor: not-allowed;
+  }
+
+  .henk-button[disabled]:hover,
+  .henk-button[aria-disabled="true"]:hover {
+    --btn-border-hover: var(--color-border-disabled);
   }
 
   /* Size modifiers */
@@ -75,18 +89,13 @@
 
   /* Ghost variant (minimal styling) */
   .henk-button--ghost {
-    --_color-background-button: transparent;
-    --_color-border-button: transparent;
-    padding-inline: 0.25em; /* optional — makes it more text-like */
-    /* padding-block: 10px; */
-    background-color: transparent;
-    border: 1px solid transparent;
-    color: var(--color-text-base); /* or a link color */
-  }
-
-  .henk-button--ghost:hover {
-    --_color-background-button: transparent;
-    color: var(--color-text-primary);
+    --btn-bg: transparent;
+    --btn-text: var(--color-text-base);
+    --btn-border: transparent;
+    --btn-bg-hover: transparent;
+    --btn-text-hover: var(--color-text-primary);
+    --btn-border-hover: transparent;
+    padding-inline: 0.25em;
   }
 
   .henk-button .henk-icon {

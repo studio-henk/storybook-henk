@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 import { createHeader, type HeaderProps } from "./TheHeader";
-import { withSectionWrapper } from '@decorators/withSectionWrapper';
+import { withSectionWrapper } from "@decorators/withSectionWrapper";
 
 const meta = {
   title: "Global/Header",
@@ -34,6 +34,17 @@ export const InvertedLogo: Story = {
   args: {
     logoProps: {
       variant: "default-inverted",
+      href: "/",
+    },
+  },
+};
+
+export const LogoCentered: Story = {
+  args: {
+    align: "center",
+    inBetween: true,
+    logoProps: {
+      variant: "transparent",
       href: "/",
     },
   },

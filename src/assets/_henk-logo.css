@@ -11,6 +11,10 @@
     padding-inline: 18px;
   }
 
+  .henk-logo svg {
+    display: block;
+  }
+
   .henk-logo--default-inverted {
     --color-text-logo: var(--color-neutral-100);
     --color-background-logo: var(--color-neutral-0);
@@ -24,5 +28,9 @@
   .henk-logo--secondary {
     --color-text-logo: var(--color-text-primary);
     --color-background-logo: var(--color-background-secondary);
+  }
+
+  .henk-logo--transparent {
+    --color-background-logo: transparent;
   }
 }
