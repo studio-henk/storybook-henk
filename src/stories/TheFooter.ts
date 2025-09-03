@@ -1,11 +1,11 @@
-import { TextLink } from './TextLink'; // adjust path as needed
+import { TextLink } from "./TextLink"; // adjust path as needed
 
 import BcorpLogoSVG from "@assets/icons/b-corp.svg?raw";
-import Pinterest from '@assets/icons/icon-pinterest.svg?raw';
-import Instagram from '@assets/icons/icon-instagram.svg?raw';
-import Facebook from '@assets/icons/icon-facebook.svg?raw';
-import TikTok from '@assets/icons/icon-tiktok.svg?raw';
-import Youtube from '@assets/icons/icon-youtube.svg?raw';
+import Pinterest from "@assets/icons/icon-pinterest.svg?raw";
+import Instagram from "@assets/icons/icon-instagram.svg?raw";
+import Facebook from "@assets/icons/icon-facebook.svg?raw";
+import TikTok from "@assets/icons/icon-tiktok.svg?raw";
+import Youtube from "@assets/icons/icon-youtube.svg?raw";
 
 function loadTrustpilotScript() {
   return new Promise((resolve, reject) => {
@@ -41,88 +41,93 @@ export interface TheFooterProps {
 
 export const defaultFooterData: FooterColumn[] = [
   {
-    heading: { label: 'Collection', href: '/en/collection' },
+    heading: { label: "Collection", href: "/en/collection" },
     links: [
-      { label: 'Dining Tables', href: '/en/products/dining-tables' },
-      { label: 'Coffee Tables', href: '/en/products/coffee-tables' },
-      { label: 'Dining Chairs', href: '/en/products/chairs' },
-      { label: 'Dining Benches', href: '/en/products/dining-benches' },
-      { label: 'Stools', href: '/en/products/stools' },
-      { label: 'Sofas', href: '/en/products/sofas' },
-      { label: 'Lounge Chairs', href: '/en/products/lounge-chairs' },
-      { label: 'Poufs', href: '/en/products/poufs' },
-      { label: 'Cabinets', href: '/en/products/cabinets' },
-      { label: 'Accessories', href: '#' },
+      { label: "Dining Tables", href: "/en/products/dining-tables" },
+      { label: "Coffee Tables", href: "/en/products/coffee-tables" },
+      { label: "Dining Chairs", href: "/en/products/chairs" },
+      { label: "Dining Benches", href: "/en/products/dining-benches" },
+      { label: "Stools", href: "/en/products/stools" },
+      { label: "Sofas", href: "/en/products/sofas" },
+      { label: "Lounge Chairs", href: "/en/products/lounge-chairs" },
+      { label: "Poufs", href: "/en/products/poufs" },
+      { label: "Cabinets", href: "/en/products/cabinets" },
+      { label: "Accessories", href: "#" },
     ],
   },
   {
-    heading: { label: 'About', href: '/en/about-us' },
+    heading: { label: "About", href: "/en/about-us" },
     links: [
-      { label: 'About HENK', href: '/en/about-us/' },
-      { label: 'Sustainability', href: '/en/about-us/b-corp' },
-      { label: 'Careers', href: 'https://studio-henk.homerun.co/' },
-      { label: 'Contact', href: '/en/contact' },
-      { label: 'Press', href: '/en/press' },
-      { label: 'Image Bank', href: '/en/top-nav/imagebank' },
+      { label: "About HENK", href: "/en/about-us/" },
+      { label: "Sustainability", href: "/en/about-us/b-corp" },
+      { label: "Careers", href: "https://studio-henk.homerun.co/" },
+      { label: "Contact", href: "/en/contact" },
+      { label: "Press", href: "/en/press" },
+      { label: "Image Bank", href: "/en/top-nav/imagebank" },
     ],
   },
   {
-    heading: { label: 'Services', href: '/en/services' },
+    heading: { label: "Services", href: "/en/services" },
     links: [
-      { label: 'Samples Service', href: '/en/samples' },
-      { label: 'Interior Advice', href: '/en/interior-advice' },
-      { label: 'Maintenance', href: '/en/maintenance' },
-      { label: 'Manuals', href: '/en/manuals' },
-      { label: 'Stock', href: '/en/stock' },
-      { label: 'Price List', href: 'https://assets.studio-henk.nl/assets/Pricelists/STUDIOHENK_Pricelist_2024_DIGITAL_v36.pdf' },
+      { label: "Samples Service", href: "/en/samples" },
+      { label: "Interior Advice", href: "/en/interior-advice" },
+      { label: "Maintenance", href: "/en/maintenance" },
+      { label: "Manuals", href: "/en/manuals" },
+      { label: "Stock", href: "/en/stock" },
+      {
+        label: "Price List",
+        href: "https://assets.studio-henk.nl/assets/Pricelists/STUDIOHENK_Pricelist_2024_DIGITAL_v36.pdf",
+      },
     ],
   },
   {
-    heading: { label: 'Support', href: '/en/contact' },
+    heading: { label: "Support", href: "/en/contact" },
     links: [
-      { label: 'Contact', href: '/en/contact' },
-      { label: 'FAQ', href: '/en/faq' },
-      { label: 'Delivery Times', href: '/en/planning' },
+      { label: "Contact", href: "/en/contact" },
+      { label: "FAQ", href: "/en/faq" },
+      { label: "Delivery Times", href: "/en/planning" },
       // Order Status and Returns commented out in HTML
     ],
   },
   {
-    heading: { label: 'Stores', href: '/en/stores' },
+    heading: { label: "Stores", href: "/en/stores" },
     links: [
-      { label: 'Amsterdam', href: '/en/stores/amsterdam-flagship-store' },
-      { label: 'Antwerpen', href: '/en/stores/antwerp-flagship-store' },
-      { label: 'Rotterdam', href: '/en/stores/rotterdam-brand-store' },
-      { label: 'Utrecht', href: '/en/stores/utrecht-brand-store' },
+      { label: "Amsterdam", href: "/en/stores/amsterdam-flagship-store" },
+      { label: "Antwerpen", href: "/en/stores/antwerp-flagship-store" },
+      { label: "Rotterdam", href: "/en/stores/rotterdam-brand-store" },
+      { label: "Utrecht", href: "/en/stores/utrecht-brand-store" },
     ],
   },
 ];
 
-export function TheFooter({ footerData = defaultFooterData }: TheFooterProps): HTMLElement {
-  const footer = document.createElement('footer');
-  footer.className = 'henk-footer';
+export function TheFooter({
+  footerData = defaultFooterData,
+}: TheFooterProps): HTMLElement {
+  const footer = document.createElement("footer");
+  footer.className = "henk-footer";
 
-  const container = document.createElement('div');
-  container.className = 'henk-footer__container';
+  const container = document.createElement("div");
+  container.className = "henk-footer__container";
 
   container.innerHTML = `<h2 class="visually-hidden">Footer</h2>`;
 
-  const rowLinks = document.createElement('div');
-  rowLinks.className = 'henk-footer__row henk-footer__row--links';
+  const rowLinks = document.createElement("div");
+  rowLinks.className = "henk-footer__row henk-footer__row--links";
 
-  const grid = document.createElement('div');
-  grid.className = 'henk-footer__grid';
+  const grid = document.createElement("div");
+  grid.className = "henk-footer__grid";
 
   // Loop over each column
-  footerData.forEach(column => {
-    const colDiv = document.createElement('div');
-    colDiv.className = 'henk-footer__grid-column';
+  footerData.forEach((column) => {
+    const colDiv = document.createElement("div");
+    colDiv.className = "henk-footer__grid-column";
 
     // Create heading with TextLink
-    const headingEl = document.createElement('h3');
-    headingEl.className = 'henk-footer__heading';
+    const headingEl = document.createElement("h3");
+    headingEl.className = "henk-footer__heading";
 
     const headingLink = TextLink({
-      textElement: 'a',
+      textElement: "a",
       href: column.heading.href,
       label: column.heading.label,
       title: column.heading.title ?? column.heading.label,
@@ -133,15 +138,15 @@ export function TheFooter({ footerData = defaultFooterData }: TheFooterProps): H
 
     // Create list of links
     if (column.links && column.links.length > 0) {
-      const ul = document.createElement('ul');
-      ul.className = 'henk-footer__list henk-list henk-list--no-bullets';
+      const ul = document.createElement("ul");
+      ul.className = "henk-footer__list henk-list henk-list--no-bullets";
 
-      column.links.forEach(link => {
-        const li = document.createElement('li');
-        li.className = 'henk-footer__list-item';
+      column.links.forEach((link) => {
+        const li = document.createElement("li");
+        li.className = "henk-footer__list-item";
 
         const linkEl = TextLink({
-          textElement: 'a',
+          textElement: "a",
           href: link.href,
           label: link.label,
           title: link.title ?? link.label,
@@ -159,30 +164,28 @@ export function TheFooter({ footerData = defaultFooterData }: TheFooterProps): H
 
   rowLinks.appendChild(grid);
 
-  const rowSocial = document.createElement('div');
-  rowSocial.className = 'henk-footer__row henk-footer__row--social-rating';
+  const rowSocial = document.createElement("div");
+  rowSocial.className = "henk-footer__row henk-footer__row--social-rating";
   rowSocial.innerHTML = `
 <div class="henk-footer__section henk-footer__section--rating">
     <h3 class="henk-footer__heading visually-hidden">Trustpilot Rating</h3>          
     <div class="henk-footer__certificates-rating">
     <a href="https://www.bcorporation.net/en-us/find-a-b-corp/company/studio-henk/" aria-label="Bcorp">${BcorpLogoSVG}</a>
-        <div class="henk-footer__rating-widget">              
-
-            <!-- TrustBox widget - Mini -->
-            <div
-                class="trustpilot-widget"
-                data-locale="nl-NL"
-                data-template-id="53aa8807dec7e10d38f59f32"
-                data-businessunit-id="60489ea4c2b19d0001711086"
-                data-style-height="150px"
-                data-style-width="100%"
-                data-theme="light"
-            >
-                <a href="https://nl.trustpilot.com/review/studio-henk.nl" target="_blank" rel="noopener">Trustpilot</a>
-            </div>
-            <!-- End TrustBox widget -->
-
-        </div>
+    <!-- <div class="henk-footer__rating-widget">               -->
+    <!---->
+    <!--     <div -->
+    <!--         class="trustpilot-widget" -->
+    <!--         data-locale="nl-NL" -->
+    <!--         data-template-id="53aa8807dec7e10d38f59f32" -->
+    <!--         data-businessunit-id="60489ea4c2b19d0001711086" -->
+    <!--         data-style-height="150px" -->
+    <!--         data-style-width="100%" -->
+    <!--         data-theme="light" -->
+    <!--     > -->
+    <!--         <a href="https://nl.trustpilot.com/review/studio-henk.nl" target="_blank" rel="noopener">Trustpilot</a> -->
+    <!--     </div> -->
+    <!---->
+    <!-- </div> -->
     </div>
 </div>
 <div class="henk-footer__section henk-footer__section--social">
@@ -217,8 +220,8 @@ export function TheFooter({ footerData = defaultFooterData }: TheFooterProps): H
 </div>
 `;
 
-  const rowPayment = document.createElement('div');
-  rowPayment.className = 'henk-footer__row henk-footer__row--payment-terms';
+  const rowPayment = document.createElement("div");
+  rowPayment.className = "henk-footer__row henk-footer__row--payment-terms";
   rowPayment.innerHTML = `
 <div class="henk-footer__section henk-footer__section--payment">
     <h3 class="visually-hidden">Payment methods</h3>
@@ -304,7 +307,7 @@ export function TheFooter({ footerData = defaultFooterData }: TheFooterProps): H
   footer.appendChild(container);
 
   loadTrustpilotScript().catch((err) => {
-    console.warn('Trustpilot script failed to load:', err);
+    console.warn("Trustpilot script failed to load:", err);
   });
 
   return footer;

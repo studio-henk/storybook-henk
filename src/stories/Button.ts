@@ -13,6 +13,7 @@ export interface ButtonProps {
   iconPosition?: IconPosition;
   iconSize?: IconSize;
   iconOnly?: boolean;
+  ariaLabel?: string;
   disabled?: boolean;
   target?: string;
   size?: "small" | "large";
@@ -31,6 +32,7 @@ export const createButton = ({
   iconPosition = "left",
   iconSize,
   iconOnly = false,
+  ariaLabel,
   disabled = false,
   target,
   size,
@@ -68,8 +70,17 @@ export const createButton = ({
     : "";
 
   // Inner content
-  btn.innerHTML =
-    iconPosition === "left" ? `${iconHTML}${label}` : `${label}${iconHTML}`;
+  if (iconOnly) {
+    // Icon-only button: use aria-label for accessibility
+    btn.innerHTML = iconHTML;
+    btn.setAttribute("aria-label", ariaLabel || label);
+  } else {
+    // Button with label (and optional icon)
+    btn.innerHTML =
+      iconPosition === "left" ? `${iconHTML}${label}` : `${label}${iconHTML}`;
+  }
+  // btn.innerHTML =
+  //   iconPosition === "left" ? `${iconHTML}${label}` : `${label}${iconHTML}`;
 
   // Classes
   const classNames = ["henk-button"];

@@ -156,6 +156,7 @@ export const IconButton: Story = {
     variant: "primary",
     iconSvg: ChevronRight,
     iconOnly: true,
+    ariaLabel: "Go to next slide",
   },
 };
 
@@ -167,6 +168,7 @@ export const IconButtonGhost: Story = {
     variant: "ghost",
     iconSvg: ChevronRight,
     iconOnly: true,
+    ariaLabel: "Go to next slide",
   },
 };
 
@@ -179,6 +181,7 @@ export const IconButtonSmall: Story = {
     size: "small",
     iconSvg: ChevronRight,
     iconOnly: true,
+    ariaLabel: "Go to next slide",
   },
 };
 
@@ -191,19 +194,9 @@ export const IconButtonSmallGhost: Story = {
     size: "small",
     iconSvg: ChevronRight,
     iconOnly: true,
+    ariaLabel: "Go to next slide",
   },
 };
-// export const IconButtonSmallIconSmall: Story = {
-//   args: {
-//     element: "button",
-//     label: "",
-//     type: "button",
-//     variant: "primary",
-//     size: "small",
-//     iconSvg: ChevronRight,
-//     iconSize: "small",
-//   },
-// };
 
 export const CloseButton: Story = {
   args: {

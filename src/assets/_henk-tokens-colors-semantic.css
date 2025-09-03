@@ -46,6 +46,8 @@
     --color-background-disabled: var(--color-neutral-80);
     --color-background-muted: var(--color-neutral-90);
     --color-background-neutral-darkest: var(--color-neutral-0);
+    --color-background-neutral-lightest: var(--color-neutral-100);
+    --color-background-neutral-light: var(--color-neutral-95);
 
     /* text */
     --color-text-body: var(--color-neutral-0, #000);

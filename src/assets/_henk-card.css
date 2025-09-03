@@ -1,5 +1,5 @@
 .henk-card {
-  background-color: var(--color-background-muted);
+  background-color: var(--color-background-neutral-light);
   border-radius: 8px;
   display: grid;
   justify-items: center;
@@ -65,4 +65,3 @@ picture.henk-card__picture {
 .henk-card__store-status--closed {
   color: var(--color-ui-text-danger);
 }
-

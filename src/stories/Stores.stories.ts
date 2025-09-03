@@ -68,7 +68,7 @@ export const StoresDetail: Story = {
       id: "stores-header",
       caption: "",
       title: "Studio HENK Amsterdam",
-      level: "1",
+      level: 1,
       content: "",
       alignLeft: false,
     });
@@ -88,7 +88,7 @@ export const StoresDetail: Story = {
         "<p>Onze deuren staan open voor al je vragen over onze producten of voor inspiratie om je interieur te vernieuwen. Boek een gratis adviesgesprek met een van onze interieuradviseurs in onze winkel aan de Rozengracht. Je bent ook zonder afspraak van harte welkom.</p>",
       imageUrl:
         "https://surf-turf-2-0.myshopify.com/cdn/shop/files/studio-henk-showroom-amsterdam-rozengracht6-2.avif?crop=center&height=1728&v=1752841549&width=1152",
-      imageAlt: "",
+      imageAlt: "Boek een afspraak",
       imageLink: "/interior-advice",
       buttonUrl: "/interior-advice",
       buttonText: "Maak een afspraak",

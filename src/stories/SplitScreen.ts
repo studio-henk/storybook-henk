@@ -1,6 +1,5 @@
-
 export interface SplitScreenProps {
-  bgColor?: 'default';
+  bgColor?: "default";
   id?: string;
   title: string;
   caption?: string;
@@ -13,56 +12,58 @@ export interface SplitScreenProps {
   imageLinkTargetBlank?: boolean;
   buttonUrl?: string;
   buttonText?: string;
-  buttonVariant?: 'default' | 'primary' | 'secondary' | 'tertiary';
+  buttonVariant?: "default" | "primary" | "secondary" | "tertiary";
   reverse?: boolean;
 }
 
 export const createSplitScreen = ({
-  bgColor = 'default',
-  id = '',
+  bgColor = "default",
+  id = "",
   title,
   display = false,
-  caption = '',
+  caption = "",
   level = 2,
-  content = '',
-  imageUrl = '',
-  imageAlt = '',
-  imageLink = '',
-  imageLinkTargetBlank = '',
-  buttonUrl = '',
-  buttonText = '',
-  buttonVariant = 'default',
+  content = "",
+  imageUrl = "",
+  imageAlt = "",
+  imageLink = "",
+  imageLinkTargetBlank = false,
+  buttonUrl = "",
+  buttonText = "",
+  buttonVariant = "default",
   reverse = false,
 }: SplitScreenProps): HTMLElement => {
-  const container = document.createElement('div');
-  container.className = `henk-split-screen${bgColor !== 'default' ? ` henk-split-screen--bg-${bgColor}` : ''}`;
+  const container = document.createElement("div");
+  container.className = `henk-split-screen${bgColor !== "default" ? ` henk-split-screen--bg-${bgColor}` : ""}`;
   if (id) container.id = id;
 
-  const inner = document.createElement('div');
-  inner.className = 'henk-split-screen__inner';
-  if (reverse) inner.dataset.order = 'reverse';
+  const inner = document.createElement("div");
+  inner.className = "henk-split-screen__inner";
+  if (reverse) inner.dataset.order = "reverse";
 
-  const grid = document.createElement('div');
-  grid.className = 'henk-split-screen__grid';
+  const grid = document.createElement("div");
+  grid.className = "henk-split-screen__grid";
 
   // === IMAGE COLUMN ===
-  const imageItem = document.createElement('div');
-  imageItem.className = 'henk-split-screen__grid-item';
+  const imageItem = document.createElement("div");
+  imageItem.className = "henk-split-screen__grid-item";
 
   if (imageUrl) {
-    const img = document.createElement('img');
+    const img = document.createElement("img");
     img.src = imageUrl;
-    img.alt = imageAlt || '';
-    img.className = 'henk-split-screen__img';
+    img.alt = imageAlt || "";
+    img.className = "henk-split-screen__img";
+    img.width = 1152;
+    img.height = 1728;
     // imageItem.appendChild(img);
 
     if (imageLink) {
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = imageLink;
 
       if (imageLinkTargetBlank) {
-        link.target = '_blank';
-        link.rel = 'noopener';
+        link.target = "_blank";
+        link.rel = "noopener";
       }
 
       link.appendChild(img);
@@ -73,15 +74,15 @@ export const createSplitScreen = ({
   }
 
   // === CONTENT COLUMN ===
-  const contentItem = document.createElement('div');
-  contentItem.className = 'henk-split-screen__grid-item';
+  const contentItem = document.createElement("div");
+  contentItem.className = "henk-split-screen__grid-item";
 
-  const contentDiv = document.createElement('div');
-  contentDiv.className = 'henk-split-screen__content';
+  const contentDiv = document.createElement("div");
+  contentDiv.className = "henk-split-screen__content";
 
   if (caption) {
-    const subtitleEl = document.createElement('p');
-    subtitleEl.className = 'henk-split-screen__caption';
+    const subtitleEl = document.createElement("p");
+    subtitleEl.className = "henk-split-screen__caption";
     subtitleEl.innerText = caption;
     contentDiv.appendChild(subtitleEl);
   }
@@ -91,22 +92,23 @@ export const createSplitScreen = ({
 
   const titleElement = document.createElement(headingTag);
   titleElement.className = [
-    'henk-split-screen__title',
-    display ? 'fs-display' : '',
-  ].filter(Boolean).join(' ');
+    "henk-split-screen__title",
+    display ? "fs-display" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
   titleElement.innerText = title;
   contentDiv.appendChild(titleElement);
 
-
   if (content) {
-    const contentEl = document.createElement('div');
-    contentEl.className = 'henk-split-screen__text';
+    const contentEl = document.createElement("div");
+    contentEl.className = "henk-split-screen__text";
     contentEl.innerHTML = content;
     contentDiv.appendChild(contentEl);
   }
 
   if (buttonUrl && buttonText) {
-    const button = document.createElement('a');
+    const button = document.createElement("a");
     button.href = buttonUrl;
     button.innerText = buttonText;
     button.className = `henk-button henk-button--${buttonVariant}`;
