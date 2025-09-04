@@ -4,7 +4,9 @@ import IconSearch from "@assets/icons/icon-search.svg?raw";
 import IconBag from "@assets/icons/icon-bag.svg?raw";
 import IconChevronDown from "@assets/icons/icon-chevron-down.svg?raw";
 import IconClose from "@assets/icons/icon-close.svg?raw";
-import { initTheHeaderMenu } from "@scripts/TheHeaderMenu";
+// import { initTheHeaderMenu } from "@scripts/TheHeaderMenu";
+
+import "../scripts/TheHeaderMenu.ts";
 
 export interface HeaderProps {
   logoProps?: LogoProps;
@@ -59,18 +61,9 @@ ${IconChevronDown}
   <div class="dropdown-container">
 
     <div class="dropdown-container__inner">
-<button type="button" 
-class="henk-button henk-button--ghost henk-button--small close-menu"
-      aria-label="Button"
-      data-js-behavior="closeMenu"
->
-  <i class="henk-icon">
-${IconClose}
-  </i>
-  CLOSE
-</button>
     <ul class="dropdown">
       <li class="sub-level left-col">
+        <span class="column__heading">Highlights</span>
         <ul>
           <li><a href="#">New in</a></li>
           <li><a href="#">Second Chance</a></li>
@@ -231,7 +224,7 @@ ${IconClose}
   </div>
 </li>
 
-<li class="henk-menu__item henk-header__dropdown main-level">
+<li class="henk-header__menu-item henk-header__dropdown main-level">
   <a data-js-behavior="openSub" href="ser" class="henk-header__menu-link henk-button henk-button--ghost">Service
       <i class="henk-icon">
 ${IconChevronDown}
@@ -240,23 +233,50 @@ ${IconChevronDown}
 
   <div class="dropdown-container">
     <div class="dropdown-container__inner">
-Service
 
-<button type="button" 
-class="henk-button henk-button--ghost henk-button--small close-menu"
-      aria-label="Button"
-      data-js-behavior="closeMenu"
->
-  <i class="henk-icon">
-${IconClose}
-  </i>
-  CLOSE
-</button>
+    <ul class="dropdown">
+      <li class="sub-level left-col">
+        <span class="column__heading">Highlights</span>
+        <ul>
+          <li><a href="#">New in</a></li>
+        </ul>
+      </li>
+      <li class="sub-level right-col">
+        <div class="column">
+            <a class="column__heading" href="/collections/tables">Service</a>
+            <ul>
+              <li>
+                  <a href="/collections/tables">
+                      Contact
+                  </a>
+              </li>
+              <li>
+                  <a href="/collections/tables">
+                      FAQ
+                  </a>
+              </li>
+              <li>
+                  <a href="/collections/tables/Office">
+                      Interieuradvies
+                  </a>
+              </li>
+              <li>
+                  <a href="/collections/tables/Bistro">
+                      Reparaties en retouren
+                  </a>
+              </li>
+              <li>
+                  <a href="/collections/tables/Bistro">
+                      Materialen en onderhoud
+                  </a>
+              </li>
+          </ul>
+        </div>
     </div>
   </div>
 </li>
 
-<li class="henk-menu__item henk-header__dropdown main-level">
+<li class="henk-header__menu-item henk-header__dropdown main-level">
   <a data-js-behavior="openSub" href="HENK" class="henk-header__menu-link henk-button--ghost henk-button">HENK
     <i class="henk-icon">
 ${IconChevronDown}
@@ -266,19 +286,38 @@ ${IconChevronDown}
   <div class="dropdown-container">
 
     <div class="dropdown-container__inner">
-  HENK
+      <ul class="dropdown">
+        <li class="sub-level left-col">
+          <span class="column__heading">Our Stores</span>
+          <ul>
+            <li><a href="#">Amsterdam</a></li>
+            <li><a href="#">Antwerpen</a></li>
+            <li><a href="#">Utrecht</a></li>
+            <li><a href="#">Rotterdam</a></li>
+            <li><a href="#">Haarlem</a></li>
+          </ul>
+        </li>
+        <li class="sub-level right-col">
+                                    
+          <div class="column">
+            <a href="#" class="column__heading">HENK</a>
+            <ul>
+              <li>
+                  <a href="#">HENK's verhaal</a>
+              </li>
+              <li>
+                  <a href="#">HENK at home</a>
+              </li>
+              <li>
+                  <a href="#">Werken bij HENK</a>
+              </li>
+            </ul>
+          </div>
+            
+        </li>
+      </ul>
 
-<button type="button" 
-class="henk-button henk-button--ghost henk-button--small close-menu"
-      aria-label="Button"
-      data-js-behavior="closeMenu"
->
-  <i class="henk-icon">
-${IconClose}
-  </i>
-  CLOSE
-</button>
-      </div>
+    </div>
   </div>
 </li>
 `;
@@ -300,7 +339,7 @@ ${IconClose}
 
   // util nav
   const headerUtils = `
-<div class="henk-header__utils">
+<div class="henk-header__utils" data-js-utils>
 
   <div class="henk-localise">
     <div class="henk-popover henk-popover--lang">
@@ -354,7 +393,7 @@ ${cartBubbleHtml}
   header.appendChild(headerInner);
 
   // Init menu JS immediately so Storybook works
-  initTheHeaderMenu(header);
+  // initTheHeaderMenu(header);
 
   return header;
 }

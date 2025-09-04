@@ -1,12 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/html";
 import { createHeader, type HeaderProps } from "./TheHeader";
 import { withSectionWrapper } from "@decorators/withSectionWrapper";
+// import "../scripts/TheHeaderMenu2.ts";
 
 const meta = {
   title: "Global/Header",
   tags: ["autodocs"],
   decorators: [withSectionWrapper],
-  render: (args: HeaderProps) => createHeader(args),
+  // render: (args: HeaderProps) => createHeader(args),
+  render: (args: HeaderProps) => {
+    const header = createHeader(args); // creates header element
+
+    // Append header to the Storybook preview DOM
+    document.body.appendChild(header);
+
+    return header; // return for Storybook rendering
+  },
   argTypes: {
     title: {
       control: "text",
