@@ -5,7 +5,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 const config: StorybookConfig = {
   stories: [
     "../src/stories/**/*.mdx",
-    "../src/stories/**/*.@(mdx|stories.@(js|jsx|mjs|ts|tsx))",
+    "../src/stories/**/*.stories.@(js|jsx|ts|tsx)",
+    // "../src/stories/**/*.@(mdx|stories.@(js|jsx|mjs|ts|tsx))",
   ],
   addons: [
     "@storybook/addon-links",
