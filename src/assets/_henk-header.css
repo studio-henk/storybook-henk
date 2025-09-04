@@ -130,10 +130,11 @@
   .henk-header .closing + .dropdown-container {
     opacity: 0;
   }
+
   .henk-header .dropdown-container .dropdown {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    width: min(1140px, 100vw);
+    width: min(var(--size-width-content, 1140px), 100% - 3rem);
     margin-inline: auto;
   }
 

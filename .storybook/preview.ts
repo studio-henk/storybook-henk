@@ -76,6 +76,7 @@ const preview = {
           "Global",
           ["Header", "Footer", "*"],
           "Pages",
+          ["HomePage", "StoresOverview", "StoresDetail"],
           "Development",
           "*",
         ],
