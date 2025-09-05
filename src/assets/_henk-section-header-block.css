@@ -4,7 +4,7 @@
   place-items: center;
   background-color: var(--color-background-base);
   color: var(--color-text-base);
-  /* padding-block: 4lh; */
+  /* padding-block: var(--space-13, 96px); */
 }
 
 .henk-section-header .henk-section-header__inner {
@@ -38,6 +38,8 @@
   word-break: break-word; /* fallback */
   overflow-wrap: anywhere; /* preferred modern */
   hyphens: auto;
+  text-box: trim-end ex alphabetic;
+  padding-top: 9px;
 }
 
 .henk-section-header--align-left {
@@ -61,5 +63,5 @@
 }
 
 .henk-section-header__button {
-  margin-block-start: 1lh;
+  margin-block-start: 24px;
 }

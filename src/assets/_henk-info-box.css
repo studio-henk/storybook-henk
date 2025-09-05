@@ -40,7 +40,7 @@
 }
 
 .info-box__body * {
-  margin-block: 1lh;
+  margin-block: 24px;
 }
 
 .info-box__body *:first-child {

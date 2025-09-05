@@ -1,5 +1,5 @@
 .henk-double-image-block {
-  padding-block: 4lh;
+  padding-block: var(--space-13, 96px);
 }
 
 .henk-double-image-block img {
@@ -16,7 +16,7 @@
 
 .henk-double-image-block__grid {
   display: flex;
-  row-gap: 2lh;
+  row-gap: var(--space-7, 48px);
   flex-wrap: wrap;
   align-items: center;
 }

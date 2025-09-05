@@ -136,22 +136,24 @@
     grid-template-columns: 1fr 2fr;
     width: min(var(--size-width-content, 1140px), 100% - 3rem);
     margin-inline: auto;
+    padding-top: 3px;
   }
 
   .henk-header .sub-level:has(.column) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
-    padding-block-start: 9px;
+    /* padding-block-start: 9px; */
   }
 
   .henk-header .left-col {
     padding-right: 1.5rem;
   }
 
-  .henk-header .left-col a {
-    font-size: 24px;
-    line-height: 40px;
+  .henk-header .left-col a:not(.column__heading) {
+    font-size: 25px;
+    /* line-height: 32px; */
+    line-height: 48px;
     font-weight: 500;
   }
 
@@ -159,12 +161,22 @@
     display: inline-block;
     font-size: 20px;
     line-height: 24px;
-    margin-bottom: 22px;
+    /* margin-bottom: 22px; */
   }
 
-  .column ul {
-    font-size: 13px;
-    line-height: 20px;
+  .henk-header .left-col .column__heading + ul {
+    margin-block-start: 9px;
+  }
+
+  .henk-header .right-col .column__heading + ul {
+    margin-block-start: var(--vertical-rhythm);
+  }
+
+  .right-col .column ul {
+    /* font-size: 13px; */
+    /* line-height: 20px; */
+    margin-block-start: 27px;
+    line-height: 24px;
   }
 
   .header__utils-link.header__utils-link--cart {

@@ -1,6 +1,5 @@
 .henk-section {
-  /* margin-block: 4lh; */
-  padding-block: 4lh;
+  padding-block: var(--space-13, 96px);
 }
 
 .henk-section__inner {

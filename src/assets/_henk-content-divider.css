@@ -1,6 +1,6 @@
 .henk-content-divider {
   background-color: var(--color-background-base-invert);
-  margin-block: 4lh;
+  margin-block: var(--space-13, 96px sg);
   width: min(var(--size-width-content), 100% - 3rem);
   margin-inline: auto;
 }

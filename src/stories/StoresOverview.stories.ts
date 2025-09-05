@@ -39,7 +39,8 @@ export const StoresOverview: Story = {
     const footer = TheFooter({});
 
     // --- Main content ---
-    const mainContent = document.createElement("div");
+    // const mainContent = document.createElement("div");
+    const mainContent = document.createDocumentFragment();
 
     const sectionHeader = createSectionHeader({
       id: "stores-overview-header",

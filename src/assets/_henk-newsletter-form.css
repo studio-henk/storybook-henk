@@ -6,7 +6,7 @@
   color: var(--color-text-static, #000);
   position: relative;
   z-index: 9;
-  padding-block: 4lh;
+  padding-block: var(--space-13, 96px);
 }
 
 .henk-newsletter-form__container {

@@ -1,0 +1,5 @@
+.henk-dl {
+  dd + dt {
+    margin-block-start: 1.5rem;
+  }
+}

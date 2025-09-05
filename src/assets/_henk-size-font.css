@@ -5,7 +5,7 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  margin-block: 1lh;
+  margin-block: var(--space-4, 24px);
   line-height: 1.5;
   letter-spacing: -0.025em;
   text-wrap: balance;
@@ -15,53 +15,61 @@ h1.fs-display,
 .h1.fs-display {
   --_target-lh: 48;
   font-size: var(--size-font-xxxx-large);
-  line-height: calc(var(--_target-lh) / var(--size-font-xxxx-large-px, 48px));
+  /* line-height: calc(var(--_target-lh) / var(--size-font-xxxx-large-px, 48px)); */
+  line-height: 72px;
 }
 
 h1,
 .h1 {
   font-size: var(--size-font-xxx-large);
-  line-height: calc(48 / var(--size-font-xxx-large-px, 48px));
+  /* line-height: calc(48 / var(--size-font-xxx-large-px, 48px)); */
+  line-height: 48px;
 }
 
 h2,
 .h2 {
   font-size: var(--size-font-xx-large);
-  line-height: calc(40 / var(--size-font-xx-large-px, 40px));
+  /* line-height: calc(40 / var(--size-font-xx-large-px, 40px)); */
+  line-height: 40px;
 }
 
 h3,
 .h3 {
   font-size: var(--size-font-x-large);
-  line-height: calc(32 / var(--size-font-x-large-px, 32px));
+  /* line-height: calc(32 / var(--size-font-x-large-px, 32px)); */
+  line-height: 32px;
 }
 
 h4,
 .h4 {
   font-size: var(--size-font-large);
-  line-height: calc(24 / var(--size-font-large-px, 24px));
+  /* line-height: calc(24 / var(--size-font-large-px, 24px)); */
+  line-height: 24px;
 }
 
 h5,
 .h5 {
   font-size: var(--size-font-medium);
-  line-height: calc(24 / var(--size-font-medium-px, 24px));
+  /* line-height: calc(24 / var(--size-font-medium-px, 24px)); */
+  line-height: 24px;
 }
 
 h6,
 .h6 {
   font-size: var(--size-font-medium);
-  line-height: calc(24 / var(--size-font-medium-px, 24px));
+  /* line-height: calc(24 / var(--size-font-medium-px, 24px)); */
+  line-height: 24px;
 }
 
 .fs-display {
   --_target-lh: 48;
   font-size: var(--size-font-xxxx-large);
-  line-height: calc(var(--_target-lh) / var(--size-font-xxxx-large-px, 48px));
+  /* line-height: calc(var(--_target-lh) / var(--size-font-xxxx-large-px, 48px)); */
+  line-height: 24px;
 }
 
 .fs-small {
   font-size: var(--size-font-small, 13px);
   /* line-height: calc(24 / var(--size-font-medium-px, 24px)); */
-  line-height: 1.5rem;
+  line-height: 24px;
 }

@@ -1,15 +1,17 @@
 .henk-breadcrumbs {
   font-size: var(--size-font-small);
+  line-height: 24px;
   width: min(var(--size-width-content), 100% - 3rem);
   margin-inline: auto;
-  /* background: aqua; */
+  text-box: trim-end ex alphabetic;
+  padding-block-start: 7px;
+  margin-block-end: 24px;
 }
 
 .henk-breadcrumbs__list {
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  /* width: min(1208px, 100% - 3rem); */
 }
 
 .henk-breadcrumbs__item {

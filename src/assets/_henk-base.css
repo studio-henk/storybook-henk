@@ -46,13 +46,41 @@
     color: var(--color-text-body);
   }
 
+  /* debugging */
+  .baseline {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 0, 128, 0.4) 1px,
+      /* magenta line */ transparent 1px
+    );
+    background-size: 100% 24px;
+  }
+
+  .henk-wrapper::before,
+  .baseline-grid::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 0, 128, 0.3) 1px,
+      transparent 1px
+    );
+    background-size: 100% 24px;
+    pointer-events: none; /* let clicks go through */
+    z-index: 9999; /* above everything */
+  }
+
   img {
     background-repeat: no-repeat;
     background-size: cover;
     display: block;
     font-style: italic;
     height: auto;
-    margin-bottom: 1lh;
+    margin-bottom: 24px;
     max-width: 100%;
     shape-margin: 1rem;
   }
@@ -82,12 +110,30 @@
     color: var(--color-text-link-hover);
   }
 
-  p {
-    margin-block: 1lh;
+  ul,
+  ol {
+    padding-left: 16px;
+  }
+
+  /* vertical rhythm  */
+  p,
+  ul,
+  ol {
+    margin-block: var(--vertical-rhythm, 24px);
+  }
+
+  dl {
+    margin-block: 1.5rem;
+
+    dt {
+      font-weight: var(--font-weight-semibold);
+    }
+    dd {
+      margin-inline-start: 0;
+    }
   }
 }
 
 .henk-wrapper > .henk-main {
-  /* background-color: pink; */
   padding-top: var(--size-height-header, 72px);
 }

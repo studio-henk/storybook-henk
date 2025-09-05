@@ -49,8 +49,9 @@ export const StoresDetail: Story = {
     });
     const footer = TheFooter({});
 
-    const mainContent = document.createElement("div");
-    mainContent.id = "stores-main-content";
+    // const mainContent = document.createElement("div");
+    // mainContent.id = "stores-main-content";
+    const mainContent = document.createDocumentFragment();
 
     const breadcrumbs = createBreadcrumbs({
       breadcrumbs: [
@@ -59,9 +60,11 @@ export const StoresDetail: Story = {
         { name: "Amsterdam", fullPath: "/stores/amsterdam" },
       ],
     });
-    mainContent.appendChild(
-      wrapWithShopifySection(breadcrumbs, "section-breadcrumbs"),
-    );
+
+    // mainContent.appendChild(
+    //   wrapWithShopifySection(breadcrumbs, "section-breadcrumbs"),
+    // );
+    mainContent.appendChild(breadcrumbs);
 
     // --- Section Header ---
     const sectionHeader = createSectionHeader({

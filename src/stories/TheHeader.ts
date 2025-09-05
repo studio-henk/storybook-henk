@@ -63,7 +63,7 @@ ${IconChevronDown}
     <div class="dropdown-container__inner">
     <ul class="dropdown">
       <li class="sub-level left-col">
-        <span class="column__heading">Highlights</span>
+        <a href="#" class="column__heading">Highlights</a>
         <ul>
           <li><a href="#">New in</a></li>
           <li><a href="#">Second Chance</a></li>

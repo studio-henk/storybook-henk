@@ -6,12 +6,10 @@
   max-width: 1256px;
   margin: 0 auto;
   transition: all 0.3s ease;
-  /* scroll-margin-top: 500px; */
 }
 
 .henk-details {
   margin-bottom: 1.5rem;
-  /* scroll-margin-top: 800px; */
 }
 
 .henk-details-group .henk-details {
@@ -38,8 +36,8 @@
 
 .henk-details__content {
   max-width: 60ch;
-  margin-trim: block;
-  padding-block: 1lh;
+  /* margin-trim: block; */
+  padding-block: var(--space-4, 24px);
 }
 
 @supports not (margin-trim: block) {
@@ -113,11 +111,12 @@
   padding: 4px;
 }
 
-.henk-details.henk-details--plusmin .henk-details__summary:focus-visible::before {
+.henk-details.henk-details--plusmin
+  .henk-details__summary:focus-visible::before {
   right: 4px;
 }
 
-.henk-details.henk-details--plusmin .henk-details__summary:focus-visible::after {
+.henk-details.henk-details--plusmin
+  .henk-details__summary:focus-visible::after {
   right: 4px;
 }
-

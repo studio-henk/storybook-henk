@@ -7,7 +7,7 @@
     display: inline-flex;
     margin-block: 0;
     margin-inline: 0;
-    padding-block: 1lh;
+    padding-block: var(--space-4, 24px);
     padding-inline: 18px;
   }
 

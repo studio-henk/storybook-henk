@@ -1,6 +1,6 @@
 .henk-split-screen {
   background-color: var(--color-background-base, #fff);
-  padding-block: 4lh;
+  padding-block: var(--space-13, 96px);
 }
 
 .henk-split-screen__inner {
@@ -47,7 +47,7 @@ svg.henk-split-screen__img {
   justify-content: start;
   justify-items: start;
   align-items: start;
-  padding-block: 1lh;
+  padding-block: var(--space-4, 24px);
 }
 
 .henk-split-screen__content > * {
