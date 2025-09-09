@@ -1,9 +1,8 @@
-// TheHeaderMenu.ts
 (() => {
-  const initHeaderMenu = () => {
+  const initHeaderMenu = (): (() => void) | null => {
     const htmlElement = document.documentElement;
     const header = document.querySelector<HTMLElement>(".henk-header");
-    if (!header) return false;
+    if (!header) return null;
 
     const selectors = {
       mainLevel: ".main-level",
@@ -136,10 +135,67 @@
     }
 
     init();
-    return true;
-  };
+    // return true;
+    // return cleanup function
+    return () => {
+      // Remove close button
+      closeButton.remove();
 
-  if (!initHeaderMenu()) {
-    document.addEventListener("DOMContentLoaded", () => initHeaderMenu());
-  }
+      // Reset overflow + state classes
+      htmlElement.style.overflow = "";
+      header.classList.remove("henk-header--is-open");
+      toggleUtils(false);
+
+      // Reset submenu states
+      header
+        .querySelectorAll<HTMLElement>(selectors.mainLevel)
+        .forEach((el) => {
+          el.classList.remove(
+            selectors.openClass,
+            selectors.openingClass,
+            selectors.closingClass,
+          );
+        });
+
+      // remove classes from submenu opener links
+      header
+        .querySelectorAll<HTMLElement>('[data-js-behavior="openSub"]')
+        .forEach((el) => {
+          el.classList.remove(
+            selectors.openClass,
+            selectors.openingClass,
+            selectors.closingClass,
+          );
+        });
+
+      // Remove event listeners
+      removeEscListener();
+      header
+        .querySelectorAll<HTMLElement>(selectors.openButton)
+        .forEach((button) => {
+          button.replaceWith(button.cloneNode(true)); // quick way to remove listeners
+        });
+    };
+  };
+  document.addEventListener("DOMContentLoaded", () => {
+    const mql = window.matchMedia("(min-width: 768px)");
+    let cleanup: (() => void) | null = null;
+
+    const handleChange = (e: MediaQueryList | MediaQueryListEvent) => {
+      if (e.matches) {
+        if (!cleanup) {
+          const maybeCleanup = initHeaderMenu();
+          if (typeof maybeCleanup === "function") cleanup = maybeCleanup;
+        }
+      } else {
+        if (cleanup) {
+          cleanup();
+          cleanup = null;
+        }
+      }
+    };
+
+    handleChange(mql);
+    mql.addEventListener("change", handleChange);
+  });
 })();

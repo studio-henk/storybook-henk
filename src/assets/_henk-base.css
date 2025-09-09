@@ -56,7 +56,7 @@
     background-size: 100% 24px;
   }
 
-  .henk-wrapper::before,
+  /* .henk-wrapper::before, */
   .baseline-grid::before {
     content: "";
     position: fixed;

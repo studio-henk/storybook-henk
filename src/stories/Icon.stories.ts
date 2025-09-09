@@ -127,3 +127,6 @@ export const IconCheckmarkFat = Template.bind({});
 IconCheckmarkFat.args = { name: "icon-checkmark-fat", size: "large" };
 
 // export const ChevronRight = () => Icon({ name: "icon-chevron-right", size: "large" });
+
+export const IconHamburger = Template.bind({});
+IconHamburger.args = { name: "icon-hamburger", size: "large" };

@@ -5,7 +5,7 @@ import Pinterest from "@assets/icons/icon-pinterest.svg?raw";
 import Instagram from "@assets/icons/icon-instagram.svg?raw";
 import Facebook from "@assets/icons/icon-facebook.svg?raw";
 import TikTok from "@assets/icons/icon-tiktok.svg?raw";
-import Youtube from "@assets/icons/icon-youtube.svg?raw";
+// import Youtube from "@assets/icons/icon-youtube.svg?raw";
 
 function loadTrustpilotScript() {
   return new Promise((resolve, reject) => {
@@ -211,11 +211,13 @@ export function TheFooter({
         ${Pinterest}
         </a>
     </li>
-    <li class="henk-footer__social-media-item">
+${
+  /*    <li class="henk-footer__social-media-item">
         <a href="https://www.youtube.com/channel/UC_RBQhav2vf-zwLTIr-xHQg" class="henk-footer__social-media-link" aria-label="youtube">
         ${Youtube}
         </a>
-    </li>            
+    </li> */ ""
+}            
     </ul>
 </div>
 `;

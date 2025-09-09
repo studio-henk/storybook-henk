@@ -6,9 +6,7 @@ import IconChevronDown from "@assets/icons/icon-chevron-down.svg?raw";
 import IconClose from "@assets/icons/icon-close.svg?raw";
 // import { initTheHeaderMenu } from "@scripts/TheHeaderMenu";
 
-import IconHamburger from "@assets/icons/icon-hamburger.svg?raw";
 import "../scripts/TheHeaderMenu.ts";
-import "../scripts/henk-mobile-menu.ts";
 
 export interface HeaderProps {
   logoProps?: LogoProps;
@@ -38,14 +36,6 @@ export function createHeader({
   const headerInner = document.createElement("div");
   headerInner.className = "henk-header__inner";
 
-  const hamburgerButton = document.createElement("button");
-  hamburgerButton.innerText = "menu";
-  hamburgerButton.className = "henk-button henk-button--ghost";
-  hamburgerButton.dataset.jsMobileMenu = "";
-  hamburgerButton.innerHTML = IconHamburger;
-
-  headerInner.appendChild(hamburgerButton);
-
   if (logoProps) {
     const logo = createLogo(logoProps);
     headerInner.appendChild(logo);
@@ -63,6 +53,9 @@ export function createHeader({
   const level1Links = `
 <li class="henk-header__menu-item henk-header__dropdown main-level">
   <a data-js-behavior="openSub" href="shop" class="henk-header__menu-link henk-button henk-button--ghost">Shop
+    <i class="henk-icon">
+${IconChevronDown}
+    </i>
   </a>
 
   <div class="dropdown-container">
@@ -233,6 +226,9 @@ export function createHeader({
 
 <li class="henk-header__menu-item henk-header__dropdown main-level">
   <a data-js-behavior="openSub" href="ser" class="henk-header__menu-link henk-button henk-button--ghost">Service
+      <i class="henk-icon">
+${IconChevronDown}
+      </i>
   </a>
 
   <div class="dropdown-container">
@@ -282,6 +278,9 @@ export function createHeader({
 
 <li class="henk-header__menu-item henk-header__dropdown main-level">
   <a data-js-behavior="openSub" href="HENK" class="henk-header__menu-link henk-button--ghost henk-button">HENK
+    <i class="henk-icon">
+${IconChevronDown}
+    </i>
   </a>
 
   <div class="dropdown-container">
