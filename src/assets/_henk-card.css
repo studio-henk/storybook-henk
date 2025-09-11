@@ -4,64 +4,142 @@
   display: grid;
   justify-items: center;
   align-items: start;
+  aspect-ratio: 2/3;
+  position: relative;
+
+  .henk-card__image-link {
+    &:hover,
+    &:focus {
+      .henk-card__img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .henk-card__image-container {
+    overflow: clip;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin: 0;
+
+    .henk-card__img {
+      height: auto;
+      border-radius: 8px 8px 0 0;
+      object-fit: cover;
+      margin: 0;
+      aspect-ratio: 1/1;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .henk-card__content {
+    width: 100%;
+    padding: 16px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    /* row-gap: 8px; */
+  }
+
+  .henk-card__title {
+    --line-clamp: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 0;
+    text-align: center;
+    text-wrap: balance;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .henk-card__description {
+    --line-clamp: 1;
+    font-size: 13px;
+    line-height: 24px;
+    margin: 0;
+    text-align: center;
+    width: min(33em, 100%);
+  }
+
+  .henk-card__link--directions {
+    font-size: 13px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .henk-card__link--directions.raw-address {
+    align-items: flex-start;
+  }
+
+  .henk-card__link--directions:hover {
+    text-decoration: underline;
+  }
+
+  .henk-card__button {
+    margin-top: 24px;
+  }
+
+  picture.henk-card__picture {
+    /* aspect-ratio: 460 / 382; */
+    aspect-ratio: 2 / 3;
+    max-height: 50%;
+  }
+
+  .henk-card__store-status {
+    margin-bottom: 0;
+  }
+
+  .henk-card__store-status--open {
+    color: var(--color-ui-text-success);
+  }
+
+  .henk-card__store-status--closed {
+    color: var(--color-ui-text-danger);
+  }
+
+  .henk-card__tags {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    gap: 8px;
+  }
+
+  &.henk-card--macs {
+    background-color: white;
+    aspect-ratio: 3/4;
+    border-radius: 0;
+
+    .henk-card__image-container {
+      aspect-ratio: 3/4;
+      background-color: var(--color-background-neutral-light);
+      border-radius: 0;
+
+      .henk-card__img {
+        aspect-ratio: 2/3;
+        border-radius: 0;
+      }
+    }
+
+    .henk-card__content {
+      display: flex;
+      gap: 4px;
+      padding: 0;
+      width: 100%;
+      justify-content: space-between;
+
+      .henk-card__title,
+      .henk-card__description {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+        width: auto;
+      }
+    }
+  }
 }
 
-.henk-card .henk-card__content {
-  padding: 24px;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  row-gap: 8px;
-}
-
-.henk-card__title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-block: 0;
-}
-
-.henk-card__link--directions {
-  font-size: 13px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.henk-card__link--directions.raw-address {
-  align-items: flex-start;
-}
-
-.henk-card__link--directions:hover {
-  text-decoration: underline;
-}
-
-.henk-card__button {
-  margin-top: 24px;
-}
-
-picture.henk-card__picture {
-  /* aspect-ratio: 460 / 382; */
-  aspect-ratio: 2 / 3;
-  max-height: 50%;
-}
-
-.henk-card__img {
-  height: auto;
-  border-radius: 8px 8px 0 0;
-  object-fit: cover;
-  margin: 0;
-}
-
-.henk-card__store-status {
-  margin-bottom: 0;
-}
-
-.henk-card__store-status--open {
-  color: var(--color-ui-text-success);
-}
-
-.henk-card__store-status--closed {
-  color: var(--color-ui-text-danger);
-}

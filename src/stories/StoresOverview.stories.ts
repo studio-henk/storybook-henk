@@ -47,7 +47,7 @@ export const StoresOverview: Story = {
       caption: "",
       title: "Onze winkels",
       level: 1,
-      content: "Ontdek onze verschillende Studio HENK winkels.",
+      content: "<p>Ontdek onze verschillende Studio HENK winkels.</p>",
       alignLeft: false,
     });
 

@@ -24,7 +24,7 @@
 .henk-tag--outlined {
   color: var(--color-text-base);
   border: 1px solid var(--color-border-base);
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 
 .henk-tag--small {
