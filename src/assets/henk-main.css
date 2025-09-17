@@ -2,12 +2,12 @@
 @import "./_henk-tokens-colors-brand.css";
 @import "./_henk-tokens-colors-primitives.css";
 @import "./_henk-tokens-colors-semantic.css";
-/* @import "./_henk-tokens-colors-semantic-dark.css"; */
 
 @import "./_henk-font-face.css";
 @import "./_henk-tokens-font.css";
 @import "./_henk-tokens-size-font.css";
 @import "./_henk-tokens-weight-font.css";
+@import "./_henk-tokens-radius.css";
 
 @import "./_henk-tokens-size-width.css";
 @import "./_henk-tokens-size-spacing.css";
@@ -34,6 +34,7 @@
 @import "./_henk-footer.css";
 @import "./_henk-lister-grid.css";
 @import "./_henk-card.css";
+@import "./_henk-pagination.css";
 
 /* forms */
 @import "./_henk-form-messages.css";

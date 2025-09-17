@@ -46,7 +46,7 @@
   aspect-ratio: 2/3;
   object-fit: cover;
   margin-bottom: 0;
-  border-radius: 8px;
+  border-radius: var(--radius-2, 8px);
 }
 
 .henk-three-column-block__image-link {

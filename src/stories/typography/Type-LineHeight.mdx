@@ -1,0 +1,30 @@
+import { Meta, Typeset, Source } from "@storybook/blocks";
+
+<Meta title="Typography/LineHeight" />
+
+# Line-Height & Vertical Rhythm
+
+Line height is the vertical spacing between lines of text. It affects readability and the overall visual rhythm of your layout. In our system, we maintain a consistent vertical rhythm using spacing tokens (e.g., --space-4) to ensure text and other elements align harmoniously across the page.
+
+We expose a CSS custom property:
+
+<Source
+    language="css"
+    dark={true}
+    code={`
+  --vertical-rhythm: var(--space-4); /* 24px rhythm */
+`}
+/>
+
+You can use this to maintain consistent spacing for block-level elements:
+
+<Source
+    language="css"
+    dark={true}
+    code={`
+.someClass {
+  margin-block: var(--vertical-rhythm, 24px);
+}
+`}
+/>
+

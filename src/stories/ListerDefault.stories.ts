@@ -117,6 +117,36 @@ export const Default: Story = {
       wrapWithShopifySection(gridContainer, "shopify-section-lister"),
     );
 
+    const paginationContainer = document.createElement("div");
+    paginationContainer.className = "henk-pagination henk-section";
+    paginationContainer.innerHTML = `
+    <nav class="pagination" role="navigation" aria-label="Paginering">
+      <div class="henk-button-group henk-button-group--center">
+        <a href="#next" class="henk-button">
+          Next page
+          <i class="henk-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.29999 0.5L17.8 12L6.29999 23.5"
+                stroke="currentcolor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </i>
+        </a>
+      </div>
+    </nav>
+`;
+
+    mainContent.appendChild(paginationContainer);
+
     return createBaseLayout({ header, mainContent, footer });
   },
 };

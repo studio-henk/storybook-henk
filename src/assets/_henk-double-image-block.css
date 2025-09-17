@@ -4,7 +4,7 @@
 
 .henk-double-image-block img {
   margin-bottom: 0;
-  border-radius: 8px;
+  border-radius: var(--radius-2, 8px);
   aspect-ratio: 2/3;
   object-fit: cover;
 }
@@ -60,7 +60,7 @@
 }
 
 .henk-double-image-block__grid-item svg {
-  border-radius: 8px;
+  border-radius: var(--radius-2, 8px);
   background-color: var(--color-background-muted);
   aspect-ratio: 2 / 3;
   width: 100%;

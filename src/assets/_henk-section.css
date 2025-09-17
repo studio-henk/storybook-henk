@@ -1,8 +1,9 @@
 .henk-section {
-  padding-block: var(--space-13, 96px);
+  /* padding-block: var(--space-13, 96px); */
+  padding-block: var(--space-7, 96px);
 }
 
 .henk-section__inner {
-  width: min(var(----size-width-content), 100% - 3rem);
+  width: min(var(--size-width-content), 100% - 3rem);
   margin-inline: auto;
 }

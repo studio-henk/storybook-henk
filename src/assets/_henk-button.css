@@ -6,11 +6,12 @@
     --btn-text-hover: var(--color-text-static);
     --btn-border: var(--color-border-static);
     --btn-border-hover: var(--color-border-static);
+    --btn-border-radius: var(--radius-1);
 
     background-color: var(--btn-bg);
     color: var(--btn-text);
     border: 1px solid var(--btn-border);
-    border-radius: 4px;
+    border-radius: var(--btn-border-radius, 4px);
     cursor: pointer;
     display: inline-flex;
     justify-content: center;
@@ -70,7 +71,6 @@
     --btn-text-hover: var(--color-text-on-disabled);
     --btn-border: var(--color-border-disabled);
     --btn-border-hover: var(--color-border-disabled);
-    /* --btn-border-hover: transparent; */
 
     cursor: not-allowed;
   }

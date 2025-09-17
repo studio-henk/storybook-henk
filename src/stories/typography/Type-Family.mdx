@@ -1,0 +1,82 @@
+import { Meta, Typeset } from "@storybook/blocks";
+
+<Meta title="Typography/Family" />
+
+export const typographyDesktop = {
+    type: {
+        primary:
+            '"Haas Grot Text R Web",system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+    },
+    weight: {
+        regular: 400,
+        semibold: 500,
+        bold: 700,
+    },
+    size: {
+        xs: 10,
+        sm: 13,
+        md: 16,
+        lg: 20,
+        xl: 25,
+        xxlarge: 31,
+        xxxlarge: 39,
+        xxxxlarge: 48,
+    },
+};
+
+export const SampleText =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+# Font Family
+
+**Primary Typeface:** Neue Haas Grotesk Text (Round Dots)  
+**Web implementation:** Haas Grot Text R Web (WOFF/WOFF2)
+
+We have the following styles available:
+
+- 55 Roman  
+- 56 Italic  
+- 65 Medium  
+- 66 Medium Italic  
+- 75 Bold  
+- 76 Bold Italic  
+
+---
+
+## Specimen 
+
+<div style={{ display: 'grid' }}>
+  <p style={{ fontSize: '20px', fontFamily: '"Haas Grot Text R Web", sans-serif', fontWeight: 400, margin: 0 }}>55 Roman — The quick brown fox jumps over the lazy dog.</p>
+  <p style={{ fontSize: '20px', fontFamily: '"Haas Grot Text R Web", sans-serif', fontWeight: 400, fontStyle: 'italic', margin: 0 }}>56 Italic — The quick brown fox jumps over the lazy dog.</p>
+  <p style={{ fontSize: '20px', fontFamily: '"Haas Grot Text R Web", sans-serif', fontWeight: 500, margin: 0 }}>65 Medium — The quick brown fox jumps over the lazy dog.</p>
+  <p style={{ fontSize: '20px', fontFamily: '"Haas Grot Text R Web", sans-serif', fontWeight: 500, margin: 0, fontStyle: 'italic' }}>66 Medium Italic — The quick brown fox jumps over the lazy dog.</p>
+  <p style={{ fontSize: '20px', fontFamily: '"Haas Grot Text R Web", sans-serif', fontWeight: 700, margin: 0, }}>75 Bold — The quick brown fox jumps over the lazy dog.</p>
+  <p style={{ fontSize: '20px', fontFamily: '"Haas Grot Text R Web", sans-serif', fontWeight: 700, margin: 0, fontStyle: 'italic' }}>76 Bold Italic — The quick brown fox jumps over the lazy dog.</p>
+</div>
+
+---
+
+📄 See also: [Neue Haas Grotesk specimen PDF](./assets/Neue_Haas_Grotesk-collection.pdf)
+
+[![Neue Haas Grotesk cover](assets/Neue_Haas_Grotesk-collection-1.jpg)](assets/Neue_Haas_Grotesk-collection.pdf)
+
+## Features 
+
+<div style={{ display: 'grid', gap: '1rem' }}>
+  <p style={{ fontSize: "2rem", fontFamily: '"Haas Grot Text R Web", sans-serif', fontWeight: 400, margin: 0, fontVariantLigatures: "common-ligatures", }} > ff fi fl ffi ffl — Ligatures</p>
+<p style={{
+      fontSize: '2rem',
+      fontFamily: '"Haas Grot Text R Web", sans-serif',
+      fontWeight: 400,
+      fontVariantNumeric: 'proportional-nums',
+      margin: 0,
+    }}>0123456789 — Proportional Lining</p>
+<p style={{
+      fontSize: '2rem',
+      fontFamily: '"Haas Grot Text R Web", sans-serif',
+      fontWeight: 400,
+      fontVariantNumeric: 'tabular-nums',
+      margin: 0,
+    }}
+  >0123456789 — Tabular Lining</p>
+</div>

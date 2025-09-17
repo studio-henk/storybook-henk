@@ -3,14 +3,20 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 9px 0.75rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  line-height: 1.5;
+  /* padding: 0.3em 1.2em; */
+  padding: 0.30769231em 1.2em;
+  font-size: min(13px, 3.4cqw);
+  line-height: 1.84615385em;
   background-color: var(--color-background-tertiary);
   color: var(--color-text-static, #000);
   border: 1px solid var(--color-ui-border-transparent);
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
+
+  border-radius: var(--radius-0);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
 }
 
 .henk-tag--primary {
@@ -24,13 +30,7 @@
 .henk-tag--outlined {
   color: var(--color-text-base);
   border: 1px solid var(--color-border-base);
-  /* background-color: transparent; */
-}
-
-.henk-tag--small {
-  font-size: 0.8125em;
-  line-height: 24px;
-  padding: 3px 16px;
+  padding-block: 0.23076923em;
 }
 
 /* link */
@@ -42,4 +42,36 @@ a.henk-tag {
 a.henk-tag:focus-visible,
 a.henk-tag:hover {
   background-color: var(--color-background-primary-lighter);
+}
+
+.henk-tag--dark {
+  background-color: var(--color-background-neutral-darkest);
+  color: var(--color-text-neutral-lightest);
+  border: 1px solid var(--color-border-neutral-darkest);
+  border-radius: var(--radius-0);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.henk-tag--light {
+  background-color: var(--color-background-neutral-lightest);
+  color: var(--color-text-neutral-darkest);
+  border: 1px solid var(--color-border-neutral-darkest);
+  border-radius: var(--radius-0);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-block: 0.23076923em;
+}
+
+.henk-tag--dark a,
+.henk-tag--light a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.henk-tag--dark a:hover,
+.henk-tag--light a:hover {
+  opacity: 0.85; /* subtle hover effect */
 }

@@ -1,8 +1,5 @@
 :root {
   /*spacings*/
-  /* calc is 4/16, divided by font size root */
-  /* used in bricks for padding-brick TODO: remove */
-  /* --size-spacing-unit-base: calc(4 / var(--size-font-body) * 1rem); */
   --space-1: 0.25rem; /* 4px */
   --space-2: 0.5rem; /* 8px */
   --space-3: 1rem; /* 16px */

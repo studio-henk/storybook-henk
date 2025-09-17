@@ -1,11 +1,13 @@
 .henk-card {
+  --card-border-radius: var(--radius-2);
   background-color: var(--color-background-neutral-light);
-  border-radius: 8px;
+  border-radius: var(--card-border-radius, 8px);
   display: grid;
   justify-items: center;
   align-items: start;
   aspect-ratio: 2/3;
   position: relative;
+  container-type: inline-size;
 
   .henk-card__image-link {
     &:hover,
@@ -18,13 +20,14 @@
 
   .henk-card__image-container {
     overflow: clip;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: var(--card-border-radius, 8px);
+    border-top-right-radius: var(--card-border-radius, 8px);
     margin: 0;
 
     .henk-card__img {
       height: auto;
-      border-radius: 8px 8px 0 0;
+      border-radius: var(--card-border-radius, 8px)
+        var(--card-border-radius, 8px) 0 0;
       object-fit: cover;
       margin: 0;
       aspect-ratio: 1/1;
@@ -59,6 +62,10 @@
     margin: 0;
     text-align: center;
     width: min(33em, 100%);
+  }
+
+  .henk-card__price {
+    margin: 0;
   }
 
   .henk-card__link--directions {
@@ -101,10 +108,10 @@
 
   .henk-card__tags {
     position: absolute;
-    right: 8px;
-    top: 8px;
     display: flex;
     gap: 8px;
+    justify-content: space-between;
+    inset: 16px 16px auto 16px;
   }
 
   &.henk-card--macs {
@@ -131,7 +138,8 @@
       justify-content: space-between;
 
       .henk-card__title,
-      .henk-card__description {
+      .henk-card__description,
+      .henk-card__price {
         font-size: 13px;
         font-weight: 500;
         line-height: 24px;
@@ -142,4 +150,3 @@
     }
   }
 }
-

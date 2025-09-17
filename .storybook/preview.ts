@@ -60,6 +60,7 @@ const preview = {
             ["Size", "Line-height"],
           ],
           "Typography",
+          ["Intro", "Family", "*"],
           "Base",
           [
             "Base HTML Elements",

@@ -1,0 +1,62 @@
+@layer type.scales {
+  :root {
+    /* Default scale: Major Third 
+    * 10.24 - 12.8 - 16 - 20 - 25 - 31.25 - 39.063 - 48.828
+    * */
+    --size-font-xxxx-large-px: 48.8281;
+    --size-font-xxx-large-px: 39.063;
+    --size-font-xx-large-px: 31.25;
+    --size-font-x-large-px: 25;
+    --size-font-large-px: 20;
+    --size-font-medium-px: 16;
+    --size-font-small-px: 12.8;
+    --size-font-x-small-px: 10.24;
+
+    --font-base-px: 16;
+    --font-scale-ratio: 1.25;
+
+    &.css-pow-supported {
+      --size-font-xxxx-large: calc(
+        var(--font-base-px) * pow(1.25, 5) / 16 * 1em
+      );
+      --size-font-xxx-large: calc(
+        var(--font-base-px) * pow(1.25, 4) / 16 * 1em
+      );
+      --size-font-xx-large: calc(var(--font-base-px) * pow(1.25, 3) / 16 * 1em);
+      --size-font-x-large: calc(var(--font-base-px) * pow(1.25, 2) / 16 * 1em);
+      --size-font-large: calc(var(--font-base-px) * pow(1.25, 1) / 16 * 1em);
+      --size-font-medium: calc(var(--font-base-px) / pow(1.25, 0) / 16 * 1em);
+      --size-font-small: calc(var(--font-base-px) / pow(1.25, 1) / 16 * 1em);
+      --size-font-x-small: calc(var(--font-base-px) / pow(1.25, 2) / 16 * 1em);
+    }
+
+    &.css-pow-not-supported {
+      --size-font-xxxx-large: calc(
+        var(--font-base-px) * 1.25 * 1.25 * 1.25 * 1.25 * 1.25 / 16 * 1em
+      );
+      --size-font-xxx-large: calc(
+        var(--font-base-px) * 1.25 * 1.25 * 1.25 * 1.25 / 16 * 1em
+      );
+      --size-font-xx-large: calc(
+        var(--font-base-px) * 1.25 * 1.25 * 1.25 / 16 * 1em
+      );
+      --size-font-x-large: calc(var(--font-base-px) * 1.25 * 1.25 / 16 * 1em);
+      --size-font-large: calc(var(--font-base-px) * 1.25 / 16 * 1em);
+      --size-font-medium: calc(var(--font-base-px) / 16 * 1em);
+      --size-font-small: calc(var(--font-base-px) / 1.25 / 16 * 1em);
+      --size-font-x-small: calc(var(--font-base-px) / 1.25 / 1.25 / 16 * 1em);
+    }
+
+    /* Alternate scale (custom) */
+    &[data-font-scale="custom"] {
+      --size-font-xxxx-large: 64px;
+      --size-font-xxx-large: 48px;
+      --size-font-xx-large: 32px;
+      --size-font-x-large: 24px;
+      --size-font-large: 20px;
+      --size-font-medium: 16px;
+      --size-font-small: 14px;
+      --size-font-x-small: 12px;
+    }
+  }
+}

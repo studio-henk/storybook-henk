@@ -3,7 +3,7 @@
   background-color: var(--color-background-base);
   color: currentColor;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-2, 8px);
   border: 1px solid var(--_infobox-border-color);
 
   & .henk-icon {

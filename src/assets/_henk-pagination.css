@@ -1,0 +1,4 @@
+.henk-pagination {
+  width: min(var(--size-width-content, 1140px), 100% - 3rem);
+  margin-inline: auto;
+}

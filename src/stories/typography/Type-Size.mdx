@@ -1,0 +1,103 @@
+import { Meta, Typeset, Source } from "@storybook/blocks";
+
+<Meta title="Typography/Size" />
+
+export const typographyDesktop = {
+    type: {
+        primary:
+            '"Haas Grot Text R Web",system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+    },
+    weight: {
+        regular: 400,
+        semibold: 500,
+        bold: 700,
+    },
+    size: {
+        xs: 10,
+        sm: 13,
+        md: 16,
+        lg: 20,
+        xl: 25,
+        xxlarge: 31,
+        xxxlarge: 39,
+        xxxxlarge: 48,
+    },
+};
+
+export const SampleText =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+# Font Size
+
+Sizes were derived from a modular scale called Major Third and uses the 1.25 multiplier.
+See [Modular Scale](https://www.modularscale.com/?16&px&1.25).
+
+## Scale 
+
+<Typeset
+    fontSizes={[
+        Number(typographyDesktop.size.xxxxlarge),
+        Number(typographyDesktop.size.xxxlarge),
+        Number(typographyDesktop.size.xxlarge),
+        Number(typographyDesktop.size.xl),
+        Number(typographyDesktop.size.lg),
+        Number(typographyDesktop.size.md),
+        Number(typographyDesktop.size.sm),
+        Number(typographyDesktop.size.xs),
+    ]}
+    fontWeight={typographyDesktop.weight.regular}
+    sampleText={SampleText}
+    fontFamily={typographyDesktop.type.primary}
+/>
+
+
+<Source
+    language="css"
+    dark={true}
+    code={`
+.fs-display {
+  font-size: var(--size-font-xxxx-large);
+  line-height: 72px;
+}
+
+.fs-xxxx-large {
+  font-size: var(--size-font-xxxx-large, 49px);
+  line-height: 72px;
+}
+
+.fs-xxx-large {
+  font-size: var(--size-font-xxx-large, 39px);
+  line-height: 48px;
+}
+
+.fs-xx-large {
+  font-size: var(--size-font-xx-large, 31px);
+  line-height: 40px;
+}
+
+.fs-x-large {
+  font-size: var(--size-font-x-large, 25px);
+  line-height: 32px;
+}
+
+.fs-large {
+  font-size: var(--size-font-large, 20px);
+  line-height: 24px;
+}
+
+.fs-medium {
+  font-size: var(--size-font-medium, 16px);
+  line-height: 24px;
+}
+
+.fs-small {
+  font-size: var(--size-font-small, 13px);
+  line-height: 24px;
+}
+
+.fs-x-small {
+  font-size: var(--size-font-x-small, 10px);
+  line-height: 24px;
+}
+`}
+/>

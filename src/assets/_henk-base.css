@@ -22,6 +22,8 @@
     font-feature-settings:
       "pnum" on,
       "lnum" on;
+    font-variant-numeric: proportional-nums;
+    font-variant-ligatures: common-ligatures;
     font-size: 100%;
     height: 100%;
     letter-spacing: 0;

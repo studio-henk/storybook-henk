@@ -2,85 +2,52 @@ import { Meta, Typeset } from "@storybook/blocks";
 
 <Meta title="Typography/Intro" />
 
-export const typographyDesktop = {
-    type: {
-        primary:
-            '"Haas Grot Text R Web",system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
-    },
-    weight: {
-        regular: 400,
-        semibold: 500,
-        bold: 700,
-    },
-    size: {
-        xs: 10.24,
-        sm: 12.8,
-        md: 16,
-        lg: 20,
-        xl: 25,
-        xxlarge: 31.25,
-        xxxlarge: 39.063,
-        xxxxlarge: 48.8281,
-    },
-};
-
-export const SampleText =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-
 # Typography
 
-## Font-family
+Typography is a key part of our design system. It defines how we present content consistently across products, ensuring **clarity, hierarchy, and brand identity**.
 
-Haas Grot Text R Web
+---
 
-## Size
+## Typeface
 
-Sizes were derived from a modular scale called Major Third and uses the 1.25 multiplier.
-See [Modular Scale](https://www.modularscale.com/?16&px&1.25).
+Our primary typeface is:
 
-### Sizes
+**Neue Haas Grotesk Text (Round Dots)**  
+Available in the following styles:  
 
-<Typeset
-    fontSizes={[
-        Number(typographyDesktop.size.xxxxlarge),
-        Number(typographyDesktop.size.xxxlarge),
-        Number(typographyDesktop.size.xxlarge),
-        Number(typographyDesktop.size.xl),
-        Number(typographyDesktop.size.lg),
-        Number(typographyDesktop.size.md),
-        Number(typographyDesktop.size.sm),
-        Number(typographyDesktop.size.xs),
-    ]}
-    fontWeight={typographyDesktop.weight.regular}
-    sampleText={SampleText}
-    fontFamily={typographyDesktop.type.primary}
-/>
+- 55 Roman  
+- 56 Italic  
+- 65 Medium  
+- 66 Medium Italic  
+- 75 Bold  
+- 76 Bold Italic  
 
-## Font Weight
+> These styles are provided as WOFF files for web usage.  
+> Italic styles exist, but should be used sparingly for emphasis only.
 
-### Roman / 400 (regular)
+---
 
-<Typeset
-    fontSizes={[Number(typographyDesktop.size.xl)]}
-    fontWeight={typographyDesktop.weight.regular}
-    sampleText={SampleText}
-    fontFamily={typographyDesktop.type.primary}
-/>
+## Type Scale
 
-### Medium / 500
+We use a **Major Third** scale as the default, with a custom scale available as an alternative.  
+This provides a balanced progression from small captions to large headings.
 
-<Typeset
-    fontSizes={[Number(typographyDesktop.size.xl)]}
-    fontWeight={typographyDesktop.weight.semibold}
-    sampleText={SampleText}
-    fontFamily={typographyDesktop.type.primary}
-/>
+👉 See [Size](?path=/docs/typography-size--docs) for details.
 
-### Bold / 700
+---
 
-<Typeset
-    fontSizes={[Number(typographyDesktop.size.xl)]}
-    fontWeight={typographyDesktop.weight.bold}
-    sampleText={SampleText}
-    fontFamily={typographyDesktop.type.primary}
-/>
+## Principles
+
+- **Consistency** → Use defined tokens for all typography.  
+- **Hierarchy** → Communicate structure with font size, weight, and spacing.  
+- **Readability** → Base font size is 16px, with line-height ~1.4–1.6.  
+- **Restraint** → Stick to Roman, Medium, and Bold for most UI; italics are the exception.
+
+---
+
+## Next steps
+
+- [Family](?path=/docs/typography-family--docs) → Typeface overview  
+- [Size](?path=/docs/typography-size--docs) → Type scale & tokens  
+- [Weight](?path=/docs/typography-weight--docs) → Font weights in use  
+- [LineHeight](?path=/docs/typography-lineheight--docs) → Guidelines for vertical rhythm  

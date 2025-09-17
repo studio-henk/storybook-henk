@@ -133,8 +133,8 @@ export const VariantMacs = () => {
       title: "Base stool 65",
       description: "Vanaf € 379",
       tags: [
-        { label: "New", variant: "primary", size: "small" },
-        { label: "Fast delivery", variant: "outlined", size: "small" },
+        { label: "New", variant: "dark", size: "small" },
+        { label: "Fast delivery", variant: "light", size: "small" },
       ],
       variant: "macs",
     },

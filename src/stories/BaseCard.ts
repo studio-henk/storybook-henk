@@ -42,7 +42,7 @@ export function createBaseCard({
 <div class="${classes.join(" ")}">
       <a href="${href}" class="henk-card__image-link">
         <figure class="henk-card__image-container">
-          <img class="henk-card__img" src="${imageSrc}" alt="${imageAlt}">
+          <img class="henk-card__img" src="${imageSrc}" alt="${imageAlt}" width="1032" height="1032">
         </figure>
       </a>
       <div class="henk-card__content">
