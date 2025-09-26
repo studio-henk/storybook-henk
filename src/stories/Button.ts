@@ -1,3 +1,5 @@
+import "../assets/components/_henk-button.css";
+
 export type IconPosition = "left" | "right";
 export type IconSize = "small" | "medium" | "large";
 export type ButtonElement = "a" | "button" | "span";

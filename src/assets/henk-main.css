@@ -1,17 +1,3 @@
-@import "./_henk-properties.css";
-@import "./_henk-tokens-colors-brand.css";
-@import "./_henk-tokens-colors-primitives.css";
-@import "./_henk-tokens-colors-semantic.css";
-
-@import "./_henk-font-face.css";
-@import "./_henk-tokens-font.css";
-@import "./_henk-tokens-size-font.css";
-@import "./_henk-tokens-weight-font.css";
-@import "./_henk-tokens-radius.css";
-
-@import "./_henk-tokens-size-width.css";
-@import "./_henk-tokens-size-spacing.css";
-
 @import "./_henk-base.css";
 @import "./_henk-dl.css";
 @import "./_henk-helpers.css";

@@ -1,0 +1,24 @@
+sup.henk-notification-badge {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  background: var(--color-success);
+  color: white;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  font-size: 10px;
+  line-height: 16px;
+  width: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+a:has(.henk-notification-badge) {
+  &:hover {
+    sup {
+      width: 20px;
+    }
+  }
+}

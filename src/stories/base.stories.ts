@@ -44,6 +44,12 @@ export const Lists: Story = {
         <dt>Term</dt>
         <dd>Description</dd>
       </dl>
+      <dl>
+        <dt>Term</dt>
+        <dd>Description</dd>
+        <dt>Term</dt>
+        <dd>Description</dd>
+      </dl>
     </section>
   `,
 };

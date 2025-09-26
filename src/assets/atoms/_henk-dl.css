@@ -1,4 +1,5 @@
 .henk-dl {
+  background-color: red;
   dd + dt {
     margin-block-start: 1.5rem;
   }

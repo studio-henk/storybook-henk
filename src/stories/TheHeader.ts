@@ -2,14 +2,17 @@ import type { LogoProps } from "./Logo";
 import { createLogo } from "./Logo";
 import IconSearch from "@assets/icons/icon-search.svg?raw";
 import IconBag from "@assets/icons/icon-bag.svg?raw";
-import IconChevronDown from "@assets/icons/icon-chevron-down.svg?raw";
-import IconClose from "@assets/icons/icon-close.svg?raw";
+// import IconChevronDown from "@assets/icons/icon-chevron-down.svg?raw";
+// import IconClose from "@assets/icons/icon-close.svg?raw";
 // import { initTheHeaderMenu } from "@scripts/TheHeaderMenu";
+import "../assets/_henk-header.css";
+import "../assets/_henk-header-mobile.css";
 
 import IconHamburger from "@assets/icons/icon-hamburger.svg?raw";
-import "../scripts/TheHeaderMenu.ts";
+import "../scripts/henk-desktop-menu.ts";
 import "../scripts/henk-mobile-menu.ts";
 
+import "../assets/components/_henk-button.css";
 export interface HeaderProps {
   logoProps?: LogoProps;
   title?: string;
@@ -46,15 +49,6 @@ export function createHeader({
 
   headerInner.appendChild(hamburgerButton);
 
-  if (logoProps) {
-    const logo = createLogo(logoProps);
-    headerInner.appendChild(logo);
-  } else {
-    const h1 = document.createElement("h1");
-    h1.innerText = title;
-    headerInner.appendChild(h1);
-  }
-
   // add menu list - hardcoded
   const headerMenu = document.createElement("ul");
   headerMenu.className = "henk-header__menu";
@@ -62,16 +56,16 @@ export function createHeader({
   // add links level 1
   const level1Links = `
 <li class="henk-header__menu-item henk-header__dropdown main-level">
-  <a data-js-behavior="openSub" href="shop" class="henk-header__menu-link henk-button henk-button--ghost">Shop
-  </a>
 
+<details name="main-nav">
+<summary >Shop</summary>
   <div class="dropdown-container">
 
     <div class="dropdown-container__inner">
     <ul class="dropdown">
       <li class="sub-level left-col">
         <a href="#" class="column__heading">Highlights</a>
-        <ul>
+        <ul class="dropdown__highlights">
           <li><a href="#">New in</a></li>
           <li><a href="#">Second Chance</a></li>
           <li><a href="#">Affordable Choices</a></li>
@@ -90,22 +84,22 @@ export function createHeader({
         <a class="column__heading" href="/collections/tables">Tafels</a>
           <ul>
             <li>
-                <a href="/collections/tables">
+                <a  href="/collections/tables">
                     Eettafels
                 </a>
             </li>
             <li>
-                <a href="/collections/tables">
+                <a  href="/collections/tables">
                     Salontafels
                 </a>
             </li>
             <li>
-                <a href="/collections/tables/Office">
+                <a  href="/collections/tables/Office">
                     Bureaus
                 </a>
             </li>
             <li>
-                <a href="/collections/tables/Bistro">
+                <a  href="/collections/tables/Bistro">
                     Bistrotafels
                 </a>
             </li>
@@ -117,43 +111,43 @@ export function createHeader({
     <div class="column">
         <a class="column__heading" href="/collections/dining-chairs-1">Zitmeubels</a>
         <ul>
-            
+
                 <li>
-                    <a href="/collections/dining-chairs-1">
+                    <a  href="/collections/dining-chairs-1">
                         Eetkamerstoelen
                     </a>
                 </li>
-            
+
                 <li>
-                    <a href="#">
+                    <a  href="#">
                         Zitbanken
                     </a>
                 </li>
-            
+
                 <li>
-                    <a href="#">
+                    <a  href="#">
                         Fauteuils
                     </a>
                 </li>
-            
+
                 <li>
-                    <a href="#">
+                    <a  href="#">
                         Barkrukken
                     </a>
                 </li>
-            
+
                 <li>
-                    <a href="/collections/dining-benches">
+                    <a  href="/collections/dining-benches">
                         Eetkamerbanken
                     </a>
                 </li>
-            
+
                 <li>
-                    <a href="#">
+                    <a  href="#">
                         Poefs
                     </a>
                 </li>
-            
+
         </ul>
     </div>
       <!--
@@ -162,37 +156,37 @@ export function createHeader({
       <div class="column">
           <a class="column__heading" href="/collections">Opbergen</a>
           <ul>
-              
+
                   <li>
-                      <a href="/collections">
+                      <a  href="/collections">
                           Wandplanken
                       </a>
                   </li>
-              
+
                   <li>
-                      <a href="/collections/tables">
+                      <a  href="/collections/tables">
                           Dressoirs
                       </a>
                   </li>
-              
+
                   <li>
-                      <a href="/collections">
+                      <a  href="/collections">
                           TV-meubels
                       </a>
                   </li>
-              
+
                   <li>
-                      <a href="/">
+                      <a  href="/">
                           Vitrinekasten
                       </a>
                   </li>
-              
+
                   <li>
-                      <a href="#">
+                      <a  href="#">
                           Boekenkasten
                       </a>
                   </li>
-              
+
           </ul>
       </div>
     <!--
@@ -201,25 +195,25 @@ export function createHeader({
     <div class="column">
         <a class="column__heading" href="/collections">Accessoires</a>
         <ul>
-            
+
                 <li>
-                    <a href="/">
+                    <a  href="/">
                         Verlichting
                     </a>
                 </li>
-            
+
                 <li>
-                    <a href="/pages/test-page">
+                    <a  href="/pages/test-page">
                         Vazen
                     </a>
                 </li>
-            
+
                 <li>
-                    <a href="/">
+                    <a  href="/">
                         HENK merchandise
                     </a>
                 </li>
-            
+
         </ul>
     </div>
     <!--
@@ -229,48 +223,48 @@ export function createHeader({
       </ul>
 </div>
   </div>
+</details>
 </li>
 
 <li class="henk-header__menu-item henk-header__dropdown main-level">
-  <a data-js-behavior="openSub" href="ser" class="henk-header__menu-link henk-button henk-button--ghost">Service
-  </a>
-
+<details name="main-nav">
+<summary>Service</summary>
   <div class="dropdown-container">
     <div class="dropdown-container__inner">
 
     <ul class="dropdown">
       <li class="sub-level left-col">
         <span class="column__heading">Highlights</span>
-        <ul>
-          <li><a href="#">New in</a></li>
+        <ul class="dropdown__highlights">
+          <li><a  href="#">New in</a></li>
         </ul>
       </li>
       <li class="sub-level right-col">
         <div class="column">
-            <a class="column__heading" href="/collections/tables">Service</a>
+            <a  class="column__heading" href="/collections/tables">Service</a>
             <ul>
               <li>
-                  <a href="/collections/tables">
+                  <a  href="/collections/tables">
                       Contact
                   </a>
               </li>
               <li>
-                  <a href="/collections/tables">
+                  <a  href="/collections/tables">
                       FAQ
                   </a>
               </li>
               <li>
-                  <a href="/collections/tables/Office">
+                  <a  href="/collections/tables/Office">
                       Interieuradvies
                   </a>
               </li>
               <li>
-                  <a href="/collections/tables/Bistro">
+                  <a  href="/collections/tables/Bistro">
                       Reparaties en retouren
                   </a>
               </li>
               <li>
-                  <a href="/collections/tables/Bistro">
+                  <a  href="/collections/tables/Bistro">
                       Materialen en onderhoud
                   </a>
               </li>
@@ -278,48 +272,49 @@ export function createHeader({
         </div>
     </div>
   </div>
+</details>
 </li>
 
 <li class="henk-header__menu-item henk-header__dropdown main-level">
-  <a data-js-behavior="openSub" href="HENK" class="henk-header__menu-link henk-button--ghost henk-button">HENK
-  </a>
-
+<details name="main-nav">
+<summary>HENK</summary>
   <div class="dropdown-container">
 
     <div class="dropdown-container__inner">
       <ul class="dropdown">
         <li class="sub-level left-col">
           <span class="column__heading">Our Stores</span>
-          <ul>
-            <li><a href="#">Amsterdam</a></li>
-            <li><a href="#">Antwerpen</a></li>
-            <li><a href="#">Utrecht</a></li>
-            <li><a href="#">Rotterdam</a></li>
-            <li><a href="#">Haarlem</a></li>
+          <ul class="dropdown__highlights">
+            <li><a  href="#">Amsterdam</a></li>
+            <li><a  href="#">Antwerpen</a></li>
+            <li><a  href="#">Utrecht</a></li>
+            <li><a  href="#">Rotterdam</a></li>
+            <li><a  href="#">Haarlem</a></li>
           </ul>
         </li>
         <li class="sub-level right-col">
-                                    
+
           <div class="column">
-            <a href="#" class="column__heading">HENK</a>
+            <a  href="#" class="column__heading">HENK</a>
             <ul>
               <li>
-                  <a href="#">HENK's verhaal</a>
+                  <a  href="#">HENK's verhaal</a>
               </li>
               <li>
-                  <a href="#">HENK at home</a>
+                  <a  href="#">HENK at home</a>
               </li>
               <li>
-                  <a href="#">Werken bij HENK</a>
+                  <a  href="#">Werken bij HENK</a>
               </li>
             </ul>
           </div>
-            
+
         </li>
       </ul>
 
     </div>
   </div>
+</details>
 </li>
 `;
 
@@ -328,14 +323,9 @@ export function createHeader({
   const cartBubbleHtml =
     cartCount > 0
       ? `
-        <div class="cart-count-bubble cart__badge">
-          ${
-            cartCount < 100
-              ? `<span aria-hidden="true">${cartCount}</span>`
-              : ""
-          }
+          ${cartCount < 100 ? `<sup class="henk-notification-badge">${cartCount}</sup>` : ""}
           <span class="visually-hidden">${cartCount} items in cart</span>
-        </div>`
+        `
       : "";
 
   // util nav
@@ -343,44 +333,41 @@ export function createHeader({
 <div class="henk-header__utils" data-js-utils>
 
   <div class="henk-localise">
-    <div class="henk-popover henk-popover--lang">
-      <button
-        id="lang-button"
-        popovertarget="henk-lang-popover"
-        class="henk-button henk-button--small henk-button--ghost"
-aria-controls="henk-lang-popover"
-aria-expanded="false"
- data-state="closed"
-data-js-expand
-      >
-        English
-    <i class="henk-icon">
-${IconChevronDown}
-    </i>
-      </button>
-      <div data-js-popover popover="" id="henk-lang-popover" anchor="lang-button" role="menu">
-        <ul id="lang-options" class="henk-list henk-list--no-bullets">
-          <li>
-            <button
-              type="button"
-              value="nl"
-              class="henk-button henk-button--ghost"
-title="Switch to Nederlands"
-            >
-              Nederlands
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-    <a class="henk-button henk-button--small henk-button--ghost henk-header__utils-link header__utils-link--search" href="search" aria-label="Search">
+<details class="henk-localise__details">
+          <summary>
+            English
+          </summary>
+          <div class="henk-localise__content"><form method="post" action="/en/localization" id="localization_form" accept-charset="UTF-8" class="shopify-localization-form" enctype="multipart/form-data"><input type="hidden" name="form_type" value="localization"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="return_to" value="/en/cart?_fd=0&amp;pb=0"><input type="hidden" name="return_to" value="/en/cart">
+              <ul class="henk-list henk-list--no-bullets">
+
+
+                    <li>
+                      <button type="submit" name="locale_code" value="nl" class="henk-button henk-button--ghost" title="Switch to Nederlands">
+                        Nederlands
+                      </button>
+                    </li>
+
+
+
+
+
+                    <li>
+                      <button type="submit" name="locale_code" value="de" class="henk-button henk-button--ghost" title="Switch to Deutsch">
+                        Deutsch
+                      </button>
+                    </li>
+
+
+              </ul></form></div>
+        </details>
+</div>
+    <!--<a class="henk-button henk-button--small henk-button--ghost henk-header__utils-link header__utils-link--search" href="search" aria-label="Search">
       <i class="henk-icon icon--only">
         ${IconSearch}
       </i>
-    </a>
-    <a class="henk-button henk-button--ghost henk-button--small header__utils-link header__utils-link--cart" href="/" aria-label="Cart">
-      <i class="henk-icon icon--small icon--only">
+    </a>-->
+    <a  class="henk-button henk-button--ghost henk-button--smallx henk-header__utils-item henk-header__utils-item--cart" href="/" aria-label="Cart">
+      <i class="henk-icon icon--only">
         ${IconBag}
       </i>
 ${cartBubbleHtml}
@@ -390,11 +377,18 @@ ${cartBubbleHtml}
 
   // add to inner div
   headerInner.appendChild(headerMenu);
+
+  if (logoProps) {
+    const logo = createLogo(logoProps);
+    logo.classList.add("henk-header__logo");
+    headerInner.appendChild(logo);
+  } else {
+    const h1 = document.createElement("h1");
+    h1.innerText = title;
+    headerInner.appendChild(h1);
+  }
   headerInner.insertAdjacentHTML("beforeend", headerUtils);
   header.appendChild(headerInner);
-
-  // Init menu JS immediately so Storybook works
-  // initTheHeaderMenu(header);
 
   return header;
 }

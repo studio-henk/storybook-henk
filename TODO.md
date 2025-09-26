@@ -1,14 +1,16 @@
 # TODO 
 
-- color-primary-dark ?
-- palette page ?
-- light mode all 
-  - base 
-    - html text elements like p, dl, ul, ol, etc 
-    - form elements 
-- css to shopify 
-  - how to with variables?
-  - focus on footer?
+- [ ] search if expand.js is used
 
 
-- figure out storybook theming, dark mode.
+## Header
+
+- [ ] mobile
+  - [ ] hamburger button via js
+- [ ] responsive
+- [ ] column width when 4?
+- [ ] add search back
+
+## lang selector 
+- [ ] close on click outside?
+- [ ] close on esc?

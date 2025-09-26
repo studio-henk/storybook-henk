@@ -1,5 +1,8 @@
-
-const icons = import.meta.glob("../assets/icons/*.svg", { as: "raw", eager: true });
+import "../assets/atoms/_henk-icon.css";
+const icons = import.meta.glob("../assets/icons/*.svg", {
+  as: "raw",
+  eager: true,
+});
 
 interface IconOptions {
   name: string; // e.g. "icon-arrow-left"
@@ -10,9 +13,11 @@ interface IconOptions {
 export function Icon({
   name,
   size = "large",
-  className = ""
+  className = "",
 }: IconOptions): HTMLElement {
-  const matchKey = Object.keys(icons).find(key => key.endsWith(`${name}.svg`));
+  const matchKey = Object.keys(icons).find((key) =>
+    key.endsWith(`${name}.svg`),
+  );
   if (!matchKey) {
     console.warn(`Icon "${name}" not found`);
     return document.createElement("span");

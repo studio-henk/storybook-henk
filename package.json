@@ -13,8 +13,8 @@
     "watch:js": "tsc -p tsconfig.scripts.json --watch",
     "build:wc": "vite build && cp -r dist/assets/* public/assets/",
     "check:browsers": "npx browserslist",
-    "css:dev": "NODE_ENV=development postcss src/assets/henk-main.css -o public/assets/henk-main.css --no-map",
-    "css:prod": "NODE_ENV=production postcss src/assets/henk-main.css -o public/assets/henk-main.min.css",
+    "css:dev": "NODE_ENV=development node build-css.js",
+    "css:prod": "NODE_ENV=production node build-css.js",
     "watch:css": "nodemon -e css -w src/assets --ignore public/assets --exec \"npm run css:dev && npm run css:prod\""
   },
   "author": "nh",

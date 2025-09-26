@@ -5,10 +5,12 @@
 //   BADGE_LOCATION,
 // } from "@geometricpanda/storybook-addon-badges";
 // import '../src/assets/henk-main.css';
-import "../src/assets/henk-main.dark.css";
+// import "../public/assets/henk-tokens.css";
+// import "../src/assets/henk-main.dark.css";
+// import "../public/assets/henk-base.css";
 
 import "../src/scripts/henk-expand-button.ts";
-import "../src/scripts/henk-popover-language-button-sync.ts";
+// import "../src/scripts/henk-popover-language-button-sync.ts";
 
 import { DocsContainer } from "@storybook/addon-docs";
 

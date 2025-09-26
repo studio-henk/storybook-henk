@@ -1,0 +1,142 @@
+.henk-button {
+  --btn-bg: var(--color-background-tertiary);
+  --btn-bg-hover: var(--color-background-tertiary-dark);
+  --btn-text: var(--color-text-static);
+  --btn-text-hover: var(--color-text-static);
+  --btn-border: var(--color-border-static);
+  --btn-border-hover: var(--color-border-static);
+  --btn-border-radius: var(--radius-1);
+
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--btn-border);
+  border-radius: var(--btn-border-radius, 4px);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  line-height: 1.5;
+  padding: 0.5625em 1em;
+  text-decoration: none;
+  text-underline-offset: 0;
+  font-family: var(--font-body, sans-serif), sans-serif;
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold, 500);
+  text-align: center;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+@media screen and (max-width: 321px) {
+  .henk-button {
+    padding-inline: 16px;
+  }
+}
+
+.henk-button:hover,
+a:hover span.henk-button {
+  background-color: var(--btn-bg-hover);
+  color: var(--btn-text-hover);
+  border-color: var(--btn-border-hover);
+  text-underline-offset: 0;
+}
+
+/* Variants */
+.henk-button--primary {
+  --btn-bg: var(--color-background-primary-light);
+}
+
+.henk-button--primary:hover {
+  --btn-bg-hover: var(--color-background-primary);
+}
+
+.henk-button--secondary {
+  --btn-bg: var(--color-background-secondary);
+
+  &:hover {
+    --btn-bg-hover: var(--color-background-secondary-dark);
+  }
+}
+
+/* Disabled state */
+.henk-button[disabled],
+.henk-button[aria-disabled="true"] {
+  --btn-bg: var(--color-background-disabled);
+  --btn-bg-hover: var(--color-background-disabled);
+  --btn-text: var(--color-text-on-disabled);
+  --btn-text-hover: var(--color-text-on-disabled);
+  --btn-border: var(--color-border-disabled);
+  --btn-border-hover: var(--color-border-disabled);
+
+  cursor: not-allowed;
+}
+
+.henk-button[disabled]:hover,
+.henk-button[aria-disabled="true"]:hover {
+  --btn-border-hover: var(--color-border-disabled);
+}
+
+/* Size modifiers */
+.henk-button--small {
+  font-size: 0.8125em;
+  line-height: 1.84615385em;
+  padding: 3px 16px;
+}
+
+/* Ghost variant (minimal styling) */
+.henk-button--ghost {
+  --btn-bg: transparent;
+  --btn-text: var(--color-text-base);
+  --btn-border: transparent;
+  --btn-bg-hover: transparent;
+  --btn-text-hover: var(--color-text-primary);
+  --btn-border-hover: transparent;
+  padding-inline: 0.25em;
+  border-width: 0;
+}
+
+.henk-button .henk-icon {
+  font-size: 12px;
+}
+
+.henk-button .henk-icon svg {
+  width: 1em;
+  height: 1em;
+}
+
+.henk-button.henk-button--small .henk-icon {
+  font-size: 10px;
+}
+
+.henk-button .henk-icon.icon--only {
+  font-size: 24px;
+}
+
+.henk-button.henk-button--small .henk-icon.icon--only {
+  font-size: 16px;
+}
+
+.henk-button:has(.icon--only) {
+  padding-inline: 9px;
+}
+
+.henk-button.henk-button--small:has(.icon--only) {
+  padding-block: 7px;
+  padding-inline: 7px;
+}
+
+.henk-button .henk-icon:has(#chevron-down) {
+  transform: translateY(1px);
+}
+
+/* state */
+.henk-button[data-state="open"] #chevron-down {
+  transform: rotate(180deg);
+}
+
+.henk-button:popover-open .henk-icon #chevron-down {
+  transform: rotate(180deg);
+}

@@ -1,10 +1,8 @@
-@layer components.button {
-  /* Dark mode adjustments */
-  [data-theme="dark"] {
-  }
+/* Dark mode adjustments */
+[data-theme="dark"] {
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-    }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
   }
 }

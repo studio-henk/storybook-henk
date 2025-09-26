@@ -26,8 +26,19 @@
     closeButton.setAttribute("aria-label", "Close menu");
     closeButton.innerHTML = `
       <i class="henk-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M23.5 0.5L0.5 23.5M0.5 0.5L23.5 23.5" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round"></path>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M23.5 0.5L0.5 23.5M0.5 0.5L23.5 23.5"
+            stroke="currentcolor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
         </svg>
       </i>
       CLOSE
@@ -122,6 +133,7 @@
     }
 
     function init() {
+      // alert("hello");
       if (!header) return;
       header
         .querySelectorAll<HTMLElement>(selectors.openButton)

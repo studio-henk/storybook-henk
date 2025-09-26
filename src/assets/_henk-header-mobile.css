@@ -1,0 +1,205 @@
+/* mobile */
+
+@media screen and (max-width: 768px) {
+  header.henk-header {
+    .henk-header__inner {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: space-between;
+      align-items: center;
+
+      width: min(var(--size-width-content, 1140px), 100% - 3rem);
+      margin-inline: auto;
+
+      &::before {
+        opacity: 0;
+        content: "";
+        background-color: rgba(255, 255, 255, 0.3);
+        width: 100%;
+        height: 100svh;
+        position: fixed;
+        inset: 0;
+        backdrop-filter: blur(24px);
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+    }
+
+    .henk-header__menu {
+      background-color: pink;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      line-height: 24px;
+      gap: 8px;
+      z-index: 10;
+
+      summary,
+      .column__heading {
+        display: flex;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      ul,
+      ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+        letter-spacing: normal;
+      }
+    }
+
+    .henk-header__logo {
+      z-index: 10;
+    }
+
+    .dropdown-container__inner {
+      width: auto;
+      padding-top: 0;
+    }
+
+    .dropdown {
+      .dropdown__highlights {
+        line-height: 24px;
+
+        a {
+          font-size: unset;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .henk-localise {
+      display: none;
+    }
+
+    .henk-header__utils-item--cart {
+      position: relative;
+      padding: 0;
+    }
+  }
+
+  /* closed */
+  header.henk-header[data-state="closed"] {
+    background-color: yellow;
+
+    .henk-header__inner::before {
+      opacity: 0;
+      pointer-events: none; /* prevent blocking taps when hidden */
+    }
+
+    .henk-header__menu {
+      display: none;
+    }
+
+    button[data-js-mobile-menu] {
+      display: flex;
+      justify-self: start;
+    }
+
+    /* [data-state="open"] .henk-header__menu { */
+    /*   display: flex; */
+    /* } */
+  }
+
+  /* open */
+  header.henk-header[data-state="open"] {
+    .henk-header__inner {
+      height: 100svh;
+      /* align-items: start; */
+      grid-template-rows: 48px auto;
+    }
+
+    .henk-header__inner::before {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    button[data-js-mobile-menu] {
+      display: none;
+    }
+
+    .henk-header__menu {
+      grid-column: 1/3;
+      grid-row: 2;
+      align-self: start;
+    }
+
+    .henk-button.close-menu {
+      z-index: 10;
+      justify-self: start;
+    }
+
+    .dropdown-container {
+      padding-block-start: 48px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-top: 1px solid var(--color-border-muted, #ccc);
+      /* height: calc(100% - 72px - 48px - 275px); */
+    }
+
+    .dropdown-container__inner {
+      width: min(1140px, 100% - 3rem);
+      margin-inline: auto;
+    }
+
+    .dropdown {
+      overflow: auto;
+      height: calc(100svh - 72px - 48px - 16px);
+
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 24px;
+    }
+
+    .dropdown .sub-level.right-col {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* @media screen and (width >= 768px) { */
+/*   [data-js-mobile-menu] { */
+/*     background-color: yellow; */
+/*     display: none; */
+/*   } */
+/**/
+/*   .henk-localise, */
+/*   .henk-header__menu { */
+/*     display: flex; */
+/*   } */
+/**/
+/*   .dropdown-container .dropdown { */
+/*     display: grid; */
+/*     grid-template-columns: 1fr 2fr; */
+/*     padding-top: 3px; */
+/*   } */
+/**/
+/*   .left-col { */
+/*     min-width: 255px; */
+/*   } */
+/**/
+/*   .left-col a:not(.column__heading) { */
+/*     font-size: 25px; */
+/*     line-height: 48px; */
+/*     font-weight: 500; */
+/*   } */
+/**/
+/*   .right-col { */
+/*     display: grid; */
+/*     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); */
+/*     gap: 1.5rem; */
+/*   } */
+/* } */

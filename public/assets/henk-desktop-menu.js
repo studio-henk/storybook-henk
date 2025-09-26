@@ -7,10 +7,6 @@
             return null;
         const selectors = {
             mainLevel: ".main-level",
-            openClass: "open",
-            openingClass: "opening",
-            closingClass: "closing",
-            openButton: '[data-js-behavior="openSub"]',
             utils: "[data-js-utils]",
             html: htmlElement,
         };
@@ -44,64 +40,66 @@
         closeButton.style.display = "none"; // hidden by default
         // Insert after utils
         utils === null || utils === void 0 ? void 0 : utils.insertAdjacentElement("afterend", closeButton);
-        function toggleHeaderSubmenuState(isOpen) {
-            if (!header)
-                return;
-            header.classList.toggle("henk-header--is-open", isOpen);
-            closeButton.style.display = isOpen ? "flex" : "none";
+        let removeTrap = null;
+        function trapMenuTabbing() {
+            const menuDetails = header === null || header === void 0 ? void 0 : header.querySelector("details[name='main-nav']");
+            if (!menuDetails)
+                return null;
+            const firstFocusable = menuDetails.querySelector("summary"); // first menu item
+            const lastFocusable = closeButton;
+            if (!firstFocusable || !lastFocusable)
+                return null;
+            const keyListener = (e) => {
+                if (e.key !== "Tab")
+                    return;
+                if (!e.shiftKey && document.activeElement === lastFocusable) {
+                    e.preventDefault();
+                    firstFocusable.focus();
+                }
+                else if (e.shiftKey && document.activeElement === firstFocusable) {
+                    e.preventDefault();
+                    lastFocusable.focus();
+                }
+            };
+            header === null || header === void 0 ? void 0 : header.addEventListener("keydown", keyListener);
+            return () => {
+                header === null || header === void 0 ? void 0 : header.removeEventListener("keydown", keyListener);
+            };
         }
         function toggleUtils(hidden) {
             if (!utils)
                 return;
             utils.style.display = hidden ? "none" : "flex";
         }
-        function openSub(element, event) {
-            if (!element)
+        function toggleHeaderState(isOpen) {
+            if (!header)
                 return;
-            if (event)
-                event.preventDefault();
-            // Close any open submenu immediately
-            const alreadyOpen = document.querySelector(`.${selectors.openClass}`);
-            if (alreadyOpen && alreadyOpen !== element) {
-                // Synchronous reset of classes instead of waiting for timeout
-                alreadyOpen.classList.remove(selectors.openClass, selectors.openingClass, selectors.closingClass);
-                removeEscListener();
-            }
-            if (!element.classList.contains(selectors.openClass)) {
-                element.classList.add(selectors.openingClass);
-                setTimeout(() => {
-                    element.classList.remove(selectors.openingClass);
-                    element.classList.add(selectors.openClass);
-                    htmlElement.style.overflow = "hidden";
-                    toggleUtils(true);
-                    toggleHeaderSubmenuState(true);
-                    addEscListener();
-                }, 20);
-            }
-            else {
-                closeSub(element);
-            }
+            header.classList.toggle("henk-header--is-open", isOpen);
+            closeButton.style.display = isOpen ? "flex" : "none";
+            closeButton.style.zIndex = isOpen ? "9" : "1";
+            utils && (utils.style.display = isOpen ? "none" : "flex");
         }
-        function closeSub(element, removeBackdrop = true) {
-            if (!element || !element.classList.contains(selectors.openClass))
-                return;
-            element.classList.add(selectors.closingClass);
-            setTimeout(() => {
-                element.classList.remove(selectors.openClass);
-                element.classList.remove(selectors.closingClass);
-                if (removeBackdrop) {
-                    htmlElement.style.overflow = "";
-                    toggleUtils(false);
-                    toggleHeaderSubmenuState(false);
+        // observe <details> open attribute
+        const detailsElements = header === null || header === void 0 ? void 0 : header.querySelectorAll("details[name='main-nav']");
+        if (detailsElements) {
+            const observer = new MutationObserver(() => {
+                const anyOpen = Array.from(detailsElements).some((d) => d.hasAttribute("open"));
+                toggleHeaderState(anyOpen);
+                // add or remove ESC listener dynamically
+                if (anyOpen) {
+                    addEscListener();
+                    removeTrap = trapMenuTabbing(); // <-- trap focus when menu opens
                 }
-                removeEscListener();
-            }, 500);
+                else {
+                    removeEscListener();
+                    removeTrap === null || removeTrap === void 0 ? void 0 : removeTrap(); // <-- release trap when menu closes
+                }
+            });
+            detailsElements.forEach((d) => observer.observe(d, { attributes: true, attributeFilter: ["open"] }));
         }
         function closeMenu() {
-            const openSubMenu = document.querySelector(`.${selectors.openClass}`);
-            if (openSubMenu) {
-                closeSub(openSubMenu);
-            }
+            header === null || header === void 0 ? void 0 : header.querySelectorAll("details[open]").forEach((d) => d.removeAttribute("open"));
+            toggleHeaderState(false);
         }
         function addEscListener() {
             escListener = (event) => {
@@ -118,45 +116,21 @@
             }
         }
         function init() {
-            // alert("hello");
             if (!header)
                 return;
-            header
-                .querySelectorAll(selectors.openButton)
-                .forEach((button) => {
-                button.addEventListener("click", (e) => openSub(e.currentTarget, e));
-            });
+            // Listen to the close button
             closeButton.addEventListener("click", () => closeMenu());
         }
         init();
-        // return true;
         // return cleanup function
         return () => {
             // Remove close button
             closeButton.remove();
             // Reset overflow + state classes
-            htmlElement.style.overflow = "";
             header.classList.remove("henk-header--is-open");
             toggleUtils(false);
-            // Reset submenu states
-            header
-                .querySelectorAll(selectors.mainLevel)
-                .forEach((el) => {
-                el.classList.remove(selectors.openClass, selectors.openingClass, selectors.closingClass);
-            });
-            // remove classes from submenu opener links
-            header
-                .querySelectorAll('[data-js-behavior="openSub"]')
-                .forEach((el) => {
-                el.classList.remove(selectors.openClass, selectors.openingClass, selectors.closingClass);
-            });
             // Remove event listeners
             removeEscListener();
-            header
-                .querySelectorAll(selectors.openButton)
-                .forEach((button) => {
-                button.replaceWith(button.cloneNode(true)); // quick way to remove listeners
-            });
         };
     };
     document.addEventListener("DOMContentLoaded", () => {
