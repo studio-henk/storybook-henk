@@ -1,16 +1,22 @@
-# TODO 
+# TODO
 
 - [ ] search if expand.js is used
-
+- [ ] TextLink with arrow, stories not same icon thickness?
+- [ ] add to css compilation:
+  - [ ] _henk-text-link.css
+  - _henk-lister-grid.css 
+  - tag css 
 
 ## Header
 
-- [ ] mobile
-  - [ ] hamburger button via js
-- [ ] responsive
-- [ ] column width when 4?
+- [ ] responsive: column width when 4?
 - [ ] add search back
+- [ ] redo desktop version same way 
 
-## lang selector 
+## lang selector
+
 - [ ] close on click outside?
 - [ ] close on esc?
+- [ ] style lang selector
+
+

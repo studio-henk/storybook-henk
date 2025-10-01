@@ -5,10 +5,11 @@ import IconBag from "@assets/icons/icon-bag.svg?raw";
 // import IconChevronDown from "@assets/icons/icon-chevron-down.svg?raw";
 // import IconClose from "@assets/icons/icon-close.svg?raw";
 // import { initTheHeaderMenu } from "@scripts/TheHeaderMenu";
-import "../assets/_henk-header.css";
-import "../assets/_henk-header-mobile.css";
+import "../assets/components/_henk-button.css";
+import "../assets/components/_henk-header-desktop.css";
+import "../assets/components/_henk-header-mobile.css";
 
-import IconHamburger from "@assets/icons/icon-hamburger.svg?raw";
+// import IconHamburger from "@assets/icons/icon-hamburger.svg?raw";
 import "../scripts/henk-desktop-menu.ts";
 import "../scripts/henk-mobile-menu.ts";
 
@@ -45,9 +46,9 @@ export function createHeader({
   hamburgerButton.innerText = "menu";
   hamburgerButton.className = "henk-button henk-button--ghost";
   hamburgerButton.dataset.jsMobileMenu = "";
-  hamburgerButton.innerHTML = IconHamburger;
+  // hamburgerButton.innerHTML = IconHamburger;
 
-  headerInner.appendChild(hamburgerButton);
+  // headerInner.appendChild(hamburgerButton);
 
   // add menu list - hardcoded
   const headerMenu = document.createElement("ul");

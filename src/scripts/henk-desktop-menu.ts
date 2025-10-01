@@ -139,15 +139,24 @@
     }
 
     function init() {
+      console.log("Init desktop menu");
       if (!header) return;
 
       // Listen to the close button
       closeButton.addEventListener("click", () => closeMenu());
     }
 
+    function closeAllDetails() {
+      if (!header) return;
+      header
+        .querySelectorAll<HTMLDetailsElement>("details[name='main-nav'][open]")
+        .forEach((d) => (d.open = false));
+    }
+
     init();
     // return cleanup function
     return () => {
+      closeAllDetails();
       // Remove close button
       closeButton.remove();
 
@@ -167,17 +176,13 @@
     const mql = window.matchMedia("(min-width: 768px)");
     let cleanup: (() => void) | null = null;
 
-    const handleChange = (e: MediaQueryList | MediaQueryListEvent) => {
-      if (e.matches) {
-        if (!cleanup) {
-          const maybeCleanup = initHeaderMenu();
-          if (typeof maybeCleanup === "function") cleanup = maybeCleanup;
-        }
-      } else {
-        if (cleanup) {
-          cleanup();
-          cleanup = null;
-        }
+    const handleChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      if (e.matches && !cleanup) {
+        cleanup = initHeaderMenu(); // or mobileMenu.init() returning cleanup
+      } else if (!e.matches && cleanup) {
+        cleanup();
+        cleanup = null;
+        console.log("Desktop menu destroyed");
       }
     };
 

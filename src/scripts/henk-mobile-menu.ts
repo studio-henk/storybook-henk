@@ -1,22 +1,81 @@
+// TODO: Convert to TS, add types where possible, convert ! to ? and add null
+// checks
 (() => {
-  const initMobileMenu = (): (() => void) | null => {
-    const htmlElement = document.documentElement;
-    const header = document.querySelector<HTMLElement>("header.henk-header");
-    const toggleButton = document.querySelector<HTMLButtonElement>(
-      "[data-js-mobile-menu]",
-    );
+  const mobileMenu = {
+    name: "mobile-menu",
+    selector: "header.henk-header",
 
-    if (!header || !toggleButton) return null;
-    header.dataset.state = "closed";
-    toggleButton.setAttribute("aria-expanded", "false");
+    get header(): HTMLElement | null {
+      return document.querySelector<HTMLElement>(this.selector);
+    },
 
-    // Create close button
-    const closeButton = document.createElement("button");
-    closeButton.type = "button";
-    closeButton.className =
-      "henk-button henk-button--ghost henk-button--small close-menu";
-    closeButton.setAttribute("aria-label", "Close menu");
-    closeButton.innerHTML = `
+    get headerInner(): HTMLElement | null {
+      return document.querySelector<HTMLElement>(
+        "header.henk-header > .henk-header__inner",
+      );
+    },
+
+    get hamburgerButtonSelector(): HTMLButtonElement | null {
+      return document.querySelector<HTMLButtonElement>("[data-js-mobile-menu]");
+    },
+
+    get closeButtonSelector(): HTMLButtonElement | null {
+      return (
+        this.header?.querySelector<HTMLButtonElement>(".close-menu") ?? null
+      );
+    },
+
+    removeTrap: null as (() => void) | null,
+
+    // ESC key handling: register while mobile menu is open, remove on close/cleanup
+    escListener: null as ((e: KeyboardEvent) => void) | null,
+
+    init() {
+      console.log("Mobile menu init");
+      // set state to closed
+      const header = document.querySelector<HTMLElement>("header.henk-header");
+      if (!header) return null;
+      header.dataset.state = "closed";
+      this.addHamburgerButton();
+      this.addCloseButton();
+    },
+    // create and add hamburger button to header
+    addHamburgerButton() {
+      const hamburgerButton = document.createElement("button");
+      hamburgerButton.type = "button";
+      hamburgerButton.className = "henk-button henk-button--ghost open-menu";
+      hamburgerButton.setAttribute("aria-label", "Open menu");
+      hamburgerButton.setAttribute("aria-expanded", "false");
+      hamburgerButton.dataset["jsMobileMenu"] = "";
+      hamburgerButton.innerHTML = `
+<i class="henk-icon icon--only">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="1"
+  >
+    <line x1="0" y1="0.5" x2="24" y2="0.5" />
+    <line x1="0" y1="12" x2="24" y2="12" />
+    <line x1="0" y1="23.5" x2="24" y2="23.5" />
+  </svg>
+</i>
+<span class="visually-hidden">Menu</span>
+    `;
+      if (!this.headerInner) return;
+      this.headerInner.insertAdjacentElement("afterbegin", hamburgerButton);
+      hamburgerButton.addEventListener("click", mobileMenu.toggleMenu);
+    },
+    // create and add close button to header
+    addCloseButton() {
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.className =
+        "henk-button henk-button--ghost henk-button--small close-menu";
+      closeButton.setAttribute("aria-label", "Close menu");
+      closeButton.innerHTML = `
       <i class="henk-icon">
         <svg
           width="24"
@@ -35,110 +94,163 @@
       </i>
       CLOSE
     `;
-    closeButton.style.display = "none";
-    toggleButton.insertAdjacentElement("afterend", closeButton);
+      closeButton.style.display = "none";
+      if (!this.headerInner) return;
+      this.headerInner.insertAdjacentElement("afterbegin", closeButton);
+      closeButton.addEventListener("click", mobileMenu.toggleMenu);
+    },
+    trapMenuTabbing(): (() => void) | null {
+      const header = this.header;
+      if (!header) return null;
 
-    // Submenu logic
-    // const submenuLinks = Array.from(
-    //   header.querySelectorAll<HTMLAnchorElement>(
-    //     '[data-js-behavior="openSub"]',
-    //   ),
-    // );
-    // const submenuHandlers: ((e: Event) => void)[] = [];
+      const menuDetails = header.querySelector<HTMLElement>(
+        "details[name='main-nav']",
+      );
+      if (!menuDetails) return null;
 
-    // const openSub = (link: HTMLAnchorElement) => {
-    //   const parent = link.closest(".main-level");
-    //   if (!parent) return;
-    //
-    //   // Close other subs
-    //   submenuLinks.forEach((l) => {
-    //     if (l !== link) {
-    //       l.classList.remove("open");
-    //       l.closest(".main-level")?.classList.remove("open");
-    //     }
-    //   });
-    //
-    //   // Open this one
-    //   parent.classList.add("open");
-    //   link.classList.add("open");
-    // };
+      const firstFocusable = this.closeButtonSelector;
+      const cartSelector =
+        "[data-js-cart], .henk-cart, [aria-label='Cart'], a[href*='cart']";
+      const cartButton = header.querySelector<HTMLElement>(cartSelector);
+      const lastFocusable = cartButton || firstFocusable;
 
-    // const closeAllSubs = () => {
-    //   submenuLinks.forEach((l) => {
-    //     l.classList.remove("open");
-    //     l.closest(".main-level")?.classList.remove("open");
-    //   });
-    // };
+      if (!firstFocusable || !lastFocusable) return null;
 
-    const toggleMenu = () => {
-      if (header.dataset.state === "open") {
-        header.dataset.state = "closed";
-        toggleButton.setAttribute("aria-expanded", "false");
-        closeButton.style.display = "none";
-        // htmlElement.style.overflow = "";
-        // closeAllSubs();
+      const keyListener = (e: KeyboardEvent) => {
+        if (e.key !== "Tab") return;
+
+        if (!e.shiftKey && document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable.focus();
+        } else if (e.shiftKey && document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      };
+
+      header.addEventListener("keydown", keyListener);
+
+      return () => {
+        header.removeEventListener("keydown", keyListener);
+      };
+    },
+    addEscListener() {
+      if (this.escListener) return; // already active
+
+      this.escListener = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          this.toggleMenu();
+        }
+      };
+      document.documentElement.addEventListener("keydown", this.escListener);
+    },
+
+    removeEscListener() {
+      if (!this.escListener) return;
+
+      document.documentElement.removeEventListener("keydown", this.escListener);
+      this.escListener = null;
+    },
+    toggleMenu() {
+      // console.log("Toggle menu" + mobileMenu.header?.dataset.state);
+
+      if (!mobileMenu.header) return;
+      if (mobileMenu.header.dataset.state === "open") {
+        mobileMenu.header.dataset.state = "closed";
+        mobileMenu.hamburgerButtonSelector!.setAttribute(
+          "aria-expanded",
+          "false",
+        );
+        mobileMenu.closeButtonSelector!.style.display = "none";
+
+        // remove ESC listener when closing
+        mobileMenu.removeEscListener();
+
+        // Release focus trap when menu closes
+        mobileMenu.removeTrap?.();
+        mobileMenu.removeTrap = null;
+
+        mobileMenu.closeAllSubs();
       } else {
-        header.dataset.state = "open";
-        toggleButton.setAttribute("aria-expanded", "true");
-        closeButton.style.display = "flex";
-        // htmlElement.style.overflow = "hidden";
+        // console.log("Open menu");
+        mobileMenu.header.dataset.state = "open";
+        mobileMenu.hamburgerButtonSelector!.setAttribute(
+          "aria-expanded",
+          "true",
+        );
+        mobileMenu.closeButtonSelector!.style.display = "flex";
+        mobileMenu.closeButtonSelector!.focus();
+
+        // add ESC listener while menu is open
+        mobileMenu.addEscListener();
+
+        // Enable focus trap when menu opens
+        mobileMenu.removeTrap = mobileMenu.trapMenuTabbing();
 
         // Open the first details element
-        const firstDetails = header.querySelector<HTMLDetailsElement>(
-          "details[name='main-nav']",
-        );
+        const firstDetails =
+          mobileMenu.header!.querySelector<HTMLDetailsElement>(
+            "details[name='main-nav']",
+          );
         if (firstDetails) {
-          // firstDetails.open = true;
+          firstDetails.open = true;
         }
       }
-    };
-
-    toggleButton.addEventListener("click", toggleMenu);
-    closeButton.addEventListener("click", toggleMenu);
-
-    // Attach submenu handlers and store references for cleanup
-    // submenuLinks.forEach((link) => {
-    //   const handler = (e: Event) => {
-    //     e.preventDefault();
-    //     openSub(link);
-    //   };
-    //   link.addEventListener("click", handler);
-    //   submenuHandlers.push(handler);
-    // });
-
-    // Cleanup
-    return () => {
-      toggleButton.removeEventListener("click", toggleMenu);
-      closeButton.removeEventListener("click", toggleMenu);
-      closeButton.remove();
-
-      htmlElement.style.overflow = "";
-      header.dataset.state = "closed";
-      closeAllSubs();
-
-      // Remove all submenu event listeners
-      submenuLinks.forEach((link, i) => {
-        link.removeEventListener("click", submenuHandlers[i]);
+    },
+    closeAllSubs() {
+      const openDetails =
+        mobileMenu.header!.querySelectorAll<HTMLDetailsElement>(
+          "details[name='main-nav'][open]",
+        );
+      openDetails.forEach((details) => {
+        details.open = false;
       });
-    };
+    },
+    destroy() {
+      // Reset menu state
+      if (this.header) {
+        this.header.dataset.state = "closed";
+      }
+
+      // Remove focus trap & ESC
+      this.removeTrap?.();
+      this.removeTrap = null;
+      this.removeEscListener();
+
+      // Remove buttons if they exist
+      this.hamburgerButtonSelector?.removeEventListener(
+        "click",
+        this.toggleMenu,
+      );
+      this.hamburgerButtonSelector?.remove();
+      this.closeButtonSelector?.removeEventListener("click", this.toggleMenu);
+      this.closeButtonSelector?.remove();
+
+      // Close all open submenus
+      this.closeAllSubs();
+
+      console.log("Mobile menu destroyed");
+    },
   };
 
   document.addEventListener("DOMContentLoaded", () => {
     const mql = window.matchMedia("(max-width: 767px)");
-    let cleanup: (() => void) | null = null;
+    let initialized = false;
 
-    const handleChange = (e: MediaQueryList | MediaQueryListEvent) => {
-      if (e.matches) {
-        if (!cleanup) cleanup = initMobileMenu();
-      } else {
-        if (cleanup) {
-          cleanup();
-          cleanup = null;
-        }
+    const handleChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      if (e.matches && !initialized) {
+        mobileMenu.init();
+        initialized = true;
+      } else if (!e.matches && initialized) {
+        mobileMenu.destroy();
+        initialized = false;
       }
     };
 
+    // run once immediately for the current viewport
     handleChange(mql);
+
+    // then listen for changes
     mql.addEventListener("change", handleChange);
   });
 })();

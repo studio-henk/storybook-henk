@@ -79,10 +79,11 @@
             closeButton.style.zIndex = isOpen ? "9" : "1";
             utils && (utils.style.display = isOpen ? "none" : "flex");
         }
+        let observer = null;
         // observe <details> open attribute
         const detailsElements = header === null || header === void 0 ? void 0 : header.querySelectorAll("details[name='main-nav']");
         if (detailsElements) {
-            const observer = new MutationObserver(() => {
+            observer = new MutationObserver(() => {
                 const anyOpen = Array.from(detailsElements).some((d) => d.hasAttribute("open"));
                 toggleHeaderState(anyOpen);
                 // add or remove ESC listener dynamically
@@ -116,14 +117,23 @@
             }
         }
         function init() {
+            console.log("Init desktop menu");
             if (!header)
                 return;
             // Listen to the close button
             closeButton.addEventListener("click", () => closeMenu());
         }
+        function closeAllDetails() {
+            if (!header)
+                return;
+            header
+                .querySelectorAll("details[name='main-nav'][open]")
+                .forEach((d) => (d.open = false));
+        }
         init();
         // return cleanup function
         return () => {
+            closeAllDetails();
             // Remove close button
             closeButton.remove();
             // Reset overflow + state classes
@@ -131,24 +141,22 @@
             toggleUtils(false);
             // Remove event listeners
             removeEscListener();
+            // Disconnect mutation observer
+            observer === null || observer === void 0 ? void 0 : observer.disconnect();
+            observer = null;
         };
     };
     document.addEventListener("DOMContentLoaded", () => {
         const mql = window.matchMedia("(min-width: 768px)");
         let cleanup = null;
         const handleChange = (e) => {
-            if (e.matches) {
-                if (!cleanup) {
-                    const maybeCleanup = initHeaderMenu();
-                    if (typeof maybeCleanup === "function")
-                        cleanup = maybeCleanup;
-                }
+            if (e.matches && !cleanup) {
+                cleanup = initHeaderMenu(); // or mobileMenu.init() returning cleanup
             }
-            else {
-                if (cleanup) {
-                    cleanup();
-                    cleanup = null;
-                }
+            else if (!e.matches && cleanup) {
+                cleanup();
+                cleanup = null;
+                console.log("Desktop menu destroyed");
             }
         };
         handleChange(mql);
