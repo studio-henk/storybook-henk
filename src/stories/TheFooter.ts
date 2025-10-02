@@ -1,4 +1,4 @@
-import "../assets/_henk-footer.css";
+// import "../assets/_henk-footer.css";
 
 import { TextLink } from "./TextLink"; // adjust path as needed
 

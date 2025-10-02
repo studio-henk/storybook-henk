@@ -5,7 +5,7 @@ import type { ButtonGroupProps } from "./ButtonGroup";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 const meta: Meta<ButtonGroupProps> = {
-  title: "Components/ButtonGroup",
+  title: "Components/Composites/ButtonGroup",
   tags: ["autodocs"],
   render: (args: ButtonGroupProps) => createButtonGroup(args),
   argTypes: {

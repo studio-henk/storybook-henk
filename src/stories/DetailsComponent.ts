@@ -1,4 +1,4 @@
-import "../assets/_henk-details-component.css";
+// import "../assets/_henk-details-component.css";
 
 export interface DetailsProps {
   summary: string;

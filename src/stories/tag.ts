@@ -1,5 +1,3 @@
-import "@assets/_henk-tag.css";
-
 export interface TagProps {
   label: string; // Required label for the tag
   iconSvg?: string; // Optional SVG icon

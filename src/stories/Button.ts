@@ -1,4 +1,4 @@
-import "../assets/components/_henk-button.css";
+// import "../assets/components/_henk-button.css";
 
 export type IconPosition = "left" | "right";
 export type IconSize = "small" | "medium" | "large";

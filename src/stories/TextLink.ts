@@ -1,4 +1,4 @@
-import "@assets/TextLink.css";
+// import "@assets/_henk-text-link.css";
 
 export type TextLinkProps = {
   textElement?: "a" | "span";

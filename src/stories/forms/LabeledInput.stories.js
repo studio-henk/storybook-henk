@@ -1,7 +1,7 @@
 import { createLabeledInput } from "./LabeledInput.js";
 
 export default {
-  title: "Components/Forms/LabeledInput",
+  title: "Components/Composites/Forms/LabeledInput",
   tags: ["autodocs"],
   component: createLabeledInput,
   render: ({ label, input, orientation, floating }) => {

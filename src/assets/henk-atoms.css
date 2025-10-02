@@ -1,5 +1,3 @@
-@import "@assets/_henk-helpers.css";
-@import "./atoms/_henk-logo.css";
-@import "./atoms/_henk-icon.css";
-@import "./atoms/_henk-list.css";
-@import "./atoms/_henk-notification-badge.css";
+@import "./utils/_henk-helpers.css";
+@import "./utils/_henk-size-font.css";
+@import "./utils/_henk-weight-font.css";

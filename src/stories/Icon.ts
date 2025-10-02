@@ -1,4 +1,3 @@
-import "../assets/atoms/_henk-icon.css";
 const icons = import.meta.glob("../assets/icons/*.svg", {
   as: "raw",
   eager: true,

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/html";
 import { createStoreCard, StoreCardProps } from "./StoreCard";
 
 const meta: Meta<StoreCardProps> = {
-  title: "Components/Cards/StoreCard",
+  title: "Components/Composites/Cards/StoreCard",
   render: (args) => createStoreCard(args),
   args: {
     name: "Amsterdam",

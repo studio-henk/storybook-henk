@@ -1,15 +1,17 @@
-
 import { createInfoBox } from "./info-box";
 import { Icon } from "./Icon";
 
-const icons = import.meta.glob("../assets/icons/*.svg", { as: "raw", eager: true });
-const iconNames = Object.keys(icons).map((path) =>
-  path.split("/").pop()?.replace(".svg", "") || ""
+const icons = import.meta.glob("../assets/icons/*.svg", {
+  as: "raw",
+  eager: true,
+});
+const iconNames = Object.keys(icons).map(
+  (path) => path.split("/").pop()?.replace(".svg", "") || "",
 );
 const iconOptions = ["None", ...iconNames];
 
 export default {
-  title: "Components/Info Box",
+  title: "Components/Composites/Info Box",
   component: createInfoBox,
   tags: ["autodocs"],
   parameters: { controls: { sort: "requiredFirst" } },
@@ -36,7 +38,6 @@ export default {
 //
 //   return createInfoBox({ ...args, iconHTML });
 // };
-
 
 const Template = (args) => {
   let iconHTML = "";

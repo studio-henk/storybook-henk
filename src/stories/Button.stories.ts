@@ -8,7 +8,7 @@ import ChevronDown from "@assets/icons/icon-chevron-down.svg?raw";
 import IconClose from "@assets/icons/icon-close.svg?raw";
 
 const meta: Meta<ButtonProps> = {
-  title: "Components/Button",
+  title: "Components/Base/Button",
   tags: ["autodocs"],
   render: (args) => createButton(args),
   argTypes: {
@@ -219,19 +219,19 @@ export const CloseButtonSmall: Story = {
   },
 };
 
-export const Expand: Story = {
-  args: {
-    element: "button",
-    label: "Open me!",
-    type: "button",
-    variant: "ghost",
-    size: "small",
-    iconSvg: ChevronDown,
-    iconPosition: "right",
-    attrs: {
-      "aria-expanded": "false",
-      "data-js-expand": "true",
-      "data-state": "closed",
-    },
-  },
-};
+// export const Expand: Story = {
+//   args: {
+//     element: "button",
+//     label: "Open me!",
+//     type: "button",
+//     variant: "ghost",
+//     size: "small",
+//     iconSvg: ChevronDown,
+//     iconPosition: "right",
+//     attrs: {
+//       "aria-expanded": "false",
+//       "data-js-expand": "true",
+//       "data-state": "closed",
+//     },
+//   },
+// };

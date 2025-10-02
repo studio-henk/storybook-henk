@@ -1,7 +1,7 @@
 import { createInput } from "./Input";
 
 export default {
-  title: "Components/Forms/Input",
+  title: "Components/Base/Forms/Input",
   tags: ["autodocs"],
   component: createInput,
   render: (args) => createInput(args),
@@ -30,12 +30,12 @@ export const Base = {
   },
 };
 
-export const Required = {
-  args: {
-    id: "input-id2",
-    type: "text",
-    value: "",
-    placeholder: "Enter text here",
-    required: true,
-  },
-};
+// export const Required = {
+//   args: {
+//     id: "input-id2",
+//     type: "text",
+//     value: "",
+//     placeholder: "Enter text here",
+//     required: true,
+//   },
+// };

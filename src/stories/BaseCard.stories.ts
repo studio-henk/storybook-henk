@@ -5,7 +5,7 @@ import { createBaseCard } from "./BaseCard";
 import { createTag } from "./tag";
 
 export default {
-  title: "Components/Cards/BaseCard",
+  title: "Components/Composites/Cards/BaseCard",
   render: (args) => createBaseCard(args),
   args: {
     title: "Card title",

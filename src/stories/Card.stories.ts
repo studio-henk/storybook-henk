@@ -20,7 +20,7 @@ if (!document.getElementById(scriptId)) {
 }
 
 export default {
-  title: "Components/Cards/Web Component Card",
+  title: "Components/Composites/Cards/Web Component Card",
   parameters: {
     // layout: 'centered',
   },

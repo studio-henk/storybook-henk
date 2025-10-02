@@ -1,6 +1,0 @@
-.henk-text-link:has(> .henk-icon:first-child) {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-}

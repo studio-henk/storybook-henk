@@ -2,18 +2,10 @@ import type { LogoProps } from "./Logo";
 import { createLogo } from "./Logo";
 import IconSearch from "@assets/icons/icon-search.svg?raw";
 import IconBag from "@assets/icons/icon-bag.svg?raw";
-// import IconChevronDown from "@assets/icons/icon-chevron-down.svg?raw";
-// import IconClose from "@assets/icons/icon-close.svg?raw";
-// import { initTheHeaderMenu } from "@scripts/TheHeaderMenu";
-import "../assets/components/_henk-button.css";
-import "../assets/components/_henk-header-desktop.css";
-import "../assets/components/_henk-header-mobile.css";
-
-// import IconHamburger from "@assets/icons/icon-hamburger.svg?raw";
 import "../scripts/henk-desktop-menu.ts";
 import "../scripts/henk-mobile-menu.ts";
 
-import "../assets/components/_henk-button.css";
+// import "../assets/components/_henk-button.css";
 export interface HeaderProps {
   logoProps?: LogoProps;
   title?: string;
@@ -229,7 +221,7 @@ export function createHeader({
 
 <li class="henk-header__menu-item henk-header__dropdown main-level">
 <details name="main-nav">
-<summary>Service</summary>
+<summary>Services</summary>
   <div class="dropdown-container">
     <div class="dropdown-container__inner">
 
@@ -278,7 +270,7 @@ export function createHeader({
 
 <li class="henk-header__menu-item henk-header__dropdown main-level">
 <details name="main-nav">
-<summary>HENK</summary>
+<summary>Explore</summary>
   <div class="dropdown-container">
 
     <div class="dropdown-container__inner">

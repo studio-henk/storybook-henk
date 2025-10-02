@@ -1,17 +1,13 @@
 /* mobile */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   html.no-js {
-    background-color: pink;
-
     .henk-header__menu {
       margin: 0;
     }
   }
 
   html.js-enabled {
-    background-color: lightgreen;
-
     &:has(details[name="main-nav"][open]) {
       overflow: hidden;
     }

@@ -3,7 +3,7 @@ import { createTag, type TagProps } from "./tag";
 import TruckIcon from "@assets/icons/icon-truck.svg?raw";
 
 const meta = {
-  title: "Components/Tag",
+  title: "Components/Base/Tag",
   tags: ["autodocs"],
   render: (args: TagProps) => createTag(args),
   argTypes: {

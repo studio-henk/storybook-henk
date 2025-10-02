@@ -1,0 +1,3 @@
+.henk-wrapper > .henk-main {
+  padding-top: var(--size-height-header, 72px);
+}

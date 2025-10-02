@@ -1,15 +1,24 @@
 # TODO
 
+## Today (2025-10-02)
+
+- [ ] check if feature / dev branch uses something to hide the cookie that would fail on staging and prod?
+- [ ] merge shopify feature branch to dev branch
+- [ ] merge dev branch to staging branch?
+
+- [ ] update chromatic cli: 
+This build was created using Chromatic CLI version 11.27.0, which is significantly outdated. Please upgrade your chromatic dependency.
+- [ ] blog overview
+- [ ] blog detail
+
+## Later
+
 - [ ] search if expand.js is used
-- [ ] TextLink with arrow, stories not same icon thickness?
-- [ ] add to css compilation:
-  - [ ] _henk-text-link.css
-  - _henk-lister-grid.css 
-  - tag css 
+- [x] TextLink with arrow, stories not same icon thickness?
 
 ## Header
 
-- [ ] responsive: column width when 4?
+- [x] responsive: column width when 4?
 - [ ] add search back
 - [ ] redo desktop version same way 
 
@@ -18,5 +27,6 @@
 - [ ] close on click outside?
 - [ ] close on esc?
 - [ ] style lang selector
+
 
 

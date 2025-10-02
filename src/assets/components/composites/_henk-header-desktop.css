@@ -44,7 +44,7 @@
       margin: 0;
       padding: 0;
       display: flex;
-      gap: 8px;
+      gap: 48px;
       justify-self: start;
       z-index: 9;
 
@@ -224,7 +224,8 @@
         }
 
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+        gap: 4px;
 
         a {
           display: block;

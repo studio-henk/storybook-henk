@@ -1,7 +1,7 @@
 import { createLabel } from "./Label.js";
 
 export default {
-  title: "Components/Forms/Label",
+  title: "Components/Base/Forms/Label",
   tags: ["autodocs"],
   component: createLabel,
   render: ({ text, ...args }) => {

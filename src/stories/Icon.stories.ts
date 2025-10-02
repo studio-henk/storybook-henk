@@ -1,7 +1,7 @@
 import { Icon } from "./Icon";
 
 export default {
-  title: "Components/Icon",
+  title: "Components/Base/Icon",
   argTypes: {
     size: {
       control: { type: "radio" },
