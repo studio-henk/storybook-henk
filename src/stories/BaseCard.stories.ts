@@ -1,4 +1,4 @@
-import "@assets/_henk-lister-grid.css";
+// import "@assets/_henk-lister-grid.css";
 // BaseCard.stories.ts
 import type { Meta, StoryObj } from "@storybook/html";
 import { createBaseCard } from "./BaseCard";
