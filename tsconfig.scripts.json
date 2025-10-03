@@ -7,15 +7,10 @@
     "noEmitOnError": false,
     "target": "ES2019", // good baseline for browsers ~2y old
     "module": "ESNext", // keep modules as ESNext so you can import/export
-    "noImplicitAny": false,
+    "strict": true, // fully enable strict mode
+    "strictPropertyInitialization": false, // optional, DOM elements often initialized later
     "skipLibCheck": true,
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2019"
-    ] // DOM.Iterable fixes TS2488 + match target
+    "lib": ["DOM", "DOM.Iterable", "ES2019"] // DOM.Iterable fixes TS2488 + match target
   },
-  "include": [
-    "src/scripts/**/*.ts"
-  ]
+  "include": ["src/scripts/**/*.ts"]
 }

@@ -9,8 +9,19 @@
 // import "../src/assets/henk-main.dark.css";
 // import "../public/assets/henk-base.css";
 
-import "../src/scripts/henk-expand-button.ts";
+// import "../src/scripts/henk-expand-button.ts";
 // import "../src/scripts/henk-popover-language-button-sync.ts";
+
+// main.ts or Storybook preview.ts
+document.documentElement.classList.add("no-js");
+document.documentElement.classList.remove("no-js");
+document.documentElement.classList.add("js-enabled");
+
+import { mobileMenu } from "../src/scripts/henk-mobile-menu.ts";
+
+document.addEventListener("DOMContentLoaded", () => {
+  mobileMenu.setupMatchMedia();
+});
 
 import { DocsContainer } from "@storybook/addon-docs";
 

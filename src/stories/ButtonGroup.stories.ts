@@ -75,23 +75,3 @@ export const GroupAlignedSpaceBetween: Story = {
     fill: false,
   },
 };
-
-// export const TertiaryPrimaryAlignedRight: Story = {
-//     args: {
-//         buttons: [
-//             { label: 'Button 1', variant: 'tertiary', href: '#' },
-//             { label: 'Button 2', variant: 'primary', href: '#' },
-//         ],
-//         fill: false,
-//     },
-// };
-
-// export const TertiarySecondaryAlignedRight: Story = {
-//     args: {
-//         buttons: [
-//             { label: 'Button 1', variant: 'tertiary', href: '#' },
-//             { label: 'Button 2', variant: 'secondary', href: '#' },
-//         ],
-//         fill: false,
-//     },
-// };

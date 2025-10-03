@@ -2,8 +2,8 @@ import type { LogoProps } from "./Logo";
 import { createLogo } from "./Logo";
 import IconSearch from "@assets/icons/icon-search.svg?raw";
 import IconBag from "@assets/icons/icon-bag.svg?raw";
-import "../scripts/henk-desktop-menu.ts";
-import "../scripts/henk-mobile-menu.ts";
+// import "../scripts/henk-desktop-menu.ts";
+// import "../scripts/henk-mobile-menu.ts";
 
 // import "../assets/components/_henk-button.css";
 export interface HeaderProps {
@@ -23,6 +23,7 @@ export function createHeader({
 }: HeaderProps = {}): HTMLElement {
   const header = document.createElement("header");
   header.className = "henk-header";
+  header.dataset.jsMobileMenu = "";
 
   if (align) {
     header.className += ` henk-header--${align}`;

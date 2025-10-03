@@ -122,14 +122,6 @@ export const Default: Story = {
     const paginationContainer = document.createElement("div");
     paginationContainer.className = "henk-pagination henk-section";
 
-    // const nextButton = createButton({
-    //   element: "a",
-    //   label: "Next page",
-    //   href: "#next",
-    //   iconSvg: ChevronRight,
-    //   iconPosition: "right",
-    // });
-
     // buttongroup wrapper
     const buttonGroupInPagination = createButtonGroup({
       buttons: [
