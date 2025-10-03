@@ -1,4 +1,6 @@
+import type { StoryFn } from "@storybook/html";
 import { Icon } from "./Icon";
+import { IconOptions } from "./Icon";
 
 export default {
   title: "Components/Base/Icon",
@@ -25,8 +27,7 @@ export default {
   },
 };
 
-const Template = ({ name, size }) => Icon({ name, size });
-
+const Template: StoryFn<IconOptions> = (args) => Icon(args);
 // export const Default = Template.bind({});
 // Default.args = {
 //   name: "icon-chevron-right",
@@ -38,7 +39,7 @@ ChevronLeft.args = { name: "icon-chevron-left", size: "large" };
 
 export const ChevronRight = Template.bind({});
 ChevronRight.args = {
-  name: "icon-chevron-right",
+  name: "icon-chevron-right-thick",
   size: "large",
 };
 

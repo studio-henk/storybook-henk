@@ -3,8 +3,8 @@ const icons = import.meta.glob("../assets/icons/*.svg", {
   eager: true,
 });
 
-interface IconOptions {
-  name: string; // e.g. "icon-arrow-left"
+export interface IconOptions {
+  name: string;
   size?: "small" | "large";
   className?: string;
 }

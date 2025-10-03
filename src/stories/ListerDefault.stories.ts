@@ -5,6 +5,8 @@ import { createHeader } from "./TheHeader";
 import { TheFooter } from "./TheFooter";
 import { createSectionHeader } from "./SectionHeader";
 import { createBaseCard, BaseCardProps } from "./BaseCard";
+import ChevronRight from "@assets/icons/icon-chevron-right-thick.svg?raw";
+import { createButtonGroup, ButtonGroupProps } from "./ButtonGroup";
 
 function wrapWithShopifySection(
   element: HTMLElement,
@@ -119,29 +121,33 @@ export const Default: Story = {
 
     const paginationContainer = document.createElement("div");
     paginationContainer.className = "henk-pagination henk-section";
+
+    // const nextButton = createButton({
+    //   element: "a",
+    //   label: "Next page",
+    //   href: "#next",
+    //   iconSvg: ChevronRight,
+    //   iconPosition: "right",
+    // });
+
+    // buttongroup wrapper
+    const buttonGroupInPagination = createButtonGroup({
+      buttons: [
+        {
+          element: "a",
+          label: "Next page",
+          variant: "primary",
+          href: "#next",
+          iconSvg: ChevronRight,
+          iconPosition: "right",
+        },
+      ],
+      alignment: "center",
+    } as ButtonGroupProps);
+
     paginationContainer.innerHTML = `
     <nav class="pagination" role="navigation" aria-label="Paginering">
-      <div class="henk-button-group henk-button-group--center">
-        <a href="#next" class="henk-button">
-          Next page
-          <i class="henk-icon">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.29999 0.5L17.8 12L6.29999 23.5"
-                stroke="currentcolor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </i>
-        </a>
-      </div>
+      ${buttonGroupInPagination.outerHTML}
     </nav>
 `;
 

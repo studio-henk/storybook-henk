@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 import { TextLink, TextLinkProps } from "./TextLink";
-import IconChevronRight from "@assets/icons/icon-chevron-right.svg?raw";
+// import IconChevronRight from "@assets/icons/icon-chevron-right-thick.svg?raw";
 import IconChevronRightThick from "@assets/icons/icon-chevron-right-thick.svg?raw";
 import IconChevronLeft from "@assets/icons/icon-chevron-left.svg?raw";
 

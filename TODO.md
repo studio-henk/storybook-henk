@@ -6,13 +6,16 @@
 - [ ] merge shopify feature branch to dev branch
 - [ ] merge dev branch to staging branch?
 
-- [ ] update chromatic cli: 
+- [ ] storybook -> use thick chevron everywhere 
+- [x] update chromatic cli: 
 This build was created using Chromatic CLI version 11.27.0, which is significantly outdated. Please upgrade your chromatic dependency.
-- [ ] blog overview
-- [ ] blog detail
+
+
 
 ## Later
 
+- [ ] blog overview
+- [ ] blog detail
 - [ ] search if expand.js is used
 - [x] TextLink with arrow, stories not same icon thickness?
 

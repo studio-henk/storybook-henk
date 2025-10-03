@@ -1,23 +1,26 @@
-
 export interface BaseLayoutProps {
-    header: HTMLElement;
-    mainContent: HTMLElement;
-    footer: HTMLElement;
+  header: HTMLElement;
+  mainContent: HTMLElement | DocumentFragment;
+  footer: HTMLElement;
 }
 
-export function createBaseLayout({ header, mainContent, footer }: BaseLayoutProps): HTMLElement {
-    const container = document.createElement('div');
-    container.id = 'base-layout';
-    container.className = 'henk-wrapper';
+export function createBaseLayout({
+  header,
+  mainContent,
+  footer,
+}: BaseLayoutProps): HTMLElement {
+  const container = document.createElement("div");
+  container.id = "base-layout";
+  container.className = "henk-wrapper";
 
-    container.appendChild(header);
+  container.appendChild(header);
 
-    const main = document.createElement('main');
-    main.className = 'henk-main';
-    main.appendChild(mainContent);
-    container.appendChild(main);
+  const main = document.createElement("main");
+  main.className = "henk-main";
+  main.appendChild(mainContent);
+  container.appendChild(main);
 
-    container.appendChild(footer);
+  container.appendChild(footer);
 
-    return container;
+  return container;
 }
