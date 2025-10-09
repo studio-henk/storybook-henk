@@ -1,3 +1,7 @@
-.henk-wrapper > .henk-main {
+/* .henk-wrapper > .henk-main { */
+/*   padding-top: var(--size-height-header, 72px); */
+/* } */
+
+.henk-wrapper {
   padding-top: var(--size-height-header, 72px);
 }
