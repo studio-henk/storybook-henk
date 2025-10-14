@@ -36,10 +36,10 @@
 
 .fs-small {
   font-size: var(--size-font-small, 13px);
-  line-height: 24px;
+  line-height: 16px;
 }
 
 .fs-x-small {
   font-size: var(--size-font-x-small, 10px);
-  line-height: 24px;
+  line-height: 16px;
 }

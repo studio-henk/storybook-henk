@@ -1,14 +1,10 @@
 .info-box {
-  --_infobox-border-color: var(--color-border-base);
+  --_infobox-border-color: var(--color-border-muted);
   background-color: var(--color-background-base);
   color: currentColor;
   padding: 1rem;
   border-radius: var(--radius-2, 8px);
   border: 1px solid var(--_infobox-border-color);
-
-  & .henk-icon {
-    color: var(--_infobox-border-color);
-  }
 }
 
 .info-box * {
@@ -67,14 +63,19 @@
   --_infobox-border-color: var(--color-danger);
 }
 
+[class*="info-box--variant-"] {
+  .henk-icon {
+    color: var(--_infobox-border-color);
+  }
+}
+
 .grid-info-box {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  padding-inline: 1.5em;
-  max-width: 1256px;
-  margin: 0 auto;
+  width: min(var(--size-width-content, 1140px), 100% - 3rem);
+  margin-inline: auto;
 }
 
 .grid-info-box .info-box {

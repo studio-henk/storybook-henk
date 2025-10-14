@@ -1,14 +1,20 @@
 # TODO
 
-## Today (2025-10-02)
+## Today
 
-- [ ] check if feature / dev branch uses something to hide the cookie that would fail on staging and prod?
-- [ ] merge shopify feature branch to dev branch
+- [ ] cart page
+  - [x] header
+  - [x] footer
+  - [ ] newsletter?
+  - story: empty
+    - [ ] grid with 3 info boxes?
+    - [ ] think about shopify, where to get data from? translations?
+  - story: not empty
+    - [ ] list of items in cart 
+      - [ ] image, info, remove, quantity, costs table? 
 - [ ] merge dev branch to staging branch?
-
 - [ ] storybook -> use thick chevron everywhere 
-- [x] update chromatic cli: 
-This build was created using Chromatic CLI version 11.27.0, which is significantly outdated. Please upgrade your chromatic dependency.
+- [ ] icons, clean up, ie b-corp is not an icon but logo
 
 
 

@@ -1,7 +1,8 @@
 import type { LogoProps } from "./Logo";
 import { createLogo } from "./Logo";
 import IconSearch from "@assets/icons/icon-search.svg?raw";
-import IconBag from "@assets/icons/icon-bag.svg?raw";
+// import IconBag from "@assets/icons/icon-bag.svg?raw";
+import IconBag from "@assets/icons/icon-bag-thick.svg?raw";
 // import "../scripts/henk-desktop-menu.ts";
 // import "../scripts/henk-mobile-menu.ts";
 
