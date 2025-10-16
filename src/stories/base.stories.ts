@@ -115,6 +115,27 @@ export const Table: Story = {
           <tr><td>Footer</td><td>Footer</td></tr>
         </tfoot>
       </table>
+<hr>
+<h2>Table 2</h2>
+<table class="cart-totals henk-table henk-table--no-border">
+              <caption class="visually-hidden">
+                Your cart totals
+              </caption>
+              <tbody>
+                <tr>
+                  <th scope="row">Totaal incl BTW</th>
+                  <td class="text-align-right">€1.836</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Nu te betalen</th>
+                  <td class="text-align-right">
+                    <strong>€1.836</strong>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
     </section>
   `,
 };

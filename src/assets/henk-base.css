@@ -200,3 +200,55 @@ h6,
   font-size: var(--size-font-medium);
   line-height: 24px;
 }
+
+table {
+  background-color: var(--color-background-base, #fff);
+  border: 1px solid var(--color-border-muted, #ccc);
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  width: 100%;
+
+  caption {
+    caption-side: top;
+    font-size: var(--size-font-large, 20px);
+    padding: var(--space-1, 4px);
+    text-align: center;
+    background-color: var(--color-background-muted, #ccc);
+  }
+
+  th,
+  td {
+    padding: var(--space-1, 4px);
+    border-bottom: 1px solid var(--color-border-muted, #ccc);
+    border-left: 1px solid var(--color-border-muted, #ccc);
+  }
+
+  th {
+    font-weight: var(--font-weight-semibold, 500);
+  }
+
+  tbody {
+    font-size: var(--size-font-small, 13px);
+  }
+
+  tbody th {
+    font-weight: 400;
+  }
+
+  tfoot th {
+    font-weight: 500;
+  }
+
+  th[scope="row"] {
+    text-align: left;
+  }
+
+  &.henk-table--no-border {
+    border: none;
+
+    th,
+    td {
+      border: none;
+    }
+  }
+}

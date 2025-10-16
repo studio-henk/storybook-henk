@@ -5,6 +5,9 @@ import { createCartContent } from "./createCartContent";
 import { mockShopifyCart } from "@utils/mockShopifyCart";
 import ChevronLeft from "@assets/icons/icon-chevron-left.svg?raw";
 
+// Import the stepper component (you don’t need to use <script> tags in Storybook)
+import "@stories/components/henk-quantity-stepper.js";
+
 export default {
   title: "Pages/Cart",
 };
@@ -58,6 +61,29 @@ export const Empty = () => {
 
       gridInfoBox.append(box1, box2, box3);
       fragment.appendChild(gridInfoBox);
+
+      // --- Stepper logic (like Shopify)
+      customElements.whenDefined("henk-quantity-stepper").then(() => {
+        // Remove fallback non-JS inputs
+        fragment.querySelectorAll("[data-js-replace]").forEach((input) => {
+          input.remove();
+        });
+
+        // Add quantity change handler
+        const steppers = fragment.querySelectorAll("henk-quantity-stepper");
+        steppers.forEach((stepper) => {
+          let debounceTimer;
+          stepper.addEventListener("quantity-change", () => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+              const form = stepper.closest("form");
+              if (form) {
+                form.submit();
+              }
+            }, 400);
+          });
+        });
+      });
 
       return fragment;
     },

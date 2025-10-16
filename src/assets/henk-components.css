@@ -38,6 +38,7 @@
 @import "./sections/_henk-content-divider.css";
 @import "./sections/_henk-stores-brick.css";
 @import "./sections/_henk-footer.css";
+@import "./sections/_henk-cart-section.css";
 
 /* layout */
 @import "./layout/_henk-lister-grid.css";
