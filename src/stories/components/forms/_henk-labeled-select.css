@@ -9,6 +9,10 @@
   justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
+
+  .select-wrapper {
+    flex: 1;
+  }
 }
 
 .henk-labeled-select .henk-label {
@@ -22,10 +26,6 @@
 .henk-labeled-select--dir-horizontal .henk-select {
   flex: 1;
 }
-
-/* .henk-labeled-select .required-indicator { */
-/*   color: var(--color-ui-text-danger); */
-/* } */
 
 .henk-labeled-select.henk-labeled-select--floating {
   position: relative;

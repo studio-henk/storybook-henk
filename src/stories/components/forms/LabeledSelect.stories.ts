@@ -67,28 +67,32 @@ export default {
 export const Default = (args) => {
   return createLabeledSelect(args); // Pass all args to createLabeledSelect
 };
-Default.args = {};
-
-export const WithCustomArrow = {
-  args: {
-    label: {
-      text: "Label",
-      htmlFor: "select-id",
-    },
-    select: {
-      options: [
-        { value: "opt1", text: "Option 1" },
-        { value: "opt2", text: "Option 2" },
-      ],
-      id: "select-id",
-      name: "select-name",
-      className: "henk-select",
-      required: false,
-      customArrow: true,
-    },
+Default.args = {
+  select: {
+    customArrow: true,
   },
 };
 
+// export const WithCustomArrow = {
+//   args: {
+//     label: {
+//       text: "Label",
+//       htmlFor: "select-id",
+//     },
+//     select: {
+//       options: [
+//         { value: "opt1", text: "Option 1" },
+//         { value: "opt2", text: "Option 2" },
+//       ],
+//       id: "select-id",
+//       name: "select-name",
+//       className: "henk-select",
+//       required: false,
+//       customArrow: true,
+//     },
+//   },
+// };
+//
 export const Required = {
   args: {
     label: {
@@ -103,6 +107,7 @@ export const Required = {
       id: "select-id2",
       name: "select-name",
       required: true,
+      customArrow: true,
     },
   },
 };
@@ -123,6 +128,7 @@ export const Horizontal = {
       name: "select-name",
       className: "henk-select",
       required: true,
+      customArrow: true,
     },
   },
 };

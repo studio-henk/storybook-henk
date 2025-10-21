@@ -1,4 +1,4 @@
-import { createFieldset } from "./Fieldset";
+import { createFieldset } from "@components/forms/Fieldset";
 
 export default {
   title: "Components/Forms/Fieldset",

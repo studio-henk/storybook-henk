@@ -2,15 +2,15 @@
 
 ## form elements 
 
-  - [ ] required with asterkisk * or in labeledSelect?
+- [ ] required with asterkisk * or in labeledSelect?
 - [ ] radio button 
 - [ ] 2 different ways to do grid form: pick 1?
+- labeledselect -> always with custom arrow!
 
 
 ## Lister
 
 - [ ] sorting 
-  - [ ] henk-select
 
 ## componentize to liquid: 
 - [ ] button-group
