@@ -1,0 +1,14 @@
+.henk-form {
+  .henk-form-grid {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: repeat(2, auto);
+    gap: var(--space-2, 8px);
+  }
+
+  .henk-form-grid__item {
+    .henk-button-group {
+      margin: 0;
+    }
+  }
+}

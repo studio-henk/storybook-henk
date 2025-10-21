@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-import { createBaseLayout } from "./templates/BaseLayout";
+import { createBaseLayout } from "@templates/BaseLayout";
 import { createHeader } from "./TheHeader";
 import { TheFooter } from "./TheFooter";
 import { createSectionHeader } from "./SectionHeader";
-import { createStoreCard } from "./StoreCard";
+import { createStoreCard } from "@components/StoreCard";
 import { createStoresGrid } from "./Grid";
+
+import { NewsletterBlock as RawNewsletterBlock } from "./NewsletterBlock.stories";
 
 function wrapWithShopifySection(
   element: HTMLElement,
@@ -18,6 +20,19 @@ function wrapWithShopifySection(
   return section;
 }
 
+function htmlToNode(html: string): HTMLElement {
+  const template = document.createElement("template");
+  template.innerHTML = html.trim();
+  return template.content.firstElementChild as HTMLElement;
+}
+
+const NewsletterBlockRender = RawNewsletterBlock.render as
+  | (() => string)
+  | undefined;
+
+if (!NewsletterBlockRender) {
+  throw new Error("NewsletterBlock story is missing a render function");
+}
 const meta: Meta = {
   title: "Pages/StoresOverview",
   parameters: { layout: "fullscreen" },
@@ -118,6 +133,8 @@ export const StoresOverview: Story = {
     mainContent.appendChild(
       wrapWithShopifySection(grid, "shopify-section-stores"),
     );
+
+    mainContent.appendChild(htmlToNode(NewsletterBlockRender()));
 
     return createBaseLayout({ header, mainContent, footer });
   },

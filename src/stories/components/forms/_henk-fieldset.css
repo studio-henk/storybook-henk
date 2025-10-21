@@ -1,0 +1,21 @@
+.henk-fieldset legend.henk-legend {
+  font-size: var(--size-font-medium, 13px);
+  font-weight: var(--font-weight-semibold, 500);
+  /* line-height: 40px; */
+  /* margin-bottom: 24px; */
+}
+
+.henk-fieldset + .henk-fieldset {
+  margin-top: 48px;
+}
+
+.henk-fieldset .form-group {
+  display: flex;
+  column-gap: 16px;
+  flex-wrap: wrap;
+}
+
+.henk-fieldset .form-group > * {
+  flex: 1;
+  min-width: 288px;
+}

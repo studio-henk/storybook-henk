@@ -1,12 +1,8 @@
-import type { LogoProps } from "./Logo";
-import { createLogo } from "./Logo";
+import type { LogoProps } from "@components/Logo";
+import { createLogo } from "@components/Logo";
 import IconSearch from "@assets/icons/icon-search.svg?raw";
-// import IconBag from "@assets/icons/icon-bag.svg?raw";
 import IconBag from "@assets/icons/icon-bag-thick.svg?raw";
-// import "../scripts/henk-desktop-menu.ts";
-// import "../scripts/henk-mobile-menu.ts";
 
-// import "../assets/components/_henk-button.css";
 export interface HeaderProps {
   logoProps?: LogoProps;
   title?: string;
@@ -332,7 +328,8 @@ export function createHeader({
           <summary>
             English
           </summary>
-          <div class="henk-localise__content"><form method="post" action="/en/localization" id="localization_form" accept-charset="UTF-8" class="shopify-localization-form" enctype="multipart/form-data"><input type="hidden" name="form_type" value="localization"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="return_to" value="/en/cart?_fd=0&amp;pb=0"><input type="hidden" name="return_to" value="/en/cart">
+          <div class="henk-localise__content">
+              <form method="post" action="/en/localization" id="localization_form" accept-charset="UTF-8" class="shopify-localization-form" enctype="multipart/form-data"><input type="hidden" name="form_type" value="localization"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="return_to" value="/en/cart?_fd=0&amp;pb=0"><input type="hidden" name="return_to" value="/en/cart">
               <ul class="henk-list henk-list--no-bullets">
 
 
@@ -341,10 +338,6 @@ export function createHeader({
                         Nederlands
                       </button>
                     </li>
-
-
-
-
 
                     <li>
                       <button type="submit" name="locale_code" value="de" class="henk-button henk-button--ghost" title="Switch to Deutsch">
@@ -361,7 +354,7 @@ export function createHeader({
         ${IconSearch}
       </i>
     </a>-->
-    <a  class="henk-button henk-button--ghost henk-button--smallx henk-header__utils-item henk-header__utils-item--cart" href="/" aria-label="Cart">
+    <a class="henk-button henk-button--ghost henk-button--smallx henk-header__utils-item henk-header__utils-item--cart" href="?path=/story/pages-cart--not-empty&globals=viewport:responsive" aria-label="Cart">
       <i class="henk-icon icon--only">
         ${IconBag}
       </i>

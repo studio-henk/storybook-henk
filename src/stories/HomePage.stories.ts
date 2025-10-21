@@ -5,7 +5,8 @@ import { createHeader } from "./TheHeader";
 import { TheFooter } from "./TheFooter";
 import { createSplitScreen } from "./SplitScreen";
 import { createThreeColumnBlock } from "./ThreeColumnBlock";
-import { NewsletterBlock } from "./NewsletterBlock.stories.js";
+// import { NewsletterBlock } from "./NewsletterBlock.stories";
+import { NewsletterBlock as RawNewsletterBlock } from "./NewsletterBlock.stories";
 
 function wrapWithShopifySection(
   element: HTMLElement,
@@ -24,6 +25,14 @@ function htmlToNode(html: string): HTMLElement {
   const template = document.createElement("template");
   template.innerHTML = html.trim();
   return template.content.firstElementChild as HTMLElement;
+}
+
+const NewsletterBlockRender = RawNewsletterBlock.render as
+  | (() => string)
+  | undefined;
+
+if (!NewsletterBlockRender) {
+  throw new Error("NewsletterBlock story is missing a render function");
 }
 
 const meta = {
@@ -235,7 +244,7 @@ export const HomePage: Story = {
     mainContent.appendChild(
       wrapWithShopifySection(threecolumn3, "section-threecolumn3"),
     );
-    mainContent.appendChild(htmlToNode(NewsletterBlock()));
+    mainContent.appendChild(htmlToNode(NewsletterBlockRender()));
 
     return createBaseLayout({ header, mainContent, footer });
   },

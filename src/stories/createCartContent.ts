@@ -1,5 +1,5 @@
 import { mockShopifyCart } from "@utils/mockShopifyCart";
-import { createButton } from "./Button";
+import { createButton } from "@components/Button";
 
 import IconTrash from "@assets/icons/icon-trash.svg?raw";
 

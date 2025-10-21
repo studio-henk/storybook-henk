@@ -1,4 +1,4 @@
-import { createButton, ButtonProps } from "./Button";
+import { createButton, ButtonProps } from "@components/Button";
 
 export interface SectionHeaderProps {
   bgColor?: "default" | "primary" | "secondary";

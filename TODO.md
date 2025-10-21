@@ -1,16 +1,34 @@
 # TODO
 
-## Collections route / page 
+## form elements 
 
-- [ ] same card but different ?
+  - [ ] required with asterkisk * or in labeledSelect?
+- [ ] radio button 
+- [ ] 2 different ways to do grid form: pick 1?
+
+
+## Lister
+
+- [ ] sorting 
+  - [ ] henk-select
+
+## componentize to liquid: 
+- [ ] button-group
+
+- [ ] form component liquids: 
+  - [ ] input
+  - [ ] label
+  - [ ] labeledinput
+
+## Collections route / page 
 
 ## Cart page
 
 - [ ] cart page
-  - [ ] controls? interaction
   - [ ] henk-quantity-stepper.js to .ts
   - [ ] mock form quantity change response?
-  - [ ] newsletter?
+  - [x] newsletter?
+  - [ ] add form controls
 - [ ] merge dev branch to staging branch?
 - [ ] storybook -> use thick chevron everywhere 
 - [ ] icons, clean up, ie b-corp is not an icon but logo
@@ -33,4 +51,9 @@
 - [ ] style lang selector
 
 
+## DONE 
+
+### HOME PAGE
+- [x] homepage newsletter block 
+- [x] section-header block, editable in admin visual editor
 

@@ -5,7 +5,8 @@ import { createHeader } from "./TheHeader";
 import { TheFooter } from "./TheFooter";
 import { createSplitScreen } from "./SplitScreen";
 import { createThreeColumnBlock } from "./ThreeColumnBlock";
-import { NewsletterBlock } from "./NewsletterBlock.stories.js";
+import { NewsletterBlock as RawNewsletterBlock } from "./NewsletterBlock.stories";
+
 import { createBreadcrumbs } from "./Breadcrumbs";
 import { createSectionHeader } from "./SectionHeader";
 
@@ -26,6 +27,14 @@ function htmlToNode(html: string): HTMLElement {
   const template = document.createElement("template");
   template.innerHTML = html.trim();
   return template.content.firstElementChild as HTMLElement;
+}
+
+const NewsletterBlockRender = RawNewsletterBlock.render as
+  | (() => string)
+  | undefined;
+
+if (!NewsletterBlockRender) {
+  throw new Error("NewsletterBlock story is missing a render function");
 }
 
 const meta = {
@@ -99,13 +108,8 @@ export const StoresDetail: Story = {
     });
 
     mainContent.appendChild(wrapWithShopifySection(split1, "section-split1"));
-    // mainContent.appendChild(wrapWithShopifySection(threecolumn1, 'section-threecolumn1'));
-    // mainContent.appendChild(wrapWithShopifySection(videoBlock1, 'section-videoBlock1'));
-    // mainContent.appendChild(wrapWithShopifySection(threecolumn2, 'section-threecolumn2'));
-    // mainContent.appendChild(wrapWithShopifySection(split2, 'section-split2'));
-    // mainContent.appendChild(wrapWithShopifySection(split3, 'section-split3'));
-    // mainContent.appendChild(wrapWithShopifySection(threecolumn3, 'section-threecolumn3'));
-    mainContent.appendChild(htmlToNode(NewsletterBlock()));
+
+    mainContent.appendChild(htmlToNode(NewsletterBlockRender()));
 
     return createBaseLayout({ header, mainContent, footer });
   },

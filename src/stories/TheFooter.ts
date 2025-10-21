@@ -1,6 +1,6 @@
 // import "../assets/_henk-footer.css";
 
-import { TextLink } from "./TextLink"; // adjust path as needed
+import { TextLink } from "@stories/base/TextLink"; // adjust path as needed
 
 import BcorpLogoSVG from "@assets/icons/b-corp.svg?raw";
 import Pinterest from "@assets/icons/icon-pinterest.svg?raw";

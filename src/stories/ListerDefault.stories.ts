@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-import { createBaseLayout } from "./templates/BaseLayout";
-import { createHeader } from "./TheHeader";
-import { TheFooter } from "./TheFooter";
-import { createSectionHeader } from "./SectionHeader";
-import { createBaseCard, BaseCardProps } from "./BaseCard";
+import { createBaseLayout } from "@templates/BaseLayout";
+import { createHeader } from "@stories/TheHeader";
+import { TheFooter } from "@stories/TheFooter";
+import { createSectionHeader } from "@stories/SectionHeader";
+import { createBaseCard, BaseCardProps } from "@components/BaseCard";
 import ChevronRight from "@assets/icons/icon-chevron-right-thick.svg?raw";
-import { createButtonGroup, ButtonGroupProps } from "./ButtonGroup";
+import { createButtonGroup, ButtonGroupProps } from "@components/ButtonGroup";
 
 function wrapWithShopifySection(
   element: HTMLElement,
