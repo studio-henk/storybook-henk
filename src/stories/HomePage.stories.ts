@@ -52,6 +52,7 @@ export const HomePage: Story = {
       cartCount: 3,
       align: "center",
       inBetween: true,
+      isHomepage: true,
       logoProps: { variant: "transparent", href: "/" },
     });
     const footer = TheFooter({});

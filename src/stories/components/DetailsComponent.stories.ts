@@ -13,8 +13,14 @@ export default {
     variant: { control: { type: "select", options: ["default", "plusmin"] } }, // Add variant control
     name: { control: "text" },
   },
-  render: ({ summary, content, variant, name }) => {
-    const details = createDetailsComponent({ summary, content, variant, name });
+  render: ({ summary, content, variant, name, iconName }) => {
+    const details = createDetailsComponent({
+      summary,
+      content,
+      variant,
+      name,
+      iconName,
+    });
     return details;
   },
   tags: ["autodocs"],
@@ -74,10 +80,24 @@ export const PlusMinVariant = {
   },
 };
 
+export const WithIcon = {
+  args: {
+    variant: "plusmin",
+    iconName: "icon-truck-thick",
+    summary: "Summary",
+    content: `<p>Op onze <a href="#">onderhoudspagina</a> vind je uitgebreide informatie over het gebruik en onderhoud van onze meubels. Zo adviseren wij het gebruik van onderzetters en schoonmaken met licht vochtig doekje (eventueel mild sopje, wel nadrogen). Hout van iedere kwaliteit werkt, en reageert op (lucht-)vocht(-igheid), warmte(-wisselingen) en licht; voorkom schommelingen hierin of blootstelling hieraan dus. Ook afwerkingen bieden slechts gedeeltelijke bescherming tegen vlekken en krassen. Scheuren of verkleuren, gevolgen van dergelijke blootstelling of schommelingen, alsook krassen, slijtagesporen, kringen of vlekken vallen daarom niet onder de garantie, zij zijn immers het gevolg van gebruik door de klant. Raadpleeg ook onze algemene voorwaarden. Je vindt op onze onderhoudspagina onder meer informatie over:</p><ul>
+	<li>gebruik van je meubel</li>
+	<li>stappenplan voor grondig onderhoud bij diepe krassen/vlekken</li>
+	<li>services</li>
+</ul>`,
+  },
+};
+
 export const MultipleDetailsComponents = () => {
   // Create details components
   const details1 = createDetailsComponent({
     summary: "What is the purpose of this component?",
+    iconName: "icon-help-circle",
     content:
       "<p>This component is used to display a list of frequently asked questions.</p>",
     variant: "plusmin",
@@ -85,6 +105,7 @@ export const MultipleDetailsComponents = () => {
 
   const details2 = createDetailsComponent({
     summary: "How many samples can I order?",
+    iconName: "icon-help-circle",
     content:
       "<p>You are free to assemble your own samples or choose from our curated sample packs, which include six material samples each. You can help us reduce waste by ordering only the samples you need.</p>",
     variant: "plusmin",
@@ -92,6 +113,7 @@ export const MultipleDetailsComponents = () => {
 
   const details3 = createDetailsComponent({
     summary: "When can I expect my samples?",
+    iconName: "icon-calendar",
     content:
       "<p>You should expect your samples within 7 days. Please contact us if you have not received your samples within one week.</p>",
     variant: "plusmin",
@@ -99,6 +121,7 @@ export const MultipleDetailsComponents = () => {
 
   const details4 = createDetailsComponent({
     summary: "Why do you want me to return the samples?",
+    iconName: "icon-help-circle",
     content:
       "<p>By returning your samples, you can help us ensure that nothing goes to waste. We repurpose samples by using them in the stores if they are still in good condition.</p>",
     variant: "plusmin",
@@ -106,6 +129,7 @@ export const MultipleDetailsComponents = () => {
 
   const details5 = createDetailsComponent({
     summary: "How can I return my samples?",
+    iconName: "icon-truck-thick",
     content:
       "<p>You can return your sample pack to any of our stores or mail it to us for free via Antwoordnummer 98189, 1000 VA Amsterdam.</p>",
     variant: "plusmin",
@@ -113,6 +137,7 @@ export const MultipleDetailsComponents = () => {
 
   const details6 = createDetailsComponent({
     summary: "Will I be reimbursed for the samples?",
+    iconName: "icon-help-circle",
     content:
       "<p>When you return the samples to one of our stores, we will reimburse the cost as a discount with your order. Unfortunately, we're not able to offer reimbursement when you return your samples to us via mail.</p>",
     variant: "plusmin",

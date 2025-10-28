@@ -100,6 +100,12 @@
       }
     }
 
+    .henk-header__logo-heading {
+      margin: 0;
+      display: inline-flex;
+      line-height: 24px;
+    }
+
     .henk-header__logo {
       z-index: 9;
       padding: 0;

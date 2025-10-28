@@ -5,7 +5,8 @@
 - [ ] required with asterkisk * or in labeledSelect?
 - [ ] radio button 
 - [ ] 2 different ways to do grid form: pick 1?
-- labeledselect -> always with custom arrow!
+- [x] labeledselect -> always with custom arrow!
+- [ ] accessibility fixes
 
 
 ## Lister

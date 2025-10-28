@@ -9,6 +9,7 @@ export interface HeaderProps {
   cartCount?: number;
   align?: string;
   inBetween?: boolean;
+  isHomepage?: boolean;
 }
 
 export function createHeader({
@@ -17,6 +18,7 @@ export function createHeader({
   cartCount = 0,
   align,
   inBetween = false,
+  isHomepage = false,
 }: HeaderProps = {}): HTMLElement {
   const header = document.createElement("header");
   header.className = "henk-header";
@@ -369,7 +371,23 @@ ${cartBubbleHtml}
   if (logoProps) {
     const logo = createLogo(logoProps);
     logo.classList.add("henk-header__logo");
-    headerInner.appendChild(logo);
+    // headerInner.appendChild(logo);
+
+    if (isHomepage) {
+      const h1 = document.createElement("h1");
+      h1.className = "henk-header__logo-heading";
+
+      const hiddenText = document.createElement("span");
+      hiddenText.className = "visually-hidden";
+      hiddenText.innerText = "Studio HENK";
+
+      logo.prepend(hiddenText);
+
+      h1.appendChild(logo);
+      headerInner.appendChild(h1);
+    } else {
+      headerInner.appendChild(logo);
+    }
   } else {
     const h1 = document.createElement("h1");
     h1.innerText = title;
