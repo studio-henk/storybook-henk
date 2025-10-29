@@ -1,0 +1,13 @@
+.henk-video-section {
+  background-color: pink;
+
+  .henk-video {
+    width: 100%;
+  }
+
+  .henk-video-container--cover {
+    aspect-ratio: 16/9;
+    max-height: 100svh;
+    width: 100%;
+  }
+}

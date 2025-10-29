@@ -1,5 +1,11 @@
 # TODO
 
+- [ ] Video block - full width
+- [ ] Splitscreen block?
+- [ ] Section header check functionality
+- [ ] icon naming consistent, also with shopify.
+- [ ] icon cleanup - remove unused icons to tmp folder legacy
+
 ## form elements 
 
 - [ ] required with asterkisk * or in labeledSelect?
@@ -10,8 +16,6 @@
 
 
 ## Lister
-
-- [ ] sorting 
 
 ## componentize to liquid: 
 - [ ] button-group
@@ -30,8 +34,6 @@
   - [ ] mock form quantity change response?
   - [x] newsletter?
   - [ ] add form controls
-- [ ] merge dev branch to staging branch?
-- [ ] storybook -> use thick chevron everywhere 
 - [ ] icons, clean up, ie b-corp is not an icon but logo
 
 ## Later

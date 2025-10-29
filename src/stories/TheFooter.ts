@@ -2,29 +2,11 @@
 
 import { TextLink } from "@stories/base/TextLink"; // adjust path as needed
 
-import BcorpLogoSVG from "@assets/icons/b-corp.svg?raw";
+import BcorpLogoSVG from "@assets/logos/b-corp.svg?raw";
 import Pinterest from "@assets/icons/icon-pinterest.svg?raw";
 import Instagram from "@assets/icons/icon-instagram.svg?raw";
 import Facebook from "@assets/icons/icon-facebook.svg?raw";
 import TikTok from "@assets/icons/icon-tiktok.svg?raw";
-// import Youtube from "@assets/icons/icon-youtube.svg?raw";
-
-// function loadTrustpilotScript() {
-//   return new Promise((resolve, reject) => {
-//     if (window.Trustpilot) {
-//       resolve();
-//       return;
-//     }
-//
-//     const script = document.createElement("script");
-//     script.src =
-//       "https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js";
-//     script.async = true;
-//     script.onload = () => resolve();
-//     script.onerror = () => reject("Trustpilot script failed to load");
-//     document.head.appendChild(script);
-//   });
-// }
 
 export interface FooterLink {
   label: string;

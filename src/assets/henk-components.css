@@ -9,6 +9,8 @@
 @import "../stories/components/_henk-tag.css";
 @import "../stories/components/_henk-details-component.css";
 @import "../stories/components/forms/_henk-form-messages.css";
+@import "../stories/components/_henk-video.css";
+@import "../stories/components/_henk-video-section.css";
 
 /* forms */
 @import "../stories/components/forms/_henk-label.css";

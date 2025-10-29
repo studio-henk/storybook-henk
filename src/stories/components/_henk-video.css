@@ -1,0 +1,33 @@
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.henk-video-container {
+  position: relative;
+
+  .henk-video-sound-toggle {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+  }
+
+  &.henk-video-container--cover {
+    background-color: pink;
+    height: 100%;
+  }
+
+  &.henk-video-container--cover .henk-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-height: 100svh;
+  }
+
+  &.henk-video-container--rounded {
+    border-radius: var(--radius-2, 8px);
+    overflow: hidden;
+  }
+}

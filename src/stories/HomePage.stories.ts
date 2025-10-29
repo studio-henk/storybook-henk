@@ -5,7 +5,7 @@ import { createHeader } from "./TheHeader";
 import { TheFooter } from "./TheFooter";
 import { createSplitScreen } from "./SplitScreen";
 import { createThreeColumnBlock } from "./ThreeColumnBlock";
-// import { NewsletterBlock } from "./NewsletterBlock.stories";
+import { VideoSection } from "@components/VideoSection";
 import { NewsletterBlock as RawNewsletterBlock } from "./NewsletterBlock.stories";
 
 function wrapWithShopifySection(
@@ -120,8 +120,39 @@ export const HomePage: Story = {
       ],
     });
 
+    const splitscreenVideo = createSplitScreen({
+      id: "split-screen-5",
+      title: "Eén HENK eettafel, één boom",
+      mediaLink: "https://www.studio-henk.nl/nl/weforest",
+      mediaLinkTargetBlank: true,
+      content:
+        "<p>Als er één ding is waar Studio HENK groot mee geworden is, dan is het de eettafel.</p>" +
+        "<p>Geen enkele van onze eettafels is hetzelfde, maar de waarden wel: met zorg vervaardigd van hout uit duurzaam beheerde bossen, lokaal en met oog voor de toekomst.</p>" +
+        "<p>Omdat we niet alleen van de aarde willen nemen, geven we daar vanaf nu ook iets voor terug. Voor elke verkochte eettafel planten we een boom en ondersteunen de groei ervan. Zo dragen we bij aan het herstel van biodiversiteit.</p>",
+      videoProps: {
+        src: "assets/video/sh-rdam.mp4",
+        width: 1080,
+        height: 1080,
+        poster: "https://via.placeholder.com/1280x720",
+        autoplay: true,
+        loop: true,
+        cover: true,
+        rounded: true,
+      },
+    });
+
     const videoBlock1 = document.createElement("div");
     videoBlock1.textContent = "video block";
+
+    const videoSection = VideoSection({
+      src: "assets/video/sh-rdam.mp4",
+      poster: "https://via.placeholder.com/1280x720",
+      autoplay: true,
+      loop: true,
+      cover: true,
+      description:
+        "Video showing Studio HENK’s nieuwe winkel in Rotterdam met de boodschap ‘Kom langs in onze nieuwe winkel’.",
+    });
 
     const threecolumn2 = createThreeColumnBlock({
       alignColumnsCenter: true,
@@ -143,6 +174,24 @@ export const HomePage: Story = {
           text: "Wij produceren op bestelling om verspilling van grondstoffen te voorkomen. Grotendeels in Nederland, altijd binnen Europa.",
         },
       ],
+    });
+
+    const splitscreenVideo2 = createSplitScreen({
+      id: "split-screen-6",
+      title: "Eén HENK eettafel, één boom",
+      content:
+        "<p>Als er één ding is waar Studio HENK groot mee geworden is, dan is het de eettafel.</p>" +
+        "<p>Geen enkele van onze eettafels is hetzelfde, maar de waarden wel: met zorg vervaardigd van hout uit duurzaam beheerde bossen, lokaal en met oog voor de toekomst.</p>" +
+        "<p>Omdat we niet alleen van de aarde willen nemen, geven we daar vanaf nu ook iets voor terug. Voor elke verkochte eettafel planten we een boom en ondersteunen de groei ervan. Zo dragen we bij aan het herstel van biodiversiteit.</p>",
+      videoProps: {
+        src: "assets/video/mov_bbb.mp4",
+        width: 320,
+        height: 176,
+        poster: "https://via.placeholder.com/1280x720",
+        autoplay: false,
+        loop: true,
+        cover: false,
+      },
     });
 
     const split2 = createSplitScreen({
@@ -235,11 +284,20 @@ export const HomePage: Story = {
       wrapWithShopifySection(threecolumn1, "section-threecolumn1"),
     );
     mainContent.appendChild(
-      wrapWithShopifySection(videoBlock1, "section-videoBlock1"),
+      wrapWithShopifySection(splitscreenVideo, "section-splitvideo"),
     );
+
     mainContent.appendChild(
       wrapWithShopifySection(threecolumn2, "section-threecolumn2"),
     );
+
+    mainContent.appendChild(
+      wrapWithShopifySection(videoSection, "section-video"),
+    );
+    // mainContent.appendChild(
+    //   wrapWithShopifySection(splitscreenVideo2, "section-splitvideo2"),
+    // );
+
     mainContent.appendChild(wrapWithShopifySection(split2, "section-split2"));
     mainContent.appendChild(wrapWithShopifySection(split3, "section-split3"));
     mainContent.appendChild(
