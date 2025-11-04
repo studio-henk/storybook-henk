@@ -4,7 +4,8 @@
 }
 
 .henk-split-screen__inner {
-  width: min(768px, 100% - 3rem);
+  /* width: min(768px, 100% - 3rem); */
+  width: min(var(--size-width-content), 100% - 3rem);
   margin-inline: auto;
 }
 

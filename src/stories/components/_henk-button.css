@@ -1,4 +1,5 @@
-.henk-button {
+.henk-button,
+.henk-button:link {
   --btn-bg: var(--color-background-tertiary);
   --btn-bg-hover: var(--color-background-tertiary-dark);
   --btn-text: var(--color-text-static);
@@ -30,8 +31,13 @@
     border-color 0.3s ease;
 }
 
+/* .henk-button:link { */
+/*   text-decoration: none; */
+/* } */
+
 @media screen and (max-width: 321px) {
-  .henk-button {
+  .henk-button,
+  .henk-button:link {
     padding-inline: 16px;
   }
 }
@@ -45,7 +51,8 @@ a:hover span.henk-button {
 }
 
 /* Variants */
-.henk-button--primary {
+.henk-button--primary,
+.henk-button--primary:link {
   --btn-bg: var(--color-background-primary-light);
 }
 

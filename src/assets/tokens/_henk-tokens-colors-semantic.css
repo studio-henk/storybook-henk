@@ -53,7 +53,9 @@
   --color-text-base: var(--color-neutral-0, #000);
   --color-text-base-invert: var(--color-neutral-100, #fff);
   --color-text-link: var(--color-blue-40, blue);
+  --color-text-link-visited: var(--color-neutral-20, blue);
   --color-text-link-hover: var(--color-blue-30, blue);
+  --color-text-link-active: var(--color-danger, red);
   --color-text-muted: var(--color-neutral-50);
   --color-text-on-disabled: var(--color-neutral-50);
   --color-text-primary: var(--color-primary);
