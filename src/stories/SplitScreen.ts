@@ -55,7 +55,7 @@ export const createSplitScreen = ({
   const mediaItem = document.createElement("div");
   mediaItem.className = "henk-split-screen__grid-item";
 
-  let mediaElement: HTMLElement | undefined;
+  // let mediaElement: HTMLElement | undefined;
 
   if (videoProps) {
     const videoBlock = VideoBlock(videoProps); // <div> with <video> + optional button
@@ -70,11 +70,7 @@ export const createSplitScreen = ({
         link.target = "_blank";
         link.rel = "noopener";
       }
-      // link.appendChild(videoElement);
-      // mediaItem.appendChild(link);
-
       // append button separately
-      // if (button) mediaItem.appendChild(button);
       // Wrap only the video in the link, keep container intact
       videoElement.parentElement?.insertBefore(link, videoElement);
       link.appendChild(videoElement);
@@ -82,9 +78,6 @@ export const createSplitScreen = ({
 
     // Always append the container
     mediaItem.appendChild(videoBlock);
-    // } else {
-    //   mediaItem.appendChild(videoBlock);
-    // }
   } else if (imageUrl) {
     const img = document.createElement("img");
     img.src = imageUrl;
@@ -106,62 +99,6 @@ export const createSplitScreen = ({
       mediaItem.appendChild(img);
     }
   }
-  // if (videoProps) {
-  //   mediaElement = VideoBlock(videoProps);
-  // } else if (imageUrl) {
-  //   const img = document.createElement("img");
-  //   img.src = imageUrl;
-  //   img.alt = imageAlt || "";
-  //   img.className = "henk-split-screen__img";
-  //   img.width = 1152;
-  //   img.height = 1728;
-  //   mediaElement = img;
-  // }
-  //
-  // // Wrap in link if provided
-  // if (mediaElement) {
-  //   if (mediaLink) {
-  //     const link = document.createElement("a");
-  //     link.href = mediaLink;
-  //     if (mediaLinkTargetBlank) {
-  //       link.target = "_blank";
-  //       link.rel = "noopener";
-  //     }
-  //     link.appendChild(mediaElement);
-  //     mediaItem.appendChild(link);
-  //   } else {
-  //     mediaItem.appendChild(mediaElement);
-  //   }
-  // }
-
-  // Video has priority if provided
-  // if (videoProps) {
-  //   const videoElement = VideoBlock(videoProps); // returns <div> wrapper with video and button
-  //   mediaItem.appendChild(videoElement);
-  // } else if (imageUrl) {
-  //   const img = document.createElement("img");
-  //   img.src = imageUrl;
-  //   img.alt = imageAlt || "";
-  //   img.className = "henk-split-screen__img";
-  //   img.width = 1152;
-  //   img.height = 1728;
-  //   // imageItem.appendChild(img);
-  //
-  //   if (imageLink) {
-  //     const link = document.createElement("a");
-  //     link.href = imageLink;
-  //
-  //     if (imageLinkTargetBlank) {
-  //       link.target = "_blank";
-  //       link.rel = "noopener";
-  //     }
-  //
-  //     link.appendChild(img);
-  //     mediaItem.appendChild(link);
-  //   } else {
-  //     mediaItem.appendChild(img);
-  //   }
-  // }
 
   // === CONTENT COLUMN ===
   const contentItem = document.createElement("div");

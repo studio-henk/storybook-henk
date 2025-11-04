@@ -44,7 +44,8 @@
 @import "./sections/_henk-three-column-block.css";
 @import "./sections/_henk-split-screen.css";
 @import "./sections/_henk-newsletter-form.css";
-@import "./sections/_henk-double-image-block.css";
+/* @import "./sections/_henk-double-image-block.css"; */
+@import "./sections/_henk-double-media-block.css";
 @import "./sections/_henk-section-header-block.css";
 @import "./sections/_henk-breadcrumbs.css";
 @import "./sections/_henk-content-divider.css";

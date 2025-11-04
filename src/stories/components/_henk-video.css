@@ -14,7 +14,7 @@ video {
   }
 
   &.henk-video-container--cover {
-    background-color: pink;
+    background-color: #fff;
     height: 100%;
   }
 

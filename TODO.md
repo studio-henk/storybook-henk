@@ -1,8 +1,6 @@
 # TODO
 
-- [ ] Video block - full width
-- [ ] Splitscreen block?
-- [ ] Section header check functionality
+
 - [ ] icon naming consistent, also with shopify.
 - [ ] icon cleanup - remove unused icons to tmp folder legacy
 
@@ -59,4 +57,7 @@
 ### HOME PAGE
 - [x] homepage newsletter block 
 - [x] section-header block, editable in admin visual editor
-
+- [x] Video block - full width
+- [x] Splitscreen block?
+- [x] Section header check functionality
+- [x] splitcreen video, remove pink bg

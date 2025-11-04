@@ -31,10 +31,6 @@
     border-color 0.3s ease;
 }
 
-/* .henk-button:link { */
-/*   text-decoration: none; */
-/* } */
-
 @media screen and (max-width: 321px) {
   .henk-button,
   .henk-button:link {
@@ -94,7 +90,7 @@ a:hover span.henk-button {
 }
 
 /* Ghost variant (minimal styling) */
-.henk-button--ghost {
+.henk-button.henk-button--ghost {
   --btn-bg: transparent;
   --btn-text: var(--color-text-base);
   --btn-border: transparent;

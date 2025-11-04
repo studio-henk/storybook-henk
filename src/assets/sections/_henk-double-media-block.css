@@ -1,21 +1,21 @@
-.henk-double-image-block {
+.henk-double-media-block {
   padding-block: var(--space-13, 96px);
 }
 
-.henk-double-image-block img,
-.henk-double-image-block video {
+.henk-double-media-block img,
+.henk-double-media-block video {
   margin-bottom: 0;
   border-radius: var(--radius-2, 8px);
   aspect-ratio: 2/3;
   object-fit: cover;
 }
 
-.henk-double-image-block__inner {
+.henk-double-media-block__inner {
   width: min(768px, 100% - 3rem);
   margin-inline: auto;
 }
 
-.henk-double-image-block__grid {
+.henk-double-media-block__grid {
   display: flex;
   row-gap: var(--space-7, 48px);
   flex-wrap: wrap;
@@ -23,45 +23,45 @@
 }
 
 @media only screen and (min-width: 588px) {
-  .henk-double-image-block__grid-item {
+  .henk-double-media-block__grid-item {
     flex: 1 1 clamp(270px, 49%, 560px);
   }
 
-  .henk-double-image-block__grid-item:last-child {
+  .henk-double-media-block__grid-item:last-child {
     display: flex;
     justify-content: flex-end;
   }
 
-  .henk-double-image-block__grid-item:last-child img,
-  .henk-double-image-block__grid-item:last-child .henk-video-container,
-  .henk-double-image-block__grid-item:last-child a {
+  .henk-double-media-block__grid-item:last-child img,
+  .henk-double-media-block__grid-item:last-child .henk-video-container,
+  .henk-double-media-block__grid-item:last-child a {
     max-width: 80%;
   }
 
-  .henk-double-image-block__grid-item:last-child a > img {
+  .henk-double-media-block__grid-item:last-child a > img {
     max-width: 100%;
   }
 
   /* Flip order if root has modifier */
-  .henk-double-image-block--reverse .henk-double-image-block__grid {
+  .henk-double-media-block--reverse .henk-double-media-block__grid {
     flex-direction: row-reverse;
   }
 
-  .henk-double-image-block--reverse
-    .henk-double-image-block__grid-item:last-child {
+  .henk-double-media-block--reverse
+    .henk-double-media-block__grid-item:last-child {
     justify-content: flex-start;
   }
 
   /* hover on links */
-  .henk-double-image-block__grid-item a img {
+  .henk-double-media-block__grid-item a img {
     transition: transform 0.3s ease;
   }
-  .henk-double-image-block__grid-item a:hover img {
+  .henk-double-media-block__grid-item a:hover img {
     transform: scale(1.025);
   }
 }
 
-.henk-double-image-block__grid-item svg {
+.henk-double-media-block__grid-item svg {
   border-radius: var(--radius-2, 8px);
   background-color: var(--color-background-muted);
   aspect-ratio: 2 / 3;
@@ -69,6 +69,6 @@
   max-width: 100%;
 }
 
-.henk-double-image-block__grid-item svg.placeholder-svg-small {
+.henk-double-media-block__grid-item svg.placeholder-svg-small {
   max-width: 80%;
 }
