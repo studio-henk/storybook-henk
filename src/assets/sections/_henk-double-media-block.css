@@ -62,11 +62,11 @@
 }
 
 .henk-double-media-block__grid-item svg {
-  border-radius: var(--radius-2, 8px);
-  background-color: var(--color-background-muted);
-  aspect-ratio: 2 / 3;
-  width: 100%;
-  max-width: 100%;
+  /* border-radius: var(--radius-2, 8px); */
+  /* background-color: var(--color-background-muted); */
+  /* aspect-ratio: 2 / 3; */
+  /* width: 100%; */
+  /* max-width: 100%; */
 }
 
 .henk-double-media-block__grid-item svg.placeholder-svg-small {

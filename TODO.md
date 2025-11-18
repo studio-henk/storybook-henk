@@ -1,5 +1,7 @@
 # TODO
 
+- [ ] check button padding left for ghost on cart page
+
 
 - [ ] icon naming consistent, also with shopify.
 - [ ] icon cleanup - remove unused icons to tmp folder legacy

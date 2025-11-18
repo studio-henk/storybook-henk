@@ -1,0 +1,38 @@
+.henk-hero {
+  background-color: #000;
+
+  .henk-hero__inner {
+    position: relative;
+    height: 100%;
+  }
+
+  .henk-hero__image {
+    margin: 0;
+    width: 100vw;
+    height: 100svh;
+    object-fit: cover;
+  }
+
+  .henk-hero__content {
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    backdrop-filter: brightness(0.85);
+
+    > * {
+      margin: 0;
+    }
+  }
+}
+
+body:has(.henk-header) .henk-hero .henk-hero__image {
+  height: calc(100svh - 72px);
+}

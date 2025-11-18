@@ -2,7 +2,7 @@ import CheckmarkIcon from "@assets/icons/icon-checkmark-fat.svg?raw";
 import { createForm } from "@components/forms/aForm";
 import { createFieldset } from "@components/forms/Fieldset";
 import { createLabeledInput } from "@components/forms/LabeledInput";
-import { createLabeledSelect } from "@components/forms/LabeledSelect";
+import createLabeledSelect from "@components/forms/LabeledSelect";
 import { createButton } from "@components/Button";
 import { createLabeledCheckbox } from "@components/forms/LabeledCheckbox";
 

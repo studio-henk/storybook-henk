@@ -1,8 +1,12 @@
+.henk-fieldset {
+  border: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
 .henk-fieldset legend.henk-legend {
   font-size: var(--size-font-medium, 13px);
   font-weight: var(--font-weight-semibold, 500);
-  /* line-height: 40px; */
-  /* margin-bottom: 24px; */
 }
 
 .henk-fieldset + .henk-fieldset {

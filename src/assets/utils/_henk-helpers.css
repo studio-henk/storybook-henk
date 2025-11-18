@@ -20,3 +20,9 @@
 .text-align-right {
   text-align: right;
 }
+
+.js-enabled {
+  [data-js-hide] {
+    display: none;
+  }
+}

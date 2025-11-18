@@ -11,6 +11,7 @@ video {
     position: absolute;
     bottom: 8px;
     left: 8px;
+    z-index: 999;
   }
 
   &.henk-video-container--cover {
@@ -30,4 +31,8 @@ video {
     border-radius: var(--radius-2, 8px);
     overflow: hidden;
   }
+}
+
+.henk-video-sound-toggle svg {
+  display: none;
 }

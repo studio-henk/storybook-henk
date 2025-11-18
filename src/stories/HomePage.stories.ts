@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/html";
 import { createBaseLayout } from "./templates/BaseLayout";
 import { createHeader } from "./TheHeader";
 import { TheFooter } from "./TheFooter";
+import { HeroBlock } from "@components/HeroBlock";
 import { createSplitScreen } from "./SplitScreen";
 import { createThreeColumnBlock } from "./ThreeColumnBlock";
 import { VideoSection } from "@components/VideoSection";
@@ -59,6 +60,15 @@ export const HomePage: Story = {
 
     const mainContent = document.createElement("div");
     mainContent.id = "home-main-content";
+
+    const hero = HeroBlock({
+      type: "image",
+      src: "assets/images/hero1.jpg",
+      caption: "Timeless Style",
+      title: "Modern Comfort, Classic Design",
+      text: "A new season of effortless looks — crafted to last.",
+      button: { label: "Shop the Collection", href: "#", variant: "primary" },
+    });
 
     const split1 = createSplitScreen({
       id: "split-screen-1",
@@ -133,7 +143,6 @@ export const HomePage: Story = {
         src: "assets/video/sh-rdam.mp4",
         width: 1080,
         height: 1080,
-        poster: "https://via.placeholder.com/1280x720",
         autoplay: true,
         loop: true,
         cover: true,
@@ -146,7 +155,6 @@ export const HomePage: Story = {
 
     const videoSection = VideoSection({
       src: "assets/video/sh-rdam.mp4",
-      poster: "https://via.placeholder.com/1280x720",
       autoplay: true,
       loop: true,
       cover: true,
@@ -187,7 +195,6 @@ export const HomePage: Story = {
         src: "assets/video/mov_bbb.mp4",
         width: 320,
         height: 176,
-        poster: "https://via.placeholder.com/1280x720",
         autoplay: false,
         loop: true,
         cover: false,
@@ -278,7 +285,7 @@ export const HomePage: Story = {
         },
       ],
     });
-
+    mainContent.appendChild(wrapWithShopifySection(hero, "section-hero"));
     mainContent.appendChild(wrapWithShopifySection(split1, "section-split1"));
     mainContent.appendChild(
       wrapWithShopifySection(threecolumn1, "section-threecolumn1"),

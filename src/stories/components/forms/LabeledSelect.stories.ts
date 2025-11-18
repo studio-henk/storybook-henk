@@ -1,18 +1,12 @@
-import { createLabeledSelect } from "@components/forms/LabeledSelect";
+import type { Meta, StoryObj } from "@storybook/html";
+import type { LabeledSelectProps } from "@components/forms/LabeledSelect";
 
-export default {
+import createLabeledSelect from "@components/forms/LabeledSelect";
+
+const meta: Meta = {
   title: "Components/Forms/LabeledSelect",
   tags: ["autodocs"],
-  component: createLabeledSelect,
-  render: ({ label, select, orientation, ...args }) => {
-    const labeledSelect = createLabeledSelect({
-      label,
-      select,
-      orientation,
-      ...args,
-    });
-    return labeledSelect;
-  },
+  render: (args) => createLabeledSelect(args as LabeledSelectProps),
   argTypes: {
     orientation: {
       control: { type: "select" },
@@ -41,6 +35,7 @@ export default {
         name: "select-name",
         className: "henk-select",
         required: false,
+        customArrow: true,
       },
     },
   },
@@ -58,41 +53,15 @@ export default {
       name: "select-name",
       className: "henk-select",
       required: false,
+      customArrow: true,
     },
   },
 };
 
-// export const Default = {};
-// Default story using render function
-export const Default = (args) => {
-  return createLabeledSelect(args); // Pass all args to createLabeledSelect
-};
-Default.args = {
-  select: {
-    customArrow: true,
-  },
-};
+export default meta;
+type Story = StoryObj<LabeledSelectProps>;
+export const Default: Story = {};
 
-// export const WithCustomArrow = {
-//   args: {
-//     label: {
-//       text: "Label",
-//       htmlFor: "select-id",
-//     },
-//     select: {
-//       options: [
-//         { value: "opt1", text: "Option 1" },
-//         { value: "opt2", text: "Option 2" },
-//       ],
-//       id: "select-id",
-//       name: "select-name",
-//       className: "henk-select",
-//       required: false,
-//       customArrow: true,
-//     },
-//   },
-// };
-//
 export const Required = {
   args: {
     label: {

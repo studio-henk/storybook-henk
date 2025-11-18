@@ -1,4 +1,4 @@
-export interface CreateLabelProps {
+export interface LabelProps {
   /** The text content of the label */
   text?: string;
   /** The ID of the input element associated with the label */
@@ -16,7 +16,7 @@ export const createLabel = ({
   text = "label text",
   htmlFor,
   required = false,
-}: CreateLabelProps): HTMLLabelElement => {
+}: LabelProps): HTMLLabelElement => {
   const label = document.createElement("label");
   label.className = "henk-label";
 

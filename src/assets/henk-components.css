@@ -35,12 +35,13 @@
 @import "./components/composites/_henk-card.css";
 @import "./components/composites/_henk-pagination.css";
 @import "./components/composites/_henk-form.css";
-
+@import "../stories/components/composites/_henk-options-bar.css";
 /* sections */
 /* @import "./sections/_henk-wrapper.css"; */
 @import "./sections/_henk-main.css";
 @import "./sections/_henk-section.css";
 @import "./sections/_henk-section-backgrounds.css";
+@import "./sections/_henk-section-grid.css";
 @import "./sections/_henk-three-column-block.css";
 @import "./sections/_henk-split-screen.css";
 @import "./sections/_henk-newsletter-form.css";
@@ -52,6 +53,7 @@
 @import "./sections/_henk-stores-brick.css";
 @import "./sections/_henk-footer.css";
 @import "./sections/_henk-cart-section.css";
+@import "./sections/_henk-section-hero.css";
 
 /* layout */
 @import "./layout/_henk-lister-grid.css";

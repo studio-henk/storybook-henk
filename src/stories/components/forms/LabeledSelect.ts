@@ -1,37 +1,26 @@
+import type { LabelProps } from "@components/forms/Label";
+import type { SelectDropdownProps } from "./SelectDropdown";
 import { createLabel } from "@components/forms/Label";
 import { createSelectDropdown } from "./SelectDropdown";
 
-/**
- * @typedef {import('./SelectDropdown').CreateSelectDropdownProps} CreateSelectDropdownProps
- * @typedef {import('./Label').CreateLabelProps} CreateLabelProps
- */
+export interface LabeledSelectProps {
+  label?: LabelProps;
+  select: SelectDropdownProps;
+  orientation?: string;
+  floating?: boolean;
+}
 
-/**
- * @typedef {Object} LabeledSelectProps
- * @property {CreateLabelProps} [label] - The properties for the label element.
- * @property {CreateSelectDropdownProps} select - The properties for the select dropdown.
- * @property {string} [orientation] - The layout variant of the labeled input ("vertical", "horizontal").
- * @property {boolean} [floating] - Indicates if the label is inside the input.
- */
-
-/**
- * Creates a labeled select element.
- *
- * @param {LabeledSelectProps} props - The properties for the labeled select.
- * @returns {HTMLDivElement} The container with the labeled select element.
- */
 export const createLabeledSelect = ({
   label,
   select,
   orientation = "vertical",
   floating = false,
-} = {}) => {
+}: LabeledSelectProps) => {
   const container = document.createElement("div");
   container.className = `henk-labeled-select henk-labeled-select--dir-${orientation} ${floating ? "henk-labeled-select--floating" : ""}`;
 
   const selectWrapper = createSelectDropdown(select);
 
-  /** @type {HTMLLabelElement | null} */
   let labelElement = null;
 
   if (label && label.text) {
@@ -54,20 +43,12 @@ export const createLabeledSelect = ({
     }
   }
 
-  // Append input first, then label for floating behavior
-  // if (floating) {
-  //   container.appendChild(selectElement);
-  //   container.appendChild(labelElement);
-  // } else {
-  //   container.appendChild(labelElement);
-  //   container.appendChild(selectElement);
-  // }
-
   // Always append the select wrapper to the container
   container.appendChild(selectWrapper);
 
   return container;
 };
+export default createLabeledSelect;
 
 // Exporting createLabeledSelect as LabeledSelect
 export { createLabeledSelect as LabeledSelect };
