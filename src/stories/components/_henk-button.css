@@ -106,20 +106,20 @@ a:hover span.henk-button {
 }
 
 .henk-button .henk-icon svg {
-  width: 1em;
-  height: 1em;
+  /*width: 1em;
+  height: 1em;*/
 }
 
 .henk-button.henk-button--small .henk-icon {
-  font-size: 10px;
+  /*font-size: 10px;*/
 }
 
 .henk-button .henk-icon.icon--only {
-  font-size: 24px;
+  /*font-size: 24px;*/
 }
 
 .henk-button.henk-button--small .henk-icon.icon--only {
-  font-size: 16px;
+  /*font-size: 16px;*/
 }
 
 .henk-button:has(.icon--only) {

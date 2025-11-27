@@ -1,7 +1,7 @@
 import { mockShopifyCart } from "@utils/mockShopifyCart";
 import { createButton } from "@components/Button";
 
-import IconTrash from "@assets/icons/icon-trash.svg?raw";
+import IconTrash from "@assets/icons/feather-trash.svg?raw";
 
 export const createCartContent = (cart) => {
   const section = document.createElement("section");

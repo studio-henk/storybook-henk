@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html";
 import { TextLink, TextLinkProps } from "@stories/base/TextLink";
-// import IconChevronRight from "@assets/icons/icon-chevron-right-thick.svg?raw";
-import IconChevronRightThick from "@assets/icons/icon-chevron-right-thick.svg?raw";
-import IconChevronLeft from "@assets/icons/icon-chevron-left.svg?raw";
+import ChevronRight from "@assets/icons/feather-chevron-right.svg?raw";
+import IconChevronLeft from "@assets/icons/feather-chevron-left.svg?raw";
 
 const meta: Meta<TextLinkProps> = {
   title: "Base/TextLink",
@@ -46,7 +45,7 @@ export const WithIconLeft: Story = {
 export const WithIconRight: Story = {
   args: {
     label: "With Right Icon",
-    iconSvg: IconChevronRightThick,
+    iconSvg: ChevronRight,
     iconPosition: "right",
     iconSize: "large",
   },

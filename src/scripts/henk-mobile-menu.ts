@@ -1,3 +1,6 @@
+import menuIcon from "@assets/icons/feather-menu.svg?raw";
+import closeIcon from "@assets/icons/feather-x.svg?raw";
+
 /**
  * ------------------------------------------------------------
  * Module: Mobile Menu
@@ -71,18 +74,7 @@ export const mobileMenu = {
     hamburgerButton.dataset["jsMobileMenuOpen"] = "";
     hamburgerButton.innerHTML = `
 <i class="henk-icon icon--only">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    stroke-width="1"
-  >
-    <line x1="0" y1="0.5" x2="24" y2="0.5" />
-    <line x1="0" y1="12" x2="24" y2="12" />
-    <line x1="0" y1="23.5" x2="24" y2="23.5" />
-  </svg>
+${menuIcon}
 </i>
 <span class="visually-hidden">Menu</span>
     `;
@@ -98,25 +90,14 @@ export const mobileMenu = {
       "henk-button henk-button--ghost henk-button--small henk-header__button--close-menu";
     closeButton.setAttribute("aria-label", "Close menu");
     closeButton.dataset["jsMobileMenuClose"] = "";
+
     closeButton.innerHTML = `
-      <i class="henk-icon">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M23.5 0.5L0.5 23.5M0.5 0.5L23.5 23.5"
-            stroke="currentcolor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>
-        </svg>
-      </i>
-      CLOSE
-    `;
+            <i class="henk-icon">
+                    ${closeIcon}
+                  </i>
+            CLOSE
+          `;
+
     closeButton.style.display = "none";
     if (!this.headerInner) return;
     this.headerInner.insertAdjacentElement("afterbegin", closeButton);

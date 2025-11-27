@@ -1,13 +1,15 @@
 import type { LogoProps } from "@components/Logo";
 import { createLogo } from "@components/Logo";
-import IconSearch from "@assets/icons/icon-search.svg?raw";
-import IconBag from "@assets/icons/icon-bag-thick.svg?raw";
+import IconSearch from "@assets/icons/feather-search.svg?raw";
+import IconBag from "@assets/icons/henk-bag.svg?raw";
+import { Icon } from "@components/Icon";
 import "@scripts/henk-desktop-menu";
 
 export interface HeaderProps {
   logoProps?: LogoProps;
   title?: string;
   cartCount?: number;
+  cartIconName?: string;
   align?: string;
   inBetween?: boolean;
   isHomepage?: boolean;
@@ -17,6 +19,7 @@ export function createHeader({
   logoProps,
   title = "Site Title",
   cartCount = 0,
+  cartIconName = "henk-bag",
   align,
   inBetween = false,
   isHomepage = false,
@@ -359,7 +362,7 @@ export function createHeader({
       </i>
     </a>-->
     <a class="henk-button henk-button--ghost henk-button--smallx henk-header__utils-item henk-header__utils-item--cart" href="?path=/story/pages-cart--not-empty&globals=viewport:responsive" aria-label="Cart">
-      <i class="henk-icon icon--only">
+      <i class="henk-icon icon--only" data-icon="cart">
         ${IconBag}
       </i>
 ${cartBubbleHtml}
@@ -396,6 +399,19 @@ ${cartBubbleHtml}
     headerInner.appendChild(h1);
   }
   headerInner.insertAdjacentHTML("beforeend", headerUtils);
+
+  // Replace placeholder with actual Icon element created by your Icon factory
+  const cartPlaceholder =
+    headerInner.querySelector<HTMLElement>('[data-icon="cart"]');
+  if (cartPlaceholder) {
+    const cartIconEl = Icon({
+      name: cartIconName ?? "henk-bag", // story can override via cartIconName
+      size: "large",
+      className: "icon--only",
+    });
+    cartPlaceholder.replaceWith(cartIconEl);
+  }
+
   header.appendChild(headerInner);
 
   return header;

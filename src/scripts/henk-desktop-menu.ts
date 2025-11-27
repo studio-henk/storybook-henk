@@ -1,3 +1,5 @@
+import closeIcon from "@assets/icons/feather-x.svg?raw";
+
 (() => {
   const initHeaderMenu = (): (() => void) | null => {
     const htmlElement = document.documentElement;
@@ -23,24 +25,31 @@
     const closeLabel = header.getAttribute("data-js-close-label") || "Close";
 
     closeButton.innerHTML = `
-<i class="henk-icon">
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M23.5 0.5L0.5 23.5M0.5 0.5L23.5 23.5"
-      stroke="currentcolor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    ></path>
-  </svg>
-</i>
+      <i class="henk-icon">
+              ${closeIcon}
+            </i>
 ${closeLabel.toUpperCase()}
     `;
+
+    //     closeButton.innerHTML = `
+    // <i class="henk-icon">
+    //   <svg
+    //     width="24"
+    //     height="24"
+    //     viewBox="0 0 24 24"
+    //     fill="none"
+    //     xmlns="http://www.w3.org/2000/svg"
+    //   >
+    //     <path
+    //       d="M23.5 0.5L0.5 23.5M0.5 0.5L23.5 23.5"
+    //       stroke="currentcolor"
+    //       stroke-linecap="round"
+    //       stroke-linejoin="round"
+    //     ></path>
+    //   </svg>
+    // </i>
+    // ${closeLabel.toUpperCase()}
+    //     `;
     closeButton.style.display = "none"; // hidden by default
     // Insert after utils
     utils?.insertAdjacentElement("afterend", closeButton);

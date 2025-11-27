@@ -1,6 +1,7 @@
 import type { Meta, StoryFn } from "@storybook/html";
 import { createInfoBox, InfoBoxProps } from "@components/InfoBox";
 
+// needed for the select dropdown to chqnge icon
 const icons = import.meta.glob("@assets/icons/*.svg", {
   as: "raw",
   eager: true,
@@ -36,7 +37,14 @@ export const Default = Template.bind({});
 Default.args = {
   title: "Heading",
   content: "<p>Some important information here.</p>",
-  iconName: "icon-info-open",
+  iconName: "feather-info",
+};
+
+export const IconHelp = Template.bind({});
+IconHelp.args = {
+  title: "Heading",
+  content: "<p>Some important information here.</p>",
+  iconName: "feather-help-circle",
 };
 
 export const VariantInfo = Template.bind({});
@@ -44,7 +52,7 @@ VariantInfo.args = {
   variant: "info",
   title: "Did you know?",
   content: "<p>Our tables come in different sizes.</p>",
-  iconName: "icon-info-open",
+  iconName: "feather-info",
   iconSize: "large",
 };
 
@@ -54,7 +62,7 @@ VariantSuccess.args = {
   title: "Yay! Congratulations!",
   content: '<p>You have successfully <a href="#">completed the task</a>.</p>',
   buttonConfig: null,
-  iconName: "icon-success",
+  iconName: "henk-success",
 };
 
 export const VariantWarning = Template.bind({});
@@ -64,7 +72,7 @@ VariantWarning.args = {
   content:
     '<p>Step away from the computer! You have <a href="#">10 seconds</a> to comply.</p>',
   buttonConfig: null,
-  iconName: "icon-warning",
+  iconName: "feather-alert-triangle",
 };
 
 export const VariantDanger = Template.bind({});
@@ -74,7 +82,7 @@ VariantDanger.args = {
   content:
     '<p>This is a dangerous box. <a href="#">Don\'t click the button</a>! Clicking the button will cause the box to disappear.</p>',
   buttonConfig: null,
-  iconName: "icon-danger",
+  iconName: "feather-alert-circle",
 };
 
 export const LocationExample = Template.bind({});
@@ -87,7 +95,7 @@ LocationExample.args = {
     href: "https://my.setmore.com/bookingpage/75b40b8e-862a-4c57-9955-376c5c809251",
     label: "Maak een afspraak",
   },
-  iconName: "icon-location-open",
+  iconName: "feather-map-pin",
 };
 
 export const MultipleParagraphs = Template.bind({});
@@ -96,5 +104,5 @@ MultipleParagraphs.args = {
   content:
     "<p>Some very important information here.</p><p>hello second paragraph</p>",
   buttonConfig: null,
-  iconName: "icon-info-open",
+  iconName: "feather-info",
 };

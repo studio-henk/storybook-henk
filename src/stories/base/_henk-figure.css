@@ -1,0 +1,7 @@
+.henk-figure {
+  margin: 0;
+
+  .henk-figure__img {
+    margin-bottom: 0;
+  }
+}

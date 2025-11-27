@@ -2,10 +2,8 @@ import type { Meta, StoryObj } from "@storybook/html";
 import { createButton, ButtonProps } from "@components/Button";
 
 // Import raw SVGs
-import ChevronRight from "@assets/icons/icon-chevron-right-thick.svg?raw";
-// import ChevronDown from "@assets/icons/icon-chevron-down.svg?raw";
-// import IconClose from "@assets/icons/icon-x.svg?raw";
-import IconClose from "@assets/icons/icon-close.svg?raw";
+import ChevronRight from "@assets/icons/feather-chevron-right.svg?raw";
+import IconClose from "@assets/icons/feather-x.svg?raw";
 
 const meta: Meta<ButtonProps> = {
   title: "Components/Button",

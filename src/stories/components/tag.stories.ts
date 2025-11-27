@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 import { createTag, type TagProps } from "@components/tag";
-import TruckIcon from "@assets/icons/icon-truck.svg?raw";
+import TruckIcon from "@assets/icons/feather-truck.svg?raw";
 
 const meta = {
   title: "Components/Tag",

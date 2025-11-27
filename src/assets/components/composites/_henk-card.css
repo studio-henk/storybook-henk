@@ -120,6 +120,7 @@
     border-radius: 0;
 
     .henk-card__image-container {
+      margin: 0;
       aspect-ratio: 3/4;
       background-color: var(--color-background-neutral-light);
       border-radius: 0;

@@ -1,4 +1,4 @@
-import CheckmarkIcon from "@assets/icons/icon-checkmark-fat.svg?raw";
+import CheckmarkIcon from "@assets/icons/feather-check.svg?raw";
 import { createForm } from "@components/forms/aForm";
 import { createFieldset } from "@components/forms/Fieldset";
 import { createLabeledInput } from "@components/forms/LabeledInput";

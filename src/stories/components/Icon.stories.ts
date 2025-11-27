@@ -49,14 +49,119 @@ Playground.args = {
 };
 
 // --- Grid of all icons preview ---
-export const AllIcons = () => {
+// export const AllIcons = () => {
+//   const container = document.createElement("div");
+//   container.style.display = "grid";
+//   container.style.gridTemplateColumns = "repeat(auto-fill, minmax(80px, 1fr))";
+//   container.style.gap = "16px";
+//   container.style.textAlign = "center";
+
+//   iconNames.forEach((name) => {
+//     const wrapper = document.createElement("div");
+//     const iconEl = Icon({ name, size: "large" });
+//     const label = document.createElement("p");
+//     label.innerText = name;
+//     label.style.fontSize = "12px";
+//     label.style.marginTop = "4px";
+
+//     wrapper.appendChild(iconEl);
+//     wrapper.appendChild(label);
+//     container.appendChild(wrapper);
+//   });
+
+//   return container;
+// };
+
+// --- Grid of feather icons preview ---
+export const FeatherIcons = () => {
   const container = document.createElement("div");
   container.style.display = "grid";
   container.style.gridTemplateColumns = "repeat(auto-fill, minmax(80px, 1fr))";
   container.style.gap = "16px";
   container.style.textAlign = "center";
 
-  iconNames.forEach((name) => {
+  // Filter icons starting with "feather-"
+  const featherIcons = iconNames.filter((name) => name.startsWith("feather-"));
+
+  featherIcons.forEach((name) => {
+    const wrapper = document.createElement("div");
+    const iconEl = Icon({ name, size: "large" });
+    const label = document.createElement("p");
+    label.innerText = name;
+    label.style.fontSize = "12px";
+    label.style.marginTop = "4px";
+
+    wrapper.appendChild(iconEl);
+    wrapper.appendChild(label);
+    container.appendChild(wrapper);
+  });
+
+  return container;
+};
+
+export const HenkIcons = () => {
+  const container = document.createElement("div");
+  container.style.display = "grid";
+  container.style.gridTemplateColumns = "repeat(auto-fill, minmax(80px, 1fr))";
+  container.style.gap = "16px";
+  container.style.textAlign = "center";
+
+  // Filter icons starting with "feather-"
+  const featherIcons = iconNames.filter((name) => name.startsWith("henk-"));
+
+  featherIcons.forEach((name) => {
+    const wrapper = document.createElement("div");
+    const iconEl = Icon({ name, size: "large" });
+    const label = document.createElement("p");
+    label.innerText = name;
+    label.style.fontSize = "12px";
+    label.style.marginTop = "4px";
+
+    wrapper.appendChild(iconEl);
+    wrapper.appendChild(label);
+    container.appendChild(wrapper);
+  });
+
+  return container;
+};
+
+// export const LegacyIcons = () => {
+//   const container = document.createElement("div");
+//   container.style.display = "grid";
+//   container.style.gridTemplateColumns = "repeat(auto-fill, minmax(80px, 1fr))";
+//   container.style.gap = "16px";
+//   container.style.textAlign = "center";
+
+//   // Filter icons starting with "feather-"
+//   const featherIcons = iconNames.filter((name) => name.startsWith("icon-"));
+
+//   featherIcons.forEach((name) => {
+//     const wrapper = document.createElement("div");
+//     const iconEl = Icon({ name, size: "large" });
+//     const label = document.createElement("p");
+//     label.innerText = name;
+//     label.style.fontSize = "12px";
+//     label.style.marginTop = "4px";
+
+//     wrapper.appendChild(iconEl);
+//     wrapper.appendChild(label);
+//     container.appendChild(wrapper);
+//   });
+
+//   return container;
+// };
+
+export const SocialIcons = () => {
+  const container = document.createElement("div");
+  container.style.display = "grid";
+  container.style.gridTemplateColumns = "repeat(auto-fill, minmax(80px, 1fr))";
+  container.style.gap = "16px";
+  container.style.textAlign = "center";
+
+  // Filter icons starting with "feather-"
+  const featherIcons = iconNames.filter((name) => name.startsWith("social-"));
+
+  featherIcons.forEach((name) => {
     const wrapper = document.createElement("div");
     const iconEl = Icon({ name, size: "large" });
     const label = document.createElement("p");

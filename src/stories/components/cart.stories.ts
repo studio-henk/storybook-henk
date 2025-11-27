@@ -3,7 +3,7 @@ import { createSectionHeader } from "@stories/SectionHeader";
 import { createInfoBox } from "@components/InfoBox";
 import { createCartContent } from "@stories/createCartContent";
 import { mockShopifyCart } from "@utils/mockShopifyCart";
-import ChevronLeft from "@assets/icons/icon-chevron-left.svg?raw";
+import ChevronLeft from "@assets/icons/feather-chevron-left.svg?raw";
 
 // Import the stepper component (you don’t need to use <script> tags in Storybook)
 import "@stories/components/henk-quantity-stepper.js";
@@ -51,7 +51,7 @@ export const Empty = () => {
         title: "Delivery by appointment",
         content:
           "<p>Our carrier will get in touch with you once your order is ready for delivery. You can then choose the desired delivery moment yourself.</p>",
-        iconName: "icon-calendar",
+        iconName: "feather-calendar",
       });
 
       const box2 = createInfoBox({
@@ -60,7 +60,7 @@ export const Empty = () => {
           <p>Our products are delivered and assembled for free in the Netherlands and Belgium (except for Wadden Island and Wallonia).</p>
           <p class="fs-small">*With the exception of wall shelves, second-chance items, and non-furniture products.</p>
         `,
-        iconName: "icon-truck-thick",
+        iconName: "feather-truck",
       });
 
       const box3 = createInfoBox({
@@ -112,7 +112,7 @@ export const NotEmpty = () => {
         title: "Delivery by appointment",
         content:
           "<p>Our carrier will get in touch with you once your order is ready for delivery. You can then choose the desired delivery moment yourself.</p>",
-        iconName: "icon-calendar",
+        iconName: "feather-calendar",
       });
 
       const box2 = createInfoBox({
@@ -121,7 +121,7 @@ export const NotEmpty = () => {
           <p>Our products are delivered and assembled for free in the Netherlands and Belgium (except for Wadden Island and Wallonia).</p>
           <p class="fs-small">*With the exception of wall shelves, second-chance items, and non-furniture products.</p>
         `,
-        iconName: "icon-truck-thick",
+        iconName: "feather-truck",
       });
 
       const box3 = createInfoBox({

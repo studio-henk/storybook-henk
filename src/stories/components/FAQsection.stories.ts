@@ -14,14 +14,14 @@ export const FAQSectionStory: StoryObj = {
       detailsItems: [
         {
           summary: "What is the purpose of this component?",
-          iconName: "icon-help-circle",
+          iconName: "feather-help-circle",
           content:
             "<p>This component is used to display a list of frequently asked questions.</p>",
           variant: "plusmin",
         },
         {
           summary: "How many samples can I order?",
-          iconName: "icon-help-circle",
+          iconName: "feather-help-circle",
           content:
             "<p>You are free to assemble your own samples or choose from our curated sample packs, which include six material samples each. You can help us reduce waste by ordering only the samples you need.</p>",
           variant: "plusmin",

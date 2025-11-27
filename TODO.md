@@ -1,10 +1,10 @@
 # TODO
 
-- [ ] check button padding left for ghost on cart page
-
-
+- [ ] move social logos out of icon component? icon-facebook / icon-instagram etc
 - [ ] icon naming consistent, also with shopify.
 - [ ] icon cleanup - remove unused icons to tmp folder legacy
+- [ ] how to do sizes ofr icons? default is 24px
+- [ ] add search button back to header?
 
 ## form elements 
 
@@ -14,8 +14,6 @@
 - [x] labeledselect -> always with custom arrow!
 - [ ] accessibility fixes
 
-
-## Lister
 
 ## componentize to liquid: 
 - [ ] button-group
@@ -32,9 +30,7 @@
 - [ ] cart page
   - [ ] henk-quantity-stepper.js to .ts
   - [ ] mock form quantity change response?
-  - [x] newsletter?
   - [ ] add form controls
-- [ ] icons, clean up, ie b-corp is not an icon but logo
 
 ## Later
 
@@ -63,3 +59,6 @@
 - [x] Splitscreen block?
 - [x] Section header check functionality
 - [x] splitcreen video, remove pink bg
+- [x] hamburger menu icon redo for mobile and desktop
+- [x] redo close icon menu mobile and desktop
+- [x] icons -> redo size -> now smaller than should be

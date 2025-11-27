@@ -38,6 +38,20 @@ export const WithCartCountBadge: Story = {
   },
 };
 
+export const WithCartIcon: Story = {
+  args: {
+    cartCount: 3,
+    cartIconName: "feather-shopping-cart",
+  },
+};
+
+export const WithAltBagIcon: Story = {
+  args: {
+    cartCount: 3,
+    cartIconName: "feather-shopping-bag",
+  },
+};
+
 // export const InvertedLogo: Story = {
 //   args: {
 //     logoProps: {

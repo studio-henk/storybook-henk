@@ -5,7 +5,7 @@ import { createHeader } from "@stories/TheHeader";
 import { TheFooter } from "@stories/TheFooter";
 import { createSectionHeader } from "@stories/SectionHeader";
 import { createBaseCard, BaseCardProps } from "@components/BaseCard";
-import ChevronRight from "@assets/icons/icon-chevron-right-thick.svg?raw";
+import ChevronRight from "@assets/icons/feather-chevron-right.svg?raw";
 import { createButtonGroup, ButtonGroupProps } from "@components/ButtonGroup";
 
 function wrapWithShopifySection(

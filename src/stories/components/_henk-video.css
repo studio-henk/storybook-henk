@@ -11,7 +11,7 @@ video {
     position: absolute;
     bottom: 8px;
     left: 8px;
-    z-index: 999;
+    z-index: 9;
   }
 
   &.henk-video-container--cover {
