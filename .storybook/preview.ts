@@ -17,11 +17,11 @@ document.documentElement.classList.add("no-js");
 document.documentElement.classList.remove("no-js");
 document.documentElement.classList.add("js-enabled");
 
-import { mobileMenu } from "../src/scripts/henk-mobile-menu.ts";
+// import { mobileMenu } from "../src/scripts/henk-mobile-menu.ts";
 
-document.addEventListener("DOMContentLoaded", () => {
-  mobileMenu.setupMatchMedia();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   mobileMenu.setupMatchMedia();
+// });
 
 import { DocsContainer } from "@storybook/addon-docs";
 

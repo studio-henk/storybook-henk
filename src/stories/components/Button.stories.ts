@@ -4,6 +4,7 @@ import { createButton, ButtonProps } from "@components/Button";
 // Import raw SVGs
 import ChevronRight from "@assets/icons/feather-chevron-right.svg?raw";
 import IconClose from "@assets/icons/feather-x.svg?raw";
+import IconDanger from "@assets/icons/feather-alert-circle.svg?raw";
 
 const meta: Meta<ButtonProps> = {
   title: "Components/Button",
@@ -246,3 +247,12 @@ export const CloseButtonSmall: Story = {
 //     },
 //   },
 // };
+
+export const DangerButton: Story = {
+  args: {
+    label: "Danger",
+    iconSvg: IconDanger,
+    iconPosition: "right",
+    variant: "danger",
+  },
+};

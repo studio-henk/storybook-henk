@@ -154,6 +154,11 @@
       align-items: center;
       justify-self: end;
       grid-column: 3;
+      gap: 8px;
+    }
+
+    .henk-header__utils-item {
+      padding: 0;
     }
 
     .henk-header__utils-item--cart {

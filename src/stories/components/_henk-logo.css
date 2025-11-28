@@ -8,6 +8,19 @@
   margin-inline: 0;
   padding-block: var(--space-4, 24px);
   padding-inline: 18px;
+
+  &:link {
+    color: var(--color-text-logo);
+  }
+
+  &:visited {
+    color: var(--color-text-logo);
+  }
+
+  &:hover {
+    /*color: var(--color-text-logo);*/
+    color: var(--color-text-primary);
+  }
 }
 
 .henk-logo svg {

@@ -118,6 +118,7 @@
       z-index: 9;
 
       .henk-header__utils-item {
+        padding: 0;
         &.henk-header__utils-item--cart {
           position: relative;
           padding: 0;

@@ -1,0 +1,19 @@
+.henk-radio[type="radio"] {
+  display: inline-flex;
+  height: 1.75rem;
+}
+
+/* state: disabled */
+.henk-radio[type="radio"][disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.henk-radio {
+  &.henk-radio--custom {
+    /*appearance: none;*/
+    width: 24px;
+    height: 24px;
+    accent-color: currentcolor;
+  }
+}

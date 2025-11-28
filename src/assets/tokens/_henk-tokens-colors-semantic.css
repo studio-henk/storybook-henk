@@ -9,6 +9,7 @@
   /* signal */
   --color-success: var(--color-green-40);
   --color-danger: var(--color-red-50);
+  --color-danger-dark: var(--color-red-40);
   --color-warning: var(--color-yellow-50);
   --color-info: var(--color-blue-50);
 
@@ -47,6 +48,8 @@
   --color-background-neutral-darkest: var(--color-neutral-0);
   --color-background-neutral-lightest: var(--color-neutral-100);
   --color-background-neutral-light: var(--color-neutral-95);
+  --color-background-danger: var(--color-danger-dark);
+  --color-background-success: var(--color-success);
 
   /* text */
   --color-text-body: var(--color-neutral-0, #000);
@@ -58,6 +61,7 @@
   --color-text-link-active: var(--color-danger, red);
   --color-text-muted: var(--color-neutral-50);
   --color-text-on-disabled: var(--color-neutral-50);
+  --color-text-on-danger: var(--color-neutral-100, #fff);
   --color-text-primary: var(--color-primary);
   --color-text-primary-dark: var(--color-primary-dark);
   --color-text-secondary: var(--color-secondary);
@@ -82,6 +86,7 @@
   --color-border-muted: var(--color-neutral-90);
   --color-border-neutral-lightest: var(--color-neutral-100, #fff);
   --color-border-neutral-darkest: var(--color-neutral-0, #000);
+  --color-border-danger: var(--color-danger, #f00);
 
   --color-border-static: var(--color-neutral-0);
   color-scheme: light;

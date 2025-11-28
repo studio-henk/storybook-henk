@@ -4,4 +4,11 @@
 
 .henk-wrapper {
   padding-top: var(--size-height-header, 72px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .henk-main {
+    flex: 1;
+  }
 }

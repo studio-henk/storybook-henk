@@ -25,7 +25,8 @@ import closeIcon from "@assets/icons/feather-x.svg?raw";
  * Author: nils hendriks | Studio HENK
  * ------------------------------------------------------------
  */
-export const mobileMenu = {
+// export const mobileMenu = {
+const mobileMenu = {
   name: "mobile-menu",
   headerAttr: "[data-js-mobile-menu]",
   openButtonAttr: "[data-js-mobile-menu-open]",
@@ -155,6 +156,39 @@ ${menuIcon}
     document.documentElement.removeEventListener("keydown", this.escListener);
     this.escListener = null;
   },
+  preventClosingOpenDetailsOnMobile() {
+    // prevent click on summary to close the whole menu
+
+    if (!mobileMenu.header) return;
+
+    if (mobileMenu.header.dataset.state === "open") {
+      // get open details element
+      // const openDetails = mobileMenu.header.querySelector("details[open]");
+      // console.log(openDetails);
+      // if (openDetails) {
+      //   openDetails.addEventListener("click", (e) => {
+      //     console.log("Clicked on open details");
+      //     e.preventDefault();
+      //   });
+      // }
+      const mainDetails =
+        mobileMenu.header.querySelectorAll<HTMLDetailsElement>(
+          'details[name="main-nav"]',
+        );
+
+      mainDetails.forEach((details) => {
+        const summary = details.querySelector("summary");
+        if (!summary) return;
+
+        summary.addEventListener("click", (e) => {
+          // Only on mobile
+          if (window.innerWidth <= 767 && details.open) {
+            e.preventDefault(); // prevent closing if already open
+          }
+        });
+      });
+    }
+  },
   toggleMenu() {
     // console.log("Toggle menu" + mobileMenu.header?.dataset.state);
 
@@ -198,6 +232,9 @@ ${menuIcon}
       if (firstDetails) {
         firstDetails.open = true;
       }
+
+      // prevent closing on summary click
+      mobileMenu.preventClosingOpenDetailsOnMobile();
     }
   },
   closeAllSubs() {
@@ -256,3 +293,6 @@ ${menuIcon}
     mql.addEventListener("change", handleChange);
   },
 };
+document.addEventListener("DOMContentLoaded", () => {
+  mobileMenu.setupMatchMedia();
+});

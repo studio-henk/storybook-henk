@@ -6,7 +6,13 @@ export interface ButtonProps {
   element?: ButtonElement;
   href?: string;
   type?: "button" | "submit" | "reset"; // only for button element
-  variant?: "primary" | "secondary" | "tertiary" | "ghost";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "ghost"
+    | "danger"
+    | "success";
   label: string;
   title?: string;
   iconSvg?: string;

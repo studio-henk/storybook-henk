@@ -4,6 +4,7 @@ import IconSearch from "@assets/icons/feather-search.svg?raw";
 import IconBag from "@assets/icons/henk-bag.svg?raw";
 import { Icon } from "@components/Icon";
 import "@scripts/henk-desktop-menu";
+import "@scripts/henk-mobile-menu";
 
 export interface HeaderProps {
   logoProps?: LogoProps;
@@ -356,11 +357,11 @@ export function createHeader({
               </ul></form></div>
         </details>
 </div>
-    <!--<a class="henk-button henk-button--small henk-button--ghost henk-header__utils-link header__utils-link--search" href="search" aria-label="Search">
+    <a class="henk-button henk-button--small henk-button--ghost henk-header__utils-item header__utils-link--search" href="search" aria-label="Search">
       <i class="henk-icon icon--only">
         ${IconSearch}
       </i>
-    </a>-->
+    </a>
     <a class="henk-button henk-button--ghost henk-button--smallx henk-header__utils-item henk-header__utils-item--cart" href="?path=/story/pages-cart--not-empty&globals=viewport:responsive" aria-label="Cart">
       <i class="henk-icon icon--only" data-icon="cart">
         ${IconBag}
