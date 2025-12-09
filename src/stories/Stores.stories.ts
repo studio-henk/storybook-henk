@@ -39,6 +39,7 @@ if (!NewsletterBlockRender) {
 
 const meta = {
   title: "Pages/StoresDetail",
+  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
   },

@@ -4,6 +4,12 @@
   initial-value: 1140px;
 }
 
+@property --size-width-content-num {
+  syntax: "<integer>";
+  inherits: true;
+  initial-value: 1140;
+}
+
 @property --line-clamp {
   syntax: "<integer>";
   inherits: true;

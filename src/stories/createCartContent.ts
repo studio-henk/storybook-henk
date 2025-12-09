@@ -92,7 +92,7 @@ export const createCartContent = (cart) => {
       href: `/cart/change?id=${item.key}&quantity=0`,
       label: "Remove", // used for aria if iconOnly = true
       title: `Remove ${item.product_title}`,
-      variant: "tertiary",
+      variant: "ghost",
       iconSvg: IconTrash,
       iconOnly: true, // 👈 this tells createButton to render icon only
       ariaLabel: `Remove ${item.product_title} from cart`,

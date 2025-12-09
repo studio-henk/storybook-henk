@@ -1,19 +1,20 @@
 # TODO
 
-- [ ] find a way to have the css variables from the css files in here. manually documenting them is way too much work.
+- [ ] add icon direction compass correctly as component
+- [ ] add product block from liquid to storybook
+- [ ] set rule for variables to be prefixed and allow locals: --henk- and --henk_
+- [ ] find and replaces classnames
+- [ ] find and replace variables
 
-## Header
+## Misc
 
-- [ ] add search back
-- [ ] add search button back to header?
-
-## form elements 
-
-- [ ] radio button 
-- [ ] 2 different ways to do grid form: pick 1?
+- [ ] find a way to have the css variables from the css files in here. manually
+      documenting them is way too much work.
 
 ## lang selector
 
 - [ ] close on click outside?
 - [ ] close on esc?
 - [ ] style lang selector
+
+this is a link

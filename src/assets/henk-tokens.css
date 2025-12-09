@@ -8,6 +8,7 @@
 @import "./tokens/_henk-tokens-size-font.css";
 @import "./tokens/_henk-tokens-weight-font.css";
 @import "./tokens/_henk-tokens-radius.css";
+@import "./tokens/_henk-tokens-typography.css";
 
 @import "./tokens/_henk-tokens-size-width.css";
 @import "./tokens/_henk-tokens-size-spacing.css";

@@ -1,10 +1,14 @@
 .info-box {
   --_infobox-border-color: var(--color-border-muted);
-  background-color: var(--color-background-base);
-  color: currentColor;
+  /*background-color: var(--color-background-base);*/
+  color: currentcolor;
   padding: 1rem;
   border-radius: var(--radius-2, 8px);
   border: 1px solid var(--_infobox-border-color);
+  background: hsl(0deg 0% 100%);
+  box-shadow: 0 0 8px #ebebeb;
+  border-radius: 8px;
+  overflow: clip;
 }
 
 .info-box * {

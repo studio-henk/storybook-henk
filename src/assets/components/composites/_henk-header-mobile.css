@@ -23,6 +23,7 @@
     right: 0;
     top: 0;
     z-index: 11;
+    hyphens: none;
 
     .henk-header__inner {
       display: grid;

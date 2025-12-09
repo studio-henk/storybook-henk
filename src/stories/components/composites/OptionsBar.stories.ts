@@ -51,10 +51,10 @@ export const OptionsBar: Story = {
                   <summary class="henk-details__summary">Color</summary>
                   <div class="henk-details__content">
                     <ul class="henk-list henk-list--no-bullets">
-                      <li><label><span class="swatch" style="background-color:#EAD8AB;"></span>Beige (2)</label></li>
-                      <li><label><span class="swatch" style="background-color:#39281e;"></span>Chocoladebruin (1)</label></li>
-                      <li><label><span class="swatch" style="background-color:#EAD8AB;"></span>Haverbeige (2)</label></li>
-                      <li><label><span class="swatch" style="background-color:#646d41;"></span>Olijfgroen (1)</label></li>
+                      <li><label><span class="swatch" style="background-color:#EAD8AB;"></span><input type="checkbox" name="filter.v.t.shopify.color-pattern" value="gid://shopify/Metaobject/124821110945">Beige</label></li>
+                      <li><label><span class="swatch" style="background-color:#39281e;"></span><input type="checkbox" />Chocoladebruin (1)</label></li>
+                      <li><label><span class="swatch" style="background-color:#EAD8AB;"></span><input type="checkbox" />Haverbeige (2)</label></li>
+                      <li><label><span class="swatch" style="background-color:#646d41;"></span><input type="checkbox" />Olijfgroen (1)</label></li>
                     </ul>
                   </div>
                 </details>

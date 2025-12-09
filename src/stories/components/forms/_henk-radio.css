@@ -11,7 +11,6 @@
 
 .henk-radio {
   &.henk-radio--custom {
-    /*appearance: none;*/
     width: 24px;
     height: 24px;
     accent-color: currentcolor;

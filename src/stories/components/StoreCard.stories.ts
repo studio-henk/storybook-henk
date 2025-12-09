@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/html";
-import { createStoreCard, StoreCardProps } from "@components/StoreCard";
+import { createStoreCard, type StoreCardProps } from "@components/StoreCard";
 
 const meta: Meta<StoreCardProps> = {
   title: "Components/Cards/StoreCard",
-  render: (args) => createStoreCard(args),
+  tags: ["autodocs"],
+  render: (args: StoreCardProps) => createStoreCard(args),
   args: {
     name: "Amsterdam",
     address: "Rozengracht 204, 1016 NL Amsterdam",

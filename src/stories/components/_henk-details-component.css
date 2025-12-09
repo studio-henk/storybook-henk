@@ -14,6 +14,14 @@
 
 .henk-details-group .henk-details {
   margin-bottom: 0;
+
+  &:hover {
+    color: var(--color-primary-darkest);
+
+    /* summary {
+      font-weight: 500;
+    } */
+  }
 }
 
 .henk-details::details-content {
@@ -32,11 +40,11 @@
 .henk-details__summary {
   cursor: pointer;
   font-weight: 400;
+  transition: all 0.3s ease;
 }
 
 .henk-details__content {
   max-width: 60ch;
-  /* margin-trim: block; */
   padding-block: var(--space-4, 24px);
 }
 
@@ -57,7 +65,6 @@
 .henk-details.henk-details--plusmin .henk-details__summary {
   align-items: center;
   display: flex;
-  /* justify-content: space-between; */
   justify-content: flex-start;
   gap: 8px;
   margin-bottom: 0;
@@ -67,7 +74,6 @@
 }
 
 .henk-details.henk-details--plusmin[open] .henk-details__summary {
-  /* color: var(--color-ui-text-default); */
   position: relative;
 }
 
@@ -79,7 +85,6 @@
   line-height: 44px;
   transition: all 0.3s ease;
   position: absolute;
-  /* top: 3px; */
   right: 0;
   transform-origin: center center;
   z-index: 1;
@@ -94,7 +99,6 @@
 .henk-details.henk-details--plusmin .henk-details__summary::after {
   content: "−";
   position: absolute;
-  /* top: 3px; */
   right: 0;
   opacity: 0;
   transition: all 0.3s ease;

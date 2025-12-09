@@ -81,9 +81,9 @@ export const Secondary: Story = {
   args: { label: "Secondary Button", variant: "secondary" },
 };
 
-export const Tertiary: Story = {
-  args: { label: "Tertiary Button", variant: "tertiary" },
-};
+// export const Tertiary: Story = {
+//   args: { label: "Tertiary Button", variant: "tertiary" },
+// };
 
 export const WithIconRight: Story = {
   args: {
@@ -231,22 +231,12 @@ export const CloseButtonSmall: Story = {
   },
 };
 
-// export const Expand: Story = {
-//   args: {
-//     element: "button",
-//     label: "Open me!",
-//     type: "button",
-//     variant: "ghost",
-//     size: "small",
-//     iconSvg: ChevronDown,
-//     iconPosition: "right",
-//     attrs: {
-//       "aria-expanded": "false",
-//       "data-js-expand": "true",
-//       "data-state": "closed",
-//     },
-//   },
-// };
+export const SuccessButton: Story = {
+  args: {
+    label: "Positive Button",
+    variant: "success",
+  },
+};
 
 export const DangerButton: Story = {
   args: {

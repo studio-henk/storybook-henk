@@ -1,17 +1,16 @@
 .henk-tag,
 .henk-tag--default {
+  --tag-background: var(--color-background-primary);
+
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  /* padding: 0.3em 1.2em; */
   padding: 0.30769231em 1.2em;
   font-size: min(13px, 3.4cqw);
   line-height: 1.84615385em;
-  background-color: var(--color-background-tertiary);
+  background-color: var(--tag-background, pink);
   color: var(--color-text-static, #000);
   border: 1px solid var(--color-ui-border-transparent);
-  /* transition: all 0.3s ease; */
-
   border-radius: var(--radius-0);
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
@@ -20,11 +19,11 @@
 }
 
 .henk-tag--primary {
-  background-color: var(--color-background-primary-light);
+  /*background-color: var(--color-background-primary-light);*/
 }
 
 .henk-tag--secondary {
-  background-color: var(--color-background-secondary);
+  /*background-color: var(--color-background-secondary);*/
 }
 
 .henk-tag--outlined {
@@ -41,7 +40,7 @@ a.henk-tag {
 
 a.henk-tag:focus-visible,
 a.henk-tag:hover {
-  background-color: var(--color-background-primary-lighter);
+  background-color: var(--color-background-primary-light);
 }
 
 .henk-tag--dark {

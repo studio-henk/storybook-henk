@@ -46,6 +46,8 @@ body {
   background-color: var(--color-background-body);
   color: var(--color-text-body);
   height: 100%;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* debugging */

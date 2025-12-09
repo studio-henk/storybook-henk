@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: flex-end;
   margin: 1.5rem 0;
-  /* width: inherit; */
 }
 
 .henk-button-group:last-child {
@@ -48,6 +47,8 @@
     flex-direction: column-reverse;
   }
 }
+
+/* stylelint-disable-next-line selector-class-pattern */
 .henk-tag--gtmLister {
   margin: 0 !important;
 }

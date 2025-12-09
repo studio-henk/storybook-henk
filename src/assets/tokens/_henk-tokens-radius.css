@@ -1,8 +1,12 @@
 :root {
   --radius-0: 0; /* 4px */
   --radius-1: 0.25rem; /* 4px */
+  --size-radius-100: 0.25rem;
   --radius-2: 0.5rem; /* 8px */
+  --size-radius-200: 0.5rem;
   --radius-3: 1rem; /* 16px */
+  --size-radius-400: 1rem;
+  --size-radius-full: 100%;
   --radius-4: 1.5rem; /* 24px */
   --radius-5: 2rem; /* 32px */
   --radius-6: 2.5rem; /* 40px */

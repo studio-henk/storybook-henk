@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/html";
 import { createTag, type TagProps } from "@components/tag";
 import TruckIcon from "@assets/icons/feather-truck.svg?raw";
 
-const meta = {
+const meta: Meta<TagProps> = {
   title: "Components/Tag",
   tags: ["autodocs"],
   render: (args: TagProps) => createTag(args),
@@ -35,7 +35,8 @@ const meta = {
   args: {
     label: "Fast Delivery",
   },
-} satisfies Meta<TagProps>;
+};
+// } satisfies Meta<TagProps>;
 
 export default meta;
 

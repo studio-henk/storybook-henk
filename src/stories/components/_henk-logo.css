@@ -1,6 +1,7 @@
 .henk-logo {
   --color-text-logo: var(--color-neutral-0, #000);
   --color-background-logo: var(--color-neutral-100, #fff);
+
   color: var(--color-text-logo);
   background-color: var(--color-background-logo);
   display: inline-flex;
@@ -18,7 +19,6 @@
   }
 
   &:hover {
-    /*color: var(--color-text-logo);*/
     color: var(--color-text-primary);
   }
 }

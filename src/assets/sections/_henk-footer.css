@@ -1,5 +1,5 @@
 .henk-footer {
-  background-color: var(--color-background-secondary-light);
+  background-color: var(--color-background-primary);
   color: var(--color-text-static, #000);
   color-scheme: light;
 
@@ -36,8 +36,7 @@
   }
 
   .henk-footer__grid-column .henk-footer__heading {
-    margin-block-start: 0;
-    margin-block-end: 24px;
+    margin-block: 0 24px;
     font-size: 20px;
     line-height: 24px;
     font-weight: 500;
@@ -94,9 +93,8 @@
 
   .henk-footer__small-print {
     display: flex;
-    row-gap: 8px;
+    gap: 8px 24px;
     flex-wrap: wrap;
-    column-gap: 24px;
   }
 
   .henk-footer__small-print-item {
@@ -113,8 +111,7 @@
   .henk-footer__certificates-rating {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 1.5rem;
-    row-gap: 1.5rem;
+    gap: 1.5rem;
     justify-content: flex-start;
     align-items: flex-start;
   }
@@ -152,7 +149,6 @@
   }
 }
 
-.henk-footer .trustpilot-widget,
 .henk-footer .trustpilot-widget {
   max-height: 118px;
 }

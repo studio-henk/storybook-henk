@@ -79,26 +79,26 @@ export const LeftAligned: StoryObj = {
   },
 };
 
-export const Primary: StoryObj = {
-  args: {
-    bgColor: "primary",
-    buttonVariant: "secondary",
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: "Black text color passes contrast test: AA.",
-      },
-    },
-  },
-};
+// export const Primary: StoryObj = {
+//   args: {
+//     bgColor: "primary",
+//     buttonVariant: "secondary",
+//   },
+//   parameters: {
+//     docs: {
+//       description: {
+//         story: "Black text color passes contrast test: AA.",
+//       },
+//     },
+//   },
+// };
 
-export const Secondary: StoryObj = {
-  args: {
-    bgColor: "secondary",
-    buttonVariant: "primary",
-  },
-};
+// export const Secondary: StoryObj = {
+//   args: {
+//     bgColor: "secondary",
+//     buttonVariant: "primary",
+//   },
+// };
 
 export const Display: StoryObj = {
   args: {

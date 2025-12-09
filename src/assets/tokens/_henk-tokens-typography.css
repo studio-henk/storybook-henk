@@ -1,0 +1,16 @@
+:root {
+  --type-caption-font-weight: var(--font-weight-semibold);
+  --type-caption-font-size: 0.875rem;
+  --type-caption-line-height: 1.4;
+  --type-caption-letter-spacing: 0.05em;
+
+  --type-title-font-weight: var(--font-weight-bold);
+  --type-title-font-size: 1.5rem;
+  --type-title-line-height: 1.3;
+  --type-title-letter-spacing: 0;
+
+  --type-subtitle-font-weight: var(--font-weight-regular);
+  --type-subtitle-font-size: 1rem;
+  --type-subtitle-line-height: 1.4;
+  --type-subtitle-letter-spacing: 0.02em;
+}
