@@ -1,3 +1,8 @@
+/* DEPRECATION NOTICE: This TypeScript-based Icon helper is deprecated in favor of the Liquid-based implementation
+   (src/stories/components/henk-icon.liquid and the corresponding stories). Keep this file for backward compatibility
+   while consumers are migrated. Do NOT delete until all call sites have been updated to use the Liquid version.
+*/
+
 const icons = import.meta.glob("../../assets/icons/*.svg", {
   as: "raw",
   eager: true,

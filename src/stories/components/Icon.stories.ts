@@ -13,7 +13,7 @@ const iconNames = Object.keys(icons).map(
 );
 
 export default {
-  title: "Components/Icon",
+  title: "Components/Deprecated/Icon",
   tags: ["autodocs"],
   argTypes: {
     name: {

@@ -1,3 +1,8 @@
+/* DEPRECATION NOTICE: This TypeScript-based button helper is deprecated in favor of the Liquid-based implementation
+   (src/stories/components/henk-button.liquid and the corresponding stories). Keep this file for backward compatibility
+   while consumers are migrated. Do NOT delete until all call sites have been updated to use the Liquid version.
+*/
+
 export type IconPosition = "left" | "right";
 export type IconSize = "small" | "medium" | "large";
 export type ButtonElement = "a" | "button" | "span";

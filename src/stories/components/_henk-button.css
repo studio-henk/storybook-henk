@@ -167,6 +167,11 @@ a:hover span.henk-button {
   transform: translateY(1px);
 }
 
+/* Pill modifier: restore old pill-shaped buttons */
+.henk-button--pill {
+  border-radius: 9999px;
+}
+
 /* state */
 .henk-button[data-state="open"] #chevron-down {
   transform: rotate(180deg);

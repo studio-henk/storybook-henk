@@ -7,7 +7,7 @@ import IconClose from "@assets/icons/feather-x.svg?raw";
 import IconDanger from "@assets/icons/feather-alert-circle.svg?raw";
 
 const meta: Meta<ButtonProps> = {
-  title: "Components/Button",
+  title: "Components/Deprecated/Button",
   tags: ["autodocs"],
   render: (args) => createButton(args),
   argTypes: {
