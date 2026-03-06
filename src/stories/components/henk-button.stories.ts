@@ -4,34 +4,15 @@ import engine from "@src/liquid-engine.js";
 import snippet from "./henk-button.liquid?raw";
 
 // Vite glob to load raw SVGs from src/assets/icons at runtime (stories run in browser)
-const svgModules = import.meta.glob("../../assets/icons/*.svg", { query: "?raw", import: "default" });
+const svgModules = import.meta.glob("../../assets/icons/*.svg", { query: "?raw", import: "default", eager: true });
 
-const loadSvgMap = async () => {
-  if (engine.__svg_map && Object.keys(engine.__svg_map).length)
-    return engine.__svg_map;
-  const entries = Object.entries(svgModules) as [
-    string,
-    () => Promise<string>,
-  ][];
-  const map: Record<string, string> = {};
-  await Promise.all(
-    entries.map(async ([filePath, loader]) => {
-      try {
-        const content = await loader();
-        const parts = filePath.split("/");
-        const filename = parts[parts.length - 1];
-        map[filename] = content;
-      } catch (e) {
-        // ignore
-      }
-    }),
-  );
-  engine.__svg_map = map;
-  return map;
-};
-
-// ensure SVGs available before rendering
-await loadSvgMap();
+// Build synchronous map of filename -> svg content for use in Liquid inline filter
+const svgMap: Record<string,string> = {};
+Object.entries(svgModules).forEach(([filePath, content]) => {
+  const filename = filePath.split('/').pop();
+  if (filename) svgMap[filename] = content as string;
+});
+engine.__svg_map = svgMap;
 
 const renderButton = (args: any) => {
   const rendered = engine.parseAndRenderSync(snippet, {
