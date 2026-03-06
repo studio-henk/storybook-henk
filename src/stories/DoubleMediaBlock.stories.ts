@@ -20,6 +20,20 @@ export const LargeImageSmallImage: StoryObj = {
     }),
 };
 
+export const LargeImageSmallImageLinked: StoryObj = {
+  render: () =>
+    createDoubleMediaBlock({
+      largeMediaType: "image",
+      largeImage:
+        "https://surf-turf-2-0.myshopify.com/cdn/shop/files/Frame_66.avif?crop=center&amp;height=1400&amp;v=1753351591&amp;width=1120",
+      largeImageUrl: "#",
+      smallMediaType: "image",
+      smallImage:
+        "https://surf-turf-2-0.myshopify.com/cdn/shop/files/Frame_66.avif?crop=center&amp;height=1400&amp;v=1753351591&amp;width=1120",
+      smallImageUrl: "#",
+    }),
+};
+
 export const LargeVideoSmallImage: StoryObj = {
   render: () => {
     const videoProps: VideoBlockProps = {

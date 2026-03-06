@@ -2,6 +2,7 @@
   display: -webkit-box !important;
   -webkit-line-clamp: var(--line-clamp);
   -webkit-box-orient: vertical;
+  line-clamp: var(--line-clamp);
   overflow: hidden;
 }
 
@@ -13,8 +14,8 @@
   margin: -1px;
   padding: 0;
   border: 0;
-  clip: rect(0 0 0 0);
-  word-wrap: normal !important;
+  clip-path: rect(0 0 0 0);
+  overflow-wrap: normal !important;
 }
 
 .text-align-right {

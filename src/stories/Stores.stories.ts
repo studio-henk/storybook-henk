@@ -8,7 +8,7 @@ import { createThreeColumnBlock } from "./ThreeColumnBlock";
 import { NewsletterBlock as RawNewsletterBlock } from "./NewsletterBlock.stories";
 
 import { createBreadcrumbs } from "./Breadcrumbs";
-import { createSectionHeader } from "./SectionHeader";
+import { HeaderBlock } from "./SectionHeader";
 
 function wrapWithShopifySection(
   element: HTMLElement,
@@ -38,7 +38,7 @@ if (!NewsletterBlockRender) {
 }
 
 const meta = {
-  title: "Pages/StoresDetail",
+  title: "Pages/Stores/Detail",
   tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
@@ -77,7 +77,7 @@ export const StoresDetail: Story = {
     mainContent.appendChild(breadcrumbs);
 
     // --- Section Header ---
-    const sectionHeader = createSectionHeader({
+    const sectionHeader = HeaderBlock({
       id: "stores-header",
       caption: "",
       title: "Studio HENK Amsterdam",

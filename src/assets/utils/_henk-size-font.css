@@ -1,5 +1,6 @@
 .fs-display {
   --_target-lh: 48;
+
   font-size: var(--size-font-xxxx-large);
   line-height: 24px;
 }

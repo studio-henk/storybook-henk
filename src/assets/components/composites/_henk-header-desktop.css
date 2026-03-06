@@ -17,8 +17,7 @@
       margin-inline: auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      justify-items: center;
-      align-items: center;
+      place-items: center center;
       padding-block: 24px;
     }
 
@@ -26,7 +25,7 @@
     .henk-header__inner::before {
       opacity: 0;
       content: "";
-      background-color: rgba(255, 255, 255, 0.75);
+      background-color: rgb(255 255 255 / 75%);
       width: 100%;
       height: 100svh;
       position: fixed;
@@ -52,16 +51,6 @@
 
       /* hide marker with display flex */
       details[name="main-nav"] {
-        &[open] {
-          summary {
-            /* color: var(--color-text-primary, blue); */
-            color: var(--color-text-link, blue);
-            text-decoration-line: underline;
-            text-decoration-thickness: 4px;
-            text-underline-offset: 4px;
-            text-underline-position: from-font;
-          }
-        }
         summary {
           display: flex;
           cursor: pointer;
@@ -81,6 +70,16 @@
 
           &:active {
             color: var(--color-text-link-hover);
+          }
+        }
+
+        &[open] {
+          summary {
+            color: var(--color-text-link, blue);
+            text-decoration-line: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 4px;
+            text-underline-position: from-font;
           }
         }
       }
@@ -121,9 +120,11 @@
 
       .henk-header__utils-item {
         padding: 0;
+
         &.henk-header__utils-item--cart {
           position: relative;
           padding: 0;
+
           --btn-text-hover: var(--color-text-link-hover);
         }
       }
@@ -133,7 +134,7 @@
       .henk-localise__details {
         position: relative;
 
-        summary {
+        .henk-localise__summary {
           font-size: 13px;
           line-height: 24px;
         }
@@ -180,6 +181,7 @@
 
       .column__heading {
         --color-text-link: var(--color-text-neutral-darkest);
+
         font-size: 13px;
         font-weight: 500;
         line-height: 24px;
@@ -195,7 +197,7 @@
           padding: 0;
 
           a {
-            color: currentColor;
+            color: currentcolor;
 
             &:not(:hover) {
               text-decoration-line: none;
@@ -213,17 +215,10 @@
       .dropdown__highlights {
         line-height: 48px;
 
-        a {
+        a.dh__link {
           font-size: 25px;
           line-height: 32px;
           transition: all 1.3s ease;
-
-          /* &:hover { */
-          /*   background: black; */
-          /*   color: white; */
-          /*   padding-block: 0.2em; */
-          /*   text-decoration-line: none; */
-          /* } */
         }
       }
 
@@ -236,7 +231,7 @@
         grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
         gap: 4px;
 
-        a {
+        a.column__link {
           display: block;
           font-size: 13px;
           line-height: 24px;

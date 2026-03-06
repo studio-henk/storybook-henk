@@ -101,7 +101,6 @@
     display: inline-flex;
   }
 
-  .henk-footer__small-print-item a,
   .henk-footer__small-print-item .footer__link {
     display: inline-flex;
     line-height: 24px;
@@ -116,13 +115,13 @@
     align-items: flex-start;
   }
 
-  .henk-footer__certificates-rating > a {
+  .henk-footer__bcorp-logo {
     display: inline-flex;
-  }
 
-  .henk-footer__certificates-rating > a > svg {
-    height: 118px;
-    width: auto;
+    svg {
+      height: 118px;
+      width: auto;
+    }
   }
 
   .henk-footer__rating-widget {

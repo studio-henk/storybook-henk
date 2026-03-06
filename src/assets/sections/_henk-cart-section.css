@@ -21,7 +21,7 @@
 .henk-cart-section__list-item {
   display: grid;
   justify-items: start;
-  background: hsl(0deg 0% 100%);
+  background: hsl(0 0% 100%);
   box-shadow: 0 0 8px #ebebeb;
   border-radius: 8px;
   overflow: clip;
@@ -57,8 +57,7 @@
   display: grid;
   grid-template-columns: 117px 1fr 1fr;
   padding-block: 0;
-  align-items: center;
-  justify-items: start;
+  place-items: center start;
 }
 
 @media screen and (min-width: 768px) {
@@ -111,8 +110,8 @@
   transition-behavior: allow-discrete;
 }
 
-/*.henk-cart-section__item-quantity {
-}*/
+/* .henk-cart-section__item-quantity {
+} */
 
 henk-quantity-stepper:defined ~ .henk-cart-section__item-quantity {
   opacity: 0;

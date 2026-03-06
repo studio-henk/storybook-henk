@@ -65,11 +65,11 @@ export function createHeader({
       <li class="sub-level left-col">
         <a href="#" class="column__heading">Highlights</a>
         <ul class="dropdown__highlights">
-          <li><a href="#">New in</a></li>
-          <li><a href="#">Second Chance</a></li>
-          <li><a href="#">Affordable Choices</a></li>
-          <li><a href="#">Fast Delivery</a></li>
-          <li><a href="#">Outdoor Collection</a></li>
+          <li><a class="dh__link" href="#">New in</a></li>
+          <li><a class="dh__link" href="#">Second Chance</a></li>
+          <li><a class="dh__link" href="#">Affordable Choices</a></li>
+          <li><a class="dh__link" href="#">Fast Delivery</a></li>
+          <li><a class="dh__link" href="#">Outdoor Collection</a></li>
         </ul>
       </li>
       <li class="sub-level right-col">
@@ -83,22 +83,30 @@ export function createHeader({
         <a class="column__heading" href="/collections/tables">Tafels</a>
           <ul>
             <li>
-                <a  href="/collections/tables">
+                <a
+                class="column__link"
+                href="/collections/tables">
                     Eettafels
                 </a>
             </li>
             <li>
-                <a  href="/collections/tables">
+                <a
+                class="column__link"
+                href="/collections/tables">
                     Salontafels
                 </a>
             </li>
             <li>
-                <a  href="/collections/tables/Office">
+                <a
+                class="column__link"
+                href="/collections/tables/Office">
                     Bureaus
                 </a>
             </li>
             <li>
-                <a  href="/collections/tables/Bistro">
+                <a
+                class="column__link"
+                href="/collections/tables/Bistro">
                     Bistrotafels
                 </a>
             </li>
@@ -112,37 +120,49 @@ export function createHeader({
         <ul>
 
                 <li>
-                    <a  href="/collections/dining-chairs-1">
+                    <a
+                    class="column__link"
+                    href="/collections/dining-chairs-1">
                         Eetkamerstoelen
                     </a>
                 </li>
 
                 <li>
-                    <a  href="#">
+                    <a
+                    class="column__link"
+                    href="#">
                         Zitbanken
                     </a>
                 </li>
 
                 <li>
-                    <a  href="#">
+                    <a
+                    class="column__link"
+                    href="#">
                         Fauteuils
                     </a>
                 </li>
 
                 <li>
-                    <a  href="#">
+                    <a
+                    class="column__link"
+                    href="#">
                         Barkrukken
                     </a>
                 </li>
 
                 <li>
-                    <a  href="/collections/dining-benches">
+                    <a
+                    class="column__link"
+                    href="/collections/dining-benches">
                         Eetkamerbanken
                     </a>
                 </li>
 
                 <li>
-                    <a  href="#">
+                    <a
+                    class="column__link"
+                    href="/collections/dining-chairs">
                         Poefs
                     </a>
                 </li>
@@ -157,31 +177,41 @@ export function createHeader({
           <ul>
 
                   <li>
-                      <a  href="/collections">
+                      <a
+                      class="column__link"
+                      href="/collections">
                           Wandplanken
                       </a>
                   </li>
 
                   <li>
-                      <a  href="/collections/tables">
+                      <a
+                      class="column__link"
+                      href="/collections/tables">
                           Dressoirs
                       </a>
                   </li>
 
                   <li>
-                      <a  href="/collections">
+                      <a
+                      class="column__link"
+                      href="/collections">
                           TV-meubels
                       </a>
                   </li>
 
                   <li>
-                      <a  href="/">
+                      <a
+                      class="column__link"
+                      href="/">
                           Vitrinekasten
                       </a>
                   </li>
 
                   <li>
-                      <a  href="#">
+                      <a
+                      class="column__link"
+                      href="#">
                           Boekenkasten
                       </a>
                   </li>
@@ -196,19 +226,25 @@ export function createHeader({
         <ul>
 
                 <li>
-                    <a  href="/">
+                    <a
+                    class="column__link"
+                    href="/">
                         Verlichting
                     </a>
                 </li>
 
                 <li>
-                    <a  href="/pages/test-page">
+                    <a
+                    class="column__link"
+                    href="/pages/test-page">
                         Vazen
                     </a>
                 </li>
 
                 <li>
-                    <a  href="/">
+                    <a
+                    class="column__link"
+                    href="/pages/test-page">
                         HENK merchandise
                     </a>
                 </li>
@@ -235,35 +271,45 @@ export function createHeader({
       <li class="sub-level left-col">
         <span class="column__heading">Highlights</span>
         <ul class="dropdown__highlights">
-          <li><a  href="#">New in</a></li>
+          <li><a class="dh__link" href="#">New in</a></li>
         </ul>
       </li>
       <li class="sub-level right-col">
         <div class="column">
-            <a  class="column__heading" href="/collections/tables">Service</a>
+            <a class="column__heading" href="/collections/tables">Service</a>
             <ul>
               <li>
-                  <a  href="/collections/tables">
+                  <a
+                    class="column__link"
+                  href="/collections/tables">
                       Contact
                   </a>
               </li>
               <li>
-                  <a  href="/collections/tables">
+                  <a
+                  class="column__link"
+                  href="/collections/tables">
                       FAQ
                   </a>
               </li>
               <li>
-                  <a  href="/collections/tables/Office">
+                  <a
+                  class="column__link"
+                  href="/collections/tables/Office">
                       Interieuradvies
                   </a>
               </li>
               <li>
-                  <a  href="/collections/tables/Bistro">
+                  <a
+                  class="column__link"
+                  href="/collections/tables/Bistro">
                       Reparaties en retouren
                   </a>
               </li>
               <li>
-                  <a  href="/collections/tables/Bistro">
+                  <a
+                  class="column__link"
+                  href="/collections/tables/Bistro">
                       Materialen en onderhoud
                   </a>
               </li>
@@ -284,26 +330,30 @@ export function createHeader({
         <li class="sub-level left-col">
           <span class="column__heading">Our Stores</span>
           <ul class="dropdown__highlights">
-            <li><a  href="#">Amsterdam</a></li>
-            <li><a  href="#">Antwerpen</a></li>
-            <li><a  href="#">Utrecht</a></li>
-            <li><a  href="#">Rotterdam</a></li>
-            <li><a  href="#">Haarlem</a></li>
+            <li><a class="dh__link" href="#">Amsterdam</a></li>
+            <li><a class="dh__link" href="#">Antwerpen</a></li>
+            <li><a class="dh__link" href="#">Utrecht</a></li>
+            <li><a class="dh__link" href="#">Rotterdam</a></li>
+            <li><a class="dh__link" href="#">Haarlem</a></li>
           </ul>
         </li>
         <li class="sub-level right-col">
 
           <div class="column">
-            <a  href="#" class="column__heading">HENK</a>
+            <a href="#" class="column__heading">HENK</a>
             <ul>
               <li>
-                  <a  href="#">HENK's verhaal</a>
+                  <a
+                  class="column__link"
+                  href="#">HENK's verhaal</a>
               </li>
               <li>
-                  <a  href="#">HENK at home</a>
+                  <a
+                  class="column__link"
+                  href="#">HENK at home</a>
               </li>
               <li>
-                  <a  href="#">Werken bij HENK</a>
+                  <a class="column__link" href="#">Werken bij HENK</a>
               </li>
             </ul>
           </div>
@@ -333,7 +383,7 @@ export function createHeader({
 
   <div class="henk-localise">
 <details class="henk-localise__details">
-          <summary>
+          <summary class="henk-localise__summary">
             English
           </summary>
           <div class="henk-localise__content">

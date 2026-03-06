@@ -14,7 +14,7 @@ export interface SectionHeaderProps {
   buttonIcon?: string;
 }
 
-export const createSectionHeader = ({
+export const HeaderBlock = ({
   bgColor = "default",
   id = "",
   caption = "",

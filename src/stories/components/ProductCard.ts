@@ -1,7 +1,7 @@
 import type { TagProps } from "./tag";
 import { createTag } from "./tag";
 
-export type BaseCardProps = {
+export type ProductCardProps = {
   href: string;
   imageSrc: string;
   imageAlt: string;
@@ -11,7 +11,7 @@ export type BaseCardProps = {
   price?: string;
   fromPrice?: string;
   discountedPrice?: string;
-  buttonLabel?: string; // optional
+  buttonLabel?: string;
   buttonVariant?: string;
   buttonSize?: string;
   tags?: TagProps[];
@@ -23,7 +23,7 @@ export type BaseCardProps = {
   directionsUrl?: string;
 };
 
-export function createBaseCard({
+export function createProductCard({
   href,
   imageSrc,
   imageAlt,
@@ -43,7 +43,7 @@ export function createBaseCard({
   shadow = false,
   directionsLabel,
   directionsUrl,
-}: BaseCardProps): string {
+}: ProductCardProps): string {
   const classes = ["henk-card"];
   if (variant) classes.push(`henk-card--${variant}`);
   if (extraClass) classes.push(extraClass);
@@ -53,7 +53,6 @@ export function createBaseCard({
   const tagsHtml = tags
     .map((tag) => {
       const tagEl = createTag(tag);
-      // If createTag returns HTMLElement, get outerHTML
       return tagEl instanceof HTMLElement ? tagEl.outerHTML : "";
     })
     .join("");

@@ -15,7 +15,7 @@
   --color-blue-90: hsl(210 100% 90%);
 
   /* neutral */
-  --color-neutral: #000000;
+  --color-neutral: #000;
   --color-neutral-0: hsl(0 0% 0%);
   --color-neutral-10: hsl(0 0% 10%);
   --color-neutral-20: hsl(0 0% 20%);
@@ -32,19 +32,19 @@
 
   /* green */
   --color-green: #008000;
-  --color-green-10: hsl(120, 80%, 10%);
-  --color-green-20: hsl(120, 80%, 20%);
-  --color-green-25: hsl(120, 80%, 25%);
-  --color-green-30: hsl(120, 80%, 30%);
-  --color-green-40: hsl(120, 80%, 40%);
-  --color-green-50: hsl(120, 80%, 50%);
-  --color-green-60: hsl(120, 80%, 60%);
-  --color-green-70: hsl(120, 80%, 70%);
-  --color-green-80: hsl(120, 80%, 80%);
-  --color-green-90: hsl(120, 80%, 90%);
+  --color-green-10: hsl(120 80% 10%);
+  --color-green-20: hsl(120 80% 20%);
+  --color-green-25: hsl(120 80% 25%);
+  --color-green-30: hsl(120 80% 30%);
+  --color-green-40: hsl(120 80% 40%);
+  --color-green-50: hsl(120 80% 50%);
+  --color-green-60: hsl(120 80% 60%);
+  --color-green-70: hsl(120 80% 70%);
+  --color-green-80: hsl(120 80% 80%);
+  --color-green-90: hsl(120 80% 90%);
 
   /* red */
-  --color-red: #ff0000;
+  --color-red: #f00;
   --color-red-30: hsl(0 100% 30%);
   --color-red-40: hsl(0 100% 40%);
   --color-red-50: hsl(0 100% 50%);

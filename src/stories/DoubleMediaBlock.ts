@@ -52,7 +52,7 @@ export function createDoubleMediaBlock({
   } else {
     const content = largeImage
       ? `<img
-          class="item__image"
+          class="item__image henk-image"
           id="img1"
           src="${largeImage}"
           alt="Large Image"
@@ -82,7 +82,7 @@ export function createDoubleMediaBlock({
   } else {
     const content = smallImage
       ? `<img
-          class="item__image"
+          class="item__image henk-image"
           id="img2"
           src="${smallImage}"
           alt="Small Image"

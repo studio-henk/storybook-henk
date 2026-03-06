@@ -18,18 +18,15 @@
 @import "../stories/components/forms/_henk-input.css";
 @import "../stories/components/forms/_henk-checkbox.css";
 @import "../stories/components/forms/_henk-radio.css";
-
 @import "../stories/components/forms/_henk-textarea.css";
 @import "../stories/components/forms/_henk-select.css";
 @import "../stories/components/forms/_henk-labeled-select.css";
 @import "../stories/components/forms/_henk-fieldset.css";
-/* @import "./components/_henk-radio.css"; */
 
 /* composites */
 @import "../stories/components/forms/_henk-labeled-input.css";
 @import "../stories/components/forms/_henk-labeled-checkbox.css";
 @import "../stories/components/forms/_custom-dropdown.css";
-
 @import "../stories/components/_henk-button-group.css";
 @import "./components/composites/_henk-header-mobile.css";
 @import "./components/composites/_henk-header-desktop.css";
@@ -38,18 +35,20 @@
 @import "./components/composites/_henk-pagination.css";
 @import "./components/composites/_henk-form.css";
 @import "../stories/components/composites/_henk-options-bar.css";
+
 /* sections */
+
 /* @import "./sections/_henk-wrapper.css"; */
+
 @import "./sections/_henk-main.css";
 @import "./sections/_henk-section.css";
-/*@import "./sections/_henk-section-backgrounds.css";*/
 @import "./sections/_henk-section-grid.css";
 @import "./sections/_henk-three-column-block.css";
 @import "./sections/_henk-split-screen.css";
 @import "./sections/_henk-newsletter-form.css";
-/* @import "./sections/_henk-double-image-block.css"; */
 @import "./sections/_henk-double-media-block.css";
 @import "./sections/_henk-section-header-block.css";
+@import "../stories/_henk-header-block.css";
 @import "./sections/_henk-breadcrumbs.css";
 @import "./sections/_henk-content-divider.css";
 @import "./sections/_henk-stores-brick.css";
@@ -59,4 +58,5 @@
 
 /* layout */
 @import "./layout/_henk-lister-grid.css";
+
 /* @import "./layout/_henk-cart-page.css"; */

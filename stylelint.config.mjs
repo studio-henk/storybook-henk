@@ -17,5 +17,8 @@ export default {
     ],
     "media-feature-range-notation": "prefix",
     "number-max-precision": 8,
+    "import-notation": "string",
+    "color-function-notation": "modern",
+    "hue-degree-notation": "number",
   },
 };

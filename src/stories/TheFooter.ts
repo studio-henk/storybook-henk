@@ -1,5 +1,3 @@
-// import "../assets/_henk-footer.css";
-
 import { TextLink } from "@stories/base/TextLink"; // adjust path as needed
 
 import BcorpLogoSVG from "@assets/logos/b-corp.svg?raw";
@@ -157,6 +155,7 @@ export function TheFooter({
     <a
       href="https://www.bcorporation.net/en-us/find-a-b-corp/company/studio-henk/"
       aria-label="Bcorp"
+      class="henk-footer__bcorp-logo"
       >${BcorpLogoSVG}</a
     >
     <!-- <div class="henk-footer__rating-widget">               -->

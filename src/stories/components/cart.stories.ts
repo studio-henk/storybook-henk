@@ -1,5 +1,5 @@
 import { createPageTemplate } from "@templates/PageTemplate";
-import { createSectionHeader } from "@stories/SectionHeader";
+import { HeaderBlock } from "@stories/SectionHeader";
 import { createInfoBox } from "@components/InfoBox";
 import { createCartContent } from "@stories/createCartContent";
 import { mockShopifyCart } from "@utils/mockShopifyCart";
@@ -34,7 +34,7 @@ export const Empty = () => {
     mainContent: () => {
       const fragment = document.createDocumentFragment();
 
-      const sectionHeader = createSectionHeader({
+      const sectionHeader = HeaderBlock({
         title: "Cart is currently empty",
         alignLeft: false,
         level: 1,
@@ -92,7 +92,7 @@ export const NotEmpty = () => {
     mainContent: () => {
       const fragment = document.createDocumentFragment();
 
-      const sectionHeader = createSectionHeader({
+      const sectionHeader = HeaderBlock({
         title: "Shopping cart",
         alignLeft: true,
         level: 1,

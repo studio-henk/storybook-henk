@@ -15,6 +15,7 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
+      "@src/*": ["src/*"],
       "@components/*": ["src/stories/components/*"],
       "@internal-components/*": ["src/internal-components/*"],
       "@templates/*": ["src/stories/templates/*"],

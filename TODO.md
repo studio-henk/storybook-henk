@@ -1,10 +1,12 @@
 # TODO
 
-- [ ] add icon direction compass correctly as component
 - [ ] add product block from liquid to storybook
+- [ ] update product block in liquid: no price in 2nd row
 - [ ] set rule for variables to be prefixed and allow locals: --henk- and --henk_
 - [ ] find and replaces classnames
 - [ ] find and replace variables
+
+- [ ] use StoreCard. strip from BaseCard.
 
 ## Misc
 
@@ -16,5 +18,3 @@
 - [ ] close on click outside?
 - [ ] close on esc?
 - [ ] style lang selector
-
-this is a link

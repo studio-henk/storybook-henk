@@ -1,0 +1,74 @@
+{% comment %}
+  HenkCard - A simple card component
+
+  Usage:
+  {% render 'henk-card',
+    href: product.url,
+    image: product.featured_image,
+    image_alt: product.title,
+    title: product.title,
+    subtitle: product.metafields.custom.short_description,
+    tags: product.tags,
+    variant: 'rounded',
+    extra_class: 'my-custom-class'
+  %}
+{% endcomment %}
+
+{% assign href = href | default: '#' %}
+{% assign image_alt = image_alt | default: '' %}
+{% assign title = title | default: '' %}
+{% assign subtitle = subtitle | default: '' %}
+
+{%- if variant == 'rounded' -%}
+  {% assign radius_class = 'henk-card--rounded' %}
+{%- elsif variant == 'shadow' -%}
+  {% assign radius_class = 'henk-card--shadow' %}
+{%- endif -%}
+
+<div class="henk-card {{ radius_class }} {{ extra_class }}">
+  <a href="{{ href }}" class="henk-card__image-link">
+    <picture class="henk-card__image-container">
+      {% if image %}
+        {% if image contains 'http' or image contains '://' %}
+          <img
+            class="henk-card__img"
+            src="{{ image }}"
+            alt="{{ image_alt }}"
+            width="1134"
+            height="1134"
+            loading="lazy"
+          >
+        {% else %}
+          <img
+            class="henk-card__img"
+            src="{{ image | image_url: width: 1134 }}"
+            alt="{{ image_alt }}"
+            width="1134"
+            height="1134"
+            loading="lazy"
+          >
+        {% endif %}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag }}
+      {% endif %}
+    </picture>
+  </a>
+
+  <div class="henk-card__content">
+    {% if title != blank %}
+      <p class="henk-card__title truncate">{{ title }}</p>
+    {% endif %}
+
+    {% if subtitle != blank %}
+      <p class="henk-card__subtitle truncate">{{ subtitle }}</p>
+    {% endif %}
+  </div>
+
+  {% if tags != blank %}
+    <div class="henk-card__tags">
+      {% for tag in tags limit: 2 %}
+        {% render 'henk-tag', tag: tag %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

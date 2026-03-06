@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 import type { SectionHeaderProps } from "./SectionHeader";
-import { createSectionHeader } from "./SectionHeader";
+import { HeaderBlock } from "./SectionHeader";
 import codeLiquid from "./henk-section-header.liquid?raw";
 import { withSectionWrapper } from "@decorators/withSectionWrapper";
 
@@ -8,7 +8,7 @@ const meta: Meta = {
   title: "Sections/SectionHeader",
   decorators: [withSectionWrapper],
   tags: ["autodocs"],
-  render: (args) => createSectionHeader(args as SectionHeaderProps),
+  render: (args) => HeaderBlock(args as SectionHeaderProps),
   parameters: {
     docs: {
       description: {

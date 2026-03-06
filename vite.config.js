@@ -14,6 +14,7 @@ export default defineConfig({
   resolve: {
     extensions: [".ts", ".js", ".jsx", ".tsx", ".json"],
     alias: {
+      "@src": path.resolve(__dirname, "src"),
       "@components": path.resolve(__dirname, "src/stories/components"),
       "@internal-components": path.resolve(
         __dirname,

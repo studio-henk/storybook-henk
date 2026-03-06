@@ -8,7 +8,7 @@
   width: min(var(--size-width-content, 1140px), 100% - 3rem);
   margin-inline: auto;
   container-type: inline-size;
-  container-name: ThreeColumnsGrid;
+  container-name: three-columns-grid;
 }
 
 .henk-three-column-block__title {
@@ -22,7 +22,7 @@
   row-gap: 4rem;
 }
 
-@container ThreeColumnsGrid (min-width: 560px) {
+@container three-columns-grid (min-width: 560px) {
   .henk-three-column-block__columns {
     grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
     column-gap: 1.5rem;

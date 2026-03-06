@@ -1,9 +1,9 @@
 dl {
-  margin-block: 1.5re 0;
+  margin-block: 1.5rem 0;
 }
 
 .sbdocs-content dt {
-  color: currentColor;
+  color: currentcolor;
   font-family: inherit;
   font-weight: 600;
   font-size: inherit;

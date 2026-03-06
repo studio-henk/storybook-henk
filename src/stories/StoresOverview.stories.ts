@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/html";
 import { createBaseLayout } from "@templates/BaseLayout";
 import { createHeader } from "./TheHeader";
 import { TheFooter } from "./TheFooter";
-import { createSectionHeader } from "./SectionHeader";
+import { HeaderBlock } from "./SectionHeader";
 import { createStoreCard } from "@components/StoreCard";
 import { createStoresGrid } from "./Grid";
 
@@ -34,7 +34,7 @@ if (!NewsletterBlockRender) {
   throw new Error("NewsletterBlock story is missing a render function");
 }
 const meta: Meta = {
-  title: "Pages/StoresOverview",
+  title: "Pages/Stores/Overview",
   parameters: { layout: "fullscreen" },
 };
 
@@ -57,7 +57,7 @@ export const StoresOverview: Story = {
     // const mainContent = document.createElement("div");
     const mainContent = document.createDocumentFragment();
 
-    const sectionHeader = createSectionHeader({
+    const sectionHeader = HeaderBlock({
       id: "stores-overview-header",
       caption: "",
       title: "Onze winkels",

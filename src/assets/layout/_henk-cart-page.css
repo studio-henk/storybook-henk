@@ -2,8 +2,10 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+
   /* max-width: 1256px; */
   margin: 0 auto;
+
   /* padding: 0 24px; */
 }
 
