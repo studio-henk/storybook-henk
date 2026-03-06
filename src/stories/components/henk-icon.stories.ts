@@ -56,32 +56,6 @@ const ICON_NAMES = [
   "social-youtube",
 ];
 
-const loadSvgMap = async () => {
-  if (engine.__svg_map && Object.keys(engine.__svg_map).length)
-    return engine.__svg_map;
-  const entries = Object.entries(svgModules) as [
-    string,
-    () => Promise<string>,
-  ][];
-  const map: Record<string, string> = {};
-  await Promise.all(
-    entries.map(async ([filePath, loader]) => {
-      try {
-        const content = await loader();
-        const parts = filePath.split("/");
-        const filename = parts[parts.length - 1];
-        map[filename] = content;
-      } catch (e) {
-        // ignore load errors
-      }
-    }),
-  );
-  engine.__svg_map = map;
-  return map;
-};
-
-// Ensure svg map is loaded before any story render (top-level await supported by Vite)
-await loadSvgMap();
 
 const renderIcon = (args: any) => {
   const rendered = engine.parseAndRenderSync(snippet, {
