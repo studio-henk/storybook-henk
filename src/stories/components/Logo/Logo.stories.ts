@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
-import snippet from "./LogoLiquid.liquid?raw";
+import snippet from "./Logo.liquid?raw";
 
 const renderLogo = (args: any) => {
   const rendered = engine.parseAndRenderSync(snippet, {
@@ -11,11 +11,12 @@ const renderLogo = (args: any) => {
   });
   const div = document.createElement("div");
   div.innerHTML = rendered;
-  return div;
+  // return the anchor element (snippet may include only markup)
+  return div.querySelector('a.henk-logo') || div.querySelector('a') || div;
 };
 
 const meta: Meta = {
-  title: "Components/LogoLiquid",
+  title: "Components/Logo",
   render: (args) => renderLogo(args),
   tags: ["autodocs"],
   parameters: {

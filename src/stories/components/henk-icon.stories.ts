@@ -3,59 +3,25 @@ import type { Meta, StoryObj } from "@storybook/html";
 import engine from "@src/liquid-engine.js";
 import snippet from "./henk-icon.liquid?raw";
 
-// Vite glob to load raw SVGs from src/assets/icons at runtime
-const svgModules = import.meta.glob("../../assets/icons/*.svg", { query: "?raw", import: "default", eager: true });
+// Vite glob to load raw SVGs from src/assets/icons and src/assets/logos at runtime
+const svgModules = import.meta.glob("../../assets/{icons,logos}/*.svg", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
 
 // Build synchronous map of filename -> svg content for use in Liquid inline filter
-const svgMap: Record<string,string> = {};
+const svgMap: Record<string, string> = {};
 Object.entries(svgModules).forEach(([filePath, content]) => {
-  const filename = filePath.split('/').pop();
+  const filename = filePath.split("/").pop();
   if (filename) svgMap[filename] = content as string;
 });
 engine.__svg_map = svgMap;
 
 // Available icon names (derived from src/assets/icons)
-const ICON_NAMES = [
-  "feather-alert-circle",
-  "feather-alert-triangle",
-  "feather-arrow-left",
-  "feather-arrow-right",
-  "feather-calendar",
-  "feather-check",
-  "feather-chevron-down",
-  "feather-chevron-left",
-  "feather-chevron-right",
-  "feather-chevron-up",
-  "feather-help-circle",
-  "feather-info",
-  "feather-map-pin",
-  "feather-menu",
-  "feather-minus",
-  "feather-navigation",
-  "feather-phone-call",
-  "feather-phone",
-  "feather-plus",
-  "feather-search",
-  "feather-shopping-bag",
-  "feather-shopping-cart",
-  "feather-smartphone",
-  "feather-star",
-  "feather-trash-2",
-  "feather-trash",
-  "feather-truck",
-  "feather-volume-2",
-  "feather-volume-x",
-  "feather-x",
-  "henk-bag",
-  "henk-navigate",
-  "henk-success",
-  "social-facebook",
-  "social-instagram",
-  "social-pinterest",
-  "social-tiktok",
-  "social-youtube",
-];
-
+const ICON_NAMES = Object.keys(svgMap)
+  .map((f) => f.replace(/\.svg$/i, ""))
+  .sort();
 
 const renderIcon = (args: any) => {
   const rendered = engine.parseAndRenderSync(snippet, {
@@ -176,3 +142,28 @@ export const SocialIcons: Story = {
     return container;
   },
 };
+
+// export const Logos: Story = {
+//   render: () => {
+//     const container = document.createElement("div");
+//     container.style.display = "flex";
+//     container.style.flexWrap = "wrap";
+//     container.style.gap = "12px";
+//
+//     ICON_NAMES.filter((name) => name.startsWith("logo-")).forEach((name) => {
+//       const rendered = engine.parseAndRenderSync(snippet, { name, class: "" });
+//       const item = document.createElement("div");
+//       item.style.display = "flex";
+//       item.style.flexDirection = "column";
+//       item.style.alignItems = "center";
+//       item.style.width = "96px";
+//       item.style.fontSize = "12px";
+//       item.innerHTML =
+//         rendered +
+//         `<div style="margin-top:6px;word-break:break-word; text-align:center;">${name}</div>`;
+//       container.appendChild(item);
+//     });
+//
+//     return container;
+//   },
+// };

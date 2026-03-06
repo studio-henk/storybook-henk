@@ -1,5 +1,21 @@
+// Use Liquid-based logo
+import snippetLogo from "./components/Logo/Logo.liquid?raw";
+// @ts-ignore - liquid-engine.js has no types
+import engine from "@src/liquid-engine.js";
 import type { LogoProps } from "@components/Logo";
-import { createLogo } from "@components/Logo";
+
+const renderLogo = (props: any) => {
+  const rendered = engine.parseAndRenderSync(snippetLogo, {
+    variant: props?.variant || "primary",
+    href: props?.href || "https://studio-henk.nl",
+    label: props?.label || "Studio HENK",
+  });
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = rendered;
+  // Pick the actual anchor element; snippet may include a <style> tag before the anchor
+  const anchor = wrapper.querySelector('a.henk-logo') as HTMLAnchorElement | null;
+  return anchor || (wrapper.querySelector('a') as HTMLAnchorElement | null) || (wrapper.lastElementChild as HTMLAnchorElement | null);
+};
 import IconSearch from "@assets/icons/feather-search.svg?raw";
 import IconBag from "@assets/icons/henk-bag.svg?raw";
 import { Icon } from "@components/Icon";
@@ -425,7 +441,7 @@ ${cartBubbleHtml}
   headerInner.appendChild(headerMenu);
 
   if (logoProps) {
-    const logo = createLogo(logoProps);
+    const logo = renderLogo(logoProps);
     logo.classList.add("henk-header__logo");
     // headerInner.appendChild(logo);
 

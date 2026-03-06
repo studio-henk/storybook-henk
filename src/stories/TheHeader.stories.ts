@@ -22,7 +22,7 @@ const meta = {
     },
   },
   args: {
-    logoProps: { variant: "default", href: "/" },
+    logoProps: { variant: "default", href: "/", label: "Studio HENK" },
   },
 } satisfies Meta<HeaderProps>;
 
