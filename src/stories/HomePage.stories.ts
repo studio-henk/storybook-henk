@@ -8,6 +8,7 @@ import { createSplitScreen } from "./SplitScreen";
 import { createThreeColumnBlock } from "./ThreeColumnBlock";
 import { VideoSection } from "@components/VideoSection";
 import { NewsletterBlock as RawNewsletterBlock } from "./NewsletterBlock.stories";
+import { HenkFAQSection as RawHenkFAQSection } from "./components/henk-faq-section.stories";
 
 function wrapWithShopifySection(
   element: HTMLElement,
@@ -310,6 +311,19 @@ export const HomePage: Story = {
     mainContent.appendChild(
       wrapWithShopifySection(threecolumn3, "section-threecolumn3"),
     );
+    // Insert Henk FAQ section before the newsletter block
+    const HenkFAQRender = RawHenkFAQSection.render as | (() => string) | undefined;
+    if (HenkFAQRender) {
+      mainContent.appendChild(htmlToNode(HenkFAQRender()));
+    } else {
+      // fallback: render via the component's render helper
+      // @ts-ignore
+      import("./components/henk-faq-section.stories").then((m) => {
+        const fn = m.render || m.default?.render;
+        if (fn) mainContent.appendChild(htmlToNode(fn()));
+      });
+    }
+
     mainContent.appendChild(htmlToNode(NewsletterBlockRender()));
 
     return createBaseLayout({ header, mainContent, footer });

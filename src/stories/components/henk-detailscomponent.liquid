@@ -1,0 +1,36 @@
+{%- comment -%} Details component snippet: summary, content, variant, name, iconName, iconSize, iconClassName {%- endcomment -%}
+{%- assign variant_class = "" -%}
+{%- if variant and variant != "default" -%}
+  {%- assign variant_class = " henk-details--" | append: variant -%}
+{%- endif -%}
+
+{%- assign icon_html = icon_html | default: "" -%}
+{%- if icon_html == "" and iconName -%}
+  {%- assign icon_class = iconClassName | default: "" -%}
+  {%- if iconSize == "small" -%}
+    {%- assign icon_class = icon_class | append: " icon--small" -%}
+  {%- elsif iconSize == "large" or iconSize == blank -%}
+    {%- assign icon_class = icon_class | append: " icon--large" -%}
+  {%- endif -%}
+  {%- assign file_name = iconName | append: '.svg' -%}
+  {%- assign svg_content = file_name | inline_asset_content -%}
+  {%- if svg_content != blank -%}
+    {%- capture icon_html -%}
+      <i class="henk-icon {{ icon_class }}">
+        {{ svg_content }}
+      </i>
+    {%- endcapture -%}
+  {%- else -%}
+    {%- capture icon_html -%}{%- endcapture -%}
+  {%- endif -%}
+{%- endif -%}
+
+<details class="henk-details{{ variant_class }}" name="{{ name }}">
+  <summary class="henk-details__summary">
+    {{ icon_html }}
+    {{ summary }}
+  </summary>
+  <div class="henk-details__content">
+    {{ content }}
+  </div>
+</details>
