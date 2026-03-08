@@ -1,4 +1,4 @@
-import menuIcon from "@assets/icons/feather-menu.svg?raw";
+import menuIcon from "@assets/feather-menu.svg?raw";
 import closeIcon from "@assets/feather-x.svg?raw";
 
 /**
@@ -74,9 +74,7 @@ const mobileMenu = {
     hamburgerButton.setAttribute("aria-expanded", "false");
     hamburgerButton.dataset["jsMobileMenuOpen"] = "";
     hamburgerButton.innerHTML = `
-<i class="henk-icon icon--only">
-${menuIcon}
-</i>
+<i class="henk-icon icon--only"> ${menuIcon} </i>
 <span class="visually-hidden">Menu</span>
     `;
     if (!this.headerInner) return;
@@ -93,9 +91,7 @@ ${menuIcon}
     closeButton.dataset["jsMobileMenuClose"] = "";
 
     closeButton.innerHTML = `
-            <i class="henk-icon">
-                    ${closeIcon}
-                  </i>
+            <i class="henk-icon"> ${closeIcon} </i>
             CLOSE
           `;
 

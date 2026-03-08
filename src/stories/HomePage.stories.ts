@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/html";
 
 import { createBaseLayout } from "./templates/BaseLayout";
 import { createHeader } from "./TheHeader";
-import { TheFooter } from "./TheFooter";
+import footerMeta from "./henk-footer.stories";
 import { HeroBlock } from "@components/HeroBlock";
 import { createSplitScreen } from "./SplitScreen";
 import { createThreeColumnBlock } from "./ThreeColumnBlock";
@@ -57,7 +57,11 @@ export const HomePage: Story = {
       isHomepage: true,
       logoProps: { variant: "transparent", href: "/" },
     });
-    const footer = TheFooter({});
+    const footerArgs = (footerMeta as { args?: any }).args;
+    const footerRender = (footerMeta as { render?: (args?: any) => HTMLElement }).render;
+    const footer = footerRender
+      ? footerRender(footerArgs)
+      : document.createElement("footer");
 
     const mainContent = document.createElement("div");
     mainContent.id = "home-main-content";

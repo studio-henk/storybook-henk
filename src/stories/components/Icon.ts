@@ -3,7 +3,7 @@
    while consumers are migrated. Do NOT delete until all call sites have been updated to use the Liquid version.
 */
 
-const icons = import.meta.glob("../../assets/icons/*.svg", {
+const icons = import.meta.glob("../../assets/*.svg", {
   as: "raw",
   eager: true,
 });

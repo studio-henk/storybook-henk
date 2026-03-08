@@ -7,11 +7,16 @@ const SCHEMA_RE = /\{%\s*schema\s*%\}[\s\S]*?\{%\s*endschema\s*%\}/i;
 const footerSection = sectionRaw.replace(SCHEMA_RE, "");
 
 const renderFooter = (args: any) => {
+  const defaultArgs = {
+    footer_menu: { links: [] },
+    shop: { policies: [] },
+  };
+  const safeArgs = { ...defaultArgs, ...args };
   const rendered = engine.parseAndRenderSync(footerSection, {
     linklists: {
-      footer: args.footer_menu,
+      footer: safeArgs.footer_menu,
     },
-    shop: args.shop,
+    shop: safeArgs.shop,
   });
 
   const footer = document.createElement("footer");
@@ -21,7 +26,7 @@ const renderFooter = (args: any) => {
 };
 
 const meta: Meta = {
-  title: "Global/HenkFooterLiquid",
+  title: "Global/Footer",
   render: (args) => renderFooter(args),
   tags: ["autodocs"],
   parameters: {
@@ -102,7 +107,10 @@ const meta: Meta = {
     },
     shop: {
       policies: [
-        { title: "Intellectual Property", url: "/policies/intellectual-property" },
+        {
+          title: "Intellectual Property",
+          url: "/policies/intellectual-property",
+        },
         { title: "Privacy Policy", url: "/policies/privacy-policy" },
         { title: "Cookie Statement", url: "/policies/cookies" },
         { title: "Terms and Conditions", url: "/policies/terms" },
