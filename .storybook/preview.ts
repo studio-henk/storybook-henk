@@ -24,6 +24,44 @@ document.documentElement.classList.add("js-enabled");
 // });
 
 import { DocsContainer } from "@storybook/addon-docs";
+// @ts-ignore - liquid-engine.js has no types
+import engine from "@src/liquid-engine.js";
+
+const liquidModules = import.meta.glob("../src/**/*.liquid", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const stylesheetBlocks: string[] = [];
+Object.values(liquidModules).forEach((liquidSource) => {
+  if (typeof liquidSource !== "string") return;
+  const matches = liquidSource.matchAll(
+    /{%\s*stylesheet\s*%}([\s\S]*?){%\s*endstylesheet\s*%}/g,
+  );
+  for (const match of matches) {
+    const block = match[1];
+    if (!block) continue;
+    const cleanedBlock = block.replace(/{%\s*comment\s*%}[\s\S]*?{%\s*endcomment\s*%}/g, "");
+    const rendered = engine.parseAndRenderSync(cleanedBlock, {});
+    if (rendered.trim().length > 0) stylesheetBlocks.push(rendered);
+  }
+});
+
+if (stylesheetBlocks.length > 0) {
+  const existingStylesheets = document.getElementById(
+    "henk-liquid-stylesheets",
+  );
+  const stylesheetMarkup = stylesheetBlocks.join("\n");
+  if (existingStylesheets && existingStylesheets instanceof HTMLStyleElement) {
+    existingStylesheets.textContent = stylesheetMarkup;
+  } else {
+    const stylesheetStyle = document.createElement("style");
+    stylesheetStyle.id = "henk-liquid-stylesheets";
+    stylesheetStyle.textContent = stylesheetMarkup;
+    document.head.appendChild(stylesheetStyle);
+  }
+}
 
 const preview = {
   globalTypes: {

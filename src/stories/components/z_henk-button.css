@@ -6,7 +6,7 @@
   --btn-text-hover: var(--color-text-static);
   --btn-border: var(--color-border-static);
   --btn-border-hover: var(--color-border-static);
-  --btn-border-radius: var(--radius-1);
+  --btn-border-radius: 9999px; /* pill by default */
   --btn-outline-width: 0;
   --btn-outline-color: var(--color-border-static);
   --btn-outline-offset: 0;

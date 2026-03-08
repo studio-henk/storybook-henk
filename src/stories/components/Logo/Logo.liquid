@@ -1,6 +1,6 @@
-<a 
-  class="henk-logo henk-logo--{{ variant }}" 
-  href="{{ href }}" 
+<a
+  class="henk-logo henk-logo--{{ variant }}"
+  href="{{ href }}"
   aria-label="{{ label }}"
 >
   <svg fill="none" height="24" viewBox="0 0 104 24" width="104" xmlns="http://www.w3.org/2000/svg">
@@ -10,3 +10,53 @@
     <path d="M104.656 20.4927C102.782 20.8937 100.902 19.901 99.0348 16.5482L95.6885 10.4867L103.834 0.230835H98.7718L90.3634 10.822V0.230835H86.3202V23.8324H90.3634V17.1661L93.0522 13.7935L95.465 18.1588C98.3116 23.3131 101.632 24.8843 105.169 23.9968L104.656 20.4927Z" fill="currentcolor"/>
   </svg>
 </a>
+
+{% stylesheet %}
+  .henk-logo {
+    --color-text-logo: var(--color-neutral-0, #000);
+    --color-background-logo: var(--color-neutral-100, #fff);
+
+    color: var(--color-text-logo);
+    background-color: var(--color-background-logo);
+    display: inline-flex;
+    margin-block: 0;
+    margin-inline: 0;
+    padding-block: var(--space-4, 24px);
+    padding-inline: 18px;
+
+    &:link {
+      color: var(--color-text-logo);
+    }
+
+    &:visited {
+      color: var(--color-text-logo);
+    }
+
+    &:hover {
+      color: var(--color-text-primary);
+    }
+  }
+
+  .henk-logo svg {
+    display: block;
+  }
+
+  .henk-logo--default-inverted {
+    --color-text-logo: var(--color-neutral-100);
+    --color-background-logo: var(--color-neutral-0);
+  }
+
+  .henk-logo--primary {
+    --color-text-logo: var(--color-text-secondary);
+    --color-background-logo: var(--color-background-primary);
+  }
+
+  .henk-logo--secondary {
+    --color-text-logo: var(--color-text-primary);
+    --color-background-logo: var(--color-background-secondary);
+  }
+
+  .henk-logo--transparent {
+    --color-background-logo: transparent;
+  }
+{% endstylesheet %}

@@ -140,6 +140,9 @@ Commands for linters are not present in package.json; run them manually if neede
 
 ## Important gotchas & notes for agents
 - Do not assume there are tests: none exist.
+- Do not summarize the chat unless explicitly asked.
+- Do not run tests unless explicitly asked.
+- Do not run typechecks unless explicitly asked.
 - tsconfig.scripts.json contains comments which cause JSON parse diagnostics in some editors; be mindful when editing this file and with JSON-only tools.
 - There are two JS build flows:
   - Vite-based flow: `npm run build:wc` (vite build → copy dist/assets → public/assets).

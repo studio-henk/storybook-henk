@@ -9,3 +9,25 @@
 {%- else -%}
   <!-- Icon "{{ name }}" not found -->
 {%- endif -%}
+
+{% stylesheet %}
+  .henk-icon {
+    display: flex;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  /* 24 */
+  .henk-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+  }
+
+  /* icon only needs other display to align better */
+  .henk-icon.icon--only {
+    display: flex;
+    align-items: center;
+  }
+{% endstylesheet %}

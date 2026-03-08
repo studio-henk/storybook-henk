@@ -1,16 +1,16 @@
 {%- comment -%} Details component snippet: summary, content, variant, name, iconName, iconSize, iconClassName {%- endcomment -%}
-{%- assign variant_class = "" -%}
-{%- if variant and variant != "default" -%}
-  {%- assign variant_class = " henk-details--" | append: variant -%}
+{%- assign variant_class = '' -%}
+{%- if variant and variant != 'default' -%}
+  {%- assign variant_class = ' henk-details--' | append: variant -%}
 {%- endif -%}
 
-{%- assign icon_html = icon_html | default: "" -%}
-{%- if icon_html == "" and iconName -%}
-  {%- assign icon_class = iconClassName | default: "" -%}
-  {%- if iconSize == "small" -%}
-    {%- assign icon_class = icon_class | append: " icon--small" -%}
-  {%- elsif iconSize == "large" or iconSize == blank -%}
-    {%- assign icon_class = icon_class | append: " icon--large" -%}
+{%- assign icon_html = icon_html | default: '' -%}
+{%- if icon_html == '' and iconName -%}
+  {%- assign icon_class = iconClassName | default: '' -%}
+  {%- if iconSize == 'small' -%}
+    {%- assign icon_class = icon_class | append: ' icon--small' -%}
+  {%- elsif iconSize == 'large' or iconSize == blank -%}
+    {%- assign icon_class = icon_class | append: ' icon--large' -%}
   {%- endif -%}
   {%- assign file_name = iconName | append: '.svg' -%}
   {%- assign svg_content = file_name | inline_asset_content -%}
@@ -34,3 +34,134 @@
     {{ content }}
   </div>
 </details>
+
+{% stylesheet %}
+  /* details-component.css */
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+    max-width: 1256px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+
+  .henk-details {
+    margin-bottom: 1.5rem;
+  }
+
+  .henk-details-group .henk-details {
+    margin-bottom: 0;
+
+    &:hover {
+      color: var(--color-primary-darkest);
+
+      /* summary {
+      font-weight: 500;
+    } */
+    }
+  }
+
+  .henk-details::details-content {
+    overflow: clip;
+    block-size: 0;
+    transition:
+      block-size 0.6s,
+      content-visibility 0.6s;
+    transition-behavior: allow-discrete;
+  }
+
+  .henk-details[open]::details-content {
+    block-size: auto;
+  }
+
+  .henk-details__summary {
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.3s ease;
+  }
+
+  .henk-details__content {
+    max-width: 60ch;
+    padding-block: var(--space-4, 24px);
+  }
+
+  @supports not (margin-trim: block) {
+    .henk-details__content *:first-child {
+      margin-top: 0;
+    }
+
+    .henk-details__content *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .henk-details.henk-details--plusmin {
+    border-bottom: 1px solid var(--color-border-muted, red);
+  }
+
+  .henk-details.henk-details--plusmin .henk-details__summary {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 0;
+    padding: 10px 12px 10px 0;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .henk-details.henk-details--plusmin[open] .henk-details__summary {
+    position: relative;
+  }
+
+  .henk-details.henk-details--plusmin .henk-details__summary::before {
+    content: '+';
+    display: inline-flex;
+    font-size: 2rem;
+    justify-content: center;
+    line-height: 44px;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 0;
+    transform-origin: center center;
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .henk-details.henk-details--plusmin[open] .henk-details__summary::before {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  .henk-details.henk-details--plusmin .henk-details__summary::after {
+    content: '−';
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 2rem;
+    line-height: 44px;
+  }
+
+  .henk-details.henk-details--plusmin[open] .henk-details__summary::after {
+    opacity: 1;
+  }
+
+  .henk-details.henk-details--plusmin .henk-details__summary:hover {
+    color: var(--color-ui-text-action-hover);
+  }
+
+  .henk-details.henk-details--plusmin .henk-details__summary:focus-visible {
+    color: var(--color-focus-ring, #005fcc);
+    padding: 4px;
+  }
+
+  .henk-details.henk-details--plusmin .henk-details__summary:focus-visible::before {
+    right: 4px;
+  }
+
+  .henk-details.henk-details--plusmin .henk-details__summary:focus-visible::after {
+    right: 4px;
+  }
+{% endstylesheet %}

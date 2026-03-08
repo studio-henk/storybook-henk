@@ -12,21 +12,6 @@
   transition: transform 0.3s ease;
 }
 
-/* 24 */
-
-/* .henk-icon.icon--large svg {
-} */
-
-/* 20 */
-
-/* .henk-icon.icon--medium svg {
-} */
-
-/* 16 */
-
-/* .henk-icon.icon--small svg {
-} */
-
 /* icon only needs other display to align better */
 .henk-icon.icon--only {
   display: flex;

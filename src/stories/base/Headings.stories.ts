@@ -1,6 +1,3 @@
-// import "@assets/utils/_henk-helpers.css";
-// import "@assets/utils/_henk-size-font.css";
-
 import type { Meta, StoryObj } from "@storybook/html";
 import { createHeadingElement, type HeadingProps } from "./Headings";
 

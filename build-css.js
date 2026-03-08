@@ -6,6 +6,10 @@ const isProd = process.env.NODE_ENV === "production";
 
 // List of CSS files to process
 const files = [
+  {
+    src: "src/assets/henk-critical.css",
+    dest: "public/assets/henk-critical.css",
+  },
   { src: "src/assets/henk-tokens.css", dest: "public/assets/henk-tokens.css" },
   { src: "src/assets/henk-base.css", dest: "public/assets/henk-base.css" },
   { src: "src/assets/henk-atoms.css", dest: "public/assets/henk-atoms.css" },

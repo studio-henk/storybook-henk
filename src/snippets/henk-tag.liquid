@@ -1,0 +1,111 @@
+{% comment %}
+  Tag component (Liquid)
+  Inputs:
+    label: text (required)
+    icon_svg: raw SVG markup string (optional)
+    icon_position: 'left' | 'right' (default: left)
+    size: 'small' | 'large'
+    variant: 'default' | 'primary' | 'secondary' | 'outlined' | 'dark' | 'light'
+    href: URL for <a>
+{% endcomment %}
+
+{% assign icon_position = icon_position | default: 'left' %}
+
+{%- comment -%} Build classes -{%- endcomment -%}
+{% assign classes = 'henk-tag' %}
+{% if variant %}{% assign classes = classes | append: ' henk-tag--' | append: variant %}{% endif %}
+{% if size %}{% assign classes = classes | append: ' henk-tag--' | append: size %}{% endif %}
+
+{%- comment -%} Build icon markup if provided -{%- endcomment -%}
+{% assign icon_markup = '' %}
+{% if icon_svg != blank %}
+  {% capture icon_markup %}
+    <i class="henk-icon icon--{% if size == 'small' %}medium{% else %}large{% endif %}">{{ icon_svg }}</i>
+  {% endcapture %}
+{% endif %}
+
+{%- comment -%} Build inner content -{%- endcomment -%}
+{% capture inner_content %}
+  {% if icon_position == 'right' %}
+    {{ label }}{{ icon_markup }}
+  {% else %}
+    {{ icon_markup }}{{ label }}
+  {% endif %}
+{% endcapture %}
+
+{% if href %}
+  <a href="{{ href }}" class="{{ classes }}">{{ inner_content }}</a>
+{% else %}
+  <span class="{{ classes }}">{{ inner_content }}</span>
+{% endif %}
+
+{% stylesheet %}
+  .henk-tag,
+  .henk-tag--default {
+    --tag-background: var(--color-background-primary);
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.30769231em 1.2em;
+    font-size: min(13px, 3.4cqw);
+    line-height: 1.84615385em;
+    background-color: var(--tag-background, pink);
+    color: var(--color-text-static, #000);
+    border: 1px solid var(--color-ui-border-transparent);
+    border-radius: var(--radius-0);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .henk-tag--outlined {
+    color: var(--color-text-base);
+    border: 1px solid var(--color-border-base);
+    padding-block: 0.23076923em;
+  }
+
+  /* link */
+  a.henk-tag {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  a.henk-tag:focus-visible,
+  a.henk-tag:hover {
+    background-color: var(--color-background-primary-light);
+  }
+
+  .henk-tag--dark {
+    background-color: var(--color-background-neutral-darkest);
+    color: var(--color-text-neutral-lightest);
+    border: 1px solid var(--color-border-neutral-darkest);
+    border-radius: var(--radius-0);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .henk-tag--light {
+    background-color: var(--color-background-neutral-lightest);
+    color: var(--color-text-neutral-darkest);
+    border: 1px solid var(--color-border-neutral-darkest);
+    border-radius: var(--radius-0);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-block: 0.23076923em;
+  }
+
+  .henk-tag--dark a,
+  .henk-tag--light a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .henk-tag--dark a:hover,
+  .henk-tag--light a:hover {
+    opacity: 0.85; /* subtle hover effect */
+  }
+{% endstylesheet %}
