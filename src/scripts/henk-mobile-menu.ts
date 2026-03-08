@@ -1,5 +1,5 @@
 import menuIcon from "@assets/icons/feather-menu.svg?raw";
-import closeIcon from "@assets/icons/feather-x.svg?raw";
+import closeIcon from "@assets/feather-x.svg?raw";
 
 /**
  * ------------------------------------------------------------

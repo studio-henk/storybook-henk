@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/html";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
 import snippet from "@src/snippets/henk-tag.liquid?raw";
-import TruckIcon from "@assets/icons/feather-truck.svg?raw";
+import TruckIcon from "@assets/feather-truck.svg?raw";
 
 const renderTag = (args: any) => {
   const rendered = engine.parseAndRenderSync(snippet, {

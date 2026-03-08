@@ -3,17 +3,6 @@ import type { Meta, StoryObj } from "@storybook/html";
 import engine from "@src/liquid-engine.js";
 import snippet from "./henk-button.liquid?raw";
 
-// Vite glob to load raw SVGs from src/assets/icons at runtime (stories run in browser)
-const svgModules = import.meta.glob("../../assets/icons/*.svg", { query: "?raw", import: "default", eager: true });
-
-// Build synchronous map of filename -> svg content for use in Liquid inline filter
-const svgMap: Record<string,string> = {};
-Object.entries(svgModules).forEach(([filePath, content]) => {
-  const filename = filePath.split('/').pop();
-  if (filename) svgMap[filename] = content as string;
-});
-engine.__svg_map = svgMap;
-
 const renderButton = (args: any) => {
   const rendered = engine.parseAndRenderSync(snippet, {
     element: args.element,

@@ -1,10 +1,10 @@
 import { TextLink } from "@stories/base/TextLink"; // adjust path as needed
 
 import BcorpLogoSVG from "@assets/logos/b-corp.svg?raw";
-import Pinterest from "@assets/icons/social-pinterest.svg?raw";
-import Instagram from "@assets/icons/social-instagram.svg?raw";
-import Facebook from "@assets/icons/social-facebook.svg?raw";
-import TikTok from "@assets/icons/social-tiktok.svg?raw";
+import Pinterest from "@assets/social-pinterest.svg?raw";
+import Instagram from "@assets/social-instagram.svg?raw";
+import Facebook from "@assets/social-facebook.svg?raw";
+import TikTok from "@assets/social-tiktok.svg?raw";
 
 export interface FooterLink {
   label: string;

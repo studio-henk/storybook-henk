@@ -1,4 +1,4 @@
-import CheckmarkIcon from "@assets/icons/feather-check.svg?raw";
+import CheckmarkIcon from "@assets/feather-check.svg?raw";
 import { createLabeledCheckbox } from "./LabeledCheckbox";
 
 export default {

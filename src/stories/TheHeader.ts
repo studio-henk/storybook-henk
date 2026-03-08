@@ -16,8 +16,8 @@ const renderLogo = (props: any) => {
   const anchor = wrapper.querySelector('a.henk-logo') as HTMLAnchorElement | null;
   return anchor || (wrapper.querySelector('a') as HTMLAnchorElement | null) || (wrapper.lastElementChild as HTMLAnchorElement | null);
 };
-import IconSearch from "@assets/icons/feather-search.svg?raw";
-import IconBag from "@assets/icons/henk-bag.svg?raw";
+import IconSearch from "@assets/feather-search.svg?raw";
+import IconBag from "@assets/henk-bag.svg?raw";
 import { Icon } from "@components/Icon";
 import "@scripts/henk-desktop-menu";
 import "@scripts/henk-mobile-menu";

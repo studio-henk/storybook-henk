@@ -3,64 +3,11 @@ import type { Meta, StoryObj } from "@storybook/html";
 import engine from "@src/liquid-engine.js";
 import snippet from "./henk-detailscomponent.liquid?raw";
 import iconSnippet from "@src/snippets/henk-icon.liquid?raw";
+import { getIconNames } from "@stories/utils/liquid-icons";
 // Register the henk-icon partial so `{% render 'henk-icon' %}` works
 if (engine.registerPartial) engine.registerPartial("henk-icon", iconSnippet);
 
-// Vite glob to load raw SVGs from src/assets/icons at runtime
-const svgModules = import.meta.glob("../../assets/icons/*.svg", {
-  query: "?raw",
-  import: "default",
-  eager: true,
-});
-
-// Build synchronous map of filename -> svg content for use in Liquid inline filter
-const svgMap: Record<string, string> = {};
-Object.entries(svgModules).forEach(([filePath, content]) => {
-  const filename = filePath.split("/").pop();
-  if (filename) svgMap[filename] = content as string;
-});
-engine.__svg_map = svgMap;
-
-const ICON_NAMES = [
-  "feather-alert-circle",
-  "feather-alert-triangle",
-  "feather-arrow-left",
-  "feather-arrow-right",
-  "feather-calendar",
-  "feather-check",
-  "feather-chevron-down",
-  "feather-chevron-left",
-  "feather-chevron-right",
-  "feather-chevron-up",
-  "feather-help-circle",
-  "feather-info",
-  "feather-map-pin",
-  "feather-menu",
-  "feather-minus",
-  "feather-navigation",
-  "feather-phone-call",
-  "feather-phone",
-  "feather-plus",
-  "feather-search",
-  "feather-shopping-bag",
-  "feather-shopping-cart",
-  "feather-smartphone",
-  "feather-star",
-  "feather-trash-2",
-  "feather-trash",
-  "feather-truck",
-  "feather-volume-2",
-  "feather-volume-x",
-  "feather-x",
-  "henk-bag",
-  "henk-navigate",
-  "henk-success",
-  "social-facebook",
-  "social-instagram",
-  "social-pinterest",
-  "social-tiktok",
-  "social-youtube",
-];
+const ICON_NAMES = getIconNames();
 
 const renderDetails = (args: any) => {
   // Pre-render icon HTML and pass as `icon_html` to avoid relying on `{% render %}` at runtime
@@ -73,7 +20,7 @@ const renderDetails = (args: any) => {
       icon_class = icon_class + " icon--large";
     }
     const filename = `${args.iconName}.svg`;
-    const svg_content = svgMap[filename];
+    const svg_content = (engine.__svg_map || {})[filename];
     if (svg_content) {
       icon_html = `<i class="henk-icon ${icon_class}">${svg_content}</i>`;
     } else {

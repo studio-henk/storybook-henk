@@ -2,7 +2,7 @@ import type { Meta, StoryFn } from "@storybook/html";
 import { createInfoBox, InfoBoxProps } from "@components/InfoBox";
 
 // needed for the select dropdown to chqnge icon
-const icons = import.meta.glob("@assets/icons/*.svg", {
+const icons = import.meta.glob("@assets/*.svg", {
   as: "raw",
   eager: true,
 });

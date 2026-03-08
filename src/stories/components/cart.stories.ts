@@ -3,7 +3,7 @@ import { HeaderBlock } from "@stories/SectionHeader";
 import { createInfoBox } from "@components/InfoBox";
 import { createCartContent } from "@stories/createCartContent";
 import { mockShopifyCart } from "@utils/mockShopifyCart";
-import ChevronLeft from "@assets/icons/feather-chevron-left.svg?raw";
+import ChevronLeft from "@assets/feather-chevron-left.svg?raw";
 
 // Import the stepper component (you don’t need to use <script> tags in Storybook)
 import "@stories/components/henk-quantity-stepper.js";

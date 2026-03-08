@@ -2,26 +2,9 @@ import type { Meta, StoryObj } from "@storybook/html";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
 import snippet from "@src/snippets/henk-icon.liquid?raw";
+import { getIconNames } from "./utils/liquid-icons";
 
-// Vite glob to load raw SVGs from src/assets/icons and src/assets/logos at runtime
-const svgModules = import.meta.glob("../../assets/{icons,logos}/*.svg", {
-  query: "?raw",
-  import: "default",
-  eager: true,
-});
-
-// Build synchronous map of filename -> svg content for use in Liquid inline filter
-const svgMap: Record<string, string> = {};
-Object.entries(svgModules).forEach(([filePath, content]) => {
-  const filename = filePath.split("/").pop();
-  if (filename) svgMap[filename] = content as string;
-});
-engine.__svg_map = svgMap;
-
-// Available icon names (derived from src/assets/icons)
-const ICON_NAMES = Object.keys(svgMap)
-  .map((f) => f.replace(/\.svg$/i, ""))
-  .sort();
+const ICON_NAMES = getIconNames();
 
 const renderIcon = (args: any) => {
   const rendered = engine.parseAndRenderSync(snippet, {

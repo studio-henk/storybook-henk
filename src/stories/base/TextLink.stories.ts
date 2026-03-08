@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html";
 import { TextLink, TextLinkProps } from "@stories/base/TextLink";
-import ChevronRight from "@assets/icons/feather-chevron-right.svg?raw";
-import IconChevronLeft from "@assets/icons/feather-chevron-left.svg?raw";
+import ChevronRight from "@assets/feather-chevron-right.svg?raw";
+import IconChevronLeft from "@assets/feather-chevron-left.svg?raw";
 
 const meta: Meta<TextLinkProps> = {
   title: "Base/TextLink",

@@ -4,14 +4,6 @@ import engine from "@src/liquid-engine.js";
 import sectionRaw from "../sections/henk-section-splitscreen.liquid?raw";
 import snippetRaw from "../snippets/henk-snippet-splitscreen.liquid?raw";
 
-// populate svgMap if snippet uses icons/logos
-const svgModules = import.meta.glob("../assets/{icons,logos}/*.svg", { query: "?raw", import: "default", eager: true });
-const svgMap: Record<string, string> = {};
-Object.entries(svgModules).forEach(([filePath, content]) => {
-  const filename = filePath.split("/").pop();
-  if (filename) svgMap[filename] = content as string;
-});
-engine.__svg_map = svgMap;
 
 // map static assets (images) to dev URLs so stories can resolve image_src to a working URL
 const assetUrlModules = import.meta.glob("../assets/**/*.{avif,jpg,png,webp,svg}", { as: "url", eager: true });

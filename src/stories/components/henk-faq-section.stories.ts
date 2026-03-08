@@ -3,21 +3,6 @@ import type { Meta, StoryObj } from "@storybook/html";
 import engine from "@src/liquid-engine.js";
 import snippet from "./henk-detailscomponent.liquid?raw";
 
-// Vite glob to load raw SVGs from src/assets/icons at runtime
-const svgModules = import.meta.glob("../../assets/icons/*.svg", {
-  query: "?raw",
-  import: "default",
-  eager: true,
-});
-
-// Build synchronous map of filename -> svg content for use in Liquid inline filter
-const svgMap: Record<string, string> = {};
-Object.entries(svgModules).forEach(([filePath, content]) => {
-  const filename = filePath.split("/").pop();
-  if (filename) svgMap[filename] = content as string;
-});
-engine.__svg_map = svgMap;
-
 const DEFAULT_ITEMS = [
   {
     summary: "What is the purpose of this component?",
@@ -70,7 +55,7 @@ const renderFAQ = (args: any) => {
     // Pre-render icon into payload.icon_html to avoid relying on partials
     if (payload.iconName) {
       const filename = `${payload.iconName}.svg`;
-      const svg_content = svgMap[filename];
+      const svg_content = (engine.__svg_map || {})[filename];
       if (svg_content) {
         const icon_class =
           (payload.iconClassName || "") +

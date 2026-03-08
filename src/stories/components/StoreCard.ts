@@ -1,4 +1,4 @@
-import IconDirections from "@assets/icons/henk-navigate.svg?raw";
+import IconDirections from "@assets/henk-navigate.svg?raw";
 
 export type StoreCardProps = {
   name: string;

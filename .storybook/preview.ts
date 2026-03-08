@@ -27,17 +27,33 @@ import { DocsContainer } from "@storybook/addon-docs";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
 
+const svgModules = import.meta.glob("../src/assets/*.svg", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
+
+const svgMap: Record<string, string> = {};
+Object.entries(svgModules).forEach(([filePath, content]) => {
+  const filename = filePath.split("/").pop();
+  if (filename) svgMap[filename] = content as string;
+});
+engine.__svg_map = svgMap;
+
 const liquidModules = import.meta.glob("../src/**/*.liquid", {
   query: "?raw",
   import: "default",
   eager: true,
 }) as Record<string, string>;
 
-const partialModules = import.meta.glob("../src/{snippets,stories/components}/**/*.liquid", {
-  query: "?raw",
-  import: "default",
-  eager: true,
-}) as Record<string, string>;
+const partialModules = import.meta.glob(
+  "../src/{snippets,stories/components}/**/*.liquid",
+  {
+    query: "?raw",
+    import: "default",
+    eager: true,
+  },
+) as Record<string, string>;
 
 Object.entries(partialModules).forEach(([filePath, content]) => {
   const base = filePath.split("/").pop() || filePath;
@@ -65,7 +81,10 @@ Object.values(liquidModules).forEach((liquidSource) => {
   for (const match of matches) {
     const block = match[1];
     if (!block) continue;
-    const cleanedBlock = block.replace(/{%\s*comment\s*%}[\s\S]*?{%\s*endcomment\s*%}/g, "");
+    const cleanedBlock = block.replace(
+      /{%\s*comment\s*%}[\s\S]*?{%\s*endcomment\s*%}/g,
+      "",
+    );
     const rendered = engine.parseAndRenderSync(cleanedBlock, {});
     if (rendered.trim().length > 0) stylesheetBlocks.push(rendered);
   }
