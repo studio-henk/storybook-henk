@@ -2,17 +2,21 @@ import type { Meta, StoryObj } from "@storybook/html";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
 import snippet from "./henk-detailscomponent.liquid?raw";
-import iconSnippet from "./henk-icon.liquid?raw";
+import iconSnippet from "@src/snippets/henk-icon.liquid?raw";
 // Register the henk-icon partial so `{% render 'henk-icon' %}` works
 if (engine.registerPartial) engine.registerPartial("henk-icon", iconSnippet);
 
 // Vite glob to load raw SVGs from src/assets/icons at runtime
-const svgModules = import.meta.glob("../../assets/icons/*.svg", { query: "?raw", import: "default", eager: true });
+const svgModules = import.meta.glob("../../assets/icons/*.svg", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
 
 // Build synchronous map of filename -> svg content for use in Liquid inline filter
-const svgMap: Record<string,string> = {};
+const svgMap: Record<string, string> = {};
 Object.entries(svgModules).forEach(([filePath, content]) => {
-  const filename = filePath.split('/').pop();
+  const filename = filePath.split("/").pop();
   if (filename) svgMap[filename] = content as string;
 });
 engine.__svg_map = svgMap;
@@ -162,12 +166,48 @@ export const WithIcon: Story = {
 export const MultipleDetailsComponents = () => {
   const groupName = "cc"; // ensure all items share the same name so only one can be open
   const items = [
-    { summary: "What is the purpose of this component?", iconName: "feather-help-circle", content: "<p>This component is used to display a list of frequently asked questions.</p>", variant: "plusmin" },
-    { summary: "How many samples can I order?", iconName: "feather-help-circle", content: "<p>You are free to assemble your own samples or choose from our curated sample packs, which include six material samples each. You can help us reduce waste by ordering only the samples you need.</p>", variant: "plusmin" },
-    { summary: "When can I expect my samples?", iconName: "feather-calendar", content: "<p>You should expect your samples within 7 days. Please contact us if you have not received your samples within one week.</p>", variant: "plusmin" },
-    { summary: "Why do you want me to return the samples?", iconName: "feather-help-circle", content: "<p>By returning your samples, you can help us ensure that nothing goes to waste. We repurpose samples by using them in the stores if they are still in good condition.</p>", variant: "plusmin" },
-    { summary: "How can I return my samples?", iconName: "feather-truck", content: "<p>You can return your sample pack to any of our stores or mail it to us for free via Antwoordnummer 98189, 1000 VA Amsterdam.</p>", variant: "plusmin" },
-    { summary: "Will I be reimbursed for the samples?", iconName: "feather-help-circle", content: "<p>When you return the samples to one of our stores, we will reimburse the cost as a discount with your order. Unfortunately, we're not able to offer reimbursement when you return your samples to us via mail.</p>", variant: "plusmin" },
+    {
+      summary: "What is the purpose of this component?",
+      iconName: "feather-help-circle",
+      content:
+        "<p>This component is used to display a list of frequently asked questions.</p>",
+      variant: "plusmin",
+    },
+    {
+      summary: "How many samples can I order?",
+      iconName: "feather-help-circle",
+      content:
+        "<p>You are free to assemble your own samples or choose from our curated sample packs, which include six material samples each. You can help us reduce waste by ordering only the samples you need.</p>",
+      variant: "plusmin",
+    },
+    {
+      summary: "When can I expect my samples?",
+      iconName: "feather-calendar",
+      content:
+        "<p>You should expect your samples within 7 days. Please contact us if you have not received your samples within one week.</p>",
+      variant: "plusmin",
+    },
+    {
+      summary: "Why do you want me to return the samples?",
+      iconName: "feather-help-circle",
+      content:
+        "<p>By returning your samples, you can help us ensure that nothing goes to waste. We repurpose samples by using them in the stores if they are still in good condition.</p>",
+      variant: "plusmin",
+    },
+    {
+      summary: "How can I return my samples?",
+      iconName: "feather-truck",
+      content:
+        "<p>You can return your sample pack to any of our stores or mail it to us for free via Antwoordnummer 98189, 1000 VA Amsterdam.</p>",
+      variant: "plusmin",
+    },
+    {
+      summary: "Will I be reimbursed for the samples?",
+      iconName: "feather-help-circle",
+      content:
+        "<p>When you return the samples to one of our stores, we will reimburse the cost as a discount with your order. Unfortunately, we're not able to offer reimbursement when you return your samples to us via mail.</p>",
+      variant: "plusmin",
+    },
   ];
 
   const container = document.createElement("div");
@@ -187,7 +227,8 @@ MultipleDetailsComponents.storyName = "Multiple Details Components";
 MultipleDetailsComponents.parameters = {
   docs: {
     description: {
-      story: "The name attribute has to be the same for each in order to have only 1 widget open at a time.",
+      story:
+        "The name attribute has to be the same for each in order to have only 1 widget open at a time.",
     },
   },
   design: {

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
-import snippet from "./henk-icon.liquid?raw";
+import snippet from "@src/snippets/henk-icon.liquid?raw";
 
 // Vite glob to load raw SVGs from src/assets/icons and src/assets/logos at runtime
 const svgModules = import.meta.glob("../../assets/{icons,logos}/*.svg", {

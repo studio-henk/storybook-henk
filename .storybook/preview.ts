@@ -33,6 +33,29 @@ const liquidModules = import.meta.glob("../src/**/*.liquid", {
   eager: true,
 }) as Record<string, string>;
 
+const partialModules = import.meta.glob("../src/{snippets,stories/components}/**/*.liquid", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+Object.entries(partialModules).forEach(([filePath, content]) => {
+  const base = filePath.split("/").pop() || filePath;
+  const filename = base.replace(/\?.*$/, "");
+  const name = filename.replace(/\.liquid$/i, "");
+  if (!name) return;
+  if (typeof (engine as any).registerPartial === "function") {
+    (engine as any).registerPartial(name, content as string);
+    (engine as any).registerPartial("snippets/" + name, content as string);
+    (engine as any).registerPartial(name + ".liquid", content as string);
+  }
+  if ((engine as any).__partials) {
+    (engine as any).__partials[name] = content as string;
+    (engine as any).__partials["snippets/" + name] = content as string;
+    (engine as any).__partials[name + ".liquid"] = content as string;
+  }
+});
+
 const stylesheetBlocks: string[] = [];
 Object.values(liquidModules).forEach((liquidSource) => {
   if (typeof liquidSource !== "string") return;
