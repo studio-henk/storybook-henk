@@ -86,6 +86,33 @@ engine.registerTag("stylesheet", {
   },
 });
 
+engine.registerTag("form", {
+  parse: function (tagToken, remainTokens) {
+    this.tpls = [];
+    this.args = tagToken.args;
+    const stream = this.liquid.parser.parseStream(remainTokens);
+    stream.on("tag:endform", () => stream.stop());
+    stream.on("template", (tpl) => this.tpls.push(tpl));
+    stream.on("end", () => {
+      throw new Error(`tag ${tagToken.raw} not closed`);
+    });
+    stream.start();
+  },
+  render: function* (ctx, emitter) {
+    if (emitter) emitter.write("<form>");
+    const inner = yield this.liquid.renderer.renderTemplates(
+      this.tpls,
+      ctx,
+      emitter,
+    );
+    if (emitter) {
+      emitter.write("</form>");
+      return;
+    }
+    return `<form>${inner}</form>`;
+  },
+});
+
 engine.registerFilter("asset_url", (filename) => `/assets/${filename}`);
 
 // inline_asset_content: lookup SVG content from engine.__svg_map when running in browser/storybook

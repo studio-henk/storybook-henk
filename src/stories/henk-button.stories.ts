@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
-import snippet from "./henk-button.liquid?raw";
+import snippet from "@src/snippets/henk-button.liquid?raw";
 
 const renderButton = (args: any) => {
   const rendered = engine.parseAndRenderSync(snippet, {

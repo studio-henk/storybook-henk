@@ -66,6 +66,7 @@ const mobileMenu = {
   },
   // create and add hamburger button to header
   addHamburgerButton() {
+    if (this.headerInner?.querySelector("[data-js-mobile-menu-open]")) return;
     const hamburgerButton = document.createElement("button");
     hamburgerButton.type = "button";
     hamburgerButton.className =
@@ -83,6 +84,8 @@ const mobileMenu = {
   },
   // create and add close button to header
   addCloseButton() {
+    if (this.headerInner?.querySelector("[data-js-mobile-menu-close]")) return;
+
     const closeButton = document.createElement("button");
     closeButton.type = "button";
     closeButton.className =

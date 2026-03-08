@@ -28,8 +28,8 @@
 @import "../../src/stories/components/forms/_henk-labeled-checkbox.css";
 @import "../../src/stories/components/forms/_custom-dropdown.css";
 @import "../../src/stories/components/_henk-button-group.css";
-@import "../src/assets/components/composites/_henk-header-mobile.css";
-@import "../src/assets/components/composites/_henk-header-desktop.css";
+/* @import "../src/assets/components/composites/_henk-header-mobile.css"; */
+/* @import "../src/assets/components/composites/_henk-header-desktop.css"; */
 @import "../src/assets/components/composites/_henk-info-box.css";
 /* @import "./components/composites/_henk-card.css"; */
 @import "../src/assets/components/composites/_henk-pagination.css";
@@ -52,7 +52,7 @@
 @import "../src/assets/sections/_henk-breadcrumbs.css";
 @import "../src/assets/sections/_henk-content-divider.css";
 @import "../src/assets/sections/_henk-stores-brick.css";
-@import "../src/assets/sections/_henk-footer.css";
+/* @import "../src/assets/sections/_henk-footer.css"; */
 @import "../src/assets/sections/_henk-cart-section.css";
 @import "../src/assets/sections/_henk-section-hero.css";
 

@@ -1,5 +1,5 @@
 // Use Liquid-based logo
-import snippetLogo from "./components/Logo/Logo.liquid?raw";
+import snippetLogo from "@src/snippets/henk-logo.liquid?raw";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
 import type { LogoProps } from "@components/Logo";
@@ -13,14 +13,20 @@ const renderLogo = (props: any) => {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = rendered;
   // Pick the actual anchor element; snippet may include a <style> tag before the anchor
-  const anchor = wrapper.querySelector('a.henk-logo') as HTMLAnchorElement | null;
-  return anchor || (wrapper.querySelector('a') as HTMLAnchorElement | null) || (wrapper.lastElementChild as HTMLAnchorElement | null);
+  const anchor = wrapper.querySelector(
+    "a.henk-logo",
+  ) as HTMLAnchorElement | null;
+  return (
+    anchor ||
+    (wrapper.querySelector("a") as HTMLAnchorElement | null) ||
+    (wrapper.lastElementChild as HTMLAnchorElement | null)
+  );
 };
 import IconSearch from "@assets/feather-search.svg?raw";
 import IconBag from "@assets/henk-bag.svg?raw";
 import { Icon } from "@components/Icon";
-import "@scripts/henk-desktop-menu";
-import "@scripts/henk-mobile-menu";
+// import "@scripts/henk-desktop-menu";
+// import "@scripts/henk-mobile-menu";
 
 export interface HeaderProps {
   logoProps?: LogoProps;

@@ -17,17 +17,20 @@ import closeIcon from "@assets/feather-x.svg?raw";
     const utils = header.querySelector<HTMLElement>(selectors.utils);
 
     // Create a single close button next to utils
+    // if not already present (e.g. from mobile menu)
+
+    if (header.querySelector("[data-js-desktop-menu-close]")) return null;
+
     const closeButton = document.createElement("button");
     closeButton.type = "button";
     closeButton.className =
       "henk-button henk-button--ghost henk-button--small close-menu";
     closeButton.setAttribute("aria-label", "Close menu");
+    closeButton.dataset.jsDesktopMenuClose = "";
     const closeLabel = header.getAttribute("data-js-close-label") || "Close";
 
     closeButton.innerHTML = `
-      <i class="henk-icon">
-              ${closeIcon}
-            </i>
+<i class="henk-icon"> ${closeIcon} </i>
 ${closeLabel.toUpperCase()}
     `;
 
