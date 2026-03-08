@@ -90,13 +90,13 @@ export const Secondary: Story = {
   },
 };
 
-export const WithIconLeft: Story = {
-  args: {
-    label: "Fast Delivery",
-    icon_svg: TruckIcon,
-    icon_position: "left",
-  },
-};
+// export const WithIconLeft: Story = {
+//   args: {
+//     label: "Fast Delivery",
+//     icon_svg: TruckIcon,
+//     icon_position: "left",
+//   },
+// };
 
 export const Link: Story = {
   args: {

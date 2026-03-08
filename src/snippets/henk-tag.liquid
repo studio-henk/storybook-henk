@@ -10,6 +10,7 @@
 {% endcomment %}
 
 {% assign icon_position = icon_position | default: 'left' %}
+{% if label == blank and tag != blank %}{% assign label = tag %}{% endif %}
 
 {%- comment -%} Build classes -{%- endcomment -%}
 {% assign classes = 'henk-tag' %}
@@ -17,12 +18,12 @@
 {% if size %}{% assign classes = classes | append: ' henk-tag--' | append: size %}{% endif %}
 
 {%- comment -%} Build icon markup if provided -{%- endcomment -%}
-{% assign icon_markup = '' %}
-{% if icon_svg != blank %}
-  {% capture icon_markup %}
-    <i class="henk-icon icon--{% if size == 'small' %}medium{% else %}large{% endif %}">{{ icon_svg }}</i>
-  {% endcapture %}
-{% endif %}
+{% comment %} {% assign icon_markup = '' %} {% endcomment %}
+{% comment %} {% if icon_svg != blank %} {% endcomment %}
+{% comment %}   {% capture icon_markup %} {% endcomment %}
+{% comment %}     <i class="henk-icon icon--{% if size == 'small' %}medium{% else %}large{% endif %}">{{ icon_svg }}</i> {% endcomment %}
+{% comment %}   {% endcapture %} {% endcomment %}
+{% comment %} {% endif %} {% endcomment %}
 
 {%- comment -%} Build inner content -{%- endcomment -%}
 {% capture inner_content %}
