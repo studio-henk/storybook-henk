@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import type { LabeledSelectProps } from "@components/forms/LabeledSelect";
 
 import createLabeledSelect from "@components/forms/LabeledSelect";

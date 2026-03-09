@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { INITIAL_VIEWPORTS } from "storybook/viewport";
 import { createList, type CreateListOptions } from "@stories/base/List";
 

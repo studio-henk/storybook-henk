@@ -1,4 +1,4 @@
-/** @type { import('@storybook/html').Preview } */
+/** @type { import('@storybook/html-vite').Preview } */
 // import {
 //   BADGE,
 //   BadgesConfig,
@@ -138,6 +138,7 @@ const preview = {
       return storyFn();
     },
   ],
+
   parameters: {
     options: {
       storySort: {
@@ -200,18 +201,19 @@ const preview = {
       },
     },
     backgrounds: {
-      disable: true,
-      default: "light",
-      values: [
-        {
+      options: {
+        light: {
           name: "light",
           value: "#ffffff",
         },
-        {
+
+        dark: {
           name: "dark",
           value: "#000000",
-        },
-      ],
+        }
+      },
+
+      disabled: true
     },
     // badgesConfig: {
     //   [BADGE.SHOPIFY]: {
@@ -239,6 +241,12 @@ const preview = {
       },
     },
   },
+
+  initialGlobals: {
+    backgrounds: {
+      value: "light"
+    }
+  }
 };
 
 export default preview;

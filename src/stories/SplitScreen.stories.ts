@@ -1,4 +1,4 @@
-import type { Meta, StoryObj, Decorator } from "@storybook/html";
+import type { Meta, StoryObj, Decorator } from "@storybook/html-vite";
 import type { SplitScreenProps } from "./SplitScreen";
 import type { VideoBlockProps } from "@components/VideoBlock";
 import { createSplitScreen } from "./SplitScreen";

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { createLabeledInput } from "@components/forms/LabeledInput";
 import { createButtonGroup } from "@components/ButtonGroup";
 

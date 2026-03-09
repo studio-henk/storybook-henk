@@ -1,4 +1,4 @@
-import type { StoryFn } from "@storybook/html";
+import type { StoryFn } from "@storybook/html-vite";
 import { Icon, type IconOptions } from "@components/Icon";
 
 // 🔍 Import all available SVG icons dynamically

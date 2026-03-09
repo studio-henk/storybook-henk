@@ -1,4 +1,4 @@
-import type { Meta, StoryObj, Decorator } from "@storybook/html";
+import type { Meta, StoryObj, Decorator } from "@storybook/html-vite";
 import {
   createThreeColumnBlock,
   ThreeColumnBlockProps,

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { createHenkCard, type HenkCardProps } from "./HenkCard";
 
 const meta: Meta<HenkCardProps> = {

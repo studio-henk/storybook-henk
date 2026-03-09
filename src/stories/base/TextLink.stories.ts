@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { TextLink, TextLinkProps } from "@stories/base/TextLink";
 import ChevronRight from "@assets/feather-chevron-right.svg?raw";
 import IconChevronLeft from "@assets/feather-chevron-left.svg?raw";

@@ -1,5 +1,5 @@
 // src/stories/VideoSection.stories.ts
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { VideoSection } from "../components/VideoSection";
 
 const meta: Meta = {

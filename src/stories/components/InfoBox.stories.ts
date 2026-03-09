@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from "@storybook/html";
+import type { Meta, StoryFn } from "@storybook/html-vite";
 import { createInfoBox, InfoBoxProps } from "@components/InfoBox";
 
 // needed for the select dropdown to chqnge icon

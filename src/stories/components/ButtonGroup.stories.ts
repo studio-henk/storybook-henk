@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { createButtonGroup } from "@components/ButtonGroup";
 import type { ButtonGroupProps } from "@components/ButtonGroup";
 

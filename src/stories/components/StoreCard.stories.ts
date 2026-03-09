@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { createStoreCard, type StoreCardProps } from "@components/StoreCard";
 
 const meta: Meta<StoreCardProps> = {

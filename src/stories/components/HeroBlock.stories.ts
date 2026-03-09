@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { HeroBlock, HeroBlockProps } from "@components/HeroBlock";
 
 const meta: Meta<HeroBlockProps> = {

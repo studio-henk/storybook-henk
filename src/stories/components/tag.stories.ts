@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { createTag, type TagProps } from "@components/tag";
 import TruckIcon from "@assets/feather-truck.svg?raw";
 

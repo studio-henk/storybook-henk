@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { createButton, ButtonProps } from "@components/Button";
 
 // Import raw SVGs

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import type { HeaderBlockProps } from "./HeaderBlock";
 import { HeaderBlock } from "./HeaderBlock";
 // import codeLiquid from "./henk-section-header.liquid?raw";

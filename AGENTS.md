@@ -134,7 +134,7 @@ Commands for linters are not present in package.json; run them manually if neede
 ---
 
 ## Testing
-- No tests are configured. `package.json` test script simply errors out. Search did not reveal test files or frameworks. If you need tests, add a test framework and update package.json accordingly.
+- Do not run `npm test` (it always fails by design). No tests are configured. If you need tests, add a test framework and update package.json accordingly.
 
 ---
 

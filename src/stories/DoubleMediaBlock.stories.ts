@@ -1,5 +1,5 @@
 // src/stories/DoubleMediaBlock.stories.ts
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { createDoubleMediaBlock } from "@stories/DoubleMediaBlock";
 import type { VideoBlockProps } from "@components/VideoBlock";
 

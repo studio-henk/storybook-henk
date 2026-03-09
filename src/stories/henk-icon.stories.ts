@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
 import snippet from "@src/snippets/henk-icon.liquid?raw";

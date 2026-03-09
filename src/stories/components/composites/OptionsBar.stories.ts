@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 
 function htmlToNode(html: string): HTMLElement {
   const template = document.createElement("template");
