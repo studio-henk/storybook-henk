@@ -13,6 +13,7 @@
 // import "../src/scripts/henk-popover-language-button-sync.ts";
 
 import { DocsContainer } from "@storybook/addon-docs/blocks";
+import addonPerformancePanel from "@github-ui/storybook-addon-performance-panel/universal";
 
 // main.ts or Storybook preview.ts
 document.documentElement.classList.add("no-js");
@@ -140,6 +141,7 @@ const preview = {
   ],
 
   parameters: {
+    addons: [addonPerformancePanel()],
     options: {
       storySort: {
         order: [
@@ -194,12 +196,14 @@ const preview = {
         ],
       },
     },
+
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
     },
+
     backgrounds: {
       options: {
         light: {
@@ -210,11 +214,12 @@ const preview = {
         dark: {
           name: "dark",
           value: "#000000",
-        }
+        },
       },
 
-      disabled: true
+      disabled: true,
     },
+
     // badgesConfig: {
     //   [BADGE.SHOPIFY]: {
     //     styles: {
@@ -240,13 +245,20 @@ const preview = {
         return DocsContainer({ context, children });
       },
     },
+
+    a11y: {
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: "todo",
+    },
   },
 
   initialGlobals: {
     backgrounds: {
-      value: "light"
-    }
-  }
+      value: "light",
+    },
+  },
 };
 
 export default preview;

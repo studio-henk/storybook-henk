@@ -17,8 +17,9 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-a11y",
-    "@storybook/addon-docs",
     // "@geometricpanda/storybook-addon-badges",
+    "@storybook/addon-docs",
+    "@github-ui/storybook-addon-performance-panel/universal",
   ],
 
   framework: {

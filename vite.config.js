@@ -1,7 +1,11 @@
 import { defineConfig } from "vite";
 import path from "path";
 import glob from "fast-glob";
-
+import { fileURLToPath } from "node:url";
+const dirname =
+  typeof __dirname !== "undefined"
+    ? __dirname
+    : path.dirname(fileURLToPath(import.meta.url));
 const entries = {};
 // find all .ts files in src/scripts
 const files = glob.sync("src/scripts/*.ts");
@@ -9,7 +13,6 @@ files.forEach((file) => {
   const name = path.basename(file, ".ts"); // file name without extension
   entries[name] = path.resolve(__dirname, file);
 });
-
 export default defineConfig({
   resolve: {
     extensions: [".ts", ".js", ".jsx", ".tsx", ".json"],
@@ -28,11 +31,13 @@ export default defineConfig({
   },
   build: {
     outDir: "dist/assets",
-    emptyOutDir: false, // don’t wipe existing files
+    emptyOutDir: false,
+    // don’t wipe existing files
     rollupOptions: {
       input: entries,
       output: {
-        entryFileNames: "[name].js", // each TS file becomes .js
+        entryFileNames: "[name].js",
+        // each TS file becomes .js
         format: "es",
       },
     },
