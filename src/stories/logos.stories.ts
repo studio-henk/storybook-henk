@@ -11,7 +11,7 @@ const render = (args: any) => {
 };
 
 const meta: Meta = {
-  title: "Snippets/Logos",
+  title: "Snippets/Assets/Logos",
   render: (args) => render(args),
   tags: ["autodocs"],
   argTypes: {

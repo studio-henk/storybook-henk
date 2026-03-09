@@ -16,7 +16,7 @@ const renderLogo = (args: any) => {
 };
 
 const meta: Meta = {
-  title: "Components/Logo",
+  title: "Snippets/Components/Logo",
   render: (args) => renderLogo(args),
   tags: ["autodocs"],
   parameters: {

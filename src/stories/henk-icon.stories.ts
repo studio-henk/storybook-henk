@@ -17,7 +17,7 @@ const renderIcon = (args: any) => {
 };
 
 const meta: Meta = {
-  title: "Components/HenkIconLiquid",
+  title: "Snippets/Components/Icon",
   render: (args) => renderIcon(args),
   tags: ["autodocs"],
   parameters: {

@@ -1,6 +1,8 @@
 import { createLabel } from "@components/forms/Label";
 import { createCheckbox } from "@components/forms/Checkbox";
-import { Icon } from "@components/Icon"; // <-- import your Icon component
+// @ts-ignore - liquid-engine.js has no types
+import engine from "@src/liquid-engine.js";
+import iconSnippet from "@src/snippets/henk-icon.liquid?raw";
 // import "./labeled-checkbox.css";
 
 export interface LabeledCheckboxProps {
@@ -22,6 +24,12 @@ export interface LabeledCheckboxProps {
 /**
  * Creates a labeled checkbox element with optional icon
  */
+const renderIcon = (args: { name: string; class?: string }) =>
+  engine.parseAndRenderSync(iconSnippet, {
+    name: args.name,
+    class: args.class,
+  });
+
 export const createLabeledCheckbox = ({
   label,
   checkbox,
@@ -56,10 +64,15 @@ export const createLabeledCheckbox = ({
       iconEl.innerHTML = icon;
     } else {
       // icon as object with name, size, className
-      iconEl = Icon({ ...icon, size });
+      const wrapper = document.createElement("div");
+      const className = icon.className || (size === "small" ? "icon--small" : "icon--large");
+      wrapper.innerHTML = renderIcon({ name: icon.name, class: className });
+      iconEl = wrapper.firstElementChild as HTMLElement;
     }
 
-    labelElement.appendChild(iconEl);
+    if (iconEl) {
+      labelElement.appendChild(iconEl);
+    }
   }
 
   container.appendChild(checkboxElement);

@@ -29,7 +29,7 @@ const renderButton = (args: any) => {
 };
 
 const meta: Meta = {
-  title: "Components/HenkButtonLiquid",
+  title: "Snippets/Components/Button",
   render: (args) => renderButton(args),
   tags: ["autodocs"],
   parameters: {

@@ -13,7 +13,7 @@ const renderHeader = (args: any) => {
 };
 
 const meta: Meta = {
-  title: "Global/HenkHeaderLiquid",
+  title: "Global/Header",
   render: (args) => renderHeader(args),
   tags: ["autodocs"],
   parameters: {
@@ -90,7 +90,10 @@ const meta: Meta = {
                   { title: "Zitbanken", url: "#" },
                   { title: "Fauteuils", url: "#" },
                   { title: "Barkrukken", url: "#" },
-                  { title: "Eetkamerbanken", url: "/collections/dining-benches" },
+                  {
+                    title: "Eetkamerbanken",
+                    url: "/collections/dining-benches",
+                  },
                   { title: "Poefs", url: "/collections/dining-chairs" },
                 ],
               },
@@ -132,7 +135,10 @@ const meta: Meta = {
                 links: [
                   { title: "Contact", url: "/collections/tables" },
                   { title: "FAQ", url: "/collections/tables" },
-                  { title: "Interieuradvies", url: "/collections/tables/Office" },
+                  {
+                    title: "Interieuradvies",
+                    url: "/collections/tables/Office",
+                  },
                   {
                     title: "Reparaties en retouren",
                     url: "/collections/tables/Bistro",

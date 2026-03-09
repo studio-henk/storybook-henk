@@ -44,7 +44,7 @@ const renderDetails = (args: any) => {
 };
 
 const meta: Meta = {
-  title: "Components/HenkDetailsComponent",
+  title: "Snippets/Components/DetailsComponent",
   render: (args) => renderDetails(args),
   tags: ["autodocs"],
   parameters: {

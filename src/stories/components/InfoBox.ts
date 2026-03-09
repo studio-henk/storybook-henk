@@ -1,7 +1,7 @@
-import { Icon } from "@components/Icon";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
 import buttonSnippet from "@src/snippets/henk-button.liquid?raw";
+import iconSnippet from "@src/snippets/henk-icon.liquid?raw";
 
 export type IconPosition = "left" | "right";
 export type ButtonElement = "a" | "button" | "span";
@@ -54,6 +54,12 @@ const renderButton = (args: ButtonProps) =>
     extra_classes: args.extra_classes,
   });
 
+const renderIcon = (args: { name: string; class?: string }) =>
+  engine.parseAndRenderSync(iconSnippet, {
+    name: args.name,
+    class: args.class,
+  });
+
 export const createInfoBox = ({
   variant,
   title = "This is a title",
@@ -94,8 +100,13 @@ export const createInfoBox = ({
   // }
 
   if (iconName) {
-    const iconEl = Icon({ name: iconName, size: iconSize });
-    header.appendChild(iconEl);
+    const wrapper = document.createElement("div");
+    const className = iconSize === "small" ? "icon--small" : "icon--large";
+    wrapper.innerHTML = renderIcon({ name: iconName, class: className });
+    const iconEl = wrapper.firstElementChild;
+    if (iconEl) {
+      header.appendChild(iconEl);
+    }
   }
 
   container.appendChild(header);

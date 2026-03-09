@@ -160,6 +160,7 @@ const preview = {
           ["Intro", "Family", "*"],
           "Base",
           ["Headings", "Paragraph", "TextLink", "List", "DescriptionList"],
+          "Snippets",
           "Components",
           [
             "Logo",
