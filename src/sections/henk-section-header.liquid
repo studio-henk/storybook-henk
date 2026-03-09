@@ -1,0 +1,175 @@
+<div
+  class="henk-section henk-section-header{% if section.settings.align_left %} henk-section-header--align-left{% endif %}"
+  {% if section.settings.section_id != blank %}
+    id="{{ section.settings.section_id }}"
+  {% endif %}
+>
+  <div class="henk-section-header__inner">
+    <div class="henk-section-header__content">
+      {% if section.settings.caption != blank %}
+        <p class="henk-section-header__caption">{{ section.settings.caption }}</p>
+      {% endif %}
+
+      {% assign level = section.settings.level | default: '2' %}
+      {% assign level_int = level | plus: 0 %}
+
+      <h{{ level_int }} class="henk-section-header__title">
+        {{ section.settings.title }}
+      </h{{ level_int }}>
+
+      {% if section.settings.content != blank %}
+        <div class="henk-section-header__text">
+          {{ section.settings.content }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.button_url != blank %}
+        <a
+          href="{{ section.settings.button_url }}"
+          class="henk-button henk-button--primary henk-section-header__button"
+        >
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .henk-section-header {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    background-color: var(--color-background-base);
+    color: var(--color-text-base);
+  }
+
+  .henk-section-header .henk-section-header__inner {
+    width: min(var(--size-width-content, 1140px), 100% - 3rem);
+    margin-inline: auto;
+  }
+
+  .henk-section-header__content {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    text-align: center;
+    text-wrap: balance;
+    width: min(540px, 100%);
+    margin-inline: auto;
+  }
+
+  .henk-section-header__content > * {
+    margin-block: 0;
+  }
+
+  .henk-section-header__caption {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .henk-section-header__title {
+    text-align: center;
+    text-wrap: balance;
+    margin-block-start: 0;
+    word-break: break-all; /* fallback */
+    overflow-wrap: anywhere; /* preferred modern */
+    hyphens: auto;
+    text-box: trim-end ex alphabetic;
+    padding-top: 9px;
+  }
+
+  .henk-section-header--align-left {
+    place-items: flex-start;
+  }
+
+  .henk-section-header--align-left .henk-section-header__content {
+    align-items: flex-start;
+    text-align: left;
+    margin-inline: unset;
+  }
+
+  .henk-section-header--align-left .henk-section-header__title {
+    text-align: left;
+  }
+
+  .henk-section-header__text {
+    :last-child {
+      margin-block-end: 0;
+    }
+  }
+
+  .henk-section-header__button {
+    margin-block-start: 24px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Section Header",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "default": "intro"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption",
+      "default": "Actie"
+    },
+    {
+      "type": "select",
+      "id": "level",
+      "label": "Heading level",
+      "default": "2",
+      "options": [
+        { "value": "1", "label": "H1" },
+        { "value": "2", "label": "H2" },
+        { "value": "3", "label": "H3" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Gratis salontafel"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Iced coffees, blote voeten, lange zomeravonden en een slapende hond. Studio HENK heeft zin in de zomer. Om het nieuwe seizoen te vieren geven we een salontafel cadeau bij een aankoop vanaf € 1000.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "align_left",
+      "label": "Align content left",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Lees meer"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Header",
+      "category": "HENK Blocks"
+    }
+  ]
+}
+{% endschema %}

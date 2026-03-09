@@ -62,7 +62,8 @@
 @font-face {
   font-family: "Haas Grot Text R Web";
   src:
-    url("/assets/NeueHaasGrotTextRound-66MediumItalic-Web.woff2") format("woff2"),
+    url("/assets/NeueHaasGrotTextRound-66MediumItalic-Web.woff2")
+      format("woff2"),
     url("/assets/NeueHaasGrotTextRound-66MediumItalic-Web.woff") format("woff");
   font-weight: 500;
   font-style: italic;
@@ -113,6 +114,10 @@
   /* --white-smoke, tertiary */
   --white-smoke-light: hsl(60 4% 98%);
   --white-smoke-dark: hsl(60 4% 80%);
+
+  /* henk finish colors */
+  --color-jet-black: #0a0a0d;
+  --color-traffic-white: #f7fbf5;
 
   /* primitive colors */
 

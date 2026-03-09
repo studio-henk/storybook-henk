@@ -55,7 +55,7 @@ const meta: Meta = {
     value: { control: "text", description: "Value attribute for <button>" },
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "tertiary", "ghost", "pill"],
+      options: ["primary", "secondary", "transparent", "ghost"],
       description: "Visual variant",
     },
     size: {
@@ -93,7 +93,7 @@ const meta: Meta = {
   args: {
     element: "a",
     href: "#",
-    variant: "tertiary",
+    variant: "primary",
     size: "large",
     label: "Click me",
     type: "button",
@@ -117,6 +117,15 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     variant: "secondary",
+  },
+};
+
+export const Transparent: Story = {
+  args: {
+    variant: "transparent",
+    label: "Transparent button",
+    icon_name: "feather-chevron-right",
+    icon_position: "right",
   },
 };
 
@@ -148,9 +157,17 @@ export const IconOnly: Story = {
   },
 };
 
-export const Pill: Story = {
+export const Disabled: Story = {
   args: {
-    variant: "pill",
-    label: "Pill button",
+    element: "button",
+    variant: "primary",
+    disabled: true,
   },
 };
+
+// export const Pill: Story = {
+//   args: {
+//     variant: "pill",
+//     label: "Pill button",
+//   },
+// };

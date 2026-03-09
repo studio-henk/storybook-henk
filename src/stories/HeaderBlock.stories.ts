@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import type { HeaderBlockProps } from "./HeaderBlock";
 import { HeaderBlock } from "./HeaderBlock";
-// import codeLiquid from "./henk-section-header.liquid?raw";
+// import codeLiquid from "../sections/henk-section-header.liquid?raw";
 import { withSectionWrapper } from "@decorators/withSectionWrapper";
 
 const meta: Meta = {
