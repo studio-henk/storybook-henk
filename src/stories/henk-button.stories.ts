@@ -91,7 +91,8 @@ const meta: Meta = {
     },
   },
   args: {
-    element: "button",
+    element: "a",
+    href: "#",
     variant: "tertiary",
     size: "large",
     label: "Click me",
