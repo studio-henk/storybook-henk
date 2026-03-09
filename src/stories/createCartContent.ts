@@ -1,7 +1,29 @@
 import { mockShopifyCart } from "@utils/mockShopifyCart";
-import { createButton } from "@components/Button";
+// @ts-ignore - liquid-engine.js has no types
+import engine from "@src/liquid-engine.js";
+import buttonSnippet from "@src/snippets/henk-button.liquid?raw";
 
 import IconTrash from "@assets/feather-trash.svg?raw";
+
+const renderButton = (args) =>
+  engine.parseAndRenderSync(buttonSnippet, {
+    element: args.element,
+    href: args.href,
+    type: args.type,
+    value: args.value,
+    variant: args.variant,
+    size: args.size,
+    label: args.label,
+    title: args.title,
+    icon_name: args.icon_name,
+    icon_position: args.icon_position,
+    icon_only: args.icon_only,
+    aria_label: args.aria_label,
+    disabled: args.disabled,
+    target: args.target,
+    attrs: args.attrs,
+    extra_classes: args.extra_classes,
+  });
 
 export const createCartContent = (cart) => {
   const section = document.createElement("section");
@@ -87,22 +109,26 @@ export const createCartContent = (cart) => {
 
     infoDiv.appendChild(qtyWrapper);
 
-    const removeButton = createButton({
+    const removeButtonWrapper = document.createElement("div");
+    removeButtonWrapper.innerHTML = renderButton({
       element: "a",
       href: `/cart/change?id=${item.key}&quantity=0`,
-      label: "Remove", // used for aria if iconOnly = true
+      label: "Remove",
       title: `Remove ${item.product_title}`,
       variant: "ghost",
-      iconSvg: IconTrash,
-      iconOnly: true, // 👈 this tells createButton to render icon only
-      ariaLabel: `Remove ${item.product_title} from cart`,
+      icon_name: "feather-trash",
+      icon_only: true,
+      aria_label: `Remove ${item.product_title} from cart`,
       attrs: {
         role: "button",
-        class: "henk-cart-section__item-remove-button", // merged with .henk-button by the component
+        class: "henk-cart-section__item-remove-button",
       },
     });
 
-    qtyWrapper.appendChild(removeButton);
+    const removeButton = removeButtonWrapper.firstElementChild;
+    if (removeButton) {
+      qtyWrapper.appendChild(removeButton);
+    }
 
     // Price
     // const price = document.createElement("div");

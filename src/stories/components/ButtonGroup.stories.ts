@@ -12,9 +12,8 @@ const meta: Meta<ButtonGroupProps> = {
     buttons: { control: "object" },
     alignment: {
       control: { type: "radio" },
-      options: ["left", "center", "right", "space-between", "fill"],
+      options: ["left", "center", "right", "space-between"],
     },
-    fill: { control: "boolean" },
   },
   parameters: {
     docs: {
@@ -39,7 +38,6 @@ export const DefaultGroup: Story = {
       { label: "Button 1", variant: "secondary", href: "#" },
       { label: "Button 2", variant: "primary", href: "#" },
     ],
-    fill: false,
   },
 };
 
@@ -50,7 +48,6 @@ export const GroupAlignedLeft: Story = {
       { label: "Button 2", variant: "primary", href: "#" },
     ],
     alignment: "left",
-    fill: false,
   },
 };
 
@@ -61,7 +58,6 @@ export const GroupAlignedCenter: Story = {
       { label: "Button 2", variant: "primary", href: "#" },
     ],
     alignment: "center",
-    fill: false,
   },
 };
 
@@ -72,6 +68,5 @@ export const GroupAlignedSpaceBetween: Story = {
       { label: "Button 2", variant: "primary", href: "#" },
     ],
     alignment: "space-between",
-    fill: false,
   },
 };

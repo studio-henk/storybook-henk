@@ -1,13 +1,16 @@
 import CheckmarkIcon from "@assets/feather-check.svg?raw";
-import { createForm } from "@components/forms/aForm";
+import { createForm } from "@components/forms/CheckoutForm";
 import { createFieldset } from "@components/forms/Fieldset";
 import { createLabeledInput } from "@components/forms/LabeledInput";
 import createLabeledSelect from "@components/forms/LabeledSelect";
-import { createButton } from "@components/Button";
+// @ts-ignore - liquid-engine.js has no types
+import engine from "@src/liquid-engine.js";
+import buttonSnippet from "@src/snippets/henk-button.liquid?raw";
+
 import { createLabeledCheckbox } from "@components/forms/LabeledCheckbox";
 
 export default {
-  title: "Components/Forms/aForm",
+  title: "Components/Forms/CheckoutForm",
   tags: ["autodocs"],
   render: ({ ...args }) => {
     // return createForm({ ...args });
@@ -66,6 +69,26 @@ export default {
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   // args: { onClick: fn() },
 };
+
+const renderButton = (args) =>
+  engine.parseAndRenderSync(buttonSnippet, {
+    element: args.element,
+    href: args.href,
+    type: args.type,
+    value: args.value,
+    variant: args.variant,
+    size: args.size,
+    label: args.label,
+    title: args.title,
+    icon_name: args.icon_name,
+    icon_position: args.icon_position,
+    icon_only: args.icon_only,
+    aria_label: args.aria_label,
+    disabled: args.disabled,
+    target: args.target,
+    attrs: args.attrs,
+    extra_classes: args.extra_classes,
+  });
 
 export const Default = {
   args: {
@@ -324,13 +347,17 @@ export const Default = {
       }),
     ],
     children: [
-      createButton({
-        buttonElement: "button",
-        type: "submit",
-        label: "Save <span class='amp'>&</span> Continue",
-        disabled: true,
-        variant: "primary",
-      }),
+      (() => {
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = renderButton({
+          element: "button",
+          type: "submit",
+          label: "Save <span class='amp'>&</span> Continue",
+          disabled: true,
+          variant: "primary",
+        });
+        return wrapper.firstElementChild;
+      })(),
     ],
   },
 };

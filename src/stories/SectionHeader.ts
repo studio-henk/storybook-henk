@@ -1,4 +1,6 @@
-import { createButton, ButtonProps } from "@components/Button";
+// @ts-ignore - liquid-engine.js has no types
+import engine from "@src/liquid-engine.js";
+import buttonSnippet from "@src/snippets/henk-button.liquid?raw";
 
 export interface SectionHeaderProps {
   bgColor?: "default" | "primary" | "secondary";
@@ -13,6 +15,26 @@ export interface SectionHeaderProps {
   alignLeft?: boolean;
   buttonIcon?: string;
 }
+
+const renderButton = (args) =>
+  engine.parseAndRenderSync(buttonSnippet, {
+    element: args.element,
+    href: args.href,
+    type: args.type,
+    value: args.value,
+    variant: args.variant,
+    size: args.size,
+    label: args.label,
+    title: args.title,
+    icon_name: args.icon_name,
+    icon_position: args.icon_position,
+    icon_only: args.icon_only,
+    aria_label: args.aria_label,
+    disabled: args.disabled,
+    target: args.target,
+    attrs: args.attrs,
+    extra_classes: args.extra_classes,
+  });
 
 export const HeaderBlock = ({
   bgColor = "default",
@@ -83,17 +105,20 @@ export const HeaderBlock = ({
   }
 
   if (buttonUrl && buttonText) {
-    const btnProps: ButtonProps = {
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = renderButton({
       element: "a",
       href: buttonUrl,
       label: buttonText,
       variant: buttonVariant,
-      size: "large", // optional, or pass from props
-      iconSvg: buttonIcon,
-    };
-    const buttonEl = createButton(btnProps);
-    buttonEl.classList.add("henk-section-header__button");
-    contentDiv.appendChild(buttonEl);
+      size: "large",
+      icon_name: buttonIcon,
+      extra_classes: "henk-section-header__button",
+    });
+    const buttonEl = wrapper.firstElementChild;
+    if (buttonEl) {
+      contentDiv.appendChild(buttonEl);
+    }
   }
 
   innerDiv.appendChild(contentDiv);

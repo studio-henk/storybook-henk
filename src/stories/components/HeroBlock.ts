@@ -1,6 +1,8 @@
 // HeroBlock.ts
 import { VideoBlock } from "@components/VideoBlock";
-import { createButton } from "@components/Button";
+// @ts-ignore - liquid-engine.js has no types
+import engine from "@src/liquid-engine.js";
+import buttonSnippet from "@src/snippets/henk-button.liquid?raw";
 
 export interface HeroBlockProps {
   id?: string;
@@ -18,6 +20,26 @@ export interface HeroBlockProps {
   };
   className?: string;
 }
+
+const renderButton = (args) =>
+  engine.parseAndRenderSync(buttonSnippet, {
+    element: args.element,
+    href: args.href,
+    type: args.type,
+    value: args.value,
+    variant: args.variant,
+    size: args.size,
+    label: args.label,
+    title: args.title,
+    icon_name: args.icon_name,
+    icon_position: args.icon_position,
+    icon_only: args.icon_only,
+    aria_label: args.aria_label,
+    disabled: args.disabled,
+    target: args.target,
+    attrs: args.attrs,
+    extra_classes: args.extra_classes,
+  });
 
 export function HeroBlock({
   id = "henk-hero",
@@ -81,15 +103,19 @@ export function HeroBlock({
   }
 
   if (button) {
-    const btnEl = createButton({
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = renderButton({
       element: "a",
       label: button.label,
       href: button.href,
       target: button.target,
       variant: button.variant || "primary",
+      extra_classes: "henk-hero__button",
     });
-    btnEl.classList.add("henk-hero__button");
-    content.appendChild(btnEl);
+    const btnEl = wrapper.firstElementChild;
+    if (btnEl) {
+      content.appendChild(btnEl);
+    }
   }
 
   inner.appendChild(bg);

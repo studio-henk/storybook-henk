@@ -3,11 +3,11 @@ import { createButtonGroup } from "@components/ButtonGroup";
 import type { StoryObj } from "@storybook/html-vite";
 
 export default {
-  title: "Components/Forms/TwoColumnForm",
+  title: "Components/Forms/SimpleForm",
 } as const;
 
 // Story 1: Standard Two-Column Form
-export const TwoColumnForm: StoryObj = {
+export const SimpleForm: StoryObj = {
   render: () => {
     const form = document.createElement("form");
     form.className = "henk-form";
@@ -57,7 +57,7 @@ export const TwoColumnForm: StoryObj = {
 };
 
 // Story 2: Two-Column Form with Button in Column 2
-export const TwoColumnFormWithButtonInColumn: StoryObj = {
+export const SimpleFormWithButtonInColumn: StoryObj = {
   render: () => {
     const form = document.createElement("form");
     form.className = "henk-form";
