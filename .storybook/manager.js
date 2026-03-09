@@ -1,11 +1,11 @@
-import { addons, types } from "@storybook/manager-api";
-import { AddonPanel } from "@storybook/components";
+import { addons, types } from "storybook/manager-api";
+import { AddonPanel } from "storybook/internal/components";
 import React from "react";
 import {
   useAddonState,
   useStorybookState,
   useParameter,
-} from "@storybook/manager-api";
+} from "storybook/manager-api";
 
 const ADDON_ID = "custom/code-panel";
 const PANEL_ID = `${ADDON_ID}/panel`;

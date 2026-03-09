@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { INITIAL_VIEWPORTS } from "storybook/viewport";
 import { createList, type CreateListOptions } from "@stories/base/List";
 
 const meta: Meta<CreateListOptions> = {

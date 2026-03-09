@@ -12,6 +12,8 @@
 // import "../src/scripts/henk-expand-button.ts";
 // import "../src/scripts/henk-popover-language-button-sync.ts";
 
+import { DocsContainer } from "@storybook/addon-docs/blocks";
+
 // main.ts or Storybook preview.ts
 document.documentElement.classList.add("no-js");
 document.documentElement.classList.remove("no-js");
@@ -23,7 +25,6 @@ document.documentElement.classList.add("js-enabled");
 //   mobileMenu.setupMatchMedia();
 // });
 
-import { DocsContainer } from "@storybook/addon-docs";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
 

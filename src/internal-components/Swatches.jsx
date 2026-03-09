@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorItem } from '@storybook/addon-docs'; // adjust import as needed
+import { ColorItem } from '@storybook/addon-docs/blocks';
 
 const getCssVariableValue = (varName) => {
   return getComputedStyle(document.documentElement).getPropertyValue(varName).trim() || 'transparent';

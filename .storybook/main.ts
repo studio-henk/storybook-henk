@@ -10,11 +10,8 @@ const config: StorybookConfig = {
   ],
   addons: [
     "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
     "@storybook/addon-a11y",
-    "@whitespace/storybook-addon-html",
-    "@storybook/addon-designs",
+    "@storybook/addon-docs",
     // "@geometricpanda/storybook-addon-badges",
   ],
   framework: {
@@ -24,9 +21,27 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  managerVite: async (config) => {
+    config.resolve = config.resolve || {};
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      "@storybook/manager-api": "storybook/manager-api",
+      "@storybook/theming": "storybook/theming",
+      "@storybook/components": "storybook/internal/components",
+    };
+    return config;
+  },
   viteFinal: async (config) => {
     config.plugins = config.plugins || [];
     config.plugins.push(tsconfigPaths());
+    config.resolve = config.resolve || {};
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      "@storybook/manager-api": "storybook/manager-api",
+      "@storybook/preview-api": "storybook/preview-api",
+      "@storybook/theming": "storybook/theming",
+      "@storybook/components": "storybook/internal/components",
+    };
     return config;
   },
 };

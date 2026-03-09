@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/html";
 import { createButtonGroup } from "@components/ButtonGroup";
 import type { ButtonGroupProps } from "@components/ButtonGroup";
 
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { INITIAL_VIEWPORTS } from "storybook/viewport";
 
 const meta: Meta<ButtonGroupProps> = {
   title: "Components/ButtonGroup",
