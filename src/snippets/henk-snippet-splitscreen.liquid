@@ -138,11 +138,7 @@
 
           {% if section_content %}
             <div class="henk-split-screen__text">
-              {% if section_content.children %}
-                {% render 'henk-rich-text', children: section_content.children %}
-              {% else %}
-                {{ section_content }}
-              {% endif %}
+              {{ section_content }}
             </div>
           {% endif %}
 
@@ -227,6 +223,10 @@
     word-break: break-all; /* fallback */
     overflow-wrap: anywhere; /* preferred modern */
     hyphens: auto;
+  }
+
+  .henk-split-screen__title + .henk-button {
+    margin-top: var(--space-4, 24px);
   }
 
   @media screen and (min-width: 620px) {
