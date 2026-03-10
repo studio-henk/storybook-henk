@@ -1,62 +1,45 @@
 /* base */
-/* @import "../../src/stories/components/_henk-logo.css"; */
-/* @import "../../src/stories/components/_henk-icon.css"; */
-@import "../../src/stories/components/_henk-notification-badge.css";
-/* @import "../../src/stories/components/_henk-button.css"; */
-/* @import "../../src/base/_henk-list.css"; */
-/* @import "../../src/base/_henk-dl.css"; */
-/* @import "../../src/base/_henk-figure.css"; */
-/* @import "../../src/base/_henk-text-link.css"; */
-/* @import "../../src/stories/components/_henk-tag.css"; */
-/* @import "../../src/stories/components/_henk-details-component.css"; */
-@import "../../src/stories/components/forms/_henk-form-messages.css";
-@import "../../src/stories/components/_henk-video.css";
-@import "../../src/stories/components/_henk-video-section.css";
+@import "/assets/_henk-notification-badge.css";
+@import "/assets/_henk-form-messages.css";
+@import "/assets/_henk-video.css";
+@import "/assets/_henk-video-section.css";
 
 /* forms */
-@import "../../src/stories/components/forms/_henk-label.css";
-@import "../../src/stories/components/forms/_henk-input.css";
-@import "../../src/stories/components/forms/_henk-checkbox.css";
-@import "../../src/stories/components/forms/_henk-radio.css";
-@import "../../src/stories/components/forms/_henk-textarea.css";
-@import "../../src/stories/components/forms/_henk-select.css";
-@import "../../src/stories/components/forms/_henk-labeled-select.css";
-@import "../../src/stories/components/forms/_henk-fieldset.css";
+@import "/assets/_henk-label.css";
+@import "/assets/_henk-input.css";
+@import "/assets/_henk-checkbox.css";
+@import "/assets/_henk-radio.css";
+@import "/assets/_henk-textarea.css";
+@import "/assets/_henk-select.css";
+@import "/assets/_henk-labeled-select.css";
+@import "/assets/_henk-fieldset.css";
 
 /* composites */
-@import "../../src/stories/components/forms/_henk-labeled-input.css";
-@import "../../src/stories/components/forms/_henk-labeled-checkbox.css";
-@import "../../src/stories/components/forms/_custom-dropdown.css";
-@import "../../src/stories/components/_henk-button-group.css";
-/* @import "../src/assets/components/composites/_henk-header-mobile.css"; */
-/* @import "../src/assets/components/composites/_henk-header-desktop.css"; */
-@import "../src/assets/components/composites/_henk-info-box.css";
-/* @import "./components/composites/_henk-card.css"; */
-@import "../src/assets/components/composites/_henk-pagination.css";
-@import "../src/assets/components/composites/_henk-form.css";
-@import "../../src/stories/components/composites/_henk-options-bar.css";
+@import "/assets/_henk-labeled-input.css";
+@import "/assets/_henk-labeled-checkbox.css";
+@import "/assets/_custom-dropdown.css";
+@import "/assets/_henk-button-group.css";
+@import "/assets/_henk-info-box.css";
+@import "/assets/_henk-pagination.css";
+@import "/assets/_henk-form.css";
+@import "/assets/_henk-options-bar.css";
 
 /* sections */
 
-/* @import "../src/assets/sections/_henk-wrapper.css"; */
-
-@import "../src/assets/sections/_henk-main.css";
-@import "../src/assets/sections/_henk-section.css";
-@import "../src/assets/sections/_henk-section-grid.css";
-@import "../src/assets/sections/_henk-three-column-block.css";
-@import "../src/assets/sections/_henk-split-screen.css";
-@import "../src/assets/sections/_henk-newsletter-form.css";
-@import "../src/assets/sections/_henk-double-media-block.css";
-@import "../src/assets/sections/_henk-section-header-block.css";
-@import "../src/stories/_henk-header-block.css";
-@import "../src/assets/sections/_henk-breadcrumbs.css";
-@import "../src/assets/sections/_henk-content-divider.css";
-@import "../src/assets/sections/_henk-stores-brick.css";
-/* @import "../src/assets/sections/_henk-footer.css"; */
-@import "../src/assets/sections/_henk-cart-section.css";
-@import "../src/assets/sections/_henk-section-hero.css";
+@import "/assets/_henk-main.css";
+@import "/assets/_henk-section.css";
+@import "/assets/_henk-section-grid.css";
+@import "/assets/_henk-three-column-block.css";
+@import "/assets/_henk-split-screen.css";
+@import "/assets/_henk-newsletter-form.css";
+@import "/assets/_henk-double-media-block.css";
+@import "/assets/_henk-section-header-block.css";
+@import "/assets/_henk-header-block.css";
+@import "/assets/_henk-breadcrumbs.css";
+@import "/assets/_henk-content-divider.css";
+@import "/assets/_henk-stores-brick.css";
+@import "/assets/_henk-cart-section.css";
+@import "/assets/_henk-section-hero.css";
 
 /* layout */
-@import "../src/assets/layout/_henk-lister-grid.css";
-
-/* @import "./layout/_henk-cart-page.css"; */
+@import "/assets/_henk-lister-grid.css";
