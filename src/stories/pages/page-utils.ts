@@ -6,6 +6,7 @@ import footerSectionRaw from "../../sections/henk-footer.liquid?raw";
 import pageSectionRaw from "../../sections/page.liquid?raw";
 import sectionHeaderSectionRaw from "../../sections/henk-section-header.liquid?raw";
 import gridSectionRaw from "../../sections/henk-section-grid.liquid?raw";
+import materialsListSectionRaw from "../../sections/henk-section-materials-list.liquid?raw";
 import breadcrumbsSectionRaw from "../../sections/henk-section-breadcrumbs.liquid?raw";
 import breadcrumbsSnippetRaw from "../../snippets/henk-snippet-breadcrumbs.liquid?raw";
 import sectionHeaderSnippetRaw from "../../snippets/henk-snippet-section-header.liquid?raw";
@@ -21,6 +22,7 @@ const footerSection = footerSectionRaw.replace(SCHEMA_RE, "");
 const pageSection = pageSectionRaw.replace(SCHEMA_RE, "");
 const sectionHeaderSection = sectionHeaderSectionRaw.replace(SCHEMA_RE, "");
 const gridSection = gridSectionRaw.replace(SCHEMA_RE, "");
+const materialsListSection = materialsListSectionRaw.replace(SCHEMA_RE, "");
 const breadcrumbsSection = breadcrumbsSectionRaw.replace(SCHEMA_RE, "");
 
 if (typeof (engine as any).registerPartial === "function") {
@@ -45,11 +47,12 @@ export type PageData = {
   content: string;
 };
 
-export function renderPageContent(template: any, page: PageData) {
+export function renderPageContent(template: any, page: PageData, extraContext: Record<string, any> = {}) {
   const map: Record<string, string> = {
     page: pageSection,
     "henk-section-header": sectionHeaderSection,
     "henk-section-grid": gridSection,
+    "henk-section-materials-list": materialsListSection,
     "henk-section-breadcrumbs": breadcrumbsSection,
   };
 
@@ -62,14 +65,7 @@ export function renderPageContent(template: any, page: PageData) {
       const sectionTemplate = map[def.type];
       if (!sectionTemplate) return "";
 
-      let settings = def.settings || {};
-      if (def.type === "henk-section-header") {
-        settings = {
-          ...settings,
-          title: page.title,
-          content: page.content,
-        };
-      }
+      const settings = def.settings || {};
 
       const blocks = def.blocks || {};
       const blockOrder = Array.isArray(def.block_order) ? def.block_order : Object.keys(blocks);
@@ -80,6 +76,7 @@ export function renderPageContent(template: any, page: PageData) {
         template: "page",
         page,
         page_title: page.title,
+        ...extraContext,
       });
     })
     .join("");

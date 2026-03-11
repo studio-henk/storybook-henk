@@ -1,17 +1,37 @@
 <div class="henk-grid">
-  {% for block in blocks %}
-    {% if block.type == 'card' %}
+  {% if blocks and blocks.size > 0 %}
+    {% for block in blocks %}
+      {% if block.type == 'card' %}
+        {% render 'henk-card',
+          href: block.settings.href,
+          image: block.settings.image,
+          image_alt: block.settings.image_alt,
+          title: block.settings.title,
+          subtitle: block.settings.subtitle,
+          rounded: block.settings.rounded,
+          shadow: block.settings.shadow
+        %}
+      {% endif %}
+    {% endfor %}
+  {% elsif materials and materials.size > 0 %}
+    {% for material in materials %}
+      {% if material.image %}
+        {% assign image_url = material.image | image_url: width: 1134 %}
+      {% else %}
+        {% assign image_url = 'https://picsum.photos/seed/' | append: material.name.value | append: '/1134/1134' %}
+      {% endif %}
+
       {% render 'henk-card',
-        href: block.settings.href,
-        image: block.settings.image,
-        image_alt: block.settings.image_alt,
-        title: block.settings.title,
-        subtitle: block.settings.subtitle,
-        rounded: block.settings.rounded,
-        shadow: block.settings.shadow
+        href: material.system.url,
+        image: image_url,
+        image_alt: material.name.value,
+        title: material.name.value,
+        subtitle: '',
+        rounded: true,
+        shadow: false
       %}
-    {% endif %}
-  {% endfor %}
+    {% endfor %}
+  {% endif %}
 </div>
 
 {% stylesheet %}

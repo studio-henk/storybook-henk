@@ -1,33 +1,54 @@
-{% assign material_types = shop.metaobjects.material_type.values %}
-{{ '_henk-grid.css' | asset_url | stylesheet_tag }}
+{% assign source = section.settings.source | default: 'material_type' %}
+{% assign parent_handle = section.settings.parent_handle %}
 
- <div class="henk-grid">
+{% case source %}
+  {% when 'material_type' %}
+    {% assign materials = shop.metaobjects.material_type.values %}
+  {% when 'material_family' %}
+    {% assign materials = shop.metaobjects.material_family.values %}
+  {% when 'material_finish' %}
+    {% assign materials = shop.metaobjects.material_finish.values %}
+{% endcase %}
 
-  {% for material in material_types %}
+{% assign filtered_materials = '' | split: ',' %}
 
-    {% if material.image %}
-      {% assign image_url = material.image | image_url: width: 1134 %}
-    {% else %}
-      {% assign image_url = 'https://picsum.photos/seed/' | append: material.name.value | append: '/1134/1134' %}
+{% if parent_handle != blank and materials %}
+  {% for material in materials %}
+    {% if source == 'material_family' and material.material_type.value.system.handle == parent_handle %}
+      {% assign filtered_materials = filtered_materials | push: material %}
+    {% elsif source == 'material_finish' and material.material_family.value.system.handle == parent_handle %}
+      {% assign filtered_materials = filtered_materials | push: material %}
     {% endif %}
-
-{% render 'henk-card',
-        href: material.system.url,
-        image: image_url,
-        image_alt: material.name.value,
-        title: material.name.value,
-        subtitle: '',
-        variant: 'rounded'
-      %}
   {% endfor %}
-</div>
+{% else %}
+  {% assign filtered_materials = materials %}
+{% endif %}
+
+{% render 'henk-snippet-grid', materials: filtered_materials %}
 
 {% schema %}
 {
   "name": "Materials List",
   "tag": "section",
   "class": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "select",
+      "id": "source",
+      "label": "Source",
+      "default": "material_type",
+      "options": [
+        { "value": "material_type", "label": "Material type" },
+        { "value": "material_family", "label": "Material family" },
+        { "value": "material_finish", "label": "Material finish" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "parent_handle",
+      "label": "Parent handle"
+    }
+  ],
   "presets": [
     {
       "name": "Materials List"

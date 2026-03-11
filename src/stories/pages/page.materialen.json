@@ -16,16 +16,27 @@
       "settings": {
         "section_id": "materials-header",
         "caption": "",
+        "title": "Materialen",
+        "content": "<p>Wij hechten veel waarde aan het design, de kwaliteit en duurzaamheid van onze meubels. Daarom selecteren wij de materialen die wij in onze collectie aanbieden zorgvuldig.</p>",
         "level": "1",
         "align_left": false,
         "button_url": "",
         "button_text": ""
+      }
+    },
+    "henk_section_materials_list_wUidBV": {
+      "type": "henk-section-materials-list",
+      "name": "Materials List",
+      "settings": {
+        "source": "material_type",
+        "parent_handle": ""
       }
     }
   },
   "order": [
     "main",
     "henk_section_breadcrumbs_qKUdU3",
-    "henk_section_header_PgtgUG"
+    "henk_section_header_PgtgUG",
+    "henk_section_materials_list_wUidBV"
   ]
 }
