@@ -76,7 +76,11 @@ const meta: Meta = {
           title: "Services",
           url: "/services",
           links: [
-            { title: "Samples Service", url: "/services/samples" },
+            {
+              title: "Materials",
+              url: "/?path=/story/pages-materials--default",
+            },
+            // { title: "Samples Service", url: "/services/samples" },
             { title: "Interior Advice", url: "/services/interior-advice" },
             { title: "Maintenance", url: "/services/maintenance" },
             { title: "Manuals", url: "/services/manuals" },

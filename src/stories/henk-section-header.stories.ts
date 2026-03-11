@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/html-vite";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
 import sectionRaw from "../sections/henk-section-header.liquid?raw";
+import snippetRaw from "../snippets/henk-snippet-section-header.liquid?raw";
 import { withSectionWrapper } from "@decorators/withSectionWrapper";
 
 const SCHEMA_RE = /\{%\s*schema\s*%\}([\s\S]*?)\{%\s*endschema\s*%\}/i;
@@ -15,6 +16,13 @@ if (schemaMatch) {
   }
 }
 const cleanedSection = sectionRaw.replace(SCHEMA_RE, "");
+
+if (typeof (engine as any).registerPartial === "function") {
+  (engine as any).registerPartial("henk-snippet-section-header", snippetRaw);
+}
+if ((engine as any).__partials) {
+  (engine as any).__partials["henk-snippet-section-header"] = snippetRaw;
+}
 
 const render = (args: any) => {
   const rendered = engine.parseAndRenderSync(cleanedSection, {

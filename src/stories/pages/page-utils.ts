@@ -4,8 +4,10 @@ import themeRaw from "../layout/theme.liquid?raw";
 import headerSectionRaw from "../../sections/henk-header.liquid?raw";
 import footerSectionRaw from "../../sections/henk-footer.liquid?raw";
 import pageSectionRaw from "../../sections/page.liquid?raw";
+import sectionHeaderSectionRaw from "../../sections/henk-section-header.liquid?raw";
 import breadcrumbsSectionRaw from "../../sections/henk-section-breadcrumbs.liquid?raw";
 import breadcrumbsSnippetRaw from "../../snippets/henk-snippet-breadcrumbs.liquid?raw";
+import sectionHeaderSnippetRaw from "../../snippets/henk-snippet-section-header.liquid?raw";
 import headerMeta from "../henk-header.stories";
 import footerMeta from "../henk-footer.stories";
 
@@ -13,15 +15,18 @@ const SCHEMA_RE = /\{%\s*schema\s*%\}[\s\S]*?\{%\s*endschema\s*%\}/i;
 const headerSection = headerSectionRaw.replace(SCHEMA_RE, "");
 const footerSection = footerSectionRaw.replace(SCHEMA_RE, "");
 const pageSection = pageSectionRaw.replace(SCHEMA_RE, "");
+const sectionHeaderSection = sectionHeaderSectionRaw.replace(SCHEMA_RE, "");
 const breadcrumbsSection = breadcrumbsSectionRaw.replace(SCHEMA_RE, "");
 
 if (typeof (engine as any).registerPartial === "function") {
   (engine as any).registerPartial("henk-snippet-breadcrumbs", breadcrumbsSnippetRaw);
   (engine as any).registerPartial("henk-breadcrumbs", breadcrumbsSnippetRaw);
+  (engine as any).registerPartial("henk-snippet-section-header", sectionHeaderSnippetRaw);
 }
 if ((engine as any).__partials) {
   (engine as any).__partials["henk-snippet-breadcrumbs"] = breadcrumbsSnippetRaw;
   (engine as any).__partials["henk-breadcrumbs"] = breadcrumbsSnippetRaw;
+  (engine as any).__partials["henk-snippet-section-header"] = sectionHeaderSnippetRaw;
 }
 
 export type PageData = {
@@ -32,6 +37,7 @@ export type PageData = {
 export function renderPageContent(template: any, page: PageData) {
   const map: Record<string, string> = {
     page: pageSection,
+    "henk-section-header": sectionHeaderSection,
     "henk-section-breadcrumbs": breadcrumbsSection,
   };
 
@@ -40,11 +46,21 @@ export function renderPageContent(template: any, page: PageData) {
   return template.order
     .map((id: string) => {
       const def = template.sections?.[id];
-      if (!def) return "";
+      if (!def || def.disabled) return "";
       const sectionTemplate = map[def.type];
       if (!sectionTemplate) return "";
+
+      let settings = def.settings || {};
+      if (def.type === "henk-section-header") {
+        settings = {
+          ...settings,
+          title: page.title,
+          content: page.content,
+        };
+      }
+
       return engine.parseAndRenderSync(sectionTemplate, {
-        section: { id, settings: def.settings || {} },
+        section: { id, settings },
         template: "page",
         page,
         page_title: page.title,

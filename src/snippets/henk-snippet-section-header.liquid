@@ -1,0 +1,36 @@
+<div
+  class="henk-section henk-section-header{% if align_left %} henk-section-header--align-left{% endif %}"
+  {% if section_id != blank %}
+    id="{{ section_id }}"
+  {% endif %}
+>
+  <div class="henk-section-header__inner">
+    <div class="henk-section-header__content">
+      {% if caption != blank %}
+        <p class="henk-section-header__caption">{{ caption }}</p>
+      {% endif %}
+
+      {% assign heading_level = level | default: '2' %}
+      {% assign level_int = heading_level | plus: 0 %}
+
+      <h{{ level_int }} class="henk-section-header__title">
+        {{ title }}
+      </h{{ level_int }}>
+
+      {% if content != blank %}
+        <div class="henk-section-header__text">
+          {{ content }}
+        </div>
+      {% endif %}
+
+      {% if button_url != blank %}
+        <a
+          href="{{ button_url }}"
+          class="henk-button henk-button--primary henk-section-header__button"
+        >
+          {{ button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

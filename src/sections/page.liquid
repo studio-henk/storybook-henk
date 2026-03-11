@@ -5,9 +5,16 @@
   https://shopify.dev/docs/storefronts/themes/architecture/templates/page
 {% endcomment %}
 
-<h1>{{ page.title }}</h1>
-
-{{ page.content }}
+{% render 'henk-snippet-section-header',
+  section_id: 'page-header',
+  caption: '',
+  level: '1',
+  title: page.title,
+  content: page.content,
+  align_left: false,
+  button_url: '',
+  button_text: ''
+%}
 
 {% schema %}
 {

@@ -44,6 +44,7 @@
     "prettier": "^3.8.1",
     "react-syntax-highlighter": "^15.5.0",
     "storybook": "10.2.16",
+    "storybook-addon-tag-badges": "^3.0.6",
     "storybook-design-token": "5.0.0",
     "stylelint": "^16.26.1",
     "stylelint-config-standard": "^39.0.1",

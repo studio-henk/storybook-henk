@@ -1,39 +1,13 @@
-<div
-  class="henk-section henk-section-header{% if section.settings.align_left %} henk-section-header--align-left{% endif %}"
-  {% if section.settings.section_id != blank %}
-    id="{{ section.settings.section_id }}"
-  {% endif %}
->
-  <div class="henk-section-header__inner">
-    <div class="henk-section-header__content">
-      {% if section.settings.caption != blank %}
-        <p class="henk-section-header__caption">{{ section.settings.caption }}</p>
-      {% endif %}
-
-      {% assign level = section.settings.level | default: '2' %}
-      {% assign level_int = level | plus: 0 %}
-
-      <h{{ level_int }} class="henk-section-header__title">
-        {{ section.settings.title }}
-      </h{{ level_int }}>
-
-      {% if section.settings.content != blank %}
-        <div class="henk-section-header__text">
-          {{ section.settings.content }}
-        </div>
-      {% endif %}
-
-      {% if section.settings.button_url != blank %}
-        <a
-          href="{{ section.settings.button_url }}"
-          class="henk-button henk-button--primary henk-section-header__button"
-        >
-          {{ section.settings.button_text }}
-        </a>
-      {% endif %}
-    </div>
-  </div>
-</div>
+{% render 'henk-snippet-section-header',
+  section_id: section.settings.section_id,
+  caption: section.settings.caption,
+  level: section.settings.level,
+  title: section.settings.title,
+  content: section.settings.content,
+  align_left: section.settings.align_left,
+  button_url: section.settings.button_url,
+  button_text: section.settings.button_text
+%}
 
 {% stylesheet %}
   .henk-section-header {

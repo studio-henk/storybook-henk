@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "henk_section_breadcrumbs_qKUdU3": {
+      "type": "henk-section-breadcrumbs",
+      "name": "Breadcrumbs",
+      "settings": {}
+    },
+    "henk_section_header_PgtgUG": {
+      "type": "henk-section-header",
+      "name": "Section Header",
+      "settings": {
+        "section_id": "materials-header",
+        "caption": "",
+        "level": "1",
+        "align_left": false,
+        "button_url": "",
+        "button_text": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "henk_section_breadcrumbs_qKUdU3",
+    "henk_section_header_PgtgUG"
+  ]
+}

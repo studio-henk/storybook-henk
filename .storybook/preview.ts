@@ -221,17 +221,6 @@ const preview = {
       disabled: true,
     },
 
-    // badgesConfig: {
-    //   [BADGE.SHOPIFY]: {
-    //     styles: {
-    //       backgroundColor: "#FFF",
-    //       borderColor: "#018786",
-    //       color: "#018786",
-    //     },
-    //     location: [BADGE_LOCATION.TOOLBAR],
-    //     title: "Not on Shopify Yet",
-    //   },
-    // },
     docs: {
       container: ({ context, children }) => {
         const theme = context?.globals?.theme || "light";

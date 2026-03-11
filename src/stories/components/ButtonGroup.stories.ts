@@ -6,7 +6,7 @@ import { INITIAL_VIEWPORTS } from "storybook/viewport";
 
 const meta: Meta<ButtonGroupProps> = {
   title: "Components/ButtonGroup",
-  tags: ["autodocs"],
+  tags: ["autodocs", "deprecated"],
   render: (args: ButtonGroupProps) => createButtonGroup(args),
   argTypes: {
     buttons: { control: "object" },
@@ -21,6 +21,7 @@ const meta: Meta<ButtonGroupProps> = {
         component:
           "HENK follows the convention followed by the majority: Primary action on the right. See research: https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/",
       },
+      tags: ["outdated"],
     },
     viewport: {
       viewports: INITIAL_VIEWPORTS,

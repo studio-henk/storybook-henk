@@ -31,7 +31,7 @@ const renderButton = (args: any) => {
 const meta: Meta = {
   title: "Snippets/Components/Button",
   render: (args) => renderButton(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     customCode: snippet,
     docs: {
