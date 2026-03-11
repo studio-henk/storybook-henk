@@ -5,9 +5,13 @@ import headerSectionRaw from "../../sections/henk-header.liquid?raw";
 import footerSectionRaw from "../../sections/henk-footer.liquid?raw";
 import pageSectionRaw from "../../sections/page.liquid?raw";
 import sectionHeaderSectionRaw from "../../sections/henk-section-header.liquid?raw";
+import gridSectionRaw from "../../sections/henk-section-grid.liquid?raw";
 import breadcrumbsSectionRaw from "../../sections/henk-section-breadcrumbs.liquid?raw";
 import breadcrumbsSnippetRaw from "../../snippets/henk-snippet-breadcrumbs.liquid?raw";
 import sectionHeaderSnippetRaw from "../../snippets/henk-snippet-section-header.liquid?raw";
+import gridSnippetRaw from "../../snippets/henk-snippet-grid.liquid?raw";
+import henkCardSnippetRaw from "../../snippets/henk-card.liquid?raw";
+import henkTagSnippetRaw from "../../snippets/henk-tag.liquid?raw";
 import headerMeta from "../henk-header.stories";
 import footerMeta from "../henk-footer.stories";
 
@@ -16,17 +20,24 @@ const headerSection = headerSectionRaw.replace(SCHEMA_RE, "");
 const footerSection = footerSectionRaw.replace(SCHEMA_RE, "");
 const pageSection = pageSectionRaw.replace(SCHEMA_RE, "");
 const sectionHeaderSection = sectionHeaderSectionRaw.replace(SCHEMA_RE, "");
+const gridSection = gridSectionRaw.replace(SCHEMA_RE, "");
 const breadcrumbsSection = breadcrumbsSectionRaw.replace(SCHEMA_RE, "");
 
 if (typeof (engine as any).registerPartial === "function") {
   (engine as any).registerPartial("henk-snippet-breadcrumbs", breadcrumbsSnippetRaw);
   (engine as any).registerPartial("henk-breadcrumbs", breadcrumbsSnippetRaw);
   (engine as any).registerPartial("henk-snippet-section-header", sectionHeaderSnippetRaw);
+  (engine as any).registerPartial("henk-snippet-grid", gridSnippetRaw);
+  (engine as any).registerPartial("henk-card", henkCardSnippetRaw);
+  (engine as any).registerPartial("henk-tag", henkTagSnippetRaw);
 }
 if ((engine as any).__partials) {
   (engine as any).__partials["henk-snippet-breadcrumbs"] = breadcrumbsSnippetRaw;
   (engine as any).__partials["henk-breadcrumbs"] = breadcrumbsSnippetRaw;
   (engine as any).__partials["henk-snippet-section-header"] = sectionHeaderSnippetRaw;
+  (engine as any).__partials["henk-snippet-grid"] = gridSnippetRaw;
+  (engine as any).__partials["henk-card"] = henkCardSnippetRaw;
+  (engine as any).__partials["henk-tag"] = henkTagSnippetRaw;
 }
 
 export type PageData = {
@@ -38,6 +49,7 @@ export function renderPageContent(template: any, page: PageData) {
   const map: Record<string, string> = {
     page: pageSection,
     "henk-section-header": sectionHeaderSection,
+    "henk-section-grid": gridSection,
     "henk-section-breadcrumbs": breadcrumbsSection,
   };
 
@@ -59,8 +71,12 @@ export function renderPageContent(template: any, page: PageData) {
         };
       }
 
+      const blocks = def.blocks || {};
+      const blockOrder = Array.isArray(def.block_order) ? def.block_order : Object.keys(blocks);
+      const orderedBlocks = blockOrder.map((blockId: string) => ({ id: blockId, ...(blocks[blockId] || {}) }));
+
       return engine.parseAndRenderSync(sectionTemplate, {
-        section: { id, settings },
+        section: { id, settings, blocks: orderedBlocks },
         template: "page",
         page,
         page_title: page.title,

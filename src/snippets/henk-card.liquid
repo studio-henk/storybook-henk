@@ -39,17 +39,17 @@
             class="henk-card__img"
             src="{{ image }}"
             alt="{{ image_alt }}"
-            width="1134"
-            height="1134"
+            width="1260"
+            height="1260"
             loading="lazy"
           >
         {% else %}
           <img
             class="henk-card__img"
-            src="{{ image | image_url: width: 1134 }}"
+            src="{{ image | image_url: width: 1260 }}"
             alt="{{ image_alt }}"
-            width="1134"
-            height="1134"
+            width="1260"
+            height="1260"
             loading="lazy"
           >
         {% endif %}
@@ -88,7 +88,7 @@
     grid-auto-rows: 1fr auto auto;
     place-items: start center;
     position: relative;
-    width: min(559px, 100%);
+    width: min(629px, 100%);
 
     /* fix for when in a grid */
     min-width: 0;

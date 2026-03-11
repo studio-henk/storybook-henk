@@ -1,0 +1,37 @@
+{% assign material_types = shop.metaobjects.material_type.values %}
+{{ '_henk-grid.css' | asset_url | stylesheet_tag }}
+
+ <div class="henk-grid">
+
+  {% for material in material_types %}
+
+    {% if material.image %}
+      {% assign image_url = material.image | image_url: width: 1134 %}
+    {% else %}
+      {% assign image_url = 'https://picsum.photos/seed/' | append: material.name.value | append: '/1134/1134' %}
+    {% endif %}
+
+{% render 'henk-card',
+        href: material.system.url,
+        image: image_url,
+        image_alt: material.name.value,
+        title: material.name.value,
+        subtitle: '',
+        variant: 'rounded'
+      %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Materials List",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Materials List"
+    }
+  ]
+}
+{% endschema %}

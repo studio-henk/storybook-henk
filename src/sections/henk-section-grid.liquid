@@ -1,0 +1,29 @@
+{% render 'henk-snippet-grid', blocks: section.blocks %}
+
+{% schema %}
+{
+  "name": "Grid",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "text", "id": "subtitle", "label": "Subtitle" },
+        { "type": "text", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_alt", "label": "Image alt" },
+        { "type": "url", "id": "href", "label": "Link" },
+        { "type": "checkbox", "id": "rounded", "label": "Rounded", "default": false },
+        { "type": "checkbox", "id": "shadow", "label": "Shadow", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grid",
+      "category": "HENK Blocks"
+    }
+  ]
+}
+{% endschema %}
