@@ -1,0 +1,14 @@
+{% comment %}
+  Layout: theme.liquid
+  Placeholder for Storybook layout
+{% endcomment %}
+
+<div class="henk-wrapper">
+  {% sections 'header-group' %}
+
+  <main class="henk-main">
+    {{ content_for_layout }}
+  </main>
+
+  {% sections 'footer-group' %}
+</div>

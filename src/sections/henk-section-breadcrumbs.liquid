@@ -1,0 +1,22 @@
+{% comment %}
+  Breadcrumbs Section
+  Simple section that renders the breadcrumbs snippet.
+  No configurable options needed.
+{% endcomment %}
+
+{% render 'henk-breadcrumbs', page: page, page_title: page_title, template: template, collection: collection, product: product, blog: blog, article: article, metaobject: metaobject %}
+
+{% schema %}
+{
+  "name": "Breadcrumbs",
+  "settings": [],
+  "disabled_on": {
+    "templates": ["index"]
+  },
+  "presets": [
+    {
+      "name": "Breadcrumbs"
+    }
+  ]
+}
+{% endschema %}

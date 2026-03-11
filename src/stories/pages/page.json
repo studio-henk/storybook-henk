@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {}
+    },
+    "henk_section_breadcrumbs_HiRQMU": {
+      "type": "henk-section-breadcrumbs",
+      "name": "Breadcrumbs",
+      "settings": {}
+    }
+  },
+  "order": [
+    "henk_section_breadcrumbs_HiRQMU",
+    "main"
+  ]
+}

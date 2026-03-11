@@ -1,7 +1,9 @@
 # TODO
 
-- [ ] add product block from liquid to storybook
-- [ ] update product block in liquid: no price in 2nd row
+## TODAY
+
+- [ ] add product block from liquid to storybook @due(2026-03-10)
+- [ ] update product block in liquid: no price in 2nd row @due(today)
 - [ ] set rule for variables to be prefixed and allow locals: --henk- and --henk_
 - [ ] find and replaces classnames
 - [ ] find and replace variables

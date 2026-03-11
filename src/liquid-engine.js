@@ -113,6 +113,36 @@ engine.registerTag("form", {
   },
 });
 
+engine.registerTag("sections", {
+  parse: function (tagToken) {
+    this.groupName = tagToken.args ? tagToken.args.trim() : "";
+  },
+  render: function (ctx) {
+    const name = (this.groupName || "").replace(/^['"]|['"]$/g, "");
+    const scope = typeof ctx.getAll === "function" ? ctx.getAll() : {};
+    const groups = scope.section_groups || scope.sectionGroups || {};
+    const group = groups[name];
+    if (!group || !Array.isArray(group.order) || !group.sections) return "";
+
+    const rendered = group.order
+      .map((id) => {
+        const def = group.sections[id];
+        if (!def || !def.template) return "";
+        return this.liquid.parseAndRenderSync(def.template, {
+          ...scope,
+          section: { id, settings: def.settings || {} },
+        });
+      })
+      .join("");
+
+    if (name === "footer-group") {
+      return `<footer class="henk-footer">${rendered}</footer>`;
+    }
+
+    return rendered;
+  },
+});
+
 engine.registerFilter("asset_url", (filename) => `/assets/${filename}`);
 
 // inline_asset_content: lookup SVG content from engine.__svg_map when running in browser/storybook

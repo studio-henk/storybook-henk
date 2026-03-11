@@ -1,30 +1,42 @@
+import type { Meta, StoryObj } from "@storybook/html";
 
-import { createBreadcrumbs } from "./Breadcrumbs";
+import engine from "@src/liquid-engine.js";
+import sectionRaw from "../sections/henk-section-breadcrumbs.liquid?raw";
+import snippetRaw from "../snippets/henk-snippet-breadcrumbs.liquid?raw";
 
-export default {
+const SCHEMA_RE = /\{%\s*schema\s*%\}[\s\S]*?\{%\s*endschema\s*%\}/i;
+const sectionTemplate = sectionRaw.replace(SCHEMA_RE, "");
+
+if (typeof (engine as any).registerPartial === "function") {
+  (engine as any).registerPartial("henk-snippet-breadcrumbs", snippetRaw);
+  (engine as any).registerPartial("henk-breadcrumbs", snippetRaw);
+}
+if ((engine as any).__partials) {
+  (engine as any).__partials["henk-snippet-breadcrumbs"] = snippetRaw;
+  (engine as any).__partials["henk-breadcrumbs"] = snippetRaw;
+}
+
+const meta = {
   title: "Sections/Breadcrumbs",
   tags: ["autodocs"],
   parameters: {
-    docs: {
-      description: {
-        component:
-          "The Breadcrumbs component provides a navigation breadcrumb for better UX.",
-      },
-    },
-    controls: {
-      exclude: ["class", "style"],
-    },
+    layout: "fullscreen",
   },
-};
+} satisfies Meta;
 
-const Template = ({ breadcrumbs }) =>
-  createBreadcrumbs({ breadcrumbs }).outerHTML;
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {
-  breadcrumbs: [
-    { name: "Home", fullPath: "/" },
-    { name: "Category", fullPath: "/parent" },
-    { name: "Current Page", fullPath: "/parent/current-page" },
-  ],
+type Story = StoryObj;
+
+export const Default: Story = {
+  render: () => {
+    const rendered = engine.parseAndRenderSync(sectionTemplate, {
+      template: "page",
+      page: { title: "Page" },
+      page_title: "Page",
+    });
+    const container = document.createElement("div");
+    container.innerHTML = rendered;
+    return container;
+  },
 };
