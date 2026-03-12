@@ -173,6 +173,10 @@
       display: none;
     }
 
+    .henk-header__button--close-menu {
+      z-index: 9;
+    }
+
     /* state: open */
     &:has(details[name="main-nav"][open]) {
       .henk-header__inner {
