@@ -13,7 +13,7 @@ const PANEL_ID = `${ADDON_ID}/panel`;
 const CodePanel = ({ active }) => {
   const state = useStorybookState();
   const storyId = state?.storyId;
-  const customCode = state?.storiesHash?.[storyId]?.parameters?.customCode;
+  const customCode = useParameter("customCode", null);
 
   return (
     <AddonPanel active={active}>

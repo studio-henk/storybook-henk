@@ -13,19 +13,22 @@
         %}
       {% endif %}
     {% endfor %}
-  {% elsif materials and materials.size > 0 %}
-    {% for material in materials %}
-      {% if material.image %}
-        {% assign image_url = material.image | image_url: width: 1134 %}
+  {% elsif items and items.size > 0 %}
+    {% for item in items %}
+      {% if item.image %}
+        {% assign image_url = item.image | image_url: width: 1134 %}
       {% else %}
-        {% assign image_url = 'https://picsum.photos/seed/' | append: material.name.value | append: '/1134/1134' %}
+        {% assign image_url = 'https://placehold.co/1260x1260?text=1260x1260\nno%20image%20assigned'
+          | append: item.name.value
+          | append: '/1260/1260'
+        %}
       {% endif %}
 
       {% render 'henk-card',
-        href: material.system.url,
+        href: item.system.url,
         image: image_url,
-        image_alt: material.name.value,
-        title: material.name.value,
+        image_alt: item.name.value,
+        title: item.name.value,
         subtitle: '',
         rounded: true,
         shadow: false
@@ -69,7 +72,7 @@
 
     display: grid;
     grid-template-columns: repeat(
-      auto-fit,
+      auto-fill,
       minmax(clamp(var(--_column-min), var(--_column-fluid), var(--_column-max)), 1fr)
     );
     padding-block: var(--_grid-padding-block, 1rem);

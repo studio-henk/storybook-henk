@@ -1,7 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
 import { renderPageContent, renderThemePage } from "./page-utils";
-import materialenTemplate from "./page.materialen.json";
+import materialenTemplateRaw from "@templates/page.materialen.json?raw";
+
+const materialenTemplate = JSON.parse(
+  materialenTemplateRaw.replace(/\/\*[\s\S]*?\*\//g, "").trimStart(),
+);
 
 const meta = {
   title: "Pages/Materials",
@@ -25,7 +29,7 @@ export const Default: Story = {
     const materialTypes = [
       {
         name: { value: "Wood" },
-        system: { url: "#" },
+        system: { url: "/?path=/story/pages-materials-material-type--default" },
         image: "https://placehold.co/1260x1260",
       },
       {

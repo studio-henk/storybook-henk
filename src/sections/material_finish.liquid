@@ -1,0 +1,16 @@
+{% assign current_finish_name = metaobject.name.value %}
+{% assign current_finish_image = metaobject.image.value %}
+{% assign parent_family = metaobject.material_family.value %}
+
+{% assign finish_content = parent_family.description | metafield_tag %}
+
+{% render 'henk-snippet-splitscreen',
+  id: 'material-finish',
+  title: current_finish_name,
+  caption: 'Finish',
+  level: 1,
+  content: finish_content,
+  media_type: 'image',
+  media: current_finish_image,
+  image_alt: current_finish_name
+%}

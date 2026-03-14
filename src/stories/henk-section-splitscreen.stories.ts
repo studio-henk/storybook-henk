@@ -4,9 +4,11 @@ import engine from "@src/liquid-engine.js";
 import sectionRaw from "../sections/henk-section-splitscreen.liquid?raw";
 import snippetRaw from "../snippets/henk-snippet-splitscreen.liquid?raw";
 
-
 // map static assets (images) to dev URLs so stories can resolve image_src to a working URL
-const assetUrlModules = import.meta.glob("../assets/**/*.{avif,jpg,png,webp,svg}", { as: "url", eager: true });
+const assetUrlModules = import.meta.glob(
+  "../assets/**/*.{avif,jpg,png,webp,svg}",
+  { as: "url", eager: true },
+);
 const assetUrlMap: Record<string, string> = {};
 Object.entries(assetUrlModules).forEach(([filePath, url]) => {
   const filename = filePath.split("/").pop()?.replace(/\?.*$/, "");
@@ -14,8 +16,16 @@ Object.entries(assetUrlModules).forEach(([filePath, url]) => {
 });
 
 // Register snippet partials from common locations so nested {% render %} calls resolve
-const snippetModulesA = import.meta.glob("../snippets/**/*.liquid", { query: "?raw", import: "default", eager: true });
-const snippetModulesB = import.meta.glob("../stories/components/**/*.liquid", { query: "?raw", import: "default", eager: true });
+const snippetModulesA = import.meta.glob("../snippets/**/*.liquid", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
+const snippetModulesB = import.meta.glob("../stories/components/**/*.liquid", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
 const snippetModules = Object.assign({}, snippetModulesA, snippetModulesB);
 if (typeof (engine as any).registerPartial === "function") {
   Object.entries(snippetModules).forEach(([filePath, content]) => {
@@ -54,7 +64,7 @@ let cleanedSection = sectionRaw.replace(SCHEMA_RE, "");
 // Inline-render fallback: replace {% render 'henk-snippet-splitscreen' ... %} with snippet raw,
 // and ensure 'props' local variable is set from section.settings so the snippet receives props.
 // Build a map of snippet name -> content for recursive inlining of {% render 'name' %} tags
-const snippetMap: Record<string,string> = {};
+const snippetMap: Record<string, string> = {};
 Object.entries(snippetModules).forEach(([filePath, content]) => {
   const base = filePath.split("/").pop() || filePath;
   const filename = base.replace(/\?.*$/, "");
@@ -63,16 +73,20 @@ Object.entries(snippetModules).forEach(([filePath, content]) => {
 });
 
 const RENDER_TAG_RE = /\{%\s*render\s+['\"]([^'\"]+)['\"]([^%]*?)%\}/gi;
-function inlineRenders(template: string, depth = 0, visited = new Set<string>()): string {
+function inlineRenders(
+  template: string,
+  depth = 0,
+  visited = new Set<string>(),
+): string {
   // safety guards
   if (depth > 10) return template;
   if (template.length > 200000) return template;
   return template.replace(RENDER_TAG_RE, (m, name, params) => {
     const candidates = [
       name,
-      name.split('/').pop(),
-      name.replace(/\.liquid$/i, ''),
-      (name.split('/').pop() || '').replace(/\.liquid$/i, ''),
+      name.split("/").pop(),
+      name.replace(/\.liquid$/i, ""),
+      (name.split("/").pop() || "").replace(/\.liquid$/i, ""),
     ];
     for (const c of candidates) {
       const key = c as string;
@@ -81,9 +95,11 @@ function inlineRenders(template: string, depth = 0, visited = new Set<string>())
       const snippet = snippetMap[key];
       if (snippet) {
         // skip inlining very large snippets to avoid huge concatenation
-        if (typeof snippet === 'string' && snippet.length > 20000) {
+        if (typeof snippet === "string" && snippet.length > 20000) {
           // eslint-disable-next-line no-console
-          console.warn(`[stories] Skipping inline of large snippet "${key}" (${snippet.length} chars)`);
+          console.warn(
+            `[stories] Skipping inline of large snippet "${key}" (${snippet.length} chars)`,
+          );
           return m;
         }
 
@@ -96,11 +112,11 @@ function inlineRenders(template: string, depth = 0, visited = new Set<string>())
             const k = match[1];
             let v = match[2].trim();
             // remove trailing comma if present
-            v = v.replace(/,$/, '').trim();
+            v = v.replace(/,$/, "").trim();
             assigns.push(`{% assign ${k} = ${v} %}`);
           }
         }
-        const assignBlock = assigns.join('\n');
+        const assignBlock = assigns.join("\n");
 
         visited.add(key);
         try {
@@ -119,26 +135,30 @@ function inlineRenders(template: string, depth = 0, visited = new Set<string>())
 const HENK_BUTTON_RE = /\{%\s*render\s+['\"]henk-button['\"]([^%]*?)%\}/gi;
 function paramsToAssigns(params: string) {
   const assigns: string[] = [];
-  if (!params) return '';
+  if (!params) return "";
   const PAIR_RE = /([a-zA-Z0-9_]+)\s*:\s*([^,]+)/g;
   let match: RegExpExecArray | null;
   while ((match = PAIR_RE.exec(params)) !== null) {
     const k = match[1];
     let v = match[2].trim();
-    v = v.replace(/,$/, '').trim();
+    v = v.replace(/,$/, "").trim();
     assigns.push(`{% assign ${k} = ${v} %}`);
   }
-  return assigns.join('\n');
+  return assigns.join("\n");
 }
 
 let cleanedSectionWithInline = inlineRenders(cleanedSection);
 // Replace henk-button renders with a safe anchor fallback that references section vars directly
-cleanedSectionWithInline = cleanedSectionWithInline.replace(HENK_BUTTON_RE, (m, params) => {
-  // produce simple anchor using section-scoped vars so label always shows
-  return `<a href="{{ section_button_url | prepend: routes.root }}" class="henk-button henk-button--{{ section_button_variant | default: 'default' }}">{{ section_button_text }}</a>`;
-});
+cleanedSectionWithInline = cleanedSectionWithInline.replace(
+  HENK_BUTTON_RE,
+  (m, params) => {
+    // produce simple anchor using section-scoped vars so label always shows
+    return `<a href="{{ section_button_url | prepend: routes.root }}" class="henk-button henk-button--{{ section_button_variant | default: 'default' }}">{{ section_button_text }}</a>`;
+  },
+);
 
-const finalSectionTemplate = `{% assign props = section.settings %}\n` + cleanedSectionWithInline;
+const finalSectionTemplate =
+  `{% assign props = section.settings %}\n` + cleanedSectionWithInline;
 
 const resolveImageSrc = (val: any) => {
   if (!val) return val;
@@ -163,13 +183,44 @@ const resolveImageSrc = (val: any) => {
 
 const render = (args: any) => {
   const resolvedArgs = { ...args };
-  if (resolvedArgs.image_src) resolvedArgs.image_src = resolveImageSrc(resolvedArgs.image_src);
-  if (resolvedArgs.video_poster) resolvedArgs.video_poster = resolveImageSrc(resolvedArgs.video_poster);
+  if (resolvedArgs.image_src)
+    resolvedArgs.image_src = resolveImageSrc(resolvedArgs.image_src);
+  if (resolvedArgs.video_poster)
+    resolvedArgs.video_poster = resolveImageSrc(resolvedArgs.video_poster);
 
-  const rendered = engine.parseAndRenderSync(finalSectionTemplate, { section: { settings: resolvedArgs } });
-  const container = document.createElement("div");
-  container.innerHTML = rendered;
-  return container;
+  const rendered = engine.parseAndRenderSync(finalSectionTemplate, {
+    section: { settings: resolvedArgs },
+  });
+  const template = document.createElement("template");
+  template.innerHTML = rendered.trim();
+  const scripts = Array.from(template.content.querySelectorAll("script"));
+  const scriptBodies = scripts.map((oldScript) => oldScript.textContent || "");
+  scripts.forEach((oldScript) => oldScript.remove());
+  const root = template.content.firstElementChild as HTMLElement;
+  if (scriptBodies.length > 0) {
+    const runScripts = () => {
+      if (!root || !root.isConnected) {
+        requestAnimationFrame(runScripts);
+        return;
+      }
+      scriptBodies.forEach((raw) => {
+        const immediate = raw
+          .replace(
+            "document.addEventListener('DOMContentLoaded', function () {",
+            "(function () {",
+          )
+          .replace(/\}\);\s*$/, "})();");
+        try {
+          // eslint-disable-next-line no-new-func
+          new Function(immediate)();
+        } catch (error) {
+          console.error("Failed to run liquid script", error);
+        }
+      });
+    };
+    requestAnimationFrame(runScripts);
+  }
+  return root;
 };
 
 // Generate argTypes and default args from Shopify section schema when available
@@ -190,7 +241,9 @@ function schemaSettingsToControls(sch: any) {
       case "radio":
         argTypes[id] = {
           control: "select",
-          options: Array.isArray(s.options) ? s.options.map((o: any) => o.value) : undefined,
+          options: Array.isArray(s.options)
+            ? s.options.map((o: any) => o.value)
+            : undefined,
           description: s.label || s.id,
         };
         break;
@@ -216,7 +269,8 @@ function schemaSettingsToControls(sch: any) {
   return { argTypes, defaults };
 }
 
-const { argTypes: schemaArgTypes, defaults: schemaDefaults } = schemaSettingsToControls(schema);
+const { argTypes: schemaArgTypes, defaults: schemaDefaults } =
+  schemaSettingsToControls(schema);
 
 const baseArgTypes = {
   id: { control: "text" },
@@ -236,11 +290,12 @@ const baseArgTypes = {
 };
 
 const baseArgs = {
-  id: "splits-1",
+  id: "splits-default",
   caption: "Caption",
-  title: "Split screen title",
+  title: "Een afvalvrije meubelindustrie",
   heading_level: "2",
-  content: "<p>Rich content goes here.</p>",
+  content:
+    "<p>Rich content goes here.</p><p>Als B Corp gebruiken wij de kracht van ons bedrijf om positieve verandering te bewerkstelligen. Het is onze missie om de meubelindustrie van binnenuit te hervormen en deze volledig afvalvrij te maken.</p>",
   media_type: "image",
   image_src: "ss-bcorp.avif",
   image_alt: "Example image",
@@ -264,3 +319,55 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 export const Default: Story = {};
+
+export const Reversed: Story = {
+  args: {
+    reverse: true,
+    image_link: "https://www.studio-henk.nl/nl/weforest",
+  },
+};
+
+export const WithVideo: Story = {
+  args: {
+    id: "splits-video",
+    media_type: "video",
+    video_src: "/assets/sh-rdam.mp4",
+    video_poster: "ss-bcorp.avif",
+    video_has_audio: true,
+    rounded_corners: true,
+  },
+};
+
+export const WithVideoCovered: Story = {
+  args: {
+    id: "splits-video-covered",
+    media_type: "video",
+    video_src: "/assets/mov_bbb.mp4",
+    video_poster: "ss-bcorp.avif",
+    video_has_audio: true,
+    image_link: "https://www.studio-henk.nl/nl/weforest",
+    rounded_corners: true,
+    video_cover: true,
+  },
+};
+
+export const WithVideoCoveredSquare: Story = {
+  args: {
+    id: "splits-video-covered-square",
+    media_type: "video",
+    video_src: "/assets/mov_bbb.mp4",
+    video_poster: "ss-bcorp.avif",
+    video_has_audio: true,
+    image_link: "https://www.studio-henk.nl/nl/weforest",
+    rounded_corners: true,
+    video_cover: true,
+    square: true,
+  },
+};
+
+export const NoMedia: Story = {
+  args: {
+    media_type: "image",
+    image_src: "",
+  },
+};

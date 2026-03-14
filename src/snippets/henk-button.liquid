@@ -6,7 +6,7 @@
     type: 'button' | 'submit' | 'reset' (only for <button>)
     value: value attribute (only for <button>)
     variant: 'primary' | 'secondary' | 'transparent' | 'ghost'
-    size: 'small' | 'large'
+    button_size: 'small' | 'large'
     label: text for button
     title: optional title attribute
     icon_name: optional icon name for henks-icon snippet
@@ -19,29 +19,25 @@
     extra_classes: additional classes
 {% endcomment %}
 
-{% assign element = element | default: 'a' %}
-{% assign variant = variant | default: 'primary' %}
-{% assign size = size | default: 'large' %}
-{% assign icon_position = icon_position | default: 'left' %}
+{%- assign element = element | default: 'a' -%}
+{%- assign href = href | default: '#' -%}
+{%- assign type = type | default: 'button' -%}
+{%- assign label = label | default: 'Button' -%}
+{%- assign variant = variant | default: 'primary' -%}
+{%- assign button_size = button_size | default: 'large' -%}
+{%- assign icon_position = icon_position | default: 'left' -%}
 
 {%- comment -%} Build classes -{%- endcomment -%}
-{% assign classes = 'henk-button' %}
-
-{% comment %} {% if variant != 'tertiary' %}{% assign classes = classes | append: ' henk-button--' | append: variant %}{% endif %} {% endcomment %}
-
-{% assign variant = variant | default: 'primary' %}
-{% if variant != 'primary' %}
-  {% assign classes = classes | append: ' henk-button--' | append: variant %}
-{% endif %}
-
-{% if size != 'large' %}{% assign classes = classes | append: ' henk-button--' | append: size %}{% endif %}
+{%- assign classes = 'henk-button' -%}
+{%- assign classes = classes | append: ' henk-button--' | append: variant -%}
+{%- assign classes = classes | append: ' henk-button--' | append: button_size -%}
 
 {% if extra_classes %}
   {% assign classes = classes | append: ' ' | append: extra_classes %}
 {% endif %}
 
 {%- comment -%} Build icon HTML if needed -{%- endcomment -%}
-{% assign icon_html = '' %}
+{%- assign icon_html = '' -%}
 {% if icon_name %}
   {% capture icon_html %}
     {% if icon_only %}
@@ -53,44 +49,46 @@
 {% endif %}
 
 {%- comment -%} Helper for inner content -{%- endcomment -%}
-{% capture inner_content %}
-  {% if icon_only %}
+{%- capture inner_content -%}
+  {%- if icon_only -%}
     {{ icon_html }}
-  {% else %}
-    {% if icon_position == 'right' %}
-      {{ label }}{{ icon_html }}
-    {% else %}
+  {%- else -%}
+    {% if icon_position == 'right' -%}
+      {{label}} {{ icon_html }}
+    {% elsif icon_position == 'left' -%}
       {{ icon_html }}{{ label }}
-    {% endif %}
-  {% endif %}
-{% endcapture %}
+    {%- else -%}
+      {{ label }}
+    {%- endif -%}
+  {%- endif -%}
+{%- endcapture -%}
 
 {%- comment -%} Render the correct element -{%- endcomment -%}
 {% if element == 'a' %}
   <a
     href="{{ href }}"
     class="{{ classes }}"
-    {% if target %}
+    {%- if target -%}
       target="{{ target }}"
-    {% endif %}
-    {% if aria_label %}
+    {%- endif -%}
+    {%- if aria_label -%}
       aria-label="{{ aria_label }}"
-    {% endif %}
-    {% if icon_only %}
+    {%- endif -%}
+    {%- if icon_only -%}
       role="button"
-    {% endif %}
-    {% if attrs %}
+    {%- endif -%}
+    {%- if attrs -%}
       {%- for pair in attrs -%}
         {{ pair[0] }}="{{ pair[1] }}"
       {%- endfor -%}
-    {% endif %}
+    {%- endif %}
   >
     {{ inner_content }}
   </a>
 
-{% elsif element == 'button' %}
+{%- elsif element == 'button' -%}
   <button
-    type="{{ type | default: 'button' }}"
+    type="{{ type }}"
     class="{{ classes }}"
     {% if value %}
       value="{{ value }}"
@@ -113,7 +111,7 @@
     {{ inner_content }}
   </button>
 
-{% else %}
+{%- else -%}
   <span
     class="{{ classes }}"
     {% if aria_label %}
@@ -122,7 +120,7 @@
   >
     {{ inner_content }}
   </span>
-{% endif %}
+{%- endif -%}
 
 {% stylesheet %}
   .henk-button,

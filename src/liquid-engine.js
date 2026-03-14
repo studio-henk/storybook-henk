@@ -145,6 +145,13 @@ engine.registerTag("sections", {
 
 engine.registerFilter("asset_url", (filename) => `/assets/${filename}`);
 
+engine.registerFilter("metafield_tag", (value) => {
+  if (value && typeof value === "object" && "value" in value) {
+    return value.value || "";
+  }
+  return value || "";
+});
+
 // inline_asset_content: lookup SVG content from engine.__svg_map when running in browser/storybook
 engine.registerFilter("inline_asset_content", (filename) => {
   if (!filename) return "";

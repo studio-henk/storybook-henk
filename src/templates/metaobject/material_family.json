@@ -1,0 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "material_family",
+      "settings": {}
+    },
+    "henk_section_header": {
+      "type": "henk-section-header",
+      "name": "Section Header",
+      "settings": {
+        "section_id": "materials-header",
+        "caption": "familie",
+        "level": "1",
+        "title": "{{ metaobject.name.value }}",
+        "content": "{{ metaobject.description | metafield_tag }}",
+        "align_left": true,
+        "button_url": "",
+        "button_text": ""
+      }
+    },
+    "henk_section_breadcrumbs_heYeHd": {
+      "type": "henk-section-breadcrumbs",
+      "name": "Breadcrumbs",
+      "settings": {}
+    }
+  },
+  "order": ["henk_section_breadcrumbs_heYeHd", "henk_section_header", "main"]
+}

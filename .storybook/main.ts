@@ -66,6 +66,7 @@ const config: StorybookConfig = {
     config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
+      "@templates": `${process.cwd()}/src/templates`,
       "@storybook/manager-api": "storybook/manager-api",
       "@storybook/preview-api": "storybook/preview-api",
       "@storybook/theming": "storybook/theming",

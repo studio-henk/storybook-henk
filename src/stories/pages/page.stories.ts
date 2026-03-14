@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
 import { renderPageContent, renderThemePage } from "./page-utils";
-import pageTemplate from "./page.json";
+import pageTemplate from "@templates/page.json";
 
 const meta = {
   title: "Pages/Page",

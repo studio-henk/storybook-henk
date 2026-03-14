@@ -10,7 +10,7 @@ const renderButton = (args: any) => {
     type: args.type,
     value: args.value,
     variant: args.variant,
-    size: args.size,
+    button_size: args.button_size,
     label: args.label,
     title: args.title,
     icon_name: args.icon_name,
@@ -23,9 +23,10 @@ const renderButton = (args: any) => {
     extra_classes: args.extra_classes,
   });
 
-  const div = document.createElement("div");
-  div.innerHTML = rendered;
-  return div;
+  // const div = document.createElement("div");
+  // div.innerHTML = rendered;
+  // return div;
+  return rendered;
 };
 
 const meta: Meta = {
@@ -58,7 +59,7 @@ const meta: Meta = {
       options: ["primary", "secondary", "transparent", "ghost"],
       description: "Visual variant",
     },
-    size: {
+    button_size: {
       control: { type: "select" },
       options: ["small", "large"],
       description: "Size modifier",
@@ -94,7 +95,7 @@ const meta: Meta = {
     element: "a",
     href: "#",
     variant: "primary",
-    size: "large",
+    button_size: "large",
     label: "Click me",
     type: "button",
     icon_position: "left",
@@ -137,7 +138,7 @@ export const Ghost: Story = {
 
 export const Small: Story = {
   args: {
-    size: "small",
+    button_size: "small",
   },
 };
 
@@ -164,10 +165,3 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
-
-// export const Pill: Story = {
-//   args: {
-//     variant: "pill",
-//     label: "Pill button",
-//   },
-// };

@@ -23,7 +23,7 @@ export default defineConfig({
         __dirname,
         "src/internal-components",
       ),
-      "@templates": path.resolve(__dirname, "src/stories/templates"),
+      "@templates": path.resolve(__dirname, "src/templates"),
       "@stories": path.resolve(__dirname, "src/stories"),
       "@scripts": path.resolve(__dirname, "src/scripts"),
       "@assets": path.resolve(__dirname, "src/assets"),

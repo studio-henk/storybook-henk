@@ -33,14 +33,14 @@
 <div class="henk-card {{ radius_class }} {{ shadow_class }} {{ extra_class }}">
   <a href="{{ href }}" class="henk-card__image-link">
     <picture class="henk-card__image-container">
-      {% if image %}
+      {% if image != blank %}
         {% if image contains 'http' or image contains '://' %}
           <img
             class="henk-card__img"
             src="{{ image }}"
             alt="{{ image_alt }}"
-            width="1260"
-            height="1260"
+            width="1134"
+            height="1134"
             loading="lazy"
           >
         {% else %}
@@ -48,13 +48,20 @@
             class="henk-card__img"
             src="{{ image | image_url: width: 1260 }}"
             alt="{{ image_alt }}"
-            width="1260"
-            height="1260"
+            width="1134"
+            height="1134"
             loading="lazy"
           >
         {% endif %}
       {% else %}
-        {{ 'image' | placeholder_svg_tag }}
+        <img
+          class="henk-card__img"
+          src="https://placehold.co/1260x1260?text=1260x1260\nno%20image%20assigned"
+          alt="{{ image_alt }}"
+          width="1260"
+          height="1260"
+          loading="lazy"
+        >
       {% endif %}
     </picture>
   </a>
@@ -88,7 +95,7 @@
     grid-auto-rows: 1fr auto auto;
     place-items: start center;
     position: relative;
-    width: min(629px, 100%);
+    width: min(559px, 100%);
 
     /* fix for when in a grid */
     min-width: 0;

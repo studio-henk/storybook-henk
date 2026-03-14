@@ -69,3 +69,10 @@ export const Shadow: Story = {
     tags: ["Second Chance", "Limited"],
   },
 };
+
+export const NoImage: Story = {
+  args: {
+    image: "",
+    image_alt: "Henk card image",
+  },
+};

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -16,9 +25,9 @@
       "settings": {
         "section_id": "materials-header",
         "caption": "",
+        "level": "1",
         "title": "Materialen",
         "content": "<p>Wij hechten veel waarde aan het design, de kwaliteit en duurzaamheid van onze meubels. Daarom selecteren wij de materialen die wij in onze collectie aanbieden zorgvuldig.</p>",
-        "level": "1",
         "align_left": false,
         "button_url": "",
         "button_text": ""

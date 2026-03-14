@@ -15,15 +15,17 @@
 
 {% assign p = props | default: null %}
 
-{% assign section_title = p.title | default: title %}
+{% assign section_title = p.title | default: title | default: 'Splitscreen Title' %}
 {% assign section_caption = p.caption | default: caption %}
 {% assign section_heading_level = p.level | default: 2 %}
 {% assign section_content = p.content | default: content %}
-{% assign section_media_type = p.media_type | default: media_type %}
+{% assign section_media_type = p.media_type | default: media_type | default: 'image' %}
 {% assign section_media = p.media | default: media %}
 {% assign section_poster = p.poster | default: poster %}
 {% assign section_has_audio = p.video_has_audio | default: video_has_audio %}
+{% assign section_cover = p.video_cover | default: video_cover %}
 {% assign section_rounded = p.rounded_corners | default: rounded_corners %}
+{% assign section_square = p.square | default: square %}
 {% assign section_image_alt = p.image_alt | default: image_alt %}
 {% assign section_image_link = p.image_link | default: image_link %}
 {% assign section_image_link_target_blank = p.image_link_target_blank | default: image_link_target_blank %}
@@ -39,7 +41,10 @@
   This ensures section_media points to the correct image/video File object
 {%- endcomment -%}
 {% if section_media_type == 'image' %}
-  {% assign section_media = p.image_src | default: section_media %}
+  {% assign section_media = p.image_src
+    | default: section_media
+    | default: 'https://placehold.co/1152x1728?text=no%20media%20assigned'
+  %}
 {% elsif section_media_type == 'video' %}
   {% assign section_media = p.video_src | default: section_media %}
 {% endif %}
@@ -82,7 +87,7 @@
     <div class="henk-split-screen__grid">
       <!-- MEDIA COLUMN -->
       <div class="henk-split-screen__grid-item">
-        {% if media_obj %}
+        {% if media_obj != blank %}
           {% case section_media_type %}
             {% when 'image' %}
               {% if section_image_link %}
@@ -112,20 +117,31 @@
                 autoplay: true,
                 has_audio: section_has_audio,
                 loop: true,
-                cover: true,
+                cover: section_cover,
                 rounded: section_rounded,
+                square: section_square,
                 description: section_image_alt,
                 link: section_image_link,
                 link_target_blank: section_image_link_target_blank
               %}
           {% endcase %}
+        {% else %}
+          hello
+          <img
+            class="henk-card__img"
+            src="https://placehold.co/1152x1728?text=1152x1728\nno%20media%20assigned"
+            alt="{{ image_alt }}"
+            width="1152"
+            height="1728"
+            loading="lazy"
+          >
         {% endif %}
       </div>
 
       <!-- CONTENT COLUMN -->
       <div class="henk-split-screen__grid-item">
         <div class="henk-split-screen__content">
-          {% if section_caption %}
+          {% if section_caption != blank %}
             <p class="henk-split-screen__caption">{{ section_caption }}</p>
           {% endif %}
 
@@ -220,7 +236,7 @@
   }
 
   .henk-split-screen__title {
-    word-break: break-all; /* fallback */
+    word-break: break-word; /* fallback */
     overflow-wrap: anywhere; /* preferred modern */
     hyphens: auto;
   }
