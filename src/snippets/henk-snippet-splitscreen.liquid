@@ -67,8 +67,6 @@
   {% comment %} Image from section or metaobject {% endcomment %}
   {% if section_media.src %}
     {% assign media_obj = section_media.src %}
-  {% else %}
-    {% assign media_obj = section_media %}
   {% endif %}
 {% endif %}
 
@@ -126,7 +124,6 @@
               %}
           {% endcase %}
         {% else %}
-          hello
           <img
             class="henk-card__img"
             src="https://placehold.co/1152x1728?text=1152x1728\nno%20media%20assigned"
