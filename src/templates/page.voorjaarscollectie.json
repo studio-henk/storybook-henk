@@ -1,0 +1,173 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "henk_section_breadcrumbs": {
+      "type": "henk-section-breadcrumbs",
+      "name": "Breadcrumbs",
+      "settings": {}
+    },
+    "henk_section_hero_i3eVt8": {
+      "type": "henk-section-hero",
+      "name": "Hero Block",
+      "settings": {
+        "type": "video",
+        "video": "shopify://files/videos/converstation_starters_campaign.mp4",
+        "video_has_audio": false,
+        "caption": "Voorjaarscollectie 2026",
+        "title": "Conversation Starters",
+        "text": "",
+        "button_label": "Ontdek de collectie",
+        "button_url": "#sh-moment",
+        "button_variant": "primary"
+      }
+    },
+    "henk_section_header_VKjn9q": {
+      "type": "henk-section-header",
+      "name": "Section Header",
+      "settings": {
+        "section_id": "sh-moment",
+        "caption": "",
+        "level": "2",
+        "title": "Inviting you to stay curious",
+        "content": "<p>In een wereld vol afleiding, creëren we ruimte voor wat écht telt. Meubels die uitnodigen om het gesprek aan te gaan, om nieuwsgierig te blijven naar elkaar. Volledig in het moment.</p>",
+        "align_left": false,
+        "button_url": "",
+        "button_text": ""
+      }
+    },
+    "henk_section_splitscreen_zcaYCr": {
+      "type": "henk-section-splitscreen",
+      "name": "Split Screen",
+      "settings": {
+        "id": "ss-unfold",
+        "caption": "",
+        "title": "Unfold eetkamerstoel",
+        "heading_level": "2",
+        "content": "<p>De Unfold eetkamerstoel houdt je bij het tafelmoment. Een lichte vormgeving die de ruimte open laat, terwijl de omhullende zitting je uitnodigt om te blijven. Om dat ene verhaal af te maken, om door te vragen, om nieuwsgierig te blijven naar elkaar. </p><p>Verkrijgbaar <a href=\"/pages/materialen\" title=\"Materialen\">met armleuning</a> of <a href=\"/pages/materialen\" title=\"Materialen\">zonder armleuningen</a> in verschillende framekleuren.</p>",
+        "media_type": "video",
+        "image_alt": "",
+        "video_src": "shopify://files/videos/Product-Eetkamerstoelen.mp4",
+        "video_has_audio": true,
+        "video_cover": true,
+        "rounded_corners": true,
+        "square": true,
+        "image_link": "shopify://pages/materialen",
+        "image_link_target_blank": false,
+        "button_url": "shopify://pages/materialen",
+        "button_text": "Ontdek Unfold eetkamerstoel",
+        "button_variant": "primary",
+        "reverse": true
+      }
+    },
+    "henk_section_splitscreen_TdtKGL": {
+      "type": "henk-section-splitscreen",
+      "name": "Split Screen",
+      "settings": {
+        "id": "ss-taper",
+        "caption": "",
+        "title": "Taper eettafel",
+        "heading_level": "2",
+        "content": "<p>De Taper eettafel vormt het middelpunt van de collectie. Met haar heldere constructie en rustige, krachtige uitstraling brengt ze structuur in de ruimte en maakt ze samenzijn vanzelfsprekend. Een tafel waar mensen aanschuiven en gesprekken beginnen. Beschikbaar in verschillende afwerkingen en in alle vertrouwde vormen van Studio HENK, van rond en rechthoekig tot organisch, speciaal op maat voor jou gemaakt.</p>",
+        "media_type": "video",
+        "image_alt": "",
+        "video_src": "shopify://files/videos/taper-eettafel.mp4",
+        "video_has_audio": true,
+        "video_cover": true,
+        "rounded_corners": true,
+        "square": true,
+        "image_link": "shopify://pages/materialen",
+        "image_link_target_blank": false,
+        "button_url": "shopify://pages/materialen",
+        "button_text": "Ontdek Taper eettafel",
+        "button_variant": "primary",
+        "reverse": false
+      }
+    },
+    "henk_section_splitscreen_YUiN83": {
+      "type": "henk-section-splitscreen",
+      "name": "Split Screen",
+      "settings": {
+        "id": "ss-unfold-sofa",
+        "caption": "",
+        "title": "Unfold sofa",
+        "heading_level": "2",
+        "content": "<p>De Unfold sofa vangt je op wanneer je neerkomt. Zachte plooien die uitnodigen, een zit die je actief houdt. Een plek die zich aanpast aan het moment - of dat nu een kort gesprek is of een avond die blijft hangen. Verkrijgbaar in meerdere opstellingen en stoffen, afgestemd op jouw ruimte.</p>",
+        "media_type": "video",
+        "image_alt": "",
+        "video_src": "shopify://files/videos/unfold-sofa.mp4",
+        "video_has_audio": true,
+        "video_cover": true,
+        "rounded_corners": true,
+        "square": true,
+        "image_link": "shopify://pages/materialen",
+        "image_link_target_blank": false,
+        "button_url": "shopify://pages/materialen",
+        "button_text": "Ontdek Unfold sofa",
+        "button_variant": "primary",
+        "reverse": true
+      }
+    },
+    "henk_section_splitscreen_neUaBM": {
+      "type": "henk-section-splitscreen",
+      "name": "Split Screen",
+      "settings": {
+        "id": "ss-taper-salontafel",
+        "caption": "",
+        "title": "Taper salontafel",
+        "heading_level": "2",
+        "content": "<p>De Taper salontafel creëert ruimte voor wat spontaan ontstaat. Een open vorm die uitnodigt om dichterbij te schuiven, een kop koffie neer te zetten, een verhaal te delen. Het stille middelpunt waar gesprekken samenkomen. </p><p>Verkrijgbaar in de vormen vierkant,rond en pebbles, in verschillende hoogtes en afwerkingen, zodat de tafel zich voegt naar jouw moment.</p>",
+        "media_type": "video",
+        "image_alt": "",
+        "video_src": "shopify://files/videos/taper-salontafel.mp4",
+        "video_has_audio": true,
+        "video_cover": true,
+        "rounded_corners": true,
+        "square": true,
+        "image_link": "shopify://pages/materialen",
+        "image_link_target_blank": false,
+        "button_url": "shopify://pages/materialen",
+        "button_text": "Ontdek Taper salontafel",
+        "button_variant": "primary",
+        "reverse": false
+      }
+    },
+    "henk_section_header": {
+      "type": "henk-section-header",
+      "name": "Section Header",
+      "settings": {
+        "section_id": "sh-duurzaam",
+        "caption": "",
+        "level": "2",
+        "title": "Duurzame designmeubels",
+        "content": "<p>Duurzaamheid staat bij Studio HENK centraal. Voor ons betekent dit dat we streven naar meubels die niet alleen mooi en functioneel zijn, maar ook verantwoord worden geproduceerd. Onze meubels zijn ontworpen volgens circulaire principes en worden gemaakt met duurzame, gecertificeerde en gerecyclede materialen in Europa. Duurzame product details kun je terugvinden op elke product pagina. </p><p><a href=\"/pages/materialen\" title=\"Materialen\">Lees meer over onze duurzame aanpak</a>.</p>",
+        "align_left": false,
+        "button_url": "",
+        "button_text": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "henk_section_breadcrumbs",
+    "henk_section_hero_i3eVt8",
+    "henk_section_header_VKjn9q",
+    "henk_section_splitscreen_zcaYCr",
+    "henk_section_splitscreen_TdtKGL",
+    "henk_section_splitscreen_YUiN83",
+    "henk_section_splitscreen_neUaBM",
+    "henk_section_header"
+  ]
+}
