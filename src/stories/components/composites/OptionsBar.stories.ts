@@ -7,7 +7,8 @@ function htmlToNode(html: string): HTMLElement {
 }
 
 const meta = {
-  title: "Components/Composites/OptionsBar",
+  title: "Components/OptionsBar",
+  tags: ["autodocs", "todo"],
 } satisfies Meta;
 
 export default meta;

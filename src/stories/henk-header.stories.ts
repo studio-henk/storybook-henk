@@ -15,7 +15,7 @@ const renderHeader = (args: any) => {
 const meta: Meta = {
   title: "Global/Header",
   render: (args) => renderHeader(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     customCode: headerSection,
     docs: {

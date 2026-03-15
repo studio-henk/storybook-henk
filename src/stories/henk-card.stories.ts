@@ -15,9 +15,9 @@ const renderCard = (args: any) => {
 };
 
 const meta: Meta = {
-  title: "Components/Cards/HenkCardLiquid",
+  title: "Snippets/Components/Card",
   render: (args) => renderCard(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     customCode: snippet,
     docs: {

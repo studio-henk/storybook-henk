@@ -119,14 +119,25 @@
           </li>
         {%- when 'metaobject/material_type' -%}
           {%- assign position = position | plus: 1 -%}
-          <li class="henk-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <li
+            class="henk-breadcrumbs__item"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
             <a href="{{ '/pages/materialen' }}" class="henk-breadcrumbs__link" itemprop="item">
               <span itemprop="name">Materialen</span>
             </a>
             <meta itemprop="position" content="{{ position }}">
           </li>
           {%- assign position = position | plus: 1 -%}
-          <li class="henk-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+          <li
+            class="henk-breadcrumbs__item"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+            aria-current="page"
+          >
             <span class="henk-breadcrumbs__name" itemprop="name">{{- metaobject.name.value -}}</span>
             <meta itemprop="position" content="{{ position }}">
           </li>
@@ -134,21 +145,37 @@
           {%- assign family = metaobject -%}
           {%- assign type = family.material_type.value -%}
           {%- assign position = position | plus: 1 -%}
-          <li class="henk-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <li
+            class="henk-breadcrumbs__item"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
             <a href="{{ '/pages/materialen' }}" class="henk-breadcrumbs__link" itemprop="item">
               <span itemprop="name">Materialen</span>
             </a>
             <meta itemprop="position" content="{{ position }}">
           </li>
           {%- assign position = position | plus: 1 -%}
-          <li class="henk-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <li
+            class="henk-breadcrumbs__item"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
             <a href="{{ type.system.url }}" class="henk-breadcrumbs__link" itemprop="item">
               <span itemprop="name">{{- type.name.value -}}</span>
             </a>
             <meta itemprop="position" content="{{ position }}">
           </li>
           {%- assign position = position | plus: 1 -%}
-          <li class="henk-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+          <li
+            class="henk-breadcrumbs__item"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+            aria-current="page"
+          >
             <span class="henk-breadcrumbs__name" itemprop="name">{{- family.name.value -}}</span>
             <meta itemprop="position" content="{{ position }}">
           </li>
@@ -157,28 +184,49 @@
           {%- assign family = finish.material_family.value -%}
           {%- assign type = family.material_type.value -%}
           {%- assign position = position | plus: 1 -%}
-          <li class="henk-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <li
+            class="henk-breadcrumbs__item"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
             <a href="{{ '/pages/materialen' }}" class="henk-breadcrumbs__link" itemprop="item">
               <span itemprop="name">Materialen</span>
             </a>
             <meta itemprop="position" content="{{ position }}">
           </li>
           {%- assign position = position | plus: 1 -%}
-          <li class="henk-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <li
+            class="henk-breadcrumbs__item"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
             <a href="{{ type.system.url }}" class="henk-breadcrumbs__link" itemprop="item">
               <span itemprop="name">{{- type.name.value -}}</span>
             </a>
             <meta itemprop="position" content="{{ position }}">
           </li>
           {%- assign position = position | plus: 1 -%}
-          <li class="henk-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <li
+            class="henk-breadcrumbs__item"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
             <a href="{{ family.system.url }}" class="henk-breadcrumbs__link" itemprop="item">
               <span itemprop="name">{{- family.name.value -}}</span>
             </a>
             <meta itemprop="position" content="{{ position }}">
           </li>
           {%- assign position = position | plus: 1 -%}
-          <li class="henk-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+          <li
+            class="henk-breadcrumbs__item"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+            aria-current="page"
+          >
             <span class="henk-breadcrumbs__name" itemprop="name">{{- finish.name.value -}}</span>
             <meta itemprop="position" content="{{ position }}">
           </li>
@@ -198,3 +246,51 @@
     </ol>
   </nav>
 {%- endunless -%}
+
+{% stylesheet %}
+  .henk-breadcrumbs {
+    font-size: var(--size-font-small);
+    line-height: 24px;
+    width: min(var(--size-width-content), 100% - 3rem);
+    margin-inline: auto;
+    text-box: trim-end ex alphabetic;
+    padding-block-start: 7px;
+    margin-block-end: 24px;
+  }
+
+  .henk-breadcrumbs__list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .henk-breadcrumbs__item {
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .henk-breadcrumbs__name {
+    text-transform: capitalize;
+  }
+
+  /* Add the ">" separator between breadcrumb items */
+  .henk-breadcrumbs__item:not(:last-child)::after {
+    content: '\003E'; /* Unicode for the > symbol */
+    margin-left: 8px;
+    color: var(--color-text-muted);
+  }
+
+  .henk-breadcrumbs__item:last-child .henk-breadcrumbs__name {
+    font-weight: 500;
+  }
+
+  @media (max-width: 767px) {
+    .henk-breadcrumbs__item:nth-child(2) {
+      display: block; /* Ensure it's still present in the DOM */
+      visibility: hidden; /* Hides the content visually */
+      position: absolute; /* Removes it from the layout flow */
+      width: 0; /* Optional: remove any space it might take */
+      height: 0;
+    }
+  }
+{% endstylesheet %}

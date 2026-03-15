@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from "@storybook/html-vite";
 import { createStoreCard, type StoreCardProps } from "@components/StoreCard";
 
 const meta: Meta<StoreCardProps> = {
-  title: "Components/Cards/StoreCard",
-  tags: ["autodocs"],
+  title: "Components/StoreCard",
+  tags: ["autodocs", "todo"],
   render: (args: StoreCardProps) => createStoreCard(args),
   args: {
     name: "Amsterdam",

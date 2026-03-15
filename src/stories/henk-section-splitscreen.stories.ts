@@ -311,7 +311,7 @@ const baseArgs = {
 const meta: Meta = {
   title: "Sections/Split Screen",
   render: (args) => render(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   argTypes: { ...baseArgTypes, ...schemaArgTypes },
   args: { ...baseArgs, ...schemaDefaults },
 };

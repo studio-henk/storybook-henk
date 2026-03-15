@@ -6,6 +6,7 @@ import {
   useStorybookState,
   useParameter,
 } from "storybook/manager-api";
+import { defaultConfig } from "storybook-addon-tag-badges/manager-helpers";
 
 const ADDON_ID = "custom/code-panel";
 const PANEL_ID = `${ADDON_ID}/panel`;
@@ -30,4 +31,22 @@ addons.register(ADDON_ID, () => {
     title: "Custom Code",
     render: CodePanel,
   });
+});
+
+addons.setConfig({
+  tagBadges: [
+    {
+      tags: "todo",
+      badge: {
+        text: "TODO",
+        style: { backgroundColor: "#7f1d1d", color: "#fff" },
+        tooltip: "Needs work",
+      },
+      display: {
+        sidebar: [{ type: "component", skipInherited: true }],
+        mdx: true,
+      },
+    },
+    ...defaultConfig,
+  ],
 });

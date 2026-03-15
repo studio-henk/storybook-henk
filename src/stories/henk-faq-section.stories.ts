@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
-import snippet from "./henk-detailscomponent.liquid?raw";
+import snippet from "@src/snippets/henk-detailscomponent.liquid?raw";
 
 const DEFAULT_ITEMS = [
   {
@@ -77,9 +77,9 @@ const renderFAQ = (args: any) => {
 };
 
 const meta: Meta = {
-  title: "Sections/HenkFAQSection",
+  title: "Sections/FAQ-Section",
   render: (args) => renderFAQ(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     docs: {
       description: {

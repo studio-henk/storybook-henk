@@ -4,7 +4,7 @@ import { createList, type CreateListOptions } from "@stories/base/List";
 
 const meta: Meta<CreateListOptions> = {
   title: "Base/List",
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   decorators: [],
   render: (args) => createList(args),
   parameters: {

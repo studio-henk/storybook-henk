@@ -22,7 +22,7 @@ const withSectionWrapper: Decorator = (Story) => {
 const meta = {
   title: "Sections/ThreeColumnBlock",
   decorators: [withSectionWrapper],
-  tags: ["autodocs"],
+  tags: ["autodocs", "todo"],
   render: (args: ThreeColumnBlockProps) => createThreeColumnBlock(args),
   parameters: {
     docs: {

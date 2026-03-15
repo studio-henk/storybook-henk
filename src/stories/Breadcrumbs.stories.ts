@@ -18,7 +18,7 @@ if ((engine as any).__partials) {
 
 const meta = {
   title: "Sections/Breadcrumbs",
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     layout: "fullscreen",
   },

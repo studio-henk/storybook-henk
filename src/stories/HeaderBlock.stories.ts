@@ -7,7 +7,7 @@ import { withSectionWrapper } from "@decorators/withSectionWrapper";
 const meta: Meta = {
   title: "Components/HeaderBlock",
   decorators: [withSectionWrapper],
-  tags: ["autodocs"],
+  tags: ["autodocs", "todo"],
   render: (args) => HeaderBlock(args as HeaderBlockProps),
   parameters: {
     docs: {

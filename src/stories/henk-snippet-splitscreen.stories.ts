@@ -12,7 +12,7 @@ const renderRawLiquid = (args: any) => {
 const meta: Meta = {
   title: "Snippets/Components/SplitScreen",
   render: (args) => renderRawLiquid(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     customCode: RawLiquid,
     docs: {

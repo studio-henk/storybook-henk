@@ -3,7 +3,7 @@ import { createDescriptionList, DLItem } from "./DescriptionList";
 
 const meta: Meta = {
   title: "Base/DescriptionList",
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     docs: {
       description: {
@@ -35,4 +35,3 @@ export const Small: Story = {
       className: "henk-dl fs-small",
     }),
 };
-

@@ -13,7 +13,7 @@ const render = (args: any) => {
 const meta: Meta = {
   title: "Snippets/Assets/Logos",
   render: (args) => render(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   argTypes: {
     href: { control: "text" },
     title: { control: "text" },

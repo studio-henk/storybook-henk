@@ -20,9 +20,9 @@ const renderTag = (args: any) => {
 };
 
 const meta: Meta = {
-  title: "Components/HenkTagLiquid",
+  title: "Snippets/Components/Tag",
   render: (args) => renderTag(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "todo"],
   parameters: {
     customCode: snippet,
     docs: {

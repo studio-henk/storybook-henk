@@ -5,7 +5,7 @@ import IconChevronLeft from "@assets/feather-chevron-left.svg?raw";
 
 const meta: Meta<TextLinkProps> = {
   title: "Base/TextLink",
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   render: (args) => TextLink(args),
   argTypes: {
     label: { control: "text" },

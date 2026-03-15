@@ -13,7 +13,7 @@ const iconNames = Object.keys(icons).map(
 export default {
   title: "Components/InfoBox",
   component: createInfoBox,
-  tags: ["autodocs"],
+  tags: ["autodocs", "todo"],
   argTypes: {
     title: { control: "text" },
     content: { control: "text" },

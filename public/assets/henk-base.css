@@ -312,3 +312,24 @@ table {
   padding-left: 1rem;
   visibility: hidden;
 }
+
+.henk-section {
+  /* padding-block: var(--space-13, 96px); */
+  padding-block: var(--space-7, 96px);
+}
+
+.henk-section__inner {
+  width: min(var(--size-width-content), 100% - 3rem);
+  margin-inline: auto;
+}
+
+.henk-wrapper {
+  padding-top: var(--size-height-header, 72px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .henk-main {
+    flex: 1;
+  }
+}

@@ -4,6 +4,7 @@ import { VideoSection } from "../components/VideoSection";
 
 const meta: Meta = {
   title: "Sections/VideoSection",
+  tags: ["autodocs", "todo"],
   render: (args) => VideoSection(args),
   argTypes: {
     src: { control: "text", description: "Video source URL (.mp4 or .webm)" },
@@ -29,7 +30,8 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     src: "https://www.w3schools.com/html/mov_bbb.mp4",
-    poster: "https://via.placeholder.com/1280x720",
+    poster:
+      "https://placehold.co/1152x1728?text=1152x1728\nno%20media%20assigned",
     autoplay: true,
     loop: true,
     width: 1080,
@@ -39,7 +41,8 @@ export const Default: Story = {
 export const Cover: Story = {
   args: {
     src: "assets/video/sh-rdam.mp4",
-    poster: "https://via.placeholder.com/1280x720",
+    poster:
+      "https://placehold.co/1152x1728?text=1152x1728\nno%20media%20assigned",
     autoplay: true,
     loop: true,
     width: 1080,
@@ -50,7 +53,8 @@ export const Cover: Story = {
 export const Description: Story = {
   args: {
     src: "assets/video/sh-rdam.mp4",
-    poster: "https://via.placeholder.com/1280x720",
+    poster:
+      "https://placehold.co/1152x1728?text=1152x1728\nno%20media%20assigned",
     autoplay: true,
     loop: true,
     width: 1080,

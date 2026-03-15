@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
-import snippet from "./henk-detailscomponent.liquid?raw";
+import snippet from "@src/snippets/henk-detailscomponent.liquid?raw";
 import iconSnippet from "@src/snippets/henk-icon.liquid?raw";
 import { getIconNames } from "@stories/utils/liquid-icons";
 // Register the henk-icon partial so `{% render 'henk-icon' %}` works
@@ -46,7 +46,7 @@ const renderDetails = (args: any) => {
 const meta: Meta = {
   title: "Snippets/Components/DetailsComponent",
   render: (args) => renderDetails(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     customCode: snippet,
     docs: {

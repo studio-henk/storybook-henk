@@ -4,6 +4,7 @@ import type { StoryObj } from "@storybook/html-vite";
 
 export default {
   title: "Components/Forms/SimpleForm",
+  tags: ["autodocs", "todo"],
 } as const;
 
 // Story 1: Standard Two-Column Form

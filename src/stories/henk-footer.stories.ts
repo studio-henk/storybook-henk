@@ -28,7 +28,7 @@ const renderFooter = (args: any) => {
 const meta: Meta = {
   title: "Global/Footer",
   render: (args) => renderFooter(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     customCode: footerSection,
     docs: {

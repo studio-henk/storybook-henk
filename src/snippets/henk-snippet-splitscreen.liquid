@@ -67,6 +67,8 @@
   {% comment %} Image from section or metaobject {% endcomment %}
   {% if section_media.src %}
     {% assign media_obj = section_media.src %}
+  {% elsif section_media != blank %}
+    {% assign media_obj = section_media %}
   {% endif %}
 {% endif %}
 

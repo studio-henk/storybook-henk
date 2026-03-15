@@ -4,7 +4,7 @@ import { createButtonGroup } from "@components/ButtonGroup";
 
 const meta: Meta = {
   title: "Sections/NewsletterBlock",
-  tags: ["autodocs"],
+  tags: ["autodocs", "todo"],
 };
 export default meta;
 

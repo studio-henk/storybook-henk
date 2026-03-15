@@ -19,7 +19,7 @@ const renderIcon = (args: any) => {
 const meta: Meta = {
   title: "Snippets/Components/Icon",
   render: (args) => renderIcon(args),
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     customCode: snippet,
     docs: {

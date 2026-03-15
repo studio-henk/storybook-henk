@@ -3,7 +3,7 @@ import { createBaseParagraph, BaseParagraphOptions } from "./Paragraph";
 
 const meta: Meta<BaseParagraphOptions> = {
   title: "Base/Paragraph",
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     docs: {
       description: {

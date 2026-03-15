@@ -1,0 +1,184 @@
+<div
+    class="henk-three-column-block{% if section.settings.bg_color != 'default' %} henk-three-column-block--bg-{{ section.settings.bg_color }}{% endif %}{% if section.settings.align_center %} henk-three-column-block--align-center{% endif %}"
+    id="{{ section.settings.anchor_id | default: section.id }}"
+>
+    <div class="henk-three-column-block__inner">
+        {% if section.settings.title != blank %}
+            <h2 class="henk-three-column-block__title">
+                {{ section.settings.title }}
+            </h2>
+        {% endif %}
+
+        <div class="henk-three-column-block__columns">
+            {% for block in section.blocks %}
+                <div class="henk-three-column-block__column">
+                    {% if block.settings.image != blank
+                        and block.settings.hide_image != true
+                    %}
+                        {% if block.settings.image_link != blank %}
+                            <a
+                                href="{{ block.settings.image_link }}"
+                                class="henk-three-column-block__image-link"
+                            >
+                                <img
+                                    src="{{ block.settings.image | image_url }}"
+                                    alt="{{ block.settings.image_alt | escape }}"
+                                    class="henk-three-column-block__image"
+                                >
+                            </a>
+                        {% else %}
+                            <div>
+                                <img
+                                    src="{{ block.settings.image | image_url }}"
+                                    alt="{{ block.settings.image_alt | escape }}"
+                                    class="henk-three-column-block__image"
+                                >
+                            </div>
+                        {% endif %}
+                    {% endif %}
+
+                    <h3 class="henk-three-column-block__heading">
+                        {{ block.settings.heading }}
+                    </h3>
+
+                    <p class="henk-three-column-block__text">
+                        {{ block.settings.text }}
+                    </p>
+
+                    {% if block.settings.button_label != blank
+                        and block.settings.button_url != blank
+                    %}
+                        <a
+                            href="{{ block.settings.button_url }}"
+                            class="henk-button henk-three-column-block__button{% if block.settings.button_variant and block.settings.button_variant != '' %} henk-button--{{ block.settings.button_variant }}{% endif %}"
+                            {% if block.settings.button_target_blank %}
+                                target="_blank" rel="noopener"
+                            {% endif %}
+                        >
+                            {{ block.settings.button_label }}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Three Column Block",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Wij helpen je met kiezen"
+    },
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "default",
+      "options": [
+        { "value": "default", "label": "Default" },
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "tertiary", "label": "Tertiary" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "align_center",
+      "label": "Center column content",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_image",
+          "label": "Hide image",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image link"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Column Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Column description"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_target_blank",
+          "label": "Open button in new tab"
+        },
+        {
+          "type": "select",
+          "id": "button_variant",
+          "label": "Button variant",
+          "default": "primary",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" },
+            { "value": "tertiary", "label": "Tertiary" }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Henk Three Column Block",
+      "blocks": [
+        { "type": "column" },
+        { "type": "column" },
+        { "type": "column" }
+      ]
+    }
+  ]
+}
+{% endschema %}

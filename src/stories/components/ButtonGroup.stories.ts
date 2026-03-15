@@ -6,7 +6,7 @@ import { INITIAL_VIEWPORTS } from "storybook/viewport";
 
 const meta: Meta<ButtonGroupProps> = {
   title: "Components/ButtonGroup",
-  tags: ["autodocs", "deprecated"],
+  tags: ["autodocs", "todo"],
   render: (args: ButtonGroupProps) => createButtonGroup(args),
   argTypes: {
     buttons: { control: "object" },

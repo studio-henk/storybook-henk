@@ -5,6 +5,7 @@ import type { VideoBlockProps } from "@components/VideoBlock";
 
 const meta: Meta = {
   title: "Sections/DoubleMediaBlock",
+  tags: ["autodocs", "todo"],
 };
 export default meta;
 

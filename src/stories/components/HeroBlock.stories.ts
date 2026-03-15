@@ -3,7 +3,7 @@ import { HeroBlock, HeroBlockProps } from "@components/HeroBlock";
 
 const meta: Meta<HeroBlockProps> = {
   title: "Sections/HeroBlock",
-  tags: ["autodocs"],
+  tags: ["autodocs", "todo"],
   render: (args) => HeroBlock(args),
   argTypes: {
     type: {

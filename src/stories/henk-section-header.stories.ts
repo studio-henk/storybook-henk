@@ -92,7 +92,7 @@ const meta: Meta = {
   title: "Sections/SectionHeader",
   render: (args) => render(args),
   decorators: [withSectionWrapper],
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   argTypes: schemaArgTypes,
   args: { ...baseArgs, ...schemaDefaults },
   parameters: {

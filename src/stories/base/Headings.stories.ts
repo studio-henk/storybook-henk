@@ -3,7 +3,7 @@ import { createHeadingElement, type HeadingProps } from "./Headings";
 
 const meta: Meta<HeadingProps> = {
   title: "Base/Headings",
-  tags: ["autodocs"],
+  tags: ["autodocs", "version:1.0.0"],
   parameters: {
     docs: {
       description: {
