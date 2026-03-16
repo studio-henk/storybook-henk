@@ -17,7 +17,7 @@
 
 {% assign section_title = p.title | default: title | default: 'Splitscreen Title' %}
 {% assign section_caption = p.caption | default: caption %}
-{% assign section_heading_level = p.level | default: 2 %}
+{% assign section_heading_level = p.heading_level | default: 2 %}
 {% assign section_content = p.content | default: content %}
 {% assign section_media_type = p.media_type | default: media_type | default: 'image' %}
 {% assign section_media = p.media | default: media %}
@@ -158,10 +158,10 @@
           {% endif %}
 
           {% if section_button_url and section_button_text %}
-            {%
-              render 'henk-button',
+            {% assign section_button_href = section_button_url | prepend: routes.root %}
+            {% render 'henk-button',
               element: 'a',
-              href: section_button_url | prepend: routes.root,
+              href: section_button_href,
               label: section_button_text,
               variant: section_button_variant,
               aria_label: section_button_text

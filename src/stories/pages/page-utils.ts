@@ -8,11 +8,18 @@ import sectionHeaderSectionRaw from "../../sections/henk-section-header.liquid?r
 import gridSectionRaw from "../../sections/henk-section-grid.liquid?raw";
 import materialsListSectionRaw from "../../sections/henk-section-materials-list.liquid?raw";
 import breadcrumbsSectionRaw from "../../sections/henk-section-breadcrumbs.liquid?raw";
+import heroSectionRaw from "../../sections/henk-section-hero.liquid?raw";
+import splitscreenSectionRaw from "../../sections/henk-section-splitscreen.liquid?raw";
+import threeColumnSectionRaw from "../../sections/henk-three-column-block.liquid?raw";
 import breadcrumbsSnippetRaw from "../../snippets/henk-snippet-breadcrumbs.liquid?raw";
 import sectionHeaderSnippetRaw from "../../snippets/henk-snippet-section-header.liquid?raw";
 import gridSnippetRaw from "../../snippets/henk-snippet-grid.liquid?raw";
 import henkCardSnippetRaw from "../../snippets/henk-card.liquid?raw";
 import henkTagSnippetRaw from "../../snippets/henk-tag.liquid?raw";
+import heroSnippetRaw from "../../snippets/henk-snippet-hero.liquid?raw";
+import splitscreenSnippetRaw from "../../snippets/henk-snippet-splitscreen.liquid?raw";
+import videoSnippetRaw from "../../snippets/henk-video.liquid?raw";
+import buttonSnippetRaw from "../../snippets/henk-button.liquid?raw";
 import headerMeta from "../henk-header.stories";
 import footerMeta from "../henk-footer.stories";
 
@@ -24,6 +31,9 @@ const sectionHeaderSection = sectionHeaderSectionRaw.replace(SCHEMA_RE, "");
 const gridSection = gridSectionRaw.replace(SCHEMA_RE, "");
 const materialsListSection = materialsListSectionRaw.replace(SCHEMA_RE, "");
 const breadcrumbsSection = breadcrumbsSectionRaw.replace(SCHEMA_RE, "");
+const heroSection = heroSectionRaw.replace(SCHEMA_RE, "");
+const splitscreenSection = splitscreenSectionRaw.replace(SCHEMA_RE, "");
+const threeColumnSection = threeColumnSectionRaw.replace(SCHEMA_RE, "");
 
 if (typeof (engine as any).registerPartial === "function") {
   (engine as any).registerPartial("henk-snippet-breadcrumbs", breadcrumbsSnippetRaw);
@@ -32,6 +42,10 @@ if (typeof (engine as any).registerPartial === "function") {
   (engine as any).registerPartial("henk-snippet-grid", gridSnippetRaw);
   (engine as any).registerPartial("henk-card", henkCardSnippetRaw);
   (engine as any).registerPartial("henk-tag", henkTagSnippetRaw);
+  (engine as any).registerPartial("henk-snippet-hero", heroSnippetRaw);
+  (engine as any).registerPartial("henk-snippet-splitscreen", splitscreenSnippetRaw);
+  (engine as any).registerPartial("henk-video", videoSnippetRaw);
+  (engine as any).registerPartial("henk-button", buttonSnippetRaw);
 }
 if ((engine as any).__partials) {
   (engine as any).__partials["henk-snippet-breadcrumbs"] = breadcrumbsSnippetRaw;
@@ -40,6 +54,10 @@ if ((engine as any).__partials) {
   (engine as any).__partials["henk-snippet-grid"] = gridSnippetRaw;
   (engine as any).__partials["henk-card"] = henkCardSnippetRaw;
   (engine as any).__partials["henk-tag"] = henkTagSnippetRaw;
+  (engine as any).__partials["henk-snippet-hero"] = heroSnippetRaw;
+  (engine as any).__partials["henk-snippet-splitscreen"] = splitscreenSnippetRaw;
+  (engine as any).__partials["henk-video"] = videoSnippetRaw;
+  (engine as any).__partials["henk-button"] = buttonSnippetRaw;
 }
 
 export type PageData = {
@@ -54,6 +72,9 @@ export function renderPageContent(template: any, page: PageData, extraContext: R
     "henk-section-grid": gridSection,
     "henk-section-materials-list": materialsListSection,
     "henk-section-breadcrumbs": breadcrumbsSection,
+    "henk-section-hero": heroSection,
+    "henk-section-splitscreen": splitscreenSection,
+    "henk-three-column-block": threeColumnSection,
   };
 
   if (!template || !Array.isArray(template.order)) return "";
