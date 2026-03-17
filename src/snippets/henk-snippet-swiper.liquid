@@ -58,44 +58,52 @@
   </swiper-container>
 </div>
 <script>
-  // swiper element
-  const swiperEl = document.querySelector('swiper-container');
+  const initSwiper = (swiperEl) => {
+    const swiperParams = {
+      slidesPerView: 1.25,
+      initialSlide: 0,
+      spaceBetween: 16,
+      centeredSlides: false,
+      // centeredSlides: true,
+      loop: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 2.25,
+        },
+        1024: {
+          slidesPerView: 3.25,
+        },
+        1440: {
+          slidesPerView: 4,
+        },
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false,
+      },
+      on: {
+        init() {
+          // ...
+        },
+      },
+    };
 
-  // swiper parameters
-  const swiperParams = {
-    slidesPerView: 1.25,
-    initialSlide: 0,
-    spaceBetween: 16,
-    centeredSlides: false,
-    // centeredSlides: true,
-    loop: true,
-    breakpoints: {
-      768: {
-        slidesPerView: 2.25,
-      },
-      1024: {
-        slidesPerView: 3.25,
-      },
-      1440: {
-        slidesPerView: 4,
-      },
-    },
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false,
-    },
-    on: {
-      init() {
-        // ...
-      },
-    },
+    Object.assign(swiperEl, swiperParams);
+
+    if (typeof swiperEl.initialize === 'function') {
+      swiperEl.initialize();
+    }
   };
 
-  // now we need to assign all parameters to Swiper element
-  Object.assign(swiperEl, swiperParams);
+  const initAllSwipers = () => {
+    document.querySelectorAll('swiper-container').forEach(initSwiper);
+  };
 
-  // and now initialize it
-  swiperEl.initialize();
+  if (window.customElements?.whenDefined) {
+    window.customElements.whenDefined('swiper-container').then(initAllSwipers);
+  } else {
+    initAllSwipers();
+  }
 </script>
 {% stylesheet %}
   .henk-snippet-swiper {

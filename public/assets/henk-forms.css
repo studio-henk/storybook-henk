@@ -1,0 +1,408 @@
+.henk-form {
+  .henk-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: var(--space-2, 8px);
+  }
+
+  .henk-form-grid__item {
+    .henk-button-group {
+      margin: 0;
+    }
+  }
+}
+.henk-label {
+  font-weight: 500;
+}
+
+.henk-select {
+  width: 100%;
+  padding: 9px 1rem;
+  background-color: var(--color-background-base);
+  border: 1px solid var(--color-border-base);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.3s;
+}
+
+.henk-select:focus {
+  border-color: var(--color-border-primary);
+  outline: none;
+}
+
+.henk-select[required] {
+  border-left: 3px solid #dc3545;
+}
+
+/* arrow */
+.select-wrapper {
+  position: relative;
+  display: block;
+}
+
+.select-wrapper select.henk-select {
+  appearance: none;
+}
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px; /* Adjust the position of the arrow */
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #555;
+  border-bottom: 2px solid #555;
+}
+
+.henk-labeled-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.henk-labeled-input--dir-horizontal {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.henk-labeled-input--dir-horizontal .henk-label {
+  margin-bottom: 0;
+}
+
+.henk-labeled-input--dir-horizontal .henk-input {
+  flex: 1;
+}
+
+.henk-labeled-input--floating {
+  position: relative;
+}
+
+.henk-labeled-input--floating .henk-label {
+  position: absolute;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  top: 10px;
+  left: 14px;
+  transition: top 0.3s ease;
+}
+
+.henk-labeled-input--floating .henk-input:focus + .henk-label,
+.henk-labeled-input--floating
+  .henk-input:not(:placeholder-shown)
+  + .henk-label {
+  top: -14px;
+  font-size: 12px;
+  background-color: #fff;
+  color: #000;
+  padding: 0 0.5rem;
+}
+
+.henk-labeled-input--required {
+  margin-bottom: 8px;
+}
+
+.henk-labeled-input .henk-input:invalid {
+  border-color: red;
+}
+
+/* empty required fields on start, showing placeholder / label ! */
+.henk-labeled-input .henk-input:placeholder-shown:invalid {
+  border-color: black;
+}
+
+/* empty required fields ! */
+.henk-labeled-input .henk-input.henk-input:not(:placeholder-shown):invalid {
+  border-color: var(--color-danger);
+}
+
+.henk-labeled-input
+  .henk-input.henk-input:not(:placeholder-shown):invalid
+  ~ .error-message {
+  visibility: visible;
+}
+
+.henk-labeled-select {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.henk-labeled-select--dir-horizontal {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+
+  .select-wrapper {
+    flex: 1;
+  }
+}
+
+.henk-labeled-select .henk-label {
+  margin-bottom: 0.25rem;
+}
+
+.henk-labeled-select--dir-horizontal .henk-label {
+  margin-bottom: 0;
+}
+
+.henk-labeled-select--dir-horizontal .henk-select {
+  flex: 1;
+}
+
+.henk-labeled-select.henk-labeled-select--floating {
+  position: relative;
+}
+
+.henk-labeled-select--floating .henk-label {
+  position: absolute;
+  font-weight: 400;
+  background-color: #fff;
+  color: var(--color-ui-text-neutral);
+  top: 10px;
+  left: 10px;
+  right: 32px;
+  transition: top 0.3s ease;
+}
+
+.henk-labeled-select--floating .henk-select:not([value=""]) + .henk-label,
+.henk-labeled-select--floating .henk-select:focus + .henk-label {
+  top: -10px;
+  font-size: 12px;
+  background-color: #fff;
+  color: #000;
+  padding: 0 0.5rem;
+  right: unset;
+}
+
+.henk-labeled-checkbox {
+  display: flex;
+  align-items: flex-start;
+
+  /* Visually hide the real checkbox but keep it accessible */
+  .henk-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .henk-label {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative;
+  }
+}
+
+.henk-labeled-checkbox .henk-label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #666;
+  border-radius: 4px;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Focus styles for keyboard navigation */
+.henk-checkbox:focus-visible + .henk-label::before {
+  outline: 2px solid #0078d4;
+  outline-offset: 2px;
+}
+
+.henk-labeled-checkbox .henk-label .henk-icon {
+  visibility: hidden;
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  color: white;
+  width: 14px;
+  height: 14px;
+}
+
+.henk-labeled-checkbox .henk-checkbox:checked + .henk-label .henk-icon {
+  visibility: visible;
+}
+
+.henk-labeled-checkbox .henk-checkbox:checked + .henk-label::before {
+  background-color: #000;
+  border-color: #000;
+}
+
+.henk-labeled-checkbox input {
+  outline: none;
+}
+
+/* Apply a focus style when focused via keyboard (tab) */
+.henk-labeled-checkbox input:focus-visible {
+  outline: none;
+}
+
+/* Optional: To ensure there's no outline when focused by mouse click */
+.henk-labeled-checkbox input:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.henk-radio[type="radio"] {
+  display: inline-flex;
+  height: 1.75rem;
+}
+
+/* state: disabled */
+.henk-radio[type="radio"][disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.henk-radio {
+  &.henk-radio--custom {
+    width: 24px;
+    height: 24px;
+    accent-color: currentcolor;
+  }
+}
+
+.henk-input {
+  background-color: var(--color-background-base, #fff);
+  border: 1px solid var(--color-border-base, #000);
+  color: var(--color-text-base);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 9px 1rem;
+}
+
+.henk-input[type="text"],
+.henk-input[type="email"],
+.henk-input[type="password"],
+.henk-input[type="search"],
+.henk-input[type="tel"] {
+  border-radius: var(--radius-1, 4px);
+}
+
+.henk-input:focus-visible {
+  outline-offset: 0;
+}
+
+.henk-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.required-indicator {
+  color: var(--color-danger);
+}
+
+.error-message {
+  color: var(--color-danger);
+  font-size: 13px;
+  line-height: 24px;
+  padding-left: 1rem;
+  visibility: hidden;
+}
+
+.labeled-custom-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-select-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px; /* Adjust the position of the arrow */
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--color-border-base, pink);
+  border-bottom: 2px solid var(--color-border-base);
+}
+
+.custom-select-wrapper .henk-input {
+  width: 100%;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid var(--color-ui-border-default);
+  border-top: none;
+  background-color: var(--color-ui-surface-default);
+  z-index: 1;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover,
+.dropdown-item.selected {
+  /* background-color: #f1f1f1; */
+  background-color: var(--color-ui-surface-neutral);
+}
+
+.show {
+  display: block;
+}
+
+.henk-textarea {
+  width: 100%;
+  display: inline-flex;
+  color: #000;
+  font-family: inherit;
+  line-height: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-base, #000);
+  padding: 0.5em 1em;
+  min-height: calc(140px + 2rem);
+}
+
+.henk-fieldset {
+  border: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.henk-fieldset legend.henk-legend {
+  font-size: var(--size-font-medium, 13px);
+  font-weight: var(--font-weight-semibold, 500);
+}
+
+.henk-fieldset + .henk-fieldset {
+  margin-top: 48px;
+}
+
+.henk-fieldset .form-group {
+  display: flex;
+  column-gap: 16px;
+  flex-wrap: wrap;
+}
+
+.henk-fieldset .form-group > * {
+  flex: 1;
+  min-width: 288px;
+}

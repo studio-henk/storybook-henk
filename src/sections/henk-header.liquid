@@ -13,7 +13,10 @@
             {% assign main_level_sub_links = main_level_link.links %}
             <li class="henk-header__menu-item henk-header__dropdown main-level">
               <details name="main-nav">
-                <summary>{{- main_level_link.title }}</summary>
+                <summary>
+                  {{- main_level_link.title }}
+                  <sup class="highlight fw-700 fs-small">Nieuw!</sup>
+                </summary>
                 <div class="dropdown-container">
                   <div class="dropdown-container__inner">
                     <ul class="dropdown">
@@ -217,7 +220,20 @@
     </div>
   </header>
 </section>
-
+{% stylesheet %}
+  .henk-header {
+    summary {
+      position: relative;
+    }
+  }
+  .highlight {
+    color: var(--color-danger);
+    position: absolute;
+    left: 100%;
+    color: red;
+    top: -16px;
+  }
+{% endstylesheet %}
 {% schema %}
 {
   "name": "t:general.header",
