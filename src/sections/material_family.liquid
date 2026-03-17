@@ -1,22 +1,23 @@
 {% assign finishes = shop.metaobjects.material_finish.values %}
 {% assign current_family_name = metaobject.name.value %}
 
-<div class="material-page">
-  <!-- <h1>{{ current_family_name }}</h1> -->
-  <div class="henk-grid">
-    {% for finish in finishes %}
-      {% assign finish_family_name = finish.material_family.value.name.value %}
-      {% if finish_family_name == current_family_name %}
-        {% render 'henk-card',
-          href: finish.system.url,
-          image: finish.image,
-          image_alt: finish.name.value,
-          title: finish.name.value,
-          subtitle: 'Bekijk materiaal',
-          rounded: false,
-          shadow: false
-        %}
-      {% endif %}
-    {% endfor %}
+{% paginate finishes by 250 %}
+  <div class="material-page">
+    <div class="henk-grid">
+      {% for finish in finishes %}
+        {% assign finish_family_name = finish.material_family.value.name.value %}
+        {% if finish_family_name == current_family_name %}
+          {% render 'henk-card',
+            href: finish.system.url,
+            image: finish.image,
+            image_alt: finish.name.value,
+            title: finish.name.value,
+            subtitle: '',
+            rounded: false,
+            shadow: false
+          %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
-</div>
+{% endpaginate %}
