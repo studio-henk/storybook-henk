@@ -1,0 +1,52 @@
+{% render 'henk-snippet-swiper', blocks: section.blocks %}
+
+{% schema %}
+{
+  "name": "Swiper",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Swiper",
+      "category": "HENK Blocks"
+    }
+  ]
+}
+{% endschema %}

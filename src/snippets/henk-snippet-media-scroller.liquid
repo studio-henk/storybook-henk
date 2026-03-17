@@ -1,0 +1,122 @@
+<div class="media-scroller-container">
+  <div class="media-scroller snaps-inline">
+    {% if blocks.size > 0 %}
+      {% for block in blocks %}
+        <div class="media-element" {{ block.shopify_attributes }}>
+          {% render 'henk-card',
+            href: block.settings.button_url,
+            image: block.settings.image,
+            image_alt: block.settings.image_alt,
+            title: block.settings.title,
+            subtitle: block.settings.text
+          %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="media-element">
+        <img
+          src="https://placehold.co/800x1200?text=media"
+          alt=""
+          loading="lazy"
+          width="800"
+          height="1200"
+        >
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .snaps-inline {
+    scroll-padding-inline: 0;
+    scroll-snap-type: inline mandatory;
+  }
+
+  .media-scroller-container {
+    padding: 1rem 0 1rem 1rem;
+  }
+
+  .media-scroller {
+    display: grid;
+    gap: 1rem;
+    grid-auto-columns: 84%;
+    /* grid-auto-columns: 23%; */
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0 0 1rem 0;
+  }
+
+  .snaps-inline > * {
+    scroll-snap-align: start;
+  }
+
+  .media-element {
+    background-color: var(--color-background-muted, grey);
+    border-radius: 8px;
+    /* grid-template-rows: auto; */
+    aspect-ratio: 2 / 3;
+    /* display: grid; */
+    gap: 1rem;
+  }
+
+  .media-element .henk-card {
+    width: 100%;
+    max-width: none;
+  }
+
+  .media-scroller::-webkit-scrollbar {
+    height: 24px;
+  }
+
+  .media-scroller::-webkit-scrollbar-track {
+    background-color: var(--color-background-secondary, lightgrey);
+    border-radius: 100vw;
+  }
+
+  .media-scroller::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary, blue);
+    border-radius: 100vw;
+  }
+
+  .media-scroller-container {
+    container-type: inline-size;
+  }
+
+  /* @container (min-width: 600px) { */
+  /*   .media-scroller { */
+  /*     grid-auto-columns: 60%; */
+  /*   } */
+  /* } */
+
+  @container (min-width: 752px) {
+    .media-scroller {
+      grid-auto-columns: 44%;
+    }
+  }
+
+  @container (min-width: 900px) {
+    .media-scroller {
+      grid-auto-columns: 29%;
+    }
+  }
+
+  @container (min-width: 1200px) {
+    .media-scroller {
+      grid-auto-columns: 23%;
+    }
+  }
+
+  /* @container (min-width: 718px) { */
+  /*   .media-scroller { */
+  /*     grid-auto-flow: row; */
+  /*     grid-template-columns: repeat(auto-fill, minmax(327px, 1fr)); */
+  /*     overflow-x: visible; */
+  /*     scroll-snap-type: none; */
+  /*   } */
+  /**/
+  /*   .media-scroller > * { */
+  /*     scroll-snap-align: none; */
+  /*   } */
+  /* } */
+</style>

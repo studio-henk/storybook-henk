@@ -13,64 +13,29 @@
   - Otherwise, fall back to individually passed variables
 {%- endcomment -%}
 
-{% assign p = props | default: null %}
+{% comment %} {% assign p = props | default: null %} {% endcomment %}
 
-{% assign section_title = p.title | default: title | default: 'Splitscreen Title' %}
-{% assign section_caption = p.caption | default: caption %}
-{% assign section_heading_level = p.heading_level | default: 2 %}
-{% assign section_content = p.content | default: content %}
-{% assign section_media_type = p.media_type | default: media_type | default: 'image' %}
-{% assign section_media = p.media | default: media %}
-{% assign section_poster = p.poster | default: poster %}
-{% assign section_has_audio = p.video_has_audio | default: video_has_audio %}
-{% assign section_cover = p.video_cover | default: video_cover %}
-{% assign section_rounded = p.rounded_corners | default: rounded_corners %}
-{% assign section_square = p.square | default: square %}
-{% assign section_image_alt = p.image_alt | default: image_alt %}
-{% assign section_image_link = p.image_link | default: image_link %}
-{% assign section_image_link_target_blank = p.image_link_target_blank | default: image_link_target_blank %}
-{% assign section_button_url = p.button_url | default: button_url %}
-{% assign section_button_text = p.button_text | default: button_text %}
-{% assign section_button_variant = p.button_variant | default: button_variant %}
-{% assign section_reverse = p.reverse | default: reverse %}
-{% comment %} {% assign section_bg_color = p.bg_color | default: bg_color %} {% endcomment %}
-{% assign section_id = p.id | default: id %}
-
-{%- comment -%}
-  For homepage sections, map actual section settings fields to section_media
-  This ensures section_media points to the correct image/video File object
-{%- endcomment -%}
-{% if section_media_type == 'image' %}
-  {% assign section_media = p.image_src
-    | default: section_media
-    | default: 'https://placehold.co/1152x1728?text=no%20media%20assigned'
-  %}
-{% elsif section_media_type == 'video' %}
-  {% assign section_media = p.video_src | default: section_media %}
-{% endif %}
-
-{%- comment -%}
-  Normalize media object
-  - Handles section VideoDrop, metaobject VideoDrop, or image
-{%- endcomment -%}
-
-{% assign media_obj = null %}
-{% assign media_type = section_media_type %}
-
-{% if section_media_type == 'video' and section_media %}
-  {% comment %} VideoDrop from metaobject or section {% endcomment %}
-  {% assign media_obj = section_media %}
-  {% if section_media.preview_image and section_media.preview_image.src %}
-    {% assign section_poster = section_media.preview_image.src %}
-  {% endif %}
-{% elsif section_media_type == 'image' and section_media %}
-  {% comment %} Image from section or metaobject {% endcomment %}
-  {% if section_media.src %}
-    {% assign media_obj = section_media.src %}
-  {% elsif section_media != blank %}
-    {% assign media_obj = section_media %}
-  {% endif %}
-{% endif %}
+{% assign section_id = props.id | default: id %}
+{% assign section_title = props.title | default: title | default: 'Splitscreen Title' %}
+{% assign section_caption = props.caption | default: caption %}
+{% assign section_heading_level = props.heading_level | default: 2 %}
+{% assign section_content = props.content | default: content %}
+{% assign section_media_type = props.media_type | default: media_type | default: 'image' %}
+{% assign image_src = props.image_src | default: image_src %}
+{% assign video_src = props.video_src | default: video_src %}
+{% assign placeholder = 'https://placehold.co/1152x1728?text=no%20media%20assigned' %}
+{% assign section_poster = props.poster | default: poster %}
+{% assign section_has_audio = props.video_has_audio | default: video_has_audio %}
+{% assign section_cover = props.video_cover | default: video_cover %}
+{% assign section_rounded = props.rounded_corners | default: rounded_corners %}
+{% assign section_square = props.square | default: square %}
+{% assign section_image_alt = props.image_alt | default: image_alt %}
+{% assign section_image_link = props.image_link | default: image_link %}
+{% assign section_image_link_target_blank = props.image_link_target_blank | default: image_link_target_blank %}
+{% assign section_button_url = props.button_url | default: button_url %}
+{% assign section_button_text = props.button_text | default: button_text %}
+{% assign section_button_variant = props.button_variant | default: button_variant %}
+{% assign section_reverse = props.reverse | default: reverse %}
 
 <div
   class="henk-section henk-split-screen{% if section_bg_color and section_bg_color != 'default' %} henk-split-screen--bg-{{ section_bg_color }}{% endif %}"
@@ -87,54 +52,49 @@
     <div class="henk-split-screen__grid">
       <!-- MEDIA COLUMN -->
       <div class="henk-split-screen__grid-item">
-        {% if media_obj != blank %}
-          {% case section_media_type %}
-            {% when 'image' %}
-              {% if section_image_link %}
-                <a
-                  href="{{ section_image_link }}"
-                  {% if section_image_link_target_blank %}
-                    target="_blank" rel="noopener"
-                  {% endif %}
-                >
-              {% endif %}
-              <img
-                src="{{ media_obj | image_url: width: 1152, height: 1728 }}"
-                alt="{{ section_image_alt | escape }}"
-                class="henk-split-screen__img"
-                loading="lazy"
-                width="1152"
-                height="1728"
+        {% case section_media_type %}
+          {% when 'image' %}
+            {% if section_image_link %}
+              <a
+                href="{{ section_image_link }}"
+                {% if section_image_link_target_blank %}
+                  target="_blank" rel="noopener"
+                {% endif %}
               >
-              {% if section_image_link %}
-                </a>
-              {% endif %}
-            {% when 'video' %}
-              {% render 'henk-video',
-                id: section_id,
-                src: media_obj,
-                poster: section_poster,
-                autoplay: true,
-                has_audio: section_has_audio,
-                loop: true,
-                cover: section_cover,
-                rounded: section_rounded,
-                square: section_square,
-                description: section_image_alt,
-                link: section_image_link,
-                link_target_blank: section_image_link_target_blank
-              %}
-          {% endcase %}
-        {% else %}
-          <img
-            class="henk-card__img"
-            src="https://placehold.co/1152x1728?text=1152x1728\nno%20media%20assigned"
-            alt="{{ image_alt }}"
-            width="1152"
-            height="1728"
-            loading="lazy"
-          >
-        {% endif %}
+            {% endif %}
+            {%- comment -%} Resolve image_src for both string URLs and Shopify image objects {%- endcomment -%}
+            {% assign resolved_image_src = image_src %}
+            {% if image_src and image_src.src %}
+              {% assign resolved_image_src = image_src | image_url: width: 1152, height: 1728 %}
+            {% endif %}
+
+            <img
+              src="{{ resolved_image_src | default: placeholder }}"
+              alt="{{ section_image_alt | escape }}"
+              class="henk-split-screen__img"
+              loading="lazy"
+              width="1152"
+              height="1728"
+            >
+            {% if section_image_link %}
+              </a>
+            {% endif %}
+          {% when 'video' %}
+            {% render 'henk-video',
+              id: section_id,
+              src: video_src,
+              poster: section_poster,
+              autoplay: true,
+              has_audio: section_has_audio,
+              loop: true,
+              cover: section_cover,
+              rounded: section_rounded,
+              square: section_square,
+              description: section_image_alt,
+              link: section_image_link,
+              link_target_blank: section_image_link_target_blank
+            %}
+        {% endcase %}
       </div>
 
       <!-- CONTENT COLUMN -->

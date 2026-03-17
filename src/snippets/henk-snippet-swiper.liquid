@@ -1,0 +1,106 @@
+<div class="henk-snippet-swiper">
+  <swiper-container
+    init="false"
+    navigation="true"
+    pagination="false"
+    scrollbar="false"
+  >
+    {% if blocks and blocks.size > 0 %}
+      {% for block in blocks %}
+        <swiper-slide {{ block.shopify_attributes }}>
+          {% render 'henk-card',
+            href: block.settings.button_url,
+            image: block.settings.image,
+            image_alt: block.settings.image_alt,
+            title: block.settings.title,
+            subtitle: block.settings.text,
+            rounded: false,
+            shadow: false
+          %}
+        </swiper-slide>
+      {% endfor %}
+    {% else %}
+      <swiper-slide>
+        {% render 'henk-card',
+          href: '#slide-1',
+          image: 'https://placehold.co/800x1200?text=media',
+          image_alt: 'Placeholder image',
+          title: 'Slide 1',
+          subtitle: 'This is the first slide',
+          rounded: false,
+          shadow: false
+        %}
+      </swiper-slide>
+      <swiper-slide>
+        {% render 'henk-card',
+          href: '#slide-2',
+          image: 'https://placehold.co/800x1200?text=media',
+          image_alt: 'Placeholder image',
+          title: 'Slide 2',
+          subtitle: 'This is the first slide',
+          rounded: false,
+          shadow: false
+        %}
+      </swiper-slide>
+      <swiper-slide>
+        {% render 'henk-card',
+          href: '#slide-3',
+          image: 'https://placehold.co/800x1200?text=media',
+          image_alt: 'Placeholder image',
+          title: 'Slide 3',
+          subtitle: 'This is the first slide',
+          rounded: false,
+          shadow: false
+        %}
+      </swiper-slide>
+    {% endif %}
+  </swiper-container>
+</div>
+<script>
+  // swiper element
+  const swiperEl = document.querySelector('swiper-container');
+
+  // swiper parameters
+  const swiperParams = {
+    slidesPerView: 1.25,
+    initialSlide: 0,
+    spaceBetween: 16,
+    centeredSlides: false,
+    // centeredSlides: true,
+    loop: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 2.25,
+      },
+      1024: {
+        slidesPerView: 3.25,
+      },
+      1440: {
+        slidesPerView: 4,
+      },
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
+    },
+    on: {
+      init() {
+        // ...
+      },
+    },
+  };
+
+  // now we need to assign all parameters to Swiper element
+  Object.assign(swiperEl, swiperParams);
+
+  // and now initialize it
+  swiperEl.initialize();
+</script>
+{% stylesheet %}
+  .henk-snippet-swiper {
+    padding: 1rem;
+  }
+  swiper-slide {
+    min-height: 200px;
+  }
+{% endstylesheet %}
