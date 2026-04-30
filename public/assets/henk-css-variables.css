@@ -102,6 +102,8 @@
   --silver: #afaaa5;
   --columbia-blue: #c8dae8;
   --white-smoke: #f3f3f2;
+  --salt: #efece7;
+  --cola: #3d3024;
 
   /* --khaki: hsl(32, 22%, 61%); */
   --khaki-light: hsl(32 22% 80%);
@@ -183,8 +185,8 @@
   --color-yellow-80: hsl(48 100% 80%);
   --color-yellow-90: hsl(48 100% 90%);
 
-  --color-palette-1: var(--khaki);
-  --color-palette-2: var(--columbia-blue);
+  --color-palette-1: var(--salt);
+  --color-palette-2: var(--cola);
   --color-palette-3: var(--white-smoke);
   --color-palette-4: var(--dim-gray);
   --color-palette-5: var(--silver);
@@ -197,8 +199,8 @@
   --color-info: var(--color-blue-50);
 
   /* primary */
-  --color-primary: var(--color-palette-2);
-  --color-secondary: var(--color-palette-3);
+  --color-primary: var(--color-palette-1);
+  --color-secondary: var(--color-palette-2);
 
   /* foundation tints */
   --color-primary-light: hsl(from var(--color-primary) h s calc(l + 5));
@@ -209,7 +211,8 @@
   --color-secondary-dark: hsl(from var(--color-secondary) h s calc(l - 10));
 
   /* background */
-  --color-background-base: var(--color-neutral-97);
+  /*--color-background-base: var(--color-neutral-97);*/
+  --color-background-base: var(--color-primary);
   --color-background-base-invert: var(--color-neutral-0);
   --color-background-base-static: var(--color-neutral-97);
   --color-background-primary: var(--color-primary);
@@ -218,10 +221,6 @@
   --color-background-secondary-light: var(--color-secondary-light);
   --color-background-secondary-dark: var(--color-secondary-dark);
   --color-background-tertiary: var(--color-tertiary);
-
-  /* --color-background-tertiary-light: var(--color-tertiary-light); */
-
-  /* --color-background-tertiary-dark: var(--color-tertiary-dark); */
   --color-background-disabled: var(--color-neutral-80);
   --color-background-muted: var(--color-neutral-90);
   --color-background-neutral-darkest: var(--color-neutral-0);
@@ -273,7 +272,7 @@
   --color-border-static: var(--color-neutral-0);
 
   /* context */
-  --color-background-body: var(--color-background-neutral-light);
+  --color-background-body: var(--color-background-base, red);
   --color-text-body: var(--color-neutral-0, #000);
 
   color-scheme: light;

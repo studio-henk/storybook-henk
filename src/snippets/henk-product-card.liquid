@@ -1,0 +1,170 @@
+{% assign href = href | default: '#' %}
+{% assign image_alt = image_alt | default: '' %}
+{% assign title = title | default: '' %}
+{% assign subtitle = subtitle | default: '' %}
+
+{% assign classes = 'henk-card' %}
+{% if variant != blank %}{% assign classes = classes | append: ' henk-card--' | append: variant %}{% endif %}
+{% if extra_class != blank %}{% assign classes = classes | append: ' ' | append: extra_class %}{% endif %}
+{% if rounded %}{% assign classes = classes | append: ' henk-card--rounded' %}{% endif %}
+{% if shadow %}{% assign classes = classes | append: ' henk-card--shadow' %}{% endif %}
+
+<div class="{{ classes }}">
+  <a href="{{ href }}" class="henk-card__image-link">
+    <picture class="henk-card__image-container">
+      {% if image != blank %}
+        {% if image contains 'http' or image contains '://' %}
+          <img
+            class="henk-card__img"
+            src="{{ image }}"
+            alt="{{ image_alt }}"
+            width="1134"
+            height="1134"
+            loading="lazy"
+          >
+        {% else %}
+          <img
+            class="henk-card__img"
+            src="{{ image | image_url: width: 1260 }}"
+            alt="{{ image_alt }}"
+            width="1134"
+            height="1134"
+            loading="lazy"
+          >
+        {% endif %}
+      {% else %}
+        <img
+          class="henk-card__img"
+          src="https://placehold.co/1260x1260?text=1260x1260\nno%20image%20assigned"
+          alt="{{ image_alt }}"
+          width="1260"
+          height="1260"
+          loading="lazy"
+        >
+      {% endif %}
+    </picture>
+  </a>
+
+  {% if variant == blank or variant == 'default' %}
+    <div class="henk-card__content">
+      {% if title != blank %}
+        <p class="henk-card__title truncate">{{ title }}</p>
+      {% endif %}
+
+      {% if discounted_price != blank %}
+        <p class="henk-card__price">
+          <del class="henk-card__price-original">{{ price }}</del> -
+          <span class="henk-card__price-number henk-card__price--discounted">{{ discounted_price }}</span>
+        </p>
+      {% elsif from_price != blank %}
+        <p class="henk-card__price">
+          Vanaf <span class="henk-card__price-number">{{ from_price }}</span>
+        </p>
+      {% elsif price != blank %}
+        <p class="henk-card__price">
+          <span class="henk-card__price-number">{{ price }}</span>
+        </p>
+      {% endif %}
+
+      {% if subtitle != blank %}
+        <p class="henk-card__subtitle truncate">{{ subtitle }}</p>
+      {% endif %}
+    </div>
+  {% else %}
+    {% assign content_classes = 'henk-card__content' %}
+    {% if content_dir != blank -%}
+      {%- assign content_classes = content_classes | append: ' henk-card__content--' | append: content_dir -%}
+    {%- endif %}
+    <div class="{{ content_classes }}">
+      {% if title != blank %}
+        <p class="henk-card__title truncate">{{ title }}</p>
+      {% endif %}
+
+      {% if discounted_price != blank %}
+        <p class="henk-card__price">
+          <del class="henk-card__price-original">{{ price }}</del> -
+          <span class="henk-card__price-number henk-card__price--discounted">{{ discounted_price }}</span>
+        </p>
+      {% elsif from_price != blank %}
+        <p class="henk-card__price">
+          Vanaf <span class="henk-card__price-number">{{ from_price }}</span>
+        </p>
+      {% elsif price != blank %}
+        <p class="henk-card__price">
+          <span class="henk-card__price-number">{{ price }}</span>
+        </p>
+      {% endif %}
+
+      {% if subtitle != blank %}
+        <p class="henk-card__subtitle truncate">{{ subtitle }}</p>
+      {% endif %}
+
+      {% if directions_label != blank %}
+        <p class="henk-card__subtitle truncate">
+          <a href="{{ directions_url }}" class="henk-card__directions">{{ directions_label }}</a>
+        </p>
+      {% endif %}
+
+      {% if button_label != blank %}
+        <a
+          href="{{ href }}"
+          class="henk-button henk-card__button{% if button_variant != blank %} henk-button--{{ button_variant }}{% endif %}{% if button_size != blank %} henk-button--{{ button_size }}{% endif %}"
+        >
+          {{- button_label -}}
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if tags != blank %}
+    <div class="henk-card__tags">
+      {% for tag in tags %}
+        {% assign tag_label = tag.label | default: tag %}
+        {% render 'henk-tag', label: tag_label, variant: tag.variant, size: tag.size, href: tag.href %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .henk-card--product {
+    /*border: 0.5px solid black;*/
+
+    .henk-card__image-link {
+      .henk-card__image-container {
+        .henk-card__img {
+          aspect-ratio: 1 / 1;
+        }
+      }
+    }
+
+    .henk-card__content {
+      padding: 0 8px 0 16px;
+    }
+
+    .henk-card__title,
+    .henk-card__price {
+      text-transform: none;
+      font-size: 12px;
+      line-height: 17px;
+      letter-spacing: 2%;
+    }
+
+    .henk-card__title {
+      font-weight: 500;
+    }
+
+    .henk-card__subtitle {
+      font-size: 12px;
+      line-height: 17px;
+    }
+
+    .henk-card__price {
+      font-weight: 400;
+    }
+
+    + .henk-card--product {
+      margin-left: -0.5px;
+    }
+  }
+{% endstylesheet %}

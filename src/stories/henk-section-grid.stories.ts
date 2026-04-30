@@ -21,7 +21,7 @@ if ((engine as any).__partials) {
 }
 
 const meta = {
-  title: "Sections/Grid",
+  title: "Sections/CardGrid",
   tags: ["autodocs", "version:1.0.0"],
   parameters: {
     layout: "fullscreen",
@@ -74,6 +74,19 @@ export const Default: Story = {
           shadow: false,
         },
       },
+      {
+        id: "card_4",
+        type: "card",
+        settings: {
+          title: "Card 2",
+          subtitle: "Short description",
+          image: "https://placehold.co/1260x1260",
+          image_alt: "Card2",
+          href: "#",
+          rounded: false,
+          shadow: false,
+        },
+      },
     ];
 
     const rendered = engine.parseAndRenderSync(sectionTemplate, {
@@ -82,6 +95,6 @@ export const Default: Story = {
 
     const container = document.createElement("div");
     container.innerHTML = rendered;
-    return container;
+    return container.firstElementChild ?? container;
   },
 };

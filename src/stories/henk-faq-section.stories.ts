@@ -1,26 +1,26 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 // @ts-ignore - liquid-engine.js has no types
 import engine from "@src/liquid-engine.js";
-import snippet from "@src/snippets/henk-detailscomponent.liquid?raw";
+import sectionRaw from "@src/sections/henk-section-faq.liquid?raw";
+
+const SCHEMA_RE = /\{%\s*schema\s*%\}[\s\S]*?\{%\s*endschema\s*%\}/i;
+const sectionTemplate = sectionRaw.replace(SCHEMA_RE, "");
 
 const DEFAULT_ITEMS = [
   {
     summary: "What is the purpose of this component?",
-    iconName: "feather-help-circle",
     content:
       "<p>This component is used to display a list of frequently asked questions.</p>",
     variant: "plusmin",
   },
   {
     summary: "How many samples can I order?",
-    iconName: "feather-help-circle",
     content:
       "<p>You are free to assemble your own samples or choose from our curated sample packs, which include six material samples each. You can help us reduce waste by ordering only the samples you need.</p>",
     variant: "plusmin",
   },
   {
     summary: "When can I expect my samples?",
-    iconName: "feather-calendar",
     content:
       "<p>You should expect your samples within 7 days. Please contact us if you have not received your samples within one week.</p>",
     variant: "plusmin",
@@ -29,51 +29,34 @@ const DEFAULT_ITEMS = [
 
 const renderFAQ = (args: any) => {
   const title = args.title || "Frequently Asked Questions";
-  const groupName = args.name || "cc"; // same name for all details so only one opens
+  const groupName = args.name || "cc";
   const items =
     args.detailsItems && Array.isArray(args.detailsItems)
       ? args.detailsItems
       : DEFAULT_ITEMS;
 
-  const section = document.createElement("section");
-  section.className = "henk-faq-section henk-section";
-
-  const sectionInner = document.createElement("div");
-  sectionInner.className = "henk-section__inner";
-  section.appendChild(sectionInner);
-
-  const h2 = document.createElement("h2");
-  h2.className = "henk-faq-section__title";
-  h2.innerText = title;
-  sectionInner.appendChild(h2);
-
-  const container = document.createElement("div");
-  container.className = "henk-details-group";
-
-  items.forEach((it: any) => {
-    const payload = { ...it, name: groupName };
-    // Pre-render icon into payload.icon_html to avoid relying on partials
-    if (payload.iconName) {
-      const filename = `${payload.iconName}.svg`;
-      const svg_content = (engine.__svg_map || {})[filename];
-      if (svg_content) {
-        const icon_class =
-          (payload.iconClassName || "") +
-          (payload.iconSize === "small" ? " icon--small" : " icon--large");
-        payload.icon_html = `<i class="henk-icon ${icon_class}">${svg_content}</i>`;
-      } else {
-        payload.icon_html = "";
-      }
-    }
-
-    const rendered = engine.parseAndRenderSync(snippet, payload);
-    const wrapper = document.createElement("div");
-    wrapper.innerHTML = rendered;
-    container.appendChild(wrapper);
+  const rendered = engine.parseAndRenderSync(sectionTemplate, {
+    section: {
+      id: "faq",
+      settings: { title, name: groupName },
+      blocks: items.map((item: any, index: number) => ({
+        id: `faq-${index + 1}`,
+        type: "item",
+        settings: {
+          summary: item.summary,
+          content: item.content,
+          icon_name: item.iconName,
+          icon_size: item.iconSize,
+          icon_class: item.iconClassName,
+          variant: item.variant,
+        },
+      })),
+    },
   });
 
-  sectionInner.appendChild(container);
-  return section;
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = rendered;
+  return wrapper.firstElementChild ?? wrapper;
 };
 
 const meta: Meta = {
@@ -84,7 +67,7 @@ const meta: Meta = {
     docs: {
       description: {
         component:
-          "FAQ section built from the Liquid details snippet. Ensure all details share the same `name` so only one widget opens at a time.",
+          "FAQ section built from the Liquid section and details snippet. Ensure all details share the same `name` so only one widget opens at a time.",
       },
     },
   },
@@ -110,8 +93,5 @@ export const CustomTitle: Story = {
 };
 
 export const HenkFAQSection: Story = {
-  render: () => {
-    const el = renderFAQ({});
-    return el.outerHTML;
-  },
+  render: () => renderFAQ({}),
 };

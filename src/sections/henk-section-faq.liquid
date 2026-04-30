@@ -1,0 +1,124 @@
+<section class="henk-faq-section henk-section">
+  <div class="henk-section__inner">
+    {% if section.settings.title != blank %}
+      <h2 class="henk-faq-section__title">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    <div class="henk-details-group">
+      {% for block in section.blocks %}
+        {% if block.type == 'item' %}
+          {% render 'henk-detailscomponent',
+            summary: block.settings.summary,
+            content: block.settings.content,
+            iconName: block.settings.icon_name,
+            iconClassName: block.settings.icon_class,
+            iconSize: block.settings.icon_size,
+            variant: block.settings.variant,
+            name: section.settings.name
+          %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .henk-faq-section {
+    background-color: #efece7;
+    padding-block: 0;
+
+    .henk-section__inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(375px, 100%), 1fr));
+      column-gap: 16px;
+      border: 1px solid #c6c6c6;
+      width: min(var(--size-width-content), 100%);
+
+      .henk-faq-section__title {
+        margin-top: 24px;
+        font-family: serif;
+        font-size: var(--size-font-xxxx-large);
+        padding: 1rem 2rem;
+      }
+      .henk-details-group {
+        font-size: var(--size-font-large);
+        border-left: 1px solid #c6c6c6;
+
+        .henk-details {
+          border-bottom: 1px solid #c6c6c6;
+          padding: 2rem;
+
+          @media (min-width: 768px) {
+            padding: 2rem 4rem;
+          }
+        }
+
+        :last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Details group name",
+      "default": "faq"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "FAQ item",
+      "settings": [
+        { "type": "text", "id": "summary", "label": "Question" },
+        { "type": "richtext", "id": "content", "label": "Answer" },
+        { "type": "text", "id": "icon_name", "label": "Icon name" },
+        {
+          "type": "select",
+          "id": "icon_size",
+          "label": "Icon size",
+          "default": "large",
+          "options": [
+            { "value": "small", "label": "Small" },
+            { "value": "large", "label": "Large" }
+          ]
+        },
+        { "type": "text", "id": "icon_class", "label": "Icon class" },
+        {
+          "type": "select",
+          "id": "variant",
+          "label": "Variant",
+          "default": "plusmin",
+          "options": [
+            { "value": "default", "label": "Default" },
+            { "value": "plusmin", "label": "Plus/Minus" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "category": "HENK Sections"
+    }
+  ]
+}
+{% endschema %}

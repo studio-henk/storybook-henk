@@ -91,11 +91,13 @@
   .henk-card {
     --_henk-card-radius: 0;
 
+    border: 0.5px solid black;
+
+    max-width: 640px;
     display: grid;
     grid-auto-rows: 1fr auto auto;
     place-items: start center;
     position: relative;
-    width: min(630px, 100%);
 
     /* fix for when in a grid */
     min-width: 0;
@@ -113,7 +115,8 @@
           height: auto;
           object-fit: cover;
           margin: 0;
-          aspect-ratio: 2/3;
+          /*aspect-ratio: 2/3;*/
+          aspect-ratio: 1/1;
           transition: transform 0.3s ease;
         }
       }
@@ -128,11 +131,12 @@
 
     .henk-card__content {
       background-color: var(--color-background-body);
+      border-top: 0.5px solid black;
       width: 100%;
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: 1lh 1lh;
-      padding: 0;
+      padding: 8px 16px;
       place-items: center start;
 
       .henk-card__link {
