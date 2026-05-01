@@ -104,6 +104,8 @@
   --white-smoke: #f3f3f2;
   --salt: #efece7;
   --cola: #3d3024;
+  --tangerine: #ff7537;
+  --queer-blue: #8aace6;
 
   /* --khaki: hsl(32, 22%, 61%); */
   --khaki-light: hsl(32 22% 80%);
@@ -187,8 +189,8 @@
 
   --color-palette-1: var(--salt);
   --color-palette-2: var(--cola);
-  --color-palette-3: var(--white-smoke);
-  --color-palette-4: var(--dim-gray);
+  --color-palette-3: var(--tangerine);
+  --color-palette-4: var(--queer-blue);
   --color-palette-5: var(--silver);
 
   /* signal */
@@ -201,6 +203,8 @@
   /* primary */
   --color-primary: var(--color-palette-1);
   --color-secondary: var(--color-palette-2);
+  --color-tertiary: var(--color-palette-3);
+  --color-quarternary: var(--color-palette-4);
 
   /* foundation tints */
   --color-primary-light: hsl(from var(--color-primary) h s calc(l + 5));
@@ -233,8 +237,8 @@
   --color-text-base: var(--color-neutral-0, #000);
   --color-text-base-invert: var(--color-neutral-100, #fff);
   --color-text-link: var(--color-blue-40, blue);
-  --color-text-link-visited: var(--color-neutral-20, blue);
-  --color-text-link-hover: var(--color-blue-30, blue);
+  --color-text-link-visited: var(--color-quarternary, blue);
+  --color-text-link-hover: var(--color-tertiary, red);
   --color-text-link-active: var(--color-danger, red);
   --color-text-muted: var(--color-neutral-50);
   --color-text-on-disabled: var(--color-neutral-50);
@@ -249,6 +253,7 @@
   --color-text-warning: var(--color-orange-50);
   --color-text-neutral-lightest: var(--color-neutral-100, #fff);
   --color-text-neutral-darkest: var(--color-neutral-0, #000);
+  --color-text-highlight: var(--color-tertiary, red);
 
   /* doesnt change in dark mode */
   --color-text-static: var(--color-neutral-0, #000);

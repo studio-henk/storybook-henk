@@ -21,7 +21,7 @@
         "text": "Sommige meubels doen meer dan er zijn. Ze brengen mensen samen en zetten iets in beweging. Een blik, een vraag, een gesprek dat vanzelf ontstaat.",
         "button_label": "Ontdek de collectie",
         "button_url": "shopify://pages/voorjaarscollectie-2026",
-        "button_variant": "primary"
+        "button_variant": "secondary"
       }
     },
     "henk_three_column_block_dGiciX": {
@@ -38,7 +38,7 @@
             "button_label": "",
             "button_url": "",
             "button_target_blank": false,
-            "button_variant": "primary"
+            "button_variant": "secondary"
           }
         },
         "column_wdNGEr": {
@@ -52,7 +52,7 @@
             "button_label": "",
             "button_url": "",
             "button_target_blank": false,
-            "button_variant": "primary"
+            "button_variant": "secondary"
           }
         },
         "column_WREHXY": {
@@ -66,15 +66,11 @@
             "button_label": "",
             "button_url": "",
             "button_target_blank": false,
-            "button_variant": "primary"
+            "button_variant": "secondary"
           }
         }
       },
-      "block_order": [
-        "column_VytLfn",
-        "column_wdNGEr",
-        "column_WREHXY"
-      ],
+      "block_order": ["column_VytLfn", "column_wdNGEr", "column_WREHXY"],
       "name": "Henk Three Column Block",
       "settings": {
         "title": "",
@@ -98,7 +94,7 @@
             "button_label": "Bekijk de samples",
             "button_url": "shopify://pages/materialen",
             "button_target_blank": false,
-            "button_variant": "primary"
+            "button_variant": "secondary"
           }
         },
         "column_CBmYFG": {
@@ -132,11 +128,7 @@
           }
         }
       },
-      "block_order": [
-        "column_PKDpq6",
-        "column_CBmYFG",
-        "column_z6PbkB"
-      ],
+      "block_order": ["column_PKDpq6", "column_CBmYFG", "column_z6PbkB"],
       "name": "Henk Three Column Block",
       "settings": {
         "title": "Wij helpen je met kiezen",
@@ -165,7 +157,7 @@
         "image_link_target_blank": false,
         "button_url": "shopify://pages/materialen",
         "button_text": "Lees meer",
-        "button_variant": "primary",
+        "button_variant": "secondary",
         "reverse": true
       }
     },

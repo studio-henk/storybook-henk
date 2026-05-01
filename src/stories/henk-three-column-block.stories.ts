@@ -84,7 +84,7 @@ const defaultBlocks = [
       button_label: "Bekijk de samples",
       button_url: "#",
       button_target_blank: false,
-      button_variant: "primary",
+      button_variant: "secondary",
     },
   },
   {
@@ -99,7 +99,7 @@ const defaultBlocks = [
       button_label: "Plan je bezoek",
       button_url: "#",
       button_target_blank: false,
-      button_variant: "primary",
+      button_variant: "secondary",
     },
   },
   {
@@ -114,7 +114,7 @@ const defaultBlocks = [
       button_label: "Ontdek onze winkels",
       button_url: "#",
       button_target_blank: false,
-      button_variant: "primary",
+      button_variant: "secondary",
     },
   },
 ];

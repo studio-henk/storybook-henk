@@ -132,7 +132,7 @@
     --btn-text-hover: var(--color-text-static);
     --btn-border: var(--color-jet-black);
     --btn-border-hover: var(--color-border-static);
-    --btn-border-radius: 9999px; /* pill by default */
+    --btn-border-radius: 0;
     --btn-outline-width: 0;
     --btn-outline-color: var(--color-border-static);
     --btn-outline-offset: 0;
@@ -193,14 +193,12 @@
 
   .henk-button--secondary,
   .henk-button--secondary:link {
-    --btn-bg: var(--color-traffic-white);
+    --btn-bg: var(--color-primary);
     --btn-text: var(--color-jet-black);
 
-    /*
     &:hover {
-      --btn-bg-hover: var(--color-background-secondary-dark);
+      --btn-bg-hover: var(--color-background-tertiary);
     }
-    */
   }
 
   .henk-button.henk-button--transparent {
@@ -258,7 +256,7 @@
   /* Size modifiers */
   .henk-button--small,
   .henk-button--small:link {
-    font-size: 0.8125em;
+    font-size: 0.8125rem;
     line-height: 1.84615385em;
     padding: 3px 16px;
   }

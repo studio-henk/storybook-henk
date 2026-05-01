@@ -30,6 +30,8 @@ html {
 }
 
 body {
+  font-size: var(--size-font-large, 20px);
+  line-height: 1.333;
   margin: 0;
   background-color: var(--color-background-body);
   color: var(--color-text-body);

@@ -42,7 +42,7 @@ const meta = {
     text: "Sommige meubels doen meer dan er zijn. Ze brengen mensen samen en zetten iets in beweging. Een blik, een vraag, een gesprek dat vanzelf ontstaat.",
     button_label: "Ontdek de collectie",
     button_url: "#",
-    button_variant: "primary",
+    button_variant: "secondary",
     split_image_src: "/assets/ss-bcorp.avif",
   },
 } satisfies Meta;
@@ -79,11 +79,16 @@ export const Home: Story = {
 
     const buildThreeColumnSection = (args: any) => {
       const { blocks = [], ...settings } = args || {};
-      const blockOrder = blocks.map((_: any, index: number) => `column_${index}`);
-      const blocksById = blocks.reduce((acc: Record<string, any>, block: any, index: number) => {
-        acc[`column_${index}`] = block;
-        return acc;
-      }, {});
+      const blockOrder = blocks.map(
+        (_: any, index: number) => `column_${index}`,
+      );
+      const blocksById = blocks.reduce(
+        (acc: Record<string, any>, block: any, index: number) => {
+          acc[`column_${index}`] = block;
+          return acc;
+        },
+        {},
+      );
       return {
         type: "henk-three-column-block",
         settings,
