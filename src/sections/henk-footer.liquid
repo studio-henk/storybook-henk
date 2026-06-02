@@ -6,7 +6,7 @@
       {% comment %} {% for link in linklists.footer.links %} {% endcomment %}
       {% for link in footer_menu.links %}
         <div class="henk-footer__grid-column">
-          <h3 class="henk-footer__heading fw-medium">
+          <h3 class="henk-footer__heading fw-mediumx">
             <a href="{{ link.url }}">{{ link.title }}</a>
           </h3>
           {% if link.links %}
@@ -90,7 +90,7 @@
         <li class="henk-footer__payment-logo-item">
           {% render 'henk-asset-logo-mastercard' %}
         </li>
-        <li class="henk-footer__payment-logo-item">
+        <li class="henk-footer__payment-logo-item" id="visa-logo">
           {% render 'henk-asset-logo-visa' %}
         </li>
       </ul>
@@ -102,7 +102,7 @@
         {%- for policy in shop.policies -%}
           {%- if policy != blank -%}
             <li class="henk-footer__small-print-item">
-              <a class="footer__link" href="{{ policy.url }}">
+              <a class="henk-footer__link" href="{{ policy.url }}">
                 <small>{{- policy.title | escape -}}</small>
               </a>
             </li>
@@ -110,20 +110,29 @@
         {%- endfor -%}
       </ul>
     </div>
+
+    {%- render 'henk-logo',
+      variant: 'secondary',
+      href: routes.root_url,
+      label: 'Studio HENK',
+      extra_classes: 'henk-footer__logo'
+    -%}
   </div>
 </div>
 <!-- </footer> -->
 
 {% stylesheet %}
   .henk-footer {
-    background-color: var(--color-background-secondary, #f00);
+    background-color: var(--color-background-secondary, #000);
     color: var(--color-text-base-invert, #fff);
     color-scheme: light;
+    border-top: 1px solid var(--color-border-base, #000);
 
     --color-text-link: var(--color-text-base-invert, #fff);
 
     a {
       text-decoration: none;
+      color: var(--color-text-base-invert, #fff);
     }
 
     a:hover {
@@ -154,13 +163,14 @@
 
     .henk-footer__grid-column .henk-footer__heading {
       margin-block: 0 24px;
-      font-size: 20px;
+      font-size: var(--size-font-x-small, 10px);
       line-height: 24px;
-      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
     }
 
     .henk-footer__grid-column .henk-footer__heading a:hover {
-      text-decoration: none;
+      /*text-decoration: none;*/
     }
 
     .henk-footer__row--social-rating {
@@ -218,9 +228,14 @@
       display: inline-flex;
     }
 
-    .henk-footer__small-print-item .footer__link {
+    .henk-footer__small-print-item .henk-footer__link {
       display: inline-flex;
       line-height: 24px;
+
+      small {
+        font-size: var(--size-font-x-small, 10px);
+        color: var(--color-text-base-invert, #fff);
+      }
     }
 
     /* b-corp and rating */
@@ -255,6 +270,18 @@
     .henk-footer__payment-logo-item svg {
       width: auto;
       height: 16px;
+    }
+
+    #visa-logo svg path {
+      fill: var(--color-text-base-invert, #fff);
+    }
+
+    .henk-logo {
+      padding: 0;
+      svg {
+        height: 14px;
+        width: auto;
+      }
     }
   }
 

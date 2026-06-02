@@ -125,7 +125,7 @@
           position: relative;
           padding: 0;
 
-          --btn-text-hover: var(--color-text-link-hover);
+          /* --btn-text-hover: var(--color-text-link-hover); */
         }
       }
     }
