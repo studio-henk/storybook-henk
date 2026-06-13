@@ -136,6 +136,14 @@ export const Ghost: Story = {
   },
 };
 
+export const GhostIcon: Story = {
+  args: {
+    variant: "ghost",
+    icon_name: "feather-chevron-right",
+    icon_position: "right",
+  },
+};
+
 export const Small: Story = {
   args: {
     button_size: "small",

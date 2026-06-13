@@ -34,28 +34,9 @@ import closeIcon from "@assets/feather-x.svg?raw";
 ${closeLabel.toUpperCase()}
     `;
 
-    //     closeButton.innerHTML = `
-    // <i class="henk-icon">
-    //   <svg
-    //     width="24"
-    //     height="24"
-    //     viewBox="0 0 24 24"
-    //     fill="none"
-    //     xmlns="http://www.w3.org/2000/svg"
-    //   >
-    //     <path
-    //       d="M23.5 0.5L0.5 23.5M0.5 0.5L23.5 23.5"
-    //       stroke="currentcolor"
-    //       stroke-linecap="round"
-    //       stroke-linejoin="round"
-    //     ></path>
-    //   </svg>
-    // </i>
-    // ${closeLabel.toUpperCase()}
-    //     `;
     closeButton.style.display = "none"; // hidden by default
     // Insert after utils
-    utils?.insertAdjacentElement("afterend", closeButton);
+    // utils?.insertAdjacentElement("afterend", closeButton);
 
     let removeTrap: (() => void) | null = null;
 
@@ -99,7 +80,7 @@ ${closeLabel.toUpperCase()}
       header.classList.toggle("henk-header--is-open", isOpen);
       closeButton.style.display = isOpen ? "flex" : "none";
       closeButton.style.zIndex = isOpen ? "9" : "1";
-      utils && (utils.style.display = isOpen ? "none" : "flex");
+      // utils && (utils.style.display = isOpen ? "none" : "flex");
     }
 
     let observer: MutationObserver | null = null;
@@ -158,6 +139,13 @@ ${closeLabel.toUpperCase()}
 
       // Listen to the close button
       closeButton.addEventListener("click", () => closeMenu());
+
+      // Close on click outside
+      document.addEventListener("click", (e) => {
+        if (!header.contains(e.target as Node)) {
+          closeMenu();
+        }
+      });
     }
 
     function closeAllDetails() {
@@ -176,7 +164,7 @@ ${closeLabel.toUpperCase()}
 
       // Reset overflow + state classes
       header.classList.remove("henk-header--is-open");
-      toggleUtils(false);
+      // toggleUtils(false);
 
       // Remove event listeners
       removeEscListener();
