@@ -123,257 +123,328 @@
 {%- endif -%}
 
 {% stylesheet %}
-  .henk-button,
-  .henk-button:link,
-  .henk-button:visited {
-    --btn-bg: var(--color-background-primary);
-    --btn-bg-hover: var(--color-background-secondary);
-    --btn-text: var(--color-text-base);
-    --btn-text-hover: var(--color-text-base-invert);
-    --btn-border: var(--color-border-base);
-    --btn-border-hover: var(--color-border-base);
-    --btn-border-radius: 0;
-    --btn-outline-width: 0;
-    --btn-outline-color: var(--color-border-base);
-    --btn-outline-offset: 0;
+      .henk-button,
+      .henk-button:link,
+      .henk-button:visited {
+        --btn-bg: var(--color-background-primary);
+        --btn-bg-hover: var(--color-background-secondary);
+        --btn-text: var(--color-text-base);
+        --btn-text-hover: var(--color-text-base-invert);
+        --btn-border: var(--color-border-base);
+        --btn-border-hover: var(--color-border-base);
+        --btn-border-radius: 0;
+        --btn-outline-width: 0;
+        --btn-outline-color: var(--color-border-base);
+        --btn-outline-offset: 0;
 
-    background-color: var(--btn-bg);
-    color: var(--btn-text);
-    border: 1px solid var(--btn-border);
-    border-radius: var(--btn-border-radius, 4px);
-    outline: var(--btn-outline-width) solid var(--btn-outline-color);
-    outline-offset: var(--btn-outline-offset, 0);
-    cursor: pointer;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5em;
-    line-height: 1.5;
-    padding: 0.5625em 1em;
-    text-decoration: none;
-    text-underline-offset: 0;
-    font-family: var(--font-body, sans-serif), sans-serif;
-    font-size: 1rem;
-    font-weight: var(--font-weight-semibold, 500);
-    text-align: center;
-    hyphens: none;
-    max-height: 44px;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
-      border-color 0.3s ease;
-  }
+        background-color: var(--btn-bg);
+        color: var(--btn-text);
+        border: 1px solid var(--btn-border);
+        border-radius: var(--btn-border-radius, 4px);
+        outline: var(--btn-outline-width) solid var(--btn-outline-color);
+        outline-offset: var(--btn-outline-offset, 0);
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+        line-height: 1.5;
+        padding: 0.5625em 1em;
+        text-decoration: none;
+        text-underline-offset: 0;
+        font-family: var(--font-body, sans-serif), sans-serif;
+        font-size: 1rem;
+        font-weight: var(--font-weight-semibold, 500);
+        text-align: center;
+        hyphens: none;
+        max-height: 44px;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          border-color 0.3s ease;
+      }
 
-  @media screen and (max-width: 321px) {
-    .henk-button,
-    .henk-button:link {
-      padding-inline: 16px;
-    }
-  }
+      @media screen and (max-width: 321px) {
+        .henk-button,
+        .henk-button:link {
+          padding-inline: 16px;
+        }
+      }
 
-  .henk-button:hover,
-  a:hover span.henk-button {
-    background-color: var(--btn-bg-hover);
-    color: var(--btn-text-hover);
-    border-color: var(--btn-border-hover);
-    text-underline-offset: 0;
-  }
+      .henk-button:hover,
+      a:hover span.henk-button {
+        background-color: var(--btn-bg-hover);
+        color: var(--btn-text-hover);
+        border-color: var(--btn-border-hover);
+        text-underline-offset: 0;
+      }
 
-  /* Variants */
-  .henk-button--primary,
-  .henk-button--primary:link {
-    --btn-bg: var(--color-background-primary);
-    --btn-text: var(--color-text-base);
-  }
+      /* Variants */
+      .henk-button--primary,
+      .henk-button--primary:link {
+        --btn-bg: var(--color-background-primary);
+        --btn-text: var(--color-text-base);
+      }
 
-  .henk-button--secondary,
-  .henk-button--secondary:link {
-    --btn-bg: var(--color-background-secondary);
-    --btn-text: var(--color-text-base-invert);
+      .henk-button--secondary,
+      .henk-button--secondary:link {
+        --btn-bg: var(--color-background-secondary);
+        --btn-text: var(--color-text-base-invert);
 
-    &:hover {
-      --btn-bg-hover: var(--color-background-secondary-light);
-    }
-  }
+        &:hover {
+          --btn-bg-hover: var(--color-background-secondary-light);
+        }
+      }
 
-  .henk-button.henk-button--transparent {
-    --btn-bg: transparent;
-    --btn-text: currentColor;
-    --btn-border: currentColor;
-  }
+      .henk-button.henk-button--transparent {
+        --btn-bg: transparent;
+        --btn-text: currentColor;
+        --btn-border: currentColor;
+      }
 
-  .henk-button--danger,
-  .henk-button--danger:link {
-    --btn-bg: var(--color-background-danger);
-    --btn-bg-hover: var(--color-background-danger);
-    --btn-text: var(--color-text-on-danger);
-    --btn-border: var(--color-border-danger);
-    --btn-border-hover: var(--color-border-danger);
-    --btn-outline-width: 2px;
-    --btn-outline-color: var(--color-border-danger);
-    --btn-outline-offset: 2px;
+      .henk-button--danger,
+      .henk-button--danger:link {
+        --btn-bg: var(--color-background-danger);
+        --btn-bg-hover: var(--color-background-danger);
+        --btn-text: var(--color-text-on-danger);
+        --btn-border: var(--color-border-danger);
+        --btn-border-hover: var(--color-border-danger);
+        --btn-outline-width: 2px;
+        --btn-outline-color: var(--color-border-danger);
+        --btn-outline-offset: 2px;
 
-    &:hover {
-      animation: pulse-outline 1s infinite;
-    }
-  }
+        &:hover {
+          animation: pulse-outline 1s infinite;
+        }
+      }
 
-  .henk-button--success,
-  .henk-button--success:link {
-    --btn-bg: var(--color-background-success);
-    --btn-bg-hover: var(--color-background-success);
-    --btn-text: var(--color-text-on-success);
-    --btn-border: var(--color-border-success);
-    --btn-border-hover: var(--color-border-success);
-    --btn-outline-width: 2px;
-    --btn-outline-color: var(--color-border-success);
-    --btn-outline-offset: 2px;
-  }
+      .henk-button--success,
+      .henk-button--success:link {
+        --btn-bg: var(--color-background-success);
+        --btn-bg-hover: var(--color-background-success);
+        --btn-text: var(--color-text-on-success);
+        --btn-border: var(--color-border-success);
+        --btn-border-hover: var(--color-border-success);
+        --btn-outline-width: 2px;
+        --btn-outline-color: var(--color-border-success);
+        --btn-outline-offset: 2px;
+      }
 
-  /* Disabled state */
-  .henk-button[disabled],
-  .henk-button[aria-disabled='true'] {
-    --btn-bg: var(--color-background-disabled);
-    --btn-bg-hover: var(--color-background-disabled);
-    --btn-text: var(--color-text-on-disabled);
-    --btn-text-hover: var(--color-text-on-disabled);
-    --btn-border: var(--color-border-disabled);
-    --btn-border-hover: var(--color-border-disabled);
+      /* Disabled state */
+      .henk-button[disabled],
+      .henk-button[aria-disabled='true'] {
+        --btn-bg: var(--color-background-disabled);
+        --btn-bg-hover: var(--color-background-disabled);
+        --btn-text: var(--color-text-on-disabled);
+        --btn-text-hover: var(--color-text-on-disabled);
+        --btn-border: var(--color-border-disabled);
+        --btn-border-hover: var(--color-border-disabled);
 
-    cursor: not-allowed;
-  }
+        cursor: not-allowed;
+      }
 
-  .henk-button[disabled]:hover,
-  .henk-button[aria-disabled='true']:hover {
-    --btn-border-hover: var(--color-border-disabled);
-  }
+      .henk-button[disabled]:hover,
+      .henk-button[aria-disabled='true']:hover {
+        --btn-border-hover: var(--color-border-disabled);
+      }
 
-  /* Size modifiers */
-  .henk-button--small,
-  .henk-button--small:link {
-    font-size: 0.8125rem;
-    line-height: 1.84615385em;
-    padding: 3px 16px;
-  }
+      /* Size modifiers */
+      .henk-button--small,
+      .henk-button--small:link {
+        font-size: 0.8125rem;
+        line-height: 1.84615385em;
+        padding: 3px 16px;
+      }
 
-  /* Ghost variant (minimal styling) */
-  .henk-button.henk-button--ghost {
-    --btn-bg: transparent;
-    --btn-text: var(--color-text-base);
-    --btn-border: transparent;
-    --btn-bg-hover: transparent;
-    --btn-text-hover: var(--color-text-link-hover, orange);
-    --btn-border-hover: transparent;
+      /* Ghost variant (minimal styling) */
+      .henk-button.henk-button--ghost {
+        --btn-bg: transparent;
+        --btn-text: var(--color-text-base);
+        --btn-border: transparent;
+        --btn-bg-hover: transparent;
+        --btn-text-hover: var(--color-text-link-hover, orange);
+        --btn-border-hover: transparent;
 
-    padding-inline: 0.25em;
-    border-width: 0;
+        padding-inline: 0.25em;
+        border-width: 0;
 
-    &:has(.icon--only) {
-      padding-inline: 10px;
-      padding-block: 10px;
-    }
-  }
+        &:has(.icon--only) {
+          padding-inline: 10px;
+          padding-block: 10px;
+        }
+      }
 
-  .henk-button .henk-icon {
-    font-size: 12px;
-  }
+      .henk-button .henk-icon {
+        font-size: 12px;
+      }
 
-  .henk-button .henk-icon svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
+      .henk-button .henk-icon svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
 
-  .henk-button:has(.icon--only) {
-    padding-inline: 9px;
-    padding-block: 9px;
-  }
+      .henk-button:has(.icon--only) {
+        padding-inline: 9px;
+        padding-block: 9px;
+      }
 
-  .henk-button.henk-button--small:has(.icon--only) {
-    padding-block: 7px;
-    padding-inline: 7px;
-  }
+      .henk-button.henk-button--small:has(.icon--only) {
+        padding-block: 7px;
+        padding-inline: 7px;
+      }
 
-  .henk-button .henk-icon:has(#chevron-down) {
-    transform: translateY(1px);
-  }
+      .henk-button .henk-icon:has(#chevron-down) {
+        transform: translateY(1px);
+      }
 
-  /* state */
-  .henk-button[data-state='open'] #chevron-down {
-    transform: rotate(180deg);
-  }
+      /* state */
+      .henk-button[data-state='open'] #chevron-down {
+        transform: rotate(180deg);
+      }
 
-  .henk-button:popover-open .henk-icon #chevron-down {
-    transform: rotate(180deg);
-  }
+      .henk-button:popover-open .henk-icon #chevron-down {
+        transform: rotate(180deg);
+      }
 
-  /* Pulsating animation */
-  @keyframes pulse-outline {
-    0% {
-      outline-offset: 2px;
-    }
+      /* Pulsating animation */
+      @keyframes pulse-outline {
+        0% {
+          outline-offset: 2px;
+        }
 
-    50% {
-      outline-offset: 6px;
-      outline-width: 4px;
-    }
+        50% {
+          outline-offset: 6px;
+          outline-width: 4px;
+        }
 
-    100% {
-      outline-offset: 2px;
-    }
-  }
+        100% {
+          outline-offset: 2px;
+        }
+      }
 
-  .henk-button-group {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: flex-end;
-    margin: 1.5rem 0;
-  }
+      .henk-button-group {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 1.5rem 0;
+      }
 
-  .henk-button-group:last-child {
-    margin-bottom: 0;
-  }
+      .henk-button-group:last-child {
+        margin-bottom: 0;
+      }
 
-  .henk-button-group--left {
-    justify-content: flex-start;
-  }
+      .henk-button-group--left {
+        justify-content: flex-start;
+      }
 
-  .henk-button-group--center {
-    justify-content: center;
-  }
+      .henk-button-group--center {
+        justify-content: center;
+      }
 
-  .henk-button-group--right {
-    justify-content: flex-end;
-  }
+      .henk-button-group--right {
+        justify-content: flex-end;
+      }
 
-  .henk-button-group--space-between {
-    justify-content: space-between;
-  }
+      .henk-button-group--space-between {
+        justify-content: space-between;
+      }
 
-  .henk-button-group--fill > * {
-    flex: 1;
-  }
+      .henk-button-group--fill > * {
+        flex: 1;
+      }
 
-  .henk-button-group--stacked {
-    flex-direction: column;
-    align-items: stretch;
-  }
+      .henk-button-group--stacked {
+        flex-direction: column;
+        align-items: stretch;
+      }
 
-  @media only screen and (max-width: 767px) {
-    .henk-button-group--mobile-stacked {
-      flex-direction: column-reverse;
-      align-items: stretch;
-    }
-  }
+      @media only screen and (max-width: 767px) {
+        .henk-button-group--mobile-stacked {
+          flex-direction: column-reverse;
+          align-items: stretch;
+        }
+      }
 
-  @media only screen and (max-width: 767px) {
-    .henk-button-group--mobile-reverse {
-      flex-direction: column-reverse;
-    }
-  }
+      @media only screen and (max-width: 767px) {
+        .henk-button-group--mobile-reverse {
+          flex-direction: column-reverse;
+        }
+      }
 
-  /* stylelint-disable-next-line selector-class-pattern */
-  .henk-tag--gtmLister {
-    margin: 0 !important;
-  }
+      /* stylelint-disable-next-line selector-class-pattern */
+      .henk-tag--gtmLister {
+        margin: 0 !important;
+      }
+
+      .henk-button[data-state='loading'] {
+        --btn-bg: var(--color-background-secondary);
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        --color-spinner-loader: var(--color-text-base-invert);
+        --color-spinner-track: rgba(255, 255, 255, 0.2);
+        color: transparent;
+        overflow: hidden;
+        pointer-events: none;
+        cursor: wait;
+      }
+
+      .henk-button[data-state='loading']:before,
+      .henk-button[data-state='loading']:after {
+        border-radius: 50%;
+        width: 1.5em;
+        height: 1.5em;
+        aspect-ratio: 1 / 1;
+      }
+
+      .henk-button[data-state='loading']:before {
+        position: absolute;
+        display: block;
+        content: '';
+        margin: 0 auto;
+        font-size: 1em;
+        text-indent: -9999em;
+        border-top: 0.25em solid var(--color-spinner-track);
+        border-right: 0.25em solid var(--color-spinner-track);
+        border-bottom: 0.25em solid var(--color-spinner-track);
+        /* spinning part */
+        border-left: 0.25em solid var(--color-spinner-loader, #fff);
+        transform: translateZ(0);
+        animation: load8 1.1s infinite linear;
+      }
+
+      @keyframes load8 {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .henk-button[data-state='loading'][data-accent='transparent']:not([data-text-color]) {
+        --color-text-button: var(--color-text-page);
+        --color-border-button: var(--color-text-page);
+      }
+
+      .henk-button[data-state='loading'][data-accent='transparent'][data-text-color] {
+        --color-border-button: var(--color-text-button);
+      }
+
+      .henk-button--ghost {
+    &.henk-button[data-state='loading'] {
+        --btn-bg: transparent;
+        --color-spinner-loader: var(--color-text-secondary);
+        --color-spinner-track: var(--color-background-secondary-light);
+      }
+
+
+      .henk-button--ghost
+      &.henk-button[disabled]{
+      &.henk-button[data-state='loading'] {
+  color: grey !important;
+      }
 {% endstylesheet %}

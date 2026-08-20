@@ -175,7 +175,7 @@ ${closeLabel.toUpperCase()}
     };
   };
   document.addEventListener("DOMContentLoaded", () => {
-    const mql = window.matchMedia("(min-width: 768px)");
+    const mql = window.matchMedia("(min-width: 900px)");
     let cleanup: (() => void) | null = null;
 
     const handleChange = (e: MediaQueryListEvent | MediaQueryList) => {

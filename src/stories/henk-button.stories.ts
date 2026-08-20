@@ -173,3 +173,21 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
+
+export const Loading: Story = {
+  args: {
+    element: "button",
+    variant: "primary",
+    disabled: false,
+    attrs: { "data-state": "loading", "data-js-button-loading": "" },
+  },
+};
+
+export const GhostLoading: Story = {
+  args: {
+    element: "button",
+    variant: "ghost",
+    disabled: false,
+    attrs: { "data-state": "loading", "data-js-button-loading": "" },
+  },
+};

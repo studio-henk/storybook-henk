@@ -181,7 +181,7 @@ const mobileMenu = {
 
         summary.addEventListener("click", (e) => {
           // Only on mobile
-          if (window.innerWidth <= 767 && details.open) {
+          if (window.innerWidth <= 899 && details.open) {
             e.preventDefault(); // prevent closing if already open
           }
         });
@@ -272,7 +272,7 @@ const mobileMenu = {
    * Call this from your main script when you want the menu active.
    */
   setupMatchMedia() {
-    const mql = window.matchMedia("(max-width: 767px)");
+    const mql = window.matchMedia("(max-width: 899px)");
     let initialized = false;
 
     const handleChange = (e: MediaQueryListEvent | MediaQueryList) => {
