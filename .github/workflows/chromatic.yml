@@ -23,6 +23,10 @@ jobs:
 
       - name: Recreate Shopify symlinks
         run: |
+          rm src/snippets/henk-button.liquid
+          rm public/assets/henk-critical.css
+          rm public/assets/henk-css-variables.css
+
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-button.liquid" src/snippets/henk-button.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-critical.css" public/assets/henk-critical.css
           ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-css-variables.css" public/assets/henk-css-variables.css
