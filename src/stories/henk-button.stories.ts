@@ -10,6 +10,7 @@ const renderButton = (args: any) => {
     type: args.type,
     value: args.value,
     variant: args.variant,
+    color: args.color,
     button_size: args.button_size,
     label: args.label,
     title: args.title,
@@ -23,9 +24,6 @@ const renderButton = (args: any) => {
     extra_classes: args.extra_classes,
   });
 
-  // const div = document.createElement("div");
-  // div.innerHTML = rendered;
-  // return div;
   return rendered;
 };
 
@@ -43,64 +41,146 @@ const meta: Meta = {
   },
   argTypes: {
     element: {
-      control: { type: "select" },
-      options: ["button", "a", "span"],
-      description: "Element to render",
+      control: false,
+      description: "HTML element to render.",
+      table: {
+        defaultValue: { summary: "a" },
+      },
     },
-    href: { control: "text", description: "URL for <a> element" },
-    type: {
-      control: { type: "select" },
-      options: ["button", "submit", "reset"],
-      description: "Type attribute for <button>",
-    },
-    value: { control: "text", description: "Value attribute for <button>" },
+
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "transparent", "ghost"],
-      description: "Visual variant",
+      options: ["primary", "secondary", "transparent", "ghost", "overlay"],
+      description: "Visual treatment of the button.",
+      table: {
+        defaultValue: { summary: "primary" },
+      },
     },
+
+    color: {
+      control: { type: "select" },
+      options: [
+        "ivory",
+        "off-white",
+        "brown",
+        "beige",
+        "soft-blue",
+        "blue",
+        "gold",
+        "green",
+        "yellow",
+      ],
+      description: "Color theme of the button.",
+      table: {
+        defaultValue: { summary: "ivory" },
+      },
+    },
+
     button_size: {
       control: { type: "select" },
       options: ["small", "large"],
-      description: "Size modifier",
+      description: "Size of the button.",
+      table: {
+        defaultValue: { summary: "large" },
+      },
     },
-    label: { control: "text", description: "Button label" },
-    title: { control: "text", description: "Optional title attribute" },
-    icon_name: { control: "text", description: "Optional icon name" },
+
+    label: {
+      control: "text",
+      description: "Button text.",
+      table: {
+        defaultValue: { summary: "Button" },
+      },
+    },
+
+    href: {
+      control: false,
+      description: "Destination URL when element is 'a'.",
+      table: {
+        defaultValue: { summary: "#" },
+      },
+    },
+
+    type: {
+      control: false,
+      description: "Button type when element is 'button'.",
+      table: {
+        defaultValue: { summary: "button" },
+      },
+    },
+
+    value: {
+      control: false,
+      description: "Value attribute when element is 'button'.",
+    },
+
+    icon_name: {
+      control: "text",
+      description: "Optional icon name.",
+    },
+
     icon_position: {
       control: { type: "select" },
       options: ["left", "right"],
-      description: "Icon placement relative to label",
+      description: "Position of the icon relative to the label.",
+      table: {
+        defaultValue: { summary: "left" },
+      },
     },
-    icon_only: { control: "boolean", description: "Render only the icon" },
-    aria_label: {
-      control: "text",
-      description: "ARIA label for accessibility",
+
+    icon_only: {
+      control: "boolean",
+      description: "Render only the icon.",
+      table: {
+        defaultValue: { summary: "false" },
+      },
     },
+
     disabled: {
       control: "boolean",
-      description: "Disabled state (for <button>)",
+      description: "Disable the button.",
+      table: {
+        defaultValue: { summary: "false" },
+      },
     },
-    target: { control: "text", description: "target for <a>" },
+
+    aria_label: {
+      control: false,
+      description:
+        "Accessible label, particularly useful for icon-only buttons.",
+    },
+
+    title: {
+      control: false,
+      description: "Optional title attribute.",
+    },
+
+    target: {
+      control: false,
+      description: "Link target when element is 'a'.",
+    },
+
     attrs: {
-      control: "object",
-      description: "Additional attributes (liquid map)",
+      control: false,
+      description: "Additional HTML attributes.",
     },
+
     extra_classes: {
-      control: "text",
-      description: "Additional classes to append",
+      control: false,
+      description: "Additional CSS classes.",
     },
   },
   args: {
-    element: "a",
-    href: "#",
     variant: "primary",
+    color: "ivory",
     button_size: "large",
-    label: "Click me",
-    type: "button",
+    label: "Button text",
     icon_position: "left",
     icon_only: false,
     disabled: false,
+    element: "a",
+    type: "button",
+    href: "#",
   },
 };
 
@@ -109,38 +189,77 @@ type Story = StoryObj;
 
 export const Default: Story = {};
 
-export const Primary: Story = {
-  args: {
-    variant: "primary",
+export const Variants: Story = {
+  render: () => {
+    const variants = [
+      "primary",
+      "secondary",
+      "transparent",
+      "ghost",
+      "overlay",
+    ];
+
+    const buttons = variants
+      .map((variant) =>
+        engine.parseAndRenderSync(snippet, {
+          element: "a",
+          href: "#",
+          variant,
+          color: "ivory",
+          button_size: "large",
+          label: variant,
+        }),
+      )
+      .join("");
+
+    return `
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+      ">
+        ${buttons}
+      </div>
+    `;
   },
 };
 
-export const Secondary: Story = {
-  args: {
-    variant: "secondary",
-  },
-};
+export const Colors: Story = {
+  render: () => {
+    const colors = [
+      "ivory",
+      "off-white",
+      "brown",
+      "beige",
+      "soft-blue",
+      "blue",
+      "gold",
+      "green",
+      "yellow",
+    ];
 
-export const Transparent: Story = {
-  args: {
-    variant: "transparent",
-    label: "Transparent button",
-    icon_name: "feather-chevron-right",
-    icon_position: "right",
-  },
-};
+    const buttons = colors
+      .map((color) =>
+        engine.parseAndRenderSync(snippet, {
+          element: "a",
+          href: "#",
+          variant: "primary",
+          color,
+          button_size: "large",
+          label: color,
+        }),
+      )
+      .join("");
 
-export const Ghost: Story = {
-  args: {
-    variant: "ghost",
-  },
-};
-
-export const GhostIcon: Story = {
-  args: {
-    variant: "ghost",
-    icon_name: "feather-chevron-right",
-    icon_position: "right",
+    return `
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+      ">
+        ${buttons}
+      </div>
+    `;
   },
 };
 
@@ -162,14 +281,13 @@ export const IconOnly: Story = {
   args: {
     icon_only: true,
     icon_name: "feather-chevron-right",
-    aria_label: "Icon-only button",
+    aria_label: "Open",
   },
 };
 
 export const Disabled: Story = {
   args: {
     element: "button",
-    variant: "primary",
     disabled: true,
   },
 };
@@ -179,15 +297,6 @@ export const Loading: Story = {
     element: "button",
     variant: "primary",
     disabled: false,
-    attrs: { "data-state": "loading", "data-js-button-loading": "" },
-  },
-};
-
-export const GhostLoading: Story = {
-  args: {
-    element: "button",
-    variant: "ghost",
-    disabled: false,
-    attrs: { "data-state": "loading", "data-js-button-loading": "" },
+    attrs: 'data-state="loading" data-js-button-loading',
   },
 };
