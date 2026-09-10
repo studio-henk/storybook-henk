@@ -1,29 +1,38 @@
-# Workflow name
 name: "Chromatic Publish"
 
-# Event for the workflow
 on: push
 
-# List of jobs
 jobs:
   test:
-    # Operating System
     runs-on: ubuntu-latest
-    # Job steps
+
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: Checkout studio-henk
+        uses: actions/checkout@v3
+        with:
+          repository: studio-henk/studio-henk
+          path: studio-henk
+          ssh-key: ${{ secrets.STUDIO_HENK_DEPLOY_KEY }}
+
+      - name: Recreate Shopify symlinks
+        run: |
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-button.liquid" src/snippets/henk-button.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-critical.css" public/assets/henk-critical.css
+          ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-css-variables.css" public/assets/henk-css-variables.css
+
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: "npm"
+
       - run: npm ci
-      #👇 Adds Chromatic as a step in the workflow
+
       - uses: chromaui/action@latest
-        # Options required for Chromatic's GitHub Action
         with:
-          #👇 Chromatic projectToken,
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
           exitOnceUploaded: true
