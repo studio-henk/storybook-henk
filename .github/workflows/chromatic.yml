@@ -19,7 +19,8 @@ jobs:
           echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git clone git@github.com:studio-henk/studio-henk.git studio-henk
+          # git clone git@github.com:studio-henk/studio-henk.git studio-henk
+          git clone --branch storybook/chromatic-deploy git@github.com:studio-henk/studio-henk.git studio-henk
 
       - name: Recreate Shopify symlinks
         run: |
