@@ -74,6 +74,30 @@ Object.entries(partialModules).forEach(([filePath, content]) => {
   }
 });
 
+const fontSnippet = Object.entries(partialModules).find(([filePath]) =>
+  filePath.endsWith("/henk-fonts.liquid"),
+)?.[1];
+
+if (fontSnippet) {
+  const renderedFonts = engine.parseAndRenderSync(fontSnippet, {});
+
+  document.head.insertAdjacentHTML("beforeend", renderedFonts);
+} else {
+  console.warn("Storybook: henk-fonts.liquid was not found");
+}
+
+// const fontSnippet =
+//   partialModules[
+//     Object.keys(partialModules).find((path) =>
+//       path.endsWith("/henk-fonts.liquid"),
+//     ) || ""
+//   ];
+//
+// if (fontSnippet) {
+//   const renderedFonts = engine.parseAndRenderSync(fontSnippet, {});
+//   document.head.insertAdjacentHTML("beforeend", renderedFonts);
+// }
+
 const stylesheetBlocks: string[] = [];
 Object.values(liquidModules).forEach((liquidSource) => {
   if (typeof liquidSource !== "string") return;

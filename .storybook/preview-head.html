@@ -1,34 +1,38 @@
 <style>
-  .sbdocs-preview {
-    background-color: var(--color-background-body) !important;
-    color: var(--color-text-body) !important;
-  }
-  .docblock-colorpalette .css-rs8390 span {
-    display: none !important;
-  }
+    .sbdocs-preview {
+        background-color: var(--color-background-body) !important;
+        color: var(--color-text-body) !important;
+    }
+    .docblock-colorpalette .css-rs8390 span {
+        display: none !important;
+    }
 
-  .sb-show-main.sb-main-padded {
-    padding: 0 !important;
-    background-color: transparent !important;
-  }
-  .sb-show-main {
-    background-color: transparent !important;
-    background: transparent !important;
-  }
-  .sb-show-main.sb-main-fullscreen {
-    background: transparent !important;
-  }
-  .sbdocs-content {
-    max-width: 1920px !important;
-    min-height: 250px !important;
-  }
+    .sb-show-main.sb-main-padded {
+        padding: 0 !important;
+        background-color: transparent !important;
+    }
+    .sb-show-main {
+        background-color: transparent !important;
+        background: transparent !important;
+    }
+    .sb-show-main.sb-main-fullscreen {
+        background: transparent !important;
+    }
+    .sbdocs-content {
+        max-width: 1920px !important;
+        min-height: 250px !important;
+    }
 
-  #storybook-root {
-    background-color: transparent !important;
-  }
+    #storybook-root {
+        background-color: transparent !important;
+    }
+
+    .css-1cvjpgl {
+        padding: 0 !important;
+    }
 </style>
 
-<link rel="stylesheet" href="/assets/_henk-font-face.css" />
+<!-- <link rel="stylesheet" href="/assets/_henk-font-face.css" /> -->
 <link rel="preload" href="/assets/henk-css-variables.css" as="style" />
 <link rel="stylesheet" href="/assets/henk-css-variables.css" />
 <link rel="preload" href="/assets/henk-critical.css" as="style" />
@@ -37,70 +41,71 @@
 <link rel="stylesheet" href="/assets/_henk-header-desktop.css" />
 <link rel="stylesheet" href="/assets/_henk-header-mobile.css" />
 <link rel="stylesheet" href="/assets/henk-forms.css" />
+<link rel="stylesheet" href="/assets/_henk-section.css" />
 
 <script>
-  (() => {
-    const html = document.documentElement;
+    (() => {
+        const html = document.documentElement;
 
-    // document.documentElement.classList.remove("no-js");
-    // document.documentElement.classList.add("js-enabled");
+        // document.documentElement.classList.remove("no-js");
+        // document.documentElement.classList.add("js-enabled");
 
-    // Color gamut
-    if (window.matchMedia("(color-gamut: p3)").matches) {
-      html.classList.add("color-p3");
-    } else {
-      html.classList.add("color-srgb");
-    }
+        // Color gamut
+        if (window.matchMedia("(color-gamut: p3)").matches) {
+            html.classList.add("color-p3");
+        } else {
+            html.classList.add("color-srgb");
+        }
 
-    // Color scheme
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      html.classList.add("theme-dark");
-    } else {
-      html.classList.add("theme-light");
-    }
+        // Color scheme
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            html.classList.add("theme-dark");
+        } else {
+            html.classList.add("theme-light");
+        }
 
-    // Reduced motion
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      html.classList.add("reduced-motion");
-    }
+        // Reduced motion
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            html.classList.add("reduced-motion");
+        }
 
-    // Device pixel ratio
-    const dpr = window.devicePixelRatio || 1;
-    if (dpr >= 3) {
-      html.classList.add("dpr-3plus");
-    } else if (dpr >= 2) {
-      html.classList.add("dpr-2");
-    } else {
-      html.classList.add("dpr-1");
-    }
+        // Device pixel ratio
+        const dpr = window.devicePixelRatio || 1;
+        if (dpr >= 3) {
+            html.classList.add("dpr-3plus");
+        } else if (dpr >= 2) {
+            html.classList.add("dpr-2");
+        } else {
+            html.classList.add("dpr-1");
+        }
 
-    // CSS pow() support detection
-    const supportsPow = (() => {
-      try {
-        const testEl = document.createElement("div");
-        testEl.style.width = "calc(pow(1.25, 2) * 1px)";
-        // If browser accepts the value, style.width won't be empty string
-        return testEl.style.width !== "";
-      } catch {
-        return false;
-      }
+        // CSS pow() support detection
+        const supportsPow = (() => {
+            try {
+                const testEl = document.createElement("div");
+                testEl.style.width = "calc(pow(1.25, 2) * 1px)";
+                // If browser accepts the value, style.width won't be empty string
+                return testEl.style.width !== "";
+            } catch {
+                return false;
+            }
+        })();
+
+        if (supportsPow) {
+            html.classList.add("css-pow-supported");
+        } else {
+            html.classList.add("css-pow-not-supported");
+        }
+
+        const supportsRelativeColors = CSS.supports(
+            "color",
+            "hsl(from var(--fake) h 0 s 0 l 0)",
+        );
+
+        document.documentElement.classList.add(
+            supportsRelativeColors ? "rcs-supported" : "rcs-not-supported",
+        );
     })();
-
-    if (supportsPow) {
-      html.classList.add("css-pow-supported");
-    } else {
-      html.classList.add("css-pow-not-supported");
-    }
-
-    const supportsRelativeColors = CSS.supports(
-      "color",
-      "hsl(from var(--fake) h 0 s 0 l 0)",
-    );
-
-    document.documentElement.classList.add(
-      supportsRelativeColors ? "rcs-supported" : "rcs-not-supported",
-    );
-  })();
 </script>
 
 <script src="assets/henk-mobile-menu.min.js" type="module"></script>
@@ -108,6 +113,6 @@
 
 <!-- Swiper JS -->
 <script
-  src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"
-  defer
+    src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"
+    defer
 ></script>

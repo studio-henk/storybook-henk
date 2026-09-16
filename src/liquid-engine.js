@@ -86,6 +86,31 @@ engine.registerTag("stylesheet", {
   },
 });
 
+engine.registerTag("style", {
+  parse: function (tagToken, remainTokens) {
+    this.tpls = [];
+    const stream = this.liquid.parser.parseStream(remainTokens);
+    stream.on("tag:endstyle", () => stream.stop());
+    stream.on("template", (tpl) => this.tpls.push(tpl));
+    stream.on("end", () => {
+      throw new Error(`tag ${tagToken.raw} not closed`);
+    });
+    stream.start();
+  },
+  render: function* (ctx, emitter) {
+    if (emitter) {
+      emitter.write("<style>");
+      yield this.liquid.renderer.renderTemplates(this.tpls, ctx, emitter);
+      emitter.write("</style>");
+      return;
+    }
+
+    const inner = yield this.liquid.renderer.renderTemplates(this.tpls, ctx);
+
+    return `<style>${inner}</style>`;
+  },
+});
+
 engine.registerTag("form", {
   parse: function (tagToken, remainTokens) {
     this.tpls = [];

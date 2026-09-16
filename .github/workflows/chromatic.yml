@@ -24,13 +24,30 @@ jobs:
 
       - name: Recreate Shopify symlinks
         run: |
-          rm src/snippets/henk-button.liquid
-          rm public/assets/henk-critical.css
-          rm public/assets/henk-css-variables.css
+          rm -f src/snippets/henk-button.liquid
+          rm -f src/sections/henk-section-splitscreen.liquid
+          rm -f src/snippets/henk-snippet-splitscreen.liquid
+          rm -f public/assets/henk-critical.css
+          rm -f public/assets/henk-css-variables.css
+          rm -f public/assets/henk-base.css
+          rm -f public/assets/_henk-section.css
+          rm -f src/snippets/henk-fonts.liquid
+          rm -f src/snippets/henk-video.liquid
 
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-button.liquid" src/snippets/henk-button.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/sections/henk-section-splitscreen.liquid" src/sections/henk-section-splitscreen.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-snippet-splitscreen.liquid" src/snippets/henk-snippet-splitscreen.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-critical.css" public/assets/henk-critical.css
           ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-css-variables.css" public/assets/henk-css-variables.css
+          ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-base.css" public/assets/henk-base.css
+          ln -s "$GITHUB_WORKSPACE/studio-henk/assets/_henk-section.css" public/assets/_henk-section.css
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-fonts.liquid" src/snippets/henk-fonts.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-video.liquid" src/snippets/henk-video.liquid
+
+          for font in "$GITHUB_WORKSPACE"/studio-henk/assets/*.{woff,woff2}; do
+            [ -e "$font" ] || continue
+            ln -sf "$font" "public/assets/$(basename "$font")"
+          done
 
       - uses: actions/setup-node@v4
         with:
