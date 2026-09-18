@@ -33,6 +33,9 @@ jobs:
           rm -f public/assets/_henk-section.css
           rm -f src/snippets/henk-fonts.liquid
           rm -f src/snippets/henk-video.liquid
+          rm -f src/snippets/henk-snippet-double-media.liquid
+          rm -f src/sections/henk-section-double-media.liquid
+
 
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-button.liquid" src/snippets/henk-button.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/sections/henk-section-splitscreen.liquid" src/sections/henk-section-splitscreen.liquid
@@ -43,6 +46,8 @@ jobs:
           ln -s "$GITHUB_WORKSPACE/studio-henk/assets/_henk-section.css" public/assets/_henk-section.css
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-fonts.liquid" src/snippets/henk-fonts.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-video.liquid" src/snippets/henk-video.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-snippet-double-media.liquid" src/snippets/henk-snippet-double-media.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/sections/henk-section-double-media.liquid" src/sections/henk-section-double-media.liquid
 
           for font in "$GITHUB_WORKSPACE"/studio-henk/assets/*.{woff,woff2}; do
             [ -e "$font" ] || continue
