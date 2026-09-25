@@ -1,4 +1,7 @@
 import { Liquid } from "liquidjs";
+import nlRaw from "./locales/nl.default.json?raw";
+
+const nl = JSON.parse(nlRaw.replace(/^\/\*[\s\S]*?\*\/\s*/, ""));
 
 const partialStore = {};
 let engine;
@@ -201,9 +204,11 @@ engine.registerFilter("inline_asset_content", (filename) => {
 });
 
 // translations
-// engine.registerFilter("t", (_key, options = []) => {
-//   return options[1] || "";
-// });
-engine.registerFilter("t", () => "Vanaf");
+
+engine.registerFilter("t", (key, options = []) => {
+  const value = key.split(".").reduce((value, part) => value?.[part], nl);
+
+  return value || options[1] || "";
+});
 
 export default engine;

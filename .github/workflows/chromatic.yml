@@ -40,6 +40,9 @@ jobs:
           rm -f src/sections/collection.liquid
           rm -f src/snippets/henk-collection-item.liquid
           rm -f public/assets/henk-collection-grid.css
+          rm -f src/locales/en.default.schema.json
+          rm -f src/locales/nl.default.json
+          rm -f src/locales/en.json
 
 
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-button.liquid" src/snippets/henk-button.liquid
@@ -58,6 +61,9 @@ jobs:
           ln -s "$GITHUB_WORKSPACE/studio-henk/sections/collection.liquid" src/sections/collection.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-collection-item.liquid" src/snippets/henk-collection-item.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-collection-grid.css" public/assets/henk-collection-grid.css
+          ln -s "$GITHUB_WORKSPACE/studio-henk/locales/en.default.schema.json" src/locales/en.default.schema.json
+          ln -s "$GITHUB_WORKSPACE/studio-henk/locales/en.json" src/locales/en.json
+          ln -s "$GITHUB_WORKSPACE/studio-henk/locales/nl.default.json" src/locales/nl.default.json
 
           for font in "$GITHUB_WORKSPACE"/studio-henk/assets/*.{woff,woff2}; do
             [ -e "$font" ] || continue
