@@ -170,6 +170,22 @@ engine.registerTag("sections", {
 
 engine.registerFilter("asset_url", (filename) => `/assets/${filename}`);
 
+engine.registerFilter("image_url", (image, options = {}) => {
+  if (!image) return "";
+
+  const src = typeof image === "string" ? image : image.src;
+
+  if (!src) return "";
+
+  return src;
+});
+
+engine.registerFilter("image_tag", (src, options = {}) => {
+  if (!src) return "";
+
+  return `<img src="${src}" alt="">`;
+});
+
 engine.registerFilter("metafield_tag", (value) => {
   if (value && typeof value === "object" && "value" in value) {
     return value.value || "";
@@ -183,5 +199,11 @@ engine.registerFilter("inline_asset_content", (filename) => {
   const map = engine.__svg_map || {};
   return map[filename] || "";
 });
+
+// translations
+// engine.registerFilter("t", (_key, options = []) => {
+//   return options[1] || "";
+// });
+engine.registerFilter("t", () => "Vanaf");
 
 export default engine;

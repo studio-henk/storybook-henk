@@ -35,6 +35,10 @@ jobs:
           rm -f src/snippets/henk-video.liquid
           rm -f src/snippets/henk-snippet-double-media.liquid
           rm -f src/sections/henk-section-double-media.liquid
+          rm -f src/sections/henk-section-swiper.liquid
+          rm -f src/snippets/henk-snippet-swiper.liquid
+          rm -f src/snippets/henk-collection-item.liquid
+          rm -f public/assets/henk-collection-grid.css
 
 
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-button.liquid" src/snippets/henk-button.liquid
@@ -48,6 +52,10 @@ jobs:
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-video.liquid" src/snippets/henk-video.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-snippet-double-media.liquid" src/snippets/henk-snippet-double-media.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/sections/henk-section-double-media.liquid" src/sections/henk-section-double-media.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/sections/henk-section-swiper.liquid" src/sections/henk-section-swiper.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-snippet-swiper.liquid" src/snippets/henk-snippet-swiper.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-collection-item.liquid" src/snippets/henk-collection-item.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-collection-grid.css" public/assets/henk-collection-grid.css
 
           for font in "$GITHUB_WORKSPACE"/studio-henk/assets/*.{woff,woff2}; do
             [ -e "$font" ] || continue

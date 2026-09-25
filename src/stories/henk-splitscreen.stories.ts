@@ -135,7 +135,7 @@ const meta: Meta = {
     content:
       "<p>This is an example of the split screen content.</p><p>It can contain multiple paragraphs.</p>",
     media_type: "image",
-    image_src: "https://placehold.co/1152x1728",
+    image_src: "/assets/slide-binnenkijker-2.webp",
     image_src_2: "",
     image_alt: "Placeholder image",
     video_src: "",
@@ -161,6 +161,7 @@ export const Default: Story = {};
 export const WithBreakInTitle: Story = {
   args: {
     title: "First line\nSecond line",
+    image_src: "/assets/slide-binnenkijker-2.webp",
     bg_color: "off-white",
   },
 };
@@ -174,7 +175,7 @@ export const Reverse: Story = {
 
 export const TwoImages: Story = {
   args: {
-    image_src_2: "https://placehold.co/1152x1728",
+    image_src_2: "/assets/slide-binnenkijker-4.webp",
     bg_color: "beige",
   },
 };

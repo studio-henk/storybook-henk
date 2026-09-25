@@ -6,6 +6,8 @@ import snippet from "@src/snippets/henk-snippet-double-media.liquid?raw";
 const sampleImage =
   "https://surf-turf-2-0.myshopify.com/cdn/shop/files/Frame_66.avif";
 
+const sampleImageLarge = "/assets/slide-binnenkijker-2.webp";
+
 const sampleVideo = "/assets/converstation_starters_campaign.mp4";
 
 const renderDoubleMediaBlock = (args: any) => {
@@ -70,7 +72,7 @@ const meta: Meta = {
     heading_level: "2",
     bg_color: "default",
     large_media_type: "image",
-    large_image: sampleImage,
+    large_image: sampleImageLarge,
     small_media_type: "image",
     small_image: sampleImage,
     reverse_layout: false,
