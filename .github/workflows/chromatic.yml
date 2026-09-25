@@ -37,6 +37,7 @@ jobs:
           rm -f src/sections/henk-section-double-media.liquid
           rm -f src/sections/henk-section-swiper.liquid
           rm -f src/snippets/henk-snippet-swiper.liquid
+          rm -f src/sections/collection.liquid
           rm -f src/snippets/henk-collection-item.liquid
           rm -f public/assets/henk-collection-grid.css
 
@@ -54,6 +55,7 @@ jobs:
           ln -s "$GITHUB_WORKSPACE/studio-henk/sections/henk-section-double-media.liquid" src/sections/henk-section-double-media.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/sections/henk-section-swiper.liquid" src/sections/henk-section-swiper.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-snippet-swiper.liquid" src/snippets/henk-snippet-swiper.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/sections/collection.liquid" src/sections/collection.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-collection-item.liquid" src/snippets/henk-collection-item.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-collection-grid.css" public/assets/henk-collection-grid.css
 
