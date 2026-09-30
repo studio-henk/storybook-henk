@@ -43,7 +43,14 @@ jobs:
           rm -f src/locales/en.default.schema.json
           rm -f src/locales/nl.default.json
           rm -f src/locales/en.json
-
+          rm -f src/snippets/henk-collection-promo.liquid
+          rm -f public/assets/henk-backgrounds.css
+          rm -f public/assets/henk-cart-drawer.css
+          rm -f src/snippets/henk-payment-logos.liquid
+          rm -f src/snippets/henk-asset-logo-bancontact.liquid
+          rm -f src/snippets/henk-asset-logo-ideal.liquid
+          rm -f src/snippets/henk-asset-logo-mastercard.liquid
+          rm -f src/snippets/henk-asset-logo-visa.liquid
 
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-button.liquid" src/snippets/henk-button.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/sections/henk-section-splitscreen.liquid" src/sections/henk-section-splitscreen.liquid
@@ -64,6 +71,14 @@ jobs:
           ln -s "$GITHUB_WORKSPACE/studio-henk/locales/en.default.schema.json" src/locales/en.default.schema.json
           ln -s "$GITHUB_WORKSPACE/studio-henk/locales/en.json" src/locales/en.json
           ln -s "$GITHUB_WORKSPACE/studio-henk/locales/nl.default.json" src/locales/nl.default.json
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-collection-promo.liquid" src/snippets/henk-collection-promo.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-backgrounds.css" public/assets/henk-backgrounds.css
+          ln -s "$GITHUB_WORKSPACE/studio-henk/assets/henk-cart-drawer.css" public/assets/henk-cart-drawer.css
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-payment-logos.liquid" src/snippets/henk-payment-logos.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-asset-logo-bancontact.liquid" src/snippets/henk-asset-logo-bancontact.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-asset-logo-ideal.liquid" src/snippets/henk-asset-logo-ideal.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-asset-logo-mastercard.liquid" src/snippets/henk-asset-logo-mastercard.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-asset-logo-visa.liquid" src/snippets/henk-asset-logo-visa.liquid
 
           for font in "$GITHUB_WORKSPACE"/studio-henk/assets/*.{woff,woff2}; do
             [ -e "$font" ] || continue

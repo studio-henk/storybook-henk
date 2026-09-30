@@ -5,6 +5,8 @@ import engine from "@src/liquid-engine.js";
 import collectionRaw from "@src/sections/collection.liquid?raw";
 import collectionItemRaw from "@src/snippets/henk-collection-item.liquid?raw";
 
+import collectionPromoRaw from "@src/snippets/henk-collection-promo.liquid?raw";
+
 const SCHEMA_RE = /\{%\s*schema\s*%\}[\s\S]*?\{%\s*endschema\s*%\}/i;
 
 const STYLESHEET_RE =
@@ -34,8 +36,10 @@ const cleanedSection = collectionRaw
 
 if (typeof (engine as any).registerPartial === "function") {
   (engine as any).registerPartial("henk-collection-item", collectionItemRaw);
+  (engine as any).registerPartial("henk-collection-promo", collectionPromoRaw);
 } else if ((engine as any).__partials) {
   (engine as any).__partials["henk-collection-item"] = collectionItemRaw;
+  (engine as any).__partials["henk-collection-promo"] = collectionPromoRaw;
 }
 
 if (!(engine as any).__collectionFiltersRegistered) {
@@ -164,3 +168,67 @@ export default meta;
 type Story = StoryObj;
 
 export const Default: Story = {};
+
+const promos = [
+  {
+    color: {
+      value: "off-white",
+    },
+    title: "Discover our collection",
+    description: {
+      value: "Explore our latest furniture and find your perfect piece.",
+    },
+    link: {
+      value: {
+        url: "#",
+      },
+    },
+    image: {
+      src: "https://placehold.co/1200x1200?text=Collection+Promo",
+      alt: "Collection promo",
+    },
+  },
+  {
+    color: {
+      value: "blue",
+    },
+    title: "Made for living",
+    description: {
+      value: "Thoughtfully designed furniture for everyday living.",
+    },
+    link: {
+      value: {
+        url: "#",
+      },
+    },
+    image: {
+      src: "https://placehold.co/1200x1200?text=Second+Promo",
+      alt: "Second collection promo",
+    },
+  },
+];
+
+export const WithPromos: Story = {
+  args: {
+    products,
+  },
+
+  render: (args) =>
+    engine.parseAndRenderSync(cleanedSection, {
+      collection: {
+        all_types: "",
+        all_products_count: args.products.length,
+        filters: [],
+        active_filters_count: 0,
+        url: "#",
+        products: args.products,
+        metafields: {
+          custom: {
+            collection_promos: {
+              value: promos,
+            },
+          },
+        },
+      },
+    }),
+};
