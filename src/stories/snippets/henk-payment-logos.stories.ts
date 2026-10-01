@@ -15,10 +15,24 @@ if ((engine as any).registerPartial) {
   (engine as any).registerPartial("henk-asset-logo-visa", visaRaw);
 }
 
-const meta: Meta = {
+const meta: Meta<{ size: "default" | "small" }> = {
   title: "Snippets/HENK Payment Logos",
 
-  render: () => engine.parseAndRenderSync(paymentLogosRaw, {}),
+  render: ({ size }) =>
+    engine.parseAndRenderSync(paymentLogosRaw, {
+      size: size === "default" ? "" : size,
+    }),
+
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["default", "small"],
+    },
+  },
+
+  args: {
+    size: "default",
+  },
 
   tags: ["autodocs", "version:1.0.0"],
 
@@ -34,6 +48,12 @@ const meta: Meta = {
 
 export default meta;
 
-type Story = StoryObj;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const Small: Story = {
+  args: {
+    size: "small",
+  },
+};

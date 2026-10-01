@@ -28,7 +28,7 @@ const CodePanel = ({ active }) => {
 addons.register(ADDON_ID, () => {
   addons.add(PANEL_ID, {
     type: types.PANEL,
-    title: "Custom Code",
+    title: "Liquid code",
     render: CodePanel,
   });
 });
