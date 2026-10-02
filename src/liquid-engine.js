@@ -141,6 +141,42 @@ engine.registerTag("form", {
   },
 });
 
+engine.registerTag("paginate", {
+  parse(tagToken, remainTokens) {
+    this.templates = [];
+
+    const stream = this.liquid.parser.parseStream(remainTokens);
+
+    stream.on("tag:endpaginate", () => stream.stop());
+    stream.on("template", (tpl) => this.templates.push(tpl));
+    stream.start();
+  },
+
+  render(ctx, emitter) {
+    ctx.push({
+      paginate: {
+        current_page: 1,
+        current_offset: 0,
+        page_size: 20,
+        items: 60,
+        pages: 3,
+        parts: [
+          { title: "1", is_link: false, url: "?page=1" },
+          { title: "2", is_link: true, url: "?page=2" },
+          { title: "3", is_link: true, url: "?page=3" },
+        ],
+        previous: null,
+        next: { url: "?page=2", title: "Next" },
+      },
+    });
+
+    try {
+      return this.liquid.renderer.renderTemplates(this.templates, ctx, emitter);
+    } finally {
+      ctx.pop();
+    }
+  },
+});
 engine.registerTag("sections", {
   parse: function (tagToken) {
     this.groupName = tagToken.args ? tagToken.args.trim() : "";
@@ -205,10 +241,45 @@ engine.registerFilter("inline_asset_content", (filename) => {
 
 // translations
 
-engine.registerFilter("t", (key, options = []) => {
-  const value = key.split(".").reduce((value, part) => value?.[part], nl);
+// engine.registerFilter("t", (key, options = []) => {
+//   const value = key.split(".").reduce((value, part) => value?.[part], nl);
+//
+//   return value || options[1] || "";
+// });
+//
+//
+engine.registerFilter("t", (key, args = []) => {
+  const options = Array.isArray(args)
+    ? Object.fromEntries(
+        Array.from({ length: Math.floor(args.length / 2) }, (_, i) => [
+          args[i * 2],
+          args[i * 2 + 1],
+        ]),
+      )
+    : args;
 
-  return value || options[1] || "";
+  const value = String(key)
+    .split(".")
+    .reduce((result, part) => result?.[part], nl);
+
+  const interpolate = (text) =>
+    text.replace(/\{\{\s*(\w+)\s*\}\}/g, (_, name) =>
+      String(options?.[name] ?? ""),
+    );
+
+  if (typeof value === "string") {
+    return interpolate(value);
+  }
+
+  if (value && typeof value === "object") {
+    const translation = Number(options?.count) === 1 ? value.one : value.other;
+
+    if (typeof translation === "string") {
+      return interpolate(translation);
+    }
+  }
+
+  return "";
 });
 
 export default engine;

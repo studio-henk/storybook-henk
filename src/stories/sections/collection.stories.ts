@@ -7,6 +7,8 @@ import collectionItemRaw from "@src/snippets/henk-collection-item.liquid?raw";
 
 import collectionPromoRaw from "@src/snippets/henk-collection-promo.liquid?raw";
 
+import paginationRaw from "@src/snippets/henk-pagination.liquid?raw";
+
 const SCHEMA_RE = /\{%\s*schema\s*%\}[\s\S]*?\{%\s*endschema\s*%\}/i;
 
 const STYLESHEET_RE =
@@ -20,8 +22,6 @@ const cleanedSection = collectionRaw
   )
   // Remove schema-collection.
   .replace(/\{%-?\s*render\s+'schema-collection'[\s\S]*?%\}\s*/i, "")
-  // Remove pagination render.
-  .replace(/\{%-?\s*render\s+'henk-pagination'[\s\S]*?%\}\s*/i, "")
   // Remove paginate wrapper.
   .replace(
     /\{%-?\s*paginate\s+collection\.products\s+by\s+products_per_page\s*-?%\}\s*/i,
@@ -37,9 +37,11 @@ const cleanedSection = collectionRaw
 if (typeof (engine as any).registerPartial === "function") {
   (engine as any).registerPartial("henk-collection-item", collectionItemRaw);
   (engine as any).registerPartial("henk-collection-promo", collectionPromoRaw);
+  (engine as any).__partials["henk-pagination"] = paginationRaw;
 } else if ((engine as any).__partials) {
   (engine as any).__partials["henk-collection-item"] = collectionItemRaw;
   (engine as any).__partials["henk-collection-promo"] = collectionPromoRaw;
+  (engine as any).__partials["henk-pagination"] = paginationRaw;
 }
 
 if (!(engine as any).__collectionFiltersRegistered) {
@@ -124,6 +126,21 @@ const products = [
   },
 ];
 
+const mockPaginate = {
+  current_page: "1",
+  current_offset: 0,
+  page_size: 3,
+  items: 8,
+  pages: 3,
+  parts: [
+    { title: "1", is_link: false, url: "?page=1" },
+    { title: "2", is_link: true, url: "?page=2" },
+    { title: "3", is_link: true, url: "?page=3" },
+  ],
+  previous: null,
+  next: { url: "?page=2", title: "Next" },
+};
+
 const meta: Meta = {
   title: "Sections/Collection",
 
@@ -131,12 +148,14 @@ const meta: Meta = {
     engine.parseAndRenderSync(cleanedSection, {
       collection: {
         all_types: "",
+        products_count: args.products.length,
         all_products_count: args.products.length,
         filters: [],
         active_filters_count: 0,
         url: "#",
         products: args.products,
       },
+      paginate: mockPaginate,
     }),
 
   tags: ["autodocs", "version:1.0.0"],
@@ -217,6 +236,7 @@ export const WithPromos: Story = {
     engine.parseAndRenderSync(cleanedSection, {
       collection: {
         all_types: "",
+        products_count: args.products.length,
         all_products_count: args.products.length,
         filters: [],
         active_filters_count: 0,
@@ -230,5 +250,6 @@ export const WithPromos: Story = {
           },
         },
       },
+      paginate: mockPaginate,
     }),
 };
