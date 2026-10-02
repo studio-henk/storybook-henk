@@ -7,7 +7,7 @@ import collectionItemRaw from "@src/snippets/henk-collection-item.liquid?raw";
 
 import collectionPromoRaw from "@src/snippets/henk-collection-promo.liquid?raw";
 
-import paginationRaw from "@src/snippets/henk-pagination.liquid?raw";
+// import paginationRaw from "@src/snippets/henk-pagination.liquid?raw";
 
 const SCHEMA_RE = /\{%\s*schema\s*%\}[\s\S]*?\{%\s*endschema\s*%\}/i;
 
@@ -28,20 +28,22 @@ const cleanedSection = collectionRaw
     "",
   )
   .replace(/\{%-?\s*endpaginate\s*-?%\}/i, "")
+  // Remove pagination render; we'll add a static preview separately.
+  .replace(/\{%-?\s*render\s+['"]henk-pagination['"][\s\S]*?%\}/i, "")
+  // Remove paginate wrapper.
+  .replace(/\{%-?\s*paginate\b[\s\S]*?%\}\s*/i, "")
+  .replace(/\{%-?\s*endpaginate\s*-?%\}/i, "")
   // Remove section schema.
   .replace(SCHEMA_RE, "")
   // Remove section stylesheet.
   .replace(STYLESHEET_RE, "");
-// .replace(/(\{%-?\s*endcapture\s*-?%\})/i, "$1\n{{ price_output }}");
 
 if (typeof (engine as any).registerPartial === "function") {
   (engine as any).registerPartial("henk-collection-item", collectionItemRaw);
   (engine as any).registerPartial("henk-collection-promo", collectionPromoRaw);
-  (engine as any).__partials["henk-pagination"] = paginationRaw;
 } else if ((engine as any).__partials) {
   (engine as any).__partials["henk-collection-item"] = collectionItemRaw;
   (engine as any).__partials["henk-collection-promo"] = collectionPromoRaw;
-  (engine as any).__partials["henk-pagination"] = paginationRaw;
 }
 
 if (!(engine as any).__collectionFiltersRegistered) {
@@ -126,24 +128,53 @@ const products = [
   },
 ];
 
-const mockPaginate = {
-  current_page: "1",
-  current_offset: 0,
-  page_size: 3,
-  items: 8,
-  pages: 3,
-  parts: [
-    { title: "1", is_link: false, url: "?page=1" },
-    { title: "2", is_link: true, url: "?page=2" },
-    { title: "3", is_link: true, url: "?page=3" },
-  ],
-  previous: null,
-  next: { url: "?page=2", title: "Next" },
-};
+// const mockPaginate = {
+//   current_page: "1",
+//   current_offset: 0,
+//   page_size: 3,
+//   items: 8,
+//   pages: 3,
+//   parts: [
+//     { title: "1", is_link: false, url: "?page=1" },
+//     { title: "2", is_link: true, url: "?page=2" },
+//     { title: "3", is_link: true, url: "?page=3" },
+//   ],
+//   previous: null,
+//   next: { url: "?page=2", title: "Next" },
+// };
+
+const staticPagination = `
+  <div class="henk-pagination henk-section">
+    <nav class="pagination" role="navigation" aria-label="Paginering">
+      <div class="henk-button-group henk-button-group--center">
+        <ol class="henk-pagination__pages">
+          <li><span class="henk-pagination__item henk-pagination__number henk-button is-current" aria-current="page">1</span></li>
+          <li><span class="henk-pagination__item henk-pagination__number henk-button">2</span></li>
+        </ol>
+        <span class="henk-pagination__item pagination__item--next henk-button">Volgende</span>
+      </div>
+    </nav>
+  </div>
+`;
 
 const meta: Meta = {
   title: "Sections/Collection",
 
+  // render: (args) => {
+  //   const html = engine.parseAndRenderSync(cleanedSection, {
+  //     collection: {
+  //       all_types: "",
+  //       products_count: args.products.length,
+  //       all_products_count: args.products.length,
+  //       filters: [],
+  //       active_filters_count: 0,
+  //       url: "#",
+  //       products: args.products,
+  //     },
+  //   });
+  //
+  //   return html + staticPagination;
+  // },
   render: (args) =>
     engine.parseAndRenderSync(cleanedSection, {
       collection: {
@@ -155,8 +186,7 @@ const meta: Meta = {
         url: "#",
         products: args.products,
       },
-      paginate: mockPaginate,
-    }),
+    }) + staticPagination,
 
   tags: ["autodocs", "version:1.0.0"],
 
@@ -250,6 +280,5 @@ export const WithPromos: Story = {
           },
         },
       },
-      paginate: mockPaginate,
-    }),
+    }) + staticPagination,
 };
