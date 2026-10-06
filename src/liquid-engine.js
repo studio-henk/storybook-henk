@@ -73,6 +73,22 @@ engine.__partials = partialStore;
 // placeholder map that stories can populate at runtime in the browser
 engine.__svg_map = engine.__svg_map || {};
 
+engine.registerTag("schema", {
+  parse: function (tagToken, remainTokens) {
+    this.tpls = [];
+    const stream = this.liquid.parser.parseStream(remainTokens);
+    stream.on("tag:endschema", () => stream.stop());
+    stream.on("template", (tpl) => this.tpls.push(tpl));
+    stream.on("end", () => {
+      throw new Error(`tag ${tagToken.raw} not closed`);
+    });
+    stream.start();
+  },
+  render: function () {
+    return "";
+  },
+});
+
 engine.registerTag("stylesheet", {
   parse: function (tagToken, remainTokens) {
     this.tpls = [];

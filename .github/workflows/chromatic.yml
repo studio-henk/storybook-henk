@@ -53,6 +53,7 @@ jobs:
           rm -f src/snippets/henk-asset-logo-mastercard.liquid
           rm -f src/snippets/henk-asset-logo-visa.liquid
           rm -f src/snippets/henk-pagination.liquid
+          rm -f src/sections/henk-section-intro.liquid
 
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-button.liquid" src/snippets/henk-button.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/sections/henk-section-splitscreen.liquid" src/sections/henk-section-splitscreen.liquid
@@ -83,6 +84,7 @@ jobs:
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-asset-logo-mastercard.liquid" src/snippets/henk-asset-logo-mastercard.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-asset-logo-visa.liquid" src/snippets/henk-asset-logo-visa.liquid
           ln -s "$GITHUB_WORKSPACE/studio-henk/snippets/henk-pagination.liquid" src/snippets/henk-pagination.liquid
+          ln -s "$GITHUB_WORKSPACE/studio-henk/sections/henk-section-intro.liquid" src/sections/henk-section-intro.liquid
 
           for font in "$GITHUB_WORKSPACE"/studio-henk/assets/*.{woff,woff2}; do
             [ -e "$font" ] || continue
