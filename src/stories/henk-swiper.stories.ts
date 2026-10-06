@@ -281,7 +281,7 @@ export const Default: Story = {};
 
 export const WithText: Story = {
   args: {
-    title: "HENK visits",
+    title: "HENK visits again",
     text: "<p>Binnenkijken voor inspiratie: bekijk HENK meubels in echte interieurs.</p>",
     blocks: [
       {
