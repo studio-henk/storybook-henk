@@ -45,7 +45,11 @@ const meta: Meta = {
 
   parameters: {
     customCode: sectionRaw,
+    layout: "fullscreen",
     docs: {
+      canvas: {
+        layout: "fullscreen",
+      },
       description: {
         component:
           "Swiper section rendered from the Shopify Liquid section and snippet.",
