@@ -16,7 +16,9 @@
     "check:browsers": "npx browserslist",
     "css:dev": "NODE_ENV=development node build-css.js",
     "css:prod": "NODE_ENV=production node build-css.js",
-    "watch:css": "nodemon -e css -w src/assets -w src/stories --ignore public/assets --exec \"npm run css:dev && npm run css:prod\""
+    "watch:css": "nodemon -e css -w src/assets -w src/stories --ignore public/assets --exec \"npm run css:dev && npm run css:prod\"",
+    "test:stories": "vitest run",
+    "test:stories:update": "vitest run --update"
   },
   "author": "nh",
   "license": "ISC",
@@ -26,8 +28,10 @@
     "@storybook/addon-designs": "11.1.2",
     "@storybook/addon-docs": "10.2.16",
     "@storybook/addon-links": "10.2.16",
+    "@storybook/addon-vitest": "^10.2.16",
     "@storybook/html-vite": "10.2.16",
     "@storybook/icons": "2.0.1",
+    "@vitest/browser-playwright": "^4.1.12",
     "@whitespace/storybook-addon-html": "^9.0.0",
     "autoprefixer": "^10.4.21",
     "browserslist-config-baseline": "^0.5.0",
@@ -35,6 +39,7 @@
     "cssnano": "^7.1.0",
     "fast-glob": "^3.3.3",
     "nodemon": "^3.1.10",
+    "playwright": "^1.64.1",
     "postcss-cli": "^11.0.1",
     "postcss-discard-comments": "^7.0.4",
     "postcss-import": "^16.1.1",
@@ -50,7 +55,8 @@
     "terser": "^5.43.1",
     "typescript": "^5.8.3",
     "vite": "^5.4.18",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^4.1.12"
   },
   "overrides": {
     "@storybook/icons": "2.0.1"

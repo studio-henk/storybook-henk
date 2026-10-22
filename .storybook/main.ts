@@ -17,6 +17,7 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-a11y",
+    "@storybook/addon-vitest",
     "@storybook/addon-docs",
     "@github-ui/storybook-addon-performance-panel/universal",
     "storybook-addon-tag-badges",
