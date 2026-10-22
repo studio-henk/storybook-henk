@@ -126,6 +126,13 @@ const products = [
     featured_image:
       "https://www.studio-henk.nl/cdn/shop/files/StudioHENK_Modulo15_01.avif?v=1781855165&width=1260",
   },
+  {
+    url: "#",
+    title: "Mock fauteuil",
+    price: 99900,
+    price_varies: true,
+    featured_image: "https://placehold.co/1260x1260?text=Fauteuil",
+  },
 ];
 
 // const mockPaginate = {
