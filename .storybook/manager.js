@@ -1,6 +1,7 @@
 import { addons, types } from "storybook/manager-api";
-import { AddonPanel } from "storybook/internal/components";
+import { AddonPanel, SyntaxHighlighter } from "storybook/internal/components";
 import React from "react";
+import liquid from "react-syntax-highlighter/dist/esm/languages/prism/liquid";
 import {
   useAddonState,
   useStorybookState,
@@ -11,16 +12,23 @@ import { defaultConfig } from "storybook-addon-tag-badges/manager-helpers";
 const ADDON_ID = "custom/code-panel";
 const PANEL_ID = `${ADDON_ID}/panel`;
 
+// Prism's Liquid grammar highlights {% %} / {{ }} and the HTML around them
+SyntaxHighlighter.registerLanguage("liquid", liquid);
+
 const CodePanel = ({ active }) => {
-  const state = useStorybookState();
-  const storyId = state?.storyId;
   const customCode = useParameter("customCode", null);
 
   return (
     <AddonPanel active={active}>
-      <pre style={{ whiteSpace: "pre-wrap", padding: 16 }}>
-        <code>{customCode || "No customCode parameter provided."}</code>
-      </pre>
+      <SyntaxHighlighter
+        language="liquid"
+        copyable
+        padded
+        format={false}
+        wrapLongLines
+      >
+        {customCode || "No customCode parameter provided."}
+      </SyntaxHighlighter>
     </AddonPanel>
   );
 };
