@@ -20,6 +20,7 @@ const config: StorybookConfig = {
     "@storybook/addon-docs",
     "@github-ui/storybook-addon-performance-panel/universal",
     "storybook-addon-tag-badges",
+    "@whitespace/storybook-addon-html",
   ],
 
   framework: {

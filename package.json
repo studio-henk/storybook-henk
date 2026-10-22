@@ -28,7 +28,7 @@
     "@storybook/addon-links": "10.2.16",
     "@storybook/html-vite": "10.2.16",
     "@storybook/icons": "2.0.1",
-    "@whitespace/storybook-addon-html": "^6.0.5",
+    "@whitespace/storybook-addon-html": "^9.0.0",
     "autoprefixer": "^10.4.21",
     "browserslist-config-baseline": "^0.5.0",
     "chromatic": "^13.1.4",
